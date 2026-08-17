@@ -5,8 +5,14 @@
 <h1 align="center">Benchmarking scientific agents across dynamic Earth systems and natural hazards</h1>
 
 <p align="center">
-  <strong>Zhiqing Cui</strong>, Xinxiang Yin, Yihong Tang, Xinglang Zhang, Yuanzhe Hu, Siru Zhong, Weidong Tang, Tao Yu, Tianyue Zhou,<br>
-  Qu Ao, Hanqing Wang, Yuxuan Liang, Weijia Li, Ming Jin, Shirui Pan, Yuhao Kang, Dingyi Zhuang, Jinhua Zhao
+  <strong>Zhiqing Cui</strong><sup>1,2</sup>, Xinxiang Yin<sup>3</sup>, Yihong Tang<sup>4</sup>, Xinglang Zhang<sup>5</sup>, Yuanzhe Hu<sup>6</sup>, Siru Zhong<sup>5</sup>, Weidong Tang<sup>7</sup>, Tao Yu<sup>8</sup>, Tianyue Zhou<sup>1</sup>,<br>
+  Qu Ao<sup>1</sup>, Hanqing Wang<sup>5</sup>, Yuxuan Liang<sup>5</sup>, Weijia Li<sup>9</sup>, Ming Jin<sup>10</sup>, Shirui Pan<sup>10</sup>, Yuhao Kang<sup>11</sup>, Dingyi Zhuang<sup>1,&dagger;</sup>, Jinhua Zhao<sup>1</sup>
+</p>
+
+<p align="center"><sub>
+  <sup>1</sup>Massachusetts Institute of Technology &nbsp; <sup>2</sup>University of Reading &nbsp; <sup>3</sup>The University of Hong Kong &nbsp; <sup>4</sup>McGill University &nbsp; <sup>5</sup>The Hong Kong University of Science and Technology (Guangzhou) &nbsp; <sup>6</sup>Georgia Institute of Technology<br>
+  <sup>7</sup>National University of Singapore &nbsp; <sup>8</sup>University of Waterloo &nbsp; <sup>9</sup>Tsinghua University &nbsp; <sup>10</sup>Griffith University &nbsp; <sup>11</sup>The University of Texas at Austin &nbsp; <sup>&dagger;</sup>Corresponding author
+</sub>
 </p>
 
 <p align="center">
@@ -196,7 +202,7 @@ mean_score = (answer_correctness_score + llm_rubric_score) / 2
 Strict Accuracy@95 counts a task as correct when its answer-unit score reaches 95. Capability summaries use `task_sets/dimension_labels.csv`. Tool calls, file reads, tokens, latency, and cost are reported as diagnostics and do not change the official mean score.
 
 <p align="center">
-  <img src="assets/figures/task-evidence-trajectory.png" alt="EarthVerse task evidence and research trajectory" width="820">
+  <img src="assets/figures/benchmark-coverage-wheel.png" alt="EarthVerse task capabilities and hazard-family coverage" width="820">
 </p>
 
 ## Scientific tools and external agents
