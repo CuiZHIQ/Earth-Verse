@@ -179,7 +179,7 @@ mean_score = (answer_correctness_score + llm_rubric_score) / 2
 Strict Accuracy@95 is the share of tasks whose answer-unit score reaches 95. Tool calls, file reads, latency, tokens, and cost are diagnostics; they do not change the official mean score. Capability summaries use `task_sets/dimension_labels.csv`.
 
 <p align="center">
-  <img src="assets/figures/benchmark-coverage-wheel.png" alt="EarthVerse task capabilities and hazard-family coverage" width="600">
+  <img src="assets/figures/benchmark-coverage-wheel.png" alt="EarthVerse task capabilities and hazard-family coverage" width="520">
 </p>
 
 ## 🧰 Tools and external agents
