@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-253_Q2",
+  "event_id": "CSX-253",
+  "target_family": "sao_sebastiao_rain_slope_evidence_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "score_6_of_6",
+    "ledger": {
+      "score_0_to_6": 6,
+      "cloud_ratio": 5.52,
+      "bright_ratio": 14.89,
+      "reported_24h_rain_floor_mm": 680,
+      "max_grid_precip_mm": 62.18,
+      "grid_product_max_spread_mm": 11.76,
+      "report_to_grid_ratio": 10.94,
+      "report_marker_count": 5,
+      "low_change_component": 1,
+      "wind_penalty": 0
+    },
+    "label": "storm_obscured_localized_rain_slope_failure",
+    "tolerance": {
+      "ratio": 0.02,
+      "mm": 0.05
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Pixel-ratio arithmetic",
+        "points": 4,
+        "description": "Computes storm/pre cloud-like and bright-pixel ratios from the stated RGB thresholds.",
+        "partial_credit": "Award 2-3 points for one exact ratio or both ratios with minor rounding drift."
+      },
+      {
+        "name": "Rainfall contrast arithmetic",
+        "points": 4,
+        "description": "Computes the gridded maximum, cross-product maximum-value spread, and reported-rainfall-to-grid ratio.",
+        "partial_credit": "Award 2-3 points for the correct gridded maximum with a small ratio or spread error."
+      },
+      {
+        "name": "Text-marker count and formula use",
+        "points": 4,
+        "description": "Counts the five report markers and applies every threshold component in the 0-6 ledger formula.",
+        "partial_credit": "Award 2-3 points for the correct marker count with one missing formula component."
+      },
+      {
+        "name": "Change and wind terms",
+        "points": 3,
+        "description": "Uses the annual cosine mean, dNBR mean, and event-window maximum daily wind value in the numeric ledger.",
+        "partial_credit": "Award 1-2 points for using two of the three terms correctly."
+      },
+      {
+        "name": "Final JSON and units",
+        "points": 3,
+        "description": "Returns compact JSON with score, ratios, millimeter values, marker count, flags, and units.",
+        "partial_credit": "Award 1-2 points when values are mostly correct but the JSON is incomplete."
+      },
+      {
+        "name": "Numeric synthesis",
+        "points": 2,
+        "description": "Shows how the component subtotal and wind term produce the final score of 6 out of 6.",
+        "partial_credit": "Award 1 point for the right final score with a thin component ledger."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-253",
+    "event_name": "2023 Sao Sebastiao compound flood-landslide disaster",
+    "hazard_family": "compound_cascading_events",
+    "event_date_or_window": "2023-02-18 to 2023-02-21"
+  },
+  "key_values": {
+    "file_count": 31,
+    "category_counts": {
+      "event_reports": 5,
+      "geospatial_context": 2,
+      "event_catalogs": 5,
+      "remote_sensing": 8,
+      "exposure_impact": 4,
+      "physical_hazard": 6,
+      "other": 1
+    },
+    "image_shares": {
+      "storm_cloud": 0.5304,
+      "pre_cloud": 0.0961,
+      "storm_bright": 0.4639,
+      "pre_bright": 0.0311
+    },
+    "precip_grid_max_mm": {
+      "era5_land": 62.18,
+      "gpm_imerg": 50.42,
+      "chirps": 52.45
+    },
+    "report_rain_floor_mm": 680,
+    "report_marker_count": 5,
+    "alphaearth_mean": 0.062,
+    "dnbr_mean": -0.06,
+    "max_event_window_daily_wind_kmh": 22.7,
+    "worldpop_population": 163110,
+    "component_scores": {
+      "obscuration": 2,
+      "rainfall": 2,
+      "report_text": 1,
+      "low_change": 1,
+      "wind_penalty": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_005_001_event_anchor_report_Locked_anchor_NASA_Earth_Observatory.html.html",
+      "data/remote_sensing/remote_sensing_006_event_2023-02-19_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_007_pre_2023-01-19_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ],
+    "pixel_rule": "bright mean RGB >= 220; cloud-like RGB channels >= 200 with channel spread <= 35"
+  }
+}

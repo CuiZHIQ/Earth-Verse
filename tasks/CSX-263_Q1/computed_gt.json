@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-263_Q1",
+  "event_id": "CSX-263",
+  "task_type": "structured_numeric_reasoning",
+  "evaluation_mode": "deterministic_with_llm_judging",
+  "target_family": "indonesia_peat_haze_process_response_priority",
+  "primary_gt": {
+    "process_model": {
+      "event": "2015 Indonesian drought, peat fires and transboundary haze",
+      "mechanism": "El Nino-amplified drying of peatlands enabled persistent fires, low smoke and carbon monoxide transport, and downwind population-service exposure.",
+      "baseline_priority": 77.34,
+      "scenario_priority": 82.08,
+      "priority_delta": 4.74
+    },
+    "evidence_scope": {
+      "point_weather": "Antecedent plus fire-season dryness and wind diagnostic for the available local/downwind context, not a sole source-region fire locator.",
+      "gridded_hazard_products": "Overlapping precipitation and heat summaries used for regional process consistency across products.",
+      "receptor_load_products": "Masked WorldPop and OSM-derived counts used as authoritative receptor/service-load statistics for the package context.",
+      "remote_sensing": "Sentinel scene-pair availability is an observability constraint, not evidence of absent burning."
+    },
+    "computed_metrics": {
+      "event_window": "2015-09-01 to 2015-10-31",
+      "event_days": 61,
+      "hazard_overlap_window": "2015-09-01 to 2015-10-16",
+      "hazard_overlap_days": 46,
+      "coverage_fraction_pct": 75.41,
+      "point_weather_days": 60,
+      "low_rain_threshold_mm_day": 1.0,
+      "dry_day_share_pct": 41.67,
+      "longest_low_rain_run_days": 8,
+      "longest_low_rain_run_start": "2015-08-21",
+      "longest_low_rain_run_end": "2015-08-28",
+      "mean_point_precip_mm_day": 3.7,
+      "heat_tail_c": 8.25,
+      "mean_overlap_wind_mps": 4.42,
+      "gpm_precip_cv": 0.499,
+      "chirps_precip_cv": 0.348,
+      "gridded_mean_gap_pct": 8.15,
+      "gpm_low_tail_norm": 0.833,
+      "chirps_low_tail_norm": 0.058,
+      "scene_pair_ready": 0,
+      "sentinel_pre_count": 0,
+      "sentinel_post_count": 1,
+      "population_sum": 510700.36,
+      "osm_element_count": 1000,
+      "critical_service_count": 395,
+      "network_element_count": 549,
+      "pop_per_osm_element": 510.7
+    },
+    "baseline_indices": {
+      "dry_persistence_index": 65.13,
+      "rainfall_structure_index": 66.34,
+      "heat_transport_index": 79.41,
+      "receptor_load_index": 90.48,
+      "observability_constraint_index": 100.0,
+      "compound_haze_response_priority": 77.34
+    },
+    "scenario_analysis": {
+      "scenario_name": "warmer_drier_higher_exposure",
+      "precipitation_multiplier": 0.85,
+      "heat_tail_increase_c": 2.0,
+      "wind_multiplier": 1.1,
+      "population_multiplier": 1.1,
+      "dry_persistence_index": 68.46,
+      "rainfall_structure_index": 69.25,
+      "heat_transport_index": 93.37,
+      "receptor_load_index": 94.74,
+      "compound_haze_response_priority": 82.08,
+      "priority_delta": 4.74
+    },
+    "mechanism_chain": [
+      "Strong seasonal drying and an 8-day low-rain run lower peat moisture.",
+      "Spatially uneven rainfall leaves dry pockets even when regional means differ across products.",
+      "A warm regional tail and moderate near-surface wind support smoke persistence and transport.",
+      "Incomplete dNBR scene pairing limits burn-scar confirmation, so true-color remote sensing and weather-exposure evidence carry more operational weight.",
+      "Population, schools, shelters, hospitals, police, fire stations, roads, and waterways make haze a receptor and service-continuity problem."
+    ],
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Indonesian_drought_peat_fires_and_transboundary_haze.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_001_pre.jpg",
+      "data/remote_sensing/remote_sensing_002_event.jpg"
+    ],
+    "final_interpretation": "The baseline priority is high, and the warmer-drier scenario raises it further because drought persistence, heat transport, and receptor load intensify while burn-scar scene pairing remains unavailable; the receptor-load and point-weather terms should be read as package-context diagnostics rather than standalone fire-source locators."
+  },
+  "numeric_tolerances": {
+    "priority_indices": 0.02,
+    "percentages": 0.05,
+    "counts": 0,
+    "temperature_c": 0.02,
+    "wind_mps": 0.02,
+    "population": 0.1,
+    "ratios": 0.005
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Identifies the relevant package evidence without being handed exact filenames, cites package-relative paths for all reported values, and states the evidence scope for weather, gridded, receptor-load, and remote-sensing products.",
+        "full_credit": "Uses event report, timing metadata, point weather, gridded rainfall, ERA5-Land, Sentinel, population, OSM, and remote-sensing evidence with package-relative citations and bounded scope statements.",
+        "partial_credit": "Uses local package evidence but misses one or two source families or provides incomplete path citations."
+      },
+      {
+        "name": "Event timing and dry persistence",
+        "points": 4,
+        "description": "Extracts the event period, handles the available hazard-data overlap, and computes the dry-day share, longest low-rain run, mean precipitation, and dry persistence index.",
+        "full_credit": "Reports the 2015-09-01 to 2015-10-31 event, the 2015-09-01 to 2015-10-16 overlap, 41.67% dry days, an 8-day run, 3.70 mm/day mean precipitation, and a 65.13 dry persistence index.",
+        "partial_credit": "Most timing or dry metrics are correct with small rounding mistakes or one window-choice error."
+      },
+      {
+        "name": "Rainfall structure across products",
+        "points": 3,
+        "description": "Computes the GPM and CHIRPS coefficient-of-variation, low-tail, and product-agreement terms.",
+        "full_credit": "Reports GPM CV 0.499, CHIRPS CV 0.348, mean-gap 8.15%, and rainfall structure index 66.34.",
+        "partial_credit": "The calculation uses the right products but has one arithmetic, denominator, or rounding error."
+      },
+      {
+        "name": "Heat, wind, and remote-sensing constraint",
+        "points": 3,
+        "description": "Computes the ERA5-Land heat tail, converts point wind from km/h to m/s, and interprets Sentinel dNBR scene-pair availability.",
+        "full_credit": "Reports heat tail 8.25 C, overlap mean wind 4.42 m/s, heat-transport index 79.41, scene-pair readiness 0, and observability constraint 1.",
+        "partial_credit": "One of these terms is missing or uses the right idea with a small unit or rounding error."
+      },
+      {
+        "name": "Receptor load and response priority",
+        "points": 4,
+        "description": "Computes exposed population, critical service count, network-element count, population per OSM element, receptor load, and baseline priority while treating receptor products as package-context load statistics.",
+        "full_credit": "Reports 510700.36 people, 395 critical services, 549 network elements, 510.70 people per OSM element, receptor load 90.48, and baseline priority 77.34.",
+        "partial_credit": "Most receptor and priority terms are correct but one OSM count, normalization, or weight is wrong."
+      },
+      {
+        "name": "Warmer-drier scenario and process interpretation",
+        "points": 3,
+        "description": "Recomputes the scenario with the stated perturbations and explains the peat-fire haze source-to-receptor mechanism.",
+        "full_credit": "Reports scenario priority 82.08, delta 4.74, and a concise mechanism chain tying El Nino dryness, peat combustion, low smoke, transport, and exposed receptors to response pressure.",
+        "partial_credit": "The scenario is directionally correct but one perturbation or mechanism link is incomplete."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-263",
+    "event_name": "2015 Indonesian drought, peat fires and transboundary haze",
+    "hazard_family": "compound_cascading_events",
+    "event_period": "2015-09-01 to 2015-10-31",
+    "location": "Sumatra, Kalimantan and downwind Southeast Asia"
+  },
+  "calculation_inputs": {
+    "file_count": 24,
+    "category_counts": {
+      "event_catalogs": 5,
+      "event_reports": 4,
+      "exposure_impact": 4,
+      "geospatial_context": 2,
+      "other": 1,
+      "physical_hazard": 6,
+      "remote_sensing": 2
+    },
+    "formula_weights": {
+      "dry_persistence_norm": {
+        "dry_day_share_pct_over_50": 0.4,
+        "longest_low_rain_run_days_over_10": 0.3,
+        "inverse_mean_precip_over_5_mm_day": 0.3
+      },
+      "rainfall_structure_norm": {
+        "spatial_cv_norm": 0.4,
+        "low_rain_tail_norm": 0.35,
+        "cross_product_agreement_norm": 0.25
+      },
+      "heat_transport_norm": {
+        "heat_tail_c_over_10": 0.65,
+        "mean_overlap_wind_mps_over_6": 0.35
+      },
+      "receptor_load_norm": {
+        "population_over_600000": 0.35,
+        "critical_services_over_400": 0.3,
+        "network_elements_over_600": 0.2,
+        "people_per_osm_element_over_600": 0.15
+      },
+      "compound_haze_response_priority": {
+        "dry_persistence_norm": 0.3,
+        "rainfall_structure_norm": 0.2,
+        "heat_transport_norm": 0.15,
+        "receptor_load_norm": 0.25,
+        "observability_constraint_norm": 0.1
+      }
+    },
+    "osm_summary": {
+      "element_count": 1000,
+      "key_counts": {
+        "amenity": 398,
+        "healthcare": 18,
+        "emergency": 5,
+        "waterway": 339,
+        "highway": 210,
+        "building": 56,
+        "aeroway": 2
+      },
+      "amenity_counts": {
+        "hospital": 30,
+        "police": 34,
+        "shelter": 102,
+        "school": 219,
+        "fire_station": 10,
+        "marketplace": 1,
+        "place_of_worship": 1,
+        "post_office": 1
+      },
+      "critical_service_count": 395,
+      "network_element_count": 549
+    }
+  },
+  "judge_anchors": {
+    "required_schema_keys": [
+      "process_model",
+      "computed_metrics",
+      "baseline_indices",
+      "scenario_analysis",
+      "mechanism_chain",
+      "source_paths",
+      "final_interpretation"
+    ],
+    "baseline_priority": 77.34,
+    "scenario_priority": 82.08,
+    "priority_delta": 4.74,
+    "must_not_require_external_data": true
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Indonesian_drought_peat_fires_and_transboundary_haze.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_001_pre.jpg",
+      "data/remote_sensing/remote_sensing_002_event.jpg"
+    ]
+  }
+}

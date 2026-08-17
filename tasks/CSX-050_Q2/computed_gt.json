@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-050_Q2",
+  "event_id": "CSX-050",
+  "task_type": "numeric",
+  "target_family": "rainfall_runoff_scale_reconciliation_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "rainfall_runoff_scale_reconciliation_ledger",
+    "runoff_mm": [
+      20.8,
+      26.0
+    ],
+    "station_to_box": {
+      "jalhay": 2.606,
+      "spa": 2.087
+    },
+    "station_mean_to_gridded_max": 4.56,
+    "gridded_pair_gap_percent": 0.03,
+    "gates": {
+      "runoff_ge20mm": true,
+      "both_stations_ge2x_box": true,
+      "gridded_pair_gap_le0_1pct": true,
+      "station_mean_ge4_5x_gridded_max": true
+    },
+    "final_label": "concentrated_station_rainfall_runoff_reconciled",
+    "computed_consequence": "The station totals are roughly 2.1-2.6 times the report-box rainfall, the two local gridded maxima differ by only 0.030%, and the 104 mm rainfall converts to 20.8-26.0 mm of direct runoff."
+  },
+  "key_values": {
+    "event_name": "July 2021 Western Europe floods",
+    "event_window": "2021-07-12 to 2021-07-16",
+    "duration_days_inclusive": 5,
+    "inputs": {
+      "report_box_48h_rainfall_mm": 104.0,
+      "jalhay_48h_rainfall_mm": 271.0,
+      "spa_48h_rainfall_mm": 217.0,
+      "runoff_fraction": [
+        0.2,
+        0.25
+      ],
+      "era5_max_mm": 53.489,
+      "gpm_max_mm": 53.505
+    },
+    "derived": {
+      "station_mean_mm": 244.0,
+      "gridded_max_mm": 53.505,
+      "structured_answer": {
+        "target_family": "rainfall_runoff_scale_reconciliation_ledger",
+        "runoff_mm": [
+          20.8,
+          26.0
+        ],
+        "station_to_box": {
+          "jalhay": 2.606,
+          "spa": 2.087
+        },
+        "station_mean_to_gridded_max": 4.56,
+        "gridded_pair_gap_percent": 0.03,
+        "gates": {
+          "runoff_ge20mm": true,
+          "both_stations_ge2x_box": true,
+          "gridded_pair_gap_le0_1pct": true,
+          "station_mean_ge4_5x_gridded_max": true
+        },
+        "final_label": "concentrated_station_rainfall_runoff_reconciled",
+        "computed_consequence": "The station totals are roughly 2.1-2.6 times the report-box rainfall, the two local gridded maxima differ by only 0.030%, and the 104 mm rainfall converts to 20.8-26.0 mm of direct runoff."
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON ledger and label",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields and the final concentrated-rainfall runoff label.",
+        "partial_credit": "Partial credit for a recoverable JSON object with minor field-name errors."
+      },
+      {
+        "name": "Runoff conversion",
+        "points": 4,
+        "description": "Computes 104.0 mm times 20-25% as 20.8-26.0 mm.",
+        "partial_credit": "Partial credit for the right formula with rounding or arithmetic errors."
+      },
+      {
+        "name": "Station-to-box ratios",
+        "points": 4,
+        "description": "Computes Jalhay/report-box near 2.606 and Spa/report-box near 2.087.",
+        "partial_credit": "Partial credit for one correct station ratio or near-miss rounding."
+      },
+      {
+        "name": "Gridded reconciliation metrics",
+        "points": 4,
+        "description": "Computes station mean, larger gridded maximum, station-mean-to-gridded ratio, and paired-product gap percent.",
+        "partial_credit": "Partial credit for correct setup with one metric error."
+      },
+      {
+        "name": "Boolean gates",
+        "points": 3,
+        "description": "Applies all four threshold tests and marks each gate true.",
+        "partial_credit": "Partial credit for three correct gates."
+      },
+      {
+        "name": "Computed consequence",
+        "points": 2,
+        "description": "Gives a concise consequence tied to the numeric ledger without extra impact accounting.",
+        "partial_credit": "Partial credit for a longer but still numeric interpretation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/other/other_003_03_ECMWF_-_Extreme_rain_in_Germany_and_Belgium_in_July_2021.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  }
+}

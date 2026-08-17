@@ -1,0 +1,307 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-089",
+  "judge_anchors": {
+    "acceptable_variants": [
+      "storm tide surge dominant with pressure wind forcing support",
+      "storm_tide_surge_dominance first, pressure_wind_forcing second",
+      "storm_tide_surge_dominant_with_pressure_wind_forcing_support"
+    ],
+    "canonical_stance": "Storm tide and surge dominate Sandy's New York and New Jersey coastal impact diagnosis; wind/pressure/track forcing explains how the surge was produced, rainfall is secondary, and exposure/loss or generic storm labels are not physical mechanism explanations.",
+    "do_not_add": [
+      "response-priority recommendations",
+      "AOI, OSM, population, or exposure-file dependency",
+      "exact loss totals as the mechanism",
+      "rainfall-only flood diagnosis as dominant",
+      "generic hurricane label as sufficient mechanism explanation"
+    ],
+    "required_elements": [
+      "Rank the listed mechanisms rather than giving response advice.",
+      "Use coastal water-level measurements as the dominant evidence.",
+      "Use wind, pressure-sensor, track, and timing evidence as surge-forcing support.",
+      "Compute rainfall totals but reject rainfall_flooding_only as dominant.",
+      "Reject exposure/loss-only and generic-track labels as non-dominant mechanism explanations."
+    ],
+    "required_metrics": [
+      {
+        "name": "coastal_major_gages",
+        "tolerance": 0,
+        "value": 10
+      },
+      {
+        "name": "max_storm_tide_ft",
+        "tolerance": 0.1,
+        "value": 11.75
+      },
+      {
+        "name": "fema_100yr_or_higher_gages",
+        "tolerance": 0,
+        "value": 8
+      },
+      {
+        "name": "storm_surge_sensors",
+        "tolerance": 0,
+        "value": 38
+      },
+      {
+        "name": "pressure_sensors",
+        "tolerance": 0,
+        "value": 10
+      },
+      {
+        "name": "gdacs_max_wind_kmh",
+        "tolerance": 1.0,
+        "value": 167.4
+      },
+      {
+        "name": "openmeteo_peak_wind_kmh",
+        "tolerance": 3.0,
+        "value": 60.6
+      },
+      {
+        "name": "event_rain_mm",
+        "tolerance": 2.0,
+        "value": 45.4
+      },
+      {
+        "name": "wettest_24h_rain_mm",
+        "tolerance": 2.0,
+        "value": 37.4
+      }
+    ]
+  },
+  "key_values": {
+    "coastal_water_level_metrics": {
+      "all_above_major": true,
+      "fema_100yr_above_count": 7,
+      "fema_100yr_approached_count": 1,
+      "gage_count": 10,
+      "max_peak_ft": 11.75,
+      "max_peak_site": "Rockaway Inlet near Floyd Bennett Field, NY",
+      "record_water_elevations_text": true
+    },
+    "event_name": "Hurricane Sandy New York and New Jersey coastal flooding",
+    "event_window": {
+      "end_date": "2012-10-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2012-10-22"
+    },
+    "forcing_metrics": {
+      "gale_to_storm_force_12_18h": true,
+      "gdacs": {
+        "alertlevel": "Orange",
+        "duration_days": 7.25,
+        "eventname": "SANDY-12",
+        "eventtype": "TC",
+        "fromdate": "2012-10-22T21:00:00",
+        "max_wind_kmh": 167.4,
+        "name": "Tropical Cyclone SANDY-12",
+        "severity_text": "Hurricane/Typhoon > 74 mph (maximum wind speed of 167 km/h)",
+        "todate": "2012-10-30T03:00:00"
+      },
+      "openmeteo_peak_wind_kmh": 60.6,
+      "openmeteo_peak_wind_time": "2012-10-29T21:00",
+      "power_peak_wind_date": "20121029",
+      "power_peak_wind_kmh": 69.3,
+      "right_of_center_landfall_text": true,
+      "tremendous_size_reported": true
+    },
+    "hazard_family": "river_coastal_flood",
+    "mechanism_score_logic": {
+      "coastal_exposure_or_loss_only": "consequence/location framing, not a physical mechanism",
+      "coastal_exposure_or_loss_only_formula": "6 when consequence/location language is present; this is not a physical mechanism score",
+      "generic_track_label": "catalog track identity and duration without process-level dominance",
+      "generic_track_label_formula": "12 for TC catalog identity + 8 for Hurricane event name + 4 for duration >=7 days",
+      "pressure_wind_forcing": "weighted GDACS and local wind metrics plus storm-force duration, right-of-center landfall timing, and pressure sensor support",
+      "pressure_wind_forcing_formula": "round(30*cap(gdacs_max_wind_kmh/167)+16*cap(power_peak_wind_kmh/69)+14*cap(openmeteo_peak_wind_kmh/60)+8*gale_to_storm_force_duration_flag+7*right_of_center_landfall_flag+5*cap(pressure_sensors/10))",
+      "rainfall_flooding_only": "weighted local and gridded rainfall context, then demoted because measured coastal water levels and storm-surge reports dominate",
+      "rainfall_flooding_only_formula": "round(max(0,24*cap(event_rain_mm/75)+18*cap(wettest_24h_rain_mm/50)+12*cap(power_event_rain_mm/75)+8*cap(gpm_mean_mm/100)+8*cap(era5_mean_mm/75)-7*coastal_surge_dominance_flag))",
+      "score_formula_note": "Scores are transparent weighted evidence scores using cap(x)=min(max(x,0),1), matching the visible prompt formulas.",
+      "storm_tide_surge_dominance": "weighted major-gage count, FEMA 100-year exceedance support, peak storm tide, record-flood text, surge sensors, and high-water marks",
+      "storm_tide_surge_dominance_formula": "round(34*cap(major_gages/10)+26*cap(fema_100yr_or_higher_gages/8)+18*cap(max_storm_tide_ft/11.75)+8*record_coastal_flood_flag+6*cap(storm_surge_sensors/38)+4*cap(high_water_marks_min/300))"
+    },
+    "rainfall_context": {
+      "gridded_summaries": {
+        "chirps_max_mm": 196.5,
+        "chirps_mean_mm": 123.9,
+        "era5_max_mm": 90.9,
+        "era5_mean_mm": 39.0,
+        "gpm_max_mm": 89.7,
+        "gpm_mean_mm": 50.5
+      },
+      "nasa_power": {
+        "event_precip_total_mm": 43.8,
+        "peak_daily_precip_date": "20121029",
+        "peak_daily_precip_mm": 36.4,
+        "peak_wind_date": "20121029",
+        "peak_wind_kmh": 69.3,
+        "peak_wind_ms": 19.24
+      },
+      "openmeteo": {
+        "event_precip_total_mm": 45.4,
+        "peak_daily_precip_date": "2012-10-29",
+        "peak_daily_precip_mm": 27.6,
+        "peak_wind_kmh": 60.6,
+        "peak_wind_time": "2012-10-29T21:00",
+        "wettest_24h_precip_mm": 37.4
+      }
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall-only or generic track-label answer fails because rainfall totals and track labels do not explain measured storm-tide exceedances.",
+      "evidence_weighting": "Coastal gage exceedances, FEMA recurrence comparisons, peak storm tide, surge sensors, and high-water marks dominate the ranking; wind and track explain forcing support.",
+      "uncertainty_or_scale_caveat": "The recurrence comparison is quantified from the USGS New York coastal-gage list, while broader NY-NJ-CT statements remain report-context evidence."
+    },
+    "surge_observation_metrics": {
+      "catastrophic_storm_surge_reported": true,
+      "damaging_waves_reported": true,
+      "high_water_mark_min_count": 300,
+      "highest_inundation_ny_nj_ct": true,
+      "pressure_sensor_count": 10,
+      "storm_surge_sensor_count": 38
+    }
+  },
+  "numeric_tolerances": {
+    "coastal_major_gages": {
+      "tolerance": 0,
+      "value": 10
+    },
+    "event_rain_mm": {
+      "tolerance": 2.0,
+      "value": 45.4
+    },
+    "fema_100yr_or_higher_gages": {
+      "tolerance": 0,
+      "value": 8
+    },
+    "gdacs_max_wind_kmh": {
+      "tolerance": 1.0,
+      "value": 167.4
+    },
+    "max_storm_tide_ft": {
+      "tolerance": 0.1,
+      "value": 11.75
+    },
+    "openmeteo_peak_wind_kmh": {
+      "tolerance": 3.0,
+      "value": 60.6
+    },
+    "power_peak_wind_kmh": {
+      "tolerance": 1.0,
+      "value": 69.3
+    },
+    "pressure_sensors": {
+      "tolerance": 0,
+      "value": 10
+    },
+    "storm_surge_sensors": {
+      "tolerance": 0,
+      "value": 38
+    },
+    "wettest_24h_rain_mm": {
+      "tolerance": 2.0,
+      "value": 37.4
+    }
+  },
+  "primary_gt": {
+    "answer": "storm_tide_surge_dominant_with_pressure_wind_forcing_support",
+    "computed_values": {
+      "coastal_major_gages": 10,
+      "event_rain_mm": 45.4,
+      "fema_100yr_or_higher_gages": 8,
+      "fema_recurrence_scope": "quantified USGS New York coastal-gage list; broader NY-NJ-CT support is narrative/report context",
+      "gdacs_max_wind_kmh": 167.4,
+      "high_water_marks_min": 300,
+      "max_storm_tide_ft": 11.75,
+      "openmeteo_peak_wind_kmh": 60.6,
+      "power_peak_wind_kmh": 69.3,
+      "pressure_sensors": 10,
+      "storm_surge_sensors": 38,
+      "wettest_24h_rain_mm": 37.4
+    },
+    "dominant_mechanism": "storm_tide_surge_dominance",
+    "mechanism_scores": {
+      "coastal_exposure_or_loss_only": 6,
+      "generic_track_label": 24,
+      "pressure_wind_forcing": 80,
+      "rainfall_flooding_only": 36,
+      "storm_tide_surge_dominance": 96
+    },
+    "ranked_mechanisms": [
+      "storm_tide_surge_dominance",
+      "pressure_wind_forcing",
+      "rainfall_flooding_only",
+      "generic_track_label",
+      "coastal_exposure_or_loss_only"
+    ],
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall-only or generic track-label answer fails because rainfall totals and track labels do not explain measured storm-tide exceedances.",
+      "evidence_weighting": "Coastal gage exceedances, FEMA recurrence comparisons, peak storm tide, surge sensors, and high-water marks dominate the ranking; wind and track explain forcing support.",
+      "uncertainty_or_scale_caveat": "The recurrence comparison is quantified from the USGS New York coastal-gage list, while broader NY-NJ-CT statements remain report-context evidence."
+    },
+    "reasoning_path": "Storm tide dominates: 10 coastal gages exceeded major level, 8 reached or approached FEMA 100-year elevations, and max tide was 11.75 ft. Wind/track forcing supports surge timing, but 45.4 mm rain and generic/loss labels do not explain measured coastal water levels alone.",
+    "rejected_mechanism": "coastal_exposure_or_loss_only",
+    "target_family": "sandy_coastal_mechanism_dominance_ranking"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "network_required": false,
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Sandy_New_York_and_New_Jersey_coastal_flooding.json",
+      "data/event_reports/event_reports_004_NOAA_NESDIS_-_Hurricane_Sandy.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/event_catalogs/event_catalogs_002_USGS_-_Hurricane_Sandy_in_New_York.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Ranks storm_tide_surge_dominance first, pressure_wind_forcing second, rainfall_flooding_only third, generic_track_label fourth, and coastal_exposure_or_loss_only last with the deterministic answer label.",
+        "name": "Final ranking and compact answer",
+        "partial_credit": "Award 2-3 points if storm tide/surge is first but the middle ranks are partly reversed; award 1 point for a coastal-flood dominant label without the specified ranking.",
+        "points": 4
+      },
+      {
+        "description": "Computes 10 major coastal gages, 11.75 ft maximum storm tide, and 8 gages reaching or approaching FEMA 100-year levels.",
+        "name": "Coastal water-level calculations",
+        "partial_credit": "Award 2-3 points for two correct coastal values; award 1 point for only one correct coastal value.",
+        "points": 4
+      },
+      {
+        "description": "Uses the record coastal-flood wording plus 38 storm-surge sensors, 10 barometric-pressure sensors, and over 300 high-water marks as mechanism evidence.",
+        "name": "Surge record and instrumentation support",
+        "partial_credit": "Award 1-2 points for recognizing record coastal flooding or instrumentation but missing one or more counts.",
+        "points": 3
+      },
+      {
+        "description": "Uses GDACS maximum wind near 167.4 km/h, local peak wind near 60.6 km/h, NASA POWER peak wind near 69.3 km/h, and landfall/right-of-center timing to support the forcing rank.",
+        "name": "Wind and timing support",
+        "partial_credit": "Award 1-2 points for wind support without the catalog or timing evidence.",
+        "points": 3
+      },
+      {
+        "description": "Computes local event rain near 45.4 mm and wettest 24-hour rain near 37.4 mm, uses rainfall summaries as context, and explains why rainfall-only cannot dominate over the measured coastal water levels.",
+        "name": "Rainfall-only demotion",
+        "partial_credit": "Award 1-2 points for correct rainfall values without explicitly demoting rainfall-only.",
+        "points": 3
+      },
+      {
+        "description": "Rejects coastal_exposure_or_loss_only and generic track labeling as non-dominant explanatory mechanisms, avoids AOI/population/exposure dependencies, and returns only compact JSON plus at most one sentence. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Rejected non-mechanisms and output discipline",
+        "partial_credit": "Award 1-2 points for the right physical stance with extra response-priority or exposure-only language; award no credit here if the answer is mainly advice or impact triage.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "sandy_coastal_mechanism_dominance_ranking",
+  "task_id": "CSX-089_Q1",
+  "task_subtype": "mechanism_dominance_ranking",
+  "task_type": "short_answer"
+}

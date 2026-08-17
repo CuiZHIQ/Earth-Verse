@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-067_Q2",
+  "event_id": "CSX-067",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "rainfall_slope_trigger_diagnostic",
+  "primary_gt": {
+    "rainfall": {
+      "reported_24h_mm": 680,
+      "mean_24h_mm_h": 28.333,
+      "ratio_to_250mm_day": 2.72,
+      "threshold_state": "passed"
+    },
+    "process_flags": {
+      "score": 7,
+      "max_score": 7,
+      "state": "complete"
+    },
+    "grid_ratios": {
+      "reported_to_gpm_max": 38.56,
+      "reported_to_era5_max": 57.761,
+      "gpm_peak_to_mean": 79.8,
+      "era5_peak_to_mean": 4.312,
+      "state": "do_not_replace_local_report"
+    },
+    "observation_timing": {
+      "post_lag_days": 7,
+      "pre_lead_days": 113,
+      "sentinel1_mean_db_change": 0.899,
+      "annual_surface_change_mean": 0.064,
+      "state": "compatible_context"
+    },
+    "population_exposure": {
+      "worldpop_population": 17858.58,
+      "state": "exposure_threshold_passed"
+    },
+    "trigger_score": {
+      "score": 6,
+      "max_score": 6,
+      "state": "confirmed"
+    },
+    "final_answer": "rainfall_slope_trigger_confirmed",
+    "rejected_alternatives": [
+      "urban_drainage_only",
+      "lowland_storage",
+      "coarse_grid_override",
+      "image_damage_count",
+      "seasonal_trigger",
+      "post_lag_trigger"
+    ]
+  },
+  "key_values": {
+    "event_name": "2023 Sao Sebastiao floods and landslides",
+    "reported_24h_input_type": "conservative_lower_bound_from_more_than_680_mm_report_phrase",
+    "mean_intensity_threshold_mm_h": 20,
+    "process_flag_names": [
+      "extreme_localized_rainfall",
+      "saturated_soils",
+      "hilly_or_steep_slopes",
+      "dense_or_numerous_landslides",
+      "beach_or_urban_communities",
+      "road_or_building_corridor_impact",
+      "satellite_scars_visible"
+    ],
+    "process_flag_values": {
+      "extreme_localized_rainfall": true,
+      "saturated_soils": true,
+      "hilly_or_steep_slopes": true,
+      "dense_or_numerous_landslides": true,
+      "beach_or_urban_communities": true,
+      "road_or_building_corridor_impact": true,
+      "satellite_scars_visible": true
+    },
+    "gpm_event_precip_mm_max": 17.635,
+    "gpm_event_precip_mm_mean": 0.221,
+    "era5_precipitation_sum_mm_max": 11.773,
+    "era5_precipitation_sum_mm_mean": 2.73,
+    "sentinel1_pre_count": 5,
+    "sentinel1_post_count": 4,
+    "event_day": "2023-02-19",
+    "post_image_day": "2023-02-26",
+    "pre_image_day": "2022-10-29",
+    "score_tests": {
+      "rainfall_ratio_at_least_1": true,
+      "mean_intensity_at_least_20_mm_h": true,
+      "process_flags_at_least_6": true,
+      "reported_to_grid_ratios_at_least_20": true,
+      "observation_dates_bracket_event": true,
+      "population_at_least_10000": true
+    },
+    "tolerances": {
+      "rainfall_values": 0.01,
+      "grid_ratios": 0.05,
+      "change_means": 0.005,
+      "population": 0.01,
+      "integer_counts": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final compact answer",
+        "points": 4,
+        "description": "Returns rainfall_slope_trigger_confirmed, a 6/6 trigger score, and the requested JSON fields.",
+        "partial_credit": "Award 2-3 points for the correct label with missing score detail, or a complete JSON object with one noncritical field omitted."
+      },
+      {
+        "name": "Rainfall threshold arithmetic",
+        "points": 4,
+        "description": "Uses 680 mm as the conservative lower-bound report input, computes 28.333 mm/h and 2.72, and marks the threshold state as passed.",
+        "partial_credit": "Award 2-3 points for the right formulas with one rounding or unit mistake; award up to 1 point for only identifying the conservative 680 mm input."
+      },
+      {
+        "name": "Process-flag scoring",
+        "points": 3,
+        "description": "Scores the process flags as 7/7 and identifies the required flag families.",
+        "partial_credit": "Award 2 points for 6/7 with a clearly event-relevant omitted flag, or 1 point for listing relevant flags without a score."
+      },
+      {
+        "name": "Gridded precipitation ratio logic",
+        "points": 3,
+        "description": "Computes the four gridded ratios and concludes that coarse maxima should not replace the local report.",
+        "partial_credit": "Award 2 points for two or three correct ratios; award 1 point for the right state with incomplete arithmetic."
+      },
+      {
+        "name": "Observation timing and change metrics",
+        "points": 2,
+        "description": "Computes 7 days, 113 days, 0.899 dB, 0.064, and the compatible-context state.",
+        "partial_credit": "Award 1 point for correct timing with one missing change metric, or for correct change metrics with one timing error."
+      },
+      {
+        "name": "Population exposure test",
+        "points": 2,
+        "description": "Uses 17,858.58 people and marks the 10,000 threshold as passed.",
+        "partial_credit": "Award 1 point for the correct state with an approximate population value, or for the correct population without the threshold state."
+      },
+      {
+        "name": "Rejected alternatives",
+        "points": 1,
+        "description": "Includes all six compact rejected-alternative tokens tied to the diagnostic.",
+        "partial_credit": "Award 0.5 points for at least four correct tokens with no unrelated additions."
+      },
+      {
+        "name": "Concision and bounded interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation short and avoids direct damage inventories, loss denominators, delayed-trigger claims, or action notes.",
+        "partial_credit": "Award 0.5 points for minor extra prose that does not alter the computed answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ]
+  }
+}

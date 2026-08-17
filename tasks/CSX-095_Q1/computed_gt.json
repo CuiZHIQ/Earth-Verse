@@ -1,0 +1,267 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-095_Q1",
+  "event_id": "CSX-095",
+  "task_type": "short_answer",
+  "target_family": "doksuri_rainfall_phase_segmentation",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "doksuri_rainfall_phase_segmentation",
+    "phases": [
+      {
+        "phase": "sustained_wet_hour_rainfall",
+        "time_window": "120-hour event window",
+        "dominant_process": "persistent remnant-cyclone rainfall",
+        "computed_value": {
+          "window_hours": 120,
+          "wet_hour_fraction": 0.7,
+          "longest_wet_run_share": 0.929,
+          "peak_hour_share": 0.0889,
+          "wet_hour_mean_mm": 2.344,
+          "window_mean_mm_per_hour": 1.641
+        },
+        "transition_basis": "A long wet run and low peak-hour share show persistence rather than a single-hour burst."
+      },
+      {
+        "phase": "three_day_concentration",
+        "time_window": "wettest three daily totals",
+        "dominant_process": "multi-day rainfall concentration",
+        "computed_value": {
+          "max_3day_share": 0.926,
+          "peak_day_share": 0.441,
+          "daily_to_hourly_total_ratio": 1.12
+        },
+        "transition_basis": "Most daily rainfall sits in a three-day block while the peak day remains below half of the total."
+      },
+      {
+        "phase": "report_calibrated_extreme_rainfall",
+        "time_window": "83-hour reported extreme-rainfall anchor",
+        "dominant_process": "report-scale rainfall alignment",
+        "computed_value": {
+          "report_avg_intensity_mm_per_hour": 3.988,
+          "report_avg_to_hourly_total_ratio": 1.681,
+          "reservoir_to_report_avg_ratio": 2.25,
+          "single_point_to_report_avg_ratio": 3.097
+        },
+        "transition_basis": "Report-average intensity and reported maxima align with extreme rainfall rather than weak background rain."
+      },
+      {
+        "phase": "wind_dominance_rejection",
+        "time_window": "event wind background",
+        "dominant_process": "rainfall-dominant remnant timeline",
+        "computed_value": {
+          "peak_wind_ms": 10.69,
+          "peak_wind_kmh": 38.5,
+          "wind_energy_proxy": 114.3
+        },
+        "transition_basis": "Peak wind is below the wind-dominance cutoff, so wind cannot replace rainfall as the timeline control."
+      }
+    ],
+    "phase_checks": [
+      {
+        "row_id": "rainfall_persistence",
+        "computed_value": {
+          "window_hours": 120,
+          "wet_hour_fraction": 0.7,
+          "longest_wet_run_share": 0.929,
+          "peak_hour_share": 0.0889,
+          "wet_hour_mean_mm": 2.344,
+          "window_mean_mm_per_hour": 1.641
+        },
+        "result": "pass_persistent_multiday_rainfall"
+      },
+      {
+        "row_id": "three_day_concentration",
+        "computed_value": {
+          "max_3day_share": 0.926,
+          "peak_day_share": 0.441,
+          "daily_to_hourly_total_ratio": 1.12
+        },
+        "result": "pass_multiday_concentrated_rainfall"
+      },
+      {
+        "row_id": "report_intensity_alignment",
+        "computed_value": {
+          "report_avg_intensity_mm_per_hour": 3.988,
+          "report_avg_to_hourly_total_ratio": 1.681,
+          "reservoir_to_report_avg_ratio": 2.25,
+          "single_point_to_report_avg_ratio": 3.097
+        },
+        "result": "pass_report_extreme_rainfall_alignment"
+      },
+      {
+        "row_id": "wind_rejection",
+        "computed_value": {
+          "peak_wind_ms": 10.69,
+          "peak_wind_kmh": 38.5,
+          "wind_energy_proxy": 114.3
+        },
+        "result": "reject_wind_dominant_calibration"
+      }
+    ],
+    "final_label": "persistent_remnant_cyclone_rainfall_supported"
+  },
+  "key_values": {
+    "event_name": "Typhoon Doksuri Beijing-Tianjin-Hebei and Haihe flood",
+    "hazard_family": "river_coastal_flood",
+    "event_window": "2023-07-29 to 2023-08-02",
+    "hourly_total_mm": 196.9,
+    "wet_hours": 84,
+    "longest_wet_run_hours": 78,
+    "peak_hour_mm": 17.5,
+    "daily_total_mm": 220.61,
+    "max_3day_daily_sum_mm": 204.32,
+    "peak_day_mm": 97.29,
+    "report_avg_mm": 331.0,
+    "report_duration_hours": 83,
+    "reservoir_mm": 744.8,
+    "single_point_max_mm": 1025.0,
+    "peak_wind_kmh": 38.5
+  },
+  "derived_metrics": {
+    "phases": [
+      {
+        "phase": "sustained_wet_hour_rainfall",
+        "time_window": "120-hour event window",
+        "dominant_process": "persistent remnant-cyclone rainfall",
+        "computed_value": {
+          "window_hours": 120,
+          "wet_hour_fraction": 0.7,
+          "longest_wet_run_share": 0.929,
+          "peak_hour_share": 0.0889,
+          "wet_hour_mean_mm": 2.344,
+          "window_mean_mm_per_hour": 1.641
+        },
+        "transition_basis": "A long wet run and low peak-hour share show persistence rather than a single-hour burst."
+      },
+      {
+        "phase": "three_day_concentration",
+        "time_window": "wettest three daily totals",
+        "dominant_process": "multi-day rainfall concentration",
+        "computed_value": {
+          "max_3day_share": 0.926,
+          "peak_day_share": 0.441,
+          "daily_to_hourly_total_ratio": 1.12
+        },
+        "transition_basis": "Most daily rainfall sits in a three-day block while the peak day remains below half of the total."
+      },
+      {
+        "phase": "report_calibrated_extreme_rainfall",
+        "time_window": "83-hour reported extreme-rainfall anchor",
+        "dominant_process": "report-scale rainfall alignment",
+        "computed_value": {
+          "report_avg_intensity_mm_per_hour": 3.988,
+          "report_avg_to_hourly_total_ratio": 1.681,
+          "reservoir_to_report_avg_ratio": 2.25,
+          "single_point_to_report_avg_ratio": 3.097
+        },
+        "transition_basis": "Report-average intensity and reported maxima align with extreme rainfall rather than weak background rain."
+      },
+      {
+        "phase": "wind_dominance_rejection",
+        "time_window": "event wind background",
+        "dominant_process": "rainfall-dominant remnant timeline",
+        "computed_value": {
+          "peak_wind_ms": 10.69,
+          "peak_wind_kmh": 38.5,
+          "wind_energy_proxy": 114.3
+        },
+        "transition_basis": "Peak wind is below the wind-dominance cutoff, so wind cannot replace rainfall as the timeline control."
+      }
+    ],
+    "phase_checks": [
+      {
+        "row_id": "rainfall_persistence",
+        "computed_value": {
+          "window_hours": 120,
+          "wet_hour_fraction": 0.7,
+          "longest_wet_run_share": 0.929,
+          "peak_hour_share": 0.0889,
+          "wet_hour_mean_mm": 2.344,
+          "window_mean_mm_per_hour": 1.641
+        },
+        "result": "pass_persistent_multiday_rainfall"
+      },
+      {
+        "row_id": "three_day_concentration",
+        "computed_value": {
+          "max_3day_share": 0.926,
+          "peak_day_share": 0.441,
+          "daily_to_hourly_total_ratio": 1.12
+        },
+        "result": "pass_multiday_concentrated_rainfall"
+      },
+      {
+        "row_id": "report_intensity_alignment",
+        "computed_value": {
+          "report_avg_intensity_mm_per_hour": 3.988,
+          "report_avg_to_hourly_total_ratio": 1.681,
+          "reservoir_to_report_avg_ratio": 2.25,
+          "single_point_to_report_avg_ratio": 3.097
+        },
+        "result": "pass_report_extreme_rainfall_alignment"
+      },
+      {
+        "row_id": "wind_rejection",
+        "computed_value": {
+          "peak_wind_ms": 10.69,
+          "peak_wind_kmh": 38.5,
+          "wind_energy_proxy": 114.3
+        },
+        "result": "reject_wind_dominant_calibration"
+      }
+    ],
+    "final_label": "persistent_remnant_cyclone_rainfall_supported"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer structure",
+        "points": 3,
+        "description": "Returns JSON only with target_family, four phases, four phase_checks, and final_label.",
+        "partial_credit": "Award 1-2 points for valid JSON with one missing row or one misplaced field."
+      },
+      {
+        "name": "Rainfall persistence row",
+        "points": 4,
+        "description": "Computes 120 h, 0.700 wet-hour fraction, 0.929 longest-run share, 0.0889 peak-hour share, 2.344 mm/wet-hour, 1.641 mm/window-hour, and the pass result.",
+        "partial_credit": "Award 2-3 points for mostly correct values with one formula or rounding error."
+      },
+      {
+        "name": "Three-day concentration row",
+        "points": 3,
+        "description": "Computes 0.926 max 3-day share, 0.441 peak-day share, 1.120 daily-to-hourly ratio, and the pass result.",
+        "partial_credit": "Award 1-2 points for two correct ratios or a correct result with incomplete arithmetic."
+      },
+      {
+        "name": "Report intensity row",
+        "points": 4,
+        "description": "Computes 3.988 mm/hour, 1.681 report-to-hourly ratio, 2.250 reservoir-to-average ratio, 3.097 single-point-to-average ratio, and the pass result.",
+        "partial_credit": "Award 2-3 points for most values correct with one missing report ratio."
+      },
+      {
+        "name": "Wind rejection row",
+        "points": 3,
+        "description": "Computes 38.5 km/h, 10.69 m/s, 114.3 proxy, applies the below-15 m/s test, and rejects wind-dominant calibration.",
+        "partial_credit": "Award 1-2 points for the right rejection with incomplete conversion or proxy work."
+      },
+      {
+        "name": "Final label and bounded interpretation",
+        "points": 3,
+        "description": "Gives the exact final label and ties the interpretation to persistent rainfall, daily/report alignment, and wind rejection without extra realized-loss or action statements.",
+        "partial_credit": "Award 1-2 points for a nearly correct label or an interpretation that is correct but too broad."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_WMO_-_Typhoons_trigger_record-breaking_rainfall_in_China.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json"
+    ]
+  }
+}

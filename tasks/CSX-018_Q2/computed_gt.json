@@ -1,0 +1,273 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-018",
+  "formula_definitions": {
+    "future_scenario": "Add +1.0 C to hourly air, hourly apparent, and daily minimum temperatures; keep RH and exposure fixed.",
+    "persistent_heat_response_index": "100*(0.26*peak_apparent_norm + 0.20*apparent_duration_norm + 0.18*night_relief_loss_norm + 0.16*population_norm + 0.12*critical_service_norm + 0.08*transport_exposure_norm)",
+    "response_priority_score": "100*(0.36*degree_hour_norm + 0.22*night_relief_loss_norm + 0.18*population_norm + 0.14*critical_service_norm + 0.10*transport_exposure_norm)"
+  },
+  "judge_anchors": {
+    "future_delta_interpretation": "the +1 C scenario mainly raises duration and degree-hour stress because warm-night loss is already saturated",
+    "must_identify_process": "persistent apparent heat with all five nights above the 27 C minimum-temperature threshold",
+    "not_a_wet_bulb_ceiling_event": "maximum Stull wet-bulb temperature is only 23.5 C"
+  },
+  "key_values": {
+    "annual_embedding_change_mean": 0.009345,
+    "aoi_area_km2": 49219.5,
+    "aoi_population": 170311.5,
+    "apparent_degree_hours_ge40c": 24.4,
+    "apparent_duration_norm": 0.4,
+    "chirps_mean_precip_mm": 25.8,
+    "critical_service_norm": 0.733,
+    "degree_hour_norm": 0.813,
+    "event_nights": 5,
+    "future_apparent_degree_hours_ge40c": 43.4,
+    "future_hours_apparent_ge40c": 25,
+    "future_max_apparent_temperature_c": 44.2,
+    "future_persistent_heat_response_index": 84.4,
+    "future_response_priority_score": 93.1,
+    "future_warm_night_count": 5,
+    "gpm_mean_precip_mm": 25.2,
+    "gridded_temperature_max_c": 35.3,
+    "health_facility_count": 2,
+    "hours_apparent_ge40c": 16,
+    "hours_wbt_ge28c": 0,
+    "land_surface_change_norm": 0.118,
+    "land_surface_stability": 0.882,
+    "major_road_way_count": 57,
+    "max_air_temperature_c": 44.6,
+    "max_apparent_temperature_c": 43.2,
+    "max_wbt_c": 23.5,
+    "mean_dnbr": -0.000979,
+    "min_daily_min_temperature_c": 27.5,
+    "night_relief_loss_norm": 1.0,
+    "peak_apparent_norm": 0.82,
+    "persistent_heat_response_index": 77.3,
+    "persistent_heat_response_index_delta": 7.1,
+    "population_density_per_km2": 3.46,
+    "population_norm": 0.852,
+    "response_priority_score": 86.4,
+    "response_priority_score_delta": 6.7,
+    "school_count": 6,
+    "shelter_count": 1,
+    "transport_exposure_norm": 0.95,
+    "warm_night_count": 5,
+    "warming_c": 1.0
+  },
+  "numeric_tolerances": {
+    "aoi_area_km2": {
+      "expected": 49219.5,
+      "tolerance": 5.0
+    },
+    "aoi_population": {
+      "expected": 170311.5,
+      "tolerance": 1.0
+    },
+    "apparent_degree_hours_ge40c": {
+      "expected": 24.4,
+      "tolerance": 0.3
+    },
+    "future_persistent_heat_response_index": {
+      "expected": 84.4,
+      "tolerance": 0.2
+    },
+    "future_response_priority_score": {
+      "expected": 93.1,
+      "tolerance": 0.2
+    },
+    "health_facility_count": {
+      "expected": 2,
+      "tolerance": 0
+    },
+    "hours_apparent_ge40c": {
+      "expected": 16,
+      "tolerance": 0
+    },
+    "major_road_way_count": {
+      "expected": 57,
+      "tolerance": 0
+    },
+    "max_air_temperature_c": {
+      "expected": 44.6,
+      "tolerance": 0.2
+    },
+    "max_apparent_temperature_c": {
+      "expected": 43.2,
+      "tolerance": 0.2
+    },
+    "max_wbt_c": {
+      "expected": 23.5,
+      "tolerance": 0.2
+    },
+    "persistent_heat_response_index": {
+      "expected": 77.3,
+      "tolerance": 0.2
+    },
+    "response_priority_score": {
+      "expected": 86.4,
+      "tolerance": 0.2
+    },
+    "school_count": {
+      "expected": 6,
+      "tolerance": 0
+    },
+    "shelter_count": {
+      "expected": 1,
+      "tolerance": 0
+    },
+    "warm_night_count": {
+      "expected": 5,
+      "tolerance": 0
+    }
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "aoi_area_km2": 49219.5,
+      "aoi_population": 170311.5,
+      "apparent_degree_hours_ge40c": 24.4,
+      "chirps_mean_precip_mm": 25.8,
+      "gpm_mean_precip_mm": 25.2,
+      "gridded_temperature_max_c": 35.3,
+      "health_facility_count": 2,
+      "hours_apparent_ge40c": 16,
+      "land_surface_change_norm": 0.118,
+      "land_surface_stability": 0.882,
+      "major_road_way_count": 57,
+      "max_air_temperature_c": 44.6,
+      "max_apparent_temperature_c": 43.2,
+      "max_wbt_c": 23.5,
+      "population_density_per_km2": 3.46,
+      "school_count": 6,
+      "shelter_count": 1,
+      "warm_night_count": 5
+    },
+    "final_interpretation": "The episode is best characterized as persistent dry-hot apparent heat with complete loss of nighttime relief; exposed population and service-access features push the baseline response load high, and a same-pattern +1 C event would materially intensify duration and priority.",
+    "indices": {
+      "persistent_heat_response_index": 77.3,
+      "response_priority_score": 86.4
+    },
+    "normalized_inputs": {
+      "apparent_duration_norm": 0.4,
+      "critical_service_norm": 0.733,
+      "degree_hour_norm": 0.813,
+      "night_relief_loss_norm": 1.0,
+      "peak_apparent_norm": 0.82,
+      "population_norm": 0.852,
+      "transport_exposure_norm": 0.95
+    },
+    "process_model": {
+      "event_window": {
+        "end_date": "2024-04-04",
+        "event_nights": 5,
+        "start_date": "2024-03-31"
+      },
+      "mechanism_chain": [
+        "regional heat episode coincided with Ramadan, power-cut stress, and elevated health vulnerability",
+        "hourly local data show prolonged apparent heat and no overnight thermal relief",
+        "population, mapped services, and major roads convert the meteorological burden into response load"
+      ],
+      "source_paths": {
+        "event_context": [
+          "data/event_reports/event_reports_001_Locked_package_evidence_report.bin",
+          "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json"
+        ],
+        "exposure_and_access": [
+          "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+          "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+          "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+        ],
+        "heat_hazard": [
+          "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "surface_context": [
+          "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+          "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+        ]
+      }
+    },
+    "scenario_analysis": {
+      "future_apparent_degree_hours_ge40c": 43.4,
+      "future_hours_apparent_ge40c": 25,
+      "future_max_apparent_temperature_c": 44.2,
+      "future_persistent_heat_response_index": 84.4,
+      "future_response_priority_score": 93.1,
+      "future_warm_night_count": 5,
+      "persistent_heat_response_index_delta": 7.1,
+      "response_priority_score_delta": 6.7,
+      "warming_c": 1.0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Finds the relevant event-context, heat-hazard, exposure/access, geospatial, and surface-context files independently and cites package-relative paths in the JSON.",
+        "name": "self_directed_discovery_and_citations",
+        "partial_credit": "Award 1-2 points if citations are incomplete but the main evidence families are identifiable.",
+        "points": 3
+      },
+      {
+        "description": "Uses the correct 2024-03-31 to 2024-04-04 window, computes Stull wet-bulb temperature, and reports max air 44.6 C, max apparent 43.2 C, max WBT 23.5 C, 16 apparent-heat hours, 24.4 C-hours, and 5 warm nights within tolerance.",
+        "name": "event_window_and_heat_reconstruction",
+        "partial_credit": "Award up to 3 points for correct heat persistence but one missing or mistyped metric.",
+        "points": 4
+      },
+      {
+        "description": "Extracts WorldPop population, computes AOI area and density, and counts schools, health facilities, shelters, and major roads from the mapped exposure slice.",
+        "name": "exposure_access_and_geospatial_load",
+        "partial_credit": "Award 1-2 points for correct population and OSM counts with missing area or density.",
+        "points": 3
+      },
+      {
+        "description": "Applies all clipping, normalization, and weighting formulas correctly, including persistent_heat_response_index 77.3 and response_priority_score 86.4.",
+        "name": "normalization_and_index_calculation",
+        "partial_credit": "Award 2-3 points if formula structure is right but one component is rounded or weighted incorrectly.",
+        "points": 4
+      },
+      {
+        "description": "Interprets the disaster process as persistent apparent heat with warm nights and response load, while using gridded precipitation/temperature and surface-change context appropriately.",
+        "name": "multi_source_process_reasoning",
+        "partial_credit": "Award 1 point for a correct but generic heat-risk interpretation.",
+        "points": 2
+      },
+      {
+        "description": "Correctly applies the +1.0 C same-pattern scenario, recomputes future heat metrics, and reports index deltas of 7.1 and 6.7 points.",
+        "name": "future_scenario",
+        "partial_credit": "Award 1 point if the warming scenario is described but future scores are incomplete.",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with the requested objects and a concise final interpretation.",
+        "name": "structured_output",
+        "partial_credit": "Award 1 point for near-JSON or missing one noncritical field.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "2.0",
+  "target_family": "heat_stress_persistence_response_model",
+  "task_id": "CSX-018_Q2",
+  "task_subtype": "heatwave_process_and_future_scenario",
+  "task_type": "short_answer"
+}

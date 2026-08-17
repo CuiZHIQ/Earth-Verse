@@ -1,0 +1,257 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-287",
+  "key_values": {
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.061,
+      "chirps_max_mm": 14.2,
+      "chirps_mean_mm": 8.9,
+      "critical_amenities": 4,
+      "era5_precip_mean_mm": 0.57,
+      "gpm_mean_mm": 0.019,
+      "heavy_rain_days": 4,
+      "heavy_rain_run_days": 4,
+      "max_daily_point_precip_mm": 54.5,
+      "nasa_power_max_daily_mm": 23.8,
+      "nasa_power_total_mm": 66.9,
+      "open_meteo_max_daily_mm": 54.5,
+      "open_meteo_max_temp_c": 13.9,
+      "open_meteo_mean_wind_kmh": 29.6,
+      "open_meteo_total_mm": 174.5,
+      "point_precip_total_mm": 120.7,
+      "population_exposed": 12377,
+      "road_features": 388,
+      "waterway_features": 129
+    },
+    "dominant_driver": "central_pacific_atmospheric_river_orographic_lift",
+    "event_window": {
+      "end_date": "2023-08-22",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2023-08-19"
+    },
+    "exact_answer_label": "atmospheric_river_orographic_flooding_high_impact_priority",
+    "impact_chain": [
+      "central_pacific_moisture_transport",
+      "orographic_rainfall_floods_and_mudslides",
+      "displacement_access_and_critical_asset_priority"
+    ],
+    "key_metrics": {
+      "critical_amenities": 4,
+      "heavy_rain_days": 4,
+      "max_daily_point_precip_mm": 54.5,
+      "point_precip_total_mm": 120.7,
+      "population_exposed": 12377
+    },
+    "priority_index": 95,
+    "priority_tier": "very_high_flood_and_access_response",
+    "text_claim_flags": {
+      "atmospheric_river": true,
+      "damage_or_displacement": true,
+      "drought_context": true,
+      "floods_or_mudslides": true,
+      "land_cover_change_context": false,
+      "orographic_effect": true
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "atmospheric river orographic flooding with very high access response priority",
+      "multi-day atmospheric-river rainfall causing floods and mudslides with very high response priority",
+      "central Pacific moisture transport plus orographic rain driving flood, mudslide, and access impacts"
+    ],
+    "answer": "atmospheric_river_orographic_flooding_high_impact_priority",
+    "answer_type": "exact_structured_answer_with_judged_reasoning",
+    "canonical_stance": "The August 2023 central Chile event is an atmospheric-river, orographic-rainfall flood and mudslide emergency with very high flood, access, shelter, and critical-asset response priority.",
+    "forbidden_claims": [
+      "Classifies heat, wind, drought, or annual land-surface change as the primary acute mechanism.",
+      "Claims exact event-wide mortality or a formal hydrologic return period from these diagnostics.",
+      "Treats bounded exposure counts as exact totals for all affected Chilean regions.",
+      "Uses low gridded precipitation aggregates to dismiss the flood mechanism without discussing scale mismatch."
+    ],
+    "impact_chain": [
+      "central_pacific_moisture_transport",
+      "orographic_rainfall_floods_and_mudslides",
+      "displacement_access_and_critical_asset_priority"
+    ],
+    "key_metrics": {
+      "critical_amenities": 4,
+      "heavy_rain_days": 4,
+      "max_daily_point_precip_mm": 54.5,
+      "point_precip_total_mm": 120.7,
+      "population_exposed": 12377
+    },
+    "metric_definitions": {
+      "critical_amenities": "hospital, clinic, school, and shelter features in the package context slice",
+      "heavy_rain_days": "conservative count of dates with at least 10 mm/day in both point samples",
+      "max_daily_point_precip_mm": "largest single-day point precipitation value across the two point samples",
+      "point_precip_total_mm": "mean of the two point-sample event precipitation totals"
+    },
+    "priority_index": 95,
+    "priority_tier": "very_high_flood_and_access_response",
+    "required_claims": [
+      "Identifies central-Pacific atmospheric-river moisture transport as the event driver.",
+      "Explains orographic enhancement near the Andes foothills or valleys.",
+      "Connects persistent heavy rainfall to floods, mudslides, damage, displacement, or evacuation.",
+      "Uses population, critical amenities, roads, or waterways to justify very high response priority.",
+      "Treats drought as antecedent context rather than the acute disaster mechanism."
+    ],
+    "required_metrics": [
+      {
+        "name": "point_precip_total_mm",
+        "tolerance": 0.2,
+        "unit": "mm",
+        "value": 120.7
+      },
+      {
+        "name": "max_daily_point_precip_mm",
+        "tolerance": 0.2,
+        "unit": "mm",
+        "value": 54.5
+      },
+      {
+        "name": "heavy_rain_days",
+        "tolerance": 0,
+        "unit": "days",
+        "value": 4
+      },
+      {
+        "name": "population_exposed",
+        "tolerance": 1,
+        "unit": "people",
+        "value": 12377
+      },
+      {
+        "name": "critical_amenities",
+        "tolerance": 0,
+        "unit": "features",
+        "value": 4
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August_2023_Central_Chile_atmospheric_rivers.json",
+      "data/event_reports/event_reports_004_NASA_EO_Atmospheric_Rivers_Swamp_Central_Chile.html",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives atmospheric_river_orographic_flooding_high_impact_priority, the very_high_flood_and_access_response tier, and priority index 95.",
+        "name": "mechanism_priority_classification",
+        "partial_credit": "Award 2-3 points for the correct atmospheric-river flooding mechanism with an incomplete tier or nearby index; award 1 point for flood response without the atmospheric-river and orographic elements.",
+        "points": 4
+      },
+      {
+        "description": "Reports 120.7 mm mean-of-two-point-samples event precipitation, 54.5 mm maximum daily point precipitation across the two point samples, and 4 conservative heavy-rain days with correct units and rounding.",
+        "name": "rainfall_metric_anchors",
+        "partial_credit": "Award 2-3 points for two correct metrics or minor rounding differences; award 1 point for recognizing persistent heavy rain without numerical anchors.",
+        "points": 4
+      },
+      {
+        "description": "Explains central-Pacific moisture transport, orographic enhancement near Andes foothills, and the resulting flood or mudslide hazard.",
+        "name": "physical_process_chain",
+        "partial_credit": "Award 1-2 points for naming atmospheric rivers but missing orographic enhancement or the flood and mudslide link.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 12,377 exposed-population anchor, 4 critical amenities defined as hospital/clinic/school/shelter features, roads, waterways, and reported road, bridge, housing, displacement, or evacuation impacts to justify the priority tier.",
+        "name": "impact_and_exposure_context",
+        "partial_credit": "Award 1-2 points for using either exposure or impact context, but not both, or for omitting one key exposure anchor.",
+        "points": 3
+      },
+      {
+        "description": "Weights the event narrative and point rainfall ahead of low gridded aggregate values and annual embedding change, explaining those as contextual or scale-limited.",
+        "name": "cross_scale_evidence_weighting",
+        "partial_credit": "Award 1 point for noting conflicting indicators without explaining why they should not overturn the flood classification.",
+        "points": 2
+      },
+      {
+        "description": "Rejects heat, wind, drought, and annual land-surface change as the primary acute disaster mechanism while allowing drought as background context.",
+        "name": "rejection_of_weaker_mechanisms",
+        "partial_credit": "Award 1 point for rejecting only some weaker alternatives or for treating drought correctly but missing heat, wind, or land-surface change.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested JSON structure and avoids unsupported claims such as exact mortality, a formal return period, or event-wide exposure totals.",
+        "name": "structured_output_and_uncertainty",
+        "partial_credit": "Award 1 point for mostly correct content in an incomplete structure or with minor overclaiming.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.061,
+      "chirps_max_mm": 14.2,
+      "chirps_mean_mm": 8.9,
+      "critical_amenities": 4,
+      "era5_precip_mean_mm": 0.57,
+      "gpm_mean_mm": 0.019,
+      "heavy_rain_days": 4,
+      "heavy_rain_run_days": 4,
+      "max_daily_point_precip_mm": 54.5,
+      "nasa_power_max_daily_mm": 23.8,
+      "nasa_power_total_mm": 66.9,
+      "open_meteo_max_daily_mm": 54.5,
+      "open_meteo_max_temp_c": 13.9,
+      "open_meteo_mean_wind_kmh": 29.6,
+      "open_meteo_total_mm": 174.5,
+      "point_precip_total_mm": 120.7,
+      "population_exposed": 12377,
+      "road_features": 388,
+      "waterway_features": 129
+    },
+    "dominant_driver": "central_pacific_atmospheric_river_orographic_lift",
+    "event_window": {
+      "end_date": "2023-08-22",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2023-08-19"
+    },
+    "osm_counts": {
+      "amenity_counts": {
+        "hospital": 1,
+        "police": 3,
+        "school": 3
+      },
+      "critical_amenities": 4,
+      "highway_counts": {
+        "primary": 17,
+        "residential": 282,
+        "secondary": 8,
+        "service": 48,
+        "tertiary": 30,
+        "trunk": 3
+      },
+      "road_features": 388,
+      "waterway_counts": {
+        "drain": 22,
+        "river": 31,
+        "stream": 76
+      },
+      "waterway_features": 129
+    },
+    "text_claim_flags": {
+      "atmospheric_river": true,
+      "damage_or_displacement": true,
+      "drought_context": true,
+      "floods_or_mudslides": true,
+      "land_cover_change_context": false,
+      "orographic_effect": true
+    }
+  },
+  "task_id": "CSX-287_Q1",
+  "task_type": "short_answer"
+}

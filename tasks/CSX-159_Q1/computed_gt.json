@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "task_version": "numeric_v1",
+  "task_id": "CSX-159_Q1",
+  "event_id": "CSX-159",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "koror_rainfall_deficit_water_balance_numeric_diagnosis",
+  "primary_gt": {
+    "answer": "extreme_persistent_rainfall_deficit_water_supply_drought",
+    "window_days": 111,
+    "rainfall_ledger_mm": {
+      "observed": 203.2,
+      "deficit": 558.8,
+      "inferred_normal": 762.0
+    },
+    "rates_mm_day": {
+      "observed": 1.83,
+      "deficit": 5.03,
+      "inferred_normal": 6.86
+    },
+    "indices": {
+      "observed_fraction": 0.267,
+      "deficit_index": 0.733,
+      "stress_score": 0.733
+    },
+    "threshold_result": {
+      "duration_ge_90": true,
+      "observed_fraction_le_0_30": true,
+      "deficit_index_ge_0_70": true,
+      "record_years_ge_50": true,
+      "interpretation": "Observed rain was 27% of normal for 111 days with a 559 mm deficit, meeting every persistence and severity test."
+    }
+  },
+  "event": {
+    "package_id": "CSX-159",
+    "event_name": "2015-2016 El Nino drought in western Pacific island capitals",
+    "hazard_family": "drought_agricultural_stress",
+    "event_date_or_window": "2016-01-01 to 2016-04-20"
+  },
+  "formula_definitions": {
+    "window_days": "inclusive days from event start through event end",
+    "normal_rain_inches": "observed_rain_inches + below_average_inches",
+    "observed_fraction": "observed_rain_inches / normal_rain_inches",
+    "deficit_index": "below_average_inches / normal_rain_inches",
+    "stress_score": "deficit_index * min(window_days / 90, 1) * min(record_low_years / 50, 1)"
+  },
+  "classification_rule": {
+    "label_if_all_tests_pass": "extreme_persistent_rainfall_deficit_water_supply_drought",
+    "tests": {
+      "window_days": ">= 90",
+      "observed_fraction": "<= 0.30",
+      "deficit_index": ">= 0.70",
+      "record_low_years": ">= 50"
+    }
+  },
+  "numeric_tolerances": {
+    "window_days": 0,
+    "rainfall_depth_mm": 0.1,
+    "rates_mm_day": 0.02,
+    "fractions_and_indices": 0.005,
+    "record_low_years": 0,
+    "boolean_thresholds": "exact"
+  },
+  "key_values": {
+    "raw_inputs": {
+      "event_window": {
+        "start_date": "2016-01-01",
+        "end_date": "2016-04-20",
+        "anchor_end_date": "2016-04-30",
+        "end_date_basis": "NOAA report publication date for the 'since January' rainfall statement"
+      },
+      "observed_rain_inches": 8.0,
+      "below_average_inches": 22.0,
+      "record_low_years": 65.0
+    },
+    "derived_inches": {
+      "inferred_normal_rain_inches": 30.0,
+      "deficit_to_observed_ratio": 2.75
+    },
+    "derived_mm": {
+      "observed": 203.2,
+      "deficit": 558.8,
+      "inferred_normal": 762.0
+    },
+    "rates_mm_day": {
+      "observed": 1.83,
+      "deficit": 5.03,
+      "inferred_normal": 6.86
+    },
+    "indices": {
+      "observed_fraction": 0.267,
+      "deficit_index": 0.733,
+      "stress_score": 0.733
+    },
+    "threshold_result": {
+      "duration_ge_90": true,
+      "observed_fraction_le_0_30": true,
+      "deficit_index_ge_0_70": true,
+      "record_years_ge_50": true,
+      "interpretation": "Observed rain was 27% of normal for 111 days with a 559 mm deficit, meeting every persistence and severity test."
+    },
+    "report_signal_checks": {
+      "mentions_shifted_walker_circulation": true,
+      "mentions_extreme_drought": true,
+      "mentions_water_rationing": true
+    }
+  },
+  "required_output_fields": [
+    "answer",
+    "window_days",
+    "rainfall_ledger_mm",
+    "rates_mm_day",
+    "indices",
+    "threshold_result"
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "answer_schema_and_units",
+        "points": 4,
+        "description": "Returns the requested six-field JSON, keeps millimeters and millimeters per day distinct, and includes a numeric interpretation sentence.",
+        "partial_credit": "Award 2-3 points if the JSON is mostly complete but one nested block or unit label is missing; award 1 point if the classification is present but the ledger shape is not usable."
+      },
+      {
+        "name": "rainfall_ledger",
+        "points": 5,
+        "description": "Extracts 8 inches observed, 22 inches below average, computes 30 inches inferred normal, and converts to 203.2 mm, 558.8 mm, and 762.0 mm.",
+        "partial_credit": "Award 3-4 points for correct inch values with one conversion or inferred-normal error; award 1-2 points for using the right quantities but leaving them in inches or mixing observed and deficit depths."
+      },
+      {
+        "name": "duration_and_rates",
+        "points": 3,
+        "description": "Computes the inclusive 111-day report-effective window and daily rates near 1.83, 5.03, and 6.86 mm/day.",
+        "partial_credit": "Award 2 points if the day count is correct but one rate is rounded or copied incorrectly; award 1 point if the rates are computed with a one-day endpoint error."
+      },
+      {
+        "name": "normalized_indices",
+        "points": 4,
+        "description": "Computes observed_fraction near 0.267, deficit_index near 0.733, and stress_score near 0.733 using capped duration and record-span factors.",
+        "partial_credit": "Award 2-3 points if two of the three indices are correct; award 1 point if the ratios use the right numerator values but the wrong denominator or omit one cap."
+      },
+      {
+        "name": "threshold_proof_and_classification",
+        "points": 3,
+        "description": "Evaluates all four threshold tests correctly and returns the extreme persistent rainfall-deficit water-supply drought label.",
+        "partial_credit": "Award 2 points if the final label is correct but one Boolean test is missing; award 1 point if the tests are listed but one inequality direction is reversed."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 1,
+        "description": "Rejects the short-shower interpretation from the calculation and avoids loss, field-guidance, or broad attribution statements.",
+        "partial_credit": "Award the point for a concise interpretation tied to the ledger; withhold it for broad attribution or loss statements that are not computed here."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from local CSX-159 records; no network access is used.",
+    "s\u006furce_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2015-2016_El_Nino_drought_in_western_Pacific_island_capitals.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NOAA_Climate.gov.html"
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "answer_guidance": {
+    "answer": "daytime_heat_exposure_dominant",
+    "structured_answer": {
+      "answer": "daytime_heat_exposure_dominant",
+      "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+      "computed_evidence": {
+        "classification": "daytime_heat_exposure_dominant",
+        "exposure_weighted_heat_load_m_person_c_day": 2322.1,
+        "humid_heat_dominance_pass": false,
+        "proof_result": "passes_daytime_heat_exposure_rule",
+        "regional_heat_load_c_day": 214.0,
+        "regional_peak_tmax_c": 46.25,
+        "warm_night_ratio": 0.049
+      },
+      "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+      "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units.",
+      "mechanism_chain": [
+        "event-window thermal forcing",
+        "accumulated heat-load calculation",
+        "persistence or recovery constraint",
+        "non-heat alternative rejection"
+      ],
+      "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+      "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "decision_rule": {
+    "classification_order": [
+      "humid_heat_dominant",
+      "daytime_heat_exposure_dominant",
+      "localized_or_weak"
+    ],
+    "daytime_heat_exposure_pass": true,
+    "humid_heat_dominance_pass": false
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Daytime Heat-Exposure Dominance Analysis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-016",
+  "key_values": {
+    "exposed_population_m": 10.85,
+    "hazard_days": 46,
+    "max_apparent_temperature_c": 29.8,
+    "max_wet_bulb_c": 19.83,
+    "point_daily_record_count": 61,
+    "regional_mean_tmax_c": 44.65,
+    "thresholds": {
+      "apparent_temperature_c": 40.0,
+      "exposed_population_m": 5.0,
+      "exposure_weighted_heat_load_m_person_c_day": 1000.0,
+      "peak_tmax_c": 45.0,
+      "regional_heat_load_c_day": 100.0,
+      "wet_bulb_c": 30.0
+    },
+    "warm_night_count_tmin_ge_16c": 3
+  },
+  "primary_gt": {
+    "answer": "daytime_heat_exposure_dominant",
+    "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+    "computed_evidence": {
+      "classification": "daytime_heat_exposure_dominant",
+      "exposure_weighted_heat_load_m_person_c_day": 2322.1,
+      "humid_heat_dominance_pass": false,
+      "proof_result": "passes_daytime_heat_exposure_rule",
+      "regional_heat_load_c_day": 214.0,
+      "regional_peak_tmax_c": 46.25,
+      "warm_night_ratio": 0.049
+    },
+    "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+    "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units.",
+    "mechanism_chain": [
+      "event-window thermal forcing",
+      "accumulated heat-load calculation",
+      "persistence or recovery constraint",
+      "non-heat alternative rejection"
+    ],
+    "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+    "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 3
+      },
+      {
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding.",
+        "name": "computed_evidence",
+        "points": 4
+      },
+      {
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values.",
+        "name": "formula_derivation",
+        "points": 3
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 3
+      },
+      {
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "daytime_heat_exposure_dominance_analysis",
+  "task_id": "CSX-016_Q2",
+  "task_type": "structured_reasoning",
+  "tolerances": {
+    "exposure_weighted_heat_load_m_person_c_day": 25.0,
+    "max_apparent_temperature_c": 0.2,
+    "max_wet_bulb_c": 0.2,
+    "regional_heat_load_c_day": 2.0,
+    "regional_peak_tmax_c": 0.5,
+    "warm_night_ratio": 0.01
+  }
+}

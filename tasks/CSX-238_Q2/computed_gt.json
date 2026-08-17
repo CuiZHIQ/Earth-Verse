@@ -1,0 +1,89 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-238",
+  "formulas": {
+    "alert_gap": "rank(liq_alert) - rank(landslide_alert), green=0 yellow=1 orange=2 red=3",
+    "answer_rule": "liquefaction_led_ground_failure if pop_ratio>=25, hazard_ratio>=10, bound_floor>=10, alert_gap>=1, and dominance_score>=3.5; otherwise not_liquefaction_led_ground_failure",
+    "bound_floor": "min(liq_pop_1std_low / landslide_pop_1std_high, liq_hazard_1std_low / landslide_hazard_1std_high)",
+    "dominance_score": "log10(pop_ratio) + log10(hazard_ratio) + alert_gap",
+    "hazard_ratio": "liq_hazard / landslide_hazard",
+    "pop_ratio": "liq_pop / landslide_pop",
+    "shaking_index": "max(mmi, cdi) / depth_km"
+  },
+  "primary_gt": {
+    "alert_gap": 1,
+    "answer": "liquefaction_led_ground_failure",
+    "bound_floor": 13.66,
+    "dominance_score": 4.048,
+    "hazard_ratio": 22.353,
+    "pop_ratio": 50.0,
+    "shaking_index": 1.493
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Answer label is determined by the explicit dominance thresholds in formulas.answer_rule.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_004_USGS_earthquake_event_GeoJSON_usp000huvq.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Extracts the correct structured anchors: 25000, 500, 38.0, 1.7, the one-sigma bounds, 8.808, 8.5, and 5.9 km.",
+        "name": "Structured numeric extraction",
+        "points": 4
+      },
+      {
+        "description": "Computes pop_ratio = 50.0 and hazard_ratio = 22.353 with correct denominators.",
+        "name": "Ratio calculations",
+        "points": 4
+      },
+      {
+        "description": "Computes both adverse-bound ratios and reports the floor as 13.66.",
+        "name": "Adverse-bound proof",
+        "points": 4
+      },
+      {
+        "description": "Applies the color-rank gap and base-10 logarithms to obtain dominance_score = 4.048.",
+        "name": "Composite score",
+        "points": 4
+      },
+      {
+        "description": "Computes shaking_index = 1.493.",
+        "name": "Shaking index",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON with the label liquefaction_led_ground_failure and the requested rounded fields, using the explicit answer rule.",
+        "name": "Final JSON result",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "source_values": {
+    "cdi": 8.5,
+    "depth_km": 5.9,
+    "event_name": "2011 Christchurch New Zealand earthquake",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "hazard_floor": 13.66,
+    "landslide_alert": "yellow",
+    "landslide_hazard": 1.7,
+    "landslide_hazard_1std_high": 2.2565945355142194,
+    "landslide_pop": 500.0,
+    "landslide_pop_1std_high": 645.5438274307791,
+    "liq_alert": "orange",
+    "liq_hazard": 38.0,
+    "liq_hazard_1std_low": 30.824277047883843,
+    "liq_pop": 25000.0,
+    "liq_pop_1std_low": 19324.78667705625,
+    "magnitude": 6.1,
+    "mmi": 8.808,
+    "pop_floor": 29.936
+  },
+  "target_family": "christchurch_ground_failure_dominance_score_ledger",
+  "task_id": "CSX-238_Q2",
+  "task_type": "numeric"
+}

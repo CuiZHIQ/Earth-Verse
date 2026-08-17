@@ -1,0 +1,247 @@
+{
+  "decision_rule": {
+    "positive_thresholds": {
+      "C": 0.5,
+      "F": 0.75,
+      "H": 0.95,
+      "L": 0.95,
+      "P": 0.75,
+      "S": 0.95,
+      "W": 0.95
+    },
+    "rainfall_threshold": {
+      "R_lt": 0.25
+    },
+    "score_formula": "100*(0.20S+0.18L+0.14W+0.14P+0.12F+0.15H+0.07C-0.05R)",
+    "score_threshold": 85.0,
+    "summary": "Compute eight normalized terms and assign the high-consistency label only when the weighted score is at least 85, at least six positive terms pass, and the rainfall term stays below 0.25."
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "category_counts": {
+      "event_catalogs": 7,
+      "event_reports": 3,
+      "exposure_impact": 8,
+      "geospatial_context": 3,
+      "other": 1,
+      "physical_hazard": 10,
+      "remote_sensing": 7
+    },
+    "event_date_or_window": "2018-09-28",
+    "event_name": "2018 Sulawesi earthquake and tsunami",
+    "file_count": 39,
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "hazard_label": "Earthquake, tsunami, and geophysical hazard",
+    "location": "Palu, Central Sulawesi, Indonesia",
+    "package_id": "CSX-235"
+  },
+  "event_id": "CSX-235",
+  "key_values": {
+    "component_ledger": [
+      {
+        "term": "S",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "L",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "W",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "P",
+        "threshold_result": "pass",
+        "value": 0.815
+      },
+      {
+        "term": "F",
+        "threshold_result": "pass",
+        "value": 0.925
+      },
+      {
+        "term": "H",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "C",
+        "threshold_result": "pass",
+        "value": 0.531
+      },
+      {
+        "term": "R",
+        "threshold_result": "pass",
+        "value": 0.162
+      }
+    ],
+    "final_label": "coupled_geophysical_high_consistency",
+    "normalized_terms": {
+      "C": 0.531,
+      "F": 0.925,
+      "H": 1.0,
+      "L": 1.0,
+      "P": 0.815,
+      "R": 0.162,
+      "S": 1.0,
+      "W": 1.0
+    },
+    "positive_terms_passing": 7,
+    "rainfall_deduction_points": 0.8,
+    "raw_inputs": {
+      "bridges": 3,
+      "chirps_mean_mm": 3.67,
+      "facility_total": 37,
+      "gpm_mean_mm": 4.43,
+      "healthcare": 2,
+      "hospitals": 5,
+      "liquefaction_alert_population": 140000,
+      "magnitude": 7.5,
+      "mean_embedding_change": 0.0531,
+      "mmi": 8.367,
+      "pga_g": 0.903,
+      "population": 407654,
+      "reported_displaced": 206524,
+      "reported_killed": 2077,
+      "schools": 27,
+      "wave_height_m": 7.0
+    },
+    "rejected_readings": [
+      "rainfall_led",
+      "image_only",
+      "loss_total_only",
+      "single_driver_score"
+    ],
+    "score": 92.4
+  },
+  "primary_gt": {
+    "component_ledger": [
+      {
+        "term": "S",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "L",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "W",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "P",
+        "threshold_result": "pass",
+        "value": 0.815
+      },
+      {
+        "term": "F",
+        "threshold_result": "pass",
+        "value": 0.925
+      },
+      {
+        "term": "H",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "C",
+        "threshold_result": "pass",
+        "value": 0.531
+      },
+      {
+        "term": "R",
+        "threshold_result": "pass",
+        "value": 0.162
+      }
+    ],
+    "final_label": "coupled_geophysical_high_consistency",
+    "positive_terms_passing": 7,
+    "rejected_readings": [
+      "rainfall_led",
+      "image_only",
+      "loss_total_only",
+      "single_driver_score"
+    ],
+    "score": 92.4
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Computed from local CSX-235 records only.",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us1000h3p4.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "question_conversion_audit": {
+    "calculation_first_design": true,
+    "conversion_note_created": false,
+    "lettered_answer_absent": true,
+    "prescriptive_guidance_points": 0,
+    "prose_centered_points": 0,
+    "visible_list_framing_absent": true
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns eight named ledger rows plus score, positive-term count, final label, and rejected readings.",
+        "name": "JSON ledger completeness",
+        "partial_credit": "Award 1-2 points for a mostly complete structure with missing rows or missing summary fields.",
+        "points": 3
+      },
+      {
+        "description": "Extracts M7.5, MMI 8.367, PGA 0.903 g, liquefaction alert population 140000, wave height 7 m, population 407654, facility total 37, killed 2077, displaced 206524, embedding mean 0.0531, and precipitation means 4.43 and 3.67 mm.",
+        "name": "Raw value extraction",
+        "partial_credit": "Award 2-3 points for most values with minor rounding mistakes, and 1 point for only a few correct anchors.",
+        "points": 4
+      },
+      {
+        "description": "Computes S=1.000, L=1.000, W=1.000, P=0.815, F=0.925, H=1.000, C=0.531, and R=0.162 within tolerance.",
+        "name": "Normalized terms",
+        "partial_credit": "Award 2-3 points for mostly correct terms with one or two formula errors.",
+        "points": 4
+      },
+      {
+        "description": "Applies the stated coefficients and reports 92.4 points out of 100 within 0.1.",
+        "name": "Weighted score",
+        "partial_credit": "Award 2-3 points for the right formula with arithmetic or rounding errors.",
+        "points": 4
+      },
+      {
+        "description": "Marks all seven positive terms as passing, marks the rainfall term as low, and assigns coupled_geophysical_high_consistency.",
+        "name": "Threshold logic",
+        "partial_credit": "Award 1 point if the final label is right but one threshold result is missing or wrong.",
+        "points": 2
+      },
+      {
+        "description": "Rejects rainfall-led, image-only, loss-total-only, and single-driver readings using computed terms.",
+        "name": "Rejected readings",
+        "partial_credit": "Award 1 point for rejecting at least two readings with numeric support.",
+        "points": 2
+      },
+      {
+        "description": "Keeps every statement tied to the weighted score or component ledger.",
+        "name": "Concise numeric framing",
+        "partial_credit": "Award 0.5 point for minor extra prose that does not change the result.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "palu_geophysical_hazard_chain_score_ledger",
+  "task_id": "CSX-235_Q1",
+  "task_type": "numeric"
+}

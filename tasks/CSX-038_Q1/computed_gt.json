@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-038_Q1",
+  "event_id": "CSX-038",
+  "task_type": "short_answer",
+  "target_family": "snow_phase_depth_precip_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "snow_phase_depth_precip_ledger",
+    "answer_label": "marginal_wet_snow_point_with_highland_depth_gap",
+    "point_phase": {
+      "snow_cm": 1.96,
+      "snow_hours": 16,
+      "freeze_hours": 0,
+      "min_temp_c": 2.2,
+      "hours_le_5c": 46,
+      "max_gust_kmh": 71.3,
+      "min_wind_chill_c": -3.3
+    },
+    "reported_depth_ratios": {
+      "jerusalem_min_to_point": 15.31,
+      "jerusalem_max_to_point": 25.51,
+      "amman_to_point": 22.96
+    },
+    "gridded_precip": {
+      "largest_mean_mm": 16.56,
+      "middle_mean_mm": 3.68,
+      "smallest_mean_mm": 1.37,
+      "largest_to_smallest_ratio": 12.06,
+      "largest_to_middle_ratio": 4.5
+    },
+    "logic_flags": {
+      "wet_snow_point": true,
+      "highland_depth_gap": true,
+      "point_total_as_highland_depth": false,
+      "sustained_subfreezing_point": false,
+      "strong_precip_spread": true
+    },
+    "computed_interpretation": "The point record shows wet-snow conditions and strong wind, while reported highland depths are 15-26 times the point snowfall and gridded precipitation means differ by roughly 4.5-12 times."
+  },
+  "key_values": {
+    "event_name": "December 2013 Middle East winter storm Alexa",
+    "hazard_family": "cold_wave_winter_storm",
+    "event_window": {
+      "start_date": "2013-12-10",
+      "end_date": "2013-12-13"
+    },
+    "point_weather_full": {
+      "snow_cm": 1.96,
+      "snow_hours": 16,
+      "freeze_hours": 0,
+      "min_temp_c": 2.2,
+      "hours_le_5c": 46,
+      "max_gust_kmh": 71.3,
+      "min_wind_chill_c": -3.3,
+      "snow_days": [
+        "2013-12-12",
+        "2013-12-13"
+      ],
+      "max_consecutive_snow_hours": 8,
+      "event_hours": 96
+    },
+    "reported_snow_cm": {
+      "jerusalem_min_cm": 30,
+      "jerusalem_max_cm": 50,
+      "amman_cm": 45
+    },
+    "reported_depth_ratios": {
+      "jerusalem_min_to_point": 15.31,
+      "jerusalem_max_to_point": 25.51,
+      "amman_to_point": 22.96
+    },
+    "precip_detail": {
+      "era5_land_mean_mm": 16.556278034047164,
+      "gpm_mean_mm": 1.372468257270106,
+      "chirps_mean_mm": 3.6774249669711017,
+      "era5_to_gpm_ratio": 12.06,
+      "era5_to_chirps_ratio": 4.5
+    }
+  },
+  "decision_rule": {
+    "wet_snow_point": "snow_hours > 0, freeze_hours == 0, and min_temp_c > 0",
+    "highland_depth_gap": "minimum reported-depth-to-point-snow ratio >= 10",
+    "point_total_as_highland_depth": "minimum reported-depth-to-point-snow ratio <= 1.25",
+    "sustained_subfreezing_point": "freeze_hours >= 12",
+    "strong_precip_spread": "largest_to_smallest_ratio >= 5 or largest_to_middle_ratio >= 3"
+  },
+  "tolerances": {
+    "snow_cm": 0.05,
+    "temperature_c": 0.2,
+    "wind_kmh": 1.0,
+    "wind_chill_c": 0.2,
+    "ratio": 0.05,
+    "precip_mm": 0.1
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Ledger shape and final label",
+        "points": 3,
+        "description": "Returns the requested compact JSON and labels the result as a marginal wet-snow point record with a large highland depth gap.",
+        "partial_credit": "Award 1-2 points for a mostly complete ledger with a vague or partially correct label; no credit if the answer is a free-form storm summary without the requested fields."
+      },
+      {
+        "name": "Point snow phase calculations",
+        "points": 4,
+        "description": "Computes 1.96 cm snowfall, 16 snowfall hours, 0 freeze hours, 2.2 C minimum temperature, 46 hours at or below 5 C, 71.3 km/h maximum gust, and -3.3 C minimum wind chill.",
+        "partial_credit": "Award up to 2 points for the snowfall and hour counts, and up to 2 points for the temperature, wind, and wind-chill values within tolerance."
+      },
+      {
+        "name": "Reported depth scale ratios",
+        "points": 4,
+        "description": "Computes the reported-depth to point-snow ratios near 15.31, 25.51, and 22.96 for Jerusalem low, Jerusalem high, and Amman.",
+        "partial_credit": "Award 2-3 points if the ratios are directionally correct but one value or rounding is wrong; award 1 point for recognizing that reported depths are over 10 times the point total without computing the ratios."
+      },
+      {
+        "name": "Gridded precipitation magnitude ledger",
+        "points": 3,
+        "description": "Computes the three gridded mean precipitation values as 16.56, 3.68, and 1.37 mm, with largest-to-smallest and largest-to-middle ratios near 12.06 and 4.50.",
+        "partial_credit": "Award 1-2 points for identifying the correct ordering and approximate magnitude spread while missing one mean or one ratio."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 4,
+        "description": "Sets wet-snow point, highland depth gap, and strong precipitation spread true, while setting point-total-as-highland-depth and sustained-subfreezing-point false.",
+        "partial_credit": "Award 1 point for each correct threshold state, up to 4 points; do not award full credit if the conclusion contradicts the computed values."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Gives one concise interpretation tying wet-snow phase, highland depth scaling, wind, and precipitation spread together without adding uncomputed impact quantities.",
+        "partial_credit": "Award 1 point for a concise but incomplete interpretation; no credit for broad impact claims or action advice not derived from the ledger."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_December_2013_Middle_East_winter_storm_Alexa.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

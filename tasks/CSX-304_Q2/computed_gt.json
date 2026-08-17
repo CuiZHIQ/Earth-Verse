@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-304_Q2",
+  "event_id": "CSX-304",
+  "task_type": "numeric",
+  "target_family": "iraq_apr2022_dust_wind_rain_threshold_consistency",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "onset_wind_supported_then_wet_moderated",
+    "wind_pair_days": 1,
+    "wind_peak": {
+      "date": "2022-04-07",
+      "ratio": 1.022
+    },
+    "rain_pair_days": 1,
+    "rain_peak": {
+      "date": "2022-04-08",
+      "ratio": 1.46
+    },
+    "lag_days": 1,
+    "late_pair": false,
+    "regional_mean_mm": 8.6802
+  },
+  "key_values": {
+    "event_name": "Iraq multi-day dust storm",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_window": [
+      "2022-04-07",
+      "2022-04-10"
+    ],
+    "region": "Iraq and Mesopotamia",
+    "thresholds": {
+      "power_wind_m_s": 4.5,
+      "companion_wind_km_h": 22.0,
+      "power_precip_mm": 10.0,
+      "companion_precip_mm": 10.0
+    },
+    "formulas": {
+      "wind_ratio": "min(point_wind_m_s / 4.5, companion_wind_km_h / 22.0)",
+      "rain_ratio": "min(point_precip_mm / 10.0, companion_precip_mm / 10.0)",
+      "regional_mean_mm": "mean of three regional event-precipitation mean values"
+    },
+    "daily_rows": [
+      {
+        "date": "2022-04-07",
+        "power_wind_m_s": 4.6,
+        "companion_wind_km_h": 25.0,
+        "power_precip_mm": 8.98,
+        "companion_precip_mm": 14.4,
+        "wind_ratio": 1.022,
+        "rain_ratio": 0.898,
+        "wind_pair": true,
+        "rain_pair": false
+      },
+      {
+        "date": "2022-04-08",
+        "power_wind_m_s": 4.1,
+        "companion_wind_km_h": 23.1,
+        "power_precip_mm": 37.6,
+        "companion_precip_mm": 14.6,
+        "wind_ratio": 0.911,
+        "rain_ratio": 1.46,
+        "wind_pair": false,
+        "rain_pair": true
+      },
+      {
+        "date": "2022-04-09",
+        "power_wind_m_s": 2.96,
+        "companion_wind_km_h": 19.3,
+        "power_precip_mm": 5.03,
+        "companion_precip_mm": 2.7,
+        "wind_ratio": 0.658,
+        "rain_ratio": 0.27,
+        "wind_pair": false,
+        "rain_pair": false
+      },
+      {
+        "date": "2022-04-10",
+        "power_wind_m_s": 4.67,
+        "companion_wind_km_h": 14.6,
+        "power_precip_mm": 2.28,
+        "companion_precip_mm": 8.9,
+        "wind_ratio": 0.664,
+        "rain_ratio": 0.228,
+        "wind_pair": false,
+        "rain_pair": false
+      }
+    ],
+    "regional_precipitation_means_mm": {
+      "hourly_aggregate": 14.4043,
+      "event_accumulated_A": 5.3213,
+      "event_accumulated_B": 6.3151
+    },
+    "tolerances": {
+      "ratios": 0.001,
+      "regional_mean_mm": 0.01,
+      "counts_and_dates": "exact"
+    }
+  },
+  "decision_rule": {
+    "summary": "The computed label is used only when onset wind support, later rain moderation, one-day lag, and a failed late-window wind-pair test all hold.",
+    "label_when_met": "onset_wind_supported_then_wet_moderated",
+    "label_otherwise": "threshold_not_met"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns compact JSON with the requested fields and numeric types, including the final answer label.",
+        "partial_credit": "Award 2-3 points for minor naming or rounding issues that do not obscure the computed values."
+      },
+      {
+        "name": "Wind threshold computation",
+        "points": 4,
+        "description": "Uses wind_ratio = min(point wind / 4.5, companion wind / 22.0), finds one paired wind day, and identifies 2022-04-07 with ratio 1.022.",
+        "partial_credit": "Award 1-3 points for correct date or count with an incomplete ratio formula."
+      },
+      {
+        "name": "Rain threshold computation",
+        "points": 4,
+        "description": "Uses rain_ratio = min(point rain / 10.0, companion rain / 10.0), finds one paired rain day, and identifies 2022-04-08 with ratio 1.460.",
+        "partial_credit": "Award 1-3 points for correct date or count with an incomplete ratio formula."
+      },
+      {
+        "name": "Timing and rejected revival test",
+        "points": 3,
+        "description": "Computes the one-day lag from wind peak to rain peak and marks the 2022-04-10 late-pair test as false.",
+        "partial_credit": "Award 1-2 points for either lag or late-pair state alone."
+      },
+      {
+        "name": "Regional precipitation anchor",
+        "points": 2,
+        "description": "Averages the three regional precipitation means to 8.6802 mm, with acceptable rounding to 8.68 mm.",
+        "partial_credit": "Award 1 point for using at least two means with a close rounded value."
+      },
+      {
+        "name": "Final computed consequence",
+        "points": 2,
+        "description": "Derives onset_wind_supported_then_wet_moderated from the counts, dates, lag, and failed late-pair test.",
+        "partial_credit": "Award 1 point for a compatible concise label with one missing threshold detail."
+      },
+      {
+        "name": "Claim discipline",
+        "points": 1,
+        "description": "Avoids converting the package-derived numeric threshold diagnostics into measured losses, closures, admissions, asset damage, or exact footprint evidence.",
+        "partial_credit": "No credit for this item if new measured impact claims are introduced."
+      }
+    ]
+  },
+  "event": {
+    "event_id": "CSX-304",
+    "event_name": "Iraq multi-day dust storm",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_date_or_window": "2022-04-07 to 2022-04-10",
+    "region": "Iraq and Mesopotamia"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Iraq_multi-day_dust_storm.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

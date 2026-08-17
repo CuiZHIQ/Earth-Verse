@@ -1,0 +1,45 @@
+{
+  "api_key_env": "OPENAI_API_KEY",
+  "base_url_env": "OPENAI_BASE_URL",
+  "default_base_url": "https://api.openai.com/v1",
+  "models": [
+    {
+      "name": "your-model",
+      "workers": 1
+    }
+  ],
+  "task_dir": "tasks",
+  "package_dir": "event_packages/standard_event_packages/packages",
+  "agent": {
+    "output_root": "outputs/agent",
+    "environment_id": null,
+    "max_agent_turns": 48,
+    "max_research_seconds": 1680,
+    "max_task_wall_seconds": 1800,
+    "finalization_reserve_seconds": 120,
+    "finalization_timeout_seconds": 120,
+    "max_parse_repairs": 2,
+    "minimal_protocol": false,
+    "max_question_chars": 12000,
+    "observation_max_chars": 12000,
+    "tool_summary_chars": 1800,
+    "context_recent_messages": 16,
+    "context_summary_chars": 24000,
+    "python_timeout_seconds": 60,
+    "temperature": null,
+    "timeout_seconds": 240,
+    "retries": 4,
+    "use_response_format": false
+  },
+  "direct": {
+    "output_root": "outputs/direct",
+    "max_context_chars": 36000,
+    "max_file_chars": 2200,
+    "max_context_files": 18,
+    "max_tokens": 2500,
+    "temperature": 0,
+    "timeout_seconds": 180,
+    "retries": 2,
+    "use_response_format": false
+  }
+}

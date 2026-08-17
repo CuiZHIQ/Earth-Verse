@@ -1,0 +1,184 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-211",
+  "key_values": {
+    "context_countermetric_passes": 0,
+    "context_gates": {
+      "heat_gate": false,
+      "rainfall_gate": false,
+      "surface_change_gate": false
+    },
+    "event_location": "New York City, Washington DC, Philadelphia, and the northeastern United States",
+    "event_name": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+    "event_window": {
+      "end_date": "2023-06-08",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2023-06-06"
+    },
+    "hazard_family": "air_pollution_smoke_heat",
+    "metrics": {
+      "alphaearth_change_mean": 0.016,
+      "chirps_event_precip_mm_mean": 15.4,
+      "elevated_smoke_km": 6,
+      "era5_temperature_2m_max_c_max": 35.1,
+      "era5_temperature_2m_max_c_mean": 30.5,
+      "event_window_days": 3,
+      "gpm_event_precip_mm_mean": 11.0,
+      "highest_reported_pm25_ug_m3": 400,
+      "near_surface_smoke_km": 3,
+      "nyc_pm25_aqi": 175,
+      "nyc_previous_pm25_aqi_record": 167,
+      "nyc_record_margin": 8,
+      "old_smoke_km": 12,
+      "sentinel2_dnbr_mean": 0.015,
+      "surface_to_elevated_ratio": 0.5,
+      "surface_to_old_ratio": 0.25
+    },
+    "score_components": {
+      "aod_context_text": 1,
+      "coastal_low_transport_text": 1,
+      "near_surface_depth_at_least_3_km": 1,
+      "nyc_aqi_record": 2,
+      "pm25_at_least_400": 2,
+      "quebec_source_text": 1,
+      "surface_air_text": 1,
+      "window_at_least_3_days": 1
+    },
+    "source_file_status_counts": {
+      "downloaded": 1,
+      "local_file_found": 13,
+      "remote_verified": 1,
+      "success": 21
+    },
+    "text_gates": {
+      "aerosol_optical_depth_context": true,
+      "coastal_low_transport": true,
+      "quebec_source": true,
+      "surface_air_degraded": true
+    }
+  },
+  "numeric_tolerances": {
+    "context_countermetric_passes": {
+      "target": 0,
+      "tolerance": 0,
+      "unit": "count"
+    },
+    "event_window_days": {
+      "target": 3,
+      "tolerance": 0,
+      "unit": "days"
+    },
+    "highest_reported_pm25_ug_m3": {
+      "target": 400,
+      "tolerance": 0,
+      "unit": "ug/m3"
+    },
+    "near_surface_smoke_km": {
+      "target": 3,
+      "tolerance": 0,
+      "unit": "km"
+    },
+    "nyc_pm25_aqi": {
+      "target": 175,
+      "tolerance": 0,
+      "unit": "AQI"
+    },
+    "nyc_record_margin": {
+      "target": 8,
+      "tolerance": 0,
+      "unit": "AQI"
+    },
+    "surface_to_elevated_ratio": {
+      "target": 0.5,
+      "tolerance": 0.01,
+      "unit": "ratio"
+    }
+  },
+  "primary_gt": {
+    "answer": "surface_smoke_pm25_window",
+    "computed_consequence": "10/10 smoke-window score with 0 context countermetric passes.",
+    "event_window_days": 3,
+    "gates": {
+      "context_countermetrics_low": true,
+      "near_surface_depth": true,
+      "pm25_aqi_record": true,
+      "score_at_least_8": true
+    },
+    "smoke_score": 10,
+    "target_family": "smoke_window_threshold_score_ledger",
+    "threshold_ledger": {
+      "context_countermetric_passes": 0,
+      "near_surface_smoke_km": 3,
+      "nyc_pm25_aqi": 175,
+      "nyc_record_margin": 8,
+      "pm25_ug_m3": 400,
+      "surface_to_elevated_ratio": 0.5
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "data_source": "event_packages/standard_event_packages/packages/CSX-211",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2023_Canadian_wildfire_smoke_over_New_York_City_and_the_U.S._Nort.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "metadata/files.csv"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with target_family, answer, event_window_days, smoke_score, threshold_ledger, gates, and computed_consequence.",
+        "name": "final_label_and_format",
+        "partial_credit": "Award 2 points for the correct answer with one missing field, or 1 point for the right label in prose without the requested compact JSON.",
+        "points": 3
+      },
+      {
+        "description": "Computes the inclusive 3-day event window and marks the Quebec source, coastal-low transport, surface-air, and aerosol-depth text gates.",
+        "name": "window_and_text_gates",
+        "partial_credit": "Award 2 points for the date window plus two or three text gates, or 1 point for the date window alone.",
+        "points": 3
+      },
+      {
+        "description": "Reports PM2.5 at 400 ug/m3, NYC PM2.5 AQI at 175, the prior record at 167, and the 8-point margin.",
+        "name": "pm25_aqi_record_ledger",
+        "partial_credit": "Award 3 points for three correct values, 2 points for two correct values, or 1 point for one correct PM2.5 or AQI anchor.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 3 km near-surface smoke depth, 6 km elevated layer, 12 km older layer, and the 0.50 surface-to-elevated ratio.",
+        "name": "vertical_layer_calculation",
+        "partial_credit": "Award 2 points for two correct layer heights, or 1 point for only the near-surface height.",
+        "points": 3
+      },
+      {
+        "description": "Shows that dNBR 0.015, annual embedding change 0.016, GPM 11.0 mm, CHIRPS 15.4 mm, 30.5 C mean max temperature, and 35.1 C max temperature do not pass their context thresholds.",
+        "name": "context_countermetric_gates",
+        "partial_credit": "Award 2 points for four or five correct context anchors, or 1 point for two or three correct anchors.",
+        "points": 3
+      },
+      {
+        "description": "Sums the smoke score as 10/10 and applies the rule that a score of at least 8 with zero context countermetric passes yields surface_smoke_pm25_window.",
+        "name": "score_arithmetic",
+        "partial_credit": "Award 2 points for the right label with minor score arithmetic error, or 1 point for the right score without the threshold comparison.",
+        "points": 3
+      },
+      {
+        "description": "Gives one concise event-specific sentence tied to the ledger without adding casualty, loss, infrastructure, or full-region uniformity statements.",
+        "name": "concise_computed_interpretation",
+        "partial_credit": "Award 0.5 point for a mostly concise sentence with minor overreach.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "smoke_window_threshold_score_ledger",
+  "task_id": "CSX-211_Q1",
+  "task_type": "short_answer"
+}

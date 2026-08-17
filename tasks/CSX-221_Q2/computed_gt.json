@@ -1,0 +1,266 @@
+{
+  "schema_version": "2.0",
+  "task_id": "CSX-221_Q2",
+  "event_id": "CSX-221",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "debris_flow_process_response_model",
+  "primary_gt": {
+    "process_model": {
+      "event": {
+        "name": "Atami debris flow",
+        "date": "2021-07-03",
+        "location": "Izusan, Atami, Shizuoka, Japan",
+        "hazard_family": "landslide_mass_movement"
+      },
+      "rainfall_loading_norm": 0.7796,
+      "surface_localization_norm": 0.8454,
+      "exposure_response_norm": 0.7435,
+      "debris_flow_process_index": 78.85,
+      "priority_class": "severe_response_priority"
+    },
+    "computed_metrics": {
+      "rainfall_conditioning": {
+        "point_15_day_total_mm": {
+          "open_meteo": 449.6,
+          "nasa_power": 410.18,
+          "mean": 429.89
+        },
+        "final3_total_mm": {
+          "open_meteo": 322.0,
+          "nasa_power": 335.84,
+          "mean": 328.92
+        },
+        "final3_share": {
+          "open_meteo": 0.7162,
+          "nasa_power": 0.8188,
+          "mean": 0.7675
+        },
+        "event_day_point_precip_mm": {
+          "open_meteo": 65.6,
+          "nasa_power": 82.08,
+          "mean": 73.84
+        },
+        "antecedent12_mean_total_mm": 100.97,
+        "final3_to_antecedent12_ratio": 3.2576,
+        "grid_event_day_maxima_mm": {
+          "era5_land": 65.098,
+          "gpm_imerg": 23.06,
+          "chirps": 74.744
+        },
+        "grid_peak_max_mm": 74.744,
+        "grid_peak_heterogeneity": 0.9518
+      },
+      "surface_change": {
+        "dnbr_max": 1.3848,
+        "dnbr_mean": 0.0271,
+        "dnbr_max_to_mean_ratio": 51.0307,
+        "radar_vv_range_db": 37.116,
+        "radar_vv_mean_db": 0.0302,
+        "radar_vv_mean_abs_db": 0.0302,
+        "alphaearth_cosine_change_max": 0.2035,
+        "alphaearth_cosine_change_mean": 0.0141,
+        "alphaearth_max_to_mean_ratio": 14.4673
+      },
+      "exposure_response": {
+        "aoi_area_km2": 10136.59,
+        "population_sum": 6761901.802,
+        "population_density_per_km2": 667.08,
+        "population_log_norm": 0.9757,
+        "near_trace_osm_feature_count": 1,
+        "bounded_osm_feature_count": 0,
+        "bounded_osm_usability_note": "empty_or_failed_query",
+        "reported_deaths": 27,
+        "reported_missing": 1,
+        "reported_injuries": 3,
+        "destroyed_houses": 54,
+        "human_impact_norm": 0.9433,
+        "housing_loss_norm": 0.9
+      }
+    },
+    "scenario_analysis": {
+      "scenario": "increase July 2-3 point rainfall and gridded event-day maxima by 20 percent",
+      "scenario_mean_final3_total_mm": 367.346,
+      "scenario_mean_event_day_precip_mm": 88.608,
+      "scenario_mean_final3_share": 0.7866,
+      "scenario_grid_peak_max_mm": 89.692,
+      "scenario_rainfall_loading_norm": 0.8813,
+      "scenario_debris_flow_process_index": 82.92,
+      "scenario_delta_index": 4.07,
+      "scenario_priority_class": "severe_response_priority"
+    },
+    "mechanism_chain": [
+      "multi_day_rainfall_preconditioning",
+      "intense_final_72_hour_loading",
+      "localized_slope_surface_disturbance",
+      "settlement_corridor_response_pressure"
+    ],
+    "source_paths": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Atami_debris_flow.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_001_OpenStreetMap_Overpass_bounded_features_generated_tiny_AOI_JSON.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_001_OpenStreetMap_Nominatim_geocoding.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ],
+    "final_interpretation": "The package supports a severe rainfall-loaded localized debris-flow response priority: multi-day wetting and strong final-period rainfall coincide with localized optical/radar change and reported fatal housing impacts; a 20 percent wetter final 48 hours raises the index but does not change the severe class.",
+    "reasoning_depth": {
+      "evidence_weighting": "Rainfall concentration and final-three-day loading define the trigger, surface-localization metrics define spatial focus, and reported impacts plus exposure determine response priority.",
+      "counterfactual_rejection": "A pure rainfall-only interpretation fails because the high dNBR/radar/embedding localization and reported impact terms are needed to explain the debris-flow response priority.",
+      "uncertainty_or_scale_caveat": "The empty or failed bounded OSM query is an uncertainty note and should not be treated as proof that exposed assets were absent."
+    }
+  },
+  "formulas": {
+    "rainfall_loading_norm": "0.40*clip(mean_final3_total_mm/400,0,1) + 0.20*clip(mean_event_day_point_precip_mm/100,0,1) + 0.20*clip(mean_final3_share,0,1) + 0.20*clip(grid_peak_max_mm/100,0,1)",
+    "surface_localization_norm": "0.30*clip(dnbr_max/1.5,0,1) + 0.20*clip(dnbr_max_to_mean_ratio/60,0,1) + 0.25*clip(radar_vv_range_db/45,0,1) + 0.15*(1-clip(abs(radar_vv_mean_db)/0.15,0,1)) + 0.10*clip(alphaearth_max_to_mean_ratio/20,0,1)",
+    "exposure_response_norm": "0.30*clip(population_density_per_km2/1000,0,1) + 0.15*clip(near_trace_osm_feature_count/5,0,1) + 0.25*clip((deaths+missing+0.1*injuries)/30,0,1) + 0.20*clip(destroyed_houses/60,0,1) + 0.10*clip(log10(population_sum)/7,0,1)",
+    "debris_flow_process_index": "100*(0.40*rainfall_loading_norm + 0.30*surface_localization_norm + 0.30*exposure_response_norm)",
+    "aoi_area_km2": "lat_span_degrees*111.32 * lon_span_degrees*111.32*cos(mean_latitude_radians)",
+    "wetter_final48h_scenario": "increase July 2 and July 3 point rainfall plus gridded event-day maxima by 20%; keep surface and exposure terms fixed"
+  },
+  "key_intermediate_values": {
+    "rainfall_window_dates": [
+      "2021-06-19",
+      "2021-06-20",
+      "2021-06-21",
+      "2021-06-22",
+      "2021-06-23",
+      "2021-06-24",
+      "2021-06-25",
+      "2021-06-26",
+      "2021-06-27",
+      "2021-06-28",
+      "2021-06-29",
+      "2021-06-30",
+      "2021-07-01",
+      "2021-07-02",
+      "2021-07-03"
+    ],
+    "final_three_dates": [
+      "2021-07-01",
+      "2021-07-02",
+      "2021-07-03"
+    ],
+    "grid_peak_mean_mm": 54.301,
+    "population_density_norm": 0.6671,
+    "direct_feature_norm": 0.2,
+    "geocode_first_result": {
+      "lat": "35.1176726",
+      "lon": "139.0897957",
+      "class": "highway",
+      "type": "bus_stop"
+    }
+  },
+  "tolerances": {
+    "index": 0.05,
+    "norms": 0.001,
+    "ratios": 0.001,
+    "precip_mm": 0.1,
+    "area_km2": 0.5,
+    "population_density": 0.1,
+    "radar_db": 0.01
+  },
+  "judge_anchors": {
+    "expected_priority_class": "severe_response_priority",
+    "expected_scenario_priority_class": "severe_response_priority",
+    "critical_numeric_values": {
+      "rainfall_loading_norm": 0.7796,
+      "surface_localization_norm": 0.8454,
+      "exposure_response_norm": 0.7435,
+      "debris_flow_process_index": 78.85,
+      "scenario_debris_flow_process_index": 82.92,
+      "scenario_delta_index": 4.07
+    },
+    "do_not_overclaim": [
+      "WorldPop broad AOI population is not a direct observed loss count.",
+      "The empty bounded OSM slice should not be treated as absence of exposed assets because it reports a query problem.",
+      "The mechanism should not be reduced to one rainfall day only."
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Atami_debris_flow.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_001_OpenStreetMap_Overpass_bounded_features_generated_tiny_AOI_JSON.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_001_OpenStreetMap_Nominatim_geocoding.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Finds the relevant package files without being given exact filenames and cites package-relative paths for rainfall, surface change, exposure, geospatial, and report values.",
+        "partial_credit": "Award 1-2 points if paths are incomplete, absolute-only, or miss one evidence family."
+      },
+      {
+        "name": "Event and impact extraction",
+        "points": 2,
+        "description": "Correctly extracts the Atami/Izusan date, location, hazard type, and reported impact counts for lives lost, missing, injuries, and destroyed houses.",
+        "partial_credit": "Award 1 point for correct event identification with one or more missing impact values."
+      },
+      {
+        "name": "Rainfall conditioning calculations",
+        "points": 4,
+        "description": "Computes point-rainfall totals, final-three-day shares, event-day rainfall, antecedent/final-period ratio, gridded maxima, heterogeneity, and rainfall_loading_norm with correct units and rounding.",
+        "partial_credit": "Award 1-3 points for correct method with arithmetic, window, unit, or product-selection errors."
+      },
+      {
+        "name": "Surface-change localization calculations",
+        "points": 3,
+        "description": "Computes dNBR ratio, radar VV range and mean magnitude, annual embedding ratio, and surface_localization_norm using the specified formula.",
+        "partial_credit": "Award 1-2 points for using the right signals but omitting a component or misapplying a normalization."
+      },
+      {
+        "name": "Exposure and response-pressure calculations",
+        "points": 3,
+        "description": "Computes AOI area, population density, population log normalization, OSM feature counts/usability, impact norms, and exposure_response_norm while avoiding direct-loss overinterpretation of broad exposure.",
+        "partial_credit": "Award 1-2 points for partial exposure synthesis or weak caveats on broad population exposure."
+      },
+      {
+        "name": "Scenario analysis",
+        "points": 2,
+        "description": "Applies the +20% final-48-hour rainfall scenario to the point rainfall and gridded event-day maxima, then recomputes the rainfall norm, process index, delta, and priority class.",
+        "partial_credit": "Award 1 point for a plausible scenario calculation with one component left unchanged or rounded incorrectly."
+      },
+      {
+        "name": "Disaster-process reasoning",
+        "points": 2,
+        "description": "Explains the mechanism chain as multi-day rainfall loading, intense final wetting, localized slope disturbance, and concentrated response pressure rather than a generic landslide summary.",
+        "partial_credit": "Award 1 point for a correct but generic or lightly supported interpretation."
+      },
+      {
+        "name": "Structured answer quality",
+        "points": 1,
+        "description": "Returns valid JSON with the requested top-level objects and concise interpretation. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "partial_credit": "Award 0.5 points for mostly valid JSON with minor formatting issues."
+      }
+    ]
+  }
+}

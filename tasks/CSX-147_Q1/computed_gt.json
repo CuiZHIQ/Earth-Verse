@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-147_Q1",
+  "event_id": "CSX-147",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "bangladesh_2004_storm_flood_process_score_ledger",
+  "primary_gt": {
+    "target_family": "bangladesh_2004_storm_flood_process_score_ledger",
+    "tests": {
+      "sequence_persistence": {
+        "pass": true,
+        "values": {
+          "storm_start": "2004-04-09",
+          "storm_end": "2004-04-19",
+          "storm_days": 11,
+          "event_days": 14,
+          "storm_window_coverage_ratio": 0.786
+        }
+      },
+      "storm_flood_causation_text": {
+        "pass": true,
+        "values": {
+          "intense_thunderstorms_text": true,
+          "floods_followed_storms_text": true,
+          "upland_runoff_cause_text": true
+        }
+      },
+      "displacement_anchor": {
+        "pass": true,
+        "values": {
+          "reported_displaced_people": 500000
+        }
+      },
+      "terrain_text": {
+        "pass": true,
+        "values": {
+          "khasi_hills_text": true,
+          "india_bangladesh_border_text": true
+        }
+      },
+      "image_timing": {
+        "pass": true,
+        "values": {
+          "image_date": "2004-04-26",
+          "event_snapshot_date": "2004-04-15",
+          "lag_after_storm_end_days": 7,
+          "lag_after_event_end_days": 4,
+          "resolution_m_per_pixel": 250
+        }
+      }
+    },
+    "score": 5,
+    "answer": "multi_day_storm_flood_process_ledger_pass",
+    "rejected_alternatives": [
+      "single_day_storm",
+      "storm_unlinked_flood_case",
+      "snapshot_timing_label"
+    ],
+    "interpretation": "The ledger supports a multi-day storm-flood process because an 11-day storm sequence is text-linked to upland runoff, cross-border flooding, 500000 displaced people, and a timely 250 m follow-up image."
+  },
+  "numeric_tolerances": {
+    "ratio": 0.001,
+    "days": 0,
+    "people": 0
+  },
+  "key_values": {
+    "event_name": "April 2004 Bangladesh severe storms and floods",
+    "event_window": {
+      "start": "2004-04-09",
+      "end": "2004-04-22",
+      "days": 14
+    },
+    "storm_sequence": {
+      "start": "2004-04-09",
+      "end": "2004-04-19",
+      "days": 11
+    },
+    "tests": {
+      "sequence_persistence": {
+        "pass": true,
+        "values": {
+          "storm_start": "2004-04-09",
+          "storm_end": "2004-04-19",
+          "storm_days": 11,
+          "event_days": 14,
+          "storm_window_coverage_ratio": 0.786
+        }
+      },
+      "storm_flood_causation_text": {
+        "pass": true,
+        "values": {
+          "intense_thunderstorms_text": true,
+          "floods_followed_storms_text": true,
+          "upland_runoff_cause_text": true
+        }
+      },
+      "displacement_anchor": {
+        "pass": true,
+        "values": {
+          "reported_displaced_people": 500000
+        }
+      },
+      "terrain_text": {
+        "pass": true,
+        "values": {
+          "khasi_hills_text": true,
+          "india_bangladesh_border_text": true
+        }
+      },
+      "image_timing": {
+        "pass": true,
+        "values": {
+          "image_date": "2004-04-26",
+          "event_snapshot_date": "2004-04-15",
+          "lag_after_storm_end_days": 7,
+          "lag_after_event_end_days": 4,
+          "resolution_m_per_pixel": 250
+        }
+      }
+    },
+    "rejected_alternatives": [
+      "single_day_storm",
+      "storm_unlinked_flood_case",
+      "snapshot_timing_label"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger and answer",
+        "points": 3,
+        "description": "Reports target_family, all five true tests, score 5, answer multi_day_storm_flood_process_ledger_pass, and the three rejected alternatives.",
+        "partial_credit": "Give 1-2 points if the answer label is close but one test status, the score, or one rejected alternative is missing."
+      },
+      {
+        "name": "Sequence arithmetic",
+        "points": 3,
+        "description": "Computes 11 storm days, 14 event days, 0.786 coverage ratio, and applies the 10-day and 0.75 thresholds correctly.",
+        "partial_credit": "Give 1-2 points for correct dates but one missing inclusive-day or ratio calculation."
+      },
+      {
+        "name": "Storm-flood causation text",
+        "points": 4,
+        "description": "Finds the series of intense thunderstorms, the statement that floods followed that sequence, and the upland runoff cause text.",
+        "partial_credit": "Give 2-3 points for two correct causal text anchors; give 1 point for only one anchor."
+      },
+      {
+        "name": "Displacement extraction",
+        "points": 3,
+        "description": "Extracts about half a million displaced people in Bangladesh as 500000 and applies the >=400000 test.",
+        "partial_credit": "Give 1-2 points for a correct qualitative half-million reading without the numeric threshold."
+      },
+      {
+        "name": "Terrain text anchors",
+        "points": 2,
+        "description": "Finds both the Khasi Hills and India-Bangladesh border area text anchors.",
+        "partial_credit": "Give 1 point for naming only one of the two anchors."
+      },
+      {
+        "name": "Image timing and resolution",
+        "points": 3,
+        "description": "Computes 2004-04-26, 7 days after storm end, 4 days after event end, 250 m per pixel, and the true pass state.",
+        "partial_credit": "Give 1-2 points for the correct image date and resolution but one missing lag calculation."
+      },
+      {
+        "name": "Compact computed interpretation",
+        "points": 2,
+        "description": "Keeps the interpretation tied to the five calculations and avoids extra loss counts beyond the ledger.",
+        "partial_credit": "Give 1 point if the interpretation is broadly consistent but weakly tied to the computed values."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_April_2004_Bangladesh_severe_storms_and_floods.json",
+      "data/other/other_001_NASA_Earth_Observatory_Bangladesh_flood_follow-up_image.html"
+    ],
+    "notes": [
+      "Off-event gridded precipitation products are not used in this ground truth.",
+      "The scored evidence comes from the declared event anchor, NASA Earth Observatory text, and package metadata."
+    ]
+  }
+}

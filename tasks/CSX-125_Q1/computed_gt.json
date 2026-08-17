@@ -1,0 +1,135 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-125",
+  "key_values": {
+    "chirps_peak_mm": 183.8,
+    "event_name": "Tropical Cyclone Freddy",
+    "gpm_peak_mm": 192.2,
+    "metrics": {
+      "event_total_mm": 375.2,
+      "grid_peak_mm": 192.2,
+      "grid_peak_ratio": 1.046,
+      "isolated_72h_burst_rejection": "The isolated 72-hour burst summary fails because the wettest 72 hours are only 29.8% of local event rainfall while the storm and window durations are long.",
+      "max_72h_mm": 111.7,
+      "max_72h_share": 0.298,
+      "population_million": 5.29,
+      "storm_days": 36.0,
+      "storm_window_fraction": 0.923,
+      "window_days": 39
+    },
+    "point_weather_first_hour": "2023-02-04T00:00",
+    "point_weather_hour_count": 936,
+    "point_weather_last_hour": "2023-03-14T23:00",
+    "point_weather_role": "local hourly precipitation series filtered to the locked event window",
+    "population": 5286729.5,
+    "region": "Southern Indian Ocean, Madagascar, Mozambique, and Malawi",
+    "tests": {
+      "duration": true,
+      "gridded_precipitation": true,
+      "population_loading": true,
+      "rainfall_distribution": true
+    },
+    "wettest_72h_end": "2023-03-14T23:00",
+    "wettest_72h_start": "2023-03-12T00:00",
+    "window_end": "2023-03-14",
+    "window_start": "2023-02-04"
+  },
+  "primary_gt": {
+    "canonical_label": "persistent_multi_pulse_rainfall_exposure",
+    "metrics": {
+      "event_total_mm": 375.2,
+      "grid_peak_mm": 192.2,
+      "grid_peak_ratio": 1.046,
+      "isolated_72h_burst_rejection": "The isolated 72-hour burst summary fails because the wettest 72 hours are only 29.8% of local event rainfall while the storm and window durations are long.",
+      "max_72h_mm": 111.7,
+      "max_72h_share": 0.298,
+      "population_million": 5.29,
+      "storm_days": 36.0,
+      "storm_window_fraction": 0.923,
+      "window_days": 39
+    },
+    "passed_tests": 4,
+    "required_claims": [
+      "All four ledger tests pass.",
+      "The isolated 72-hour burst summary fails because the wettest 72 hours are only 29.8% of local event rainfall while the storm and window durations are long."
+    ],
+    "thresholds": {
+      "duration_days_min": 30,
+      "event_total_mm_gt": 300,
+      "grid_peak_mm_min": 180,
+      "grid_peak_ratio_max": 1.1,
+      "max_72h_share_lt": 0.35,
+      "population_million_min": 5.0,
+      "window_days_min": 35
+    },
+    "tolerances": {
+      "days": 0.5,
+      "mm": 2.0,
+      "population_million": 0.1,
+      "ratio": 0.01
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Tropical_Cyclone_Freddy.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the final label persistent_multi_pulse_rainfall_exposure and states that all four tests pass.",
+        "name": "Final ledger result",
+        "partial_credit": "Give 2-3 points for a correct persistent rainfall-exposure label with an incomplete pass count; give 1 point for a generic long-lived cyclone label.",
+        "points": 4
+      },
+      {
+        "description": "Computes 36.0 storm-status days, 39 inclusive window days, and the 0.923 duration fraction.",
+        "name": "Duration arithmetic",
+        "partial_credit": "Give 1-2 points for one or two correct duration values with missing arithmetic.",
+        "points": 3
+      },
+      {
+        "description": "Computes 375.2 mm event total, 111.7 mm wettest 72-hour total, and the 0.298 share below 0.35.",
+        "name": "Rainfall distribution",
+        "partial_credit": "Give 2-3 points for two correct rainfall values; give 1 point for using rainfall values without the share test.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 192.2 mm larger gridded peak, 183.8 mm smaller peak, and 1.046 peak ratio below 1.10.",
+        "name": "Gridded precipitation comparison",
+        "partial_credit": "Give 1-2 points for the correct peaks but missing or misreading the ratio.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 5.29 million compact population value and applies the 5.0 million threshold correctly.",
+        "name": "Population threshold",
+        "partial_credit": "Give 1 point for citing population without the threshold comparison.",
+        "points": 2
+      },
+      {
+        "description": "Explains why the isolated 72-hour burst summary fails using the 29.8% share and the long event duration.",
+        "name": "Burst summary rejection",
+        "partial_credit": "Give 1 point for rejecting the burst summary using only one of those two ideas.",
+        "points": 2
+      },
+      {
+        "description": "Provides one concise JSON object with the requested fields, including isolated_72h_burst_rejection, and avoids extra realized-loss claims not calculated in the ledger.",
+        "name": "Concise requested format",
+        "partial_credit": "Give 1 point for a mostly complete answer with minor formatting or rounding issues.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "tropical_cyclone_rainfall_exposure_ledger",
+  "task_id": "CSX-125_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-325_Q1",
+  "event_id": "CSX-325",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "coral_bleaching_heat_stress_extent_escalation_test",
+  "event": {
+    "package_id": "CSX-325",
+    "event_name": "2023-2024 global coral bleaching event",
+    "hazard_family": "marine_heatwave_coastal_ecosystem",
+    "event_date_or_window": "1 January 2023 to 30 September 2025",
+    "metadata_event_name": "2023-2024 global coral bleaching event",
+    "region": "Southeast Asia"
+  },
+  "primary_gt": {
+    "current_pct": 84.4,
+    "previous_pct": 68.2,
+    "increase_pp": 16.2,
+    "relative_increase_pct": 23.8,
+    "countries_or_territories": 83,
+    "basin_count": 3,
+    "passed_tests": 5,
+    "conclusion": "heat_stress_escalation_pass"
+  },
+  "anchors": {
+    "formulas": {
+      "increase_pp": "current_pct - previous_pct",
+      "relative_increase_pct": "100 * increase_pp / previous_pct",
+      "passed_tests": "count of five threshold inequalities that evaluate true"
+    },
+    "thresholds": {
+      "current_pct_min": 80,
+      "increase_pp_min": 15,
+      "relative_increase_pct_min": 20,
+      "countries_or_territories_min": 80,
+      "basin_count_min": 3
+    },
+    "threshold_results": {
+      "current_pct_gte_80": true,
+      "increase_pp_gte_15": true,
+      "relative_increase_pct_gte_20": true,
+      "countries_or_territories_gte_80": true,
+      "basin_count_gte_3": true
+    },
+    "named_basins": [
+      "Atlantic",
+      "Pacific",
+      "Indian"
+    ],
+    "source_window": "1 January 2023 to 30 September 2025",
+    "rounding": "Round percentage outputs to one decimal place; relative_increase_pct uses the displayed one-decimal increase_pp.",
+    "conclusion_rule": "heat_stress_escalation_pass only when passed_tests equals 5"
+  },
+  "tolerances": {
+    "current_pct": 0.05,
+    "previous_pct": 0.05,
+    "increase_pp": 0.05,
+    "relative_increase_pct": 0.05,
+    "countries_or_territories": 0,
+    "basin_count": 0,
+    "passed_tests": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON answer shape",
+        "points": 3,
+        "description": "Returns valid compact JSON with exactly the requested eight keys and no extra narrative."
+      },
+      {
+        "name": "Package anchor extraction",
+        "points": 5,
+        "description": "Extracts 84.4%, 68.2%, 83 countries or territories, and three named basins correctly."
+      },
+      {
+        "name": "Derived calculations",
+        "points": 4,
+        "description": "Computes the 16.2 percentage-point increase and 23.8% relative increase with the stated formulas."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 4,
+        "description": "Evaluates all five inequalities correctly and reports passed_tests as 5."
+      },
+      {
+        "name": "Conclusion",
+        "points": 2,
+        "description": "Uses heat_stress_escalation_pass and rejects the marginal repeat-baseline rule from the computed thresholds."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 1,
+        "description": "Keeps the physical consequence to accumulated marine heat-stress extent as the supported diagnostic signal."
+      },
+      {
+        "name": "No overclaim",
+        "points": 1,
+        "description": "Does not infer measured local mortality, tourism loss, or terrestrial weather causation from these metrics."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_NOAA_Coral_Reef_Watch_bleaching_status.html",
+      "data/event_reports/event_reports_002_NOAA_NESDIS_fourth_global_coral_bleaching_event.html"
+    ]
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_version": "v3.1",
+  "task_id": "CSX-308_Q1",
+  "event_id": "CSX-308",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "subtype": "compound_impact_chain_response_priority",
+  "primary_gt": {
+    "answer": "urban_lava_flow_impact",
+    "response_priority": "life_safety_evacuation_and_emergency_shelter",
+    "key_numeric_anchors": {
+      "catalog_alert_level": "Red",
+      "reported_deaths": 32,
+      "reported_destroyed_homes": 1000,
+      "aoi_population_rounded": 43914,
+      "mean_surface_change_index": 0.0271
+    },
+    "impact_chain": [
+      "volcanic eruption and lava displacement near Goma",
+      "fatalities, housing loss, and urban population exposure",
+      "life safety evacuation, shelter, and displacement support"
+    ],
+    "why_alternatives_are_weaker": [
+      "ash-centered disruption is not the dominant documented impact pathway",
+      "rainfall or lahar flooding is contextual rather than primary",
+      "surface change alone misses the reported urban humanitarian impact"
+    ]
+  },
+  "judge_anchors": {
+    "canonical_stance": "Immediate operations should be driven by a lava-flow urban impact and displacement chain near Goma, not by ash, rainfall/lahar flooding, or image-change context alone.",
+    "required_claims": [
+      "Selects lava-driven urban impact/displacement as the dominant mechanism.",
+      "Prioritizes life safety, evacuation support, emergency shelter, and displacement support.",
+      "Uses fatalities and destroyed homes as impact anchors.",
+      "Treats the population summary as exposure context rather than a direct affected count.",
+      "Rejects ash, rainfall/lahar flooding, and remote-sensing-only interpretations as weaker."
+    ],
+    "required_metrics": [
+      {
+        "name": "catalog_alert_level",
+        "expected": "Red"
+      },
+      {
+        "name": "reported_deaths",
+        "expected": 32,
+        "tolerance": 0
+      },
+      {
+        "name": "reported_destroyed_homes",
+        "expected": 1000,
+        "tolerance": 0
+      },
+      {
+        "name": "aoi_population_rounded",
+        "expected": 43914,
+        "tolerance": 2
+      },
+      {
+        "name": "mean_surface_change_index",
+        "expected": 0.0271,
+        "tolerance": 0.0005
+      }
+    ],
+    "forbidden_claims": [
+      "Claims a precise lava-flow footprint from this task alone.",
+      "Treats the population summary as a direct affected-population count.",
+      "Identifies ash/aviation disruption or rainfall/lahar flooding as the primary mechanism.",
+      "Infers exact displacement, road closure, hospital outage, or infrastructure loss counts beyond the anchors."
+    ],
+    "acceptable_variants": [
+      "urban_lava_displacement",
+      "lava_driven_urban_impact",
+      "lava_flow_housing_loss_and_evacuation_priority"
+    ]
+  },
+  "required_findings": [
+    {
+      "id": "mechanism",
+      "finding": "Selects lava-driven urban impact/displacement as the mechanism that should drive emergency operations."
+    },
+    {
+      "id": "priority",
+      "finding": "Names life safety, evacuation support, and emergency shelter as the response priority."
+    },
+    {
+      "id": "impact_counts",
+      "finding": "Uses the reported fatalities and destroyed-home counts as impact anchors."
+    },
+    {
+      "id": "exposure_context",
+      "finding": "Treats the population figure as AOI exposure context rather than a direct affected count."
+    },
+    {
+      "id": "alternative_mechanisms",
+      "finding": "Explains why ash, lahar/rainfall flooding, and remote-sensing-only interpretations are weaker."
+    }
+  ],
+  "numeric_tolerances": {
+    "reported_deaths": {
+      "expected": 32,
+      "tolerance": 0
+    },
+    "reported_destroyed_homes": {
+      "expected": 1000,
+      "tolerance": 0
+    },
+    "aoi_population_rounded": {
+      "expected": 43914,
+      "tolerance": 2
+    },
+    "mean_surface_change_index": {
+      "expected": 0.0271,
+      "tolerance": 0.0005
+    },
+    "mean_embedding_change_context": {
+      "expected": 0.0105,
+      "tolerance": 0.0005
+    }
+  },
+  "reasoning_requirements": [
+    "Connect the volcano trigger to urban exposure and displacement-oriented operations.",
+    "Use numeric anchors to support the chain without treating them as a complete damage model.",
+    "Separate contextual remote-sensing and rainfall signals from the dominant impact pathway."
+  ],
+  "forbidden_overclaims": [
+    "Do not claim a precise lava-flow footprint from this task alone.",
+    "Do not turn the AOI population summary into a direct affected-population count.",
+    "Do not claim ash/aviation disruption or rainfall/lahar flooding as the primary disaster mechanism.",
+    "Do not infer exact displacement, road closure, hospital outage, or infrastructure loss counts beyond the package anchors."
+  ],
+  "key_values": {
+    "event_name": "2021 Mount Nyiragongo eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "scale": "metro_urban",
+    "region": "Africa",
+    "event_dates": {
+      "start": "2021-05-22",
+      "end": "2021-05-23"
+    },
+    "catalog": {
+      "eventtype": "VO",
+      "eventname": "Nyiragongo",
+      "alert_level": "Red",
+      "country": "Democratic Republic of Congo",
+      "coordinates": [
+        29.25,
+        -1.52
+      ]
+    },
+    "context_metrics": {
+      "raw_population_sum": 43913.563500039134,
+      "surface_change_max": 0.7243,
+      "embedding_change_mean": 0.0105,
+      "event_precipitation_mean_mm": 5.02
+    },
+    "manifest": {
+      "total_files": 40,
+      "category_counts": {
+        "event_reports": 4,
+        "event_catalogs": 5,
+        "geospatial_context": 3,
+        "other": 4,
+        "physical_hazard": 10,
+        "remote_sensing": 10,
+        "exposure_impact": 4
+      },
+      "successful_or_remote_verified_files": 22
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "id": "final_mechanism_and_priority",
+        "name": "Final mechanism and response priority",
+        "points": 5,
+        "description": "Full credit selects urban_lava_flow_impact or an equivalent lava-driven urban displacement mechanism and names life safety, evacuation support, emergency shelter, and displacement assistance as the response priority.",
+        "partial_credit": "Award up to 3 points for the correct lava-driven urban impact mechanism and up to 2 points for a response priority centered on life safety, evacuation, shelter, and displacement support."
+      },
+      {
+        "id": "quantitative_anchors",
+        "name": "Quantitative anchors",
+        "points": 4,
+        "description": "Full credit uses the Red alert level, 32 deaths, 1,000 destroyed homes, population exposure near 43,914, and mean surface-change index near 0.0271 accurately and in the right role.",
+        "partial_credit": "Award roughly equal credit for each correct anchor within tolerance; give substantial credit for at least three correct anchors when they support the mechanism rather than appear as an isolated metric list."
+      },
+      {
+        "id": "physical_mechanism_reasoning",
+        "name": "Physical mechanism reasoning",
+        "points": 4,
+        "description": "Full credit connects the volcanic trigger and lava displacement near Goma to fatalities, housing destruction, urban exposure, and emergency operations.",
+        "partial_credit": "Award partial credit for recognizing the volcanic or lava trigger without a complete impact chain, or for naming impacts without clearly tying them to the operational priority."
+      },
+      {
+        "id": "cross_scale_interpretation",
+        "name": "Cross-scale interpretation",
+        "points": 3,
+        "description": "Full credit uses population and remote-sensing metrics as context without treating them as a complete damage model or as direct affected-population counts.",
+        "partial_credit": "Award partial credit for using either exposure context or surface-change context correctly; withhold credit for converting contextual metrics into unsupported exact damage or affected-person counts."
+      },
+      {
+        "id": "alternative_mechanism_rejection",
+        "name": "Alternative mechanism rejection",
+        "points": 2,
+        "description": "Full credit explains why ash-centered disruption, rainfall or lahar flooding, and image-only interpretations are weaker for immediate operations.",
+        "partial_credit": "Award 1 point for rejecting one or two weaker alternatives with a valid reason; award 2 points only when the answer covers the main ash, rainfall/lahar, and image-only alternatives."
+      },
+      {
+        "id": "overclaim_control_and_structure",
+        "name": "Overclaim control and output structure",
+        "points": 2,
+        "description": "Full credit avoids unsupported exact footprints, displacement totals, infrastructure-loss claims, and dominant ash/flood claims while returning the requested concise JSON structure.",
+        "partial_credit": "Award 1 point for mostly disciplined claims with minor format issues, or for correct JSON structure with one small unsupported extrapolation; award 0 if unsupported claims drive the conclusion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Wikipedia_2021_Mount_Nyiragongo_eruption.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2021_Mount_Nyiragongo_eruption.json",
+      "data/event_catalogs/event_catalogs_005_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  }
+}

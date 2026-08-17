@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-021_Q1",
+  "event_id": "CSX-021",
+  "package_id": "CSX-021",
+  "task_type": "short_answer",
+  "task_subtype": "key_intermediate_variable_ranking",
+  "target_family": "marine_heatwave_key_intermediate_variable_ranking",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "exceedance_duration",
+    "target_family": "marine_heatwave_key_intermediate_variable_ranking",
+    "computed_values": {
+      "definition_days_min": 5,
+      "threshold_percentile": 90,
+      "regional_duration_months_min": 10,
+      "mean_duration_days": 54,
+      "mean_intensity_c": 0.52,
+      "cumulative_degree_days": 28.08,
+      "duration_record_ratio": 1.349,
+      "na_sst_anomaly_c": 3.0,
+      "peak_global_sst_c": 18.99,
+      "global_ocean_fraction": 0.94
+    },
+    "variable_scores": {
+      "exceedance_duration": 0.96,
+      "cumulative_heat_load": 0.91,
+      "sst_anomaly_intensity": 0.84,
+      "threshold_choice": 0.72,
+      "peak_sst_only": 0.38,
+      "report_label_only": 0.14
+    },
+    "ranked_variables": [
+      "exceedance_duration",
+      "cumulative_heat_load",
+      "sst_anomaly_intensity",
+      "threshold_choice",
+      "peak_sst_only",
+      "report_label_only"
+    ],
+    "key_variable": "exceedance_duration",
+    "rejected_variable": "report_label_only",
+    "reasoning_path": [
+      "thresholded persistence exceeds the 5-day MHW definition by months",
+      "cumulative heat load integrates duration and intensity",
+      "intensity and peaks support severity but cannot prove persistence alone",
+      "labels without threshold, duration, or intensity have lowest leverage"
+    ]
+  },
+  "key_values": {
+    "event_name": "2023 global/North Atlantic marine heatwave",
+    "event_region": "Global oceans",
+    "locked_window": {
+      "start_date": "2023-06-01",
+      "end_date": "2023-12-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "source_values": {
+      "global_ocean_any_mhw_percent": 94.0,
+      "warmest_percent_definition": 10.0,
+      "threshold_percentile": 90,
+      "definition_days_min": 5,
+      "regional_duration_months_min": 10,
+      "global_mhw_days": 116,
+      "previous_record_days": 86,
+      "record_warm_months": 7,
+      "peak_global_sst_c": 18.99,
+      "na_sst_anomaly_c": 3.0,
+      "baseline_years": 30,
+      "mean_duration_days": 54,
+      "mean_intensity_c": 0.52,
+      "mean_activity_c_day_km2": 17204,
+      "hotspot_area_pct": 19.9,
+      "hotspot_days_gt": 250,
+      "morocco_days_gt": 300,
+      "gulf_stream_days_around": 100,
+      "max_area_coverage_gt_pct": 60.0,
+      "peak_strong_or_higher_pct": 59.4,
+      "annual_strong_or_higher_pct": 91.7,
+      "annual_severe_or_extreme_pct": 51.5
+    },
+    "derived_values": {
+      "global_ocean_fraction": 0.94,
+      "regional_duration_days_equiv_min": 304.2,
+      "cumulative_degree_days": 28.08,
+      "duration_record_ratio": 1.349,
+      "definition_margin_mean_duration": 10.8,
+      "threshold_month_margin": 60.8
+    }
+  },
+  "ranking_logic": {
+    "scoring_stance": "Rank variables by diagnostic leverage for a persistent marine heatwave conclusion.",
+    "highest_weight": "Thresholded duration has the most direct leverage because it discriminates persistence from a single peak or report label.",
+    "lower_weight": "Peak-only SST and report labels are supporting context, not decisive intermediate variables.",
+    "excluded_evidence": [
+      "OSM",
+      "AOI",
+      "population",
+      "exposure",
+      "rainfall",
+      "dNBR",
+      "embedding_change",
+      "land_surface_proxy"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Returned JSON shape",
+        "points": 4,
+        "description": "Includes answer, target_family, computed_values, variable_scores, ranked_variables, key_variable, rejected_variable, and reasoning_path.",
+        "partial_credit": "Award partial credit for a parseable compact object with minor field-name or nesting errors."
+      },
+      {
+        "name": "Top-ranked variable",
+        "points": 4,
+        "description": "Ranks exceedance_duration first and explains why thresholded persistence is the key diagnostic variable.",
+        "partial_credit": "Award 2 points if duration is discussed but not ranked first; award 1 point for a vague persistence argument."
+      },
+      {
+        "name": "MHW definition anchors",
+        "points": 3,
+        "description": "Uses the 5-day minimum, 90th percentile threshold, and at least 10 months for the regional MHW state.",
+        "partial_credit": "Award 1 point for each correct definition or duration anchor."
+      },
+      {
+        "name": "Integrated calculations",
+        "points": 3,
+        "description": "Computes 28.08 C-day cumulative heat load and 1.349 global MHW-day record ratio.",
+        "partial_credit": "Award 1.5 points for each correct derived value with acceptable rounding."
+      },
+      {
+        "name": "Ocean intensity anchors",
+        "points": 2,
+        "description": "Uses 0.52 C mean MHW intensity, 3.0 C North Atlantic anomaly, and 18.99 C peak global SST as supporting evidence.",
+        "partial_credit": "Award partial credit in proportion to the number of correct ocean intensity anchors."
+      },
+      {
+        "name": "Rejects weak variables",
+        "points": 2,
+        "description": "Ranks peak-only and report-label-only reasoning below thresholded duration and cumulative heat load.",
+        "partial_credit": "Award 1 point if only one weak variable is rejected clearly."
+      },
+      {
+        "name": "Marine-only evidence",
+        "points": 1,
+        "description": "Uses local ocean and heat evidence only, without OSM, AOI, population, exposure, rainfall, dNBR, embedding-change, or land-surface proxies.",
+        "partial_credit": "Award 0.5 point if one irrelevant land proxy is mentioned but not used in the ranking."
+      },
+      {
+        "name": "Units and rounding",
+        "points": 1,
+        "description": "Keeps units, rounding, and ranking order clear enough for deterministic checking.",
+        "partial_credit": "Award 0.5 point for mostly clear units with one minor rounding issue."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_global_North_Atlantic_marine_heatwave.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/other/other_005_03_NOAA_Climate.html.html",
+      "data/other/other_004_02_Copernicus_State_of_the_Planet_-_2023_North_Atlantic_tropical_marine_heatwave.html.html"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-187",
+  "key_values": {
+    "composite_score": 12,
+    "context_population_people": 58882,
+    "event_name": "2023 Canadian wildfires and smoke",
+    "event_window": {
+      "end_date": "2023-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2023-05-01"
+    },
+    "report_metrics": {
+      "alberta_active_fire_count_may_16": 87,
+      "burned_hectares_as_of_may_16": 478000,
+      "burned_square_miles_as_of_may_16": 1800,
+      "goddard_aod_average_may_10": 1.0,
+      "grand_forks_aod_average_may_16": 2.3,
+      "grand_forks_aod_peak_close_to_may_16": 3.0
+    },
+    "score_components": {
+      "fire_source": [
+        {
+          "metric": "burned_hectares_as_of_may_16",
+          "points": 2,
+          "threshold": ">= 400000",
+          "value": 478000
+        },
+        {
+          "metric": "burned_square_miles_as_of_may_16",
+          "points": 1,
+          "threshold": ">= 1500",
+          "value": 1800
+        },
+        {
+          "metric": "alberta_active_fire_count_may_16",
+          "points": 1,
+          "threshold": ">= 80",
+          "value": 87
+        }
+      ],
+      "smoke_load": [
+        {
+          "metric": "goddard_aod_average_may_10",
+          "points": 2,
+          "threshold": ">= 1.0",
+          "value": 1.0
+        },
+        {
+          "metric": "grand_forks_aod_average_may_16",
+          "points": 2,
+          "threshold": ">= 2.0",
+          "value": 2.3
+        },
+        {
+          "metric": "grand_forks_aod_peak_close_to_may_16",
+          "points": 1,
+          "threshold": ">= 3.0",
+          "value": 3.0
+        }
+      ],
+      "surface_change": [
+        {
+          "metric": "sentinel2_dnbr_mean",
+          "points": 1,
+          "threshold": ">= 0.30",
+          "value": 0.355
+        },
+        {
+          "metric": "sentinel2_dnbr_max",
+          "points": 1,
+          "threshold": ">= 1.00",
+          "value": 1.417
+        },
+        {
+          "metric": "annual_embedding_pair",
+          "points": 1,
+          "threshold": "mean < 0.10 and max >= 0.75",
+          "value": {
+            "max_change": 0.792,
+            "mean_change": 0.045
+          }
+        }
+      ]
+    },
+    "scores": {
+      "fire_source": 4,
+      "smoke_load": 5,
+      "surface_change": 3
+    },
+    "surface_metrics": {
+      "annual_embedding_max_change": 0.792,
+      "annual_embedding_mean_change": 0.045,
+      "sentinel2_dnbr_max": 1.417,
+      "sentinel2_dnbr_mean": 0.355
+    },
+    "thresholds": {
+      "alberta_active_fire_count_may_16": ">= 80 for 1 point",
+      "annual_embedding_pair": "mean < 0.10 and max >= 0.75 for 1 point",
+      "burned_hectares_as_of_may_16": ">= 400000 for 2 points",
+      "burned_square_miles_as_of_may_16": ">= 1500 for 1 point",
+      "goddard_aod_average_may_10": ">= 1.0 for 2 points",
+      "grand_forks_aod_average_may_16": ">= 2.0 for 2 points",
+      "grand_forks_aod_peak_close_to_may_16": ">= 3.0 for 1 point",
+      "sentinel2_dnbr_max": ">= 1.00 for 1 point",
+      "sentinel2_dnbr_mean": ">= 0.30 for 1 point"
+    },
+    "top_score_family": "smoke_load"
+  },
+  "primary_gt": {
+    "answer": "smoke_load_5_fire_source_4_surface_change_3_composite_12",
+    "decision_rule": "Use the highest family score; ties break smoke_load, fire_source, surface_change.",
+    "expected_object": {
+      "composite_score": 12,
+      "context_population_people": 58882,
+      "fire_source_score": 4,
+      "smoke_load_score": 5,
+      "surface_change_score": 3,
+      "top_score_family": "smoke_load"
+    },
+    "population_tolerance": 1,
+    "score_tolerance": 0,
+    "top_score_family": "smoke_load"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Canadian_wildfires_and_smoke.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields and includes the canonical ledger values.",
+        "name": "output_schema_and_canonical_answer",
+        "partial_credit": "Give 1-2 points for a mostly complete object with one missing or mislabeled field.",
+        "points": 3
+      },
+      {
+        "description": "Reports AOD values of 1.0, 2.3, and about 3.0, applies the three thresholds correctly, and computes smoke_load_score = 5.",
+        "name": "smoke_load_extraction_and_scoring",
+        "partial_credit": "Give 2-4 points for correct values with one threshold or arithmetic error.",
+        "points": 5
+      },
+      {
+        "description": "Reports 478000 hectares, 1800 square miles, and 87 active fires, applies the thresholds, and computes fire_source_score = 4.",
+        "name": "fire_source_extraction_and_scoring",
+        "partial_credit": "Give 2-3 points for using two correct anchors or for a minor unit or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Reports mean dNBR about 0.355, maximum dNBR about 1.417, annual embedding mean about 0.045, and annual embedding maximum about 0.792, then computes surface_change_score = 3.",
+        "name": "surface_change_extraction_and_scoring",
+        "partial_credit": "Give 1-2 points for correct dNBR scoring but incomplete annual embedding scoring.",
+        "points": 3
+      },
+      {
+        "description": "Computes composite_score = 12 and identifies top_score_family = smoke_load without invoking the tie rule.",
+        "name": "composite_arithmetic_and_top_family",
+        "partial_credit": "Give 1-2 points for the right top family with an arithmetic error, or the right composite with a wrong family label.",
+        "points": 3
+      },
+      {
+        "description": "Rounds the compact population sum to 58882 people and gives only a short interpretation tied to the ledger.",
+        "name": "population_context_and_concise_interpretation",
+        "partial_credit": "Give 1 point for a nearby population value or for an interpretation that is longer than needed but still tied to the scores.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-187_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-320_Q2",
+  "event_id": "CSX-320",
+  "target_family": "mendenhall_glof_release_precip_radar_gate_consistency",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "mendenhall_glof_release_precip_radar_gate_pass",
+    "target_family": "mendenhall_glof_release_precip_radar_gate_consistency",
+    "metrics": {
+      "release_mcm": 55.267,
+      "crest_excess_ft": 1.02,
+      "flow_floor_m3s": 934.456,
+      "precip_mean_max_mm": 0.1239,
+      "radar_span_db": 42.9976,
+      "coverage_balance": 0.6
+    },
+    "gates": {
+      "release_gate": true,
+      "river_gate": true,
+      "rainfall_guardrail": true,
+      "radar_context_gate": true
+    },
+    "computed_consequence": "rainfall_trigger_rejected_release_gate_passes",
+    "tolerances": {
+      "release_mcm": 0.001,
+      "crest_excess_ft": 0.01,
+      "flow_floor_m3s": 0.001,
+      "precip_mean_max_mm": 0.0001,
+      "radar_span_db": 0.0001,
+      "coverage_balance": 0.0001
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 4,
+        "description": "Returns compact JSON with target_family, metrics, gates, answer, and computed_consequence."
+      },
+      {
+        "name": "Numeric anchors and formulas",
+        "points": 5,
+        "description": "Computes release volume in MCM, crest excess, flow floor in m3/s, precipitation maximum, radar span, and coverage balance with correct units."
+      },
+      {
+        "name": "Threshold gates",
+        "points": 4,
+        "description": "Applies the release, river, rainfall guardrail, and radar context gates using the stated inequalities and reaches the correct answer label."
+      },
+      {
+        "name": "Component reasoning",
+        "points": 3,
+        "description": "Shows how the conversion, difference, maximum, span, and balance calculations were derived from event-package values rather than listing raw numbers only."
+      },
+      {
+        "name": "Computed rejection",
+        "points": 2,
+        "description": "Rejects rainfall trigger dominance from the below-1 mm precipitation guardrail while the release and river gates pass."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 1,
+        "description": "Keeps the computed consequence short and tied to the gates."
+      },
+      {
+        "name": "No overreach",
+        "points": 1,
+        "description": "Avoids treating radar context, annual surface change, population context, or amenity counts as loss accounting."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-320",
+    "event_name": "Mendenhall Glacier outburst flood",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date_or_window": "2024-08-06"
+  },
+  "decision_rule": {
+    "summary": "All four gates must pass: release volume above 50 MCM, river crest and flow above thresholds, event-window precipitation below 1 mm with missing daily mean, and usable pre/post radar context.",
+    "formulas": {
+      "release_mcm": "release_billion_gal * 3.785411784",
+      "crest_excess_ft": "reported_crest_ft - previous_record_crest_ft",
+      "flow_floor_m3s": "reported_streamflow_floor_cfs * 0.028316846592",
+      "precip_mean_max_mm": "max(reanalysis_mean_mm, satellite_mean_mm, daily_mean_mm_or_zero)",
+      "radar_span_db": "vv_change_max_db - vv_change_min_db",
+      "coverage_balance": "min(pre_count, post_count) / max(pre_count, post_count)"
+    },
+    "thresholds": {
+      "release_gate": "release_mcm >= 50",
+      "river_gate": "crest_excess_ft >= 1.0 and flow_floor_m3s >= 900",
+      "rainfall_guardrail": "precip_mean_max_mm < 1.0 and daily precipitation mean is missing",
+      "radar_context_gate": "pre_count >= 5 and post_count >= 5 and radar_span_db >= 20 and coverage_balance >= 0.5"
+    }
+  },
+  "key_values": {
+    "report_anchors": {
+      "release_billion_gal": 14.6,
+      "reported_crest_ft": 15.99,
+      "previous_record_crest_ft": 14.97,
+      "streamflow_floor_cfs": 33000.0
+    },
+    "precipitation_means_mm": {
+      "reanalysis": 9.7e-05,
+      "satellite": 0.12393,
+      "daily_is_missing": true
+    },
+    "radar_inputs": {
+      "pre_count": 10,
+      "post_count": 6,
+      "min_db": -21.9947,
+      "max_db": 21.0028
+    }
+  },
+  "numeric_tolerances": {
+    "release_mcm": {
+      "target": 55.267,
+      "absolute_tolerance": 0.001
+    },
+    "crest_excess_ft": {
+      "target": 1.02,
+      "absolute_tolerance": 0.01
+    },
+    "flow_floor_m3s": {
+      "target": 934.456,
+      "absolute_tolerance": 0.001
+    },
+    "precip_mean_max_mm": {
+      "target": 0.1239,
+      "absolute_tolerance": 0.0001
+    },
+    "radar_span_db": {
+      "target": 42.9976,
+      "absolute_tolerance": 0.0001
+    },
+    "coverage_balance": {
+      "target": 0.6,
+      "absolute_tolerance": 0.0001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Mendenhall_Glacier_outburst_flood.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "Deterministic local-file calculation with fixed formulas and numeric tolerances."
+  }
+}

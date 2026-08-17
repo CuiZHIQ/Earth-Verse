@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-071_Q1",
+  "event_id": "CSX-071",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "central_park_hour_mm_per_h": 88.138,
+    "regional_peak_lower_bound_mm": 254.0,
+    "central_hour_to_regional_ratio": 0.347,
+    "gridded": {
+      "era5_land": {
+        "max_to_mean_ratio": 2.519,
+        "central_hour_to_grid_max_ratio": 0.693
+      },
+      "gpm_imerg": {
+        "max_to_mean_ratio": 2.574,
+        "central_hour_to_grid_max_ratio": 0.644
+      },
+      "chirps": {
+        "max_to_mean_ratio": 2.065,
+        "central_hour_to_grid_max_ratio": 0.754
+      }
+    },
+    "final_label": "short_duration_urban_rainfall_burst",
+    "interpretation": "The Central Park one-hour intensity is large enough relative to event-scale gridded maxima to anchor the NYC diagnosis in a local hourly burst, while the broader maxima provide scale context."
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2021-09-01",
+      "end_date": "2021-09-02"
+    },
+    "central_park_record": {
+      "inches": 3.47,
+      "mm": 88.138,
+      "window": "7:51 and 8:51 pm",
+      "date": "2021-09-01"
+    },
+    "regional_peak_lower_bound": {
+      "inches": 10.0,
+      "phrase": "just above",
+      "mm": 254.0
+    },
+    "gridded_raw": {
+      "era5_land": {
+        "max_mm": 127.15556569531827,
+        "mean_mm": 50.47489524891448,
+        "max_to_mean_ratio": 2.5191843404182777,
+        "central_hour_to_grid_max_ratio": 0.69315094088127
+      },
+      "gpm_imerg": {
+        "max_mm": 136.88849873002619,
+        "mean_mm": 53.17665586199258,
+        "max_to_mean_ratio": 2.574221648786789,
+        "central_hour_to_grid_max_ratio": 0.6438670948815595
+      },
+      "chirps": {
+        "max_mm": 116.95662689208984,
+        "mean_mm": 56.63037213939392,
+        "max_to_mean_ratio": 2.065263258454398,
+        "central_hour_to_grid_max_ratio": 0.7535956049871431
+      }
+    },
+    "tolerances": {
+      "precip_mm": 0.01,
+      "ratio": 0.01
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON answer",
+        "points": 4,
+        "description": "Returns the requested compact JSON with the local hourly value, regional lower bound, regional ratio, all three gridded entries, final label, and one-sentence interpretation.",
+        "partial_credit": "Minor field-name or nesting differences are acceptable when every required value and conclusion is present."
+      },
+      {
+        "name": "Central Park hourly conversion",
+        "points": 4,
+        "description": "Computes 3.47 inches as 88.138 mm and reports the one-hour intensity as 88.138 mm/h for September 1, 2021.",
+        "partial_credit": "Credit is reduced for coarse rounding, missing units, or omitting the one-hour intensity statement."
+      },
+      {
+        "name": "Regional lower-bound ratio",
+        "points": 3,
+        "description": "Computes 10 inches as 254.0 mm and the Central Park-hour to regional lower-bound ratio as 0.347.",
+        "partial_credit": "Partial credit is earned for one correct value or a correct setup with a small arithmetic error."
+      },
+      {
+        "name": "Gridded max-to-mean ratios",
+        "points": 4,
+        "description": "Computes ERA5-Land, GPM IMERG, and CHIRPS max-to-mean ratios as 2.519, 2.574, and 2.065 within tolerance.",
+        "partial_credit": "Partial credit is earned when two sources are correct or all sources are attempted with small calculation errors."
+      },
+      {
+        "name": "Local-hour to grid-maximum ratios",
+        "points": 3,
+        "description": "Computes Central Park-hour to grid-maximum ratios as 0.693, 0.644, and 0.754 for ERA5-Land, GPM IMERG, and CHIRPS.",
+        "partial_credit": "Partial credit is earned when two ratios are correct or all three are directionally correct but outside tolerance."
+      },
+      {
+        "name": "Computed final interpretation",
+        "points": 2,
+        "description": "Identifies the final label as short_duration_urban_rainfall_burst or an equivalent concise label tied to the conversions and scale ratios.",
+        "partial_credit": "Partial credit is earned for a directionally correct label that is too wordy or insufficiently tied to the computed values."
+      }
+    ]
+  },
+  "event": {
+    "event_name": "Post-Tropical Cyclone Ida NYC flash flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2021-09-01 to 2021-09-02"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_package_json.evidence_inventory.reports_0_.url.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Post-Tropical_Cyclone_Ida_NYC_flash_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

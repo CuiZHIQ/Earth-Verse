@@ -1,0 +1,122 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-278",
+  "formulas": {
+    "coupled_persistence_score": "coupled_months / event_months",
+    "people_ratio_min": "20000000 / compact_aoi_population",
+    "short_slice_fraction": "inclusive_short_precipitation_days / inclusive_event_days"
+  },
+  "key_values": {
+    "classification": "sustained_coupled_event",
+    "compact_aoi_population": 4982987.813,
+    "event_days": 942,
+    "event_name": "2020-2023 triple-dip La Nina and Horn of Africa drought",
+    "event_window": "2020-09-01 to 2023-03-31",
+    "food_insecure_millions_floor": 20.0,
+    "location": "Southern Ethiopia, Somalia and eastern Kenya",
+    "oni_threshold": -0.5,
+    "short_slice_days": 46,
+    "strong_oni_threshold": -0.8,
+    "strong_soi_threshold": 0.7
+  },
+  "numeric_tolerances": {
+    "cold_oni_months": {
+      "absolute_tolerance": 0,
+      "target": 25
+    },
+    "coupled_months": {
+      "absolute_tolerance": 0,
+      "target": 25
+    },
+    "coupled_persistence_score": {
+      "absolute_tolerance": 0.001,
+      "target": 0.806
+    },
+    "event_months": {
+      "absolute_tolerance": 0,
+      "target": 31
+    },
+    "people_ratio_min": {
+      "absolute_tolerance": 0.01,
+      "target": 4.014
+    },
+    "positive_soi_months": {
+      "absolute_tolerance": 0,
+      "target": 31
+    },
+    "short_slice_fraction": {
+      "absolute_tolerance": 0.001,
+      "target": 0.049
+    },
+    "strong_coupled_months": {
+      "absolute_tolerance": 0,
+      "target": 14
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "cold_oni_months": 25,
+      "coupled_months": 25,
+      "coupled_persistence_score": 0.806,
+      "event_months": 31,
+      "people_ratio_min": 4.014,
+      "positive_soi_months": 31,
+      "short_slice_fraction": 0.049,
+      "strong_coupled_months": 14
+    },
+    "calculation_note": "The ledger uses 25/31 for coupled persistence, 46/942 for the short precipitation slice, and 20000000/4982987.813 for the people-scale ratio.",
+    "classification": "sustained_coupled_event"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_anchor_WMO.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2020-2023_triple-dip_La_Nina_and_Horn_of_Africa_drought.json",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_010_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with the requested numeric fields, classification, and formula note.",
+        "name": "Ledger structure",
+        "points": 3
+      },
+      {
+        "description": "Reports 31 event months, 25 cold ONI months, 31 positive SOI months, and 25 coupled months.",
+        "name": "Monthly threshold counts",
+        "points": 5
+      },
+      {
+        "description": "Reports 14 strong coupled months and computes the persistence score as 25/31 = 0.806.",
+        "name": "Strong coupling and score",
+        "points": 4
+      },
+      {
+        "description": "Uses inclusive dates to compute 46/942 = 0.049 for the precipitation-slice fraction.",
+        "name": "Short-slice fraction",
+        "points": 3
+      },
+      {
+        "description": "Computes the minimum regional-to-compact-population ratio as 20000000/4982987.813 = 4.014.",
+        "name": "People-scale ratio",
+        "points": 3
+      },
+      {
+        "description": "Keeps month counts as integers and rounds derived fractions or ratios to three decimals with clear units.",
+        "name": "Rounding and units",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "enso_coupling_threshold_ledger",
+  "task_id": "CSX-278_Q2",
+  "task_type": "numeric"
+}

@@ -1,0 +1,124 @@
+{
+  "disaster_interpretation_gt": {
+    "forbidden_overclaims": [
+      "treating the ratio as a transferable predictive law for other fjords",
+      "claiming exact casualties, building losses, or evacuation success from this calculation alone",
+      "downgrading the event to only a terrestrial rockslide response problem"
+    ],
+    "must_mention": [
+      "deglaciated or glacier-adjacent slope instability",
+      "direct water entry or fjord coupling",
+      "runup or shoreline evacuation/reconnaissance priority"
+    ],
+    "required_stance": "A very high runup produced by direct entry of a massive deglaciated-slope failure into fjord water should make fjord-margin tsunami runup the lead emergency priority."
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-313",
+  "key_values": {
+    "event_date": "2015-10-17",
+    "event_location": "Taan Fiord / Tyndall Glacier",
+    "event_name": "Taan Fiord glacier-adjacent landslide tsunami",
+    "landslide_rock_mass_million_tons": 180.0,
+    "maximum_tsunami_runup_m": 193.0,
+    "reciprocal_mass_loading_raw_million_tons_per_m": 0.9326424870466321,
+    "runup_efficiency_raw_m_per_million_tons": 1.0722222222222222,
+    "severity_label": "high_priority_fjord_tsunami_runup_hazard"
+  },
+  "numeric_tolerances": {
+    "reciprocal_mass_loading_million_tons_per_m": {
+      "absolute_tolerance": 0.02,
+      "accepted_rounding": "0.93, or an unrounded value from 0.913 to 0.953",
+      "expected": 0.93,
+      "raw": 0.9326424870466321,
+      "units": "million tons per m"
+    },
+    "runup_efficiency_m_per_million_tons": {
+      "absolute_tolerance": 0.02,
+      "accepted_rounding": "1.07, or an unrounded value from 1.052 to 1.092",
+      "expected": 1.07,
+      "raw": 1.0722222222222222,
+      "units": "m per million tons"
+    }
+  },
+  "primary_gt": {
+    "accepted_formats": [
+      "compact JSON with numeric fields and interpretation",
+      "short prose that states both numbers with units and the response-priority interpretation"
+    ],
+    "answer": {
+      "interpretation": "high_priority_fjord_tsunami_runup_hazard",
+      "reciprocal_mass_loading_million_tons_per_m": 0.93,
+      "runup_efficiency_m_per_million_tons": 1.07
+    },
+    "answer_type": "numeric_pair_with_concise_disaster_interpretation"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Taan_Fiord_glacier-adjacent_landslide_tsunami.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html"
+    ]
+  },
+  "python_derived_calculation_notes": {
+    "formulas": {
+      "reciprocal_mass_loading_million_tons_per_m": "mass_million_tons / runup_m",
+      "runup_efficiency_m_per_million_tons": "runup_m / mass_million_tons"
+    },
+    "intermediate_values": {
+      "mass_million_tons": 180.0,
+      "runup_m": 193.0
+    },
+    "source_extraction": "Parsed the local report description for the rock mass and maximum runup values."
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports both target ratios: runup-to-mass efficiency of 1.07 m per million tons within 0.02 and reciprocal mass loading of 0.93 million tons per meter within 0.02.",
+        "name": "final_numeric_answer",
+        "partial_credit": "Award 2.5 points for each correct numeric ratio within tolerance. Give up to half of each ratio's credit for a correctly formulated but misrounded value just outside tolerance.",
+        "points": 5
+      },
+      {
+        "description": "Identifies the 193 m maximum runup and 180 million tons landslide mass, applies runup_m / mass_million_tons, and applies mass_million_tons / runup_m.",
+        "name": "calculation_trace",
+        "partial_credit": "Award partial credit for identifying only one source value, using only one of the two formulas, or showing a traceable calculation with a minor arithmetic slip.",
+        "points": 4
+      },
+      {
+        "description": "States units for both ratios, keeps meters per million tons separate from million tons per meter, and does not invert the labels.",
+        "name": "unit_handling",
+        "partial_credit": "Award partial credit when units are mostly clear but abbreviated, or when one ratio is labeled correctly and the other is implicit. Withhold most credit if the ratios are inverted.",
+        "points": 3
+      },
+      {
+        "description": "Connects glacier-adjacent or deglaciated slope instability, direct entry into fjord water, wave generation, and extreme shoreline runup.",
+        "name": "physical_mechanism",
+        "partial_credit": "Award partial credit for mentioning some but not all stages of the chain, such as slope failure and runup without explaining direct fjord-water coupling.",
+        "points": 4
+      },
+      {
+        "description": "Explains that fjord-margin evacuation exposure, runup reconnaissance, shoreline access control, or similar emergency priorities should be elevated.",
+        "name": "operational_interpretation",
+        "partial_credit": "Award 1 point for a generic high-priority response statement that lacks specific fjord-margin, runup, reconnaissance, or shoreline-control implications.",
+        "points": 2
+      },
+      {
+        "description": "Avoids presenting the signature as a universal forecast model or as proof of exact casualties, losses, or evacuation performance.",
+        "name": "overclaim_control",
+        "partial_credit": "No partial credit unless the answer is mostly cautious but includes one minor unsupported extrapolation.",
+        "points": 1
+      },
+      {
+        "description": "Returns the two rounded metrics and a concise disaster interpretation in a clear, compact format.",
+        "name": "response_structure",
+        "partial_credit": "No partial credit unless the response contains the required elements but is mildly disorganized or verbose.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-313_Q2",
+  "task_type": "numeric"
+}

@@ -1,0 +1,153 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_name": "2019-2020 Australian Black Summer heat-drought-fire-smoke event",
+    "event_period": "2019-09-01 to 2020-02-29",
+    "hazard_family": "compound_cascading_events",
+    "package_id": "CSX-254"
+  },
+  "event_id": "CSX-254",
+  "key_values": {
+    "annual_max": 0.494,
+    "annual_mean": 0.028,
+    "burn_post_end": "2019-11-30",
+    "class_label": "strong smoke-fire consistency with incomplete-season burn period",
+    "components": {
+      "B": 2,
+      "G": -1,
+      "R": 3,
+      "S": 1,
+      "T": 1,
+      "V": 2
+    },
+    "delta_gray": 144.023,
+    "delta_texture": 20.814,
+    "dnbr_max": 0.974,
+    "dnbr_mean": 0.156,
+    "dnbr_min": -1.074,
+    "event_end": "2020-02-29",
+    "gap_days": 91,
+    "gray_event": 215.256,
+    "gray_pre": 71.233,
+    "score": 8,
+    "text_flag_evidence": {
+      "late_outbreak_dates": [
+        "2019-12-29",
+        "2020-01-04",
+        "2020-01-06"
+      ],
+      "long_range_transport": "satellite. While the visualization shows long, thin plumes of smoke stretching across the Pacific Ocean, the clouds (small, shaded areas) detected were all lower than 14 kilometers (8 miles). In the natural-color image, sunglint caused by the reflection of light left bright areas at regular intervals. The photograph below from the International Space Station shows extreme fire activity on January 4, 2020. When volcanic plumes reach the stratosphere, they are closely watched by scientists because they can cause widespread atmospheric cooling in the months after the eruption. Wildfire smoke has a different composition\u2014more sooty black carbon than sulfates, for instance\u2014so the consequences for weather and climate are not as well understood. Smoke this high in the atmosphere also may have effects on the chemistry of stratospheric ozone . Smoke that reaches the stratosphere generally stays there for several months, traveling thousands of kilometers from its source. Since the recent outburst of fire clouds, many different satellite sensors have collected images of vast plumes crossing the Pacific. \u201cNASA is currently tracking the movement of smoke from the Australian fires using several sensors,\u201d said Colin Seftor , a scientist at NASA Goddard Space Flight Center. \u201cThe smoke had a dramatic impact on New Zealand, causing severe air quality issues across the county and visibly darkening mountaintop snow. Beyond New Zealand, the smoke has now travelled more than halfway around the Earth, crossing South America, turning the skies hazy, and causing colorful sunrises and sunsets. It is expected to make at least one full circuit, r",
+      "pyro_or_firestorm": "ital Camera Suomi NPP \u2014 VIIRS Topics: Droughts Heat & Radiation Wildfires January 6, 2020 Pyrocumulonimbus . Fire clouds. Flammagenitus . Fire-breathing dragon of clouds . There are several terms for the towering clouds that o",
+      "smoke": "Image of the Day for January 10, 2020 Fires are burning so fiercely that they are lofting smoke to unusual heights. NASA Earth Observatory Jan 10, 2020 Article View more Images of the Day: Jan 9, 2020 Jan 11, 2020 I",
+      "stratosphere": "g between 15 to 19 kilometers (9 to 12 miles) on January 6, 2020\u2014high enough to reach the stratosphere . \u201cIt is premature to compare and rank the height of this plume with others because smoke plumes like this rise in alti"
+    },
+    "text_flags": {
+      "late_outbreak_dates": true,
+      "long_range_transport": true,
+      "pyro_or_firestorm": true,
+      "smoke": true,
+      "stratosphere": true
+    },
+    "texture_event": 28.625,
+    "texture_pre": 49.439
+  },
+  "primary_gt": {
+    "class_label": "strong smoke-fire consistency with incomplete-season burn period",
+    "components": {
+      "B": 2,
+      "G": -1,
+      "R": 3,
+      "S": 1,
+      "T": 1,
+      "V": 2
+    },
+    "one_line_diagnosis": "Bright smoke-season imagery, local burn-change statistics, and report text agree on a strong fire-smoke signal, while the burn raster period ends before the late-season outbreaks.",
+    "score": 8,
+    "tolerance": 0,
+    "values": {
+      "annual_mean": 0.028,
+      "burn_post_end": "2019-11-30",
+      "delta_gray": 144.023,
+      "delta_texture": 20.814,
+      "dnbr_max": 0.974,
+      "dnbr_mean": 0.156,
+      "dnbr_min": -1.074,
+      "event_end": "2020-02-29",
+      "gap_days": 91,
+      "gray_event": 215.256,
+      "gray_pre": 71.233,
+      "text_flags": {
+        "late_outbreak_dates": true,
+        "long_range_transport": true,
+        "pyro_or_firestorm": true,
+        "smoke": true,
+        "stratosphere": true
+      },
+      "texture_event": 28.625,
+      "texture_pre": 49.439
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_heat-drought-fire-smoke_event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_004_pre.jpg",
+      "data/remote_sensing/remote_sensing_005_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports score 8 with the exact top class label.",
+        "name": "Final numeric target",
+        "partial_credit": "Award up to 2 points for the right class with an arithmetic slip.",
+        "points": 4
+      },
+      {
+        "description": "Uses dnbr_mean 0.156, dnbr_max 0.974, dnbr_min -1.074, and annual_mean 0.028.",
+        "name": "Burn and annual extraction",
+        "partial_credit": "Award proportional credit for correctly extracted values.",
+        "points": 4
+      },
+      {
+        "description": "Computes gray and texture metrics for both images plus deltas 144.023 and 20.814.",
+        "name": "Image calculation",
+        "partial_credit": "Award proportional credit for correct formulas with minor rounding drift.",
+        "points": 3
+      },
+      {
+        "description": "Applies B=2, V=2, T=1, G=-1, R=3, S=1 and sums them to 8.",
+        "name": "Ledger arithmetic",
+        "partial_credit": "Award proportional credit for correct component scoring.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 91-day gap from 2019-11-30 to 2020-02-29 and applies G=-1.",
+        "name": "Date calculation",
+        "partial_credit": "Award 1 point for the correct dates with an arithmetic slip.",
+        "points": 2
+      },
+      {
+        "description": "Finds all five text flags with report-text evidence and assigns R=3.",
+        "name": "Text-flag parsing",
+        "partial_credit": "Award 1 point for four correct flags.",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON with three-decimal numeric anchors and exact dates.",
+        "name": "Structured numeric output",
+        "partial_credit": "Award 0.5 for complete values in a less tidy structure.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "fire_smoke_numeric_consistency",
+  "task_id": "CSX-254_Q2",
+  "task_type": "numeric"
+}

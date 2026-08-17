@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-186_Q1",
+  "event_id": "CSX-186",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "numeric_threshold_ledger",
+    "answer": "rapid_growth_burn_signal_pass",
+    "growth_increase_acres": 140000,
+    "growth_multiplier": 5.67,
+    "pulse_to_ten_day_rate_ratio": 7.37,
+    "containment_gap_pct_points": 85,
+    "dnbr_excess_over_high_threshold": 0.0409,
+    "annual_change_peak_to_mean_ratio": 25.57
+  },
+  "key_values": {
+    "event_name": "2020 Cameron Peak and East Troublesome fires",
+    "event_location": "Colorado Rocky Mountains",
+    "event_window": {
+      "start_date": "2020-08-13",
+      "end_date": "2020-12-02",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "raw_values": {
+      "growth_start_acres": 30000,
+      "growth_end_acres": 170000,
+      "east_troublesome_acres_within_ten_days_min": 190000,
+      "containment_percent_oct_26": 15,
+      "dnbr_max": 0.7008767967293026,
+      "dnbr_mean": -0.006181328940404897,
+      "annual_change_max": 0.6702516677331538,
+      "annual_change_mean": 0.02621332373839775
+    },
+    "thresholds": {
+      "growth_increase_acres_min": 100000,
+      "pulse_to_ten_day_rate_ratio_min": 5,
+      "containment_gap_pct_points_min": 80,
+      "dnbr_high_threshold": 0.66,
+      "annual_change_peak_to_mean_ratio_min": 20
+    },
+    "pass_tests": {
+      "growth_increase_acres_gte_100000": true,
+      "pulse_to_ten_day_rate_ratio_gte_5": true,
+      "containment_gap_pct_points_gte_80": true,
+      "dnbr_excess_over_high_threshold_gt_0": true,
+      "annual_change_peak_to_mean_ratio_gte_20": true
+    },
+    "tolerances": {
+      "growth_increase_acres": 5000,
+      "growth_multiplier": 0.02,
+      "pulse_to_ten_day_rate_ratio": 0.05,
+      "containment_gap_pct_points": 2,
+      "dnbr_excess_over_high_threshold": 0.001,
+      "annual_change_peak_to_mean_ratio": 0.1
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final_json_and_label",
+        "points": 3,
+        "description": "Returns the requested compact JSON and the label rapid_growth_burn_signal_pass.",
+        "partial_credit": "Award 1-2 points for the right label in prose or a JSON object with missing keys."
+      },
+      {
+        "name": "acreage_pulse_arithmetic",
+        "points": 4,
+        "description": "Extracts 30,000 and 170,000 acres and computes the 140,000-acre increase.",
+        "partial_credit": "Award 2-3 points for the right values with minor rounding or transcription errors, or 1 point for only one acreage anchor."
+      },
+      {
+        "name": "growth_rate_and_containment_checks",
+        "points": 4,
+        "description": "Computes the 5.67 multiplier, 7.37 pulse-to-ten-day ratio, and 85 percentage-point containment gap.",
+        "partial_credit": "Award 2-3 points for two correct quantities, or 1 point for one correct quantity."
+      },
+      {
+        "name": "image_metric_calculations",
+        "points": 4,
+        "description": "Computes dNBR excess as 0.0409 and annual-change peak-to-mean ratio as 25.57.",
+        "partial_credit": "Award 2-3 points for one correct image-derived quantity or a correct threshold sign with rough rounding."
+      },
+      {
+        "name": "threshold_ledger_decision",
+        "points": 3,
+        "description": "Applies all five pass tests and explains why the label passes.",
+        "partial_credit": "Award 1-2 points for a correct conclusion with an incomplete threshold ledger."
+      },
+      {
+        "name": "concise_computed_interpretation",
+        "points": 2,
+        "description": "Keeps the interpretation tied to computed growth and burn-signal values without adding direct loss, health, or later-flow quantities.",
+        "partial_credit": "Award 1 point for a mostly numeric interpretation with one extra claim not established by the ledger."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_Cameron_Peak_and_East_Troublesome_fires.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  }
+}

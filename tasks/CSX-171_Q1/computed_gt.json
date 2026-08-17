@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-171_Q1",
+  "event_id": "CSX-171",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "numeric_diagnosis",
+  "primary_gt": {
+    "answer": "extreme_drought_threshold_consistent",
+    "palau_observed_fraction": 0.267,
+    "palau_deficit_fraction": 0.733,
+    "palau_deficit_mm": 558.8,
+    "water_source_stress_score": 1.0,
+    "local_window_coverage_fraction": 0.126,
+    "precip_product_range_pct": 37.37,
+    "threshold_result": "pass_observed_le_one_third_and_deficit_ge_two_thirds"
+  },
+  "event": {
+    "event_name": "2015-2016 El Nino drought impacts across the tropical Pacific and global tropics",
+    "hazard_family": "drought_agricultural_stress",
+    "event_date_or_window": "2015-06-01 to 2016-05-31"
+  },
+  "key_values": {
+    "palau_rainfall_ledger": {
+      "observed_rain_in": 8.0,
+      "below_average_in": 22.0,
+      "normal_rain_in": 30.0,
+      "observed_mm": 203.2,
+      "deficit_mm": 558.8,
+      "normal_mm": 762.0,
+      "observed_fraction": 0.26666666666666666,
+      "deficit_fraction": 0.7333333333333333,
+      "observed_pct_normal": 26.666666666666668,
+      "deficit_pct_normal": 73.33333333333333
+    },
+    "thresholds": {
+      "observed_fraction_max": 0.3333333333333333,
+      "deficit_fraction_min": 0.6666666666666667,
+      "threshold_pass": true
+    },
+    "water_source_proxy": {
+      "dam_dry_flag": true,
+      "other_drinking_water_source_very_low_flag": true,
+      "stress_flags": 2,
+      "water_source_stress_score": 1.0
+    },
+    "window_ledger": {
+      "event_start": "2015-06-01",
+      "event_end": "2016-05-31",
+      "event_days_inclusive": 366,
+      "local_start": "2015-06-01",
+      "local_end": "2015-07-16",
+      "local_days_inclusive": 46,
+      "coverage_fraction": 0.12568306010928962,
+      "coverage_pct": 12.568306010928962
+    },
+    "precipitation_spread": {
+      "mean_products_mm": {
+        "era5_land_mm": 189.52,
+        "gpm_imerg_mm": 275.1,
+        "chirps_mm": 222.49
+      },
+      "ensemble_mean_mm": 229.03754489214623,
+      "range_mm": 85.58452283922699,
+      "range_pct_of_mean": 37.36702769824429,
+      "max_to_min_ratio": 1.451587652847265
+    }
+  },
+  "numeric_tolerances": {
+    "palau_observed_fraction": {
+      "expected": 0.267,
+      "absolute_tolerance": 0.01
+    },
+    "palau_deficit_fraction": {
+      "expected": 0.733,
+      "absolute_tolerance": 0.01
+    },
+    "palau_deficit_mm": {
+      "expected": 558.8,
+      "absolute_tolerance": 1.0,
+      "units": "mm"
+    },
+    "water_source_stress_score": {
+      "expected": 1.0,
+      "absolute_tolerance": 0.0
+    },
+    "local_window_coverage_fraction": {
+      "expected": 0.126,
+      "absolute_tolerance": 0.005
+    },
+    "precip_ensemble_mean_mm": {
+      "expected": 229.04,
+      "absolute_tolerance": 0.1,
+      "units": "mm"
+    },
+    "precip_range_mm": {
+      "expected": 85.58,
+      "absolute_tolerance": 0.1,
+      "units": "mm"
+    },
+    "precip_product_range_pct": {
+      "expected": 37.37,
+      "absolute_tolerance": 0.1,
+      "units": "percent"
+    }
+  },
+  "decision_rule": {
+    "classification": "extreme_drought_threshold_consistent",
+    "rule": "Pass when observed_fraction <= 1/3, deficit_fraction >= 2/3, and water_source_stress_score equals 1.0; report local precipitation spread separately.",
+    "required_output_fields": [
+      "answer",
+      "palau_deficit",
+      "water_source_stress_score",
+      "local_window",
+      "precipitation_spread",
+      "interpretation"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "answer_schema",
+        "points": 4,
+        "description": "Returns the requested compact JSON with answer, palau_deficit, water_source_stress_score, local_window, precipitation_spread, and interpretation.",
+        "partial_credit": "Award 2-3 points if all required information is present but not valid JSON; award 1 point for a prose summary with some required values."
+      },
+      {
+        "name": "palau_deficit_calculation",
+        "points": 5,
+        "description": "Correctly computes normal_rain_in = 30, observed_fraction = 0.267, deficit_fraction = 0.733, and deficit_mm = 558.8.",
+        "partial_credit": "Award up to 3 points for correct formulas with one arithmetic or rounding error; award up to 2 points for identifying the 8 inch and 22 inch inputs without all derived values."
+      },
+      {
+        "name": "threshold_and_water_proxy",
+        "points": 4,
+        "description": "Correctly applies the two-part drought threshold and reports threshold_pass = true, then computes water_source_stress_score = 1.0 from two stressed drinking-water flags.",
+        "partial_credit": "Award 2 points for the threshold result alone and 1-2 points for a partially correct water-source proxy."
+      },
+      {
+        "name": "window_and_precipitation_ledger",
+        "points": 4,
+        "description": "Correctly reports event_days = 366, local_days = 46, coverage_fraction = 0.126, ensemble_mean_mm = 229.04, range_mm = 85.58, and range_pct_of_mean = 37.37.",
+        "partial_credit": "Award up to 2 points for correct window arithmetic and up to 2 points for correct precipitation-product arithmetic."
+      },
+      {
+        "name": "numeric_reasoning_consistency",
+        "points": 2,
+        "description": "Explains that the Palau deficit and water-source proxy drive the drought-stress classification while the 46-day product spread is a local numeric check.",
+        "partial_credit": "Award 1 point for a correct but terse interpretation."
+      },
+      {
+        "name": "claim_scope_control",
+        "points": 1,
+        "description": "Avoids exact loss accounting or broad country-to-country comparisons from these calculations and keeps the conclusion tied to the computed threshold diagnostics.",
+        "partial_credit": "No partial credit unless the answer is otherwise tightly scoped with only one minor overstatement."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2015-2016_El_Nino_drought_impacts_across_the_tropical_Pacific_and_glob.json",
+      "data/other/other_002_NOAA_Climate.gov_Pacific_ENSO_drought_summary.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "Computed only from local CSX-171 package values."
+  }
+}

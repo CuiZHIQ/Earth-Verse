@@ -1,0 +1,230 @@
+{
+  "schema_version": "2.0",
+  "task_id": "CSX-059_Q2",
+  "event_id": "CSX-059",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "urban_pluvial_response_stress_model",
+  "primary_gt": {
+    "structured_answer": {
+      "process_model": {
+        "event_window": {
+          "start_date": "2021-09-01",
+          "end_date": "2021-09-02",
+          "duration_days": 2
+        },
+        "rainfall_forcing": {
+          "central_park_record_hour_mm": 88.138,
+          "regional_reference_mm": 254.0,
+          "max_gridded_precip_mm": 136.888,
+          "mean_gridded_event_mm": 53.427,
+          "hour_to_grid_peak_ratio": 0.644,
+          "regional_to_grid_peak_ratio": 1.856,
+          "burst_to_areal_daily_ratio": 3.299
+        },
+        "exposure_load": {
+          "population_millions": 5.013,
+          "population_rain_load_million_person_mm": 267.812
+        },
+        "surface_response": {
+          "radar_mean_db": 0.234,
+          "annual_embedding_mean": 0.022,
+          "surface_change_norm": 0.337
+        }
+      },
+      "scenario_analysis": {
+        "baseline_index": 72.6,
+        "future_short_burst_index": 80.1,
+        "index_delta": 7.5,
+        "baseline_components": {
+          "intensity_norm": 0.881,
+          "accumulation_norm": 0.684,
+          "concentration_norm": 0.858,
+          "exposure_norm": 0.501,
+          "surface_change_norm": 0.337
+        },
+        "scenario_components": {
+          "intensity_norm": 1.0,
+          "accumulation_norm": 0.753,
+          "concentration_norm": 0.937,
+          "exposure_norm": 0.526,
+          "surface_change_norm": 0.337
+        }
+      },
+      "mechanism_chain": [
+        "A record 88.138 mm one-hour burst supplies 64.4% of the largest two-day gridded peak, indicating short-duration pluvial forcing.",
+        "The broader rain shield remains large: the 254.000 mm regional reference is 1.856 times the largest gridded event maximum.",
+        "About 5.013 million exposed people and moderate mean surface-change signals raise response stress without making land-surface change the dominant signal."
+      ],
+      "source_paths": [
+        "metadata/event.json",
+        "metadata/files.csv",
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+        "data/event_reports/event_reports_003_Locked_event_anchor_Post-Tropical_Cyclone_Ida_NYC_flash_flood.json",
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+        "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+        "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ],
+      "final_interpretation": "The baseline stress index of 72.6 already indicates severe urban pluvial overload, and the specified warmer short-burst scenario raises it to 80.1 because hourly intensity reaches the normalization cap while accumulation and exposure also increase."
+    },
+    "required_metrics": [
+      "duration_days=2",
+      "central_park_record_hour_mm=88.138",
+      "regional_reference_mm=254.000",
+      "max_gridded_precip_mm=136.888",
+      "mean_gridded_event_mm=53.427",
+      "hour_to_grid_peak_ratio=0.644",
+      "regional_to_grid_peak_ratio=1.856",
+      "burst_to_areal_daily_ratio=3.299",
+      "population_millions=5.013",
+      "population_rain_load_million_person_mm=267.812",
+      "surface_change_norm=0.337",
+      "baseline_index=72.6",
+      "future_short_burst_index=80.1",
+      "index_delta=7.5"
+    ],
+    "tolerances": {
+      "mm": 0.01,
+      "ratio": 0.002,
+      "population_millions": 0.002,
+      "population_load": 0.02,
+      "normalized_component": 0.002,
+      "index": 0.1
+    }
+  },
+  "event": {
+    "event_name": "Post-Tropical Cyclone Ida NYC flash flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_window": "2021-09-01 to 2021-09-02"
+  },
+  "formula_spec": {
+    "baseline": "100 * (0.35 * intensity_norm + 0.20 * accumulation_norm + 0.20 * concentration_norm + 0.15 * exposure_norm + 0.10 * surface_change_norm)",
+    "normalization": {
+      "intensity_norm": "clip(record_hour_mm / 100, 0, 1)",
+      "accumulation_norm": "clip(max_gridded_precip_mm / 200, 0, 1)",
+      "concentration_norm": "clip(hour_to_grid_peak_ratio / 0.75, 0, 1)",
+      "exposure_norm": "clip(population_millions / 10, 0, 1)",
+      "surface_change_norm": "mean(clip(radar_mean_db / 1.0, 0, 1), clip(annual_embedding_mean / 0.05, 0, 1))"
+    },
+    "scenario": {
+      "record_hour_multiplier": 1.2,
+      "gridded_precipitation_max_multiplier": 1.1,
+      "population_multiplier": 1.05,
+      "remote_sensing_change": "unchanged"
+    }
+  },
+  "key_values": {
+    "start_date": "2021-09-01",
+    "end_date": "2021-09-02",
+    "duration_days": 2,
+    "central_park_record_hour_inches": 3.47,
+    "central_park_record_hour_mm": 88.138,
+    "regional_reference_inches": 10.0,
+    "regional_reference_mm": 254.0,
+    "era5_land_precipitation_sum_mm_max": 127.156,
+    "gpm_event_precip_mm_max": 136.888,
+    "chirps_event_precip_mm_max": 116.957,
+    "era5_land_precipitation_sum_mm_mean": 50.475,
+    "gpm_event_precip_mm_mean": 53.177,
+    "chirps_event_precip_mm_mean": 56.63,
+    "max_gridded_precip_mm": 136.888,
+    "mean_gridded_event_mm": 53.427,
+    "hour_to_grid_peak_ratio": 0.644,
+    "regional_to_grid_peak_ratio": 1.856,
+    "burst_to_areal_daily_ratio": 3.299,
+    "population": 5012638.677,
+    "population_millions": 5.013,
+    "population_rain_load_million_person_mm": 267.812,
+    "radar_mean_db": 0.234,
+    "annual_embedding_mean": 0.022,
+    "surface_change_norm": 0.337,
+    "scenario_record_hour_mm": 105.766,
+    "scenario_max_gridded_precip_mm": 150.577,
+    "scenario_population_millions": 5.263,
+    "baseline_index": 72.6,
+    "future_short_burst_index": 80.1,
+    "index_delta": 7.5
+  },
+  "baseline_components": {
+    "intensity_norm": 0.881,
+    "accumulation_norm": 0.684,
+    "concentration_norm": 0.858,
+    "exposure_norm": 0.501,
+    "surface_change_norm": 0.337
+  },
+  "scenario_components": {
+    "intensity_norm": 1.0,
+    "accumulation_norm": 0.753,
+    "concentration_norm": 0.937,
+    "exposure_norm": 0.526,
+    "surface_change_norm": 0.337
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package use and citations",
+        "points": 3,
+        "description": "Finds the relevant event, rainfall, exposure, and remote-sensing layers without being given exact filenames, and cites package-relative paths for all values used.",
+        "partial_credit": "Award 1-2 points if citations are incomplete but the answer uses package evidence rather than outside facts."
+      },
+      {
+        "name": "Event-window and rainfall extraction",
+        "points": 4,
+        "description": "Extracts the 2021-09-01 to 2021-09-02 inclusive window, converts 3.47 inches to 88.138 mm, treats the 'just above 10 inches' regional reference as a conservative 10.0-inch lower bound equal to 254.000 mm, and uses the correct gridded precipitation maxima and means.",
+        "partial_credit": "Award up to 2 points for correct window and local-hour conversion, and up to 2 points for the gridded rainfall fields."
+      },
+      {
+        "name": "Process metrics",
+        "points": 4,
+        "description": "Computes max gridded precipitation, mean gridded event precipitation, hour-to-grid ratio, regional-to-grid ratio, burst-to-areal-daily ratio, exposed population in millions, and population-rain load within tolerance.",
+        "partial_credit": "Award roughly proportional credit for correct formulas and values; cap at 3 points if a unit conversion error affects several outputs."
+      },
+      {
+        "name": "Remote-sensing normalization",
+        "points": 2,
+        "description": "Uses the Sentinel-1 mean backscatter change and annual embedding mean to compute the clipped two-part surface-change normalization.",
+        "partial_credit": "Award 1 point if the source values are correct but the clipping or averaging is wrong."
+      },
+      {
+        "name": "Baseline and scenario index calculation",
+        "points": 4,
+        "description": "Applies the weighted urban pluvial response-stress formula, rounds components and indices correctly, and recomputes the near-future stress test with the specified rainfall and population perturbations.",
+        "partial_credit": "Award 2-3 points for a mostly correct index with one component or scenario perturbation error."
+      },
+      {
+        "name": "Disaster-process interpretation",
+        "points": 3,
+        "description": "Explains how a record one-hour burst inside a larger rain shield stresses a dense urban population, while the moderate mean surface-change metrics shape but do not dominate the interpretation.",
+        "partial_credit": "Award 1-2 points for a plausible interpretation that is not fully tied to the computed values."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "expected_process_framing": "record one-hour urban pluvial burst embedded in a broader two-day rain shield",
+    "dominant_driver": "hourly rainfall intensity and concentration",
+    "secondary_drivers": [
+      "event-window accumulated rainfall",
+      "dense exposed population",
+      "moderate mean remote-sensing surface change"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Post-Tropical_Cyclone_Ida_NYC_flash_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  }
+}

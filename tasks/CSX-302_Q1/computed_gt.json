@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-302_Q1",
+  "event_id": "CSX-302",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "evaluation_mode_justification": "All required outputs are fixed calculations from package images, event-window summaries, and stated threshold gates.",
+  "target_family": "dust_transport_receptor_signal_diagnosis",
+  "primary_gt": {
+    "answer": "receptor_dust_signal_consistent",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+    "computed_evidence": {
+      "image_signal": {
+        "dci_delta": 0.036578,
+        "blue_drop_pp": 1.22
+      },
+      "confounders": {
+        "pt_precip_mm": 3.3,
+        "max_temp_c": 30.903,
+        "surf_mean": 0.0251
+      },
+      "receptor_context": {
+        "days": 15,
+        "population": 49269.915
+      },
+      "component_evidence_scores": {
+        "duration": 1.0,
+        "image": 1.0,
+        "blue": 1.0,
+        "population": 0.985,
+        "dry": 0.67,
+        "surface": 0.498
+      },
+      "dust_receptor_index": 93.97,
+      "diagnostic_diagnostic_test_result": {
+        "passed_diagnostic_tests": 8,
+        "label": "receptor_dust_signal_consistent"
+      }
+    },
+    "mechanism_chain": [
+      "pollutant or aerosol burden",
+      "transport/stagnation duration",
+      "rain or ventilation modifier",
+      "receptor-context interpretation"
+    ],
+    "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+    "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+    "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package.",
+    "formula_derivation": "Use an exposure-window concept: burden proxy times duration, with rain or ventilation acting as a removal/moderation term."
+  },
+  "answer_guidance": {
+    "answer": "receptor_dust_signal_consistent",
+    "expected": {
+      "image_signal": {
+        "dci_delta": 0.036578,
+        "blue_drop_pp": 1.22
+      },
+      "confounders": {
+        "pt_precip_mm": 3.3,
+        "max_temp_c": 30.903,
+        "surf_mean": 0.0251
+      },
+      "receptor_context": {
+        "days": 15,
+        "population": 49269.915
+      },
+      "component_scores": {
+        "duration": 1.0,
+        "image": 1.0,
+        "blue": 1.0,
+        "population": 0.985,
+        "dry": 0.67,
+        "surface": 0.498
+      },
+      "dust_receptor_index": 93.97,
+      "threshold_result": {
+        "passed_gates": 8,
+        "label": "receptor_dust_signal_consistent"
+      }
+    },
+    "formula": "DRI=100*(.25Du+.30Im+.15Bl+.15Pop+.10Dry+.05Surf)",
+    "thresholds": {
+      "days": 14,
+      "dci_delta": 0.03,
+      "blue_drop_pp": 1.0,
+      "pt_precip_max": 5.0,
+      "temp_max": 35.0,
+      "surf_mean_max": 0.05,
+      "pop_min": 10000.0,
+      "dri_min": 75.0
+    },
+    "tolerances": {
+      "dci": 0.0005,
+      "pp_mm_temp": 0.05,
+      "surface": 0.0005,
+      "population": 1.0,
+      "score": 0.01
+    },
+    "label": "june2020_transatlantic_receptor_dust_pass",
+    "structured_answer": {
+      "answer": "receptor_dust_signal_consistent",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+      "computed_evidence": {
+        "image_signal": {
+          "dci_delta": 0.036578,
+          "blue_drop_pp": 1.22
+        },
+        "confounders": {
+          "pt_precip_mm": 3.3,
+          "max_temp_c": 30.903,
+          "surf_mean": 0.0251
+        },
+        "receptor_context": {
+          "days": 15,
+          "population": 49269.915
+        },
+        "component_evidence_scores": {
+          "duration": 1.0,
+          "image": 1.0,
+          "blue": 1.0,
+          "population": 0.985,
+          "dry": 0.67,
+          "surface": 0.498
+        },
+        "dust_receptor_index": 93.97,
+        "diagnostic_diagnostic_test_result": {
+          "passed_diagnostic_tests": 8,
+          "label": "receptor_dust_signal_consistent"
+        }
+      },
+      "mechanism_chain": [
+        "pollutant or aerosol burden",
+        "transport/stagnation duration",
+        "rain or ventilation modifier",
+        "receptor-context interpretation"
+      ],
+      "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+      "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+      "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package.",
+      "formula_derivation": "Use an exposure-window concept: burden proxy times duration, with rain or ventilation acting as a removal/moderation term."
+    }
+  },
+  "event": {
+    "event_name": "June 2020 Saharan dust outbreak to Caribbean and U.S.",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_window": {
+      "start": "2020-06-14",
+      "end": "2020-06-28"
+    },
+    "region": "Sahara, Caribbean and southeastern United States"
+  },
+  "key_values": {
+    "pre_image": {
+      "width": 1024,
+      "height": 768,
+      "dci": 1.138175,
+      "blue_water_fraction": 0.01863,
+      "valid_fraction": 0.95554
+    },
+    "event_image": {
+      "width": 1024,
+      "height": 768,
+      "dci": 1.174754,
+      "blue_water_fraction": 0.006413,
+      "valid_fraction": 0.96123
+    },
+    "unrounded": {
+      "dci_delta": 0.036578471184026906,
+      "blue_drop_pp": 1.2217203776041667,
+      "point_precip_mm": 3.3000000000000003,
+      "max_temp_c": 30.902993774414085,
+      "surface_mean": 0.02507693877338612,
+      "population": 49269.914585497914,
+      "dust_receptor_index": 93.97328049831076
+    },
+    "gates": {
+      "days_ge_14": true,
+      "dci_delta_ge_0_03": true,
+      "blue_drop_pp_ge_1": true,
+      "point_precip_mm_le_5": true,
+      "max_temp_c_lt_35": true,
+      "surface_mean_le_0_05": true,
+      "population_ge_10000": true,
+      "dri_ge_75": true
+    },
+    "formulas": {
+      "dci": "mean((R+G)/(2*max(B,1))) for pixels with 20<mean(R,G,B)<245",
+      "blue_water_fraction": "count(B>R+15 and B>G+5 and B>80)/all_pixels",
+      "duration": "clip(window_days/14)",
+      "image": "clip(dci_delta/0.03)",
+      "blue": "clip(blue_drop_pp/1.0)",
+      "population": "clip(population/50000)",
+      "dry": "clip(1-point_precip_mm/10)",
+      "surface": "clip(1-surface_mean/0.05)"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2020_Saharan_dust_outbreak_to_Caribbean_and_U.S.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "All numeric anchors are regenerated from local CSX-302 package files."
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Trans-Atlantic Dust Receptor Transport Diagnosis"
+  }
+}

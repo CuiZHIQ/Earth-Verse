@@ -1,0 +1,129 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-132",
+  "key_values": {
+    "event_name": "July 2023 northern Italy severe hailstorms",
+    "event_window": {
+      "end_date": "2023-07-25",
+      "start_date": "2023-07-19"
+    },
+    "hail_ledger": {
+      "giant_reports_croatia": 2,
+      "giant_reports_italy": 22,
+      "giant_reports_total": 24,
+      "giant_threshold_cm": 10,
+      "injuries_per_report": 4.54,
+      "italy_share_pct": 91.7,
+      "max_hail_cm": 19,
+      "previous_record_cm": 16,
+      "record_margin_cm": 3,
+      "reported_injuries": 109,
+      "threshold_multiple": 1.9
+    },
+    "image_context": {
+      "alphaearth_max_change": 0.525615,
+      "alphaearth_mean_change": 0.036589,
+      "in_event_view": {
+        "bbox": "44.0,7.0,47.5,13.5",
+        "height": 768,
+        "layers": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "time": "2023-07-22",
+        "width": 1024
+      },
+      "interpretation": "context_not_damage_count",
+      "pre_event_view": {
+        "bbox": "44.0,7.0,47.5,13.5",
+        "height": 768,
+        "layers": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "time": "2023-07-05",
+        "width": 1024
+      }
+    },
+    "region": "Northern Italy and Alpine region",
+    "weather_context": {
+      "chirps_stats_all_null": true,
+      "era5_precip_sum_mm_max": 27.852,
+      "event_total_precip_mm": 66.3,
+      "gpm_event_precip_mm_max": 53.91,
+      "max_hourly_precip_mm": 12.5,
+      "max_hourly_precip_time": "2023-07-24T14:00",
+      "minimum_pressure_hpa": 1000.0,
+      "peak_wind_gust_kmh": 43.2,
+      "peak_wind_gust_time": "2023-07-19T00:00"
+    }
+  },
+  "primary_gt": {
+    "answer": "record_reported_giant_hail",
+    "image_read": "context_not_damage_count",
+    "injuries_per_report": 4.54,
+    "italy_share_pct": 91.7,
+    "max_cm": 19,
+    "rain_hourly_mm": 12.5,
+    "threshold_multiple": 1.9
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are parsed from local event records and gridded/statistical inputs.",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2023_northern_Italy_severe_hailstorms.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_006_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "metadata/files.csv"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives record_reported_giant_hail or an equivalent concise label that makes reported giant hail the headline signal.",
+        "name": "Headline label",
+        "partial_credit": "Award 1-2 points for naming severe hail without clearly making it the headline; award 0 for a rain/wind or image-change headline.",
+        "points": 3
+      },
+      {
+        "description": "Includes 19 cm, the 10 cm giant-hail threshold, and the 1.90 threshold multiple with correct units or equivalent wording.",
+        "name": "Hail ledger arithmetic",
+        "partial_credit": "Award 2-3 points for mostly correct hail values with one missing derived value; award 1 for qualitative large-hail wording only.",
+        "points": 4
+      },
+      {
+        "description": "Includes 22 of 24 Italy giant-hail reports, 91.7% Italy share, 109 injuries, and 4.54 injuries per giant-hail report.",
+        "name": "Report concentration and injury normalization",
+        "partial_credit": "Award 2-3 points for partial report or injury values without the normalization; award 1 point for qualitative injury/report-concentration wording only.",
+        "points": 4
+      },
+      {
+        "description": "Uses at least two weather or gridded precipitation anchors and keeps them secondary to the hail ledger.",
+        "name": "Weather context comparison",
+        "partial_credit": "Award 1-2 points for correct rain or wind values but weak comparison.",
+        "points": 3
+      },
+      {
+        "description": "States that imagery and embedding-change statistics provide broad context only, not a direct hail-damage or loss count.",
+        "name": "Image context boundary",
+        "partial_credit": "Award 1 point for mentioning image context without clearly excluding direct damage-count use.",
+        "points": 2
+      },
+      {
+        "description": "Avoids exact monetary, crop, roof, vehicle, or building-loss counts unless computed, and does not treat image-change statistics as counted hail damage.",
+        "name": "Damage-count discipline",
+        "partial_credit": "Award 1 point for minor extra detail that does not change the headline.",
+        "points": 2
+      },
+      {
+        "description": "Returns a concise JSON-like or similarly structured answer with the requested fields and a one-sentence conclusion.",
+        "name": "Compact answer format",
+        "partial_credit": "Award 1 point for correct content in a loose paragraph format or with missing fields.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "hail_severity_ledger",
+  "task_id": "CSX-132_Q1",
+  "task_type": "short_answer"
+}

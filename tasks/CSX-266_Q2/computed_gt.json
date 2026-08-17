@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-266_Q2",
+  "event_id": "CSX-266",
+  "task_type": "numeric",
+  "target_family": "monthly_compound_weather_threshold_ledger",
+  "evaluation_mode": "deterministic_numeric",
+  "primary_gt": {
+    "answer": "december_margin_confirmed",
+    "dominant_month": "2019-12",
+    "ledger": {
+      "heat_days_ge_40c": 20,
+      "dry_fraction": 0.935,
+      "wind_days_ge_35kmh": 3,
+      "hot_windy_days": 2,
+      "precip_total_mm": 0.4,
+      "peak_tmax_c": 46.0
+    },
+    "diagnostic_index": 79.6,
+    "margin_vs_january": 29.7,
+    "margin_vs_november": 30.3
+  },
+  "key_values": {
+    "event_span": {
+      "start_date": "2019-09-01",
+      "end_date": "2020-02-29"
+    },
+    "formula": "I=2*heat_days_ge_40c+20*dry_fraction+2*wind_days_ge_35kmh+3*hot_windy_days+1.5*max(0,peak_tmax_c-40)-0.2*min(precip_total_mm,50)",
+    "month_indices": {
+      "2019-09": 18.8,
+      "2019-10": 25.8,
+      "2019-11": 49.3,
+      "2019-12": 79.6,
+      "2020-01": 49.9,
+      "2020-02": 16.1
+    },
+    "reference_ledgers": {
+      "2019-12": {
+        "heat_days_ge_40c": 20,
+        "dry_fraction": 0.935,
+        "wind_days_ge_35kmh": 3,
+        "hot_windy_days": 2,
+        "precip_total_mm": 0.4,
+        "peak_tmax_c": 46.0,
+        "diagnostic_index": 79.6
+      },
+      "2020-01": {
+        "heat_days_ge_40c": 10,
+        "dry_fraction": 0.839,
+        "wind_days_ge_35kmh": 3,
+        "hot_windy_days": 2,
+        "precip_total_mm": 21.9,
+        "peak_tmax_c": 43.7,
+        "diagnostic_index": 49.9
+      },
+      "2019-11": {
+        "heat_days_ge_40c": 3,
+        "dry_fraction": 1.0,
+        "wind_days_ge_35kmh": 7,
+        "hot_windy_days": 2,
+        "precip_total_mm": 0.0,
+        "peak_tmax_c": 42.2,
+        "diagnostic_index": 49.3
+      }
+    },
+    "december_formula_terms": {
+      "heat_term": 40.0,
+      "dry_term": 18.7,
+      "wind_term": 6.0,
+      "overlap_term": 6.0,
+      "peak_heat_term": 9.0,
+      "wet_term": -0.08
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Threshold diagnosis",
+        "points": 4,
+        "description": "Provides answer=december_margin_confirmed and dominant_month=2019-12.",
+        "partial_credit": "Award 2 points if December is identified but the threshold status is missing or wrong."
+      },
+      {
+        "name": "December ledger",
+        "points": 4,
+        "description": "Computes the December ledger: 20 heat-threshold days, dry fraction 0.935, 3 wind-threshold days, 2 hot-windy days, 0.4 mm precipitation, and 46.0 C peak temperature.",
+        "partial_credit": "Award 1 point for each major group of correct values: heat, dryness/precipitation, wind/overlap, and peak temperature."
+      },
+      {
+        "name": "Formula application",
+        "points": 4,
+        "description": "Applies the diagnostic formula and reports I=79.6 for 2019-12.",
+        "partial_credit": "Award 2-3 points for a correct setup with minor rounding or arithmetic errors."
+      },
+      {
+        "name": "January margin",
+        "points": 3,
+        "description": "Computes I=49.9 for 2020-01 and margin_vs_january=29.7.",
+        "partial_credit": "Award 1-2 points if the comparison is directionally correct but numerically imprecise."
+      },
+      {
+        "name": "November margin",
+        "points": 3,
+        "description": "Computes I=49.3 for 2019-11 and margin_vs_november=30.3.",
+        "partial_credit": "Award 1-2 points if the comparison is directionally correct but numerically imprecise."
+      },
+      {
+        "name": "Scope control",
+        "points": 2,
+        "description": "Keeps the explanation tied to the computed weather index, monthly margins, and stated comparison window.",
+        "partial_credit": "Award 1 point if the explanation is broadly right but the numeric comparison window is weak."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json"
+    ]
+  }
+}

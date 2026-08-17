@@ -1,0 +1,174 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-133",
+  "key_values": {
+    "daily_values": {
+      "peak_daily_rain_day": "2024-09-07",
+      "peak_daily_rain_mm": 118.6,
+      "peak_daily_wind_day": "2024-09-07",
+      "peak_daily_wind_m_s": 11.81
+    },
+    "decision_rule": {
+      "flags": {
+        "daily_cross_check": true,
+        "lag_le_2h": true,
+        "same_day": true,
+        "share_ge_0_60": true
+      },
+      "label_if_all_true": "same_day_wind_rain_peak",
+      "lag_threshold_h": 2.0,
+      "timestamp_basis": "package hourly timestamp day for hourly aggregation; daily product date for daily cross-check",
+      "wettest_day_share_threshold": 0.6
+    },
+    "event": {
+      "name": "Super Typhoon Yagi severe wind and rainfall impacts",
+      "region": "South China Sea, Hainan, southern China, and northern Viet Nam",
+      "window": {
+        "end": "2024-09-07",
+        "start": "2024-09-01"
+      }
+    },
+    "hourly_values": {
+      "daily_max_gust_kmh": {
+        "2024-09-01": 21.6,
+        "2024-09-02": 23.4,
+        "2024-09-03": 29.5,
+        "2024-09-04": 16.9,
+        "2024-09-05": 36.7,
+        "2024-09-06": 49.3,
+        "2024-09-07": 116.6
+      },
+      "daily_rain_mm": {
+        "2024-09-01": 13.3,
+        "2024-09-02": 3.1,
+        "2024-09-03": 0.0,
+        "2024-09-04": 0.0,
+        "2024-09-05": 3.8,
+        "2024-09-06": 26.1,
+        "2024-09-07": 119.0
+      },
+      "event_rain_mm": 165.3,
+      "gust_to_rain_lag_h": 1.0,
+      "peak_gust_date": "2024-09-07",
+      "peak_gust_kmh": 116.6,
+      "peak_gust_time": "2024-09-07T12:00",
+      "peak_hourly_rain_date": "2024-09-07",
+      "peak_hourly_rain_mm": 17.8,
+      "peak_hourly_rain_time": "2024-09-07T13:00",
+      "wettest_day": "2024-09-07",
+      "wettest_day_rain_mm": 119.0,
+      "wettest_day_share": 0.72,
+      "wettest_day_share_pct": 72.0
+    },
+    "required_metrics": [
+      {
+        "name": "peak_gust_kmh",
+        "target": 116.6,
+        "tolerance": 0.2,
+        "unit": "km/h"
+      },
+      {
+        "name": "peak_hourly_rain_mm",
+        "target": 17.8,
+        "tolerance": 0.2,
+        "unit": "mm"
+      },
+      {
+        "name": "event_rain_mm",
+        "target": 165.3,
+        "tolerance": 0.5,
+        "unit": "mm"
+      },
+      {
+        "name": "wettest_day_rain_mm",
+        "target": 119.0,
+        "tolerance": 0.5,
+        "unit": "mm"
+      },
+      {
+        "name": "wettest_day_share",
+        "target": 0.72,
+        "tolerance": 0.01,
+        "unit": "fraction"
+      },
+      {
+        "name": "gust_to_rain_lag_h",
+        "target": 1.0,
+        "tolerance": 0.1,
+        "unit": "hours"
+      }
+    ]
+  },
+  "primary_gt": {
+    "answer": "same_day_wind_rain_peak",
+    "computed_sentence": "The 7 September peak gust and rainfall maximum satisfy the same-day, 2-hour lag, 60% rainfall-share, and daily cross-check tests.",
+    "metrics": {
+      "event_rain_mm": 165.3,
+      "gust_to_rain_lag_h": 1.0,
+      "peak_gust_kmh": 116.6,
+      "peak_hourly_rain_mm": 17.8,
+      "wettest_day_rain_mm": 119.0,
+      "wettest_day_share": 0.72
+    },
+    "peak_day": "2024-09-07",
+    "rule_flags": {
+      "daily_cross_check": true,
+      "lag_le_2h": true,
+      "same_day": true,
+      "share_ge_0_60": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_weather_API.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns same_day_wind_rain_peak with peak day 2024-09-07.",
+        "name": "Final peak-window label",
+        "partial_credit": "Award 2 points for the correct date with an imprecise label; award 1 point for noting strong wind and rain without applying the rule.",
+        "points": 4
+      },
+      {
+        "description": "Reports the 116.6 km/h peak gust at 2024-09-07T12:00 and 17.8 mm peak hourly rain at 2024-09-07T13:00.",
+        "name": "Hourly peak extraction",
+        "partial_credit": "Award 2-3 points for one exact peak plus the correct date; award 1 point for approximate peak values without times.",
+        "points": 4
+      },
+      {
+        "description": "Computes 165.3 mm event rainfall, 119.0 mm wettest-day rainfall, and wettest-day share 0.72 or 72.0%.",
+        "name": "Rainfall aggregation and share",
+        "partial_credit": "Award 2-3 points for correct accumulation values with a missing or slightly rounded share; award 1 point for only naming the wettest day.",
+        "points": 4
+      },
+      {
+        "description": "Computes a +1.0 hour gust-to-rain lag and marks same_day, lag_le_2h, and share_ge_0_60 as true.",
+        "name": "Lag and rule flags",
+        "partial_credit": "Award 1-2 points for correct flags with a missing signed lag or minor threshold wording error.",
+        "points": 3
+      },
+      {
+        "description": "Uses the daily precipitation maximum of 118.6 mm/day and daily 10 m wind maximum of 11.81 m/s, both on 2024-09-07.",
+        "name": "Daily cross-check",
+        "partial_credit": "Award 1 point for recognizing daily agreement but omitting one value.",
+        "points": 2
+      },
+      {
+        "description": "Provides concise JSON with the requested fields and avoids unrequested casualty, housing, mapped-damage, or broad narrative additions.",
+        "name": "Structured answer discipline",
+        "partial_credit": "Award 1-2 points for correct computations with minor JSON or verbosity problems.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "window_threshold_reconstruction",
+  "task_id": "CSX-133_Q1",
+  "task_type": "short_answer"
+}

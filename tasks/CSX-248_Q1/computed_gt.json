@@ -1,0 +1,119 @@
+{
+  "calculation": {
+    "components": {
+      "dry_run": 1.0,
+      "heat_load": 1.0,
+      "hot_dry": 1.0,
+      "hot_spell": 1.0,
+      "precip_deficit": 0.342612,
+      "warm_night": 1.0
+    },
+    "formula": "100*(0.25*min(heat_load/35,1)+0.15*min(hot_spell/9,1)+0.15*min(warm_night/7,1)+0.20*min(dry_run/12,1)+0.20*min(hot_dry/5,1)+0.05*max(0,min(1,1-local_regional_precip_ratio)))",
+    "inputs": {
+      "local_precip_sum_mm": 47.5,
+      "regional_precip_mean_mm": 72.255605,
+      "weather_days": 46
+    },
+    "runs": {
+      "dry_run_le_1mm": {
+        "days": 12,
+        "end": "2018-06-15",
+        "start": "2018-06-04"
+      },
+      "hot_dry_overlap": {
+        "days": 5,
+        "end": "2018-05-31",
+        "start": "2018-05-27"
+      },
+      "hot_spell_ge_25c": {
+        "days": 9,
+        "end": "2018-06-04",
+        "start": "2018-05-27"
+      },
+      "warm_night_ge_16c": {
+        "days": 7,
+        "end": "2018-06-03",
+        "start": "2018-05-28"
+      }
+    },
+    "threshold": {
+      "onset_score_gte_90": true
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_id": "CSX-248",
+    "event_name": "2018 Northern and Central Europe heatwave-drought-wildfire-low-river-flow compound event",
+    "event_window": "2018-05-01 to 2018-10-31",
+    "weather_slice": "2018-05-01 to 2018-06-15"
+  },
+  "primary_gt": {
+    "answer": "compound_onset_gate_met",
+    "dry_run_days": 12,
+    "heat_load_cday": 35.7,
+    "hot_dry_overlap_days": 5,
+    "hot_spell_days": 9,
+    "local_regional_precip_ratio": 0.657,
+    "onset_score": 96.71,
+    "warm_night_run_days": 7
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2018_Northern_and_Central_Europe_heatwave-drought-wildfire-low-river-f.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  },
+  "quality_checks": {
+    "primary_gt_compact_bytes": 200,
+    "primary_gt_top_level_keys": 8,
+    "rubric_points": 20
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Filters the Open-Meteo daily series to 2018-05-01 through 2018-06-15.",
+        "name": "Weather slice",
+        "partial_credit": "Award 2-3 points for using the correct product with a minor date-window or indexing error.",
+        "points": 4
+      },
+      {
+        "description": "Computes Tmax exceedance above 25 C and rounds it to 35.7 C-days.",
+        "name": "Heat load",
+        "partial_credit": "Award 2-3 points for the right formula with a minor summation or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 9-day hot spell and 7-day warm-night run.",
+        "name": "Heat persistence",
+        "partial_credit": "Award 1-2 points if one of the two run lengths is correct.",
+        "points": 3
+      },
+      {
+        "description": "Computes the 12-day dry run and 5-day hot-dry overlap run.",
+        "name": "Dry persistence",
+        "partial_credit": "Award 1-2 points if one of the two dry or overlap runs is correct.",
+        "points": 3
+      },
+      {
+        "description": "Computes the local precipitation sum over the ERA5-Land regional mean and rounds to 0.657.",
+        "name": "Precipitation ratio",
+        "partial_credit": "Award 1-2 points for the correct sources with a denominator, sum, or rounding mistake.",
+        "points": 3
+      },
+      {
+        "description": "Applies the weighted formula, rounds the score to 96.71, and returns the compact JSON fields.",
+        "name": "Index formula",
+        "partial_credit": "Award 1-2 points for a mostly correct weighted formula or final label with one component error.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "northern_central_europe_heat_dry_onset_index",
+  "task_id": "CSX-248_Q1",
+  "task_type": "numeric"
+}

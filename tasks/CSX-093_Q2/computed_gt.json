@@ -1,0 +1,174 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-093",
+  "event_summary": {
+    "event_name": "September 2021 Hurricane Ida Northeast flooding",
+    "event_window": {
+      "end_date": "2021-09-03",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2021-09-01"
+    },
+    "hazard_family": "river_coastal_flood"
+  },
+  "formulas": {
+    "contrast_pass_count": "count true tests among max_point_wind_kmh<63, abs(sentinel1_mean_db)<1, alphaearth_mean_change<0.05",
+    "event_total_mm": "sum(hourly precipitation)",
+    "rain_pass_count": "count true tests among regional_peak_floor_mm>=254, central_park_record_hour_mm>=75, wettest_6h_mm>=75, six_hour_share>=0.60, city_report_total>=400, top3_borough_share>=0.75",
+    "six_hour_share": "wettest_6h_mm / event_total_mm",
+    "wet_run_hours": "longest contiguous run of hourly precipitation > 0",
+    "wettest_6h_mm": "max rolling 6-hour precipitation sum"
+  },
+  "key_values": {
+    "alphaearth_mean_change": 0.0382,
+    "central_park_record_hour_mm": 88.1,
+    "city_report_total": 500,
+    "max_point_wind_kmh": 45.2,
+    "regional_peak_floor_mm": 254.0,
+    "sentinel1_mean_db": -0.429,
+    "top3_borough_share": 0.836
+  },
+  "numeric_tolerances": {
+    "alphaearth_mean_change": {
+      "tolerance": 0.0001,
+      "value": 0.0382
+    },
+    "central_park_record_hour_mm": {
+      "tolerance": 0.1,
+      "value": 88.1
+    },
+    "city_report_total": {
+      "tolerance": 0,
+      "value": 500
+    },
+    "event_total_mm": {
+      "tolerance": 0.1,
+      "value": 133.9
+    },
+    "max_point_wind_kmh": {
+      "tolerance": 0.1,
+      "value": 45.2
+    },
+    "regional_peak_floor_mm": {
+      "tolerance": 0.1,
+      "value": 254.0
+    },
+    "sentinel1_mean_db": {
+      "tolerance": 0.001,
+      "value": -0.429
+    },
+    "six_hour_share": {
+      "tolerance": 0.001,
+      "value": 0.734
+    },
+    "top3_borough_share": {
+      "tolerance": 0.001,
+      "value": 0.836
+    },
+    "wet_run_hours": {
+      "tolerance": 0,
+      "value": 23
+    },
+    "wettest_6h_mm": {
+      "tolerance": 0.1,
+      "value": 98.3
+    }
+  },
+  "primary_gt": {
+    "event_total_mm": 133.9,
+    "final_state": "rainfall_concentration_signature_supported",
+    "six_hour_share": 0.734,
+    "threshold_counts": {
+      "contrast": 3,
+      "rain": 6
+    },
+    "wet_run_hours": 23,
+    "wettest_6h_mm": 98.3
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2021_Hurricane_Ida_Northeast_flooding.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/air_quality/air_quality_002_03_city_feedback_or_air_quality_NYC_311_Service_Requests_Socrata_flood_complaints.json.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_010_sentinel1_vv_change_stats.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the six requested top-level fields with threshold_counts nested as specified.",
+        "name": "JSON shape",
+        "partial_credit": "Award 1-2 points if the answer includes most required fields but has minor nesting, naming, or extra-text problems; award 0 if the required ledger is not recoverable.",
+        "points": 3
+      },
+      {
+        "description": "Computes 133.9 mm event total, 98.3 mm wettest 6-hour load, 0.734 six-hour share, and 23 wet-run hours.",
+        "name": "Hourly rainfall calculations",
+        "partial_credit": "Award about 1 point for each correct rainfall quantity, with small rounding tolerance; lose the relevant credit for wrong aggregation windows, unit mistakes, or treating trace-zero hours as wet.",
+        "points": 5
+      },
+      {
+        "description": "Evaluates all six rain thresholds from report, hourly rainfall, and city record values.",
+        "name": "Rain thresholds",
+        "partial_credit": "Award partial credit in proportion to correctly evaluated rain tests; lose credit for missing the inch-to-mm conversion, using the wrong threshold, or miscounting the six-test pass total.",
+        "points": 4
+      },
+      {
+        "description": "Evaluates wind, Sentinel-1 mean VV change, and AlphaEarth mean change checks correctly.",
+        "name": "Contrast thresholds",
+        "partial_credit": "Award 1 point per correctly evaluated contrast test; lose credit for using the signed Sentinel-1 value instead of its absolute magnitude or reversing a less-than comparison.",
+        "points": 3
+      },
+      {
+        "description": "Applies the threshold-count rule and returns rainfall_concentration_signature_supported.",
+        "name": "Final state",
+        "partial_credit": "Award 1-2 points if the final label is consistent with one threshold count but the other count or the rule wording is partly wrong; award 0 for the opposite final state.",
+        "points": 3
+      },
+      {
+        "description": "Shows enough formula work to audit rounding and inch-to-mm conversion.",
+        "name": "Formula trace",
+        "partial_credit": "Award 0.5 point for a mostly clear trace with one missing conversion or rounding note; award 0 if no calculation path is shown.",
+        "points": 1
+      },
+      {
+        "description": "Does not convert service records into verified flood depth or mean image summaries into a complete inundation map.",
+        "name": "No overstatement",
+        "partial_credit": "Award 0.5 point if the answer has one minor over-broad phrase but keeps the computed ledger intact; award 0 for adding major realized-loss or full-map conclusions beyond the computed values.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "support_values": {
+    "alphaearth_mean_change": 0.0382,
+    "central_park_record_hour_mm": 88.1,
+    "city_report_total": 500,
+    "max_point_wind_kmh": 45.2,
+    "regional_peak_floor_mm": 254.0,
+    "sentinel1_mean_db": -0.429,
+    "top3_borough_share": 0.836
+  },
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-093_Q2",
+  "task_type": "numeric",
+  "thresholds": {
+    "contrast": {
+      "alphaearth_mean_lt_0_05": true,
+      "max_point_wind_lt_63kmh": true,
+      "sentinel1_mean_abs_lt_1db": true
+    },
+    "rain": {
+      "central_park_record_hour_ge_75mm": true,
+      "city_report_total_ge_400": true,
+      "regional_peak_floor_ge_254mm": true,
+      "six_hour_share_ge_0_60": true,
+      "top3_borough_share_ge_0_75": true,
+      "wettest_6h_ge_75mm": true
+    }
+  }
+}

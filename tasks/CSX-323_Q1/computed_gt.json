@@ -1,0 +1,124 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-323",
+  "key_values": {
+    "ecosystem_impact_term_count": 6,
+    "event_window_days": 1127,
+    "event_window_years": 3.09,
+    "impact_chain": [
+      "persistent_ocean_heat_anomaly",
+      "basin_scale_marine_heatwave",
+      "marine_ecosystem_heat_stress_and_foodweb_disruption_priority"
+    ],
+    "judge_anchors": [
+      "The event should be framed as a basin-scale marine heatwave and marine ecosystem heat-stress priority.",
+      "The 1127-day window supports persistence rather than a short-duration weather-triggered disaster.",
+      "Local event-search evidence links The Blob to marine heatwave persistence and ecological or harmful-algal-bloom impacts.",
+      "The answer should avoid unsupported exact mortality, fishery-loss, climate-attribution, or direct urban infrastructure claims."
+    ],
+    "marine_heatwave_term_count": 10,
+    "northeast_pacific_reference_count": 3,
+    "priority_index": 1.0,
+    "source_result_count": 6
+  },
+  "primary_gt": {
+    "answer": "basin_scale_marine_heatwave_ecosystem_heat_stress_priority",
+    "impact_chain": [
+      "persistent_ocean_heat_anomaly",
+      "basin_scale_marine_heatwave",
+      "marine_ecosystem_heat_stress_and_foodweb_disruption_priority"
+    ],
+    "key_metrics": {
+      "ecosystem_impact_term_count": 6,
+      "event_window_days": 1127,
+      "event_window_years": 3.09,
+      "marine_heatwave_term_count": 10,
+      "northeast_pacific_reference_count": 3,
+      "source_result_count": 6
+    },
+    "priority_index": 1.0
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2013-2016_Northeast_Pacific_marine_heatwave_The_Blob.json",
+      "data/other/other_002_01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects basin_scale_marine_heatwave_ecosystem_heat_stress_priority.",
+        "name": "Priority label",
+        "partial_credit": "2 points for a marine heatwave label that omits the ecosystem heat-stress priority.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 1127-day multi-year window and basin-scale Northeast Pacific framing.",
+        "name": "Duration and scale",
+        "partial_credit": "1.5 points for identifying persistence without the correct duration.",
+        "points": 3
+      },
+      {
+        "description": "Uses marine heatwave, Northeast Pacific, and ecological-impact terminology to justify ecosystem heat-stress priority.",
+        "name": "Heat-stress mechanism",
+        "partial_credit": "2 points for using marine heatwave terminology without clearly tying it to ecosystem impacts.",
+        "points": 4
+      },
+      {
+        "description": "Reports priority_index near 1.00 and the expected event-window and text-evidence metrics with reasonable rounding.",
+        "name": "Structured metrics",
+        "partial_credit": "Award up to 0.5 points for each correct key metric, capped at 3.",
+        "points": 3
+      },
+      {
+        "description": "Rejects rainfall, wind, terrestrial burn or vegetation loss, and urban exposure as primary framings without relying on land-product proxies.",
+        "name": "Competing-signal rejection",
+        "partial_credit": "Award 0.75 points for each correctly rejected competing framing.",
+        "points": 3
+      },
+      {
+        "description": "Gives the chain from persistent ocean heat anomaly to basin-scale marine heatwave to ecosystem heat stress and food-web disruption.",
+        "name": "Impact-chain quality",
+        "partial_credit": "1 point for a partially correct two-step chain.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported exact mortality, fisheries-loss, attribution, or direct urban-infrastructure claims.",
+        "name": "Overclaim control",
+        "partial_credit": "0.5 points for one minor overclaim that does not change the main diagnosis.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "component_scores": {
+      "basin_context_score": 1.0,
+      "duration_score": 1.0,
+      "ecosystem_context_score": 1.0,
+      "hazard_family_score": 1.0,
+      "marine_term_score": 1.0
+    },
+    "event_name": "2013-2016 Northeast Pacific marine heatwave 'The Blob'",
+    "event_window": {
+      "end_date": "2016-12-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2013-12-01"
+    },
+    "hazard_family": "marine_heatwave_coastal_ecosystem",
+    "hazard_label": "Marine heatwave and coastal ecosystem impact",
+    "local_text_flags": {
+      "wiki_search_has_ecosystem_impact": true,
+      "wiki_search_has_marine_heatwave": true,
+      "wiki_search_has_northeast_pacific_context": true,
+      "wiki_search_has_the_blob_page": true
+    },
+    "region": "Global oceans",
+    "wiki_search_totalhits": 6
+  },
+  "task_id": "CSX-323_Q1",
+  "task_type": "short_answer"
+}

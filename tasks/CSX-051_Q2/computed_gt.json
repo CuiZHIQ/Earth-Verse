@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-051_Q2",
+  "event_id": "CSX-051",
+  "task_type": "short_answer",
+  "target_family": "rainfall_concentration_calibration",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "diagnosis_label": "peak_hour_burst_embedded_in_wet_event_window",
+    "hourly_peak_mm": 201.9,
+    "event_window_mean_mm": {
+      "gpm": 426.1,
+      "chirps": 256.635,
+      "era5_land": 214.341
+    },
+    "peak_share_of_means": {
+      "gpm": 0.474,
+      "chirps": 0.787,
+      "era5_land": 0.942
+    },
+    "product_spread_ratio": 1.988,
+    "context_metrics": {
+      "road_ways": 252,
+      "bridge_tagged": 108,
+      "critical_service_nodes": 48,
+      "population_rounded": 11097000,
+      "sentinel1_vv_change_mean_db": 0.854,
+      "alphaearth_change_mean": 0.045
+    },
+    "interpretation": "The 201.9 mm Zhengzhou hour is a peak-hour burst inside a wet 2021-07-17 to 2021-07-23 window: all three mean precipitation products exceed 200 mm, and the hourly peak is 47.4%, 78.7%, and 94.2% of those event-window means."
+  },
+  "event": {
+    "name": "July 2021 Henan Zhengzhou extreme rainfall and flood",
+    "window": "2021-07-17 to 2021-07-23",
+    "hazard_family": "extreme_precip_pluvial_flood"
+  },
+  "key_values": {
+    "hourly_peak_mm": 201.9,
+    "all_event_means_above_200mm": true,
+    "rainfall_product_count": 3,
+    "surface_change_metrics": {
+      "sentinel1_vv_change_mean_db": 0.854,
+      "alphaearth_change_mean": 0.045
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON form and diagnosis",
+        "points": 3,
+        "description": "Returns the requested JSON shape and gives the diagnosis label peak_hour_burst_embedded_in_wet_event_window or a clear equivalent.",
+        "partial_credit": "1 point for a valid compact JSON object; 1 point for the correct label family; 1 point for not substituting a surface-change or exposure-first answer."
+      },
+      {
+        "name": "Rainfall metrics and ratios",
+        "points": 5,
+        "description": "Reports the 201.9 mm hourly peak, the three event-window means near 426.100, 256.635, and 214.341 mm, and the three peak-share ratios near 0.474, 0.787, and 0.942.",
+        "partial_credit": "Up to 2 points for the peak and event means; up to 2 points for the three ratios; 1 point for rounding within the stated tolerance."
+      },
+      {
+        "name": "Product comparison",
+        "points": 3,
+        "description": "Uses the all-products-above-200 mm check and the 1.988 spread ratio to show why the case is not isolated-hour-only and not capped by the lowest product.",
+        "partial_credit": "1 point for the above-200 mm check; 1 point for the spread ratio; 1 point for rejecting the two incorrect calibration shortcuts."
+      },
+      {
+        "name": "Surface-change role",
+        "points": 3,
+        "description": "Treats rainfall timing and accumulation as the primary calibration, while using Sentinel-1 or AlphaEarth values only as surface-change context.",
+        "partial_credit": "1 point for naming the surface-change values; 1 point for using them only as context; 1 point for keeping rainfall as the controlling evidence."
+      },
+      {
+        "name": "Urban context metrics",
+        "points": 3,
+        "description": "Gives at least three correct context metrics among population 11097000, road ways 252, bridge-tagged ways 108, and critical service nodes 48.",
+        "partial_credit": "1 point for each correct context metric, capped at 3 points."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 3,
+        "description": "Keeps the interpretation concise and avoids invented casualty, outage, facility-failure, or flood-depth values.",
+        "partial_credit": "1 point for a concise final interpretation; 1 point for no invented impact numbers; 1 point for aligning the prose with the computed label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Wikipedia_2021_Henan_floods.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Henan_Zhengzhou_extreme_rainfall_and_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

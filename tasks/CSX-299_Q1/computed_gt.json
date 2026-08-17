@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-299_Q1",
+  "event_id": "CSX-299",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "patagonian_dust_streamer_dry_transport_threshold_proof",
+  "primary_gt": {
+    "evidence_windows": {
+      "event_window": {
+        "start": "2020-02-06",
+        "end": "2020-02-06"
+      },
+      "precip_wind_window": {
+        "start": "2020-02-06",
+        "end": "2020-02-06"
+      },
+      "transport_report_context_date": "2020-03-07"
+    },
+    "pmax_mm": 0.602,
+    "dry_count": 3,
+    "wind_m_s": 1.758,
+    "transport_km_lb": 120,
+    "pm_obs_frac": 0.0,
+    "conclusion": "dry_wind_conditions_with_report_context_transport_not_measured_pm"
+  },
+  "tolerances": {
+    "pmax_mm": 0.001,
+    "wind_m_s": 0.001,
+    "pm_obs_frac": 0.001,
+    "integer_fields": "exact",
+    "conclusion": "exact"
+  },
+  "decision_rule": {
+    "dry_pass": "max(mean_precip_mm) < 1.0 and dry_count == 3",
+    "wind_pass": "sqrt(u_mean^2 + v_mean^2) >= 1.5",
+    "transport_pass": "reported_lower_bound_km >= 120",
+    "pm_burden_pass": "non_null_pm_pm25_dust / total_slots > 0",
+    "final": "dry_pass and wind_pass and report_context_transport_pass and not pm_burden_pass"
+  },
+  "key_values": {
+    "precip_mean_mm": {
+      "era5_land": 0.602039325999626,
+      "gpm": 0.03194741516660765,
+      "chirps": 0
+    },
+    "wind_component_mean_m_s": {
+      "u": 1.0989165525796456,
+      "v": 1.37268061591687
+    },
+    "pm_counts": {
+      "hours": 24,
+      "fields": 3,
+      "non_null": 0,
+      "total_slots": 72
+    },
+    "report_checks": {
+      "transport_report_context_date": "2020-03-07",
+      "source_lake": true,
+      "exposed_silt": true,
+      "wind_aligned": true,
+      "transport_km_lb": 120
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Return schema",
+        "points": 3,
+        "description": "Returns exactly the six requested JSON fields with numeric rounding and the final label."
+      },
+      {
+        "name": "Dryness calculation",
+        "points": 4,
+        "description": "Uses the three mean precipitation products, computes pmax_mm, and counts all three below 1.0 mm."
+      },
+      {
+        "name": "Wind-vector proof",
+        "points": 3,
+        "description": "Applies sqrt(u_mean^2 + v_mean^2), reports 1.758 m/s within tolerance, and tests the 1.5 m/s threshold."
+      },
+      {
+        "name": "Transport threshold",
+        "points": 3,
+        "description": "Extracts the 120 km report-context lower bound and verifies that it satisfies the transport-context rule without treating it as same-day measured transport."
+      },
+      {
+        "name": "PM availability fraction",
+        "points": 3,
+        "description": "Counts 0 non-null PM10, PM2.5, and dust values across 72 hourly slots and computes pm_obs_frac = 0.0."
+      },
+      {
+        "name": "Deterministic conclusion",
+        "points": 3,
+        "description": "Combines all threshold states to produce dry_wind_conditions_with_report_context_transport_not_measured_pm."
+      },
+      {
+        "name": "No unsupported escalation",
+        "points": 1,
+        "description": "Avoids adding casualty, closure, asset-loss, or measured concentration claims not implied by the calculations."
+      }
+    ]
+  },
+  "event": {
+    "event_name": "Patagonian dust streamers",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_date_or_window": {
+      "start_date": "2020-02-06",
+      "end_date": "2020-02-06",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "region": "South America",
+    "scale": "neighborhood_asset"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Patagonian_dust_streamers.json",
+      "data/event_reports/event_reports_004_NASA_EO_Patagonian_Dust_Streamers.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/air_quality/air_quality_001_05_open_meteo_air_quality.json.json"
+    ],
+    "notes": "Deterministic formulas are computed from local package values; no network access is used."
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-295_Q1",
+  "event_id": "CSX-295",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "saharan_dust_transport_scale_consistency_ledger",
+  "primary_gt": {
+    "answer": "transport_scale_pass",
+    "diagnosis": "transport_scale_pass",
+    "window_days": 4,
+    "plume_speed_kmh": 41.67,
+    "local_peak_wind_kmh": 21.6,
+    "speed_ratio": 1.93,
+    "precip_context_mm": 5.66,
+    "tolerance": {
+      "kmh": 0.05,
+      "ratio": 0.02,
+      "mm": 0.02
+    }
+  },
+  "event": {
+    "event_name": "Saharan dust storm over the Atlantic Ocean",
+    "hazard_family": "dust_sandstorm_extreme",
+    "window_start": "2022-01-18",
+    "window_end": "2022-01-21"
+  },
+  "key_values": {
+    "reported_plume_length_km": 4000,
+    "window_days": 4,
+    "plume_speed_kmh_unrounded": 41.666666666666664,
+    "nasa_power_ws10m_peak_m_s": {
+      "date": "20220118",
+      "value": 3.09
+    },
+    "nasa_power_ws10m_peak_kmh": 11.124,
+    "open_meteo_wind_peak_kmh": {
+      "date": "2022-01-21",
+      "value": 21.6
+    },
+    "local_peak_wind_kmh": 21.6,
+    "wind_comparator_scope": "package point-wind maximum used only as a point comparator, not as complete corridor wind evidence",
+    "speed_ratio": 1.929012345679012,
+    "precipitation_maxima_mm": {
+      "gpm": 0.9899999499320984,
+      "chirps": 5.657702445983887,
+      "used": 5.657702445983887
+    },
+    "threshold_tests": {
+      "plume_length_ge_3000_km": true,
+      "window_days_ge_3": true,
+      "speed_ratio_gt_1_5": true
+    },
+    "judge_anchor": {
+      "required_metric_count": 5,
+      "rule": "plume_length_km >= 3000 and window_days >= 3 and speed_ratio > 1.5",
+      "expected_label": "transport_scale_pass"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns compact JSON with exactly the six requested keys and no extra prose in the final object.",
+        "partial_credit": "Give partial credit for a complete object with minor naming or rounding issues."
+      },
+      {
+        "name": "Numeric calculations",
+        "points": 5,
+        "description": "Computes duration, plume-speed proxy, local wind conversion, wind peak, speed ratio, and precipitation context with correct units.",
+        "partial_credit": "Give partial credit for correct formulas with one arithmetic or rounding error."
+      },
+      {
+        "name": "Threshold ledger",
+        "points": 5,
+        "description": "Applies the length, duration, and speed-ratio inequalities and returns transport_scale_pass.",
+        "partial_credit": "Give partial credit for two correct inequalities with the final label missing or wrong."
+      },
+      {
+        "name": "Wind comparison",
+        "points": 3,
+        "description": "Uses the larger converted 10 m wind maximum as the local comparator.",
+        "partial_credit": "Give partial credit for converting m/s correctly but using the smaller wind value."
+      },
+      {
+        "name": "Precipitation context",
+        "points": 2,
+        "description": "Reports precipitation as a secondary numeric context value without reframing the case as a wet hazard.",
+        "partial_credit": "Give partial credit for using one gridded precipitation maximum correctly."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 1,
+        "description": "Keeps the final interpretation tied to the computed transport-scale ledger and avoids unsupported impact claims.",
+        "partial_credit": "Give partial credit for a correct label with extra but harmless narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Saharan_dust_storm_over_the_Atlantic_Ocean.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "All values are parsed from local CSX-295 package files; no network access is used."
+  }
+}

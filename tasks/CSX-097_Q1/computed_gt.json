@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-097_Q1",
+  "event_id": "CSX-097",
+  "task_type": "short_answer",
+  "target_family": "yagi_persistent_rainfall_impact_consistency",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "persistent_heavy_rain_multi_country_disruption_supported",
+    "computed_metrics": {
+      "event_days": 12,
+      "hour_count": 288,
+      "hourly_precipitation_total_mm": 373.0,
+      "daily_precipitation_total_mm": 388.82,
+      "daily_hourly_precipitation_ratio": 1.0424,
+      "peak_hour_share_of_hourly_total": 0.0477,
+      "peak_daily_share_of_daily_total": 0.305,
+      "mean_hourly_precipitation_rate_mm_h": 1.295,
+      "max_hourly_wind_m_s": 17.333,
+      "hourly_to_daily_wind_ratio": 1.4677,
+      "damaged_school_to_health_centre_ratio_lower_bound": 1.5455,
+      "viet_nam_water_lack_share_proxy": 0.5,
+      "education_support_share_proxy": 0.3333,
+      "myanmar_displacement_per_death_report_scale_ratio": 1882.35,
+      "named_country_count": 4
+    },
+    "tests": {
+      "persistent_rainfall": "pass",
+      "single_hour_spike": "fail",
+      "wind_only_explanation": "fail",
+      "regional_disruption": "pass"
+    },
+    "required_interpretation": "Persistent heavy rainfall, not a single-hour spike or wind-only explanation, aligns with multi-country disruption.",
+    "tolerances": {
+      "ratio_abs": 0.005,
+      "precipitation_mm_abs": 0.1,
+      "wind_m_s_abs": 0.01,
+      "count_exact": true
+    }
+  },
+  "key_values": {
+    "event_window": "2024-09-07 to 2024-09-18",
+    "countries": [
+      "Laos",
+      "Myanmar",
+      "Thailand",
+      "Viet Nam"
+    ],
+    "report_values": {
+      "children_affected_nearly_million": 6.0,
+      "damaged_schools_over": 850,
+      "damaged_health_centres_more_than": 550,
+      "viet_nam_people_lacking_safe_water_million": 3.0,
+      "children_without_education_support_million": 2.0,
+      "myanmar_deaths_over": 170,
+      "myanmar_displacements_more_than": 320000,
+      "named_countries_present": {
+        "Viet Nam": true,
+        "Myanmar": true,
+        "Laos": true,
+        "Thailand": true
+      }
+    },
+    "thresholds": {
+      "rainfall_total_mm": 300,
+      "peak_hour_share_max": 0.1,
+      "wind_only_max_hourly_wind_m_s": 25.0,
+      "named_country_count_min": 4
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON answer and label",
+        "points": 4,
+        "description": "Returns valid JSON with the requested target family, all requested metric groups, test states, and the exact final label.",
+        "partial_credit": "Award 2-3 points for the correct label with minor JSON omissions; award 1 point for a recognizable but incomplete conclusion."
+      },
+      {
+        "name": "Rainfall-window and precipitation calculations",
+        "points": 4,
+        "description": "Computes 12 days, 288 hours, 373.0 mm, 388.82 mm, ratio 1.0424, mean hourly rate 1.295, and correct units.",
+        "partial_credit": "Award up to 3 points for mostly correct rainfall values with one or two arithmetic or rounding errors."
+      },
+      {
+        "name": "Peak-concentration tests",
+        "points": 3,
+        "description": "Computes peak-hour share 0.0477 and peak-day share 0.305, then concludes that the single-hour-spike test fails.",
+        "partial_credit": "Award 1-2 points for computing only one peak share or drawing the right conclusion from approximate values."
+      },
+      {
+        "name": "Wind conversion and interpretation",
+        "points": 3,
+        "description": "Computes 17.333 m/s and wind ratio 1.4677, and rejects a wind-only explanation.",
+        "partial_credit": "Award 1-2 points for correct conversion without the ratio or with weak interpretation."
+      },
+      {
+        "name": "Regional impact normalization",
+        "points": 4,
+        "description": "Computes ratios 1.5455, 0.5, 0.3333, and 1882.35 plus named-country count 4, preserving lower-bound/proxy wording.",
+        "partial_credit": "Award up to 3 points for correct values with missing proxy wording or one omitted ratio."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 2,
+        "description": "Ties persistent rainfall and multi-country disruption together without adding response actions or unverified realized-loss assertions.",
+        "partial_credit": "Award 1 point for a concise but less specific interpretation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source": "local CSX-097 event record",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Super_Typhoon_Yagi_floods.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/other/other_001_UNICEF_-_Children_affected_by_Typhoon_Yagi_floods_and_landslides.html"
+    ],
+    "inputs": [
+      "locked event anchor",
+      "Open-Meteo hourly point weather",
+      "NASA POWER daily point weather",
+      "UNICEF Yagi flood and landslide report"
+    ]
+  }
+}

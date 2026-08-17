@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-065_Q2",
+  "event_id": "CSX-065",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "rainfall_storage_score_ledger",
+  "primary_gt": {
+    "answer": "prolonged_lowland_storage_supported",
+    "target_family": "rainfall_storage_score_ledger",
+    "score": 5,
+    "pass_tests": [
+      "partial_window",
+      "heavy_accumulation",
+      "satellite_agreement",
+      "moderate_concentration",
+      "report_persistence"
+    ],
+    "required_metrics": [
+      "coverage_pct",
+      "precip_means_mm",
+      "satellite_gap_pct",
+      "max_mean_ratios",
+      "report_signal_count"
+    ],
+    "rejected_diagnosis": "short_burst_only"
+  },
+  "key_values": {
+    "event_window_days": 137,
+    "precip_window_days": 46,
+    "coverage_pct": 33.6,
+    "precip_means_mm": {
+      "era5": 360.117,
+      "gpm": 310.842,
+      "chirps": 311.49
+    },
+    "satellite_mean_mm": 311.166,
+    "satellite_gap_mm": 0.649,
+    "satellite_gap_pct": 0.2,
+    "max_mean_ratios": {
+      "era5": 1.49,
+      "gpm": 2.015,
+      "chirps": 1.886
+    },
+    "report_signal_count": 12,
+    "tests": {
+      "partial_window": true,
+      "heavy_accumulation": true,
+      "satellite_agreement": true,
+      "moderate_concentration": true,
+      "report_persistence": true
+    },
+    "score": 5,
+    "thresholds": {
+      "coverage_pct_below": 50.0,
+      "mean_precip_mm_at_least": 300.0,
+      "satellite_gap_pct_below": 1.0,
+      "max_mean_ratio_below": 2.5,
+      "report_signal_count_at_least": 10
+    },
+    "rejected_diagnosis": "short_burst_only"
+  },
+  "event": {
+    "event_name": "2011 Southeast Asia monsoon floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_window": "2011-07-31 to 2011-12-14"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON structure and label",
+        "points": 4,
+        "description": "Returns the requested top-level keys, all five test booleans, score 5, final label prolonged_lowland_storage_supported, and rejected diagnosis short_burst_only.",
+        "partial_credit": "Award 2-3 points for a mostly complete JSON ledger with one missing field or a synonymous final label; award 1 point for a readable but incomplete structured answer."
+      },
+      {
+        "name": "Duration and accumulation calculations",
+        "points": 4,
+        "description": "Computes 137 event days, 46 precipitation days, 33.6 percent coverage, and the three mean precipitation values within tolerance.",
+        "partial_credit": "Award 2-3 points for correct duration or precipitation values with one rounding or product omission; award 1 point for only identifying that rainfall was substantial."
+      },
+      {
+        "name": "Satellite agreement and concentration ratios",
+        "points": 4,
+        "description": "Computes satellite mean 311.166 mm, GPM-CHIRPS gap 0.649 mm, gap percentage 0.2 percent, and max-to-mean ratios 1.490, 2.015, and 1.886.",
+        "partial_credit": "Award 2-3 points for correct formulas with minor arithmetic errors; award 1 point for using the right products but missing either the agreement or ratio test."
+      },
+      {
+        "name": "Threshold scoring",
+        "points": 3,
+        "description": "Marks all five tests true and computes the score as 5 out of 5 using the stated thresholds.",
+        "partial_credit": "Award 2 points for one incorrect test state; award 1 point for recognizing the overall label without showing the component scoring."
+      },
+      {
+        "name": "Reasoning path and rejected diagnosis",
+        "points": 3,
+        "description": "Ties the passed tests to prolonged lowland storage and rejects short_burst_only using accumulation, agreement, ratio, and persistence metrics.",
+        "partial_credit": "Award 1-2 points for a plausible explanation that misses one or two required metric links."
+      },
+      {
+        "name": "Computed interpretation discipline",
+        "points": 2,
+        "description": "Keeps the interpretation to one calculation-bound event consequence without management steps or a broad disaster essay.",
+        "partial_credit": "Award 1 point for a mostly concise interpretation with minor extra narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2011_Southeast_Asia_monsoon_floods.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-106_Q1",
+  "event_id": "CSX-106",
+  "task_type": "short_answer",
+  "target_family": "temporal_peak_consistency_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "temporal_peak_consistency_ledger",
+    "answer": "late_wind_pressure_pulse_with_offset_rain_peaks",
+    "peak_values": {
+      "peak_gust_kmh": 111.6,
+      "peak_wind_speed_kmh": 61.4,
+      "minimum_pressure_hpa": 989.6,
+      "point_rainfall_total_mm": 13.1,
+      "hourly_rainfall_peak_mm": 0.9
+    },
+    "peak_times": {
+      "gust": "2017-10-16T14:00",
+      "wind": "2017-10-16T14:00",
+      "pressure": "2017-10-16T15:00",
+      "rain_peak_times": [
+        "2017-10-11T07:00",
+        "2017-10-15T16:00"
+      ]
+    },
+    "timing_tests": {
+      "wind_gust_same_hour": true,
+      "pressure_lag_hours_after_gust": 1,
+      "nearest_rain_peak_lag_hours_before_gust": 22,
+      "earliest_rain_peak_lag_hours_before_gust": 127,
+      "rain_mm_within_3h_of_gust": 0.4
+    },
+    "computed_interpretation": "Wind and pressure extrema form a late-window pulse; hourly rainfall peaks are offset from that pulse."
+  },
+  "key_values": {
+    "event_name": "Hurricane Ophelia impacts in Ireland and the UK",
+    "hazard_family": "tropical_cyclone",
+    "hour_count": 192,
+    "tolerances": {
+      "numeric_values": 0.2,
+      "hour_offsets": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger and label",
+        "points": 3,
+        "description": "Returns the requested compact JSON and labels the result late_wind_pressure_pulse_with_offset_rain_peaks.",
+        "partial_credit": "Award 1-2 points for an equivalent label with incomplete JSON; no credit for a broad narrative without the ledger."
+      },
+      {
+        "name": "Peak values and units",
+        "points": 4,
+        "description": "Reports 111.6 km/h gust, 61.4 km/h 10 m wind, 989.6 hPa minimum pressure, 13.1 mm total point rainfall, and 0.9 mm hourly rainfall peak.",
+        "partial_credit": "Award roughly 0.8 points per correct value; cap at 3 points if units or rounding are unclear."
+      },
+      {
+        "name": "Peak times and rainfall tie handling",
+        "points": 4,
+        "description": "Reports gust and wind at 2017-10-16T14:00, pressure at 2017-10-16T15:00, and both rainfall-peak times.",
+        "partial_credit": "Award 2-3 points for correct wind-pressure times but only one rainfall-peak time; award 1 point for a partly correct time list."
+      },
+      {
+        "name": "Timing arithmetic",
+        "points": 4,
+        "description": "Computes same-hour wind/gust as true, pressure lag as 1 hour, nearest rainfall-peak lag as 22 hours before gust, earliest rainfall-peak lag as 127 hours before gust, and 0.4 mm within the 3-hour gust window.",
+        "partial_credit": "Award credit for each correct timing test; reduce credit for wrong sign conventions."
+      },
+      {
+        "name": "Event-window source discipline",
+        "points": 2,
+        "description": "Derives the peak ledger from the event-window hourly point-weather arrays and does not score or substitute separate daily cross-check values.",
+        "partial_credit": "Award 1 point if the hourly extrema are mostly correct but the proof mixes in unrequested daily summaries."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 3,
+        "description": "States that the wind-pressure extrema form a late-window pulse and rainfall peaks are offset, without adding loss totals, public guidance, or broad event narration.",
+        "partial_credit": "Award 1-2 points for the right conclusion with extra unneeded prose."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  }
+}

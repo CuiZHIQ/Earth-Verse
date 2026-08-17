@@ -1,0 +1,126 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-321",
+  "key_values": {
+    "component_scores": {
+      "casualty_score": 1.0,
+      "heat_condition_score": 1.0,
+      "low_point_precip_score": 1.0,
+      "low_wind_score": 1.0
+    },
+    "event_name": "2022 Marmolada glacier collapse",
+    "event_window": {
+      "end_date": "2022-07-03",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2022-07-03"
+    },
+    "fatalities": 11,
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "high_elevation_precip_mm": 0.2,
+    "high_elevation_tmax_c": 12.8,
+    "high_elevation_wind_kmh": 7.8,
+    "impact_chain": [
+      "warm_high_mountain_conditions",
+      "serac_collapse",
+      "direct_alpine_life_safety"
+    ],
+    "injuries": 8,
+    "nasa_precip_mm": 1.18,
+    "nasa_t2m_c": 18.8,
+    "priority_index": 1.0,
+    "text_flags": {
+      "direct_life_safety_impact": true,
+      "serac_collapse_text": true
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "warm-condition glacier collapse with direct casualty priority",
+      "heat-conditioned serac failure and alpine life-safety priority"
+    ],
+    "answer": "heat_conditioned_serac_collapse_life_safety_priority",
+    "answer_type": "exact_label_plus_judged_explanation",
+    "canonical_stance": "The Marmolada collapse should be prioritized as a heat-conditioned serac-collapse life-safety event, not as rainfall, wind, urban amenity, or vegetation damage.",
+    "forbidden_claims": [
+      "rainfall-triggered flood or GLOF is the primary priority",
+      "wind or urban infrastructure disruption is the primary impact interpretation",
+      "dNBR or annual embedding change proves burn or vegetation-loss priority",
+      "the evidence proves exact collapse volume, runout, or full climate attribution"
+    ],
+    "priority_index": 1.0,
+    "required_claims": [
+      "direct report identifies a Marmolada serac collapse on 2022-07-03",
+      "direct casualties make life safety the first impact priority",
+      "warm high-mountain conditions support cryosphere instability while low point precipitation weakens rainfall-primary explanations",
+      "low point wind and the direct incident record weaken wind, urban-service, and vegetation-change framings"
+    ],
+    "required_metrics": [
+      "fatalities=11",
+      "injuries=8",
+      "high_elevation_tmax_c=12.8",
+      "high_elevation_precip_mm=0.2",
+      "high_elevation_wind_kmh=7.8",
+      "priority_index=1.00"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Wikipedia_2022_Marmolada_serac_collapse.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2022_Marmolada_glacier_collapse.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects heat_conditioned_serac_collapse_life_safety_priority as the compact label for the Marmolada event.",
+        "name": "Final classification",
+        "partial_credit": "Give partial credit for a serac or glacier-collapse life-safety priority without the exact label; give no credit for rainfall, wind, urban amenity, vegetation, or insufficient-evidence as the primary label.",
+        "points": 4
+      },
+      {
+        "description": "Reports 11 fatalities, 8 injuries, and a priority_index close to 1.00 as the direct life-safety basis for priority setting.",
+        "name": "Casualty and priority anchors",
+        "partial_credit": "Give partial credit when the casualty evidence is used correctly but the index is omitted, rounded imprecisely, or not tied to the priority decision.",
+        "points": 4
+      },
+      {
+        "description": "Connects 12.8 C high-elevation Tmax and 18.8 C same-day point-temperature context to heat-conditioned ice or serac instability without claiming full climate attribution.",
+        "name": "Warm-condition cryosphere mechanism",
+        "partial_credit": "Give partial credit for mentioning warm conditions without explaining the cryosphere failure mechanism, or for overstating the attribution while preserving the main mechanism.",
+        "points": 4
+      },
+      {
+        "description": "Uses 0.2 mm high-elevation precipitation, 1.18 mm NASA precipitation, and 7.8 km/h wind to reject rainfall-primary, GLOF-primary, and windstorm-primary interpretations.",
+        "name": "Rejection of rainfall and storm alternatives",
+        "partial_credit": "Give partial credit for rejecting the alternatives with fewer quantitative anchors while still keeping rainfall and wind secondary.",
+        "points": 3
+      },
+      {
+        "description": "Keeps urban-service exposure and vegetation or burn-change labels secondary because the confirmed event record is a direct alpine serac-collapse casualty incident.",
+        "name": "Alternative-priority control",
+        "partial_credit": "Give partial credit for rejecting only one of the urban-service or vegetation-change alternatives.",
+        "points": 2
+      },
+      {
+        "description": "Gives an impact chain equivalent to warm_high_mountain_conditions -> serac_collapse -> direct_alpine_life_safety.",
+        "name": "Impact-chain reasoning",
+        "partial_credit": "Give partial credit for a plausible glacier-collapse impact chain that omits either the warm-conditioning driver or the direct life-safety endpoint.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured answer and avoids unsupported claims about exact collapse volume, runout distance, full climate attribution, or urban service losses.",
+        "name": "Format and unsupported-claim control",
+        "partial_credit": "Give partial credit for a correct answer with minor formatting issues or a small unsupported statement that does not change the conclusion.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-321_Q1",
+  "task_type": "short_answer"
+}

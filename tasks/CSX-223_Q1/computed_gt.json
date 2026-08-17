@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-223_Q1",
+  "event_id": "CSX-223",
+  "task_type": "short_answer",
+  "target_family": "rainfall_window_threshold_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "pre_event_window_dominant",
+    "openmeteo": {
+      "prior14_mm": 143.8,
+      "prior10_mm": 136.1,
+      "prior7_mm": 71.6,
+      "event_day_mm": 2.0,
+      "wettest_prior_date": "2006-02-09",
+      "wettest_prior_mm": 43.3
+    },
+    "nasa_power": {
+      "prior14_mm": 441.1,
+      "prior10_mm": 413.5,
+      "prior7_mm": 296.5,
+      "event_day_mm": 4.4,
+      "wettest_prior_date": "2006-02-12",
+      "wettest_prior_mm": 91.4
+    },
+    "event_day_means_mm": {
+      "era5": 4.64,
+      "gpm": 2.4,
+      "chirps": 0.0,
+      "max_mean": 4.64
+    },
+    "threshold_ledger": {
+      "openmeteo_prior14_ge_100": true,
+      "nasa_power_prior14_ge_250": true,
+      "both_daily_event_lt_10": true,
+      "gridded_event_max_lt_5": true,
+      "score": 4
+    },
+    "decision_rule": "Use pre_event_window_dominant when the four threshold tests all pass; here both prior-14-day totals clear their thresholds while daily and gridded event-day rainfall stay below their caps."
+  },
+  "formulas": {
+    "prior14_mm": "sum daily precipitation for the 14 dates before 2006-02-17",
+    "prior10_mm": "sum daily precipitation for the 10 dates before 2006-02-17",
+    "prior7_mm": "sum daily precipitation for the 7 dates before 2006-02-17",
+    "score": "one point for each passing threshold test"
+  },
+  "tolerances": {
+    "daily_precip_mm": 0.1,
+    "gridded_mean_mm": 0.02,
+    "score": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer format and label",
+        "points": 3,
+        "description": "Returns the requested compact JSON shape and final label pre_event_window_dominant.",
+        "partial_credit": "Award 1-2 points for the correct label with incomplete JSON or a nearly correct structure with one missing group."
+      },
+      {
+        "name": "Open-Meteo window ledger",
+        "points": 4,
+        "description": "Computes 143.8, 136.1, 71.6, 2.0, 2006-02-09, and 43.3 from the Open-Meteo daily series.",
+        "partial_credit": "Award proportional credit for correct window totals, event-day value, and wettest pre-event day; minor rounding within 0.1 mm keeps credit."
+      },
+      {
+        "name": "NASA POWER window ledger",
+        "points": 4,
+        "description": "Computes 441.1, 413.5, 296.5, 4.4, 2006-02-12, and 91.4 from the NASA POWER daily series.",
+        "partial_credit": "Award proportional credit for correct window totals, event-day value, and wettest pre-event day; minor rounding within 0.1 mm keeps credit."
+      },
+      {
+        "name": "Event-day gridded means",
+        "points": 3,
+        "description": "Reports ERA5-Land 4.64 mm, GPM 2.40 mm, CHIRPS 0.00 mm, and maximum mean 4.64 mm.",
+        "partial_credit": "Award about 0.75 point for each correct gridded value or derived maximum within 0.02 mm."
+      },
+      {
+        "name": "Threshold score",
+        "points": 4,
+        "description": "Evaluates all four threshold tests correctly and gives a score of 4.",
+        "partial_credit": "Award 1 point for each correctly evaluated test; do not award a test point if the inequality direction is reversed."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Explains the result as a threshold-ledger comparison of pre-event totals versus event-day caps without adding broad causal or management narrative.",
+        "partial_credit": "Award 1 point for a correct but thin explanation, or for a mostly numeric explanation with minor extra narrative."
+      }
+    ]
+  },
+  "key_values": {
+    "event_name": "Southern Leyte / Guinsaugon landslide",
+    "hazard_family": "landslide_mass_movement",
+    "region": "Southeast Asia",
+    "package_file_count": 31,
+    "openmeteo_window": {
+      "prior14_mm": 143.8,
+      "prior10_mm": 136.1,
+      "prior7_mm": 71.6,
+      "event_day_mm": 2.0,
+      "wettest_prior_date": "2006-02-09",
+      "wettest_prior_mm": 43.3
+    },
+    "nasa_power_window": {
+      "prior14_mm": 441.1,
+      "prior10_mm": 413.5,
+      "prior7_mm": 296.5,
+      "event_day_mm": 4.4,
+      "wettest_prior_date": "2006-02-12",
+      "wettest_prior_mm": 91.4
+    },
+    "event_day_means_mm": {
+      "era5": 4.64,
+      "gpm": 2.4,
+      "chirps": 0.0,
+      "max_mean": 4.64
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

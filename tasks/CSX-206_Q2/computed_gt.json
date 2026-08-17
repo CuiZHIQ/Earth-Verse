@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-206_Q2",
+  "event_id": "CSX-206",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "satellite_smoke_load": {
+      "pre_pct": 64.82,
+      "event_pct": 87.91,
+      "ratio": 1.356,
+      "threshold_pass": true
+    },
+    "source_fire_count": {
+      "reported_heavy_burning_zones": 4,
+      "eonet_wildfire_events": 0,
+      "catalog_gap_ratio": 0.0,
+      "threshold_pass": true
+    },
+    "wind_transport": {
+      "u_mean_mps": 0.728,
+      "v_mean_mps": 0.093,
+      "bearing_deg": 82.7,
+      "threshold_pass": true
+    },
+    "precip_clearing": {
+      "wet_days": 7,
+      "support_days": 46,
+      "wet_fraction": 0.152,
+      "gpm_chirps_mean_ratio": 1.026,
+      "rain_clearing_dominant": false
+    },
+    "consistency_score": 5,
+    "diagnosis": "transport_persistent_biomass_burning_smoke",
+    "answer": "transport_persistent_biomass_burning_smoke"
+  },
+  "event": {
+    "package_id": "CSX-206",
+    "event_name": "August-September 2000 southern Africa biomass-burning aerosol and smoke episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_date_or_window": "2000-08-14 to 2000-09-29",
+    "event_window_days_inclusive": 47
+  },
+  "decision_rule": {
+    "summary": "Return the transport-persistent smoke diagnosis only when the image smoke-load ratio, source-zone count, wind-vector bearing, non-dominant rain-clearing test, and GPM/CHIRPS mean-ratio test all pass.",
+    "smoke_load_pass": "event/pre ROI haze fraction ratio >= 1.25 and delta >= 20 percentage points",
+    "source_pass": "reported heavy-burning zone count >= 3; local EONET fire count is treated as a catalog gap if it is zero",
+    "wind_pass": "ERA5 mean vector has positive u and v components and transport bearing from north is 67.5-112.5 degrees",
+    "precip_pass": "rain clearing is not dominant when >=10 mm wet-day fraction < 0.50 and longest >=10 mm run < 5 days",
+    "grid_precip_pass": "GPM/CHIRPS event-mean precipitation ratio is between 0.90 and 1.10"
+  },
+  "key_values": {
+    "satellite_roi_formula": {
+      "valid_pixel": "mean_rgb > 10 and not all rgb channels < 8",
+      "haze_pixel": "valid and 60 <= mean_rgb <= 210 and saturation <= 0.20",
+      "saturation": "(max_rgb - min_rgb) / max(max_rgb, 1)",
+      "roi_pixels": {
+        "y0": 450,
+        "y1_exclusive": 730,
+        "x0": 300,
+        "x1_exclusive": 820
+      }
+    },
+    "satellite_smoke_load_full": {
+      "pre": {
+        "valid_pixels": 120861,
+        "haze_pixels": 78340,
+        "haze_fraction_pct": 64.82,
+        "mean_brightness": 97.43,
+        "mean_saturation": 0.154
+      },
+      "event": {
+        "valid_pixels": 140385,
+        "haze_pixels": 123406,
+        "haze_fraction_pct": 87.91,
+        "mean_brightness": 121.19,
+        "mean_saturation": 0.085
+      },
+      "haze_pixel_delta": 45066,
+      "haze_fraction_delta_pct_points": 23.09,
+      "haze_fraction_ratio": 1.356
+    },
+    "source_fire_full": {
+      "reported_heavy_burning_zones": [
+        "western Zambia",
+        "southern Angola",
+        "northern Namibia",
+        "northern Botswana"
+      ],
+      "reported_heavy_burning_zone_count": 4,
+      "eonet_category_search_events": 0,
+      "eonet_keyword_wildfire_events": 0,
+      "catalog_gap_ratio": 0.0,
+      "report_mentions_fire_fronts_20_miles": true
+    },
+    "wind_full": {
+      "u_mean_mps": 0.728,
+      "v_mean_mps": 0.093,
+      "speed_mps": 0.734,
+      "transport_bearing_deg": 82.7,
+      "east_component_dominance_ratio": 7.81,
+      "east_northeast_pass": true
+    },
+    "precipitation_full": {
+      "daily_point": {
+        "support_start": "2000-08-14",
+        "support_end": "2000-09-28",
+        "support_days": 46,
+        "precip_total_mm": 233.7,
+        "precip_mean_mm_day": 5.08,
+        "precip_max_mm_day": 18.7,
+        "wet_ge10mm_days": 7,
+        "wet_ge10mm_fraction": 0.152,
+        "longest_wet_ge10mm_run_days": 2
+      },
+      "gridded_products": {
+        "gpm_mean_mm": 326.39,
+        "gpm_max_mm": 642.73,
+        "chirps_mean_mm": 318.03,
+        "chirps_max_mm": 430.3,
+        "gpm_chirps_mean_ratio": 1.026,
+        "gpm_chirps_max_ratio": 1.494
+      },
+      "rain_clearing_dominant": false
+    },
+    "report_semantics": {
+      "red_high_blue_low": true,
+      "black_no_result_clouds": true,
+      "angola_southern_zaire_smoke_maximum": true,
+      "vegetation_availability_northward": true
+    },
+    "check_results": {
+      "smoke_load_ratio_pass": true,
+      "source_zone_count_pass": true,
+      "east_northeast_wind_pass": true,
+      "rain_clearing_not_dominant_pass": true,
+      "precip_product_ratio_pass": true
+    }
+  },
+  "tolerances": {
+    "percent_values_abs": 0.05,
+    "ratios_abs": 0.005,
+    "wind_components_mps_abs": 0.005,
+    "bearing_deg_abs": 0.1,
+    "precip_mm_abs": 0.05,
+    "integer_counts_abs": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON schema",
+        "points": 3,
+        "description": "Returns the six requested ledger fields with numeric values, booleans, and the final diagnosis string.",
+        "partial_credit": "Award 1-2 points for a mostly correct structure with missing or mistyped fields."
+      },
+      {
+        "name": "Satellite smoke-load calculation",
+        "points": 5,
+        "description": "Computes the ROI valid/haze mask, pre and event haze fractions, 1.356 ratio, and smoke-load threshold pass.",
+        "partial_credit": "Award 2-4 points for correct masking but one rounded value or threshold detail wrong."
+      },
+      {
+        "name": "Source and fire-count ledger",
+        "points": 3,
+        "description": "Counts four named heavy-burning zones, zero local EONET wildfire events, and treats the zero as a catalog gap rather than absence of burning.",
+        "partial_credit": "Award 1-2 points for correct counts but incomplete ratio or catalog-gap handling."
+      },
+      {
+        "name": "Transport-vector test",
+        "points": 3,
+        "description": "Computes ERA5 mean u/v, vector speed or bearing, and the east-northeast pass condition.",
+        "partial_credit": "Award 1-2 points for correct components but an incomplete bearing or sector test."
+      },
+      {
+        "name": "Precipitation clearing and ratio tests",
+        "points": 3,
+        "description": "Computes 7/46 wet days, wet fraction 0.152, non-dominant clearing status, and GPM/CHIRPS mean ratio near 1.026.",
+        "partial_credit": "Award 1-2 points for correct wet-day arithmetic but one product-ratio or run-length detail wrong."
+      },
+      {
+        "name": "Threshold synthesis",
+        "points": 2,
+        "description": "Combines all five pass/fail checks into consistency_score=5 and the transport-persistent biomass-burning smoke diagnosis.",
+        "partial_credit": "Award 1 point for the right score or label but not both."
+      },
+      {
+        "name": "Output scope control",
+        "points": 1,
+        "description": "Keeps the answer limited to the numeric ledger and avoids added health-impact or action-guidance narrative.",
+        "partial_credit": "No partial credit for this one-point criterion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August-September_2000_southern_Africa_biomass-burning_aerosol_and_smok.json",
+      "data/other/other_001_NASA_Earth_Observatory_Unprecedented_Fires_in_Southern_Africa.html",
+      "data/event_catalogs/event_catalogs_001_NASA_EONET_v3_events_categories_search.json",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_wildfire_events.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ],
+    "notes": "All values are derived from local CSX-206 package files; no network access is used."
+  }
+}

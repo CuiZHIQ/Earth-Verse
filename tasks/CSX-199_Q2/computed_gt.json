@@ -1,0 +1,114 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-199",
+  "key_values": {
+    "alphaearth_max_change": 0.093747,
+    "alphaearth_mean_change": 0.02035,
+    "decision_rule": "moderate mean bin plus three passed patchiness tests",
+    "dnbr_cv": 0.514577,
+    "dnbr_max": 1.002855,
+    "dnbr_mean": 0.328507,
+    "dnbr_min": -0.379248,
+    "dnbr_stddev": 0.169042,
+    "event_name": "2023 Canadian wildfires and smoke",
+    "hazard_family": "wildfire_burn_smoke",
+    "patchiness_score": "3/3",
+    "patchiness_tests": {
+      "cv_ge_0_45": true,
+      "max_ge_0_66": true,
+      "min_lt_0": true
+    },
+    "required_metrics": [
+      "dnbr_mean",
+      "dnbr_max",
+      "dnbr_min",
+      "dnbr_cv"
+    ],
+    "sentinel2_post_count": 33,
+    "sentinel2_pre_count": 20,
+    "severity_bins": {
+      "high": "0.44 <= mean < 0.66",
+      "low": "0.00 <= mean < 0.27",
+      "moderate": "0.27 <= mean < 0.44",
+      "unburned_or_regrowth": "mean < 0.00",
+      "very_high": "mean >= 0.66"
+    },
+    "target_family": "threshold_ledger"
+  },
+  "numeric_tolerances": {
+    "dnbr_cv": 0.03,
+    "dnbr_max": 0.02,
+    "dnbr_mean": 0.02,
+    "dnbr_min": 0.03
+  },
+  "primary_gt": {
+    "computed_interpretation": "The mean dNBR is moderate, while the maximum, negative lower tail, and CV all satisfy the patchiness rule.",
+    "dnbr_cv": 0.515,
+    "dnbr_max": 1.003,
+    "dnbr_mean": 0.329,
+    "dnbr_min": -0.379,
+    "final_label": "patchy_moderate_burn_index_distribution",
+    "heterogeneity_class": "patchy",
+    "patchiness_score": "3/3",
+    "severity_class": "moderate"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the final label patchy_moderate_burn_index_distribution, severity class moderate, heterogeneity class patchy, and patchiness score 3/3.",
+        "name": "Final structured answer",
+        "partial_credit": "Award 2 points for only the correct severity or heterogeneity class; award 3 points for both classes without the final label or score.",
+        "points": 4
+      },
+      {
+        "description": "Reports dNBR mean near 0.329, max near 1.003, min near -0.379, and CV near 0.515.",
+        "name": "dNBR numeric extraction and rounding",
+        "partial_credit": "Award 1 point for each correct value within tolerance.",
+        "points": 4
+      },
+      {
+        "description": "Computes dNBR CV as stddev divided by absolute mean and applies it to the event values.",
+        "name": "CV formula",
+        "partial_credit": "Award 1 point for naming the correct formula but not computing it; award 2 points for a nearby CV with a rounding or denominator mistake.",
+        "points": 3
+      },
+      {
+        "description": "Uses the stated mean dNBR bins and places 0.329 in the moderate interval.",
+        "name": "Mean-severity threshold logic",
+        "partial_credit": "Award 1 point for using the bins but landing one adjacent class away; award 2 points for the right class with incomplete interval logic.",
+        "points": 3
+      },
+      {
+        "description": "Evaluates all three patchiness tests and finds that CV, max, and min tests pass.",
+        "name": "Patchiness gate ledger",
+        "partial_credit": "Award 1 point for one correct test, 2 points for two correct tests, or 2 points for the right patchy class without all test values.",
+        "points": 3
+      },
+      {
+        "description": "States that the distribution is moderate on average with a severe upper tail and that the peak should not summarize the full distribution.",
+        "name": "Computed interpretation",
+        "partial_credit": "Award 1 point for a correct but vague sentence tied to only one statistic.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON with rounded numeric fields and no added prose outside the object.",
+        "name": "Concise JSON format",
+        "partial_credit": "Award 0.5 points for a readable answer with minor field omissions.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "threshold_ledger",
+  "task_id": "CSX-199_Q2",
+  "task_type": "short_answer"
+}

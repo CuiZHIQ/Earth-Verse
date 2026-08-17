@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-194_Q1",
+  "event_id": "CSX-194",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "black_summer_coupled_process_model",
+  "task_subtype": "black_summer_fire_weather_pyroconvection_receptor_stress_model",
+  "primary_gt": {
+    "target_family": "black_summer_coupled_process_model",
+    "answer": "extreme_coupled_fire_smoke_response_case",
+    "baseline_classification": "extreme_coupled_fire_smoke_response_case",
+    "baseline_coupled_process_index": 78.721,
+    "scenario_coupled_process_index": 80.362,
+    "scenario_delta": 1.641,
+    "response_priority_order": [
+      "smoke_air_quality",
+      "access_evacuation",
+      "fireline_containment"
+    ],
+    "final_answer": {
+      "target_family": "black_summer_coupled_process_model",
+      "source_paths": {
+        "event_context": [
+          "metadata/event.json",
+          "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_bushfires.json"
+        ],
+        "weather_and_precipitation": [
+          "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+          "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+          "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "burn_and_surface_change": [
+          "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+          "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+        ],
+        "exposure": [
+          "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+          "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+        ],
+        "smoke_and_response_context": [
+          "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+          "data/other/other_001_WMO_Australia_fires_after_hottest_driest_year_on_record.html"
+        ]
+      },
+      "process_model": {
+        "event_period": {
+          "start": "2019-09-01",
+          "end": "2020-02-29"
+        },
+        "analysis_window": {
+          "start": "2019-09-01",
+          "end": "2019-10-16",
+          "days": 46
+        },
+        "baseline_classification": "extreme_coupled_fire_smoke_response_case"
+      },
+      "computed_metrics": {
+        "baseline_weather": {
+          "precip_total_mm": 67.3,
+          "dry_days": 38,
+          "dry_day_fraction": 0.826,
+          "longest_dry_spell_days": 12,
+          "hot_windy_days": 1,
+          "max_temp_c": 27.5,
+          "max_wind_kmh": 30.3,
+          "gridded_precip_consensus_mm": 63.311,
+          "point_to_grid_precip_ratio": 0.956,
+          "fire_weather_stress_norm": 0.647
+        },
+        "burn_surface_smoke_exposure": {
+          "dnbr_mean": 0.123,
+          "dnbr_max": 0.974,
+          "dnbr_spread": 0.851,
+          "annual_embedding_change_mean": 0.03,
+          "annual_embedding_change_max": 0.377,
+          "max_smoke_height_km": 19,
+          "firestorms_minimum": 21,
+          "population": 344722,
+          "road_features": 914,
+          "amenity_features": 78,
+          "burn_severity_norm": 0.787,
+          "surface_change_norm": 0.72,
+          "smoke_pyroconvective_norm": 0.982,
+          "exposure_load_norm": 0.916
+        },
+        "baseline_coupled_process_index": 78.721
+      },
+      "scenario_analysis": {
+        "perturbation": {
+          "temperature_c": 2.0,
+          "wind_multiplier": 1.15,
+          "precip_multiplier": 0.8
+        },
+        "scenario_fire_weather_stress_norm": 0.712,
+        "scenario_coupled_process_index": 80.362,
+        "scenario_delta": 1.641
+      },
+      "response_priorities": [
+        {
+          "priority": "smoke_air_quality",
+          "score": 88.191,
+          "rank": 1
+        },
+        {
+          "priority": "access_evacuation",
+          "score": 78.983,
+          "rank": 2
+        },
+        {
+          "priority": "fireline_containment",
+          "score": 74.98,
+          "rank": 3
+        }
+      ],
+      "mechanism_chain": [
+        "Persistent dry days and a 12-day dry spell kept local fuels receptive during the early-season fire window.",
+        "High dNBR maxima and measurable annual embedding change show localized severe burning and landscape alteration.",
+        "More than 20 pyrocumulonimbus firestorms lofted smoke to 19 km, extending response concern from the fireline to downwind air quality."
+      ],
+      "final_interpretation": "The observed early-season package evidence supports an extreme coupled fire-smoke response case, with smoke and access/evacuation pressures ranking above direct fireline containment in the baseline prioritization."
+    },
+    "tolerances": {
+      "norms_and_indices": 0.01,
+      "precip_mm": 0.1,
+      "ratio": 0.01,
+      "counts": 0,
+      "population": 5000
+    }
+  },
+  "key_values": {
+    "event": {
+      "event_name": "2019-2020 Australian Black Summer bushfires",
+      "hazard_family": "wildfire_burn_smoke",
+      "region": "Oceania",
+      "event_start": "2019-09-01",
+      "event_end": "2020-02-29"
+    },
+    "analysis_window": {
+      "start": "2019-09-01",
+      "end": "2019-10-16",
+      "days": 46
+    },
+    "weather": {
+      "days": 46,
+      "precip_total_mm": 67.3,
+      "dry_days": 38,
+      "dry_day_fraction": 0.826,
+      "longest_dry_spell_days": 12,
+      "hot_windy_days": 1,
+      "hot_windy_fraction": 0.022,
+      "max_temp_c": 27.5,
+      "max_wind_kmh": 30.3,
+      "nasa_power_precip_total_mm": 53.81,
+      "gridded_precip_sources_mm": {
+        "era5_land_mean_mm": 69.082,
+        "gpm_imerg_mean_mm": 62.016,
+        "chirps_mean_mm": 58.835
+      },
+      "gridded_precip_consensus_mm": 63.311,
+      "point_to_grid_precip_ratio": 0.956,
+      "fire_weather_stress_norm": 0.647
+    },
+    "scenario_weather": {
+      "days": 46,
+      "precip_total_mm": 53.84,
+      "dry_days": 38,
+      "dry_day_fraction": 0.826,
+      "longest_dry_spell_days": 12,
+      "hot_windy_days": 3,
+      "hot_windy_fraction": 0.065,
+      "max_temp_c": 29.5,
+      "max_wind_kmh": 34.845,
+      "scenario_gridded_precip_consensus_mm": 50.649,
+      "scenario_fire_weather_stress_norm": 0.712
+    },
+    "burn_surface_smoke_exposure": {
+      "dnbr_mean": 0.123,
+      "dnbr_max": 0.974,
+      "dnbr_spread": 0.851,
+      "annual_embedding_change_mean": 0.03,
+      "annual_embedding_change_max": 0.377,
+      "smoke_values": {
+        "firestorms_minimum": 21,
+        "smoke_height_min_km": 15,
+        "max_smoke_height_km": 19,
+        "transport_targets": {
+          "new_zealand": true,
+          "south_america": true
+        }
+      },
+      "population": 344722,
+      "road_features": 914,
+      "amenity_features": 78,
+      "burn_severity_norm": 0.787,
+      "surface_change_norm": 0.72,
+      "smoke_pyroconvective_norm": 0.982,
+      "exposure_load_norm": 0.916
+    },
+    "indices": {
+      "baseline_coupled_process_index": 78.721,
+      "scenario_coupled_process_index": 80.362,
+      "scenario_delta": 1.641,
+      "response_priorities": [
+        {
+          "priority": "smoke_air_quality",
+          "score": 88.191,
+          "rank": 1
+        },
+        {
+          "priority": "access_evacuation",
+          "score": 78.983,
+          "rank": 2
+        },
+        {
+          "priority": "fireline_containment",
+          "score": 74.98,
+          "rank": 3
+        }
+      ],
+      "answer": "extreme_coupled_fire_smoke_response_case"
+    },
+    "report_context": {
+      "national_temp_anomaly_c": 1.52,
+      "national_rainfall_2019_mm": 277.6,
+      "national_rainfall_below_average_percent": 40,
+      "reported_co2_megatonnes": 400,
+      "very_much_above_average_ffdi_area_percent_min": 95,
+      "highest_record_ffdi_area_percent_approx": 60
+    }
+  },
+  "numeric_tolerances": {
+    "norms_and_indices": 0.01,
+    "precip_mm": 0.1,
+    "temperature_c": 0.1,
+    "wind_kmh": 0.1,
+    "ratio": 0.01,
+    "population": 5000,
+    "counts": 0
+  },
+  "decision_rule": {
+    "classification_if": {
+      "baseline_coupled_process_index_min": 75,
+      "scenario_delta_min": 1.0,
+      "smoke_pyroconvective_norm_min": 0.9,
+      "exposure_load_norm_min": 0.85
+    },
+    "otherwise": "lower_coupled_response_pressure"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Identifies relevant package files across reports, hazard products, remote sensing, and exposure, and cites package-relative paths in the requested source_paths structure.",
+        "partial_credit": "Give 1-2 points if citations are present but omit one major evidence family."
+      },
+      {
+        "name": "Weather-window and rainfall reconstruction",
+        "points": 4,
+        "description": "Uses the 2019-09-01 to 2019-10-16 quantitative window, computes 46 days, 67.3 mm local precipitation, 38 dry days, 12-day longest dry spell, 1 hot-windy day, 27.5 C max temperature, 30.3 km/h max wind, 63.311 mm gridded precipitation consensus, and point-to-grid ratio 0.956.",
+        "partial_credit": "Give 1-3 points for correct windowing with minor rounding errors or one missing precipitation source."
+      },
+      {
+        "name": "Burn, surface-change, smoke, and exposure terms",
+        "points": 5,
+        "description": "Extracts dNBR mean 0.123, dNBR max 0.974, annual change mean 0.030, annual change max 0.377, 15-19 km smoke height, more than 20 firestorms, smoke transport to New Zealand and South America, population 344722, 914 road features, and 78 amenity features.",
+        "partial_credit": "Give 1-4 points according to how many evidence families and numeric anchors are correctly recovered."
+      },
+      {
+        "name": "Formula implementation and baseline classification",
+        "points": 4,
+        "description": "Computes fire_weather_stress_norm 0.647, burn_severity_norm 0.787, surface_change_norm 0.720, smoke_pyroconvective_norm 0.982, exposure_load_norm 0.916, baseline coupled_process_index 78.721, and classifies the event as extreme_coupled_fire_smoke_response_case.",
+        "partial_credit": "Give 1-3 points for correct component logic but an incorrect final rounded index or label."
+      },
+      {
+        "name": "Sensitivity and response-priority reasoning",
+        "points": 3,
+        "description": "Applies the +2 C, 1.15 wind, 0.80 precipitation perturbation, obtains scenario fire-weather stress 0.712, scenario coupled index 80.362, delta 1.641, and ranks smoke_air_quality before access_evacuation before fireline_containment.",
+        "partial_credit": "Give 1-2 points if the scenario is applied but response ranking or delta is wrong."
+      },
+      {
+        "name": "Disaster-process interpretation",
+        "points": 1,
+        "description": "Explains the physical chain from persistent dry weather and burn severity to pyrocumulonimbus smoke injection and receptor-response pressure without generic wildfire commentary.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_bushfires.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/other/other_001_WMO_Australia_fires_after_hottest_driest_year_on_record.html"
+    ]
+  }
+}

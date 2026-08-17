@@ -1,0 +1,138 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "event_id": "CSX-256",
+  "task_id": "CSX-256_Q1",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "post_fire_rainfall_debris_flow_cascade",
+    "priority": "highest_life_safety_and_asset_damage_priority",
+    "cascade_priority_index": 100.0,
+    "impact_chain": [
+      "recent_burned_steep_catchments",
+      "intense_rainfall",
+      "debris_flows_on_alluvial_fans"
+    ],
+    "key_metrics": {
+      "open_meteo_precip_mm": 62.4,
+      "max_precip_support_mm": 68.2,
+      "dnbr_mean": 0.26,
+      "exposed_population": 120050,
+      "critical_facilities": 52
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_id": "CSX-256",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_data_release.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2018_Montecito_post-fire_debris_flows.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "key_values": {
+    "event_name": "2018 Montecito post-fire debris flows",
+    "event_date": "2018-01-09",
+    "text_flags": {
+      "intense_rain": true,
+      "post_fire": true,
+      "steep_catchments": true,
+      "alluvial_fans": true,
+      "fatalities": true,
+      "homes_damaged": true
+    },
+    "rain_products_ge_50mm": 6,
+    "mean_precip_support_mm": 55.3,
+    "precipitation_mm": {
+      "open_meteo": 62.4,
+      "gpm_mean": 52.1,
+      "gpm_max": 68.2,
+      "chirps_mean": 13.9,
+      "chirps_max": 62.8,
+      "era5_mean": 51.4,
+      "era5_max": 53.3
+    },
+    "burn_and_change": {
+      "dnbr_mean": 0.26,
+      "dnbr_max": 1.578,
+      "alphaearth_change_mean": 0.088
+    },
+    "osm_counts": {
+      "elements": 1000,
+      "roads": 947,
+      "buildings": 1,
+      "schools": 34,
+      "fire_stations": 9,
+      "hospitals": 4,
+      "police": 1,
+      "shelters": 4,
+      "critical_facilities": 52
+    },
+    "score_components": {
+      "rainfall_score": 1.0,
+      "burn_proxy_score": 1.0,
+      "exposure_score": 1.0,
+      "facility_score": 1.0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Mechanism diagnosis",
+        "points": 3,
+        "description": "Selects post_fire_rainfall_debris_flow_cascade rather than rainfall-only, fire-only, or exposure-only interpretations.",
+        "partial_credit": "Award 1-2 points for recognizing debris flow but missing the post-fire or rainfall-trigger coupling."
+      },
+      {
+        "name": "Antecedent burn conditioning",
+        "points": 3,
+        "description": "Explains wildfire/burn-scar conditioning, including Thomas Fire timing and steep catchment susceptibility.",
+        "partial_credit": "Award 1-2 points for mentioning fire history without linking it to runoff or sediment susceptibility."
+      },
+      {
+        "name": "Rainfall support",
+        "points": 3,
+        "description": "Uses rainfall support, including Open-Meteo near 62.4 mm and multiple products/statistics at or above 50 mm.",
+        "partial_credit": "Award 1-2 points for citing rainfall but omitting cross-product support."
+      },
+      {
+        "name": "Process routing",
+        "points": 2,
+        "description": "Describes rapid runoff, sediment entrainment, channel routing, and alluvial-fan deposition.",
+        "partial_credit": "Award 1 point for a generic debris-flow pathway without the alluvial-fan or channel component."
+      },
+      {
+        "name": "Exposure and service impacts",
+        "points": 2,
+        "description": "Connects priority to fatalities, home damage, population exposure near 120050, and 52 critical facilities.",
+        "partial_credit": "Award 1 point for using exposure but missing service assets or reported impacts."
+      },
+      {
+        "name": "Remote-sensing interpretation",
+        "points": 2,
+        "description": "Interprets dNBR mean near 0.26, dNBR maximum near 1.578, and AlphaEarth change near 0.088 as susceptibility/context support.",
+        "partial_credit": "Award 1 point for mentioning remote-sensing metrics without interpreting their role."
+      },
+      {
+        "name": "Compact GT values",
+        "points": 2,
+        "description": "Reports maximum precipitation support near 68.2 mm, cascade priority index near 100.0, and the expected three-stage impact chain.",
+        "partial_credit": "Award 1 point for reporting some values with minor omissions."
+      },
+      {
+        "name": "Priority and overclaim control",
+        "points": 3,
+        "description": "Assigns highest life-safety and asset-damage priority while avoiding unsupported threshold, damage, affected-population, or building-level loss claims.",
+        "partial_credit": "Award 1-2 points for correct priority with some overstatement or weak caveating."
+      }
+    ]
+  }
+}

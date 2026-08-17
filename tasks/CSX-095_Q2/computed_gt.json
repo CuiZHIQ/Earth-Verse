@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-095_Q2",
+  "event_id": "CSX-095",
+  "target_family": "doksuri_haihe_basin_routing_persistence_peak_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "doksuri_haihe_basin_routing_persistence_peak_ledger",
+    "basin_routing_ledger": [
+      {
+        "row_id": "report_rain_load",
+        "formula": "331.0/83.0; 1025.0/331.0; 331.0*1000; 1025.0*1000; 744.8/331.0",
+        "computed_value": {
+          "report_avg_intensity_mm_per_hour": 3.988,
+          "max_to_avg_rainfall_ratio": 3.097,
+          "avg_rain_volume_m3_per_km2": 331000.0,
+          "max_point_rain_volume_m3_per_km2": 1025000.0,
+          "reservoir_to_avg_ratio": 2.25
+        },
+        "threshold_or_test": "duration >= 72 h, average load >= 300000 m3/km2, max/avg > 2, and reservoir/avg > 2",
+        "result": "pass_persistent_high_load"
+      },
+      {
+        "row_id": "persistence_over_peak",
+        "formula": "97.4/196.9; 161.3/196.9; 187.2/196.9; 187.2/17.5; 11/52; 97.29/220.61",
+        "computed_value": {
+          "wettest_24h_share": 0.495,
+          "wettest_48h_share": 0.819,
+          "wettest_72h_share": 0.951,
+          "wettest_72h_to_1h_peak_ratio": 10.697,
+          "wet_hours_ge_5_share_of_ge_1": 0.212,
+          "daily_peak_share": 0.441
+        },
+        "threshold_or_test": "72h share >= 0.90, 72h/1h ratio >= 10, and daily peak share < 0.50",
+        "result": "pass_persistence_dominates_peak"
+      },
+      {
+        "row_id": "river_response_receptor_density",
+        "formula": "river flag count = 1 + 1; 199/2031.312*100; 81/2031.312*100",
+        "computed_value": {
+          "river_response_flag_count": 2,
+          "river_response_flags_possible": 2,
+          "road_bridge_density_per_100km2": 9.797,
+          "critical_facility_density_per_100km2": 3.988
+        },
+        "threshold_or_test": "2/2 river-response flags pass; density checks show receptor context",
+        "result": "pass_river_response_with_receptor_density"
+      },
+      {
+        "row_id": "wind_and_compact_grid_rejection",
+        "formula": "38.5/3.6; (38.5/3.6)^2; 8.1955/196.9; 20.5586/196.9; 196.9/3.0849; 196.9/8.1955; 196.9/20.5586",
+        "computed_value": {
+          "peak_wind_ms": 10.694,
+          "wind_energy_proxy": 114.371,
+          "compact_event_max_to_point_total_ratio": 0.042,
+          "compact_daily_max_to_point_total_ratio": 0.104,
+          "point_total_to_compact_hourly_grid_max_ratio": 63.828,
+          "point_total_to_compact_event_grid_max_ratio": 24.025,
+          "point_total_to_compact_daily_grid_max_ratio": 9.578
+        },
+        "threshold_or_test": "peak wind < 15 m/s and compact-grid maxima are far below the point event total",
+        "result": "reject_wind_control_and_low_grid_downgrade"
+      },
+      {
+        "row_id": "sensor_context_check",
+        "formula": "abs(-0.0410782699); scene counts = 2 and 8; embedding mean = 0.0067614112",
+        "computed_value": {
+          "pre_scene_count": 2,
+          "post_scene_count": 8,
+          "radar_mean_abs_change_db": 0.041,
+          "embedding_mean_change": 0.00676
+        },
+        "threshold_or_test": "small mean-change metrics cannot replace the rainfall/routing proof",
+        "result": "context_only_not_main_trigger"
+      }
+    ],
+    "rejected_overreads": [
+      "typhoon_wind_control",
+      "release_or_retention_decisions_as_primary_trigger",
+      "short_peak_hour_framing",
+      "low_compact_gridded_rainfall_downgrade",
+      "image_led_extent_as_hydrologic_proof",
+      "mountain_gully_closures_as_dominant_basin_driver"
+    ],
+    "final_consistency_label": "basin_routed_persistent_rainfall_flood_supported"
+  },
+  "event": {
+    "package_id": "CSX-095",
+    "event_name": "Typhoon Doksuri Beijing-Tianjin-Hebei and Haihe flood",
+    "hazard_family": "river_flood",
+    "event_date_or_window": "2023-07-29 to 2023-08-02"
+  },
+  "key_values": {
+    "wmc_avg_rainfall_mm": 331.0,
+    "wmc_duration_hours": 83.0,
+    "wmc_single_point_max_rainfall_mm": 1025.0,
+    "rainfall_max_to_average_ratio": 3.097,
+    "avg_rain_volume_m3_per_km2": 331000.0,
+    "max_point_rain_volume_m3_per_km2": 1025000.0,
+    "wmo_reservoir_rainfall_mm": 744.8,
+    "wmo_to_nasa_power_total_ratio": 3.376,
+    "open_meteo_event_total_mm": 196.9,
+    "open_meteo_max_1h_mm": 17.5,
+    "open_meteo_max_24h_mm": 97.4,
+    "open_meteo_max_48h_mm": 161.3,
+    "open_meteo_max_72h_mm": 187.2,
+    "open_meteo_72h_share_of_event_total": 0.951,
+    "precipitation_persistence_to_1h_peak_ratio": 10.697,
+    "wet_hours_ge_1mm": 52,
+    "wet_hours_ge_5mm": 11,
+    "open_meteo_max_wind_kmh": 38.5,
+    "nasa_power_total_precip_mm": 220.61,
+    "nasa_power_max_day": "20230730",
+    "nasa_power_max_day_precip_mm": 97.29,
+    "nasa_power_daily_peak_share_of_total": 0.441,
+    "era5_land_precipitation_sum_mm_mean": 2.546014314957643,
+    "era5_land_precipitation_sum_mm_max": 3.0848629355659796,
+    "gpm_event_precip_mm_mean": 4.031783825855036,
+    "gpm_event_precip_mm_max": 8.195499760098755,
+    "gpm_max_to_open_meteo_event_total_ratio": 0.042,
+    "chirps_event_precip_mm_mean": 0.3743156117885388,
+    "chirps_event_precip_mm_max": 20.558565139770508,
+    "chirps_max_to_open_meteo_event_total_ratio": 0.104,
+    "wmc_people_evacuated_in_advance": 42000.0,
+    "wmo_people_evacuated_more_than": 125000.0,
+    "wmc_construction_workers_relocated": 500000.0,
+    "wmc_construction_sites_halted": 3554.0,
+    "wmc_scenic_spots_closed": 230.0,
+    "wmc_mountain_flood_gullies_sealed": 427.0,
+    "wmc_rural_homestays_suspended_more_than": 5100.0,
+    "wmo_hebei_river_swelling": true,
+    "wmo_bridge_damage": true,
+    "analysis_area_km2": 2031.312,
+    "worldpop_population_context": 2485012.263,
+    "population_density_per_km2": 1223.353,
+    "osm_elements": 1000,
+    "major_road_elements": 170,
+    "bridge_elements": 29,
+    "road_bridge_elements": 199,
+    "tunnel_elements": 2,
+    "waterway_elements": 8,
+    "critical_facility_elements": 81,
+    "critical_facility_breakdown": {
+      "hospital": 24,
+      "school": 10,
+      "shelter": 12,
+      "police": 28,
+      "fire_station": 7
+    },
+    "major_road_elements_per_100km2": 8.369,
+    "road_bridge_elements_per_100km2": 9.797,
+    "critical_facility_elements_per_100km2": 3.988,
+    "people_per_critical_facility": 30679.164,
+    "sentinel_pre_count": 2,
+    "sentinel_post_count": 8,
+    "sentinel_vv_change_mean_db": -0.04107826990398353,
+    "sentinel_vv_change_min_db": -36.16357128692215,
+    "alphaearth_change_mean": 0.0067614112250658715
+  },
+  "derived_metrics": {
+    "report_avg_intensity_mm_per_hour": 3.988,
+    "max_to_avg_rainfall_ratio": 3.097,
+    "avg_rain_volume_m3_per_km2": 331000.0,
+    "max_point_rain_volume_m3_per_km2": 1025000.0,
+    "reservoir_to_avg_ratio": 2.25,
+    "wettest_24h_share": 0.495,
+    "wettest_48h_share": 0.819,
+    "wettest_72h_share": 0.951,
+    "wettest_72h_to_1h_peak_ratio": 10.697,
+    "wet_hours_ge_5_share_of_ge_1": 0.212,
+    "daily_peak_share": 0.441,
+    "river_response_flag_count": 2,
+    "river_response_flags_possible": 2,
+    "road_bridge_density_per_100km2": 9.797,
+    "critical_facility_density_per_100km2": 3.988,
+    "peak_wind_ms": 10.694,
+    "wind_energy_proxy": 114.371,
+    "compact_event_max_to_point_total_ratio": 0.042,
+    "compact_daily_max_to_point_total_ratio": 0.104,
+    "point_total_to_compact_hourly_grid_max_ratio": 63.828,
+    "point_total_to_compact_event_grid_max_ratio": 24.025,
+    "point_total_to_compact_daily_grid_max_ratio": 9.578,
+    "pre_scene_count": 2,
+    "post_scene_count": 8,
+    "radar_mean_abs_change_db": 0.041,
+    "embedding_mean_change": 0.00676,
+    "open_meteo_max_24h_start_index": 45,
+    "open_meteo_max_48h_start_index": 22,
+    "open_meteo_max_72h_start_index": 1
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required JSON schema and final label",
+        "points": 3,
+        "description": "Returns target_family, all five required ledger rows, rejected_overreads, and the final consistency label.",
+        "partial_credit": "Award 1-2 points for a mostly correct JSON ledger with one missing row or minor label mismatch; award 0 if the answer is not ledger-style."
+      },
+      {
+        "name": "Report rain-load calculations",
+        "points": 4,
+        "description": "Correctly computes average intensity, max/average ratio, average and maximum water volumes per km2, and reservoir/average ratio.",
+        "partial_credit": "Award 2-3 points for most values with a rounding or unit slip; award 1 point for using the right variables but missing derived load or ratio logic."
+      },
+      {
+        "name": "Persistence-over-peak proof",
+        "points": 4,
+        "description": "Correctly computes 24h/48h/72h shares, 72h-to-1h ratio, wetter-hour share, daily peak share, and pass logic.",
+        "partial_credit": "Award 2-3 points for correct window shares but incomplete threshold reasoning; award 1 point for only identifying that the 72h window dominates."
+      },
+      {
+        "name": "River response and receptor-density checks",
+        "points": 3,
+        "description": "Correctly gives the 2/2 river-response flag pass and computes road/bridge and critical-facility densities per 100 km2.",
+        "partial_credit": "Award 1-2 points for the correct river flags but one density missing or miscomputed."
+      },
+      {
+        "name": "Wind and compact-grid rejection",
+        "points": 3,
+        "description": "Uses the wind conversion/proxy and compact-grid contrast ratios to reject wind control and low-grid downgrade.",
+        "partial_credit": "Award 1-2 points for only the wind calculation or only the compact-grid comparison."
+      },
+      {
+        "name": "Rejected overreads and sensor-context check",
+        "points": 2,
+        "description": "Rejects the required overreads; the sensor-context check contributes at most 1 point and cannot replace the rainfall/routing proof.",
+        "partial_credit": "Award 1 point for rejecting only two or three overreads or omitting the sensor-context limitation."
+      },
+      {
+        "name": "Calculation-led interpretation",
+        "points": 1,
+        "description": "Keeps the final label concise and avoids broad event narration; broad explanatory prose earns no extra credit.",
+        "partial_credit": "No partial credit for this item; prose that drifts away from the calculations earns 0 points."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_WMO_-_Typhoons_trigger_record-breaking_rainfall_in_China.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "All decisive values are computed or extracted from local CSX-095 package files. AOI, OSM, WorldPop, and exposure files are evaluated for declared derived statistics and provenance completeness, not for absolute coordinate/place-name validity."
+  }
+}

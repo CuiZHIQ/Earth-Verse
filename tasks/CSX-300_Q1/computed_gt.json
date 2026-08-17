@@ -1,0 +1,165 @@
+{
+  "decision_rule": {
+    "required_output_keys": [
+      "max_wind_ms",
+      "point_precip_total_mm",
+      "regional_precip_mm",
+      "receptors",
+      "component_scores",
+      "dust_wind_index",
+      "threshold_result"
+    ],
+    "summary": "Compute DWI from wind, dryness, road exposure, facility exposure, and population; the threshold passes only if every numeric gate is true. Point-weather and receptor-context metrics are separate evidence roles."
+  },
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "All required fields are fixed calculations from event-window data and threshold gates.",
+  "event_id": "CSX-300",
+  "key_values": {
+    "event_name": "September 2009 Australian dust storm",
+    "event_window": [
+      "2009-09-22",
+      "2009-09-23"
+    ],
+    "gates": {
+      "index_ge_70": true,
+      "point_precip_eq_0_mm": true,
+      "regional_max_lt_3_mm": true,
+      "regional_mean_le_0_1_mm": true,
+      "wind_ge_8_ms": true
+    },
+    "openmeteo_wind_max_ms": 11.64,
+    "power_wind_max_ms": 9.06,
+    "reasoning_depth": {
+      "counterfactual_rejection": "A wetness-led interpretation fails because point precipitation is zero and regional mean precipitation is far below the dryness gate.",
+      "evidence_weighting": "Wind and regional dryness provide the physical dust-transport evidence; road, amenity, and population values are receptor context rather than dust-generation evidence.",
+      "uncertainty_or_scale_caveat": "Receptor counts help prioritize disruption context but do not prove observed dust concentration or health impacts."
+    },
+    "regional_max_inputs_mm": [
+      0.0677854,
+      2.1649999,
+      0.0
+    ],
+    "regional_mean_inputs_mm": [
+      0.0025303,
+      0.04315,
+      0.0
+    ]
+  },
+  "primary_gt": {
+    "answer": {
+      "component_scores": {
+        "dryness": 0.848,
+        "facility": 1.0,
+        "population": 0.609,
+        "transport": 1.0,
+        "wind": 0.91
+      },
+      "dust_wind_index": 90.32,
+      "max_wind_ms": 11.64,
+      "point_precip_total_mm": 0.0,
+      "receptors": {
+        "critical_amenities": 53,
+        "local_population": 6086.444,
+        "major_roads": 170
+      },
+      "regional_precip_mm": {
+        "max": 2.165,
+        "mean": 0.0152
+      },
+      "threshold_result": "dust_transport_consistent"
+    },
+    "canonical_answer": "dust_transport_consistent",
+    "consequence": "wetness_led_reading_fails_precip_gates",
+    "evidence_roles": {
+      "point_weather": "wind and point-precipitation gates",
+      "receptor_context": "road, amenity, and population components only",
+      "regional_precipitation": "regional dryness gates"
+    },
+    "formula": "DWI=100*(0.35W+0.30D+0.20T+0.10F+0.05P)",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A wetness-led interpretation fails because point precipitation is zero and regional mean precipitation is far below the dryness gate.",
+      "evidence_weighting": "Wind and regional dryness provide the physical dust-transport evidence; road, amenity, and population values are receptor context rather than dust-generation evidence.",
+      "uncertainty_or_scale_caveat": "Receptor counts help prioritize disruption context but do not prove observed dust concentration or health impacts."
+    },
+    "result": "pass",
+    "thresholds": {
+      "index": 70.0,
+      "max_precip_mm": 3.0,
+      "mean_precip_mm": 0.1,
+      "point_precip_mm": 0.0,
+      "wind_ms": 8.0
+    },
+    "tolerances": {
+      "index": 0.05,
+      "population": 0.001,
+      "precip": 0.0005,
+      "wind": 0.02
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2009_Australian_dust_storm.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with numeric values and the final threshold string.",
+        "name": "Output schema",
+        "partial_credit": "Award 1-2 points for mostly complete JSON with missing nesting or one missing field.",
+        "points": 3
+      },
+      {
+        "description": "Uses 11.64 m/s wind, 0.0 mm point precipitation, 0.0152 mm regional mean precipitation, 2.165 mm regional maximum precipitation, 170 major roads, 53 critical amenities, and 6086.444 people while keeping point-weather and receptor-context roles separate.",
+        "name": "Core numeric extraction",
+        "partial_credit": "Award partial credit for correct values with minor rounding or one omitted receptor metric.",
+        "points": 5
+      },
+      {
+        "description": "Applies the five clipped component formulas and reports wind 0.91, dryness 0.848, transport 1.0, facility 1.0, and population 0.609.",
+        "name": "Component formulas",
+        "partial_credit": "Award 2-3 points for correct formulas with one arithmetic or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Computes dust_wind_index as 90.32 within 0.05 using the stated weights.",
+        "name": "Weighted index",
+        "partial_credit": "Award 1-2 points for the right weighting pattern but an index outside tolerance.",
+        "points": 3
+      },
+      {
+        "description": "Checks all five gates and gives dust_transport_consistent only because every gate passes.",
+        "name": "Threshold gates",
+        "partial_credit": "Award 1-2 points for the right final label with incomplete gate accounting.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the mechanism label to the short computed consequence of the threshold test.",
+        "name": "Computed consequence",
+        "partial_credit": "Award 0.5 points if the label is correct but surrounded by unnecessary narration.",
+        "points": 1
+      },
+      {
+        "description": "Does not add measured road closures, health thresholds, direct losses, or wet-event dominance beyond the computed gates. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Scope control",
+        "partial_credit": "Award 0.5 points if one extra inference is hinted but not central.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "australian_dust_wind_dryness_receptor_index_consistency",
+  "task_id": "CSX-300_Q1",
+  "task_type": "numeric"
+}

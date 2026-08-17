@@ -1,0 +1,264 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-278",
+  "forbidden_overclaims": [
+    "Do not claim that the package proves a complete gridded multi-year rainfall deficit across the full Horn of Africa.",
+    "Do not claim precise mortality, famine phase, hospital stress, or exact livelihood losses from this package alone.",
+    "Do not convert the bounded population context into the number of people directly affected.",
+    "Do not treat annual land-cover or embedding change as direct evidence of the dominant disaster mechanism.",
+    "Do not conclude that La Nina caused only drought everywhere; this task concerns the Horn of Africa impact pathway represented in this package."
+  ],
+  "key_values": {
+    "bounded_population_context": 4982988,
+    "cold_phase_months": 25,
+    "event_window_months": 31,
+    "expected_answer_label": "persistent_la_nina_rainfall_failure_food_security_priority",
+    "expected_mechanism_label": "cool_eastern_pacific_lanina_teleconnection_to_repeated_failed_rains",
+    "expected_priority_label": "food_security_and_livelihood_drought_response",
+    "longest_cold_phase_run_months": 17,
+    "positive_atmospheric_coupling_months": 31,
+    "reported_food_insecure_millions": 20
+  },
+  "numeric_tolerances": {
+    "bounded_population_context": {
+      "tolerance": 10,
+      "units": "people",
+      "value": 4982988
+    },
+    "cold_phase_months": {
+      "tolerance": 0,
+      "units": "months",
+      "value": 25
+    },
+    "longest_cold_phase_run_months": {
+      "tolerance": 0,
+      "units": "months",
+      "value": 17
+    },
+    "positive_atmospheric_coupling_months": {
+      "tolerance": 0,
+      "units": "months",
+      "value": 31
+    },
+    "reported_food_insecure_millions": {
+      "tolerance": 0.5,
+      "units": "million people",
+      "value": 20
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "persistent ENSO cold-phase drought and food-security priority",
+      "triple-dip La Nina rainfall-failure drought response pathway",
+      "La Nina teleconnection to repeated failed rains and livelihood/food-security response"
+    ],
+    "answer": "persistent_la_nina_rainfall_failure_food_security_priority",
+    "answer_type": "deterministic_labels_with_rubric_judged_reasoning",
+    "canonical_stance": "The dominant response pathway is persistent La Nina teleconnection-driven rainfall failure leading to Horn of Africa drought, food insecurity, and livelihood-focused response needs.",
+    "confidence": "high",
+    "forbidden_claims": [
+      "A complete gridded multi-year rainfall deficit has been proven for the full Horn of Africa.",
+      "The bounded population context is the number of directly affected people.",
+      "Annual land-cover or embedding change is the dominant disaster mechanism.",
+      "The task should be answered as a flood response, direct heat-stress, or land-cover-change priority.",
+      "La Nina causes drought everywhere in all affected regions."
+    ],
+    "impact_chain": [
+      "persistent_la_nina",
+      "regional_rainfall_pattern_disruption",
+      "multi_season_drought",
+      "food_insecurity_and_livelihood_stress"
+    ],
+    "key_numeric_anchors": {
+      "cold_phase_months": 25,
+      "longest_cold_phase_run_months": 17,
+      "population_context": 4982988,
+      "positive_atmospheric_coupling_months": 31,
+      "reported_food_insecure_millions": 20
+    },
+    "mechanism": "cool_eastern_pacific_lanina_teleconnection_to_repeated_failed_rains",
+    "priority": "food_security_and_livelihood_drought_response",
+    "required_claims": [
+      "Identifies persistent La Nina as the dominant large-scale driver.",
+      "Connects the teleconnection to rainfall-pattern disruption and repeated failed rainy seasons.",
+      "Frames the disaster outcome as multi-season drought with food-security and livelihood stress.",
+      "Selects food-security and livelihood drought response over heat, flood, or land-cover-change priorities."
+    ],
+    "required_metrics": [
+      "25 cold-phase months during the 31-month event-window index slice.",
+      "17-month longest uninterrupted cold-phase run.",
+      "31 positive atmospheric-coupling months.",
+      "More than 20 million highly food-insecure people reported across Kenya, Somalia, and Ethiopia.",
+      "Bounded population context of approximately 4,982,988 people, not direct affected population."
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_path": "event_packages/standard_event_packages/packages/CSX-278",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2020-2023_triple-dip_La_Nina_and_Horn_of_Africa_drought.json",
+      "data/event_reports/event_reports_001_Locked_anchor_WMO.html",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_009_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_010_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_011_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "question_leakage_audit": {
+    "absolute_path_hits": 0,
+    "boundary_main_hits": 0,
+    "expected_issue_score": 0,
+    "lists_specific_files": false,
+    "product_hits": 0,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 0
+  },
+  "reasoning_requirements": [
+    "Use climate-index persistence to diagnose a persistent teleconnection state.",
+    "Connect atmospheric coupling and report claims to rainfall-pattern disruption.",
+    "Translate repeated failed rains into drought, livelihood stress, and food-security priority.",
+    "Treat contextual precipitation, land-change, and population values as supporting context rather than the whole answer."
+  ],
+  "required_findings": [
+    {
+      "expected": "persistent La Nina rainfall disruption leading to multi-season drought and food-security stress",
+      "name": "dominant_pathway",
+      "scoring_note": "Must choose the drought and food-security pathway over heat, flood response, or land-cover-change priority."
+    },
+    {
+      "expected": "cold eastern Pacific La Nina teleconnection alters rainfall patterns and contributes to repeated failed rains",
+      "name": "mechanism",
+      "scoring_note": "Must connect the teleconnection state to rainfall failure rather than treating indices as standalone labels."
+    },
+    {
+      "expected": "food security and livelihood drought response",
+      "name": "priority",
+      "scoring_note": "Must state a response priority tied to the impact chain."
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant pathway as persistent La Nina rainfall failure leading to food-security and livelihood drought response.",
+        "full_credit": [
+          "Uses or clearly paraphrases the expected answer label.",
+          "Names the La Nina teleconnection mechanism.",
+          "Selects food-security and livelihood drought response as the priority."
+        ],
+        "name": "final_pathway_and_priority",
+        "partial_credit": "Award 1-3 points for answers that identify drought or La Nina but miss either the response priority or pathway specificity.",
+        "points": 4
+      },
+      {
+        "description": "Uses the required deterministic numeric anchors accurately.",
+        "full_credit": [
+          "25 cold-phase months.",
+          "17-month longest cold-phase run.",
+          "31 positive atmospheric-coupling months.",
+          "More than 20 million highly food-insecure people.",
+          "Population context of approximately 4,982,988 people without treating it as affected population."
+        ],
+        "name": "quantitative_anchors",
+        "partial_credit": "Award up to 4 points in proportion to correct anchors and appropriate units or caveats.",
+        "points": 4
+      },
+      {
+        "description": "Explains how persistent cool eastern Pacific La Nina conditions and atmospheric coupling translate into rainfall-pattern disruption.",
+        "full_credit": [
+          "Treats climate indices as evidence of a sustained coupled teleconnection state.",
+          "Links teleconnection forcing to repeated failed rains in the Horn of Africa.",
+          "Avoids treating the index values as isolated labels without process reasoning."
+        ],
+        "name": "physical_mechanism_reasoning",
+        "partial_credit": "Award 1-3 points for incomplete but directionally correct ENSO or drought reasoning.",
+        "points": 4
+      },
+      {
+        "description": "Builds a coherent driver-to-hazard-to-impact-to-response chain.",
+        "full_credit": [
+          "Persistent La Nina driver.",
+          "Regional rainfall disruption and multi-season drought.",
+          "Food insecurity and livelihood stress.",
+          "Food-security/livelihood response focus."
+        ],
+        "name": "impact_chain_interpretation",
+        "partial_credit": "Award 1-2 points for chains that are mostly correct but skip one link.",
+        "points": 3
+      },
+      {
+        "description": "Rejects plausible but weaker dominant pathways.",
+        "full_credit": [
+          "Explains why direct heat stress is not the central response pathway.",
+          "Explains why flood response is not the dominant priority.",
+          "Explains why land-cover-change triage is contextual rather than dominant."
+        ],
+        "name": "distractor_rejection",
+        "partial_credit": "Award 1 point for rejecting at least one major distractor with a substantive reason.",
+        "points": 2
+      },
+      {
+        "description": "Keeps claims within what the event evidence supports.",
+        "full_credit": [
+          "Does not claim precise deaths, famine phase, hospital stress, or exact livelihood losses.",
+          "Does not convert population context into directly affected population.",
+          "Does not claim complete full-region gridded rainfall reconstruction."
+        ],
+        "name": "overclaim_control",
+        "partial_credit": "Award 1 point for mostly disciplined claims with one minor unsupported inference.",
+        "points": 2
+      },
+      {
+        "description": "Returns concise JSON with clear labels, numeric anchors, and an impact chain.",
+        "full_credit": [
+          "JSON-like structure is compact and readable.",
+          "Fields match the requested answer, mechanism, priority, numeric anchors, and impact chain."
+        ],
+        "name": "structured_output_quality",
+        "partial_credit": "No partial credit unless the output is structured enough to grade unambiguously.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "annual_embedding_change_mean_context": 0.025,
+      "atmospheric_coupling_mean": 1.79,
+      "atmospheric_coupling_month_count": 31,
+      "bounded_population_context": 4982988,
+      "cold_phase_index_mean": -0.74,
+      "cold_phase_index_min": -1.2,
+      "cold_phase_months": 25,
+      "context_precip_mean_mm_partial_slice": {
+        "chirps": 272.5,
+        "era5": 307.4,
+        "gpm": 247.9
+      },
+      "event_months_in_index_window": 31,
+      "longest_cold_phase_run_months": 17,
+      "positive_atmospheric_coupling_months": 31,
+      "reported_food_insecure_millions": 20
+    },
+    "event_window": {
+      "end_date": "2023-03-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2020-09-01"
+    },
+    "package_hazard_family": "climate_teleconnection_enso_iod_mjo",
+    "text_claim_flags": {
+      "fifth_failed_season_claim": true,
+      "food_security_claim": true,
+      "horn_drought_claim": true,
+      "lanina_mechanism_claim": true,
+      "triple_dip_claim": true
+    }
+  },
+  "task_id": "CSX-278_Q1",
+  "task_subtype": "mechanism_attribution_response_priority",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-220_Q1",
+  "event_id": "CSX-220",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "mechanism_label": "quick_clay_landslide",
+    "footprint": {
+      "runout_width_m": 300,
+      "runout_length_m": 700,
+      "rectangle_area_ha": 21.0,
+      "debris_flow_area_ha": 9
+    },
+    "rainfall": {
+      "antecedent_5_day_precip_mm": 72.2,
+      "event_day_precip_mm": 8.9,
+      "wetness_index_mm_day": 14.44,
+      "event_day_fraction": 0.1233
+    },
+    "change_signal": {
+      "radar_abs_mean": 0.6378,
+      "optical_abs_mean": 0.3457,
+      "embedding_mean": 0.0912,
+      "dominant_mean_signal": "radar_abs_mean",
+      "radar_to_optical_ratio": 1.845
+    },
+    "exposure_context": {
+      "population_sum_rounded": 1059042,
+      "population_millions": 1.059
+    },
+    "diagnosis_label": "large_quick_clay_footprint_wet_context_radar_dominant"
+  },
+  "judge_anchors": {
+    "target_family": "numeric_diagnosis",
+    "answer": "large_quick_clay_footprint_wet_context_radar_dominant",
+    "tolerances": {
+      "rain_mm": 0.05,
+      "wetness": 0.005,
+      "fraction": 5e-05,
+      "change": 5e-05,
+      "ratio": 0.0005,
+      "population_millions": 0.0005
+    },
+    "required_claims": [
+      "rainfall_context_not_trigger_proof",
+      "population_context_not_loss",
+      "annual_embedding_context_not_event_timed_proof"
+    ]
+  },
+  "key_values": {
+    "event_name": "Gjerdrum quick-clay landslide",
+    "hazard_family": "landslide_mass_movement",
+    "region": "Europe",
+    "event_date": "2020-12-30",
+    "target_family": "numeric_diagnosis",
+    "daily_precip_mm": {
+      "2020-12-26": 7.7,
+      "2020-12-27": 31.6,
+      "2020-12-28": 16.2,
+      "2020-12-29": 7.8,
+      "2020-12-30": 8.9
+    },
+    "formulae": {
+      "rectangle_area_ha": "runout_width_m * runout_length_m / 10000",
+      "wetness_index_mm_day": "antecedent_5_day_precip_mm / 5",
+      "event_day_fraction": "event_day_precip_mm / antecedent_5_day_precip_mm",
+      "radar_to_optical_ratio": "radar_abs_mean / optical_abs_mean"
+    },
+    "signal_scope": {
+      "embedding_mean_scope": "coarse annual surface-change context; included in magnitude comparison but not treated as event-timed proof",
+      "dominant_signal_rule": "largest of radar_abs_mean, optical_abs_mean, and embedding_mean"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "output_schema_and_diagnosis_label",
+        "points": 3,
+        "description": "Returns the requested six-key JSON object with mechanism_label and diagnosis_label matching the expected quick-clay, wet-context, radar-dominant diagnosis.",
+        "partial_credit": "Award 1-2 points for a valid but incomplete object or a generic landslide label."
+      },
+      {
+        "name": "footprint_calculation",
+        "points": 3,
+        "description": "Reports 300 m width, 700 m length, 21.0 ha rectangular footprint proxy, and 9 ha debris-flow area.",
+        "partial_credit": "Award 1-2 points for correct source values with a missing or miscomputed rectangle-area conversion."
+      },
+      {
+        "name": "rainfall_ledger",
+        "points": 4,
+        "description": "Uses the 2020-12-26 through 2020-12-30 window and reports 72.2 mm total, 8.9 mm event-day precipitation, 14.44 mm/day wetness index, and 0.1233 event-day fraction.",
+        "partial_credit": "Award 2-3 points for the correct window with minor rounding errors; award 1 point for using only the event-day value."
+      },
+      {
+        "name": "change_signal_comparison",
+        "points": 4,
+        "description": "Reports 0.6378 radar, 0.3457 optical, 0.0912 coarse annual embedding context, identifies radar_abs_mean as the dominant mean signal, and computes the 1.845 radar-to-optical ratio.",
+        "partial_credit": "Award 2-3 points for identifying radar as largest with one missing value or a minor ratio error; award 1 point for only naming the radar signal."
+      },
+      {
+        "name": "exposure_context",
+        "points": 2,
+        "description": "Reports the rounded population value 1059042 and 1.059 million.",
+        "partial_credit": "Award 1 point for one of the two population values or a small rounding mistake."
+      },
+      {
+        "name": "json_implied_formula_consistency",
+        "points": 2,
+        "description": "The returned JSON values are internally consistent with the area, wetness, event-day fraction, and radar-to-optical formulas; no prose or formula strings outside the JSON are required.",
+        "partial_credit": "Award 1 point when most values are correct but one derived value is not formula-consistent."
+      },
+      {
+        "name": "overclaim_control",
+        "points": 2,
+        "description": "Avoids claiming rainfall proves the trigger or that population exposure is confirmed loss.",
+        "partial_credit": "Award 1 point for one correct caution with another extra escalation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Wikipedia_2020_Gjerdrum_landslide.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "The embedding mean is a coarse annual context value; radar dominance and rainfall/population cautions are scored through the requested JSON fields and judge anchors."
+  }
+}

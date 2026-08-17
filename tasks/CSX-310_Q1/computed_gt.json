@@ -1,0 +1,211 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-310",
+  "forbidden_overclaims": [
+    "Do not claim exact casualties, exact building loss, or exact tsunami depth.",
+    "Do not require population counts or gridded surface-change statistics to prove the response priority.",
+    "Do not recast the event as rainfall-driven flooding or a routine monitoring case."
+  ],
+  "key_values": {
+    "chirps_precip_mm_max": 0.0,
+    "correct_priority_label": "compound_explosive_volcano_tsunami_ashfall_coastal_priority",
+    "gdacs_alert_level": "Red",
+    "gpm_precip_mm_max": 0.005,
+    "plume_height_km_max": 50.0,
+    "priority_chain": [
+      "submarine_water_magma_explosion",
+      "ashfall_and_destructive_tsunami",
+      "coastal_evacuation_lifeline_and_ash_response"
+    ]
+  },
+  "numeric_tolerances": {
+    "chirps_precip_mm_max": {
+      "tolerance": 0.01,
+      "value": 0.0
+    },
+    "gpm_precip_mm_max": {
+      "tolerance": 0.01,
+      "value": 0.005
+    },
+    "plume_height_km_max": {
+      "tolerance": 2.0,
+      "value": 50.0
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "compound_volcano_tsunami_ashfall_priority",
+      "explosive_submarine_eruption_tsunami_ashfall_coastal_priority",
+      "coastal_tsunami_lifeline_ashfall_priority"
+    ],
+    "answer": "compound_explosive_volcano_tsunami_ashfall_coastal_priority",
+    "answer_type": "deterministic_label_with_rubric_judged_reasoning",
+    "canonical_answer": "compound_explosive_volcano_tsunami_ashfall_coastal_priority",
+    "canonical_stance": "Initial response priority should be driven by a compound explosive submarine volcano-tsunami-ashfall coastal emergency, not rainfall flooding or ordinary local weather.",
+    "forbidden_claims": [
+      "Rainfall flooding, local heat, or local wind is the dominant initial response priority.",
+      "The event is only a routine ash-monitoring case.",
+      "Exact casualties, exact building loss, or exact tsunami depth are established by the answer anchors."
+    ],
+    "key_anchors": {
+      "eruption_scale": "stratospheric plume with ashfall and destructive tsunami mechanism",
+      "exposure_context": "coastal communities and lifelines require response attention, but no population-count proof is needed",
+      "rainfall_alternative": "near-zero event rainfall, not a flood-response trigger",
+      "severity_signal": "Red volcano alert"
+    },
+    "priority_chain": [
+      "submarine_water_magma_explosion",
+      "ashfall_and_destructive_tsunami",
+      "coastal_evacuation_lifeline_and_ash_response"
+    ],
+    "required_claims": [
+      "Diagnoses an explosive submarine water-magma eruption as the dominant trigger.",
+      "Links the eruption to both ashfall and destructive tsunami coastal hazards.",
+      "Prioritizes coastal evacuation or coastal safety, lifeline continuity, ashfall response, and rapid disturbance screening.",
+      "Rejects rainfall flooding and ordinary local heat or wind as the dominant response pathway.",
+      "Treats rapid island or coastal disturbance screening as a response need, not as a quantified loss estimate."
+    ],
+    "required_metrics": [
+      {
+        "name": "gdacs_alert_level",
+        "value": "Red"
+      },
+      {
+        "name": "plume_height_km_max",
+        "tolerance": 2.0,
+        "value": 50.0
+      },
+      {
+        "name": "gpm_precip_mm_max",
+        "tolerance": 0.01,
+        "value": 0.005
+      },
+      {
+        "name": "chirps_precip_mm_max",
+        "tolerance": 0.01,
+        "value": 0.0
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Hunga_Tonga-Hunga_Ha_apai_eruption_and_tsunami.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_catalogs/event_catalogs_005_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Connect the eruption trigger to both ashfall and coastal tsunami response needs.",
+    "Use severity, plume scale, low rainfall, and report-supported coastal/ashfall effects as a compound priority chain.",
+    "Reject routine ash-only, rainfall-flood, and local weather-response interpretations."
+  ],
+  "required_findings": [
+    {
+      "name": "dominant_mechanism",
+      "value": "explosive submarine water-magma eruption with tsunami and ashfall consequences"
+    },
+    {
+      "name": "response_priority",
+      "value": "coastal evacuation, lifeline continuity, ashfall response, and rapid surface-disturbance screening"
+    },
+    {
+      "name": "rainfall_and_local_weather_alternatives",
+      "value": "rainfall, heat, and local wind do not dominate the emergency priority"
+    },
+    {
+      "name": "screening_role",
+      "value": "rapid island and coastal disturbance screening is a response priority inferred from the compound event report, not a direct loss measurement"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the exact priority label 'compound_explosive_volcano_tsunami_ashfall_coastal_priority' or a semantically equivalent compound volcano-tsunami-ashfall coastal-priority answer.",
+        "name": "final_priority_label",
+        "points": 4
+      },
+      {
+        "description": "Correctly links submarine water-magma explosive eruption to ashfall and destructive tsunami, then to coastal evacuation or safety, lifeline continuity, ashfall response, and rapid disturbance screening.",
+        "name": "priority_chain",
+        "points": 3
+      },
+      {
+        "description": "Uses the Red volcano alert and extreme plume-scale signal near 50 km as severity anchors without reducing the answer to a numeric table.",
+        "name": "severity_and_scale_anchors",
+        "points": 3
+      },
+      {
+        "description": "Rejects rainfall-flood, local heat or wind, and routine ash-only interpretations using near-zero rainfall and the compound tsunami-plus-ash mechanism.",
+        "name": "alternative_rejection",
+        "points": 3
+      },
+      {
+        "description": "Explains how volcanic forcing, ocean response, ashfall consequences, island or coastal disturbance, and coastal communities or lifelines combine into the operational priority.",
+        "name": "cross_scale_disaster_reasoning",
+        "points": 3
+      },
+      {
+        "description": "Avoids asserting exact casualties, exact building loss, exact tsunami depth, or requiring auxiliary population/surface-change statistics as direct human-loss measurements.",
+        "name": "overclaim_control",
+        "points": 2
+      },
+      {
+        "description": "Returns a compact JSON object with answer, priority_chain, key_anchors, and 2-4 sentences of brief reasoning.",
+        "name": "requested_json_format",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "strict_audit_fields": {
+    "absolute_path_hits": 0,
+    "issue_score": 0,
+    "numeric_anchor_count": 3,
+    "product_hits_visible": 0,
+    "specific_file_hits_visible": 0,
+    "visible_package_directive_hits": 0
+  },
+  "supporting_metrics": {
+    "candidate_scores": {
+      "local_weather_score": 0,
+      "rainfall_score": 0,
+      "routine_ash_score": 0,
+      "volcano_tsunami_score": 9
+    },
+    "computed_metrics": {
+      "chirps_precip_mm_max": 0.0,
+      "episode_alert_score": 2.5,
+      "gdacs_alert_level": "Red",
+      "gdacs_alert_score": 3.0,
+      "gpm_precip_mm_max": 0.005,
+      "plume_height_km_max": 50.0
+    },
+    "event": {
+      "event_name": "2022 Hunga Tonga-Hunga Ha'apai eruption and tsunami",
+      "hazard_family": "volcano_ash_lahar",
+      "package_id": "CSX-310",
+      "region": "Oceania",
+      "temporal_window": {
+        "end_date": "2022-01-15",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2022-01-15"
+      }
+    },
+    "mechanism_flags": {
+      "ashfall": true,
+      "destructive_tsunami": true,
+      "land_loss": true,
+      "large_water_magma_interaction": true,
+      "violent_explosion": true
+    }
+  },
+  "task_design_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-310_Q1",
+  "task_subtype": "response_priority_compound_volcano_tsunami",
+  "task_type": "short_answer"
+}

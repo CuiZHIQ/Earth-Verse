@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-074_Q1",
+  "event_id": "CSX-074",
+  "task_type": "short_answer",
+  "target_family": "regional_multiday_rainfall_timing_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "regional_multiday_rainfall_timing_diagnosis",
+    "computed_values": {
+      "event_days": 5,
+      "catalog_union_days": 4,
+      "catalog_overlap_days": 2,
+      "union_event_share": 0.8,
+      "overlap_event_share": 0.4,
+      "gpm_max_mean_ratio": 2.279,
+      "era5_max_mean_ratio": 2.343,
+      "gridded_max_agreement_pct": 99.97,
+      "point_peak_hour_total_ratio": 0.077,
+      "point_peak_hour_gpm_max_ratio": 0.14,
+      "point_total_power_total_ratio": 1.056
+    },
+    "test_results": {
+      "catalog_timing": "pass",
+      "gridded_rainfall": "pass",
+      "point_burst_rejection": "pass",
+      "daily_point_crosscheck": "pass"
+    },
+    "score": 4,
+    "max_score": 4,
+    "final_label": "regional_multiday_rainfall_timing_diagnosis",
+    "one_sentence_interpretation": "The timing and rainfall ratios support a regional multi-day rainfall-to-flood diagnosis rather than an isolated one-hour point-burst explanation."
+  },
+  "key_values": {
+    "event_name": "July 2021 Western Europe floods",
+    "hazard_label": "Extreme precipitation and pluvial flooding",
+    "event_window": {
+      "start_date": "2021-07-12",
+      "end_date": "2021-07-16",
+      "inclusive_days": 5
+    },
+    "country_spans": {
+      "Belgium": {
+        "start_date": "2021-07-14",
+        "end_date": "2021-07-16",
+        "inclusive_days": 3,
+        "alertlevel": "Orange"
+      },
+      "Germany": {
+        "start_date": "2021-07-13",
+        "end_date": "2021-07-15",
+        "inclusive_days": 3,
+        "alertlevel": "Orange"
+      }
+    },
+    "timing": {
+      "catalog_union_days": 4,
+      "catalog_overlap_days": 2,
+      "union_event_share": 0.8,
+      "overlap_event_share": 0.4
+    },
+    "rainfall": {
+      "gpm_max_mm": 53.504998721182346,
+      "gpm_mean_mm": 23.475926708068542,
+      "era5_max_mm": 53.48888337580959,
+      "era5_mean_mm": 22.829102080373424,
+      "max_difference_mm": 0.016115,
+      "gridded_max_agreement_pct": 99.97,
+      "gpm_max_mean_ratio": 2.279,
+      "era5_max_mean_ratio": 2.343
+    },
+    "point_checks": {
+      "point_total_mm": 97.1,
+      "point_peak_hour_mm": 7.5,
+      "point_peak_hour_time": "2021-07-14T20:00",
+      "point_peak_day": "2021-07-14",
+      "point_peak_day_mm": 56.8,
+      "power_total_mm": 91.96,
+      "power_peak_day": "20210714",
+      "power_peak_day_mm": 64.56,
+      "point_peak_hour_total_ratio": 0.077,
+      "point_peak_hour_gpm_max_ratio": 0.14,
+      "point_total_power_total_ratio": 1.056
+    },
+    "decision_rule": {
+      "catalog_timing": "union_event_share >= 0.75 and catalog_overlap_days >= 2",
+      "gridded_rainfall": "gridded_max_agreement_pct >= 99.5 and both max_mean ratios > 2.0",
+      "point_burst_rejection": "point_peak_hour_total_ratio <= 0.15 and point_peak_hour_gpm_max_ratio <= 0.15",
+      "daily_point_crosscheck": "0.90 <= point_total_power_total_ratio <= 1.10",
+      "all_pass_label": "regional_multiday_rainfall_timing_diagnosis"
+    },
+    "test_results": {
+      "catalog_timing": "pass",
+      "gridded_rainfall": "pass",
+      "point_burst_rejection": "pass",
+      "daily_point_crosscheck": "pass"
+    }
+  },
+  "numeric_tolerances": {
+    "day_counts": 0,
+    "ratios": 0.01,
+    "percentages": 0.05,
+    "precip_mm": 0.02
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Compact JSON answer",
+        "points": 4,
+        "description": "Returns the requested compact JSON with target family, computed values, four test results, score, final label, and one concise interpretation.",
+        "partial_credit": "Award 2-3 points if one block is missing or several field names are malformed but the answer is still gradable."
+      },
+      {
+        "name": "Timing interval arithmetic",
+        "points": 4,
+        "description": "Computes 5 event days, 4 country-union days, 2 country-overlap days, 0.800 union share, and 0.400 overlap share.",
+        "partial_credit": "Award 2-3 points for correct day counts with one share or inclusive-date mistake."
+      },
+      {
+        "name": "Gridded rainfall ratios",
+        "points": 3,
+        "description": "Computes 99.970% maximum agreement, 2.279 GPM max-to-mean ratio, and 2.343 ERA5 max-to-mean ratio.",
+        "partial_credit": "Award 1-2 points for using the right rainfall values but missing one derived metric."
+      },
+      {
+        "name": "Point burst ratios",
+        "points": 3,
+        "description": "Computes 0.077 peak-hour share of point total and 0.140 peak-hour share of gridded maximum.",
+        "partial_credit": "Award 1-2 points for correct point total and peak hour without both ratios."
+      },
+      {
+        "name": "Daily point crosscheck",
+        "points": 2,
+        "description": "Computes the daily point ratio 1.056 and applies the within-10% rule.",
+        "partial_credit": "Award 1 point for reporting the two daily totals but not the ratio or rule."
+      },
+      {
+        "name": "Pass-rule scoring",
+        "points": 2,
+        "description": "Applies all four pass rules correctly and reports score 4/4.",
+        "partial_credit": "Award 1 point if one pass rule is misapplied while the final direction remains consistent."
+      },
+      {
+        "name": "Final label",
+        "points": 1,
+        "description": "Gives the exact final label regional_multiday_rainfall_timing_diagnosis.",
+        "partial_credit": "Award 0.5 points for a close label that preserves the same meaning."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation concise and avoids turning point rainfall, exposure, or broad context into a direct whole-event cause or loss estimate.",
+        "partial_credit": "Award 0.5 points for a mostly concise interpretation with one weak extra inference."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json"
+    ]
+  }
+}

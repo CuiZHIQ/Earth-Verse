@@ -1,0 +1,341 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-315",
+  "forbidden_overclaims": [
+    "Do not claim that the package proves an acute glacial-lake outburst flood or avalanche.",
+    "Do not treat precipitation totals alone as observed flood damage or evacuation evidence.",
+    "Do not infer exact glacier-area loss because no local glacier-area time series is computed here.",
+    "Do not claim burn severity, casualties, displacement, road closure, or infrastructure damage from context layers alone."
+  ],
+  "key_values": {
+    "acute_response_score": 0,
+    "critical_amenities_in_aoi": 10,
+    "event_duration_days": 183,
+    "matching_eonet_events": 0,
+    "priority_score_components": {
+      "acute_response_score": {
+        "critical_amenities_at_least_20": false,
+        "humanitarian_response_reports_present": false,
+        "matching_event_catalog_hits_present": false,
+        "sentinel1_mean_change_abs_at_least_3_db": false,
+        "usable_post_event_sentinel2_scenes_present": false
+      },
+      "slow_onset_monitoring_score": {
+        "event_anchor_notes_cryosphere_context": true,
+        "event_duration_days_at_least_90": true,
+        "event_name_identifies_glacier_retreat": true,
+        "metadata_frames_slow_onset_glacier_retreat": true,
+        "sentinel1_mean_change_abs_below_0_5_db": true,
+        "sentinel2_no_sufficient_scenes": true
+      }
+    },
+    "priority_scoring_rule": {
+      "acute_response_score": {
+        "critical_amenities_at_least_20": 1,
+        "humanitarian_response_reports_present": 2,
+        "matching_event_catalog_hits_present": 2,
+        "sentinel1_mean_change_abs_at_least_3_db": 1,
+        "usable_post_event_sentinel2_scenes_present": 1
+      },
+      "slow_onset_monitoring_score": {
+        "event_anchor_notes_cryosphere_context": 1,
+        "event_duration_days_at_least_90": 2,
+        "event_name_identifies_glacier_retreat": 2,
+        "metadata_frames_slow_onset_glacier_retreat": 2,
+        "sentinel1_mean_change_abs_below_0_5_db": 1,
+        "sentinel2_no_sufficient_scenes": 1
+      }
+    },
+    "sentinel1_mean_change_db": -0.147,
+    "sentinel2_scene_status": "no_sufficient_scenes",
+    "slow_onset_monitoring_score": 9
+  },
+  "numeric_anchor_count": 4,
+  "numeric_tolerances": {
+    "critical_amenities_in_aoi": {
+      "tolerance": 0,
+      "value": 10
+    },
+    "event_duration_days": {
+      "tolerance": 0,
+      "value": 183
+    },
+    "matching_catalog_events": {
+      "tolerance": 0,
+      "value": 0
+    },
+    "scene_mean_change_db": {
+      "tolerance": 0.02,
+      "value": -0.147
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "slow_onset_glacier_retreat_monitoring",
+      "tropical_glacier_retreat_monitoring_priority",
+      "long_term_cryosphere_monitoring_priority"
+    ],
+    "answer": "slow_onset_tropical_glacier_retreat_monitoring_priority",
+    "answer_type": "structured_priority_json",
+    "canonical_answer": "slow_onset_tropical_glacier_retreat_monitoring_priority",
+    "canonical_stance": "The Puncak Jaya episode should be framed as slow-onset tropical glacier-retreat monitoring and long-term risk management, not as an acute flood, avalanche, GLOF, or fire response.",
+    "confidence": "moderate",
+    "deterministic_targets": {
+      "acute_response_score": 0,
+      "answer": "slow_onset_tropical_glacier_retreat_monitoring_priority",
+      "numeric_tolerances": {
+        "critical_amenities_in_aoi": {
+          "tolerance": 0,
+          "value": 10
+        },
+        "event_duration_days": {
+          "tolerance": 0,
+          "value": 183
+        },
+        "matching_catalog_events": {
+          "tolerance": 0,
+          "value": 0
+        },
+        "scene_mean_change_db": {
+          "tolerance": 0.02,
+          "value": -0.147
+        }
+      },
+      "slow_onset_monitoring_score": 9
+    },
+    "event_window": {
+      "end": "2016-03-31",
+      "inclusive_days": 183,
+      "start": "2015-10-01"
+    },
+    "forbidden_claims": [
+      "The event proves an acute glacial-lake outburst flood or avalanche.",
+      "Precipitation context alone proves observed flood damage or evacuation.",
+      "The task computes exact glacier-area loss.",
+      "The evidence proves casualties, displacement, road closure, burn severity, or observed infrastructure damage."
+    ],
+    "impact_chain": [
+      "tropical_cryosphere_warming",
+      "slow_glacier_retreat_and_ice_loss",
+      "monitoring_and_long_term_risk_management"
+    ],
+    "key_numeric_anchors": [
+      {
+        "name": "event_duration_days",
+        "value": 183
+      },
+      {
+        "name": "scene_mean_change_db",
+        "value": -0.147
+      },
+      {
+        "name": "matching_catalog_events",
+        "value": 0
+      },
+      {
+        "name": "critical_amenities_in_aoi",
+        "value": 10
+      }
+    ],
+    "priority_index": {
+      "acute_response_score": 0,
+      "slow_onset_monitoring_score": 9
+    },
+    "priority_score_components": {
+      "acute_response_score": {
+        "critical_amenities_at_least_20": false,
+        "humanitarian_response_reports_present": false,
+        "matching_event_catalog_hits_present": false,
+        "sentinel1_mean_change_abs_at_least_3_db": false,
+        "usable_post_event_sentinel2_scenes_present": false
+      },
+      "slow_onset_monitoring_score": {
+        "event_anchor_notes_cryosphere_context": true,
+        "event_duration_days_at_least_90": true,
+        "event_name_identifies_glacier_retreat": true,
+        "metadata_frames_slow_onset_glacier_retreat": true,
+        "sentinel1_mean_change_abs_below_0_5_db": true,
+        "sentinel2_no_sufficient_scenes": true
+      }
+    },
+    "priority_scoring_rule": {
+      "acute_response_score": {
+        "critical_amenities_at_least_20": 1,
+        "humanitarian_response_reports_present": 2,
+        "matching_event_catalog_hits_present": 2,
+        "sentinel1_mean_change_abs_at_least_3_db": 1,
+        "usable_post_event_sentinel2_scenes_present": 1
+      },
+      "slow_onset_monitoring_score": {
+        "event_anchor_notes_cryosphere_context": 1,
+        "event_duration_days_at_least_90": 2,
+        "event_name_identifies_glacier_retreat": 2,
+        "metadata_frames_slow_onset_glacier_retreat": 2,
+        "sentinel1_mean_change_abs_below_0_5_db": 1,
+        "sentinel2_no_sufficient_scenes": 1
+      }
+    },
+    "rationale": "The event timing and cryosphere-retreat framing favor monitoring and long-term risk management; acute-response alternatives are weakened by weak scene-change, catalog, and humanitarian-impact signals.",
+    "required_claims": [
+      "The 2015-10-01 to 2016-03-31 event window gives 183 inclusive days and supports a slow-onset cryosphere interpretation.",
+      "The weak radar mean change and lack of sufficient burn-severity scenes do not support an acute surface-disturbance priority.",
+      "Zero matching event-catalog hits and no humanitarian response reports weaken acute-response interpretations.",
+      "Exposure context motivates monitoring and preparedness but is not observed damage evidence."
+    ],
+    "required_metrics": [
+      {
+        "name": "event_duration_days",
+        "tolerance": 0,
+        "value": 183
+      },
+      {
+        "name": "scene_mean_change_db",
+        "tolerance": 0.02,
+        "value": -0.147
+      },
+      {
+        "name": "matching_catalog_events",
+        "tolerance": 0,
+        "value": 0
+      },
+      {
+        "name": "critical_amenities_in_aoi",
+        "tolerance": 0,
+        "value": 10
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Puncak_Jaya_glacier_retreat_episode.json",
+      "data/event_reports/event_reports_005_02_reliefweb_reports.json.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_ICIMOD_NSIDC_national_glacier_hazard_reports.html",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/event_catalogs/event_catalogs_005_04_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Connect the long event window to a slow-onset cryosphere mechanism.",
+    "Apply the visible priority-index rule rather than inventing a hidden score.",
+    "Use remote-sensing change and catalog/report alignment to separate monitoring from acute response.",
+    "Treat rainfall and exposure as contextual risk factors unless linked to observed impacts.",
+    "Return a compact priority label, priority index, anchors, impact chain, and rationale."
+  ],
+  "required_findings": [
+    {
+      "name": "dominant_mechanism",
+      "value": "slow-onset tropical glacier retreat and ice-loss monitoring"
+    },
+    {
+      "name": "acute_cryosphere_alternative",
+      "value": "acute avalanche or lake-outburst response should not be the dominant priority"
+    },
+    {
+      "name": "rainfall_flood_alternative",
+      "value": "wet tropical precipitation context does not become a damaging flood diagnosis by itself"
+    },
+    {
+      "name": "exposure_context",
+      "value": "population and critical amenities motivate monitoring and preparedness, not observed-loss claims"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the slow-onset tropical glacier-retreat monitoring priority label or a clear equivalent, and reports a priority index with slow-onset monitoring dominant over acute response by applying the visible scoring rule, ideally 9 versus 0.",
+        "name": "priority_label_and_index",
+        "points": 4
+      },
+      {
+        "description": "Reports the four required anchors with appropriate precision: 183 event days, -0.147 dB scene mean change within +/-0.02, 0 matching catalog events, and 10 critical amenities.",
+        "name": "key_numeric_anchors",
+        "points": 5
+      },
+      {
+        "description": "Connects the tropical high-mountain setting and long event duration to slow glacier retreat and ice loss rather than a short-fuse avalanche, GLOF, flood, or fire mechanism.",
+        "name": "cryosphere_mechanism_reasoning",
+        "points": 4
+      },
+      {
+        "description": "Correctly interprets weak radar change, no sufficient burn-severity scenes, zero matching event-catalog hits, and no humanitarian response report as evidence against an acute-response posture.",
+        "name": "change_catalog_report_interpretation",
+        "points": 3
+      },
+      {
+        "description": "Builds an impact chain from tropical cryosphere warming to glacier retreat and monitoring or long-term risk management, treating exposure as a preparedness concern rather than observed damage.",
+        "name": "impact_chain_and_operational_posture",
+        "points": 2
+      },
+      {
+        "description": "Returns concise JSON in the requested structure and avoids unsupported claims about exact glacier-area loss, casualties, evacuation, road disruption, burn severity, observed infrastructure damage, or confirmed flood impacts.",
+        "name": "format_and_overclaim_control",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "strict_audit": {
+    "absolute_path_hits": 0,
+    "issue_score": 2,
+    "numeric_anchor_count": 4,
+    "product_hits_visible": 1,
+    "specific_file_hits_visible": 0,
+    "visible_numeric_anchor_count": 27,
+    "visible_package_directive_hits": 0
+  },
+  "supporting_metrics": {
+    "computed_metrics": {
+      "chirps_event_precip_mm_mean": 270.8,
+      "critical_amenities_in_aoi": 10,
+      "downloaded_or_success_file_count": 36,
+      "era5_precipitation_sum_mm_mean": 617.5,
+      "event_duration_days": 183,
+      "gpm_event_precip_mm_mean": 291.5,
+      "matching_eonet_events": 0,
+      "open_meteo_days": 15,
+      "open_meteo_max_tmax_c": 28.5,
+      "open_meteo_mean_tmax_c": 28.2,
+      "open_meteo_total_precip_mm": 3.4,
+      "power_total_precip_mm": 3.8,
+      "reliefweb_has_reports": false,
+      "sentinel1_mean_change_db": -0.147,
+      "sentinel1_stddev_change_db": 2.853,
+      "sentinel2_post_count": 0,
+      "sentinel2_pre_count": 0,
+      "sentinel2_scene_status": "no_sufficient_scenes",
+      "worldpop_population_sum": 385051
+    },
+    "file_status_counts": {
+      "downloaded": 10,
+      "local_file_found": 14,
+      "remote_verified": 1,
+      "success": 11
+    },
+    "package_claim_flags": {
+      "anchor_event_lock_notes_cryosphere": true,
+      "benchmark_needs_event_review": true,
+      "event_name_has_glacier_retreat": true,
+      "hazard_match_slow_onset_partial": true,
+      "icimod_general_cryosphere_impact": true,
+      "nasa_html_contains_event_terms": false,
+      "temporal_match_partial": true
+    }
+  },
+  "task_design_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-315_Q1",
+  "task_subtype": "response_priority_cryosphere_mechanism",
+  "task_type": "short_answer"
+}

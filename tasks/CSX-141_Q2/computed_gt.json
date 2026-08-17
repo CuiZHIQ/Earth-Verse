@@ -1,0 +1,132 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-141",
+  "event_name": "March 31-April 1 2023 U.S. tornado outbreak",
+  "hazard_family": "extratropical_storm_severe_convection",
+  "key_values": {
+    "fatalities": 1,
+    "injuries": 40,
+    "precipitation_maxima_mm": {
+      "chirps": 26.199,
+      "era5_land": 38.991,
+      "gpm_imerg": 30.599
+    },
+    "rating_counts": {
+      "EF-0": 6,
+      "EF-1": 12,
+      "EF-2": 3,
+      "EF-U": 1
+    },
+    "thresholds": {
+      "casualty_total_min": 40,
+      "ef2_plus_min": 3,
+      "local_tornadoes_min": 20,
+      "precip_mm_min": 35,
+      "wind_mph_min": 80,
+      "wind_place_count_min": 10
+    },
+    "wind_damage_locations": [
+      "Mendota",
+      "Lee",
+      "Shabbona",
+      "DeKalb",
+      "Somonauk",
+      "Maple Park",
+      "Union",
+      "Harvard",
+      "North Aurora",
+      "Richton Park",
+      "Park Forest",
+      "Portage",
+      "Valparaiso"
+    ]
+  },
+  "primary_gt": {
+    "casualty_total": 41,
+    "conclusion": "passes_convective_impact_ledger",
+    "ef_counts": {
+      "ef1": 12,
+      "ef2_plus": 3
+    },
+    "gates": {
+      "casualty": true,
+      "precip_complication": true,
+      "tornado_core": true,
+      "wind_spread": true
+    },
+    "local_tornadoes": 22,
+    "max_precip_mm": 38.991,
+    "wind_damage": {
+      "max_mph": 90,
+      "place_count": 13
+    },
+    "window": "2023-03-31/2023-04-01"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_005_Locked_anchor_report_NOAA_NWS.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Includes exactly the requested eight keys with nested objects for EF counts, wind damage, and gates.",
+        "name": "JSON shape",
+        "partial_credit": "Award 1-2 points for a mostly correct object that omits one nested field or adds minor extra fields without changing the answer.",
+        "points": 3
+      },
+      {
+        "description": "Reports 22 local tornadoes, 12 EF-1 tornadoes, and 3 EF-2-or-stronger tornadoes.",
+        "name": "Local tornado and EF values",
+        "partial_credit": "Award 2-3 points for the correct local tornado count with one EF count wrong; award 1 point for using the national tornado count or only listing a count without EF detail.",
+        "points": 4
+      },
+      {
+        "description": "Computes 41 from 1 fatality plus 40 injuries.",
+        "name": "Casualty arithmetic",
+        "partial_credit": "Award 1-2 points for identifying the correct site but reporting only fatalities, only injuries, or a small arithmetic error.",
+        "points": 3
+      },
+      {
+        "description": "Reports 90 mph and counts 13 named straight-line-wind damage locations.",
+        "name": "Wind damage readout",
+        "partial_credit": "Award 1-2 points for getting either the wind speed or the place count right, or for counting a near-complete location list.",
+        "points": 3
+      },
+      {
+        "description": "Compares the gridded precipitation maxima and reports 38.991 mm within 0.001 mm.",
+        "name": "Precipitation maximum",
+        "partial_credit": "Award 1-2 points for using a correct precipitation product but selecting a non-maximum value or rounding outside the tolerance.",
+        "points": 3
+      },
+      {
+        "description": "Applies all four threshold formulas and gives passes_convective_impact_ledger.",
+        "name": "Gate logic and conclusion",
+        "partial_credit": "Award 1-2 points for correct formulas with one Boolean mistake or a conclusion that does not match the computed gates.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the explanation brief and avoids adding exact losses, outages, closures, or service-demand details that are not established by the computed ledger.",
+        "name": "Concision and grounding",
+        "partial_credit": "Award 0.5 points for a slightly verbose explanation that still stays tied to the computed quantities.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_threshold_ledger",
+  "task_id": "CSX-141_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "conclusion": "exact",
+    "count_abs": 0,
+    "precip_mm_abs": 0.001,
+    "wind_mph_abs": 0
+  }
+}

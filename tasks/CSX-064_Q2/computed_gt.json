@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-064_Q2",
+  "event_id": "CSX-064",
+  "task_type": "short_answer",
+  "task_subtype": "scenario_sensitivity_ranking",
+  "evaluation_mode": "hybrid",
+  "target_family": "monsoon_flood_scenario_sensitivity_ranking",
+  "primary_gt": {
+    "answer": "weaker_three_product_rainfall_load",
+    "target_family": "monsoon_flood_scenario_sensitivity_ranking",
+    "computed_values": {
+      "days": 31,
+      "mean_mm": 301.068,
+      "min_mean_mm": 279.79,
+      "spread_ratio": 0.165,
+      "gpm_chirps": 1.12,
+      "max_mean": 1.63,
+      "anchors": "7/7",
+      "wind_max": 2.49
+    },
+    "scenario_scores": {
+      "weaker_three_product_rainfall_load": 89.353,
+      "loss_of_product_coherence": 88.393,
+      "report_anchor_dropout": 85.714,
+      "peak_burst_reinterpretation": 77.301,
+      "shortened_monsoon_window": 64.516,
+      "wind_led_reinterpretation": 0.0
+    },
+    "ranked_scenarios": [
+      "weaker_three_product_rainfall_load",
+      "loss_of_product_coherence",
+      "report_anchor_dropout",
+      "peak_burst_reinterpretation",
+      "shortened_monsoon_window",
+      "wind_led_reinterpretation"
+    ],
+    "top_sensitivity": {
+      "scenario": "weaker_three_product_rainfall_load",
+      "why": "10.6% rainfall weakening drops the lowest product below 250 mm"
+    },
+    "rejected_sensitivity": {
+      "scenario": "wind_led_reinterpretation",
+      "why": "2.49 m/s wind proxy needs a 301.6% increase to reach 10 m/s"
+    },
+    "evidence_paths": {
+      "event_window": [
+        "data/event_reports/event_reports_003_Locked_event_anchor_2020_South_and_East_Asia_monsoon_floods.json"
+      ],
+      "report_anchors": [
+        "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html"
+      ],
+      "precipitation_products": [
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+      ],
+      "wind_proxy": [
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+      ]
+    },
+    "reasoning_path": [
+      "compute baseline hazard and report margins",
+      "convert each scenario to threshold-crossing change",
+      "rank higher scores as smaller changes"
+    ]
+  },
+  "key_values": {
+    "event_name": "2020 South and East Asia monsoon floods",
+    "event_window": "2020-07-01 to 2020-07-31",
+    "duration_days": 31,
+    "product_means_mm": {
+      "era5_mean_mm": 279.79,
+      "gpm_mean_mm": 329.374,
+      "chirps_mean_mm": 294.04
+    },
+    "product_maxima_mm": {
+      "era5_max_mm": 491.133,
+      "gpm_max_mm": 466.113,
+      "chirps_max_mm": 382.717
+    },
+    "three_product_mean_mm": 301.068,
+    "daily_rate_mm_per_day": 9.712,
+    "min_product_mean_mm": 279.79,
+    "mean_spread_mm": 49.584,
+    "spread_to_mean_ratio": 0.165,
+    "gpm_to_chirps_mean_ratio": 1.12,
+    "max_to_mean_ratio": 1.63,
+    "wind_components": {
+      "u10_max_m_per_s": 1.995,
+      "v10_max_m_per_s": 1.482,
+      "u10_mean_m_per_s": 1.229,
+      "v10_mean_m_per_s": 0.895
+    },
+    "max_wind_speed_proxy_m_per_s": 2.49,
+    "mean_wind_speed_proxy_m_per_s": 1.52,
+    "report_flags": {
+      "excessive_monsoon_rains": true,
+      "south_and_east_asia_flooding": true,
+      "assam_disruption_or_displacement": true,
+      "poyang_lake_22_6m_2020_07_13": true,
+      "japan_floods_or_landslides": true,
+      "nepal_mentioned": true,
+      "stationary_monsoon_systems": true
+    },
+    "scenario_details": {
+      "weaker_three_product_rainfall_load": {
+        "score": 89.353,
+        "change_to_threshold": 0.106,
+        "threshold_basis": "uniform reduction until lowest product mean falls below 250 mm",
+        "diagnostic_effect": "breaks the core sustained-rainfall load test"
+      },
+      "loss_of_product_coherence": {
+        "score": 88.393,
+        "change_to_threshold": 0.116,
+        "threshold_basis": "nearest coherence failure: GPM-to-CHIRPS ratio reaches 1.25",
+        "diagnostic_effect": "makes the rainfall diagnosis depend on a less coherent product set"
+      },
+      "report_anchor_dropout": {
+        "score": 85.714,
+        "change_to_threshold": 0.143,
+        "threshold_basis": "loss of one required report anchor from a seven-anchor set",
+        "diagnostic_effect": "weakens routed-flooding and lagged report confirmation"
+      },
+      "peak_burst_reinterpretation": {
+        "score": 77.301,
+        "change_to_threshold": 0.227,
+        "threshold_basis": "increase largest product maximum until max-to-mean ratio reaches 2.0",
+        "diagnostic_effect": "pushes the evidence toward a short peak-burst alternative"
+      },
+      "shortened_monsoon_window": {
+        "score": 64.516,
+        "change_to_threshold": 0.355,
+        "threshold_basis": "remove 11 of 31 days so the event falls below a 21-day persistence window",
+        "diagnostic_effect": "reframes July persistence as a shorter episode"
+      },
+      "wind_led_reinterpretation": {
+        "score": 0.0,
+        "change_to_threshold": 3.016,
+        "threshold_basis": "increase wind proxy until it reaches 10 m/s",
+        "diagnostic_effect": "would be needed to make wind a plausible leading driver"
+      }
+    },
+    "ranking_rule": "score = max(0, 100 * (1 - fractional_change_needed_to_cross_threshold))",
+    "precision_policy": "scores and change_to_threshold values use three decimals; computed_values use integer counts/days, three-decimal mm/daily-rate values, three-decimal spread_ratio, and two-decimal ratio summaries/wind proxies",
+    "final_diagnosis": "persistent_monsoon_rainfall_with_routed_flooding"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ranking JSON",
+        "points": 3,
+        "description": "Provides the requested compact JSON fields including evidence_paths, names weaker_three_product_rainfall_load as the top sensitivity, and lists all six ranked scenarios.",
+        "partial_credit": "Give 1-2 points if the structure is mostly present but the top scenario or one required ranking field is missing."
+      },
+      {
+        "name": "Baseline rainfall calculations",
+        "points": 4,
+        "description": "Computes 31 days, product means of 279.790, 329.374, and 294.040 mm, the 301.068 mm mean, 9.712 mm/day, and the 279.790 mm minimum product mean.",
+        "partial_credit": "Give 2-3 points for mostly correct rainfall arithmetic with minor rounding errors; give 1 point if only one precipitation product is used."
+      },
+      {
+        "name": "Coherence and peak margins",
+        "points": 3,
+        "description": "Computes the 49.584 mm spread, 0.165 spread-to-mean ratio, 1.12 GPM-to-CHIRPS ratio, 491.133 mm maximum, and 1.63 max-to-mean ratio.",
+        "partial_credit": "Give 1-2 points if either the coherence or peak calculations are correct but the other family is missing or not tied to thresholds."
+      },
+      {
+        "name": "Report and wind evidence",
+        "points": 3,
+        "description": "Counts all seven report anchors, includes Poyang Lake at 22.6 m on 2020-07-13, and computes wind proxies of 2.49 m/s maximum and 1.52 m/s mean.",
+        "partial_credit": "Give 1-2 points if the answer captures either the report anchors or the wind proxy correctly but not both."
+      },
+      {
+        "name": "Scenario sensitivity scoring",
+        "points": 4,
+        "description": "Uses the threshold-crossing formula and reports scores of 89.353, 88.393, 85.714, 77.301, 64.516, and 0.000 for the six candidate perturbations.",
+        "partial_credit": "Give 2-3 points if the formula is right but one or two scores are rounded incorrectly; give 1 point for a qualitative ranking without reproducible margins."
+      },
+      {
+        "name": "Interpretation and rejected alternative",
+        "points": 3,
+        "description": "Explains that rainfall-load weakening is the most sensitive perturbation, while wind-led reinterpretation is rejected because it needs a roughly 301.6% proxy increase.",
+        "partial_credit": "Give 1-2 points if the interpretation is broadly consistent but omits either the top-sensitivity margin or the wind-led rejection margin."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_South_and_East_Asia_monsoon_floods.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

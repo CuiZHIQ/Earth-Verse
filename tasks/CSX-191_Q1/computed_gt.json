@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-191_Q1",
+  "event_id": "CSX-191",
+  "task_type": "numeric",
+  "target_family": "threshold_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "psi_excess_ratio": 5.714,
+    "co_anomaly_ratio": 13.0,
+    "resp_cases_per_exposed_million": 11627.907,
+    "service_markers_per_100k": 9.937,
+    "threshold_pass_count": 4,
+    "final_label": "smoke_threshold_confirmed"
+  },
+  "key_values": {
+    "event_name": "2015 Southeast Asia haze from Indonesian fires",
+    "hazard_label": "Wildfire, burn scar, and smoke",
+    "region": "Southeast Asia",
+    "temporal_window": {
+      "start_date": "2015-08-01",
+      "end_date": "2015-11-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "psi_peak_reported_above": 2000,
+    "psi_hazardous_threshold": 350,
+    "co_surface_ppb_typical": 100,
+    "co_surface_ppb_borneo_2015_nearly": 1300,
+    "respiratory_cases": 500000,
+    "smoke_exposed_people_min": 43000000,
+    "worldpop_population_sum": 573590.9458804413,
+    "service_marker_categories": [
+      "school",
+      "hospital",
+      "police",
+      "fire_station",
+      "shelter"
+    ],
+    "service_marker_count": 57,
+    "amenity_counts": {
+      "community_centre": 1,
+      "fire_station": 1,
+      "hospital": 5,
+      "marketplace": 1,
+      "pharmacy": 1,
+      "place_of_worship": 1,
+      "police": 6,
+      "school": 26,
+      "shelter": 19
+    },
+    "pass_flags": {
+      "psi_excess": true,
+      "co_anomaly": true,
+      "resp_rate": true,
+      "service_density": true
+    },
+    "report_anchor_semantics": {
+      "psi_peak_reported_above": "uses 2000 as the benchmark anchor for a report phrase saying PSI soared above 2000",
+      "psi_hazardous_threshold": "uses 350 as the benchmark anchor for a report phrase saying any score above 350 is hazardous",
+      "co_peak_nearly": "uses 1300 as the benchmark anchor for a report phrase saying surface CO reached nearly 1300 ppb",
+      "co_usual_about": "uses 100 as the benchmark anchor for a report phrase saying usual CO is about 100 ppb",
+      "exposed_people_min": "uses 43 million as the lower-bound exposure anchor for a report phrase saying more than 43 million were exposed"
+    },
+    "service_marker_context_note": "OSM/WorldPop service-marker density is a package-derived receptor-context statistic, not an event-time facility impact count.",
+    "thresholds": {
+      "psi_excess_ratio_min": 5.0,
+      "co_anomaly_ratio_min": 10.0,
+      "resp_cases_per_exposed_million_min": 10000,
+      "service_markers_per_100k_min": 8.0,
+      "final_pass_count_min": 3
+    }
+  },
+  "event": {
+    "event_id": "CSX-191",
+    "package_id": "CSX-191",
+    "event_name": "2015 Southeast Asia haze from Indonesian fires",
+    "hazard_family": "wildfire_smoke_haze",
+    "event_date_or_window": "2015-08-01 to 2015-11-30"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2015_Southeast_Asia_haze_from_Indonesian_fires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_\u0041\u004f\u0049_slice.json"
+    ],
+    "notes": "Source values are extracted deterministically from local event data."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON and label",
+        "points": 4,
+        "description": "Returns the six requested fields and the final label smoke_threshold_confirmed with threshold_pass_count equal to 4.",
+        "partial_credit": "Give 2 points for the correct label with missing or malformed fields; give 1 point for a plausible threshold result with the wrong pass count."
+      },
+      {
+        "name": "PSI and carbon monoxide ratios",
+        "points": 4,
+        "description": "Computes benchmark-anchor ratios 2000 / 350 = 5.714 and 1300 / 100 = 13.0, with correct rounding and pass states.",
+        "partial_credit": "Give 2 points for one correct ratio and pass state; give 3 points for both ratios with minor rounding or unit wording errors."
+      },
+      {
+        "name": "Respiratory-case rate",
+        "points": 3,
+        "description": "Computes the benchmark rate 500000 / 43 = 11627.907 cases per exposed million from the report's case anchor and exposed-population lower-bound anchor, then marks the test as passed.",
+        "partial_credit": "Give 1 to 2 points for using the correct inputs but dividing by total people rather than millions, rounding poorly, or omitting the pass comparison."
+      },
+      {
+        "name": "Local service-marker density",
+        "points": 3,
+        "description": "Sums the package-derived service-context markers to 57, divides by 573590.9458804413, multiplies by 100000, obtains 9.937, and marks the context-density test as passed without treating markers as event-time facility impacts.",
+        "partial_credit": "Give 1 point for the correct marker sum only; give 2 points for the correct rate with a minor category or rounding error."
+      },
+      {
+        "name": "Threshold arithmetic",
+        "points": 3,
+        "description": "Applies the four thresholds exactly and derives the final rule from at least three passing tests.",
+        "partial_credit": "Give 1 to 2 points for correct arithmetic with one threshold comparison or final-rule mistake."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Gives a concise interpretation tied to the four computed values and avoids turning local service counts into confirmed facility harm.",
+        "partial_credit": "Give 1 point for a mostly numeric answer with a vague or overstated interpretation."
+      },
+      {
+        "name": "Concise answer format",
+        "points": 1,
+        "description": "Keeps the answer compact and uses the requested field names.",
+        "partial_credit": "Give 0.5 points for a correct answer embedded in unnecessary prose."
+      }
+    ]
+  }
+}

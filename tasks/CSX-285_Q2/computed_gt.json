@@ -1,0 +1,129 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2024-09-06 to 2024-09-18",
+    "event_name": "Active monsoon and Typhoon Yagi compound rainfall",
+    "package_id": "CSX-285",
+    "region": "Southeast Asia"
+  },
+  "event_id": "CSX-285",
+  "key_values": {
+    "anchors": {
+      "annual_change_max": 0.779,
+      "annual_change_mean": 0.0202,
+      "brightness_delta": 10.11,
+      "chirps_max_mm": 492.3,
+      "chirps_mean_mm": 105.5,
+      "dark_fraction_delta": 0.0593,
+      "event_brightness": 109.03,
+      "event_dark_fraction": 0.3139,
+      "gpm_max_mm": 637.7,
+      "gpm_mean_mm": 142.2,
+      "pre_brightness": 119.14,
+      "pre_dark_fraction": 0.2546
+    },
+    "classification": "storm_window_transient_signal_dominant",
+    "components": {
+      "annual_c": 0.596,
+      "brightness_c": 0.842,
+      "chirps_c": 0.879,
+      "dark_c": 0.847,
+      "gpm_c": 0.948
+    },
+    "storm_surface_score": 0.861,
+    "weights": {
+      "annual_c": 0.1,
+      "brightness_c": 0.2,
+      "chirps_c": 0.3,
+      "dark_c": 0.1,
+      "gpm_c": 0.3
+    }
+  },
+  "primary_gt": {
+    "anchors": {
+      "annual_change_mean": 0.0202,
+      "brightness_delta": 10.11,
+      "chirps_max_mm": 492.3,
+      "chirps_mean_mm": 105.5,
+      "dark_fraction_delta": 0.0593,
+      "gpm_max_mm": 637.7,
+      "gpm_mean_mm": 142.2
+    },
+    "answer": 0.861,
+    "classification": "storm_window_transient_signal_dominant",
+    "components": {
+      "annual_c": 0.596,
+      "brightness_c": 0.842,
+      "chirps_c": 0.879,
+      "dark_c": 0.847,
+      "gpm_c": 0.948
+    },
+    "formula": "0.30*gpm_c+0.30*chirps_c+0.20*brightness_c+0.10*dark_c+0.10*annual_c",
+    "storm_surface_score": 0.861,
+    "threshold": "score>=0.75 and annual_change_mean<0.05",
+    "tolerance": 0.01
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Active_monsoon_and_Typhoon_Yagi_compound_rainfall.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reads GPM and CHIRPS event precipitation means and maxima, keeps millimeter units, and rounds reported anchors correctly.",
+        "name": "Rainfall extraction",
+        "points": 4
+      },
+      {
+        "description": "Computes pre and event mean brightness plus dark-pixel fractions using the stated bilinear RGB resize and brightness rule.",
+        "name": "Image delta calculation",
+        "points": 4
+      },
+      {
+        "description": "Applies every capped component formula for GPM, CHIRPS, brightness, dark fraction, and annual-change dampening.",
+        "name": "Component ledger",
+        "points": 5
+      },
+      {
+        "description": "Combines component values with the 0.30, 0.30, 0.20, 0.10, and 0.10 weights and returns the score within 0.01.",
+        "name": "Weighted score",
+        "points": 4
+      },
+      {
+        "description": "Returns valid JSON with the score, class label, component ledger, and numeric anchors needed to audit the calculation.",
+        "name": "Compact numeric output",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "supporting_metrics": {
+    "image_method": {
+      "brightness_formula": "(R+G+B)/3",
+      "dark_pixel_rule": "brightness<60",
+      "resampling": "bilinear",
+      "resize_height": 192,
+      "resize_width": 256
+    },
+    "raw_annual_change_mean": 0.02020777679126824,
+    "raw_precipitation": {
+      "chirps_max_mm": 492.2705268859863,
+      "chirps_mean_mm": 105.52753632294285,
+      "gpm_max_mm": 637.6599865555763,
+      "gpm_mean_mm": 142.1999905084803
+    }
+  },
+  "target_family": "yagi_storm_surface_consistency_index",
+  "task_id": "CSX-285_Q2",
+  "task_subtype": "rainfall_image_annual_change_threshold_ledger",
+  "task_type": "numeric"
+}

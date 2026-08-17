@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-062_Q2",
+  "event_id": "CSX-062",
+  "task_type": "short_answer",
+  "target_family": "runoff_translation_consistency_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "task_family": "runoff_translation_consistency_ledger",
+    "event_window_days": 5,
+    "calculation_rows": [
+      {
+        "row": "local_rainfall_amplification",
+        "formulas": [
+          "jalhay_to_station_average = jalhay_48h_mm / station_average_48h_mm",
+          "jalhay_to_report_box = jalhay_48h_mm / report_box_48h_mm",
+          "station_average_to_hres = station_average_48h_mm / hres_last_forecast_48h_mm"
+        ],
+        "values": {
+          "jalhay_48h_mm": 271.0,
+          "station_average_48h_mm": 120.0,
+          "report_box_48h_mm": 104.0,
+          "hres_last_forecast_48h_mm": 107.0,
+          "jalhay_to_station_average_ratio": 2.26,
+          "jalhay_to_report_box_ratio": 2.61,
+          "station_average_to_hres_ratio": 1.12
+        },
+        "conclusion": "local amplification supported"
+      },
+      {
+        "row": "runoff_depth_translation",
+        "formulas": [
+          "report_box_runoff_low_mm = report_box_48h_mm * 0.20",
+          "report_box_runoff_high_mm = report_box_48h_mm * 0.25",
+          "jalhay_runoff_low_mm = jalhay_48h_mm * 0.20",
+          "jalhay_runoff_high_mm = jalhay_48h_mm * 0.25",
+          "local_to_report_runoff_ratio = jalhay_runoff_range / report_box_runoff_range"
+        ],
+        "values": {
+          "runoff_fraction_range": [
+            0.2,
+            0.25
+          ],
+          "report_box_runoff_mm_range": [
+            20.8,
+            26.0
+          ],
+          "jalhay_runoff_mm_range": [
+            54.2,
+            67.8
+          ],
+          "local_to_report_runoff_range_ratio": [
+            2.61,
+            2.61
+          ]
+        },
+        "conclusion": "runoff depth range keeps local rainfall peak"
+      },
+      {
+        "row": "gridded_precipitation_smoothing_test",
+        "formulas": [
+          "era5_max_to_mean = era5_max_mm / era5_mean_mm",
+          "gpm_max_to_mean = gpm_max_mm / gpm_mean_mm",
+          "report_box_to_grid_max = report_box_48h_mm / max(era5_max_mm, gpm_max_mm)",
+          "jalhay_to_era5_max = jalhay_48h_mm / era5_max_mm"
+        ],
+        "values": {
+          "era5_max_mm": 53.489,
+          "era5_mean_mm": 42.616,
+          "era5_max_to_mean_ratio": 1.26,
+          "gpm_max_mm": 45.42,
+          "gpm_mean_mm": 19.907,
+          "gpm_max_to_mean_ratio": 2.28,
+          "report_box_to_grid_max_ratio": 1.94,
+          "jalhay_to_era5_max_ratio": 5.07,
+          "grid_as_runoff_basis": false,
+          "comparison_boundary": "scale contrast between report 48-hour station/report-box rainfall and package event-window gridded accumulated-precipitation summaries; not strict same-window gauge-grid verification"
+        },
+        "conclusion": "station rainfall basis retained for runoff depth"
+      },
+      {
+        "row": "forecast_timing_context",
+        "formulas": [
+          "forecast_signal_lead_hours = event_rain_start - first_forecast_signal_time",
+          "ensemble_p99_lead_hours = event_rain_start - ensemble_median_above_p99_time"
+        ],
+        "values": {
+          "forecast_signal_lead_hours": 78,
+          "ensemble_median_above_p99_lead_hours": 54,
+          "timing_metric_present": true,
+          "forecast_as_runoff_basis": false
+        },
+        "conclusion": "timing metrics recorded alongside runoff arithmetic"
+      },
+      {
+        "row": "exposure_remote_change_context",
+        "formulas": [
+          "critical_amenities_per_100k = critical_amenity_count / population * 100000",
+          "combined_features_per_100k = (critical_amenity_count + road_like_highway_count) / population * 100000"
+        ],
+        "values": {
+          "worldpop_population_context": 1025289,
+          "critical_amenity_count": 171,
+          "road_like_highway_count": 129,
+          "critical_amenity_definition": "amenity in {hospital, clinic, fire_station, police, school, shelter}",
+          "road_like_highway_definition": "highway tag present, excluding bus_stop and platform",
+          "critical_amenities_per_100k_population": 16.68,
+          "combined_small_features_per_100k_population": 29.26,
+          "sentinel1_vv_post_minus_pre_db_mean": 0.108,
+          "sentinel1_vv_post_minus_pre_db_min": -16.581,
+          "sentinel1_vv_post_minus_pre_db_max": 13.395,
+          "alphaearth_change_mean": 0.1109,
+          "alphaearth_change_max": 0.5225,
+          "exact_depth_or_loss_values": false
+        },
+        "conclusion": "exposure and remote metrics recorded as rates and change summaries"
+      }
+    ],
+    "final_label": "local_rainfall_runoff_consistency_supported",
+    "consistency_checks": [
+      "local station peak retained in runoff translation",
+      "gridded maxima checked against station and report rainfall",
+      "timing, exposure, and remote metrics kept as supporting numeric context"
+    ]
+  },
+  "canonical_answer": {
+    "task_family": "runoff_translation_consistency_ledger",
+    "event_window_days": 5,
+    "calculation_rows": [
+      {
+        "row": "local_rainfall_amplification",
+        "formulas": [
+          "jalhay_to_station_average = jalhay_48h_mm / station_average_48h_mm",
+          "jalhay_to_report_box = jalhay_48h_mm / report_box_48h_mm",
+          "station_average_to_hres = station_average_48h_mm / hres_last_forecast_48h_mm"
+        ],
+        "values": {
+          "jalhay_48h_mm": 271.0,
+          "station_average_48h_mm": 120.0,
+          "report_box_48h_mm": 104.0,
+          "hres_last_forecast_48h_mm": 107.0,
+          "jalhay_to_station_average_ratio": 2.26,
+          "jalhay_to_report_box_ratio": 2.61,
+          "station_average_to_hres_ratio": 1.12
+        },
+        "conclusion": "local amplification supported"
+      },
+      {
+        "row": "runoff_depth_translation",
+        "formulas": [
+          "report_box_runoff_low_mm = report_box_48h_mm * 0.20",
+          "report_box_runoff_high_mm = report_box_48h_mm * 0.25",
+          "jalhay_runoff_low_mm = jalhay_48h_mm * 0.20",
+          "jalhay_runoff_high_mm = jalhay_48h_mm * 0.25",
+          "local_to_report_runoff_ratio = jalhay_runoff_range / report_box_runoff_range"
+        ],
+        "values": {
+          "runoff_fraction_range": [
+            0.2,
+            0.25
+          ],
+          "report_box_runoff_mm_range": [
+            20.8,
+            26.0
+          ],
+          "jalhay_runoff_mm_range": [
+            54.2,
+            67.8
+          ],
+          "local_to_report_runoff_range_ratio": [
+            2.61,
+            2.61
+          ]
+        },
+        "conclusion": "runoff depth range keeps local rainfall peak"
+      },
+      {
+        "row": "gridded_precipitation_smoothing_test",
+        "formulas": [
+          "era5_max_to_mean = era5_max_mm / era5_mean_mm",
+          "gpm_max_to_mean = gpm_max_mm / gpm_mean_mm",
+          "report_box_to_grid_max = report_box_48h_mm / max(era5_max_mm, gpm_max_mm)",
+          "jalhay_to_era5_max = jalhay_48h_mm / era5_max_mm"
+        ],
+        "values": {
+          "era5_max_mm": 53.489,
+          "era5_mean_mm": 42.616,
+          "era5_max_to_mean_ratio": 1.26,
+          "gpm_max_mm": 45.42,
+          "gpm_mean_mm": 19.907,
+          "gpm_max_to_mean_ratio": 2.28,
+          "report_box_to_grid_max_ratio": 1.94,
+          "jalhay_to_era5_max_ratio": 5.07,
+          "grid_as_runoff_basis": false,
+          "comparison_boundary": "scale contrast between report 48-hour station/report-box rainfall and package event-window gridded accumulated-precipitation summaries; not strict same-window gauge-grid verification"
+        },
+        "conclusion": "station rainfall basis retained for runoff depth"
+      },
+      {
+        "row": "forecast_timing_context",
+        "formulas": [
+          "forecast_signal_lead_hours = event_rain_start - first_forecast_signal_time",
+          "ensemble_p99_lead_hours = event_rain_start - ensemble_median_above_p99_time"
+        ],
+        "values": {
+          "forecast_signal_lead_hours": 78,
+          "ensemble_median_above_p99_lead_hours": 54,
+          "timing_metric_present": true,
+          "forecast_as_runoff_basis": false
+        },
+        "conclusion": "timing metrics recorded alongside runoff arithmetic"
+      },
+      {
+        "row": "exposure_remote_change_context",
+        "formulas": [
+          "critical_amenities_per_100k = critical_amenity_count / population * 100000",
+          "combined_features_per_100k = (critical_amenity_count + road_like_highway_count) / population * 100000"
+        ],
+        "values": {
+          "worldpop_population_context": 1025289,
+          "critical_amenity_count": 171,
+          "road_like_highway_count": 129,
+          "critical_amenity_definition": "amenity in {hospital, clinic, fire_station, police, school, shelter}",
+          "road_like_highway_definition": "highway tag present, excluding bus_stop and platform",
+          "critical_amenities_per_100k_population": 16.68,
+          "combined_small_features_per_100k_population": 29.26,
+          "sentinel1_vv_post_minus_pre_db_mean": 0.108,
+          "sentinel1_vv_post_minus_pre_db_min": -16.581,
+          "sentinel1_vv_post_minus_pre_db_max": 13.395,
+          "alphaearth_change_mean": 0.1109,
+          "alphaearth_change_max": 0.5225,
+          "exact_depth_or_loss_values": false
+        },
+        "conclusion": "exposure and remote metrics recorded as rates and change summaries"
+      }
+    ],
+    "final_label": "local_rainfall_runoff_consistency_supported",
+    "consistency_checks": [
+      "local station peak retained in runoff translation",
+      "gridded maxima checked against station and report rainfall",
+      "timing, exposure, and remote metrics kept as supporting numeric context"
+    ]
+  },
+  "event": {
+    "package_id": "CSX-062",
+    "event_name": "July 2021 Western Europe floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2021-07-12 to 2021-07-16"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON schema",
+        "points": 3,
+        "description": "Returns the task family, event-window field, all five required calculation rows, final label, and consistency-check list.",
+        "partial_credit": "Award up to 2 points if the structure is mostly present but one row or final field is missing."
+      },
+      {
+        "name": "Local rainfall amplification",
+        "points": 4,
+        "description": "Computes Jalhay/station-average = 2.26, Jalhay/report-box = 2.61, and station-average/HRES = 1.12 from the 48-hour rainfall values.",
+        "partial_credit": "Award partial credit for correct input values with one missing or incorrectly rounded ratio."
+      },
+      {
+        "name": "Runoff-depth translation",
+        "points": 4,
+        "description": "Applies the 0.20-0.25 runoff fraction to report-box and Jalhay rainfall, yielding 20.8-26.0 mm and 54.2-67.8 mm, with a local-to-report range ratio near 2.61.",
+        "partial_credit": "Award up to 2 points for one correct runoff range and up to 2 points for the second range and ratio."
+      },
+      {
+        "name": "Gridded precipitation smoothing test",
+        "points": 3,
+        "description": "Uses ERA5 and GPM maxima and max/mean ratios, plus report-box/grid and Jalhay/ERA5 ratios, to keep station rainfall as the runoff-depth basis.",
+        "partial_credit": "Award up to 2 points for correct gridded values and 1 point for the correct runoff-basis conclusion."
+      },
+      {
+        "name": "Forecast, exposure, and remote metrics",
+        "points": 3,
+        "description": "Uses the 78 h and 54 h lead times, exposure rates of 16.68 and 29.26 per 100k, Sentinel-1 mean +0.108 dB, and AlphaEarth mean 0.1109 as numeric context.",
+        "partial_credit": "Award 1 point each for forecast timing, exposure-rate computation, and remote-change handling."
+      },
+      {
+        "name": "Final label and consistency checks",
+        "points": 2,
+        "description": "Gives the expected final label and concise consistency checks matching the computed row conclusions.",
+        "partial_credit": "Award 1 point for the final label and 1 point for consistency checks tied to the row calculations."
+      },
+      {
+        "name": "Calculation-centered wording",
+        "points": 1,
+        "description": "Keeps row-level conclusion statements compact and tied to the numeric ledger.",
+        "partial_credit": "Award this point when the answer remains focused on calculations."
+      }
+    ]
+  },
+  "decision_rule": {
+    "summary": "Score each row by matching formula inputs, rounded outputs, and boolean conclusion state.",
+    "required_conclusion_states": {
+      "local_amplification_supported": true,
+      "local_runoff_basis_required": true,
+      "grid_as_runoff_basis": false,
+      "forecast_as_runoff_basis": false,
+      "remote_as_exact_depth_or_loss": false
+    },
+    "requires_computation": true
+  },
+  "key_values": {
+    "report_box_48h_mm": 104.0,
+    "hres_last_forecast_48h_mm": 107.0,
+    "station_average_48h_mm": 120.0,
+    "jalhay_48h_mm": 271.0,
+    "spa_48h_mm": 217.0,
+    "german_station_48h_floor_mm": 150.0,
+    "jalhay_to_report_box_ratio": 2.61,
+    "jalhay_to_station_average_ratio": 2.26,
+    "station_average_to_hres_ratio": 1.12,
+    "report_box_runoff_mm_range": [
+      20.8,
+      26.0
+    ],
+    "jalhay_runoff_mm_range": [
+      54.2,
+      67.8
+    ],
+    "forecast_signal_lead_hours": 78,
+    "ensemble_median_above_p99_lead_hours": 54,
+    "era5_max_mm": 53.489,
+    "gpm_max_mm": 45.42,
+    "worldpop_population_context": 1025289,
+    "critical_amenities_per_100k_population": 16.68,
+    "combined_small_features_per_100k_population": 29.26,
+    "sentinel1_vv_post_minus_pre_db_mean": 0.108,
+    "alphaearth_change_mean": 0.1109
+  },
+  "supporting_metrics": {
+    "event_name": "July 2021 Western Europe floods",
+    "event_window": {
+      "start_date": "2021-07-12",
+      "end_date": "2021-07-16",
+      "duration_days_inclusive": 5
+    },
+    "rainfall": {
+      "report_box_48h_mm": 104.0,
+      "hres_last_forecast_48h_mm": 107.0,
+      "station_average_48h_mm": 120.0,
+      "jalhay_48h_mm": 271.0,
+      "spa_48h_mm": 217.0,
+      "german_station_48h_floor_mm": 150.0,
+      "jalhay_to_report_box_ratio": 2.61,
+      "jalhay_to_station_average_ratio": 2.26,
+      "station_average_to_hres_ratio": 1.12
+    },
+    "runoff": {
+      "runoff_fraction_range": [
+        0.2,
+        0.25
+      ],
+      "report_box_runoff_mm_range": [
+        20.8,
+        26.0
+      ],
+      "jalhay_runoff_mm_range": [
+        54.2,
+        67.8
+      ],
+      "local_to_report_runoff_range_ratio": [
+        2.61,
+        2.61
+      ]
+    },
+    "structured_grid": {
+      "era5_max_mm": 53.489,
+      "era5_mean_mm": 42.616,
+      "era5_max_to_mean_ratio": 1.26,
+      "gpm_max_mm": 45.42,
+      "gpm_mean_mm": 19.907,
+      "gpm_max_to_mean_ratio": 2.28,
+      "chirps_max_mm": null,
+      "report_box_to_grid_max_ratio": 1.94,
+      "jalhay_to_era5_max_ratio": 5.07,
+      "grid_as_runoff_basis": false
+    },
+    "forecast": {
+      "forecast_signal_lead_hours": 78,
+      "ensemble_median_above_p99_lead_hours": 54,
+      "timing_metric_present": true,
+      "forecast_as_runoff_basis": false
+    },
+    "exposure_remote": {
+      "worldpop_population_context": 1025289,
+      "osm_small_critical_amenity_count": 171,
+      "osm_small_road_like_highway_count": 129,
+      "critical_amenity_definition": "amenity in {hospital, clinic, fire_station, police, school, shelter}",
+      "road_like_highway_definition": "highway tag present, excluding bus_stop and platform",
+      "critical_amenities_per_100k_population": 16.68,
+      "combined_small_features_per_100k_population": 29.26,
+      "sentinel1_vv_post_minus_pre_db_mean": 0.108,
+      "sentinel1_vv_post_minus_pre_db_min": -16.581,
+      "sentinel1_vv_post_minus_pre_db_max": 13.395,
+      "alphaearth_change_mean": 0.1109,
+      "alphaearth_change_max": 0.5225,
+      "exact_depth_or_loss_values": false
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/other/other_003_03_ECMWF_-_Extreme_rain_in_Germany_and_Belgium_in_July_2021.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "All metrics are extracted or computed from local CSX-062 package files; no network access is used."
+  }
+}

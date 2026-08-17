@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-207_Q1",
+  "event_id": "CSX-207",
+  "task_type": "disaster_science_reasoning",
+  "evaluation_mode": "hybrid",
+  "target_family": "wildfire_smoke_process_model",
+  "primary_gt": {
+    "process_model": {
+      "event_window_days": 52,
+      "weather_record_days": 46,
+      "weather_coverage_fraction": 0.884615,
+      "aoi_area_km2": 72061.668712,
+      "source_severity_component": 0.909832,
+      "hot_dry_wind_component": 0.802892,
+      "transport_exposure_component": 0.933806,
+      "baseline_stress_index": 87.839632,
+      "baseline_stress_class": "extreme"
+    },
+    "computed_metrics": {
+      "dnbr_peak_to_mean": 8.040601,
+      "annual_embedding_peak_to_mean_change": 14.496825,
+      "hot_diagnostic_mean_max_c": 40.789426,
+      "dry_day_fraction": 0.869565,
+      "mean_peak_wind_ms": 8.808333,
+      "rain_suppression_norm": 0.329058,
+      "population_person_days_million": 1.957034,
+      "critical_facility_count": 62,
+      "nearest_brazil_wildfire_catalog_km": 304.116583
+    },
+    "scenario_analysis": {
+      "scenario": "+2 C temperature diagnostics, -20% gridded mean precipitation, +15% peak wind, +10% exposed population",
+      "scenario_hot_dry_wind_component": 0.900672,
+      "scenario_transport_exposure_component": 0.939177,
+      "scenario_stress_index": 91.39623,
+      "scenario_delta": 3.556598,
+      "scenario_stress_class": "extreme",
+      "worsening_flag": true
+    },
+    "mechanism_chain": [
+      "High burn-change metrics indicate a strong fire source in the event area.",
+      "The available daily weather records are mostly dry, hot, and windy enough to support sustained fire spread and smoke production, with coverage tracked separately.",
+      "Report text explicitly links wildfire emissions, transport, air quality, PM2.5, and health-relevant exposure using once-per-term presence scoring.",
+      "Population, critical facilities, and nearby Brazil wildfire catalog points make the smoke episode operationally consequential."
+    ],
+    "source_paths": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Copernicus_CAMS_global_wildfires_review_2024.html",
+      "data/event_reports/event_reports_004_NASA_SVS_South_American_wildfires_smoke.html",
+      "data/event_reports/event_reports_005_Wikipedia_2024_South_American_wildfires.json",
+      "data/event_reports/event_reports_006_Locked_event_anchor_2024_South_America_historic_wildfire_smoke_emissions.json",
+      "data/event_catalogs/event_catalogs_004_04_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "final_interpretation": "The coupled model classifies the episode as extreme at baseline and remains extreme under the hotter, drier, windier, higher-exposure scenario, with a material stress increase."
+  },
+  "event": {
+    "package_id": "CSX-207",
+    "event_name": "2024 South America historic wildfire smoke emissions",
+    "hazard_family": "air_pollution_smoke_heat",
+    "hazard_label": "Air pollution, smoke, and heat exposure",
+    "event_date_or_window": "2024-08-01 to 2024-09-21",
+    "location": "Amazon and Pantanal, Bolivia and Brazil"
+  },
+  "key_values": {
+    "event_window": {
+      "start": "2024-08-01",
+      "end": "2024-09-21",
+      "inclusive_days": 52,
+      "weather_record_days": 46,
+      "weather_coverage_fraction": 0.8846153846153846,
+      "available_daily_weather_start": "2024-07-18",
+      "available_daily_weather_end": "2024-09-15",
+      "uncovered_event_tail_days": 6,
+      "coverage_note": "Daily weather calculations use only available package records inside the event window."
+    },
+    "aoi": {
+      "min_lon": -59.25,
+      "max_lon": -56.75,
+      "min_lat": -22.75,
+      "max_lat": -20.25,
+      "mid_lat": -21.5,
+      "width_km": 258.9352091693974,
+      "height_km": 278.29999999999995,
+      "centroid_lon": -58.0,
+      "centroid_lat": -21.5,
+      "area_km2": 72061.66871184329
+    },
+    "source_severity": {
+      "dnbr_mean": 0.11238615527118169,
+      "dnbr_max": 0.9036522820445674,
+      "dnbr_peak_to_mean": 8.040601441201574,
+      "annual_embedding_change_mean": 0.05313105454741848,
+      "annual_embedding_change_max": 0.7702315879158653,
+      "annual_embedding_peak_to_mean_change": 14.496824775582947,
+      "component": 0.9098318970492564
+    },
+    "hot_dry_wind": {
+      "heat_diagnostics_c": {
+        "local_daily_max_c": 39.0,
+        "nasa_power_daily_max_c": 42.11,
+        "era5_land_reanalysis_max_c": 41.258279418945335
+      },
+      "hot_diagnostic_mean_max_c": 40.78942647298178,
+      "heat_exceedance_norm": 0.8270609247116829,
+      "dry_day_count": 40,
+      "dry_day_fraction": 0.8695652173913043,
+      "local_peak_wind_ms": 9.916666666666668,
+      "nasa_peak_wind_ms": 7.7,
+      "mean_peak_wind_ms": 8.808333333333334,
+      "wind_peak_norm": 0.8808333333333334,
+      "gpm_mean_mm": 67.09417149021219,
+      "chirps_mean_mm": 62.40479256676154,
+      "rain_suppression_norm": 0.32905828509787804,
+      "component": 0.8028916449125
+    },
+    "transport_exposure": {
+      "process_terms": [
+        "wildfire",
+        "smoke",
+        "transport",
+        "air quality",
+        "pm2.5",
+        "human health"
+      ],
+      "process_term_hits": {
+        "wildfire": true,
+        "smoke": true,
+        "transport": true,
+        "air quality": true,
+        "pm2.5": true,
+        "human health": true
+      },
+      "transport_process_text_fraction": 1.0,
+      "term_count_rule": "Each process term is counted once if present at least once in the selected report corpus or locked event-anchor notes after lowercasing; repeated occurrences are not counted.",
+      "population_sum": 37635.27276382126,
+      "population_person_days_million": 1.9570341837187055,
+      "person_day_norm": 0.9785170918593528,
+      "critical_facility_count": 62,
+      "critical_facility_breakdown": {
+        "hospital": 6,
+        "school": 32,
+        "police": 23,
+        "shelter": 1
+      },
+      "critical_facility_norm": 1.0,
+      "nearest_brazil_wildfire_catalog_point": {
+        "distance_km": 304.1165826418012,
+        "event_id": "EONET_11309",
+        "title": "Wildfire in Brazil 1022393",
+        "longitude": -55.52998192719732,
+        "latitude": -20.034838614212816,
+        "date": "2024-09-21T19:00:00Z"
+      },
+      "catalog_proximity_norm": 0.6958834173581988,
+      "component": 0.9338059564364779
+    },
+    "scenario": {
+      "scenario_heat_diagnostic_mean_max_c": 42.78942647298178,
+      "scenario_heat_exceedance_norm": 1.0,
+      "scenario_wind_peak_norm": 1.0,
+      "scenario_rain_suppression_norm": 0.4632466280783024,
+      "scenario_population_person_days_million": 2.152737602090576,
+      "scenario_person_day_norm": 1.0,
+      "scenario_hot_dry_wind_component": 0.9006724888947866,
+      "scenario_transport_exposure_component": 0.9391766834716399
+    },
+    "manifest_file_count": 33
+  },
+  "tolerances": {
+    "integer_fields": 0,
+    "component_fields": 0.0005,
+    "index_fields": 0.0005,
+    "distance_km": 0.01,
+    "area_km2": 0.1
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Finds relevant package files independently and cites package-relative paths spanning reports, hazard products, remote sensing, exposure, geospatial context, and catalogs.",
+        "partial_credit": "Award up to 2 points for incomplete but useful multi-family citations."
+      },
+      {
+        "name": "Event window, weather coverage, and AOI geometry",
+        "points": 3,
+        "description": "Correctly derives the 52-day inclusive event window, 46 available weather-record days, coverage fraction, and approximate AOI area from the polygon without inferring missing daily weather values.",
+        "partial_credit": "Award 1 point for each correct group of calculations."
+      },
+      {
+        "name": "Source severity and remote-sensing calculations",
+        "points": 3,
+        "description": "Correctly extracts dNBR mean/max, annual embedding change mean/max, computes the peak-to-mean ratios, and applies the source component formula.",
+        "partial_credit": "Award proportional credit for correct extraction and formula use."
+      },
+      {
+        "name": "Hot-dry-wind process component",
+        "points": 4,
+        "description": "Correctly computes the three temperature diagnostics, dry-day fraction, wind unit conversion, precipitation suppression, and the combined hot-dry-wind component.",
+        "partial_credit": "Award partial credit for each correct subterm within tolerance."
+      },
+      {
+        "name": "Transport and exposure component",
+        "points": 3,
+        "description": "Correctly detects the six process terms using once-per-term presence scoring, computes person-day exposure, counts critical facilities, finds the nearest Brazil wildfire catalog point, and combines the component.",
+        "partial_credit": "Award proportional credit for correct text, exposure, facility, and catalog subterms."
+      },
+      {
+        "name": "Baseline and scenario stress model",
+        "points": 3,
+        "description": "Correctly computes baseline index/class and the warmer-drier-windier-higher-exposure scenario index, delta, class, and worsening flag.",
+        "partial_credit": "Award partial credit for a correct baseline or scenario with minor rounding errors."
+      },
+      {
+        "name": "Disaster-process interpretation and valid JSON",
+        "points": 1,
+        "description": "Returns parseable JSON with a concise mechanism chain and interpretation grounded in wildfire source, weather, transport, and exposure evidence.",
+        "partial_credit": "No credit for generic explanation not tied to the computed model."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "baseline_stress_index": 87.839632,
+    "scenario_stress_index": 91.39623,
+    "scenario_delta": 3.556598,
+    "baseline_stress_class": "extreme",
+    "scenario_stress_class": "extreme",
+    "worsening_flag": true
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Copernicus_CAMS_global_wildfires_review_2024.html",
+      "data/event_reports/event_reports_004_NASA_SVS_South_American_wildfires_smoke.html",
+      "data/event_reports/event_reports_005_Wikipedia_2024_South_American_wildfires.json",
+      "data/event_reports/event_reports_006_Locked_event_anchor_2024_South_America_historic_wildfire_smoke_emissions.json",
+      "data/event_catalogs/event_catalogs_004_04_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "notes": "All values are recomputed from local CSX-207 package files; no network access is used. Daily weather metrics use available records through the package record end and weather_coverage_fraction records partial event coverage."
+  }
+}

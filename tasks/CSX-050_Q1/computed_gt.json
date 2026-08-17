@@ -1,0 +1,160 @@
+{
+  "computed_interpretation": "ERA5-Land and GPM nearly coincide near 53.5 mm, but the reported 104 mm box total and 271 mm Jalhay station total are about 1.94x and 5.06x larger, so the gridded maxima are a lower-scale consistency signal rather than a station-extreme proxy.",
+  "evaluation_mode": "hybrid",
+  "event": {
+    "end_date": "2021-07-16",
+    "event_name": "July 2021 Western Europe floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "region": "Germany and Belgium",
+    "start_date": "2021-07-12"
+  },
+  "event_id": "CSX-050",
+  "judge_anchors": {
+    "claim_limits": [
+      "Do not treat the gridded maximum as the highest station 48-hour rainfall.",
+      "Do not treat null CHIRPS statistics as a finite rainfall estimate."
+    ],
+    "required_points": [
+      "ERA5-Land and GPM event maxima are nearly identical near 53.5 mm.",
+      "The ECMWF 104 mm box total is about 1.94 times the larger gridded maximum.",
+      "The 271 mm Jalhay station total is about 5.06 times the larger gridded maximum.",
+      "The 20-25 percent fraction applied to 104 mm gives 20.8-26.0 mm.",
+      "CHIRPS event statistics are null, so they do not add finite event totals."
+    ]
+  },
+  "key_values": {
+    "chirps_status": "all_event_stats_null",
+    "era5_land_event_precip_mm_max": 53.489,
+    "era5_land_event_precip_mm_mean": 22.829,
+    "fatalities_lower_bound": 200,
+    "german_station_threshold_mm_48h": 150,
+    "german_threshold_to_gridmax_ratio": 2.8,
+    "gpm_era5_max_diff_mm": 0.016,
+    "gpm_era5_mean_diff_mm": 0.647,
+    "gpm_event_precip_mm_max": 53.505,
+    "gpm_event_precip_mm_mean": 23.476,
+    "gridmax_mm": 53.505,
+    "gridmax_relative_diff_percent": 0.03,
+    "gridmax_source": "GPM",
+    "high_rainfall_window": "2021-07-13T06:00Z_to_2021-07-15T06:00Z",
+    "jalhay_mm_48h": 271,
+    "jalhay_to_gridmax_ratio": 5.06,
+    "report_box_rainfall_mm_48h": 104,
+    "report_box_to_gridmax_ratio": 1.94,
+    "runoff_depth_range_mm": [
+      20.8,
+      26.0
+    ],
+    "spa_mm_48h": 217,
+    "spa_to_gridmax_ratio": 4.06,
+    "station_mean_mm_48h": 244.0,
+    "station_mean_to_gridmax_ratio": 4.56,
+    "station_spread_mm": 54
+  },
+  "numeric_tolerances": {
+    "gpm_era5_max_diff_mm": {
+      "tolerance": 0.01,
+      "value": 0.016
+    },
+    "gridmax_mm": {
+      "tolerance": 0.02,
+      "value": 53.505
+    },
+    "jalhay_to_gridmax_ratio": {
+      "tolerance": 0.1,
+      "value": 5.06
+    },
+    "report_box_to_gridmax_ratio": {
+      "tolerance": 0.05,
+      "value": 1.94
+    },
+    "runoff_depth_range_mm": {
+      "tolerance": 0.2,
+      "value": [
+        20.8,
+        26.0
+      ]
+    },
+    "station_spread_mm": {
+      "tolerance": 1,
+      "value": 54
+    }
+  },
+  "primary_gt": {
+    "answer": "gridded_agreement_lower_than_station_extreme",
+    "chirps_status": "all_event_stats_null",
+    "gpm_era5_max_diff_mm": 0.016,
+    "gridmax_mm": 53.505,
+    "interpretation": "ERA5-Land and GPM nearly coincide near 53.5 mm, but the reported 104 mm box total and 271 mm Jalhay station total are about 1.94x and 5.06x larger, so the gridded maxima are a lower-scale consistency signal rather than a station-extreme proxy.",
+    "jalhay_to_gridmax_ratio": 5.06,
+    "report_box_to_gridmax_ratio": 1.94,
+    "runoff_depth_range_mm": [
+      20.8,
+      26.0
+    ],
+    "station_spread_mm": 54
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from local JSON and HTML files only; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/other/other_003_03_ECMWF_-_Extreme_rain_in_Germany_and_Belgium_in_July_2021.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the compact label gridded_agreement_lower_than_station_extreme or a clearly equivalent label, and uses the requested JSON fields.",
+        "name": "answer_label_and_format",
+        "partial_credit": "Award 1 point for a mostly clear label with minor field omissions.",
+        "points": 2
+      },
+      {
+        "description": "Extracts ERA5-Land 53.489 mm, GPM 53.505 mm, and the larger gridded maximum 53.505 mm.",
+        "name": "gridded_maxima",
+        "partial_credit": "Award 1-2 points for one correct product value or rounded values near 53.5 mm.",
+        "points": 3
+      },
+      {
+        "description": "Computes the ERA5-Land versus GPM maximum difference as 0.016 mm.",
+        "name": "gridded_difference",
+        "partial_credit": "Award 1-2 points for identifying near equality without the exact difference.",
+        "points": 3
+      },
+      {
+        "description": "Computes the ECMWF box-to-grid maximum ratio as about 1.94 using 104 mm and 53.505 mm.",
+        "name": "report_box_ratio",
+        "partial_credit": "Award 1-2 points for using the right values with arithmetic or rounding errors.",
+        "points": 3
+      },
+      {
+        "description": "Computes the Jalhay-to-grid maximum ratio about 5.06 and the Jalhay-minus-Spa spread 54 mm.",
+        "name": "station_comparison",
+        "partial_credit": "Award 2 points for either correct station calculation, or 1 point for using the station values without deriving the requested metrics.",
+        "points": 4
+      },
+      {
+        "description": "Computes the direct-runoff depth range as 20.8-26.0 mm from 20-25 percent of 104 mm, and notes that CHIRPS event statistics are all null.",
+        "name": "runoff_and_chirps",
+        "partial_credit": "Award 1-2 points for only one of these two elements.",
+        "points": 3
+      },
+      {
+        "description": "Interprets the ledger as gridded-product agreement at a lower intensity than the report and station rainfall, without turning the gridded maximum into a highest-station rainfall proxy.",
+        "name": "computed_interpretation",
+        "partial_credit": "Award 1 point for a broadly correct but vague interpretation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "rainfall_source_reconciliation",
+  "task_id": "CSX-050_Q1",
+  "task_type": "short_answer"
+}

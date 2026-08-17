@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-074_Q2",
+  "event_id": "CSX-074",
+  "task_type": "structured_reasoning",
+  "target_family": "rainfall_routing_lag_process_analysis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "multiday_rainfall_to_river_routing_lag_consistent",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+    "computed_evidence": {
+      "proof_blocks": [
+        {
+          "block_id": "event_window_and_alert_lags",
+          "formula": [
+            "inclusive_days*24",
+            "alert_start-event_start",
+            "lag/event_window_hours"
+          ],
+          "computed_values": {
+            "event_window_hours": 120,
+            "Germany_lag_hours": 25.0,
+            "Belgium_lag_hours": 49.0,
+            "Germany_lag_ratio": 0.208,
+            "Belgium_lag_ratio": 0.408
+          },
+          "result": "lagged_alert_timing_pass"
+        },
+        {
+          "block_id": "cross_border_alert_timing",
+          "formula": [
+            "max(alert_end)-min(alert_start)",
+            "later_alert_start-earlier_alert_start",
+            "alert_overlap_hours",
+            "combined_window/event_window_hours",
+            "overlap/combined_window",
+            "onset_gap/event_window_hours"
+          ],
+          "computed_values": {
+            "combined_alert_window_hours": 72.0,
+            "alert_onset_gap_hours": 24.0,
+            "alert_overlap_hours": 24.0,
+            "combined_window_ratio": 0.6,
+            "overlap_combined_ratio": 0.333,
+            "onset_gap_ratio": 0.2
+          },
+          "result": "cross_border_timing_pass"
+        },
+        {
+          "block_id": "gridded_rainfall_process alignment",
+          "formula": [
+            "satellite_max/satellite_mean",
+            "reanalysis_max/reanalysis_mean",
+            "abs(satellite_max-reanalysis_max)/mean(satellite_max,reanalysis_max)*100"
+          ],
+          "computed_values": {
+            "satellite_max_mean_ratio": 2.279,
+            "reanalysis_max_mean_ratio": 2.343,
+            "gridded_max_difference_pct": 0.03
+          },
+          "result": "gridded_rainfall_consistency_pass"
+        },
+        {
+          "block_id": "local_hourly_rain_spike_test",
+          "formula": [
+            "local_peak_hour/local_total",
+            "longest_wet_run/event_window_hours",
+            "wet_span/event_window_hours",
+            "local_total/satellite_max"
+          ],
+          "computed_values": {
+            "local_peak_share": 0.077,
+            "longest_wet_run_ratio": 0.442,
+            "wet_span_ratio": 0.808,
+            "local_total_to_satellite_max_ratio": 1.815
+          },
+          "result": "single_hour_spike_fails"
+        }
+      ],
+      "rejected_alternatives": [
+        "single_local_hourly_spike",
+        "rainfall_total_without_lag",
+        "single_country_alert_sequence"
+      ],
+      "final_label": "multiday_rainfall_to_river_routing_lag_consistent"
+    },
+    "mechanism_chain": [
+      "multiday rainfall loading",
+      "basin or terrain routing",
+      "river-response timing",
+      "instantaneous simplification rejection"
+    ],
+    "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+    "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+    "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+    "formula_derivation": "Compute routing lag as response_time - rainfall_peak_time where source fields permit it; compare ratios or differences across products."
+  },
+  "key_values": {
+    "event_name": "July 2021 Western Europe floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_window_start": "2021-07-12",
+    "event_window_end": "2021-07-16",
+    "event_window_days": 5,
+    "event_window_hours": 120,
+    "alert_windows": {
+      "Germany": {
+        "start": "2021-07-13T01:00",
+        "end": "2021-07-15T01:00"
+      },
+      "Belgium": {
+        "start": "2021-07-14T01:00",
+        "end": "2021-07-16T01:00"
+      }
+    },
+    "alert_lag_hours": {
+      "Germany": 25.0,
+      "Belgium": 49.0
+    },
+    "alert_onset_gap_hours": 24.0,
+    "alert_combined_window_hours": 72.0,
+    "alert_overlap_hours": 24.0,
+    "satellite_max_mm": 53.505,
+    "satellite_mean_mm": 23.476,
+    "reanalysis_max_mm": 53.489,
+    "reanalysis_mean_mm": 22.829,
+    "satellite_max_mean_ratio": 2.279,
+    "reanalysis_max_mean_ratio": 2.343,
+    "gridded_max_difference_pct": 0.03,
+    "local_total_mm": 97.1,
+    "local_peak_hour_mm": 7.5,
+    "local_peak_hour_time": "2021-07-14T20:00",
+    "local_peak_share": 0.077,
+    "local_wet_span_hours": 97.0,
+    "local_longest_wet_run_hours": 53,
+    "local_total_to_satellite_max_ratio": 1.815,
+    "Germany_lag_ratio": 0.208,
+    "Belgium_lag_ratio": 0.408,
+    "combined_window_ratio": 0.6,
+    "overlap_combined_ratio": 0.333,
+    "onset_gap_ratio": 0.2,
+    "longest_wet_run_ratio": 0.442,
+    "wet_span_ratio": 0.808
+  },
+  "tolerances": {
+    "hours": 0.1,
+    "ratios": 0.005,
+    "percent": 0.01
+  },
+  "proof_blocks": [
+    {
+      "block_id": "event_window_and_alert_lags",
+      "formula": [
+        "inclusive_days*24",
+        "alert_start-event_start",
+        "lag/event_window_hours"
+      ],
+      "computed_values": {
+        "event_window_hours": 120,
+        "Germany_lag_hours": 25.0,
+        "Belgium_lag_hours": 49.0,
+        "Germany_lag_ratio": 0.208,
+        "Belgium_lag_ratio": 0.408
+      },
+      "result": "lagged_alert_timing_pass"
+    },
+    {
+      "block_id": "cross_border_alert_timing",
+      "formula": [
+        "max(alert_end)-min(alert_start)",
+        "later_alert_start-earlier_alert_start",
+        "alert_overlap_hours",
+        "combined_window/event_window_hours",
+        "overlap/combined_window",
+        "onset_gap/event_window_hours"
+      ],
+      "computed_values": {
+        "combined_alert_window_hours": 72.0,
+        "alert_onset_gap_hours": 24.0,
+        "alert_overlap_hours": 24.0,
+        "combined_window_ratio": 0.6,
+        "overlap_combined_ratio": 0.333,
+        "onset_gap_ratio": 0.2
+      },
+      "result": "cross_border_timing_pass"
+    },
+    {
+      "block_id": "gridded_rainfall_consistency",
+      "formula": [
+        "satellite_max/satellite_mean",
+        "reanalysis_max/reanalysis_mean",
+        "abs(satellite_max-reanalysis_max)/mean(satellite_max,reanalysis_max)*100"
+      ],
+      "computed_values": {
+        "satellite_max_mean_ratio": 2.279,
+        "reanalysis_max_mean_ratio": 2.343,
+        "gridded_max_difference_pct": 0.03
+      },
+      "result": "gridded_rainfall_consistency_pass"
+    },
+    {
+      "block_id": "local_hourly_rain_spike_test",
+      "formula": [
+        "local_peak_hour/local_total",
+        "longest_wet_run/event_window_hours",
+        "wet_span/event_window_hours",
+        "local_total/satellite_max"
+      ],
+      "computed_values": {
+        "local_peak_share": 0.077,
+        "longest_wet_run_ratio": 0.442,
+        "wet_span_ratio": 0.808,
+        "local_total_to_satellite_max_ratio": 1.815
+      },
+      "result": "single_hour_spike_fails"
+    }
+  ],
+  "decision_rule": {
+    "final_label": "multiday_rainfall_to_river_routing_lag_consistent",
+    "conditions": [
+      "event_window_hours == 120",
+      "Germany_lag_hours == 25.0 and Belgium_lag_hours == 49.0",
+      "alert_onset_gap_hours == 24.0 and alert_combined_window_hours == 72.0",
+      "gridded_max_difference_pct <= 0.05",
+      "local_peak_share < 0.10 and wet_span_ratio >= 0.50"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_package": "event_packages/standard_event_packages/packages/CSX-074",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Western Europe Flood Rainfall-to-Routing Lag Analysis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "multiday_rainfall_to_river_routing_lag_consistent",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+      "computed_evidence": {
+        "proof_blocks": [
+          {
+            "block_id": "event_window_and_alert_lags",
+            "formula": [
+              "inclusive_days*24",
+              "alert_start-event_start",
+              "lag/event_window_hours"
+            ],
+            "computed_values": {
+              "event_window_hours": 120,
+              "Germany_lag_hours": 25.0,
+              "Belgium_lag_hours": 49.0,
+              "Germany_lag_ratio": 0.208,
+              "Belgium_lag_ratio": 0.408
+            },
+            "result": "lagged_alert_timing_pass"
+          },
+          {
+            "block_id": "cross_border_alert_timing",
+            "formula": [
+              "max(alert_end)-min(alert_start)",
+              "later_alert_start-earlier_alert_start",
+              "alert_overlap_hours",
+              "combined_window/event_window_hours",
+              "overlap/combined_window",
+              "onset_gap/event_window_hours"
+            ],
+            "computed_values": {
+              "combined_alert_window_hours": 72.0,
+              "alert_onset_gap_hours": 24.0,
+              "alert_overlap_hours": 24.0,
+              "combined_window_ratio": 0.6,
+              "overlap_combined_ratio": 0.333,
+              "onset_gap_ratio": 0.2
+            },
+            "result": "cross_border_timing_pass"
+          },
+          {
+            "block_id": "gridded_rainfall_process alignment",
+            "formula": [
+              "satellite_max/satellite_mean",
+              "reanalysis_max/reanalysis_mean",
+              "abs(satellite_max-reanalysis_max)/mean(satellite_max,reanalysis_max)*100"
+            ],
+            "computed_values": {
+              "satellite_max_mean_ratio": 2.279,
+              "reanalysis_max_mean_ratio": 2.343,
+              "gridded_max_difference_pct": 0.03
+            },
+            "result": "gridded_rainfall_consistency_pass"
+          },
+          {
+            "block_id": "local_hourly_rain_spike_test",
+            "formula": [
+              "local_peak_hour/local_total",
+              "longest_wet_run/event_window_hours",
+              "wet_span/event_window_hours",
+              "local_total/satellite_max"
+            ],
+            "computed_values": {
+              "local_peak_share": 0.077,
+              "longest_wet_run_ratio": 0.442,
+              "wet_span_ratio": 0.808,
+              "local_total_to_satellite_max_ratio": 1.815
+            },
+            "result": "single_hour_spike_fails"
+          }
+        ],
+        "rejected_alternatives": [
+          "single_local_hourly_spike",
+          "rainfall_total_without_lag",
+          "single_country_alert_sequence"
+        ],
+        "final_label": "multiday_rainfall_to_river_routing_lag_consistent"
+      },
+      "mechanism_chain": [
+        "multiday rainfall loading",
+        "basin or terrain routing",
+        "river-response timing",
+        "instantaneous simplification rejection"
+      ],
+      "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+      "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+      "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+      "formula_derivation": "Compute routing lag as response_time - rainfall_peak_time where source fields permit it; compare ratios or differences across products."
+    },
+    "answer": "multiday_rainfall_to_river_routing_lag_consistent"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-085_Q1",
+  "event_id": "CSX-085",
+  "task_type": "short_answer",
+  "target_family": "yagi_rainfall_impact_ratio_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "yagi_rainfall_impact_ratio_ledger",
+    "row_results": {
+      "rainfall_load": "pass",
+      "rainfall_concentration": "pass",
+      "wind_context": "context_only",
+      "regional_impact_ratios": "pass",
+      "local_denominator_test": "reject_scaling",
+      "surface_change_metric_role": "context_only"
+    },
+    "core_values": {
+      "hourly_total_mm": 373.0,
+      "daily_total_mm": 388.82,
+      "daily_to_hourly_ratio": 1.042,
+      "hourly_mean_mm_h": 1.295,
+      "daily_mean_mm_day": 32.402,
+      "max_hour_fraction": 0.0477,
+      "max_day_fraction": 0.305,
+      "wind_ratio": 1.468,
+      "safe_water_ratio": 0.5,
+      "education_ratio": 0.333,
+      "school_health_ratio": 1.545,
+      "children_pop_ratio": 2175.7,
+      "school_local_ratio": 60.7,
+      "s1_range_db": 24.612,
+      "alpha_mean_max_ratio": 0.117
+    },
+    "rejected_scaling": [
+      "Do not scale the 6 million affected-children report by the 2757.761-person local denominator.",
+      "Do not scale 850 damaged schools by the 14 local school features.",
+      "Do not convert local surface-change metrics into regional loss totals."
+    ],
+    "final_label": "sustained_rainfall_dominant_regional_flood_landslide_signal",
+    "interpretation": "The rainfall totals and concentration ratios support sustained storm-window flood and landslide conditions, while wind and surface-change metrics remain contextual."
+  },
+  "key_values": {
+    "hourly_total_mm": 373.0,
+    "daily_total_mm": 388.82,
+    "daily_to_hourly_ratio": 1.042,
+    "hourly_mean_mm_h": 1.295,
+    "daily_mean_mm_day": 32.402,
+    "max_hourly_mm": 17.8,
+    "max_hour_time": "2024-09-07T13:00",
+    "max_hour_fraction": 0.0477,
+    "max_daily_mm": 118.6,
+    "max_daily_date": "20240907",
+    "max_day_fraction": 0.305,
+    "nasa_wind_kmh": 42.516,
+    "open_meteo_wind_kmh": 62.4,
+    "wind_ratio": 1.468,
+    "children_affected_million": 6,
+    "safe_water_ratio": 0.5,
+    "education_ratio": 0.333,
+    "damaged_schools": 850,
+    "damaged_health_centres": 550,
+    "school_health_ratio": 1.545,
+    "local_population": 2757.761,
+    "local_school_count": 14,
+    "children_pop_ratio": 2175.7,
+    "school_local_ratio": 60.7,
+    "s1_range_db": 24.612,
+    "s1_mean_change_db": 0.534,
+    "alpha_mean_max_ratio": 0.117
+  },
+  "tolerances": {
+    "precipitation_mm_abs": 0.5,
+    "mean_precipitation_abs": 0.01,
+    "wind_speed_abs": 0.1,
+    "ratio_abs": 0.01,
+    "population_abs": 1.0,
+    "surface_change_abs": 0.01,
+    "accepted_row_states": [
+      "pass",
+      "context_only",
+      "reject_scaling"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Compact JSON answer",
+        "points": 3,
+        "description": "Returns target_family, six row results, core_values, rejected_scaling, final_label, and a one-sentence interpretation.",
+        "partial_credit": "Give 1-2 points for a mostly correct structure with one or two missing minor fields."
+      },
+      {
+        "name": "Rainfall load and concentration",
+        "points": 5,
+        "description": "Computes 373.0 mm, 388.82 mm, 1.295 mm/h, 32.402 mm/day, 1.042, 0.0477, and 0.305 within tolerance.",
+        "partial_credit": "Give 2-4 points when totals are correct but one or more derived ratios are missing or incorrectly rounded."
+      },
+      {
+        "name": "Wind and regional ratios",
+        "points": 3,
+        "description": "Computes 42.516 km/h, 1.468, 0.500, 0.333, and 1.545 and uses them as context or regional ratio checks.",
+        "partial_credit": "Give 1-2 points for correct formulas with one or two numeric mistakes."
+      },
+      {
+        "name": "Local denominator and surface values",
+        "points": 3,
+        "description": "Computes 14 local schools, 2175.7, 60.7, 24.612 dB, and 0.117.",
+        "partial_credit": "Give 1-2 points if the denominator mismatch is recognized but one metric group is incomplete."
+      },
+      {
+        "name": "Row state decisions",
+        "points": 3,
+        "description": "Marks rainfall_load, rainfall_concentration, and regional_impact_ratios as pass; wind_context and surface_change_metric_role as context_only; and local_denominator_test as reject_scaling.",
+        "partial_credit": "Give 1-2 points for the right overall direction with one or two row-state errors."
+      },
+      {
+        "name": "Rejected scaling",
+        "points": 2,
+        "description": "Rejects scaling regional children, school damage, or regional losses from the small local denominator or surface-change metrics.",
+        "partial_credit": "Give 1 point if only one or two of the scaling errors are rejected."
+      },
+      {
+        "name": "Final label discipline",
+        "points": 1,
+        "description": "Uses the compact rainfall-dominant flood/landslide label without adding broader statements not computed by the ledger.",
+        "partial_credit": "Give 0.5 points for a compatible but vague final label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/other/other_001_UNICEF_-_Children_affected_by_Typhoon_Yagi_floods_and_landslides.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "Values are regenerated from local package records used by this task."
+  }
+}

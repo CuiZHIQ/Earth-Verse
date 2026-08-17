@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-049_Q1",
+  "event_id": "CSX-049",
+  "task_type": "short_answer",
+  "target_family": "ida_nyc_pluvial_rainfall_concentration_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_label": "short_window_high_contrast_pluvial_flood_signature",
+    "event_window_days": 2,
+    "precip_max_mm": {
+      "era5": 10.82,
+      "gpm": 18.36,
+      "chirps": 18.05
+    },
+    "max_to_mean_ratios": {
+      "era5": 6.8,
+      "gpm": 9.18,
+      "chirps": 127.19
+    },
+    "satellite_max_disagreement_percent": 1.72,
+    "report_flag_count": 6,
+    "score_0_to_6": 6,
+    "computed_interpretation": "The two-day Ida record has concentrated precipitation maxima across products, close GPM-CHIRPS peak agreement, and six independent disruption flags."
+  },
+  "key_values": {
+    "decision_tests": {
+      "two_day_window": true,
+      "era5_max_ge10mm": true,
+      "satellite_maxima_ge18mm": true,
+      "all_max_to_mean_ratios_ge5": true,
+      "report_flags_ge5": true,
+      "gpm_chirps_disagreement_le5pct": true
+    },
+    "thresholds": {
+      "era5_max_mm": 10,
+      "satellite_max_mm": 18,
+      "max_to_mean_ratio": 5,
+      "report_flag_count": 5,
+      "satellite_disagreement_percent": 5
+    },
+    "report_flag_phrases": [
+      "road shutdowns",
+      "public transit disruption",
+      "flight cancellations",
+      "stranded cars",
+      "high-water rescues",
+      "flash-flood emergency statements"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON and label",
+        "points": 3,
+        "description": "Returns the requested compact JSON and the high-contrast pluvial-flood label.",
+        "partial_credit": "Partial credit for a recoverable JSON answer with a compatible but imprecise label."
+      },
+      {
+        "name": "Product maxima",
+        "points": 4,
+        "description": "Computes ERA5, GPM, and CHIRPS event-maximum precipitation correctly.",
+        "partial_credit": "Partial credit for two correct maxima or minor rounding errors."
+      },
+      {
+        "name": "Concentration ratios",
+        "points": 4,
+        "description": "Computes all three max-to-mean ratios and recognizes that all exceed the threshold.",
+        "partial_credit": "Partial credit for correct method with one product error."
+      },
+      {
+        "name": "Satellite peak agreement",
+        "points": 3,
+        "description": "Computes the GPM-CHIRPS maximum disagreement percent and applies the <= 5% test.",
+        "partial_credit": "Partial credit for identifying close agreement without the exact percent."
+      },
+      {
+        "name": "Report flags",
+        "points": 3,
+        "description": "Counts the six report impact flags and uses them as report anchors.",
+        "partial_credit": "Partial credit for at least four correct flags."
+      },
+      {
+        "name": "Diagnostic score",
+        "points": 2,
+        "description": "Applies all six decision tests and reports score_0_to_6 = 6.",
+        "partial_credit": "Partial credit for one test error with the same broad conclusion."
+      },
+      {
+        "name": "Compact interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation tied to the computed diagnostic score and avoids extra realized-loss accounting.",
+        "partial_credit": "Partial credit for a longer but still numerically grounded interpretation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2021_Hurricane_Ida_rainfall_flooding_in_New_York_City.json",
+      "data/event_reports/event_reports_002_Wikipedia_Northeast_Ida_effects.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

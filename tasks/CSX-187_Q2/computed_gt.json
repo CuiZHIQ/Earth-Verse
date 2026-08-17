@@ -1,0 +1,152 @@
+{
+  "answer_summary": {
+    "answer": "ledger_complete"
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-187",
+  "explanation_anchors": [
+    "AOD ratios are far above clear-sky conditions and near the Sun-visibility reference.",
+    "Burned area, active fires, and burn-signal statistics support an active wildfire source.",
+    "Exposure counts describe a compact local slice, not continent-wide exposure.",
+    "Rainfall summaries are a context check and do not replace the smoke and fire-source evidence."
+  ],
+  "key_values": {
+    "event_name": "2023 Canadian wildfires and smoke",
+    "event_window": {
+      "end_date": "2023-09-30",
+      "start_date": "2023-05-01"
+    },
+    "hazard_family": "wildfire_burn_smoke",
+    "raw_inputs": {
+      "alberta_active_fires": 87,
+      "burned_area_multiple": 10,
+      "burned_hectares": 478000,
+      "clear_sky_aod_reference": 0.05,
+      "goddard_aod": 1.0,
+      "grand_forks_aod": 2.3,
+      "grand_forks_peak_aod": 3.0,
+      "osm_counts": {
+        "critical_amenities": {
+          "fire_stations": 4,
+          "hospitals": 5,
+          "police": 4,
+          "schools": 38,
+          "shelters": 2
+        },
+        "critical_amenity_total": 53,
+        "elements_total": 1000,
+        "highway_elements": 947
+      },
+      "out_of_control_fraction": 0.25,
+      "precipitation_means_mm": {
+        "chirps_mm": 86.9228661689917,
+        "era5_land_mm": 139.94800746185726,
+        "gpm_imerg_mm": 82.54546579820062
+      },
+      "sun_reference_aod": 3.0
+    },
+    "region": "North America"
+  },
+  "overclaim_checks": [
+    "confirmed deaths or hospitalizations",
+    "quantified medical visits",
+    "exact property loss or facility outages",
+    "annual land-surface change as direct smoke exposure",
+    "local exposure slice as continent-wide exposure",
+    "rainfall or flooding as the primary event impact"
+  ],
+  "package_relative_path": "event_packages/standard_event_packages/packages/CSX-187",
+  "primary_gt": {
+    "burn_signal_check": {
+      "alphaearth_max": 0.792,
+      "alphaearth_mean": 0.045,
+      "sentinel2_dnbr_max": 1.417,
+      "sentinel2_dnbr_mean": 0.355
+    },
+    "computed_interpretation": "The computed ledger supports a wildfire-smoke threshold classification: the Grand Forks AOD ratios are extreme relative to clear-sky and Sun-visibility references, and the burned-area, active-fire, dNBR, and embedding-change values provide a consistent source-side check. Rainfall remains a context variable in the ledger, not the controlling event-family signal.",
+    "estimated_out_of_control_fires": 22,
+    "exposure_counts": {
+      "critical_amenities": 53,
+      "highway_elements": 947,
+      "population": 58882
+    },
+    "grand_forks_clear_sky_ratio": 46.0,
+    "grand_forks_sun_reference_percent": 76.7,
+    "implied_average_burned_hectares": 47800,
+    "precip_window_check": {
+      "event_window_days": 153,
+      "precip_mean_spread_mm": 57.4
+    }
+  },
+  "provenance": {
+    "additional_local_source_labels": [
+      "OpenStreetMap bounded local exposure slice"
+    ],
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Canadian_wildfires_and_smoke.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes both Grand Forks AOD ratios from 2.3, 0.05, and 3.0, with one-decimal rounding and labels.",
+        "name": "aod_threshold_calculations",
+        "partial_credit": "Earn 2 points for one correct ratio, or 3 points for both formulas with one rounding or percent-unit error.",
+        "points": 4
+      },
+      {
+        "description": "Computes 478000 / 10 = 47800 ha and 87 * 0.25 = 22 fires, with units and rounding.",
+        "name": "fire_source_formula_checks",
+        "partial_credit": "Earn 2 points for one correct fire-source value, or 3 points for both calculations with a minor rounding or unit omission.",
+        "points": 4
+      },
+      {
+        "description": "Reports Sentinel-2 dNBR mean and max plus AlphaEarth mean and max to three decimals.",
+        "name": "burn_signal_cross_check",
+        "partial_credit": "Earn 1 to 2 points for two or three correct burn-signal values, or for correct values with inconsistent rounding.",
+        "points": 3
+      },
+      {
+        "description": "Reports rounded population, highway elements, and total critical amenities from the five amenity classes.",
+        "name": "exposure_aggregation",
+        "partial_credit": "Earn 1 point for one correct exposure value, or 2 points for two correct values or a correct amenity sum with one omitted class.",
+        "points": 3
+      },
+      {
+        "description": "Computes the precipitation-mean spread and the inclusive event-window length.",
+        "name": "rainfall_spread_and_event_window",
+        "partial_credit": "Earn 1 point for one correct value, or 2 points for both formulas with one arithmetic or inclusive-count error.",
+        "points": 3
+      },
+      {
+        "description": "Connects the ledger to wildfire smoke in two or three sentences without casualty, medical, loss, outage, or continent-wide exposure claims.",
+        "name": "concise_computed_interpretation",
+        "partial_credit": "Earn 1 to 2 points if the interpretation is directionally correct but misses either the rainfall cross-check role or the limit on extra impact claims.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "wildfire_smoke_threshold_ledger",
+  "task_id": "CSX-187_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "burn_signal_abs": 0.001,
+    "event_window_days_abs": 0,
+    "fire_count_abs": 1,
+    "hectares_abs": 1,
+    "population_abs": 1,
+    "precip_spread_mm_abs": 0.1,
+    "ratio_or_percent_abs": 0.1
+  }
+}

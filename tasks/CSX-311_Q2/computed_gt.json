@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-311_Q2",
+  "event_id": "CSX-311",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "formula_derivation_consistency_proof",
+  "primary_gt": {
+    "answer": "sudden summit phreatic plume signal",
+    "text_anchor_score": 1.0,
+    "image_byte_ratio": 4.356742,
+    "max_precip_mm": 0.536591,
+    "surface_pre_scene_total": 0,
+    "ledger_score": 4,
+    "decision": "passes_4_of_4"
+  },
+  "event": {
+    "package_id": "CSX-311",
+    "event_name": "Mount Ontake eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "event_date_or_window": "2014-09-27",
+    "location": "Nagano / Gifu"
+  },
+  "decision_rule": {
+    "text_anchor_score": "count of required anchors present divided by 5",
+    "image_byte_ratio": "event image manifest bytes divided by pre-event image manifest bytes",
+    "max_precip_mm": "maximum across five event-day precipitation summaries",
+    "surface_pre_scene_total": "Sentinel-1 pre_count plus Sentinel-2 pre_count",
+    "ledger_score": "sum of four threshold tests: text score equals 1, image ratio at least 3, precipitation below 1 mm, and surface pre-scene total equals 0"
+  },
+  "key_values": {
+    "anchors_present": [
+      "unexpectedly",
+      "gas and steam",
+      "phreatic eruption",
+      "ash",
+      "little warning"
+    ],
+    "image_bytes": {
+      "pre": 22655,
+      "event": 98702
+    },
+    "precipitation_mm": {
+      "nasa_power_mm": 0.01,
+      "open_meteo_mm": 0.0,
+      "era5_land_mm": 0.5365908145904541,
+      "gpm_imerg_mm": 0.11499999463558197,
+      "chirps_mm": 0.0
+    },
+    "surface_pre_counts": {
+      "sentinel_1": 0,
+      "sentinel_2": 0
+    },
+    "tests": {
+      "all_text_anchors_present": true,
+      "image_ratio_at_least_3": true,
+      "precip_below_1_mm": true,
+      "no_surface_pre_scenes": true
+    }
+  },
+  "tolerances": {
+    "text_anchor_score": 0.0,
+    "image_byte_ratio": 1e-06,
+    "max_precip_mm": 1e-06,
+    "surface_pre_scene_total": 0,
+    "ledger_score": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields with numeric values rounded to 6 decimals where applicable."
+      },
+      {
+        "name": "Text anchor score",
+        "points": 4,
+        "description": "Computes the 5-of-5 text anchor score correctly and ties it to the named anchors."
+      },
+      {
+        "name": "Image byte ratio",
+        "points": 4,
+        "description": "Computes the image byte ratio correctly from 98,702 and 22,655."
+      },
+      {
+        "name": "Precipitation threshold",
+        "points": 3,
+        "description": "Computes the precipitation maximum correctly and applies the less-than-1-mm threshold."
+      },
+      {
+        "name": "Surface pre-scene total",
+        "points": 2,
+        "description": "Computes the surface pre-scene total from Sentinel-1 and Sentinel-2 counts."
+      },
+      {
+        "name": "Ledger score",
+        "points": 2,
+        "description": "Applies all four ledger tests correctly and gives a score of 4."
+      },
+      {
+        "name": "Concise label",
+        "points": 1,
+        "description": "Gives the label sudden summit phreatic plume signal or an equivalent wording."
+      },
+      {
+        "name": "No extra inference",
+        "points": 1,
+        "description": "Keeps the consistency note limited to the four computed tests without adding unmeasured impacts."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Mount_Ontake_eruption.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

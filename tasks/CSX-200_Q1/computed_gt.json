@@ -1,0 +1,155 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-200",
+  "key_values": {
+    "dates": {
+      "continued_fire_weather_date": "2023-08-23",
+      "viirs_date": "2023-08-22"
+    },
+    "event": {
+      "event_name": "2023 Greece wildfires",
+      "hazard_family": "wildfire_burn_smoke",
+      "hazard_label": "Wildfire, burn scar, and smoke",
+      "region": "Europe",
+      "temporal_window": {
+        "end_date": "2023-08-31",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2023-07-01"
+      }
+    },
+    "formulas": {
+      "athens_local_fire_context": "1*(athens_cue_count>=4)+1*(weather_terms_count==3)+1*(late_august_fires_min>=24)",
+      "burn_surface_mapping": "1*(dnbr_max>=0.75)+1*(dnbr_mean>=0.10)+1*(alphaearth_mean>=0.10)+1*(post_pre_scene_ratio>=1.20)",
+      "dominance_rule": "top_score>=7 and top_score-second_score>=4",
+      "regional_smoke_chain": "2*(alexandroupolis_source)+1*(southwest_transport)+1*(receptor_count>=3)+1*(weather_terms_count==3)+1*(late_august_fires_min>=24)+1*(timing_hours<=24)+1*(viirs_date==\"2023-08-22\")"
+    },
+    "score_inputs": {
+      "alexandroupolis_source": true,
+      "alphaearth_mean": 0.061316,
+      "athens_cue_count": 4,
+      "athens_local_cues": true,
+      "dnbr_max": 0.859705,
+      "dnbr_mean": -0.083037,
+      "late_august_fires_min": 24,
+      "post_pre_scene_ratio": 1.64,
+      "post_scene_count": 82,
+      "pre_scene_count": 50,
+      "receptor_count": 3,
+      "southwest_transport": true,
+      "timing_hours": 24,
+      "viirs_date": "2023-08-22",
+      "weather_terms_count": 3
+    },
+    "surface_metric_scope": "Sentinel-2 dNBR post window is 2023-07-01 to 2023-09-29, beyond the 2023-08-31 event lock; surface metrics are scored only as available comparison metrics, not strict event-window burn-perimeter proof.",
+    "surface_metric_windows": {
+      "post": [
+        "2023-07-01",
+        "2023-09-29"
+      ],
+      "pre": [
+        "2023-05-02",
+        "2023-06-24"
+      ]
+    }
+  },
+  "numeric_tolerances": {
+    "alphaearth_mean": 0.0005,
+    "dnbr_max": 0.0005,
+    "dnbr_mean": 0.0005,
+    "integer_counts": 0,
+    "post_pre_scene_ratio": 0.01
+  },
+  "primary_gt": {
+    "answer": "regional_smoke_chain_dominant",
+    "computed_consequence": "The ledger favors a regional smoke-transport chain; burn-surface metrics are mixed because only the maximum dNBR and scene-count ratio pass.",
+    "margin": 5,
+    "metrics": {
+      "alphaearth_mean": 0.061316,
+      "dnbr_max": 0.859705,
+      "dnbr_mean": -0.083037,
+      "late_august_fires_min": 24,
+      "post_pre_scene_ratio": 1.64,
+      "receptor_count": 3,
+      "timing_hours": 24,
+      "viirs_date": "2023-08-22",
+      "weather_terms_count": 3
+    },
+    "score_comparison": {
+      "lead_signal": "regional_smoke_chain",
+      "low_score_signal": "burn_surface_mapping",
+      "second_signal": "athens_local_fire_context"
+    },
+    "scores": {
+      "athens_local_fire_context": 3,
+      "burn_surface_mapping": 2,
+      "regional_smoke_chain": 8
+    },
+    "target_family": "candidate_explanation_score_ledger",
+    "text_gates": {
+      "alexandroupolis_source": true,
+      "athens_local_cues": true,
+      "southwest_transport": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with target_family, metrics including viirs_date, text_gates, scores, score_comparison, margin, answer, and computed_consequence.",
+        "name": "Requested JSON structure",
+        "partial_credit": "Award partial credit for minor key-name differences that preserve all scored fields.",
+        "points": 3
+      },
+      {
+        "description": "Extracts late_august_fires_min 24, timing_hours 24, receptor_count 3, weather_terms_count 3, and viirs_date 2023-08-22.",
+        "name": "Report metric extraction",
+        "partial_credit": "Award partial credit for correct threshold states with one missing or rounded value.",
+        "points": 4
+      },
+      {
+        "description": "Sets alexandroupolis_source true, southwest_transport true, and athens_local_cues true.",
+        "name": "Report text gates",
+        "partial_credit": "Award partial credit for two correct gates.",
+        "points": 3
+      },
+      {
+        "description": "Uses available surface-comparison metrics: dNBR mean -0.083037, dNBR maximum 0.859705, AlphaEarth mean 0.061316, and post/pre scene ratio 1.64, without treating them as strict event-window burn-perimeter proof.",
+        "name": "Surface metrics",
+        "partial_credit": "Award partial credit for correct threshold states with weaker rounding.",
+        "points": 3
+      },
+      {
+        "description": "Applies the formulas exactly, yielding regional_smoke_chain 8, athens_local_fire_context 3, and burn_surface_mapping 2.",
+        "name": "Score arithmetic",
+        "partial_credit": "Award partial credit for one arithmetic error that does not alter the lead label.",
+        "points": 3
+      },
+      {
+        "description": "Applies the dominance rule with lead_signal regional_smoke_chain, second_signal athens_local_fire_context, low_score_signal burn_surface_mapping, margin 5, and answer regional_smoke_chain_dominant.",
+        "name": "Score comparison",
+        "partial_credit": "Award partial credit for the right answer with incomplete comparison fields.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the consequence tied to the computed ledger and avoids extra burned-area, casualty, evacuation, hospital, or asset-loss totals not produced by the calculation.",
+        "name": "Bounded computed consequence",
+        "partial_credit": "No credit if the answer turns the ledger into a broad narrative.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-200_Q1",
+  "task_type": "numeric"
+}

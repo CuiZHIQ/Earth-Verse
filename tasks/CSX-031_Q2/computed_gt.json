@@ -1,0 +1,200 @@
+{
+  "answer_guidance": {
+    "answer": "sustained_freezing_cold",
+    "structured_answer": {
+      "answer": "sustained_freezing_cold",
+      "bounded_interpretation": "The answer should not estimate exact snowpack volume, road closures, or complete infrastructure losses.",
+      "computed_evidence": {
+        "decision_rule": "label sustained_freezing_cold when daily run >= 3 days and hourly freezing run >= 48 hours",
+        "diagnostic_diagnostic_test_tests": {
+          "brief_cold_anomaly_pass": false,
+          "snow_ice_primary_pass": false,
+          "sustained_freezing_pass": true,
+          "wind_chill_only_pass": false
+        },
+        "evidence_synthesis": {
+          "daily_below_freezing_run_days": 3,
+          "event_snowfall_cm": 9.87,
+          "freezing_degree_hours_c_h": 177.4,
+          "freezing_run_hours": 60,
+          "heating_degree_days_base18c": 124.2,
+          "min_tmin_c": -6.3,
+          "min_wind_chill_c": -17.1,
+          "wind_chill_amplification_c": 10.8
+        },
+        "tolerances": {
+          "degree_hours": 1.0,
+          "run_hours": 1,
+          "snow_cm": 0.1,
+          "temperature_c": 0.3
+        }
+      },
+      "decisive_evidence": "Thermal persistence, phase partition, and elevation contrast should outweigh image brightness or isolated precipitation values.",
+      "mechanism_chain": [
+        "event-window cold or storm anchor",
+        "temperature and phase calculation",
+        "elevation or wind context",
+        "warm-rain or image-only rejection"
+      ],
+      "mechanism_question": "determine whether the record supports persistent cold or elevation-stratified snow response rather than a brief visual snow proxy",
+      "rejected_simplifications": "Reject uniform warm-rain, uniform lowland-snow, or image-only explanations if the computed phase structure is stratified.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "East Asia 2016 Cold-Wave Persistence Mechanism Diagnosis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-031",
+  "formulae": {
+    "freezing_degree_hours_c_h": "sum(max(0, 0 - hourly_T_c))",
+    "heating_degree_days_base18c": "sum(max(0, 18 - hourly_T_c)) / 24",
+    "wind_chill_c": "WC = 13.12 + 0.6215*T - 11.37*V^0.16 + 0.3965*T*V^0.16",
+    "wind_chill_gate": "T <= 10 C and V > 4.8 km/h"
+  },
+  "key_values": {
+    "answer": "sustained_freezing_cold",
+    "brief_cold_anomaly_pass": false,
+    "daily_below_freezing_run_days": 3,
+    "event_snowfall_cm": 9.87,
+    "freezing_degree_hours_c_h": 177.4,
+    "freezing_run_hours": 60,
+    "heating_degree_days_base18c": 124.2,
+    "min_tmin_c": -6.3,
+    "min_wind_chill_c": -17.1,
+    "snow_ice_primary_pass": false,
+    "sustained_freezing_pass": true,
+    "wind_chill_amplification_c": 10.8,
+    "wind_chill_only_pass": false
+  },
+  "numeric_tolerances": {
+    "daily_below_freezing_run_days": {
+      "target": 3,
+      "tolerance": 0,
+      "unit": "days"
+    },
+    "event_snowfall_cm": {
+      "target": 9.87,
+      "tolerance": 0.1,
+      "unit": "cm"
+    },
+    "freezing_degree_hours_c_h": {
+      "target": 177.4,
+      "tolerance": 1.0,
+      "unit": "deg C hours"
+    },
+    "freezing_run_hours": {
+      "target": 60,
+      "tolerance": 1,
+      "unit": "hours"
+    },
+    "heating_degree_days_base18c": {
+      "target": 124.2,
+      "tolerance": 0.5,
+      "unit": "deg C days"
+    },
+    "min_tmin_c": {
+      "target": -6.3,
+      "tolerance": 0.2,
+      "unit": "deg C"
+    },
+    "min_wind_chill_c": {
+      "target": -17.1,
+      "tolerance": 0.3,
+      "unit": "deg C"
+    },
+    "wind_chill_amplification_c": {
+      "target": 10.8,
+      "tolerance": 0.3,
+      "unit": "deg C"
+    }
+  },
+  "primary_gt": {
+    "answer": "sustained_freezing_cold",
+    "bounded_interpretation": "The answer should not estimate exact snowpack volume, road closures, or complete infrastructure losses.",
+    "computed_evidence": {
+      "decision_rule": "label sustained_freezing_cold when daily run >= 3 days and hourly freezing run >= 48 hours",
+      "diagnostic_diagnostic_test_tests": {
+        "brief_cold_anomaly_pass": false,
+        "snow_ice_primary_pass": false,
+        "sustained_freezing_pass": true,
+        "wind_chill_only_pass": false
+      },
+      "evidence_synthesis": {
+        "daily_below_freezing_run_days": 3,
+        "event_snowfall_cm": 9.87,
+        "freezing_degree_hours_c_h": 177.4,
+        "freezing_run_hours": 60,
+        "heating_degree_days_base18c": 124.2,
+        "min_tmin_c": -6.3,
+        "min_wind_chill_c": -17.1,
+        "wind_chill_amplification_c": 10.8
+      },
+      "tolerances": {
+        "degree_hours": 1.0,
+        "run_hours": 1,
+        "snow_cm": 0.1,
+        "temperature_c": 0.3
+      }
+    },
+    "decisive_evidence": "Thermal persistence, phase partition, and elevation contrast should outweigh image brightness or isolated precipitation values.",
+    "mechanism_chain": [
+      "event-window cold or storm anchor",
+      "temperature and phase calculation",
+      "elevation or wind context",
+      "warm-rain or image-only rejection"
+    ],
+    "mechanism_question": "determine whether the record supports persistent cold or elevation-stratified snow response rather than a brief visual snow proxy",
+    "rejected_simplifications": "Reject uniform warm-rain, uniform lowland-snow, or image-only explanations if the computed phase structure is stratified.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "data_source": "event_packages/standard_event_packages/packages/CSX-031",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 4
+      },
+      {
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values.",
+        "name": "computed_evidence",
+        "points": 5
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 4
+      },
+      {
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "sustained_freezing_cold_process_diagnosis",
+  "task_id": "CSX-031_Q2",
+  "task_type": "structured_reasoning"
+}

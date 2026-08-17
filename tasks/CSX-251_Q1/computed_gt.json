@@ -1,0 +1,199 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-251_Q1",
+  "event_id": "CSX-251",
+  "task_type": "short_answer",
+  "task_subtype": "response_priority_compound_chain",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "high_priority_compound_peat_fire_haze",
+    "priority_class": "high",
+    "mechanism_chain": [
+      "el_nino_drought_and_dry_peat",
+      "peat_fire_smoke_haze",
+      "downwind_air_quality_exposure"
+    ],
+    "response_priority": "Prioritize peat-fire haze exposure management and downwind air-quality protection, not rainfall/flood disruption or direct burn-scar response as the main profile.",
+    "key_numeric_anchors": {
+      "weather_analysis_days": 46,
+      "dry_day_pair": "15 and 14",
+      "longest_dry_run_days": 4,
+      "local_population": 2750.7,
+      "priority_index": 84.2
+    }
+  },
+  "key_values": {
+    "answer": "high_priority_compound_peat_fire_haze",
+    "priority_class": "high",
+    "compound_fire_haze_priority_index": 84.2,
+    "event_window": {
+      "start_date": "2015-09-01",
+      "end_date": "2015-10-31"
+    },
+    "weather_analysis_window": {
+      "start_date": "2015-09-01",
+      "end_date": "2015-10-16"
+    },
+    "weather_analysis_days": 46,
+    "open_meteo_dry_days": 15,
+    "nasa_power_dry_days": 14,
+    "longest_dry_run_days": 4,
+    "local_population": 2750.7
+  },
+  "required_findings": [
+    {
+      "name": "dominant_priority_profile",
+      "expected": "compound peat-fire haze response priority, not rainfall/flood or direct burn-scar damage"
+    },
+    {
+      "name": "mechanism_chain",
+      "expected": "El Nino or drought dryness -> dry peat and fires -> smoke/haze transport -> downwind air-quality exposure"
+    },
+    {
+      "name": "response_priority",
+      "expected": "haze exposure and air-quality protection calibrated by local population and asset exposure"
+    },
+    {
+      "name": "overclaim_control",
+      "expected": "avoid exact deaths, PM2.5 dose, economic loss, direct burn-scar severity, and full regional drought reconstruction"
+    }
+  ],
+  "numeric_tolerances": {
+    "compound_fire_haze_priority_index": {
+      "value": 84.2,
+      "tolerance": 0.2
+    },
+    "weather_analysis_days": {
+      "value": 46,
+      "tolerance": 0
+    },
+    "longest_dry_run_days": {
+      "value": 4,
+      "tolerance": 0
+    },
+    "local_population": {
+      "value": 2750.7,
+      "tolerance": 5.0
+    }
+  },
+  "reasoning_requirements": [
+    "Connect drought or El Nino dryness to peat-fire susceptibility.",
+    "Treat smoke or haze transport as the dominant impact pathway.",
+    "Use local exposure to explain response priority rather than as observed damage.",
+    "Reject rainfall/flood disruption and direct burn-scar damage as the main profile."
+  ],
+  "forbidden_overclaims": [
+    "exact deaths, hospitalizations, or economic losses",
+    "precise PM2.5 concentration or pollution-dose reconstruction",
+    "direct burn-scar severity as the central conclusion",
+    "full Sumatra/Kalimantan drought reconstruction from the bounded local daily weather point",
+    "rainfall or flood disruption as the dominant mechanism",
+    "climate-change attribution"
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final_answer_and_priority_class",
+        "points": 4,
+        "description": "Returns high_priority_compound_peat_fire_haze or an equivalent compact compound peat-fire haze label and assigns priority_class high.",
+        "partial_credit": "Gives a fire-haze answer but omits the priority class or uses a nearby but incorrect class such as very_high or moderate."
+      },
+      {
+        "name": "quantitative_anchors",
+        "points": 4,
+        "description": "Uses 2-5 relevant anchors, including several of: 46 weather-analysis days, 15 and 14 dry days, 4-day longest dry run, 84.2 priority index if reported, and local population near 2,750.",
+        "partial_credit": "Provides at least one correct anchor but mixes in irrelevant or unsupported numbers."
+      },
+      {
+        "name": "mechanism_chain",
+        "points": 4,
+        "description": "Connects drought or El Nino dryness to dry peat, peat fires, smoke or haze, and downwind air-quality exposure.",
+        "partial_credit": "Mentions fires and haze but weakly explains the drought/peat driver or transport pathway."
+      },
+      {
+        "name": "response_priority_interpretation",
+        "points": 3,
+        "description": "States a practical response priority centered on haze exposure management, air-quality protection, and exposed people or infrastructure.",
+        "partial_credit": "Gives a generic emergency response statement without tying it to haze exposure."
+      },
+      {
+        "name": "distractor_rejection",
+        "points": 2,
+        "description": "Substantively rejects rainfall/flood disruption, direct burn-scar damage, and catalog-only uncertainty as the main framing.",
+        "partial_credit": "Rejects only one or two distractors or does so without explanation."
+      },
+      {
+        "name": "overclaim_control",
+        "points": 2,
+        "description": "Avoids unsupported exact mortality, hospitalization, economic-loss, PM2.5 dose, climate-attribution, direct burn-scar severity, and full regional drought-reconstruction claims.",
+        "partial_credit": "Contains a minor unsupported extension but does not change the main diagnosis."
+      },
+      {
+        "name": "format_and_clarity",
+        "points": 1,
+        "description": "Returns compact JSON with the requested keys and concise, internally consistent wording.",
+        "partial_credit": "Mostly follows the requested structure but has minor formatting or clarity issues."
+      }
+    ]
+  },
+  "supporting_metrics": {
+    "computed_metrics": {
+      "event_window": {
+        "start_date": "2015-09-01",
+        "end_date": "2015-10-31"
+      },
+      "weather_analysis_window": {
+        "start_date": "2015-09-01",
+        "end_date": "2015-10-16"
+      },
+      "weather_analysis_days": 46,
+      "open_meteo_total_precip_mm": 197.6,
+      "open_meteo_mean_daily_precip_mm": 4.3,
+      "open_meteo_dry_days": 15,
+      "open_meteo_dry_fraction": 0.326,
+      "nasa_power_total_precip_mm": 160.0,
+      "nasa_power_mean_daily_precip_mm": 3.48,
+      "nasa_power_dry_days": 14,
+      "nasa_power_dry_fraction": 0.304,
+      "longest_dry_run_days": 4,
+      "peak_open_meteo_wind_kmh": 25.8,
+      "mean_open_meteo_wind_kmh": 15.9,
+      "mean_open_meteo_tmax_c": 28.6,
+      "population": 2750.7,
+      "building_count": 142,
+      "road_count": 10,
+      "waterway_count": 29,
+      "gpm_mean_event_precip_mm": 275.3,
+      "chirps_mean_event_precip_mm": 234.4,
+      "sentinel2_status": "no_sufficient_scenes"
+    },
+    "component_scores": {
+      "mechanism_score": 1.0,
+      "dryness_stress_score": 0.368,
+      "smoke_transport_score": 1.0,
+      "local_exposure_score": 1.0
+    },
+    "text_claim_flags": {
+      "peat": true,
+      "fire": true,
+      "smoke_or_haze": true,
+      "drought_or_el_nino": true,
+      "downwind_smoke_or_haze": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Indonesian_drought_peat_fires_and_transboundary_haze.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  }
+}

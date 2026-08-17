@@ -1,0 +1,112 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-319",
+  "key_values": {
+    "correspondence_score": 94,
+    "event_end": "2016-09-21",
+    "event_location": "Aru Range, western Tibet",
+    "event_lock_notes": "Rare catastrophic glacier collapses/ice avalanches in High Asia.",
+    "event_name": "Aru / Tibet glacier avalanche",
+    "event_start": "2016-07-17",
+    "event_window_days": 67,
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "hazard_label": "Cryosphere, avalanche, GLOF, and snowmelt",
+    "lock_confidence": "high",
+    "mechanism_term_count": 5,
+    "mechanism_terms": {
+      "avalanche": true,
+      "collapse": true,
+      "cryosphere": true,
+      "glacier": true,
+      "high_asia_or_tibet": true
+    }
+  },
+  "primary_gt": {
+    "answer": "cryosphere_glacier_collapse_monitoring_priority",
+    "evidence_strength": "high_event_anchor_support",
+    "impact_chain": [
+      "rare_catastrophic_glacier_collapse",
+      "ice_avalanche_or_debris_flow_runout",
+      "cryosphere_monitoring_and_downstream_screening_priority"
+    ],
+    "judge_anchors": {
+      "forbidden_claims": [
+        "Exact trigger attribution from precipitation alone",
+        "Confirmed casualties, displacement, mapped volume, or facility-level impacts",
+        "Dominant vegetation, burn-change, or rainfall-flood mechanism"
+      ],
+      "required_claims": [
+        "The event is primarily a cryosphere glacier-collapse mass movement.",
+        "The high-confidence NASA event anchor and correspondence score support the diagnosis.",
+        "Auxiliary precipitation, radar, and exposure products are not required for the final label."
+      ],
+      "required_metrics": [
+        "event_window_days = 67",
+        "correspondence_score = 94",
+        "mechanism_term_count = 5",
+        "lock_confidence = high"
+      ]
+    },
+    "key_metrics": {
+      "correspondence_score": 94,
+      "event_window_days": 67,
+      "lock_confidence": "high",
+      "mechanism_term_count": 5
+    },
+    "mechanism": "cryosphere_glacier_collapse_mass_movement",
+    "priority": "high_cryosphere_monitoring_priority"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "MINOR cleanup removed off-region precipitation, radar, point-weather, and exposure products from the scoring path.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Aru_Tibet_glacier_avalanche.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the cryosphere glacier-collapse monitoring interpretation and high monitoring priority.",
+        "name": "final structured diagnosis",
+        "partial_credit": "Credit the cryosphere mechanism or the high-priority conclusion separately when one part is missing.",
+        "points": 4
+      },
+      {
+        "description": "Reports the 2016-07-17 to 2016-09-21 event window and computes 67 inclusive days.",
+        "name": "event-window anchor",
+        "partial_credit": "Credit the correct date range or an off-by-one duration separately.",
+        "points": 3
+      },
+      {
+        "description": "Uses high lock confidence and correspondence_score = 94 as event-anchor support.",
+        "name": "source-confidence anchors",
+        "partial_credit": "Credit one of the two confidence anchors if the other is missing.",
+        "points": 4
+      },
+      {
+        "description": "Counts the cryosphere, glacier, avalanche, collapse, and High Asia/Tibet mechanism terms, giving mechanism_term_count = 5.",
+        "name": "mechanism consistency",
+        "partial_credit": "Credit partial term counts when the core glacier avalanche mechanism remains clear.",
+        "points": 4
+      },
+      {
+        "description": "Connects rare glacier collapse to ice-avalanche/debris-flow runout and monitoring relevance while rejecting rainfall-only, vegetation-change, and low-priority framings.",
+        "name": "impact chain and alternatives",
+        "partial_credit": "Credit a generic cryosphere chain if weaker alternatives are not clearly rejected.",
+        "points": 3
+      },
+      {
+        "description": "Returns the requested JSON-like structure and avoids unsupported trigger, casualty, displacement, mapped-volume, precipitation, radar, or population-impact claims.",
+        "name": "structured output and scope",
+        "partial_credit": "Credit correct content with minor formatting issues.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-319_Q1",
+  "task_type": "short_answer"
+}

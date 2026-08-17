@@ -1,0 +1,340 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-052",
+  "key_values": {
+    "cyclone_context": {
+      "gdacs_wind_kmh": 111.11,
+      "max_wind_kmh_from_kts": 111.12,
+      "max_wind_kts": 60.0,
+      "track_point_count": 8
+    },
+    "duration_days": 4,
+    "event_name": "Cyclone Michaung Chennai urban flooding",
+    "event_window": {
+      "end": "2023-12-06",
+      "start": "2023-12-03"
+    },
+    "exposure": {
+      "aoi_area_km2": 16602.609,
+      "bounded_osm": {
+        "amenity_breakdown": {
+          "fire_station": 1,
+          "hospital": 192,
+          "police": 12,
+          "school": 57,
+          "shelter": 1
+        },
+        "bridge_count": 154,
+        "element_count": 1000,
+        "fire_station_count": 1,
+        "highway_breakdown": {
+          "primary": 81,
+          "residential": 128,
+          "secondary": 76,
+          "service": 7,
+          "tertiary": 120,
+          "trunk": 186
+        },
+        "hospital_count": 192,
+        "police_count": 12,
+        "roadway_count": 598,
+        "school_count": 57,
+        "shelter_count": 1,
+        "waterway_breakdown": {
+          "canal": 56,
+          "dam": 14,
+          "river": 25,
+          "stream": 11,
+          "weir": 4
+        },
+        "waterway_count": 110
+      },
+      "critical_slice": {
+        "amenity_breakdown": {
+          "hospital": 22,
+          "police": 1,
+          "school": 1
+        },
+        "bridge_count": 85,
+        "element_count": 300,
+        "fire_station_count": 0,
+        "highway_breakdown": {
+          "primary": 52,
+          "secondary": 34,
+          "tertiary": 93,
+          "trunk": 97
+        },
+        "hospital_count": 22,
+        "police_count": 1,
+        "roadway_count": 276,
+        "school_count": 1,
+        "shelter_count": 0,
+        "waterway_breakdown": {},
+        "waterway_count": 0
+      },
+      "masked_spatial_product_contract": {
+        "absolute_coordinates_place_names_and_georeferencing_not_for_event_validity": true,
+        "applies_to": [
+          "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+          "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+          "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+          "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+        ],
+        "derived_statistics_authoritative": true
+      },
+      "population": 3368009.16,
+      "population_density_per_km2": 202.86,
+      "population_million": 3.368
+    },
+    "judge_anchors": [
+      "The answer should be a compound-process model, not a binary threshold table.",
+      "The reported rainfall lower bound supplies the event-scale rainfall forcing, while the gridded products describe the local package AOI signal and should not be substituted for each other.",
+      "Cyclone wind is context for a rain-driven pluvial flood process, not a stand-alone explanation.",
+      "The surface-change terms are corroborating disturbance indicators, not direct flood-depth or damage estimates.",
+      "The response ranking should prioritize transport continuity first, with hospital access close behind, using the computed scores."
+    ],
+    "normalized_components": {
+      "bridge_norm": 0.77,
+      "cyclone_wind_norm": 0.926,
+      "embedding_change_norm": 0.442,
+      "hospital_norm": 0.768,
+      "local_gridded_rain_norm": 0.825,
+      "population_density_norm": 0.406,
+      "population_norm": 0.674,
+      "rainfall_report_norm": 1.0,
+      "roadway_norm": 0.748,
+      "s1_mean_abs_norm": 0.809,
+      "s1_spread_norm": 0.629,
+      "waterway_norm": 0.55
+    },
+    "process_model": {
+      "compound_urban_flood_stress_index": 77.477,
+      "exposure_service_norm": 0.649,
+      "final_process_class": "high_compound_urban_flood_stress",
+      "hydrometeorological_forcing_norm": 0.938,
+      "surface_disturbance_norm": 0.691
+    },
+    "rainfall": {
+      "gridded_maxima_mm": {
+        "chirps_mm": 9.716,
+        "era5_mm": 10.549,
+        "gpm_mm": 4.485
+      },
+      "gridded_means_mm": {
+        "chirps_mm": 5.084,
+        "era5_mm": 4.975,
+        "gpm_mm": 1.08
+      },
+      "mean_gridded_max_mm": 8.25,
+      "rain_rate_mm_day": 50.0,
+      "report_rain_cm_lower_bound": 20.0,
+      "report_rain_inches_context": 8,
+      "report_rain_mm_lower_bound": 200.0,
+      "report_to_local_grid_ratio": 18.959
+    },
+    "response_priorities": [
+      {
+        "priority": "transport_corridor_continuity",
+        "rank": 1,
+        "score": 81.958
+      },
+      {
+        "priority": "hospital_access_and_patient_transfer",
+        "rank": 2,
+        "score": 80.542
+      },
+      {
+        "priority": "drainage_and_waterway_choke_points",
+        "rank": 3,
+        "score": 77.02
+      }
+    ],
+    "scenario_analysis": {
+      "assumptions": {
+        "infrastructure_load_multiplier": 1.1,
+        "population_and_density_multiplier": 1.15,
+        "rainfall_multiplier": 1.2,
+        "surface_disturbance_multiplier": 1.1
+      },
+      "scenario_class": "stress_escalation",
+      "scenario_compound_index": 83.584,
+      "scenario_delta": 6.107,
+      "scenario_exposure_service_norm": 0.727,
+      "scenario_hydrometeorological_forcing_norm": 0.979,
+      "scenario_surface_disturbance_norm": 0.76
+    },
+    "surface_change": {
+      "embedding_max_1_minus_cosine": 0.36,
+      "embedding_mean_1_minus_cosine": 0.022,
+      "sentinel1_abs_mean_change_db": 0.809,
+      "sentinel1_mean_change_db": -0.809,
+      "sentinel1_post_count": 8,
+      "sentinel1_pre_count": 10,
+      "sentinel1_stddev_db": 0.943
+    },
+    "tolerances": {
+      "area_km2": 5.0,
+      "counts": 0,
+      "density_per_km2": 0.2,
+      "index_values": 0.2,
+      "normalized_components": 0.005,
+      "population_million": 0.001,
+      "rain_mm": 0.1,
+      "surface_change_db": 0.02,
+      "wind_kmh": 0.1
+    }
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "cyclone_wind_kmh": 111.11,
+      "event_window": {
+        "duration_days": 4,
+        "end": "2023-12-06",
+        "start": "2023-12-03"
+      },
+      "exposure": {
+        "aoi_area_km2": 16602.609,
+        "bridge_count": 154,
+        "hospital_count": 192,
+        "population_density_per_km2": 202.86,
+        "population_million": 3.368,
+        "roadway_count": 598,
+        "waterway_count": 110
+      },
+      "rainfall": {
+        "mean_gridded_precip_max_mm": 8.25,
+        "rain_rate_mm_day": 50.0,
+        "report_to_local_grid_ratio": 18.959,
+        "reported_rain_mm_lower_bound": 200.0
+      },
+      "surface_change": {
+        "embedding_mean_1_minus_cosine": 0.022,
+        "sentinel1_abs_mean_change_db": 0.809,
+        "sentinel1_vv_mean_change_db": -0.809,
+        "sentinel1_vv_stddev_db": 0.943
+      }
+    },
+    "final_interpretation": "Cyclone Michaung's package evidence supports a high compound urban flood stress diagnosis driven by intense reported rainfall, cyclone context, exposed transport and hospital systems, and corroborating surface disturbance.",
+    "mechanism_chain": [
+      "A 4-day cyclone window combined report-scale rainfall of at least 200 mm with storm winds near 111 km/h, supporting a rain-driven tropical-cyclone forcing interpretation.",
+      "The compact AOI exposure layer contains about 3.368 million people, dense road and hospital assets, waterways, and bridge-tagged features, so flooding becomes a service-continuity problem rather than only a meteorological anomaly.",
+      "Sentinel-1 VV backscatter change and annual embedding change provide surface-disturbance support, but they are treated as corroborating disturbance indicators rather than direct flood-depth or damage estimates.",
+      "A wetter and more exposed repeat scenario raises the compound index by more than 5 points, making transport continuity the leading operational priority."
+    ],
+    "process_model": {
+      "compound_urban_flood_stress_index": 77.477,
+      "exposure_service_norm": 0.649,
+      "final_process_class": "high_compound_urban_flood_stress",
+      "hydrometeorological_forcing_norm": 0.938,
+      "surface_disturbance_norm": 0.691
+    },
+    "response_priorities": [
+      {
+        "priority": "transport_corridor_continuity",
+        "rank": 1,
+        "score": 81.958
+      },
+      {
+        "priority": "hospital_access_and_patient_transfer",
+        "rank": 2,
+        "score": 80.542
+      },
+      {
+        "priority": "drainage_and_waterway_choke_points",
+        "rank": 3,
+        "score": 77.02
+      }
+    ],
+    "scenario_analysis": {
+      "scenario_class": "stress_escalation",
+      "scenario_compound_index": 83.584,
+      "scenario_delta": 6.107
+    },
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Cyclone_Michaung_Chennai_urban_flooding.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Michaung_drenches_India_s_southeast_coast.html.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_public_event_feeds_and_archive.json",
+      "data/event_catalogs/event_catalogs_005_05_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "AOI, WorldPop, and OSM exposure products are treated as spatially masked products; derived statistics are authoritative, while absolute coordinates/place names/georeferencing are not event-location validity checks.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Cyclone_Michaung_Chennai_urban_flooding.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Michaung_drenches_India_s_southeast_coast.html.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_public_event_feeds_and_archive.json",
+      "data/event_catalogs/event_catalogs_005_05_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies relevant report, catalog, physical-hazard, exposure, geospatial, and remote-sensing files without being given exact filenames, and cites package-relative paths for values used.",
+        "name": "Self-directed package discovery and citations",
+        "partial_credit": "Award 1-2 points if several evidence families are found but citations are incomplete or too few.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 2023-12-03 to 2023-12-06 window as 4 inclusive days, extracts the report rainfall lower bound of 200 mm, uses cyclone wind near 111.11 km/h, combines GPM, CHIRPS, and ERA5 local maxima, and computes hydrometeorological_forcing_norm near 0.938.",
+        "name": "Event window and hydrometeorological forcing",
+        "partial_credit": "Award 2-3 points for mostly correct rain and wind values with a minor duration, rounding, or product-combination error; award 1 point for generic heavy-rain discussion without the model inputs.",
+        "points": 4
+      },
+      {
+        "description": "Computes population near 3.368 million, AOI area near 16602.6 km2, density near 202.86 people/km2, bounded OSM counts of 598 roadways, 192 hospitals, 110 waterways, and derives exposure_service_norm near 0.649, treating masked AOI/WorldPop/OSM derived statistics as package-authoritative rather than judging them by internal coordinates or place names.",
+        "name": "Exposure and service-load synthesis",
+        "partial_credit": "Award 2-3 points for correct population and most counts but incomplete normalization; award 1 point for naming exposure qualitatively.",
+        "points": 4
+      },
+      {
+        "description": "Uses Sentinel-1 mean VV change near -0.809 dB, absolute mean change near 0.809 dB, Sentinel-1 spread near 0.943 dB, AlphaEarth mean cosine-change near 0.0221, and computes surface_disturbance_norm near 0.691.",
+        "name": "Surface disturbance synthesis",
+        "partial_credit": "Award 2 points for the Sentinel-1 computation without the embedding term; award 1 point for mentioning imagery without quantitative use.",
+        "points": 3
+      },
+      {
+        "description": "Applies the weighted compound index formula to obtain about 77.477 and classifies the event as high_compound_urban_flood_stress, explaining the rain-driven urban service disruption mechanism.",
+        "name": "Compound index and process interpretation",
+        "partial_credit": "Award 2 points for the correct class with a small arithmetic error; award 1 point for plausible process interpretation but no score.",
+        "points": 3
+      },
+      {
+        "description": "Applies the wetter/more-exposed scenario to obtain scenario index near 83.584, delta near 6.107, stress_escalation, and ranks transport corridor continuity first, hospital access second, drainage/waterway choke points third.",
+        "name": "Scenario and response-priority reasoning",
+        "partial_credit": "Award 1 point for either correct scenario values or correct response ranking.",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with the requested process_model, computed_metrics, scenario_analysis, response_priorities, mechanism_chain, source_paths, and final_interpretation fields, avoiding unsupported casualty, damage, flood-depth, or exact-filename prompt leakage.",
+        "name": "Structured output discipline",
+        "partial_credit": "Award 0.5 point for minor JSON or wording issues that do not change the scientific answer.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "compound_urban_flood_process_model",
+  "task_id": "CSX-052_Q1",
+  "task_type": "short_answer"
+}

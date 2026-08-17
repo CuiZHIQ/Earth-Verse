@@ -1,0 +1,1362 @@
+[
+  {
+    "name": "list_event_package_files",
+    "kit": "A Package Discovery",
+    "purpose": "List files in one event package with size, type and relative path.",
+    "inputs": "event_id, recursive, layer_filter?",
+    "output": "file inventory JSON",
+    "used_by": "all tasks"
+  },
+  {
+    "name": "read_event_metadata",
+    "kit": "A Package Discovery",
+    "purpose": "Read event anchor metadata: hazard family, date window, AOI and source summary.",
+    "inputs": "event_id",
+    "output": "metadata JSON",
+    "used_by": "all tasks"
+  },
+  {
+    "name": "get_event_aoi",
+    "kit": "A Package Discovery",
+    "purpose": "Return the event AOI as bbox or GeoJSON for spatial operations.",
+    "inputs": "event_id, format",
+    "output": "bbox/GeoJSON",
+    "used_by": "spatial tasks"
+  },
+  {
+    "name": "find_files_by_layer",
+    "kit": "A Package Discovery",
+    "purpose": "Find files belonging to a semantic layer such as reports, hazard, exposure or imagery.",
+    "inputs": "event_id, layer",
+    "output": "matched file list",
+    "used_by": "tool routing"
+  },
+  {
+    "name": "find_files_by_keyword",
+    "kit": "A Package Discovery",
+    "purpose": "Find package files by data-source or variable keywords.",
+    "inputs": "event_id, keywords",
+    "output": "matched file list",
+    "used_by": "tool routing"
+  },
+  {
+    "name": "find_files_by_extension",
+    "kit": "A Package Discovery",
+    "purpose": "Find files by extensions such as tif, csv, geojson, png, pdf or html.",
+    "inputs": "event_id, extensions",
+    "output": "matched file list",
+    "used_by": "tool routing"
+  },
+  {
+    "name": "summarize_event_inventory",
+    "kit": "A Package Discovery",
+    "purpose": "Summarize package layers, representative files and missing data classes.",
+    "inputs": "event_id",
+    "output": "inventory summary",
+    "used_by": "first pass triage"
+  },
+  {
+    "name": "check_required_layers_present",
+    "kit": "A Package Discovery",
+    "purpose": "Check whether a question-required evidence set exists or has substitutes.",
+    "inputs": "event_id, required_layers",
+    "output": "presence report",
+    "used_by": "task feasibility"
+  },
+  {
+    "name": "resolve_relative_package_path",
+    "kit": "A Package Discovery",
+    "purpose": "Resolve safe relative paths inside the benchmark package.",
+    "inputs": "event_id, relative_path",
+    "output": "absolute path or error",
+    "used_by": "runner safety"
+  },
+  {
+    "name": "inspect_package_file",
+    "kit": "A Package Discovery",
+    "purpose": "Inspect any local package file and return the best available summary for archives, text, JSON, tables, rasters, images, vectors, PDFs or binary files.",
+    "inputs": "path, max_chars?, max_rows?, max_members?",
+    "output": "typed file summary JSON",
+    "used_by": "universal evidence inspection"
+  },
+  {
+    "name": "list_archive_contents",
+    "kit": "A Package Discovery",
+    "purpose": "List members inside a ZIP evidence artifact without extracting files to disk.",
+    "inputs": "path, max_members?",
+    "output": "archive member inventory",
+    "used_by": "masked exposure and downloaded source packages"
+  },
+  {
+    "name": "summarize_archive_member",
+    "kit": "A Package Discovery",
+    "purpose": "Read or summarize one ZIP member as text, JSON, CSV/TSV, nested archive metadata or binary metadata.",
+    "inputs": "path, member?, max_chars?, max_rows?",
+    "output": "archive member summary",
+    "used_by": "masked exposure and downloaded source packages"
+  },
+  {
+    "name": "infer_data_layer_from_filename",
+    "kit": "A Package Discovery",
+    "purpose": "Infer probable layer and source from filename patterns.",
+    "inputs": "path",
+    "output": "layer/source guess",
+    "used_by": "messy packages"
+  },
+  {
+    "name": "build_task_file_manifest",
+    "kit": "A Package Discovery",
+    "purpose": "Create the exact file manifest an agent should see for one task.",
+    "inputs": "task_id",
+    "output": "manifest JSON",
+    "used_by": "trajectory logging"
+  },
+  {
+    "name": "select_candidate_files_for_question",
+    "kit": "A Package Discovery",
+    "purpose": "Rank candidate files by question terms without reading answers.",
+    "inputs": "task_text, file_manifest",
+    "output": "ranked file list",
+    "used_by": "routing"
+  },
+  {
+    "name": "read_text_or_html",
+    "kit": "B Reports and Claims",
+    "purpose": "Read plain text, markdown, saved webpages or HTML reports.",
+    "inputs": "path, max_chars?",
+    "output": "clean text with title",
+    "used_by": "report tasks"
+  },
+  {
+    "name": "read_pdf_text",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract text from a PDF report by page range.",
+    "inputs": "path, pages?",
+    "output": "page text JSON",
+    "used_by": "institutional reports"
+  },
+  {
+    "name": "extract_report_snippets",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract keyword-centered snippets with source provenance.",
+    "inputs": "paths, keywords, window",
+    "output": "snippet list",
+    "used_by": "evidence retrieval"
+  },
+  {
+    "name": "extract_event_time_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract dates, windows and temporal qualifiers from reports.",
+    "inputs": "paths",
+    "output": "time claims",
+    "used_by": "event anchoring"
+  },
+  {
+    "name": "extract_location_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract place names, admin units and coordinates from reports.",
+    "inputs": "paths",
+    "output": "location claims",
+    "used_by": "event anchoring"
+  },
+  {
+    "name": "extract_impact_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract deaths, displaced people, damage, disruption and response impacts.",
+    "inputs": "paths",
+    "output": "impact claims",
+    "used_by": "impact reasoning"
+  },
+  {
+    "name": "extract_hazard_magnitude_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract rainfall, wind, temperature, magnitude, AQI or other hazard intensity claims.",
+    "inputs": "paths",
+    "output": "magnitude claims",
+    "used_by": "physical context"
+  },
+  {
+    "name": "extract_response_action_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract warnings, evacuations, closures and response actions.",
+    "inputs": "paths",
+    "output": "response claims",
+    "used_by": "priority tasks"
+  },
+  {
+    "name": "parse_report_source_metadata",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract concrete source metadata such as organization, publication date, URL, title and document type from report files.",
+    "inputs": "paths, metadata_patterns?",
+    "output": "source metadata table JSON",
+    "used_by": "report parsing tasks"
+  },
+  {
+    "name": "build_report_event_timeline",
+    "kit": "B Reports and Claims",
+    "purpose": "Convert extracted time, hazard, impact and response claims into an ordered event timeline.",
+    "inputs": "time_claims, hazard_claims?, impact_claims?, response_claims?",
+    "output": "event timeline rows JSON",
+    "used_by": "process reconstruction tasks"
+  },
+  {
+    "name": "deduplicate_report_claims",
+    "kit": "B Reports and Claims",
+    "purpose": "Merge duplicate claims repeated across reports and news pages.",
+    "inputs": "claims",
+    "output": "deduplicated claims",
+    "used_by": "report synthesis"
+  },
+  {
+    "name": "classify_claim_type",
+    "kit": "B Reports and Claims",
+    "purpose": "Classify a text claim as hazard, exposure, impact, response or uncertainty.",
+    "inputs": "claim_text",
+    "output": "claim class",
+    "used_by": "scoring"
+  },
+  {
+    "name": "extract_report_causal_chains",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract reported causal links such as rainfall-to-flooding, heat-to-health stress or fire-to-smoke impacts.",
+    "inputs": "paths, hazard_keywords?, impact_keywords?",
+    "output": "causal chain claim list JSON",
+    "used_by": "mechanism and impact-chain tasks"
+  },
+  {
+    "name": "extract_report_numeric_observations",
+    "kit": "B Reports and Claims",
+    "purpose": "Extract numeric observations and their units from reports, including casualties, rainfall, wind, temperature, discharge, area and exposure counts.",
+    "inputs": "paths, target_variables?, unit_patterns?",
+    "output": "numeric observation table JSON",
+    "used_by": "numeric report reasoning tasks"
+  },
+  {
+    "name": "load_table_schema",
+    "kit": "C Tables and Time Series",
+    "purpose": "Inspect table fields, data types, row count, samples and likely units.",
+    "inputs": "path",
+    "output": "schema JSON",
+    "used_by": "tabular tasks"
+  },
+  {
+    "name": "filter_table_rows",
+    "kit": "C Tables and Time Series",
+    "purpose": "Filter rows by explicit conditions on time, region, source or variable.",
+    "inputs": "path, conditions",
+    "output": "filtered rows summary",
+    "used_by": "event-window selection"
+  },
+  {
+    "name": "select_table_columns",
+    "kit": "C Tables and Time Series",
+    "purpose": "Select needed columns and report missing columns clearly.",
+    "inputs": "path, columns",
+    "output": "subtable summary",
+    "used_by": "field selection"
+  },
+  {
+    "name": "normalize_time_column",
+    "kit": "C Tables and Time Series",
+    "purpose": "Parse and normalize time columns to UTC or local event time.",
+    "inputs": "path, time_col, timezone?",
+    "output": "normalized table",
+    "used_by": "time alignment"
+  },
+  {
+    "name": "resample_timeseries",
+    "kit": "C Tables and Time Series",
+    "purpose": "Resample hourly/daily/monthly series with mean, max, min or sum.",
+    "inputs": "path, time_col, freq, agg",
+    "output": "resampled series",
+    "used_by": "multi-source alignment"
+  },
+  {
+    "name": "compute_time_window_stats",
+    "kit": "C Tables and Time Series",
+    "purpose": "Compute event-window min, max, mean, sum and date of peak.",
+    "inputs": "path, time_col, value_cols, start, end",
+    "output": "window stats",
+    "used_by": "most tasks"
+  },
+  {
+    "name": "compute_rolling_sum",
+    "kit": "C Tables and Time Series",
+    "purpose": "Compute rolling accumulation and its peak window.",
+    "inputs": "path, time_col, value_col, window",
+    "output": "rolling sum stats",
+    "used_by": "rain/flood"
+  },
+  {
+    "name": "compute_rolling_mean",
+    "kit": "C Tables and Time Series",
+    "purpose": "Compute rolling mean and its peak or trough window.",
+    "inputs": "path, time_col, value_col, window",
+    "output": "rolling mean stats",
+    "used_by": "heat/smoke/drought"
+  },
+  {
+    "name": "detect_consecutive_exceedance",
+    "kit": "C Tables and Time Series",
+    "purpose": "Find longest run above or below a threshold.",
+    "inputs": "path, time_col, value_col, threshold, op",
+    "output": "run-length stats",
+    "used_by": "persistence"
+  },
+  {
+    "name": "compute_lagged_peak",
+    "kit": "C Tables and Time Series",
+    "purpose": "Find response lag between driver and impact series.",
+    "inputs": "driver_series, response_series, lags",
+    "output": "best lag and correlation",
+    "used_by": "flood/smoke/311"
+  },
+  {
+    "name": "compare_event_to_baseline_percentile",
+    "kit": "C Tables and Time Series",
+    "purpose": "Compare event values with baseline percentile threshold.",
+    "inputs": "event_values, baseline_values, percentile",
+    "output": "exceedance result",
+    "used_by": "extremeness"
+  },
+  {
+    "name": "detect_event_peak_window",
+    "kit": "C Tables and Time Series",
+    "purpose": "Detect most dangerous window using a metric and duration.",
+    "inputs": "series, metric, window",
+    "output": "peak window",
+    "used_by": "response timing"
+  },
+  {
+    "name": "join_timeseries_on_time",
+    "kit": "C Tables and Time Series",
+    "purpose": "Join multiple time series on normalized time.",
+    "inputs": "paths, time_cols, join_type",
+    "output": "joined table",
+    "used_by": "multi-source tasks"
+  },
+  {
+    "name": "compute_anomaly_from_climatology",
+    "kit": "C Tables and Time Series",
+    "purpose": "Compute anomaly relative to monthly or daily climatology.",
+    "inputs": "event_series, climatology",
+    "output": "anomaly series",
+    "used_by": "climate tasks"
+  },
+  {
+    "name": "compute_percentile_rank",
+    "kit": "C Tables and Time Series",
+    "purpose": "Return percentile rank of event value in a historical distribution.",
+    "inputs": "value, baseline_values",
+    "output": "percentile rank",
+    "used_by": "GT metrics"
+  },
+  {
+    "name": "export_intermediate_table",
+    "kit": "C Tables and Time Series",
+    "purpose": "Write a derived table for trace reproducibility.",
+    "inputs": "dataframe, relative_output_path",
+    "output": "artifact path",
+    "used_by": "time-series inspection"
+  },
+  {
+    "name": "load_vector_summary",
+    "kit": "D Vector and Exposure",
+    "purpose": "Inspect vector CRS, bbox, geometry types and feature count.",
+    "inputs": "path",
+    "output": "vector summary",
+    "used_by": "GIS tasks"
+  },
+  {
+    "name": "reproject_vector",
+    "kit": "D Vector and Exposure",
+    "purpose": "Reproject vector data to a target CRS.",
+    "inputs": "path, target_crs",
+    "output": "reprojected path",
+    "used_by": "spatial alignment"
+  },
+  {
+    "name": "clip_vector_to_aoi",
+    "kit": "D Vector and Exposure",
+    "purpose": "Clip vector features to an AOI polygon.",
+    "inputs": "vector_path, aoi",
+    "output": "clipped summary",
+    "used_by": "AOI tasks"
+  },
+  {
+    "name": "buffer_geometries",
+    "kit": "D Vector and Exposure",
+    "purpose": "Create distance buffers around points, lines or polygons.",
+    "inputs": "vector_path, distance_km",
+    "output": "buffer polygon",
+    "used_by": "track/epicenter tasks"
+  },
+  {
+    "name": "intersect_vectors",
+    "kit": "D Vector and Exposure",
+    "purpose": "Intersect two vector layers and summarize overlap.",
+    "inputs": "path_a, path_b",
+    "output": "intersection metrics",
+    "used_by": "hazard-exposure"
+  },
+  {
+    "name": "union_hazard_footprints",
+    "kit": "D Vector and Exposure",
+    "purpose": "Union multiple hazard polygons into one footprint.",
+    "inputs": "polygon_paths",
+    "output": "union footprint",
+    "used_by": "multi-sensor hazards"
+  },
+  {
+    "name": "count_points_in_polygon",
+    "kit": "D Vector and Exposure",
+    "purpose": "Count point features inside an AOI or hazard polygon.",
+    "inputs": "points_path, polygon_path",
+    "output": "point count",
+    "used_by": "hotspots/complaints"
+  },
+  {
+    "name": "calculate_line_length_in_polygon",
+    "kit": "D Vector and Exposure",
+    "purpose": "Calculate line length inside polygon by class.",
+    "inputs": "line_path, polygon_path, class_filter?",
+    "output": "length by class",
+    "used_by": "roads/rivers"
+  },
+  {
+    "name": "calculate_polygon_area",
+    "kit": "D Vector and Exposure",
+    "purpose": "Calculate polygon area by class in square kilometers.",
+    "inputs": "polygon_path, class_filter?",
+    "output": "area table",
+    "used_by": "flood/burn/slip"
+  },
+  {
+    "name": "estimate_population_exposure",
+    "kit": "D Vector and Exposure",
+    "purpose": "Estimate population exposed inside a hazard footprint.",
+    "inputs": "hazard_polygon, population_grid",
+    "output": "exposed population",
+    "used_by": "impact tasks"
+  },
+  {
+    "name": "count_facilities_exposed",
+    "kit": "D Vector and Exposure",
+    "purpose": "Count facilities exposed by type.",
+    "inputs": "hazard_polygon, facilities_vector, facility_types",
+    "output": "facility counts",
+    "used_by": "schools/hospitals"
+  },
+  {
+    "name": "compute_distance_to_track_or_epicenter",
+    "kit": "D Vector and Exposure",
+    "purpose": "Compute minimum distance from locations to a cyclone track, river or epicenter.",
+    "inputs": "locations, track_or_point",
+    "output": "distance metrics",
+    "used_by": "cyclone/earthquake"
+  },
+  {
+    "name": "spatial_join_exposure_attributes",
+    "kit": "D Vector and Exposure",
+    "purpose": "Join hazard and exposure attributes by spatial relation.",
+    "inputs": "hazard_path, exposure_path, predicate",
+    "output": "joined exposure table",
+    "used_by": "impact chain"
+  },
+  {
+    "name": "estimate_admin_unit_exposure",
+    "kit": "D Vector and Exposure",
+    "purpose": "Aggregate exposed population or infrastructure by admin unit.",
+    "inputs": "hazard_path, admin_path, exposure_data",
+    "output": "admin exposure table",
+    "used_by": "briefings"
+  },
+  {
+    "name": "compute_network_service_area",
+    "kit": "D Vector and Exposure",
+    "purpose": "Estimate service area or reachable network segments around facilities.",
+    "inputs": "network_path, facility_points, distance",
+    "output": "service area summary",
+    "used_by": "response access"
+  },
+  {
+    "name": "compute_hazard_aoi_overlap",
+    "kit": "D Vector and Exposure",
+    "purpose": "Compute overlap between a hazard footprint or track buffer and the event AOI/admin geometry.",
+    "inputs": "hazard_vector, aoi_vector, metric?",
+    "output": "overlap area/ratio JSON",
+    "used_by": "spatial hazard tasks"
+  },
+  {
+    "name": "make_overview_map",
+    "kit": "D Vector and Exposure",
+    "purpose": "Create a static overview map with AOI, hazard and key exposure layers.",
+    "inputs": "layers, output_path",
+    "output": "map artifact",
+    "used_by": "visual reporting"
+  },
+  {
+    "name": "load_raster_summary",
+    "kit": "E Raster and EO",
+    "purpose": "Inspect raster CRS, resolution, bbox, bands, nodata and value range.",
+    "inputs": "path",
+    "output": "raster summary",
+    "used_by": "raster tasks"
+  },
+  {
+    "name": "reproject_raster",
+    "kit": "E Raster and EO",
+    "purpose": "Reproject raster to target CRS or grid.",
+    "inputs": "path, target_crs, resolution?",
+    "output": "reprojected raster",
+    "used_by": "alignment"
+  },
+  {
+    "name": "clip_raster_to_aoi",
+    "kit": "E Raster and EO",
+    "purpose": "Clip raster to AOI and report valid-pixel count.",
+    "inputs": "raster_path, aoi",
+    "output": "clipped raster summary",
+    "used_by": "AOI stats"
+  },
+  {
+    "name": "compute_zonal_raster_stats",
+    "kit": "E Raster and EO",
+    "purpose": "Compute zonal raster mean, max, sum, p95, p99 or count.",
+    "inputs": "raster_path, aoi, stats",
+    "output": "zonal stats",
+    "used_by": "physical fields"
+  },
+  {
+    "name": "compute_raster_threshold_area",
+    "kit": "E Raster and EO",
+    "purpose": "Calculate area exceeding a raster threshold.",
+    "inputs": "raster_path, threshold, op, aoi?",
+    "output": "area metrics",
+    "used_by": "flood/burn/heat"
+  },
+  {
+    "name": "compare_pre_post_rasters",
+    "kit": "E Raster and EO",
+    "purpose": "Compute pre/post raster differences and changed area.",
+    "inputs": "pre_path, post_path, method, threshold?",
+    "output": "change metrics",
+    "used_by": "RS change"
+  },
+  {
+    "name": "compute_ndvi",
+    "kit": "E Raster and EO",
+    "purpose": "Compute NDVI from NIR and red bands.",
+    "inputs": "nir_band, red_band",
+    "output": "NDVI raster/stats",
+    "used_by": "vegetation"
+  },
+  {
+    "name": "compute_ndwi",
+    "kit": "E Raster and EO",
+    "purpose": "Compute water index from green and NIR/SWIR bands.",
+    "inputs": "green_band, nir_or_swir_band",
+    "output": "NDWI raster/stats",
+    "used_by": "flood/water"
+  },
+  {
+    "name": "compute_nbr",
+    "kit": "E Raster and EO",
+    "purpose": "Compute burn ratio from NIR and SWIR bands.",
+    "inputs": "nir_band, swir_band",
+    "output": "NBR raster/stats",
+    "used_by": "wildfire"
+  },
+  {
+    "name": "compute_lst_summary",
+    "kit": "E Raster and EO",
+    "purpose": "Summarize land surface temperature raster over AOI.",
+    "inputs": "lst_raster, aoi",
+    "output": "LST stats",
+    "used_by": "heat/urban heat island"
+  },
+  {
+    "name": "mask_clouds_from_quality_band",
+    "kit": "E Raster and EO",
+    "purpose": "Mask clouds using QA band or scene classification.",
+    "inputs": "raster_path, qa_band",
+    "output": "cloud-masked raster",
+    "used_by": "optical images"
+  },
+  {
+    "name": "mosaic_rasters",
+    "kit": "E Raster and EO",
+    "purpose": "Mosaic raster tiles and report seam/coverage warnings.",
+    "inputs": "raster_paths",
+    "output": "mosaic path",
+    "used_by": "large AOIs"
+  },
+  {
+    "name": "sample_raster_at_points",
+    "kit": "E Raster and EO",
+    "purpose": "Sample raster values at point locations.",
+    "inputs": "raster_path, points_path",
+    "output": "sample table",
+    "used_by": "station comparison"
+  },
+  {
+    "name": "compute_raster_histogram",
+    "kit": "E Raster and EO",
+    "purpose": "Compute histogram and quantiles for raster values.",
+    "inputs": "raster_path, aoi?, bins",
+    "output": "histogram JSON",
+    "used_by": "distribution reasoning"
+  },
+  {
+    "name": "align_raster_grids",
+    "kit": "E Raster and EO",
+    "purpose": "Align multiple rasters to a common grid.",
+    "inputs": "raster_paths, reference_path",
+    "output": "aligned paths",
+    "used_by": "multi-raster metrics"
+  },
+  {
+    "name": "compute_valid_pixel_fraction",
+    "kit": "E Raster and EO",
+    "purpose": "Compute valid, nodata and masked pixel fractions for a raster layer or AOI clip.",
+    "inputs": "path, nodata_value?, band?",
+    "output": "valid pixel fraction JSON",
+    "used_by": "raster diagnostics tasks"
+  },
+  {
+    "name": "extract_raster_timeseries",
+    "kit": "E Raster and EO",
+    "purpose": "Extract per-date AOI statistics from raster stacks.",
+    "inputs": "raster_stack, aoi, stats",
+    "output": "raster time series",
+    "used_by": "GPM/ERA/OISST"
+  },
+  {
+    "name": "export_raster_thumbnail",
+    "kit": "E Raster and EO",
+    "purpose": "Export a normalized image thumbnail from a raster layer.",
+    "inputs": "raster_path, bands, stretch",
+    "output": "thumbnail path",
+    "used_by": "human inspection"
+  },
+  {
+    "name": "read_image_rgb_summary",
+    "kit": "F Image and Multimodal",
+    "purpose": "Read image dimensions and simple RGB statistics without semantic detection.",
+    "inputs": "image_path",
+    "output": "image RGB summary",
+    "used_by": "image statistics tasks"
+  },
+  {
+    "name": "summarize_image_rgb_statistics",
+    "kit": "F Image and Multimodal",
+    "purpose": "Summarize per-channel RGB statistics, brightness, and contrast proxies.",
+    "inputs": "image_path",
+    "output": "image RGB statistics",
+    "used_by": "image diagnostics"
+  },
+  {
+    "name": "compare_image_rgb_summaries",
+    "kit": "F Image and Multimodal",
+    "purpose": "Compare two image RGB summaries and compute simple channel deltas.",
+    "inputs": "pre_image, post_image",
+    "output": "RGB change summary",
+    "used_by": "change detection proxies"
+  },
+  {
+    "name": "estimate_image_flood_proxy",
+    "kit": "F Image and Multimodal",
+    "purpose": "Estimate a simple flood-like proxy from RGB dominance; not semantic segmentation.",
+    "inputs": "image_path, aoi?",
+    "output": "flood proxy",
+    "used_by": "flood imagery proxies"
+  },
+  {
+    "name": "estimate_image_burn_proxy",
+    "kit": "F Image and Multimodal",
+    "purpose": "Estimate a simple burn-scar proxy from RGB dominance; not semantic detection.",
+    "inputs": "image_path, aoi?",
+    "output": "burn proxy",
+    "used_by": "wildfire imagery proxies"
+  },
+  {
+    "name": "estimate_image_obscuration_proxy",
+    "kit": "F Image and Multimodal",
+    "purpose": "Estimate cloud, smoke, haze, or ash obscuration proxy from brightness and channel balance.",
+    "inputs": "image_path",
+    "output": "obscuration proxy",
+    "used_by": "image reliability proxies"
+  },
+  {
+    "name": "read_image_georeference",
+    "kit": "F Image and Multimodal",
+    "purpose": "Read georeferencing metadata from GeoTIFF or related raster metadata.",
+    "inputs": "image_path",
+    "output": "georeference summary",
+    "used_by": "image-GIS alignment"
+  },
+  {
+    "name": "read_alphaearth_embedding_stats",
+    "kit": "F Image and Multimodal",
+    "purpose": "Read AlphaEarth embedding or change-stat JSON from package files.",
+    "inputs": "stats_path",
+    "output": "AlphaEarth stats summary",
+    "used_by": "semantic EO change statistics"
+  },
+  {
+    "name": "compare_alphaearth_embedding_stats",
+    "kit": "F Image and Multimodal",
+    "purpose": "Compare two AlphaEarth statistics files and report numeric deltas on shared keys.",
+    "inputs": "pre_stats_path, post_stats_path",
+    "output": "AlphaEarth comparison summary",
+    "used_by": "longer-term context"
+  },
+  {
+    "name": "read_image_file_metadata",
+    "kit": "F Image and Multimodal",
+    "purpose": "Read image file format, size, mode, and info keys.",
+    "inputs": "image_path",
+    "output": "image file metadata",
+    "used_by": "file inspection"
+  },
+  {
+    "name": "compare_image_proxy_to_hazard_signature",
+    "kit": "F Image and Multimodal",
+    "purpose": "Compare heuristic image proxy scores with a named hazard template; not object detection.",
+    "inputs": "image_path, hazard_type",
+    "output": "proxy comparison JSON",
+    "used_by": "image-hazard interpretation proxies"
+  },
+  {
+    "name": "build_image_change_summary",
+    "kit": "F Image and Multimodal",
+    "purpose": "Combine before/after image summaries and optional EO metrics into a compact change summary.",
+    "inputs": "pre_image, post_image, eo_metrics?",
+    "output": "image change summary JSON",
+    "used_by": "visual-numeric reasoning proxies"
+  },
+  {
+    "name": "compute_precip_accumulation",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute event-window precipitation accumulation.",
+    "inputs": "precip_series_or_raster, start, end, aoi?",
+    "output": "accumulation stats",
+    "used_by": "rain/flood"
+  },
+  {
+    "name": "compute_precip_intensity_duration",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute max intensity over multiple durations.",
+    "inputs": "precip_series, durations",
+    "output": "ID stats",
+    "used_by": "flash flood"
+  },
+  {
+    "name": "compute_flood_impact_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Combine flood area, exposed population and road length metrics.",
+    "inputs": "flood_mask, population, roads",
+    "output": "flood impact JSON",
+    "used_by": "flood GT"
+  },
+  {
+    "name": "compute_streamflow_anomaly",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute streamflow anomaly or return-period proxy.",
+    "inputs": "streamflow_series, climatology",
+    "output": "flow anomaly",
+    "used_by": "river flood"
+  },
+  {
+    "name": "estimate_runoff_proxy",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Estimate runoff proxy from rainfall, slope and soil/land-cover context.",
+    "inputs": "rain, slope, soil?, landcover?",
+    "output": "runoff risk score",
+    "used_by": "flash flood/landslide"
+  },
+  {
+    "name": "compute_spei_spi",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute SPI/SPEI drought index from precipitation and PET data.",
+    "inputs": "precip_series, pet_series?, scale",
+    "output": "drought index",
+    "used_by": "drought"
+  },
+  {
+    "name": "compute_soil_moisture_percentile",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute soil moisture percentile against baseline.",
+    "inputs": "soil_moisture, baseline",
+    "output": "percentile",
+    "used_by": "drought/flood precondition"
+  },
+  {
+    "name": "compute_heat_index",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute heat index from temperature and relative humidity.",
+    "inputs": "temp, rh",
+    "output": "heat index series",
+    "used_by": "heat"
+  },
+  {
+    "name": "compute_wet_bulb_temperature",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute wet-bulb temperature from temperature, humidity and pressure.",
+    "inputs": "temp, rh, pressure?",
+    "output": "wet-bulb series",
+    "used_by": "humid heat"
+  },
+  {
+    "name": "compute_apparent_temperature_stats",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute apparent temperature peak and persistence.",
+    "inputs": "temp, humidity, wind?, radiation?",
+    "output": "apparent temp stats",
+    "used_by": "heat health"
+  },
+  {
+    "name": "compute_warm_night_count",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Count warm nights or high minimum-temperature runs.",
+    "inputs": "daily_min_temp, threshold",
+    "output": "warm-night metrics",
+    "used_by": "heat stress"
+  },
+  {
+    "name": "compute_heatwave_duration_intensity",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute heatwave duration, peak Tmax and cumulative intensity.",
+    "inputs": "daily_temp, thresholds",
+    "output": "heatwave metrics",
+    "used_by": "heat"
+  },
+  {
+    "name": "compute_cyclone_track_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute track proximity, max wind and landfall timing.",
+    "inputs": "track_file, aoi",
+    "output": "cyclone metrics",
+    "used_by": "cyclone"
+  },
+  {
+    "name": "compute_storm_surge_proxy",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Estimate surge-risk proxy from wind, pressure, coast distance and tide context.",
+    "inputs": "track, wind, pressure, coast",
+    "output": "surge proxy",
+    "used_by": "coastal flood"
+  },
+  {
+    "name": "compute_wind_exposure_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute population or infrastructure exposed to wind threshold zones.",
+    "inputs": "wind_field, exposure_layers",
+    "output": "wind exposure",
+    "used_by": "cyclone/storm"
+  },
+  {
+    "name": "compute_enso_phase_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute ENSO phase and strength from Niño indices or SST anomalies.",
+    "inputs": "nino_series, dates",
+    "output": "ENSO metrics",
+    "used_by": "ENSO"
+  },
+  {
+    "name": "compute_teleconnection_lag_correlation",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Estimate lagged relationship between climate index and regional hazard.",
+    "inputs": "index_series, hazard_series, lags",
+    "output": "lag correlation",
+    "used_by": "ENSO impact"
+  },
+  {
+    "name": "compute_marine_heatwave_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute MHW duration, intensity and cumulative intensity.",
+    "inputs": "sst_series, climatology",
+    "output": "MHW metrics",
+    "used_by": "ocean heat"
+  },
+  {
+    "name": "compute_cold_spell_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute cold-spell duration and anomaly intensity.",
+    "inputs": "temperature_series, thresholds",
+    "output": "cold metrics",
+    "used_by": "cold wave"
+  },
+  {
+    "name": "compute_snow_ice_anomaly",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute snow or ice anomaly from raster/time series products.",
+    "inputs": "snow_or_ice_data, baseline",
+    "output": "snow/ice anomaly",
+    "used_by": "cryosphere"
+  },
+  {
+    "name": "compute_fire_hotspot_metrics",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Summarize FIRMS hotspots, FRP and density inside AOI/time window.",
+    "inputs": "hotspot_points, aoi, time_window",
+    "output": "hotspot metrics",
+    "used_by": "wildfire"
+  },
+  {
+    "name": "compute_burned_area_metrics",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute burned area and severity from masks or NBR change.",
+    "inputs": "burn_mask_or_dnbr, aoi",
+    "output": "burn metrics",
+    "used_by": "wildfire"
+  },
+  {
+    "name": "compute_fire_weather_index_proxy",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute fire-weather risk proxy from temperature, humidity, wind and rain.",
+    "inputs": "weather_series",
+    "output": "FWI proxy",
+    "used_by": "fire risk"
+  },
+  {
+    "name": "compute_smoke_pm_lag_metrics",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Link smoke/hotspot timing to PM2.5 or AQI response.",
+    "inputs": "smoke_or_fire, pm_series, lags",
+    "output": "lag metrics",
+    "used_by": "smoke health"
+  },
+  {
+    "name": "compute_air_quality_exceedance",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Count exceedance days and peaks for PM2.5, O3, NO2 or AQI.",
+    "inputs": "pollution_series, standards",
+    "output": "AQ metrics",
+    "used_by": "air quality"
+  },
+  {
+    "name": "interpolate_station_pollution",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Interpolate station pollution to a coarse AOI surface.",
+    "inputs": "station_points, values, method",
+    "output": "interpolated surface/stats",
+    "used_by": "AQ spatial gaps"
+  },
+  {
+    "name": "compute_earthquake_sequence_metrics",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute mainshock/aftershock counts, magnitude decay and spatial spread.",
+    "inputs": "quake_catalog, event_window",
+    "output": "sequence metrics",
+    "used_by": "earthquake"
+  },
+  {
+    "name": "compute_shakemap_exposure",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Overlay shaking intensity zones with population/facilities.",
+    "inputs": "shakemap, exposure_layers",
+    "output": "shake exposure",
+    "used_by": "earthquake impact"
+  },
+  {
+    "name": "estimate_ground_failure_susceptibility",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Estimate landslide/liquefaction susceptibility from shaking, slope and soil proxies.",
+    "inputs": "shaking, slope, soil?",
+    "output": "susceptibility score",
+    "used_by": "earthquake/landslide"
+  },
+  {
+    "name": "compute_landslide_trigger_index",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Combine rainfall, slope and antecedent wetness into landslide trigger index.",
+    "inputs": "rain, slope, soil_moisture?",
+    "output": "trigger index",
+    "used_by": "landslide"
+  },
+  {
+    "name": "compute_volcano_ash_extent",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Estimate ash/cloud extent from polygons, images or VAAC reports.",
+    "inputs": "ash_data, aoi",
+    "output": "ash extent",
+    "used_by": "volcano"
+  },
+  {
+    "name": "compute_so2_anomaly",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute SO2 anomaly or plume intensity over AOI.",
+    "inputs": "so2_raster_or_series, baseline",
+    "output": "SO2 anomaly",
+    "used_by": "volcano"
+  },
+  {
+    "name": "compute_tsunami_coastal_exposure",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Estimate coastal exposure to tsunami warning or inundation proxy.",
+    "inputs": "coast, elevation, population, warning_zone",
+    "output": "coastal exposure",
+    "used_by": "tsunami"
+  },
+  {
+    "name": "compute_dust_storm_metrics",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute dust-storm intensity from visibility, AOD, wind or PM indicators.",
+    "inputs": "dust_series_or_raster",
+    "output": "dust metrics",
+    "used_by": "dust"
+  },
+  {
+    "name": "compute_ocean_heat_content_proxy",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Estimate ocean heat-content proxy from SST anomaly and depth/region data if available.",
+    "inputs": "sst_anomaly, region, depth?",
+    "output": "OHC proxy",
+    "used_by": "ocean events"
+  },
+  {
+    "name": "compute_coral_bleaching_alert",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Compute bleaching alert from hotspot and degree-heating-weeks style inputs.",
+    "inputs": "sst, climatology",
+    "output": "bleaching alert",
+    "used_by": "marine heatwave"
+  },
+  {
+    "name": "compute_tide_surge_compound_index",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Combine tide, surge and rainfall timing into compound coastal flood risk.",
+    "inputs": "tide, surge_proxy, rainfall",
+    "output": "compound index",
+    "used_by": "coastal flood"
+  },
+  {
+    "name": "compute_multihazard_overlap_score",
+    "kit": "H Fire Air Geophysics Ocean",
+    "purpose": "Score overlap among multiple hazards in space and time.",
+    "inputs": "hazard_layers, weights",
+    "output": "overlap score",
+    "used_by": "compound events"
+  },
+  {
+    "name": "summarize_311_complaints",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Summarize 311 complaints by type, time and area.",
+    "inputs": "complaints_table, aoi, time_window",
+    "output": "complaint metrics",
+    "used_by": "urban flooding/heat"
+  },
+  {
+    "name": "compute_road_disruption_proxy",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Estimate road disruption proxy from exposed roads, flood/burn masks and road class.",
+    "inputs": "roads, hazard_polygon",
+    "output": "road disruption metrics",
+    "used_by": "transport"
+  },
+  {
+    "name": "compute_hospital_exposure_priority",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Rank hospitals or clinics by hazard exposure and catchment population.",
+    "inputs": "facilities, hazard, population",
+    "output": "hospital priority list",
+    "used_by": "health response"
+  },
+  {
+    "name": "compute_school_exposure_priority",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Rank schools or shelters exposed to hazard footprint.",
+    "inputs": "facilities, hazard, population?",
+    "output": "school/shelter priority",
+    "used_by": "response"
+  },
+  {
+    "name": "compute_power_grid_exposure_proxy",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Estimate exposed power infrastructure if grid/OSM features exist.",
+    "inputs": "power_features, hazard",
+    "output": "power exposure proxy",
+    "used_by": "lifelines"
+  },
+  {
+    "name": "compute_port_airport_exposure",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Assess ports or airports exposed to flood, wind, ash or smoke.",
+    "inputs": "facility_layers, hazard_layers",
+    "output": "facility exposure",
+    "used_by": "logistics"
+  },
+  {
+    "name": "compute_building_footprint_exposure",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Count building footprints or built area inside hazard zone.",
+    "inputs": "buildings, hazard_polygon",
+    "output": "building exposure",
+    "used_by": "urban damage proxy"
+  },
+  {
+    "name": "compute_vulnerable_population_proxy",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Estimate vulnerability proxy from age, poverty or nightlights/population where available.",
+    "inputs": "demographic_layers, hazard",
+    "output": "vulnerability proxy",
+    "used_by": "impact prioritization"
+  },
+  {
+    "name": "rank_admin_units_by_response_need",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Rank districts by combined hazard, exposure and vulnerability metrics.",
+    "inputs": "admin_units, metrics, weights",
+    "output": "ranked units",
+    "used_by": "briefings"
+  },
+  {
+    "name": "compute_access_route_risk",
+    "kit": "I Urban and Infrastructure",
+    "purpose": "Assess whether routes to key facilities intersect hazard zones.",
+    "inputs": "roads, facilities, hazard",
+    "output": "route risk",
+    "used_by": "emergency access"
+  },
+  {
+    "name": "plan_evidence_collection",
+    "kit": "J Reasoning and Output",
+    "purpose": "Generate a task-specific evidence plan from the question and manifest.",
+    "inputs": "question, manifest",
+    "output": "ordered plan",
+    "used_by": "agent controller"
+  },
+  {
+    "name": "select_minimal_tool_subset",
+    "kit": "J Reasoning and Output",
+    "purpose": "Select the smallest tool subset likely to answer a task.",
+    "inputs": "question, manifest, tool_registry",
+    "output": "tool subset",
+    "used_by": "router"
+  },
+  {
+    "name": "route_to_hazard_workflow",
+    "kit": "J Reasoning and Output",
+    "purpose": "Route a task to heat, flood, fire, cyclone, geophysical, urban or climate workflow.",
+    "inputs": "metadata, question",
+    "output": "workflow label",
+    "used_by": "router"
+  },
+  {
+    "name": "build_hazard_metric_matrix",
+    "kit": "J Reasoning and Output",
+    "purpose": "Assemble hazard, exposure, impact and process metrics into a task-specific matrix for downstream reasoning.",
+    "inputs": "metric_groups, dimensions?, event_metadata?",
+    "output": "hazard metric matrix JSON",
+    "used_by": "multi-step reasoning tasks"
+  },
+  {
+    "name": "synthesize_multisource_evidence",
+    "kit": "J Reasoning and Output",
+    "purpose": "Combine physical, remote-sensing, exposure and report evidence into a structured finding.",
+    "inputs": "evidence_objects",
+    "output": "evidence synthesis",
+    "used_by": "final reasoning"
+  },
+  {
+    "name": "rank_response_priorities",
+    "kit": "J Reasoning and Output",
+    "purpose": "Rank days, places, mechanisms or actions using provided metrics and weights.",
+    "inputs": "items, metrics, weights",
+    "output": "ranked output",
+    "used_by": "priority tasks"
+  },
+  {
+    "name": "assemble_structured_answer_fields",
+    "kit": "J Reasoning and Output",
+    "purpose": "Assemble computed metrics, labels and selected option fields into a requested structured answer object.",
+    "inputs": "fields, metrics, labels?, selected_option?",
+    "output": "structured answer fields JSON",
+    "used_by": "structured QA tasks"
+  },
+  {
+    "name": "summarize_key_findings_table",
+    "kit": "J Reasoning and Output",
+    "purpose": "Summarize the most important computed findings as rows with metric, value, unit and interpretation.",
+    "inputs": "findings, metrics?, interpretations?",
+    "output": "key findings table JSON",
+    "used_by": "short-answer reasoning tasks"
+  },
+  {
+    "name": "build_decision_brief_sections",
+    "kit": "J Reasoning and Output",
+    "purpose": "Organize hazard diagnosis, mechanism, exposure, impact-chain and action-priority findings into named briefing sections.",
+    "inputs": "hazard_findings, mechanism_findings?, impact_findings?, action_findings?",
+    "output": "briefing section JSON",
+    "used_by": "expert briefing tasks"
+  },
+  {
+    "name": "compute_weighted_hazard_score",
+    "kit": "J Reasoning and Output",
+    "purpose": "Compute a weighted score from normalized hazard, exposure, persistence, anomaly and infrastructure metrics.",
+    "inputs": "metrics, weights, normalization?",
+    "output": "weighted hazard score JSON",
+    "used_by": "priority and severity tasks"
+  },
+  {
+    "name": "merge_tool_outputs_by_time",
+    "kit": "J Reasoning and Output",
+    "purpose": "Merge time-indexed outputs from weather, hydrology, air-quality or report timeline tools into one chronological table.",
+    "inputs": "tool_outputs, time_key?",
+    "output": "merged chronological table JSON",
+    "used_by": "temporal synthesis tasks"
+  },
+  {
+    "name": "normalize_answer_units_and_fields",
+    "kit": "J Reasoning and Output",
+    "purpose": "Normalize answer fields, units, dates and option letters before final reporting or comparison.",
+    "inputs": "answer_fields, unit_map?, field_aliases?",
+    "output": "normalized answer field JSON",
+    "used_by": "structured QA tasks"
+  },
+  {
+    "name": "infer_task_reasoning_axes",
+    "kit": "J Reasoning and Output",
+    "purpose": "Infer which deep reasoning axes a task requires: mechanism, severity, image-numeric fusion, impact chain, response priority, or physical consistency.",
+    "inputs": "question, metadata?, question_context?",
+    "output": "reasoning-axis plan JSON",
+    "used_by": "tool router and judge planning"
+  },
+  {
+    "name": "build_mechanism_competition_table",
+    "kit": "J Reasoning and Output",
+    "purpose": "Compare plausible disaster mechanisms and record supporting, contradicting and secondary evidence for each candidate.",
+    "inputs": "candidate_mechanisms, evidence_objects, required_axes?",
+    "output": "mechanism competition table",
+    "used_by": "MCQ and causal diagnosis tasks"
+  },
+  {
+    "name": "reconstruct_event_process_stages",
+    "kit": "J Reasoning and Output",
+    "purpose": "Reconstruct event phases from precursor forcing through hazard peak, exposure interaction and aftermath.",
+    "inputs": "timeline_evidence, metrics, reports?",
+    "output": "ordered process-stage reconstruction",
+    "used_by": "phase reconstruction and briefing tasks"
+  },
+  {
+    "name": "evaluate_physical_consistency",
+    "kit": "J Reasoning and Output",
+    "purpose": "Check whether a proposed answer is physically consistent with event forcing, indices, scale, timing and known hazard processes.",
+    "inputs": "proposed_answer, metrics, mechanism_rules, event_metadata",
+    "output": "physical-consistency verdict and failure modes",
+    "used_by": "answer assembly and agent self-check"
+  },
+  {
+    "name": "synthesize_compound_hazard_chain",
+    "kit": "J Reasoning and Output",
+    "purpose": "Build a driver-hazard-exposure-impact chain for compound or cascading events across multiple hazard components.",
+    "inputs": "drivers, hazard_components, exposure_metrics, impact_claims",
+    "output": "compound hazard-chain JSON",
+    "used_by": "compound disaster tasks"
+  },
+  {
+    "name": "compare_visual_numeric_evidence",
+    "kit": "J Reasoning and Output",
+    "purpose": "Jointly interpret visual/remote-sensing cues and numeric indicators while separating what imagery can and cannot prove.",
+    "inputs": "image_summaries, numeric_metrics, question_context",
+    "output": "visual-numeric consistency report",
+    "used_by": "image-numeric reasoning tasks"
+  },
+  {
+    "name": "calibrate_event_severity_profile",
+    "kit": "J Reasoning and Output",
+    "purpose": "Convert peak, persistence, anomaly, spatial extent and exposure metrics into a calibrated event severity profile.",
+    "inputs": "hazard_metrics, baseline_metrics?, exposure_metrics?, thresholds?",
+    "output": "severity profile with calibrated labels",
+    "used_by": "severity and index diagnosis tasks"
+  },
+  {
+    "name": "derive_response_priority_rationale",
+    "kit": "J Reasoning and Output",
+    "purpose": "Derive a response-priority rationale from hazard timing, exposed systems, accessibility and cascading-risk indicators.",
+    "inputs": "hazard_metrics, exposure_metrics, impact_claims, candidate_actions",
+    "output": "ranked response rationale",
+    "used_by": "ranking and emergency decision tasks"
+  },
+  {
+    "name": "test_option_hypothesis_consistency",
+    "kit": "J Reasoning and Output",
+    "purpose": "Treat each MCQ option as a hypothesis and compare its numeric, mechanism, timing and impact statements against computed metrics.",
+    "inputs": "options, metrics, mechanism_findings?, impact_findings?",
+    "output": "option hypothesis comparison JSON",
+    "used_by": "MCQ reasoning tasks"
+  },
+  {
+    "name": "extract_required_computation_targets",
+    "kit": "J Reasoning and Output",
+    "purpose": "Extract required variables, indices, thresholds, units and comparison targets from a question.",
+    "inputs": "question, metadata?",
+    "output": "required computation target JSON",
+    "used_by": "tool planning tasks"
+  },
+  {
+    "name": "map_task_to_required_tools",
+    "kit": "J Reasoning and Output",
+    "purpose": "Map required computation targets and reasoning axes to concrete candidate tools.",
+    "inputs": "computation_targets, reasoning_axes?, tool_registry?",
+    "output": "required tool map JSON",
+    "used_by": "tool routing tasks"
+  },
+  {
+    "name": "build_metric_dependency_graph",
+    "kit": "J Reasoning and Output",
+    "purpose": "Build a dependency graph linking input files, intermediate metrics and final conclusions.",
+    "inputs": "input_files, computations, final_fields?",
+    "output": "metric dependency graph JSON",
+    "used_by": "reproducible reasoning tasks"
+  },
+  {
+    "name": "summarize_table_or_json",
+    "kit": "C Tables and Time Series",
+    "purpose": "Summarize CSV, TSV, JSON, or nested JSON files with row count, columns, numeric fields, and representative records.",
+    "inputs": "path, max_rows?, numeric_summary?",
+    "output": "table/JSON summary with numeric anchors",
+    "used_by": "JSON and table parsing"
+  },
+  {
+    "name": "compute_unit_conversion_or_ratio",
+    "kit": "C Tables and Time Series",
+    "purpose": "Convert common disaster-analysis units and compute ratios such as max/mean, point/grid, and event/baseline contrasts.",
+    "inputs": "value?, from_unit?, to_unit?, numerator?, denominator?",
+    "output": "converted value and/or ratio",
+    "used_by": "numeric anchor normalization"
+  },
+  {
+    "name": "compute_hot_dry_vpd_metrics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute hot-dry burden, VPD proxy, hot-dry hours or days, and peak dry-heat stress from temperature and humidity series.",
+    "inputs": "path or arrays, temp_col?, rh_col?, temp_threshold?, rh_max?",
+    "output": "hot-dry/VPD metrics",
+    "used_by": "heat, drought, and fire-weather tasks"
+  },
+  {
+    "name": "compute_urban_pluvial_diagnostics",
+    "kit": "G Weather Hydro Climate",
+    "purpose": "Compute short-duration rainfall concentration, burst ratio, event total, and urban drainage-overload diagnostic labels.",
+    "inputs": "path or values, precip_col?, durations?, burst_threshold?",
+    "output": "urban pluvial diagnostics",
+    "used_by": "city flash-flood and drainage-overload tasks"
+  },
+  {
+    "name": "reconcile_point_grid_regional_scale",
+    "kit": "J Reasoning and Output",
+    "purpose": "Compare point, gridded AOI, regional, and report-level metrics and return scale-aware interpretation cautions.",
+    "inputs": "source_metrics, event_scale?, question_context?",
+    "output": "scale reconciliation report",
+    "used_by": "cross-scale reasoning tasks"
+  },
+  {
+    "name": "parse_mcq_options_and_select",
+    "kit": "J Reasoning and Output",
+    "purpose": "Parse MCQ options, normalize option letters, and check that the selected answer matches the requested output format.",
+    "inputs": "question_text?, options?, selected?",
+    "output": "normalized options and selected letter",
+    "used_by": "MCQ trajectory and evaluation"
+  }
+]

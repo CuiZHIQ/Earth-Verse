@@ -1,0 +1,232 @@
+{
+  "audit": {
+    "absolute_path_hits": 0,
+    "boundary_main_hits": 0,
+    "expected_issue_score": 0,
+    "lists_specific_files": false,
+    "product_hits": 0,
+    "visible_numeric_anchor_count": 1,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 0
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-318",
+  "forbidden_overclaims": [
+    "Do not claim confirmed deaths, injuries, evacuations, building damage, road disruption, or economic loss.",
+    "Do not claim rainfall or snowmelt caused the primary event mechanism.",
+    "Do not claim direct image-derived proof of the calving footprint or iceberg field from unavailable pre/post change scenes.",
+    "Do not generalize auxiliary context into a broad affected-population or facility-impact emergency."
+  ],
+  "key_values": {
+    "earthquake_magnitude_mw": 6.3,
+    "event_window_days": 9,
+    "ice_mass_million_tons": 30.0,
+    "image_role": "image_context_not_decisive_change_detection"
+  },
+  "numeric_anchor_count": 3,
+  "numeric_anchors": [
+    {
+      "name": "earthquake magnitude",
+      "tolerance": 0.05,
+      "unit": "Mw",
+      "value": 6.3
+    },
+    {
+      "name": "reported ice mass entering the lake",
+      "tolerance": 0.1,
+      "unit": "million tons",
+      "value": 30.0
+    },
+    {
+      "name": "event-window length",
+      "tolerance": 0,
+      "unit": "days",
+      "value": 9
+    }
+  ],
+  "numeric_tolerances": {
+    "earthquake_magnitude": {
+      "tolerance": 0.05,
+      "value": 6.3
+    },
+    "event_window_days": {
+      "tolerance": 0,
+      "value": 9
+    },
+    "ice_mass_million_tons": {
+      "tolerance": 0.1,
+      "value": 30.0
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "Equivalent diagnosis labels that name earthquake-triggered glacier calving and lake iceberg operations.",
+      "Equivalent response-priority wording focused on visitor safety, navigation control, or localized nearshore lake hazard management."
+    ],
+    "answer": "earthquake_triggered_glacier_calving_lake_iceberg_priority",
+    "answer_type": "structured_json_with_deterministic_label_and_judged_reasoning",
+    "canonical_stance": "The late-February 2011 Tasman Glacier/Tasman Lake incident should be diagnosed as earthquake-triggered glacier terminus calving into Tasman Lake, with localized lake-iceberg operations as the leading response priority.",
+    "context_role": "image_context_not_decisive_change_detection",
+    "diagnosis": "earthquake_triggered_glacier_calving_lake_iceberg_priority",
+    "forbidden_claims": [
+      "Confirmed deaths, injuries, evacuations, building damage, road disruption, or economic loss.",
+      "Rainfall or snowmelt as the primary cause of the event without report support.",
+      "Direct image-derived proof of the calving footprint or iceberg field.",
+      "A broad affected-population or facility-impact emergency inferred from auxiliary context."
+    ],
+    "image_role": "image_context_not_decisive_change_detection",
+    "impact_chain": [
+      "magnitude_6_3_earthquake",
+      "glacier_terminus_calving_into_tasman_lake",
+      "localized_lake_iceberg_and_navigation_hazard"
+    ],
+    "key_numeric_anchors": [
+      {
+        "name": "earthquake magnitude",
+        "tolerance": 0.05,
+        "unit": "Mw",
+        "value": 6.3
+      },
+      {
+        "name": "reported ice mass entering the lake",
+        "tolerance": 0.1,
+        "unit": "million tons",
+        "value": 30.0
+      },
+      {
+        "name": "event-window length",
+        "tolerance": 0,
+        "unit": "days",
+        "value": 9
+      }
+    ],
+    "mechanism_summary": "A magnitude 6.3 earthquake supplied the trigger for terminus ice calving into Tasman Lake, producing a localized iceberg hazard rather than a rainfall, fire, heat, or broad-exposure emergency.",
+    "required_claims": [
+      "Dominant pathway is earthquake-triggered glacier terminus calving into Tasman Lake.",
+      "Operational priority is localized lake-iceberg, visitor-safety, navigation, or nearshore control.",
+      "Rainfall or snowmelt flooding, heat/fire stress, and broad population exposure are weaker primary framings.",
+      "Image/change context is not the decisive proof of the mechanism."
+    ],
+    "required_metrics": [
+      "earthquake magnitude approximately 6.3",
+      "reported ice mass approximately 30.0 million tons",
+      "event-window length of 9 days"
+    ],
+    "response_priority": "Treat the event as a localized cryosphere-lake hazard with lake-iceberg operations and visitor/navigation control as the leading response priority."
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_Locked_event_anchor_2011_Tasman_Glacier_earthquake-triggered_ice_calving_and_lake_iceberg.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Distinguish a geophysical trigger from hydrometeorological or heat-fire mechanisms.",
+    "Connect trigger, glacier terminus calving, lake iceberg generation, and operational response into one impact chain.",
+    "Use a small set of numeric anchors without converting the answer into a metric inventory.",
+    "Avoid treating auxiliary context as observed damage."
+  ],
+  "required_findings": [
+    "Classify the dominant mechanism as earthquake-triggered glacier terminus calving into Tasman Lake.",
+    "Frame the response priority as localized lake-iceberg operations, visitor safety, and navigation or nearshore control.",
+    "Use the earthquake magnitude and reported ice mass as the primary trigger-intensity anchors.",
+    "Reject rainfall-flood or broad population-emergency framing because they are not report-supported primary mechanisms.",
+    "Treat image-derived change information as contextual rather than the decisive mechanism evidence for this task."
+  ],
+  "rubric": {
+    "competing_explanation_points": 2,
+    "criteria": [
+      {
+        "description": "Identifies earthquake-triggered glacier terminus calving into Tasman Lake as the dominant pathway, using the expected diagnosis label or equivalent wording.",
+        "minimal_credit": "Selects rainfall, heat, fire, or broad population exposure as the main pathway.",
+        "name": "Final diagnosis",
+        "partial_credit": "Gives a glacier-calving diagnosis but omits the earthquake trigger or lake-iceberg priority.",
+        "points": 4
+      },
+      {
+        "description": "Prioritizes localized lake-iceberg operations, visitor safety, navigation control, or nearshore lake hazard management.",
+        "minimal_credit": "Centers response on flood evacuation, fire response, heat stress, or broad population relief.",
+        "name": "Response priority",
+        "partial_credit": "Mentions monitoring or caution around the glacier/lake but does not translate it into an operational priority.",
+        "points": 3
+      },
+      {
+        "description": "Connects earthquake trigger, glacier terminus calving, ice entry into Tasman Lake, iceberg generation, and localized operational hazard.",
+        "minimal_credit": "Provides disconnected facts or a mechanism inconsistent with the event.",
+        "name": "Mechanism and impact chain",
+        "partial_credit": "Contains the right general process but misses one or two links in the trigger-to-impact chain.",
+        "points": 4
+      },
+      {
+        "description": "Includes at least three relevant anchors: magnitude 6.3, 30.0 million tons of ice, and 9 event-window days.",
+        "minimal_credit": "Uses irrelevant metrics, no numeric anchors, or metric lists that do not support the diagnosis.",
+        "name": "Quantitative anchors",
+        "partial_credit": "Uses one or two relevant anchors, or gives values with minor rounding/formatting issues.",
+        "points": 4
+      },
+      {
+        "description": "Rejects rainfall/snowmelt flooding, heat/fire stress, and broad population emergency because they are not the report-supported primary mechanism.",
+        "minimal_credit": "Treats a competing pathway as equally or more likely without support.",
+        "name": "Competing-explanation rejection",
+        "partial_credit": "Rejects some distractors but leaves the flood or exposure alternative ambiguous.",
+        "points": 2
+      },
+      {
+        "description": "Treats image summaries as contextual and avoids unsupported claims about casualties, evacuations, damage, losses, road disruption, or direct image-confirmed calving footprint.",
+        "minimal_credit": "Makes unsupported impact or direct image-proof claims.",
+        "name": "Image and overclaim control",
+        "partial_credit": "Mostly avoids unsupported losses but overstates the role of image evidence.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested JSON object with all required keys and concise, decision-oriented wording.",
+        "minimal_credit": "Does not provide the requested structured JSON.",
+        "name": "Output structure and concision",
+        "partial_credit": "Minor formatting issues while preserving the requested content.",
+        "points": 1
+      }
+    ],
+    "image_and_overclaim_control_points": 2,
+    "impact_chain_points": 4,
+    "mechanism_classification_points": 4,
+    "numeric_anchor_points": 4,
+    "output_structure_points": 1,
+    "response_priority_points": 3,
+    "scoring_notes": {
+      "full_credit": "Answer identifies earthquake-triggered glacier calving into Tasman Lake, assigns localized lake-iceberg operations as the priority, includes the main trigger/intensity and context anchors, and avoids unsupported loss or image-footprint claims.",
+      "minimal_credit": "Give minimal credit to rainfall, heat, fire, or broad population-exposure framings unless they are clearly rejected in favor of the glacier-lake chain.",
+      "partial_credit": "Give partial credit for generic glacier-calving answers that miss the earthquake trigger or for correct mechanism answers with weak operational priority."
+    },
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "response_priority_compound_cryosphere_impact_chain",
+  "supporting_context": {
+    "competing_signal_flags": {
+      "broad_population_emergency_signal": false,
+      "rainfall_competing_signal": false
+    },
+    "event_window": {
+      "end_date": "2011-03-02",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2011-02-22"
+    },
+    "image_scene_counts": {
+      "post_count_primary_change_summary": 0,
+      "post_count_secondary_change_summary": 0,
+      "pre_count_primary_change_summary": 0,
+      "pre_count_secondary_change_summary": 0
+    },
+    "text_claim_flags": {
+      "final_pulse_of_energy": true,
+      "icebergs": true,
+      "tasman_lake": true,
+      "terminus_or_retreat_context": true
+    }
+  },
+  "task_id": "CSX-318_Q1",
+  "task_type": "short_answer"
+}

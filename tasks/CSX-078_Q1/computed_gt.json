@@ -1,0 +1,168 @@
+{
+  "answer_guidance": {
+    "answer": "localized_arbaat_dam_cascade_supported",
+    "structured_answer": {
+      "answer": "localized_arbaat_dam_cascade_supported",
+      "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+      "computed_evidence": {
+        "component_evidence_scores": {
+          "dam_impact_record": 3,
+          "duration_window": 2,
+          "image_change_context": 1,
+          "rainfall_accumulation": 2
+        },
+        "diagnosis_label": "rainfall_conditioned_dam_impact_chain",
+        "diagnostic_diagnostic_test_result": "passes: total_score >= 6 and dam_impact_record = 3",
+        "event_window_days": 24,
+        "impact_diagnostic_diagnostic_tests_met": 7,
+        "one_sentence_interpretation": "The evidence synthesis supports a rainfall-conditioned dam-impact chain: the long wet window and accumulated rainfall set the flood context, while the report-count diagnostic gates make the dam-linked impact path decisive.",
+        "rainfall_anchors_mm": {
+          "chirps_max": 103.777,
+          "chirps_mean": 88.433,
+          "gpm_max": 124.095,
+          "gpm_mean": 89.272
+        },
+        "total_evidence_score": 8
+      },
+      "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+      "mechanism_chain": [
+        "storm or rainfall loading",
+        "dam-area pathway or storage release",
+        "downstream flood-wave amplification",
+        "regional-rainfall-only rejection"
+      ],
+      "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+      "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Arbaat Dam Cascading Flood Mechanism Diagnosis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-078",
+  "key_values": {
+    "decision_rule": "answer is rainfall_conditioned_dam_impact_chain when total_score >= 6 and dam_impact_record = 3",
+    "event_window": {
+      "days": 24,
+      "end_date": "2024-09-05",
+      "start_date": "2024-08-13"
+    },
+    "impact_counts": {
+      "collapsed_borehole_wells": 84,
+      "fatalities_at_least": 30,
+      "missing_livestock_over": 10000,
+      "schools_damaged_or_destroyed": 70,
+      "severely_affected_people": 50000,
+      "villages_destroyed": 20,
+      "villages_impacted": 70
+    },
+    "impact_tests": {
+      "collapsed_borehole_wells_ge_50": true,
+      "fatalities_at_least_ge_25": true,
+      "missing_livestock_over_ge_10000": true,
+      "schools_damaged_or_destroyed_ge_50": true,
+      "severely_affected_people_ge_40000": true,
+      "villages_destroyed_ge_10": true,
+      "villages_impacted_ge_50": true
+    },
+    "radar_context": {
+      "abs_change_max_db": 0.5,
+      "mean_vv_post_minus_pre_db": 0.115,
+      "post_count": 5,
+      "pre_count": 5
+    },
+    "rainfall_rule": {
+      "gpm_max_min_mm": 100,
+      "gpm_mean_min_mm": 75,
+      "mean_crosscheck_max_abs_diff_mm": 10,
+      "observed_mean_abs_diff_mm": 0.839
+    }
+  },
+  "primary_gt": {
+    "answer": "localized_arbaat_dam_cascade_supported",
+    "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+    "computed_evidence": {
+      "component_evidence_scores": {
+        "dam_impact_record": 3,
+        "duration_window": 2,
+        "image_change_context": 1,
+        "rainfall_accumulation": 2
+      },
+      "diagnosis_label": "rainfall_conditioned_dam_impact_chain",
+      "diagnostic_diagnostic_test_result": "passes: total_score >= 6 and dam_impact_record = 3",
+      "event_window_days": 24,
+      "impact_diagnostic_diagnostic_tests_met": 7,
+      "one_sentence_interpretation": "The evidence synthesis supports a rainfall-conditioned dam-impact chain: the long wet window and accumulated rainfall set the flood context, while the report-count diagnostic gates make the dam-linked impact path decisive.",
+      "rainfall_anchors_mm": {
+        "chirps_max": 103.777,
+        "chirps_mean": 88.433,
+        "gpm_max": 124.095,
+        "gpm_mean": 89.272
+      },
+      "total_evidence_score": 8
+    },
+    "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+    "mechanism_chain": [
+      "storm or rainfall loading",
+      "dam-area pathway or storage release",
+      "downstream flood-wave amplification",
+      "regional-rainfall-only rejection"
+    ],
+    "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+    "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+      "data/other/other_001_UN_Geneva_OCHA_-_Flooding_from_Sudan_dam_collapse_worsens_humanitarian_crisis.html",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 4
+      },
+      {
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values.",
+        "name": "computed_evidence",
+        "points": 5
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 4
+      },
+      {
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "dam_area_cascading_flood_mechanism_diagnosis",
+  "task_id": "CSX-078_Q1",
+  "task_type": "structured_reasoning"
+}

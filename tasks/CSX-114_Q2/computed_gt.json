@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-114_Q2",
+  "event_id": "CSX-114",
+  "target_family": "gonu_muscat_land_stage_numeric_consistency_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "consistent_local_land_stage_not_offshore_core",
+    "expected_rows": [
+      "rainfall_concentration",
+      "wind_pressure_signature",
+      "official_local_contrast",
+      "precip_product_contrast",
+      "receptor_density_check"
+    ],
+    "metrics": {
+      "event_precip_mm": 170.2,
+      "wettest24_event_ratio": 0.9,
+      "wettest72_event_ratio": 1.0,
+      "heavy_hours_ge_5mm": 12,
+      "peak_hourly_precip_mm": 15.7,
+      "peak_gust_kmh": 109.1,
+      "peak_wind_kmh": 53.0,
+      "gust_to_wind_ratio": 2.06,
+      "min_pressure_hpa": 991.8,
+      "pressure_fall_hpa": 14.6,
+      "gust_hours_ge_75kmh": 17,
+      "gust_hours_ge_100kmh": 4,
+      "official_wind_to_local_gust_ratio": 2.16,
+      "openmeteo_to_nasa_event_precip_ratio": 2.45,
+      "local_precip_to_official_coastal_max_ratio": 0.28,
+      "gpm_to_chirps_max_ratio": 1.42,
+      "buildings_per_1000_people": 92.0
+    },
+    "failed_label": "offshore_core_equivalent_local_point",
+    "tolerances": {
+      "mm": 0.2,
+      "kmh": 0.2,
+      "hpa": 0.2,
+      "ratios": 0.02,
+      "counts": 0
+    }
+  },
+  "key_values": {
+    "official": {
+      "official_peak_wind_kt": 127,
+      "official_peak_wind_kmh": 235.2,
+      "official_min_pressure_hpa": 920,
+      "official_coastal_rainfall_max_mm": 610,
+      "official_muscat_wind_kmh": 100
+    },
+    "local": {
+      "event_precip_mm": 170.2,
+      "wettest_24h_mm": 152.6,
+      "wettest_72h_mm": 170.2,
+      "peak_hourly_precip_mm": 15.7,
+      "heavy_precip_hours_ge_5mm": 12,
+      "peak_gust_kmh": 109.1,
+      "peak_wind_kmh": 53.0,
+      "min_pressure_hpa": 991.8,
+      "pressure_fall_hpa": 14.6,
+      "gust_hours_ge_75kmh": 17,
+      "gust_hours_ge_100kmh": 4
+    },
+    "daily": {
+      "event_precip_mm": 69.54,
+      "peak_daily_precip_mm": 50.68,
+      "peak_daily_precip_date": "20070606"
+    },
+    "area_precipitation": {
+      "era5_max_mean_mm": [
+        46.62,
+        40.26
+      ],
+      "gpm_max_mean_mm": [
+        84.43,
+        53.43
+      ],
+      "chirps_max_mean_mm": [
+        59.54,
+        45.48
+      ],
+      "gpm_to_chirps_max_ratio": 1.42
+    },
+    "receptor": {
+      "population": 10576,
+      "osm_total_elements": 1000,
+      "osm_buildings": 973,
+      "osm_roads": 20,
+      "osm_schools": 4,
+      "buildings_per_1000_people": 92.0
+    },
+    "derived": {
+      "wettest24_event_ratio": 0.9,
+      "wettest72_event_ratio": 1.0,
+      "gust_to_wind_ratio": 2.06,
+      "official_wind_to_local_gust_ratio": 2.16,
+      "openmeteo_to_nasa_event_precip_ratio": 2.45,
+      "local_precip_to_official_coastal_max_ratio": 0.28,
+      "gpm_to_chirps_max_ratio": 1.42,
+      "buildings_per_1000_people": 92.0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON ledger",
+        "points": 3,
+        "description": "Returns the target family, all five row IDs, formulas, computed values, final_label, and failed_label.",
+        "partial_credit": "Award 1-2 points if most rows are present but formulas, values, or one final label are missing."
+      },
+      {
+        "name": "Rainfall concentration row",
+        "points": 4,
+        "description": "Computes 170.2 mm event precipitation, 152.6 mm wettest 24-hour precipitation, ratios 0.90 and 1.00, 12 heavy-precipitation hours, and 15.7 mm peak hourly precipitation.",
+        "partial_credit": "Award up to 3 points for mostly correct values with minor rounding or one missing metric."
+      },
+      {
+        "name": "Wind-pressure row",
+        "points": 4,
+        "description": "Reports 109.1 km/h peak gust, 53.0 km/h peak wind, ratio 2.06, 991.8 hPa minimum pressure, 14.6 hPa pressure fall, and 17/4 gust-threshold hours.",
+        "partial_credit": "Award up to 3 points for mostly correct values with one or two omissions."
+      },
+      {
+        "name": "Official-local contrast",
+        "points": 3,
+        "description": "Uses 127 kt, 235.2 km/h, 920 hPa, 610 mm, 100 km/h Muscat wind, and official/local gust ratio 2.16 to separate the official cyclone peak from the local point.",
+        "partial_credit": "Award 1-2 points for correct official values with weak contrast logic."
+      },
+      {
+        "name": "Precipitation product contrast",
+        "points": 3,
+        "description": "Compares Open-Meteo 170.2 mm, NASA 69.54 mm, NASA peak 50.68 mm on 20070606, ERA5 46.62/40.26, GPM 84.43/53.43, CHIRPS 59.54/45.48, and ratios 2.45, 0.28, and 1.42.",
+        "partial_credit": "Award 1-2 points for a partial product comparison or missing ratios."
+      },
+      {
+        "name": "Receptor density check",
+        "points": 3,
+        "description": "Reports population 10576, 1000 OSM elements, 973 buildings, 20 roads, 4 schools, and 92.0 buildings per 1000 people without turning counts into damage totals.",
+        "partial_credit": "Award 1-2 points for correct receptor counts without the density calculation or with an overextended damage claim."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are regenerated from local Cyclone Gonu data files.",
+    "source_files": [
+      "data/event_reports/event_reports_006_IMD_RSMC_New_Delhi_Cyclone_Gonu_PDF.pdf",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_A\u004fI_slice.json"
+    ]
+  }
+}

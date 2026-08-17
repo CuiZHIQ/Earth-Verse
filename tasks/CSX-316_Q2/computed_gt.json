@@ -1,0 +1,166 @@
+{
+  "decision_rule": {
+    "formula": "KSCI = span_score_0_4 + weather_window_score_0_2 + weather_contrast_score_0_1 + scene_pair_score_0_3",
+    "pixel_thresholds": {
+      "black_pixel": "R <= 5 and G <= 5 and B <= 5",
+      "bright_pixel": "R >= 200 and G >= 200 and B >= 200",
+      "percentages": "100 * matching_pixels / all RGB pixels, rounded to four decimals"
+    },
+    "thresholds": {
+      "pass_label": "long_window_retreat_consistency_pass if KSCI >= 9 and span_gate and scene_pair_gate pass",
+      "scene_pair_score_0_3": "3 if pre_black_pct >= 99 and formal_no_scene_pairs == 2, else 0",
+      "span_score_0_4": "4 if event_span_years >= 15, else 0",
+      "weather_contrast_score_0_1": "1 if precip_max_mean_ratio < 3 and temp_peak_minus_mean_c < 6, else 0",
+      "weather_window_score_0_2": "2 if met_fraction <= 0.01, else 0"
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2000-02-21 to 2020-02-21",
+    "event_name": "Kilimanjaro ice-field retreat",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "package_id": "CSX-316"
+  },
+  "event_id": "CSX-316",
+  "key_values": {
+    "event_window": {
+      "end": "2020-02-21",
+      "start": "2000-02-21"
+    },
+    "formal_statuses": {
+      "optical": "no_sufficient_scenes",
+      "radar": "no_sufficient_scenes"
+    },
+    "met_window": {
+      "end": "2000-04-06",
+      "start": "2000-02-21"
+    },
+    "metrics": {
+      "event_bright_pct": 82.6421,
+      "event_span_days": 7305,
+      "event_span_years": 20.0,
+      "formal_no_scene_pairs": 2,
+      "met_fraction": 0.006297,
+      "met_window_days": 46,
+      "pre_black_pct": 100.0,
+      "precip_max_mean_ratio": 2.8095,
+      "temp_peak_minus_mean_c": 5.2011
+    }
+  },
+  "numeric_tolerances": {
+    "event_bright_pct": 0.0001,
+    "event_span_days": 0,
+    "event_span_years": 0.01,
+    "formal_no_scene_pairs": 0,
+    "ksci_0_10": 0,
+    "met_fraction": 1e-06,
+    "met_window_days": 0,
+    "pre_black_pct": 0.0001,
+    "precip_max_mean_ratio": 0.0001,
+    "temp_peak_minus_mean_c": 0.0001
+  },
+  "primary_gt": {
+    "answer": "long_window_retreat_consistency_pass",
+    "computed_consequence": "short_weather_single_scene_counterweights_fail",
+    "gates": {
+      "scene_pair_gate": true,
+      "span_gate": true,
+      "weather_contrast_gate": true,
+      "weather_window_gate": true
+    },
+    "ksci_0_10": 10,
+    "metrics": {
+      "event_bright_pct": 82.6421,
+      "event_span_days": 7305,
+      "event_span_years": 20.0,
+      "formal_no_scene_pairs": 2,
+      "met_fraction": 0.006297,
+      "met_window_days": 46,
+      "pre_black_pct": 100.0,
+      "precip_max_mean_ratio": 2.8095,
+      "temp_peak_minus_mean_c": 5.2011
+    },
+    "pixel_thresholds": {
+      "black_pixel": "R <= 5 and G <= 5 and B <= 5 after RGB conversion",
+      "bright_pixel": "R >= 200 and G >= 200 and B >= 200 after RGB conversion",
+      "percentage_denominator": "all RGB pixels in the preview image"
+    },
+    "target_family": "kilimanjaro_retreat_window_scene_consistency_index",
+    "tolerances": {
+      "event_bright_pct": 0.0001,
+      "event_span_days": 0,
+      "event_span_years": 0.01,
+      "formal_no_scene_pairs": 0,
+      "ksci_0_10": 0,
+      "met_fraction": 1e-06,
+      "met_window_days": 0,
+      "pre_black_pct": 0.0001,
+      "precip_max_mean_ratio": 0.0001,
+      "temp_peak_minus_mean_c": 0.0001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Kilimanjaro_ice-field_retreat.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_005_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with numeric values in the expected units and the final label.",
+        "name": "Requested JSON form",
+        "partial_credit": "Award 1-2 points if the JSON is parseable but omits one or two requested fields.",
+        "points": 3
+      },
+      {
+        "description": "Computes 7305 span days, 20.0 span years, 46 regional-summary days, and 0.006297 window fraction.",
+        "name": "Window calculations",
+        "partial_credit": "Award 1 point each for span days, span years, regional-summary days, and fraction.",
+        "points": 4
+      },
+      {
+        "description": "Computes precipitation max/mean ratio as 2.8095 and maximum-temperature contrast as 5.2011 C.",
+        "name": "Weather contrast calculations",
+        "partial_credit": "Award 2 points for each correct contrast value within tolerance.",
+        "points": 4
+      },
+      {
+        "description": "Uses the stated RGB pixel thresholds to report 100.0 percent pre-scene black pixels, 82.6421 percent event-scene bright pixels, and two no-sufficient-scene statuses.",
+        "name": "Scene-pair checks",
+        "partial_credit": "Award 1 point for pre-scene black percent, 1 point for event-scene bright percent, and 2 points for the two scene-pair statuses.",
+        "points": 4
+      },
+      {
+        "description": "Applies all four gates, computes KSCI as 10, and returns long_window_retreat_consistency_pass.",
+        "name": "Index gates and label",
+        "partial_credit": "Award 1 point for gates, 1 point for KSCI, and 1 point for the label.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the consequence short and tied to the computed gates.",
+        "name": "Computed consequence",
+        "partial_credit": "Award 0.5 points for a consequence that is directionally correct but too verbose.",
+        "points": 1
+      },
+      {
+        "description": "Does not convert single-scene brightness or mapped counts into measured area or affected-population totals.",
+        "name": "No extra inference",
+        "partial_credit": "No partial credit.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "kilimanjaro_retreat_window_scene_consistency_index",
+  "task_id": "CSX-316_Q2",
+  "task_type": "numeric"
+}

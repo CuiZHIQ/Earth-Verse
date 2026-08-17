@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-145_Q1",
+  "event_id": "CSX-145",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "formula_derivation_consistency_proof",
+  "primary_gt": {
+    "answer": "compound_wind_rain_impact_chain_not_compact_weather_layer",
+    "event_window_days": 7,
+    "unit_checks": {
+      "wind_kmh_from_133_mph": 214.04,
+      "wind_difference_kmh": 1.04,
+      "rain_mm_from_25_cm": 250.0,
+      "rain_difference_mm_between_25cm_and_10in": 4.0
+    },
+    "hazard_contrasts": {
+      "reported_wind_unit_pair_ratio": 1.0,
+      "rain_unit_pair_ratio": 0.98,
+      "regional_to_gridded_peak_rainfall_ratio": 3.86,
+      "gridded_rain_max_ratio": 1.47
+    },
+    "impact_ratios": {
+      "evacuees_per_death_report_threshold": 279.33,
+      "houses_per_death_report_threshold": 265.36
+    },
+    "consistency_tests": {
+      "unit_pairs_consistent": true,
+      "compact_weather_layer_passes": false,
+      "single_layer_diagnosis_passes": false
+    },
+    "conclusion": "The unit pairs are internally consistent, but the regional-to-gridded rainfall scale contrast and impact-threshold ratios reject a single compact weather-layer diagnosis."
+  },
+  "numeric_tolerances": {
+    "ratios_abs": 0.05,
+    "unit_values_abs": 0.05
+  },
+  "answer_schema": {
+    "required_top_level_fields": [
+      "answer",
+      "event_window_days",
+      "unit_checks",
+      "hazard_contrasts",
+      "impact_ratios",
+      "consistency_tests",
+      "conclusion"
+    ],
+    "rounding": "Ratios and derived unit values should be rounded to two decimals."
+  },
+  "event": {
+    "event_id": "CSX-145",
+    "event_name": "Super Typhoon Yagi severe wind and rainfall impacts",
+    "hazard_family": "tropical_cyclone_typhoon",
+    "metadata_hazard_family_raw": "extratropical_storm_severe_convection",
+    "event_date_or_window": "2024-09-01 to 2024-09-07"
+  },
+  "decision_rule": {
+    "unit_pairs_consistent": "wind difference <= 2 km/h and rain-unit difference <= 5 mm",
+    "compact_weather_layer_passes": "regional-to-gridded peak rainfall ratio <= 3 and both impact threshold ratios are below 50",
+    "single_layer_diagnosis_passes": "unit pairs are consistent and compact_weather_layer_passes is true",
+    "expected_result": "unit pairs pass; compact weather-layer and single-layer diagnosis fail"
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2024-09-01",
+      "end_date": "2024-09-07",
+      "inclusive_days": 7
+    },
+    "report_values": {
+      "reported_landfall_wind_kmh": 213.0,
+      "reported_landfall_wind_mph": 133.0,
+      "evacuated_people_threshold": 50000.0,
+      "deaths_threshold": 179.0,
+      "damaged_or_destroyed_houses_threshold": 47500.0,
+      "regional_rain_inches": 10.0,
+      "regional_rain_cm": 25.0,
+      "noaa_sustained_wind_mph": 125.0,
+      "wind_kmh_from_133_mph": 214.04,
+      "rain_mm_from_25_cm": 250.0,
+      "rain_mm_from_10_inches": 254.0,
+      "noaa_sustained_wind_kmh": 201.17
+    },
+    "regional_precipitation": {
+      "gpm_event_precip_mm_max": 44.05,
+      "chirps_event_precip_mm_max": 64.77
+    },
+    "unit_checks": {
+      "wind_kmh_from_133_mph": 214.04,
+      "wind_difference_kmh": 1.04,
+      "rain_mm_from_25_cm": 250.0,
+      "rain_difference_mm_between_25cm_and_10in": 4.0
+    },
+    "hazard_contrasts": {
+      "reported_wind_unit_pair_ratio": 1.0,
+      "rain_unit_pair_ratio": 0.98,
+      "regional_to_gridded_peak_rainfall_ratio": 3.86,
+      "gridded_rain_max_ratio": 1.47
+    },
+    "impact_ratios": {
+      "evacuees_per_death_report_threshold": 279.33,
+      "houses_per_death_report_threshold": 265.36
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON answer structure",
+        "points": 4,
+        "description": "Includes the answer label, 7-day window, unit checks, hazard contrasts, impact ratios, consistency tests, and a concise conclusion.",
+        "partial_credit": "2-3 points if one or two required fields are missing; 1 point if the answer is prose only but contains most values."
+      },
+      {
+        "name": "Unit conversion checks",
+        "points": 5,
+        "description": "Computes 214.04 km/h, 1.04 km/h wind difference, 250.0 mm rainfall from 25 cm, 4.0 mm rain-unit difference, and unit_pairs_consistent = true.",
+        "partial_credit": "3-4 points for one arithmetic or rounding error; 1-2 points for correct formulas with multiple incorrect values."
+      },
+      {
+        "name": "Hazard contrast calculations",
+        "points": 4,
+        "description": "Uses the report unit-pair ratios, regional-to-gridded peak rainfall ratio, and 1.47 gridded precipitation max ratio without relying on off-event local point weather.",
+        "partial_credit": "2-3 points if one contrast is wrong; 1 point if ratios are attempted but use the wrong source family."
+      },
+      {
+        "name": "Impact threshold ledger",
+        "points": 3,
+        "description": "Computes 279.33 and 265.36 while treating the report values as thresholds, not exact final loss rates.",
+        "partial_credit": "2 points for one correct ratio; 1 point for the right division setup with incorrect arithmetic."
+      },
+      {
+        "name": "Decision-rule application",
+        "points": 2,
+        "description": "Correctly marks the compact weather-layer test and single-layer diagnosis as failing the stated tests.",
+        "partial_credit": "1 point if only one of the two pass/fail states is correct."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Uses a compact compound wind-rain-impact interpretation tied to the calculated ledger.",
+        "partial_credit": "0.5 points if the interpretation is directionally right but not tied to the ledger."
+      },
+      {
+        "name": "Overstatement control",
+        "points": 1,
+        "description": "Avoids exact-loss overstatement, broad event narration, and extra instructions beyond the computed ledger.",
+        "partial_credit": "0.5 points if the answer has minor extra prose but does not change the conclusion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Super_Typhoon_Yagi_severe_wind_and_rainfall_impacts.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NOAA_NESDIS.html",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": [
+      "Off-event Open-Meteo and NASA POWER point-weather fills were removed from the official calculation.",
+      "The ledger uses report unit checks, declared package-relative gridded precipitation summaries, and report impact thresholds."
+    ]
+  }
+}

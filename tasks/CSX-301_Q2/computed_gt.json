@@ -1,0 +1,144 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-301",
+  "key_values": {
+    "dry_windy_day_dates": [
+      "2021-03-15",
+      "2021-03-16"
+    ],
+    "dry_windy_days": 2,
+    "dust_mobility_wetness_index": 6.5,
+    "mean_annual_embedding_change": 0.026,
+    "mean_precip_candidates_mm": {
+      "chirps_aoi_mean_mm": 0.785,
+      "era5_land_aoi_mean_mm": 1.659,
+      "gpm_imerg_aoi_mean_mm": 1.274,
+      "open_meteo_point_total_mm": 2.4,
+      "power_point_total_mm": 2.12
+    },
+    "peak_wind_date": "2021-03-15",
+    "peak_wind_kmh": 22.1,
+    "peak_wind_source": "Open-Meteo daily point sample",
+    "wettest_mean_precip_mm": 2.4,
+    "wettest_mean_source": "open_meteo_point_total_mm"
+  },
+  "primary_gt": {
+    "answer": "high_dust_mobility_low_wet_removal",
+    "answer_type": "structured_numeric_json_with_expert_reasoning",
+    "dry_windy_days": 2,
+    "forbidden_claims": [
+      "rainfall-driven washout is the dominant event-window mechanism",
+      "the index directly measures PM concentration or exact visibility",
+      "the point wind is the regional maximum wind for the entire dust storm"
+    ],
+    "index": 6.5,
+    "numeric_tolerances": {
+      "dry_windy_days": 0,
+      "index": 0.1,
+      "peak_wind_kmh": 0.1,
+      "wettest_mean_precip_mm": 0.1
+    },
+    "peak_wind_kmh": 22.1,
+    "required_claims": [
+      "index indicates high dust mobility with limited wet removal",
+      "two dry windy days support continued dust transport during the short event window",
+      "annual embedding change should not be interpreted as direct dust concentration or structural damage"
+    ],
+    "wettest_mean_precip_mm": 2.4
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns high_dust_mobility_low_wet_removal or an equivalent compact interpretation.",
+        "name": "Interpretation label",
+        "partial_credit": "1-2 points for identifying dust mobility but missing limited wet removal or using an imprecise label.",
+        "points": 3
+      },
+      {
+        "description": "Computes the index near 6.5 from 22.1 divided by 1 plus 2.4.",
+        "name": "Index calculation",
+        "partial_credit": "1-3 points for using the correct formula but with one incorrect input or rounding issue.",
+        "points": 4
+      },
+      {
+        "description": "Reports peak wind near 22.1 km/h and uses it as the numerator of the index.",
+        "name": "Peak wind term",
+        "partial_credit": "1-2 points for reporting the wind but not clearly using it in the formula.",
+        "points": 3
+      },
+      {
+        "description": "Reports the wettest precipitation candidate near 2.4 mm and explains its low wet-removal implication.",
+        "name": "Wetness denominator",
+        "partial_credit": "1-2 points for reporting a precipitation value but not connecting it to washout.",
+        "points": 3
+      },
+      {
+        "description": "Counts two dry windy days using wind at least 18 km/h and precipitation at most 1 mm.",
+        "name": "Dry windy day count",
+        "partial_credit": "1 point for applying only one of the two thresholds or giving an off-by-one count.",
+        "points": 2
+      },
+      {
+        "description": "Connects the index result to dust transport and limited wet removal rather than hydrologic washout.",
+        "name": "Physical diagnosis",
+        "partial_credit": "1 point for naming dust transport without contrasting it with wet removal.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported claims about PM concentration, exact visibility, confirmed direct impacts, structural land-cover damage, or regional maximum winds.",
+        "name": "Boundary of inference",
+        "partial_credit": "1-2 points for avoiding most overclaims but still overstating one metric.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "classification_thresholds": {
+      "annual_embedding_change_maximum": 0.05,
+      "dry_windy_day_precip_maximum_mm": 1.0,
+      "dry_windy_day_wind_minimum_kmh": 18.0,
+      "high_index_minimum": 5.0
+    },
+    "computed_metrics": {
+      "dry_windy_day_dates": [
+        "2021-03-15",
+        "2021-03-16"
+      ],
+      "dry_windy_days": 2,
+      "dust_mobility_wetness_index": 6.5,
+      "mean_annual_embedding_change": 0.026,
+      "mean_precip_candidates_mm": {
+        "chirps_aoi_mean_mm": 0.785,
+        "era5_land_aoi_mean_mm": 1.659,
+        "gpm_imerg_aoi_mean_mm": 1.274,
+        "open_meteo_point_total_mm": 2.4,
+        "power_point_total_mm": 2.12
+      },
+      "peak_wind_date": "2021-03-15",
+      "peak_wind_kmh": 22.1,
+      "peak_wind_source": "Open-Meteo daily point sample",
+      "wettest_mean_precip_mm": 2.4,
+      "wettest_mean_source": "open_meteo_point_total_mm"
+    },
+    "event_name": "March 2021 East Asia dust storm",
+    "hazard_family": "dust_sandstorm_extreme",
+    "hazard_label": "Extreme dust or sandstorm",
+    "index_rule": "peak_wind_kmh / (1 + wettest_event_mean_precip_mm)"
+  },
+  "task_id": "CSX-301_Q2",
+  "task_type": "short_answer"
+}

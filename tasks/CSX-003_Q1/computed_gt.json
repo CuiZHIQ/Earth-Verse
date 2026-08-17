@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-003_Q1",
+  "event_id": "CSX-003",
+  "task_type": "short_answer",
+  "target_family": "evidence_sufficiency_ruling",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "evidence_sufficiency_ruling",
+    "ruling": "partially_supported",
+    "supported_evidence_roles": [
+      "event_window",
+      "heat_timing",
+      "drought_low_water_context"
+    ],
+    "insufficient_basis": "direct_late_august_drought_metric_from_precipitation_summaries",
+    "tolerances": "Exact dates and paths; 0.1 C for temperature; 0.01 for precipitation ratio; 0.01 mm for difference."
+  },
+  "key_values": {
+    "event_start": "2022-06-01",
+    "event_end": "2022-08-31",
+    "expected_days": 92,
+    "daily_records_in_window": 92,
+    "peak_apparent_temperature_c": 44.0,
+    "peak_apparent_temperature_date": "2022-08-20",
+    "compound_heat_run_start": "2022-08-12",
+    "compound_heat_run_end": "2022-08-22",
+    "compound_heat_run_days": 11,
+    "precipitation_summary_end": "2022-07-16",
+    "precipitation_to_heat_peak_gap_days": 35,
+    "gpm_mean_mm": 457.495,
+    "chirps_mean_mm": 371.964,
+    "gpm_minus_chirps_mm": 85.53,
+    "gpm_chirps_ratio": 1.23
+  },
+  "expected_output": {
+    "answer_type": "evidence_sufficiency_ruling",
+    "ruling": "partially_supported",
+    "claim_ruling": {
+      "supported_part": "The package supports late-August heat timing and report-based Poyang Lake drought or low-water context.",
+      "insufficient_part": "The package precipitation accumulations are not sufficient as a direct late-August drought measurement for the heat peak."
+    },
+    "selected_evidence": {
+      "event_window": {
+        "path": "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+        "start": "2022-06-01",
+        "end": "2022-08-31",
+        "expected_days": 92
+      },
+      "heat_timing": {
+        "path": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+        "daily_records_in_window": 92,
+        "peak_apparent_temperature_c": 44.0,
+        "peak_apparent_temperature_date": "2022-08-20",
+        "compound_heat_run": {
+          "start": "2022-08-12",
+          "end": "2022-08-22",
+          "days": 11,
+          "rule": "Tmax >=35 C, apparent >=40 C, Tmin >=28 C"
+        }
+      },
+      "drought_low_water_context": {
+        "path": "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+        "evidence_role": "direct_report_context",
+        "matched_terms": [
+          "Prolonged heat and drought",
+          "Poyang Lake",
+          "largest freshwater lake",
+          "water levels"
+        ]
+      }
+    },
+    "calculation_check": {
+      "precipitation_summary_window": {
+        "era5": [
+          "2022-06-01",
+          "2022-07-16"
+        ],
+        "gpm": [
+          "2022-06-01",
+          "2022-07-16"
+        ],
+        "chirps": [
+          "2022-06-01",
+          "2022-07-16"
+        ]
+      },
+      "precipitation_to_heat_peak_gap_days": 35,
+      "precipitation_product_conflict": {
+        "gpm_mean_mm": 457.495,
+        "chirps_mean_mm": 371.964,
+        "difference_mm": 85.53,
+        "ratio": 1.23
+      }
+    },
+    "insufficient_alternatives": [
+      {
+        "basis": "Use ERA5, GPM, or CHIRPS precipitation accumulations as a direct late-August drought metric.",
+        "paths": [
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "reason_code": "wrong_window",
+        "numeric_or_path_reason": "The latest precipitation summary ends 2022-07-16, 35 days before the 2022-08-20 apparent-temperature peak."
+      },
+      {
+        "basis": "Select one gridded precipitation product as the precise event drought amount.",
+        "paths": [
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "reason_code": "product_conflict",
+        "numeric_or_path_reason": "GPM mean 457.495 mm versus CHIRPS mean 371.964 mm; difference 85.53 mm and ratio 1.23."
+      },
+      {
+        "basis": "Use Sentinel-2 dNBR as the direct heat-drought evidence.",
+        "paths": [
+          "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+        ],
+        "reason_code": "wrong_measurement_type",
+        "numeric_or_path_reason": "The file reports Sentinel-2 dNBR burn-index statistics over 2022-06-01 to 2022-08-30, not daily heat timing or precipitation."
+      }
+    ],
+    "minimal_required_paths": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "final_assessment": "Rule partially supported: use Open-Meteo for late-August heat timing and the NASA report for drought or low-water context, but do not use the early-window precipitation summaries as the direct late-August drought metric."
+  },
+  "numeric_tolerances": {
+    "temperature_c": 0.1,
+    "precip_mm": 0.01,
+    "precip_ratio": 0.01,
+    "day_counts": 0,
+    "dates": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "schema_and_ruling",
+        "points": 3,
+        "description": "Returns the required JSON schema with answer_type evidence_sufficiency_ruling and ruling partially_supported."
+      },
+      {
+        "name": "event_window_and_heat_calculation",
+        "points": 4,
+        "description": "Uses the locked 2022-06-01 to 2022-08-31 event window, 92 daily records, the 44.0 C apparent-temperature peak on 2022-08-20, and the 11-day compound heat run from 2022-08-12 to 2022-08-22."
+      },
+      {
+        "name": "direct_report_context",
+        "points": 3,
+        "description": "Uses the NASA Poyang Lake report as direct drought/low-water context and identifies matched terms such as Prolonged heat and drought, Poyang Lake, largest freshwater lake, and water levels."
+      },
+      {
+        "name": "precipitation_window_boundary",
+        "points": 3,
+        "description": "Shows ERA5, GPM, and CHIRPS summary windows end on 2022-07-16, 35 days before the 2022-08-20 heat peak."
+      },
+      {
+        "name": "precipitation_product_conflict",
+        "points": 2,
+        "description": "Computes GPM mean 457.495 mm, CHIRPS mean 371.964 mm, difference 85.53 mm, and ratio 1.23."
+      },
+      {
+        "name": "insufficient_alternative_reasoning",
+        "points": 3,
+        "description": "Rejects or marks insufficient the tempting precipitation basis and at least one weak alternative source with package-relative paths and reason codes."
+      },
+      {
+        "name": "package_local_evidence_only",
+        "points": 2,
+        "description": "Uses only package-local evidence and avoids web search, hidden answers, invented values, or broad disaster prose."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+    ],
+    "data_basis": [
+      "locked package event window",
+      "daily heat archive filtered to the event window",
+      "NASA Poyang Lake drought/low-water report context",
+      "precipitation summary window timing",
+      "GPM versus CHIRPS precipitation mean conflict",
+      "weak-source rejection for wrong measurement type"
+    ]
+  }
+}

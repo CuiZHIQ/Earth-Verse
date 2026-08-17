@@ -1,0 +1,131 @@
+{
+  "decision_rule": {
+    "anomaly_gate_min_c": 3.0,
+    "duration_gate_min_ratio": 50.0,
+    "label_when_all_gates_pass": "persistent_record_marine_heatwave",
+    "pass_flags": {
+      "anomaly_gate": true,
+      "coverage_record_gate": true,
+      "duration_gate": true,
+      "mhw_days_record_gate": true,
+      "phase_gate": true
+    },
+    "phase_gate": "ne_may_peak_to_caribbean_autumn",
+    "record_ratio_min": 1.0
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-021",
+  "judge_anchors": {
+    "must_avoid": [
+      "treating the event as a brief SST pulse",
+      "assigning sole cause to ENSO",
+      "using land-exposure layers as the main proof",
+      "adding realized-loss totals not present in the record"
+    ],
+    "must_include": [
+      "duration converted from at least 10 months to about 304 days",
+      "duration ratio tested against the five-day definition",
+      "both record ratios exceed the previous records",
+      "phase timing from north-east May peak to Caribbean by autumn"
+    ]
+  },
+  "key_values": {
+    "category_text": "severe and extreme",
+    "daily_coverage_pct": 32,
+    "definition_min_days": 5,
+    "global_mean_mhw_days": 116,
+    "global_ocean_surface_mhw_pct": 94,
+    "min_days_from_months": 304,
+    "previous_daily_coverage_pct": 23,
+    "previous_global_mean_mhw_days": 86,
+    "proof_sentence_must_link": [
+      "10 months",
+      "60.8 times the five-day definition",
+      "record ratios above 1.0",
+      "3.0 deg C anomaly"
+    ]
+  },
+  "primary_gt": {
+    "coverage_record_ratio": 1.39,
+    "duration_ratio": 60.8,
+    "evidence_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/other/other_004_02_Copernicus_State_of_the_Planet_-_2023_North_Atlantic_tropical_marine_heatwave.html.html",
+      "data/other/other_005_03_NOAA_Climate.html.html"
+    ],
+    "final_label": "persistent_record_marine_heatwave",
+    "max_sst_anomaly_c": 3.0,
+    "mhw_days_record_ratio": 1.35,
+    "mhw_min_months": 10,
+    "phase_code": "ne_may_peak_to_caribbean_autumn",
+    "proof_sentence": "The diagnosis passes because the North Atlantic persistence is 10 months, about 60.8 times the five-day MHW definition, both record ratios exceed 1.0, the anomaly reaches about 3.0 deg C, and the basin phase evolves from a north-east May peak to Caribbean conditions by autumn."
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/other/other_004_02_Copernicus_State_of_the_Planet_-_2023_North_Atlantic_tropical_marine_heatwave.html.html",
+      "data/other/other_005_03_NOAA_Climate.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON shape and gives the persistent-record marine heatwave label.",
+        "name": "final_json_and_label",
+        "partial_credit": "Give partial credit for a close label with minor field naming errors.",
+        "points": 3
+      },
+      {
+        "description": "Extracts 10 months and computes round(10 * 365 / 12) / 5 = 60.8.",
+        "name": "duration_formula",
+        "partial_credit": "Give partial credit for the correct months or formula with a rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Computes 32 / 23 = 1.39 and 116 / 86 = 1.35 with acceptable rounding.",
+        "name": "record_ratios",
+        "partial_credit": "Give partial credit for only one correct ratio or swapped numerator context.",
+        "points": 4
+      },
+      {
+        "description": "Includes the 3.0 deg C anomaly anchor and the north-east May peak to Caribbean autumn phase code.",
+        "name": "anomaly_and_phase",
+        "partial_credit": "Give partial credit for only the anomaly or only the phase timing.",
+        "points": 3
+      },
+      {
+        "description": "Explains why duration, record ratios, anomaly, and phase gates jointly pass.",
+        "name": "gate_logic",
+        "partial_credit": "Give partial credit for a correct pass result with incomplete gate reasoning.",
+        "points": 3
+      },
+      {
+        "description": "Rejects the brief-pulse and sole-ENSO framings through the computed gates.",
+        "name": "weaker_hypotheses",
+        "partial_credit": "Give partial credit for rejecting only one weaker framing.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the proof concise and avoids extra realized-loss totals or action planning.",
+        "name": "concise_bounds",
+        "partial_credit": "No credit if the answer expands into a broad briefing.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "north_atlantic_marine_heatwave_persistence_phase_diagnosis",
+  "task_id": "CSX-021_Q2",
+  "task_type": "short_answer",
+  "tolerances": {
+    "coverage_record_ratio": 0.03,
+    "duration_ratio": 0.2,
+    "max_sst_anomaly_c": 0.2,
+    "mhw_days_record_ratio": 0.03,
+    "mhw_min_months": 0
+  }
+}

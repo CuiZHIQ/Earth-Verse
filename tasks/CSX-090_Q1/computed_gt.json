@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-090_Q1",
+  "event_id": "CSX-090",
+  "target_family": "derna_rainfall_routing_exposure_score_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "rainfall_wadi_dam_exposure_chain",
+    "target_family": "derna_rainfall_routing_exposure_score_ledger",
+    "metrics": {
+      "gpm_max_to_mean": 1.385,
+      "grid_mean_spread_fraction": 1.7196,
+      "power_total_mm": 120.33,
+      "route_dam_markers": 5,
+      "exposed_population_k": 56.113,
+      "building_features": 25,
+      "bridge_features": 6,
+      "destroyed_highway_per_1000_roads": 3.099,
+      "surface_contrast_index": 0.329
+    },
+    "gates": {
+      "rain_load_gate": true,
+      "rain_variability_gate": true,
+      "route_dam_gate": true,
+      "exposure_gate": true,
+      "access_gate": true,
+      "surface_contrast_gate": true
+    },
+    "chain_score": 6,
+    "final_label": "rainfall_wadi_dam_exposure_chain",
+    "computed_consequence": "score_requires_routing_exposure_and_surface_contrast"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 3,
+        "description": "Returns compact JSON with target_family, metrics, gates, chain_score, final_label, and computed_consequence.",
+        "partial_credit": "Award 1-2 points when the response includes the core fields but omits one nested group or uses minor naming differences that do not obscure the score."
+      },
+      {
+        "name": "Precipitation ledger",
+        "points": 4,
+        "description": "Computes gpm_max_to_mean, grid_mean_spread_fraction, and power_total_mm within tolerance.",
+        "partial_credit": "Award about 1 point for each correct precipitation value; lose credit for wrong aggregation windows, missing units, or ratios outside tolerance."
+      },
+      {
+        "name": "Route and dam marker count",
+        "points": 3,
+        "description": "Counts all five specified route/dam report markers.",
+        "partial_credit": "Award 1-2 points for finding at least three route/dam markers; lose credit if the count is based on unrelated narrative details."
+      },
+      {
+        "name": "Exposure and access ledger",
+        "points": 4,
+        "description": "Computes population, building, bridge, and damaged-road metrics within tolerance.",
+        "partial_credit": "Award about 1 point for each correct exposure or access metric; lose credit for confusing damaged highways with all highways or reporting raw population in thousands incorrectly."
+      },
+      {
+        "name": "Surface contrast term",
+        "points": 3,
+        "description": "Computes the radar-range times annual-change index and applies the negative radar-mean condition.",
+        "partial_credit": "Award 1-2 points for the correct radar range or multiplication but not both; lose credit if the negative mean condition is ignored."
+      },
+      {
+        "name": "Gate score and label",
+        "points": 2,
+        "description": "Applies the six gates, returns chain_score of 6, and sets the final label correctly.",
+        "partial_credit": "Award 1 point if the gate count or final label is correct but the other is missing or inconsistent."
+      },
+      {
+        "name": "Bounded consequence",
+        "points": 1,
+        "description": "Keeps the consequence tied to the score without turning exposure counts into casualty counts or exact block-level damage.",
+        "partial_credit": "Award 0.5 points for a mostly bounded consequence with a small overstatement; award 0 for casualty, loss, or impact statements not derived from the ledger."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-090",
+    "event_name": "Storm Daniel Derna flood",
+    "hazard_family": "river_coastal_flood",
+    "event_date_or_window": "2023-09-10 to 2023-09-11"
+  },
+  "decision_rule": {
+    "summary": "Six fixed gates score the rainfall, wadi/dam route, exposure, access, and surface terms.",
+    "formulas": {
+      "gpm_max_to_mean": "high_resolution_event_precip_max_mm / high_resolution_event_precip_mean_mm",
+      "grid_mean_spread_fraction": "(max(gridded_event_precip_means_mm) - min(gridded_event_precip_means_mm)) / mean(gridded_event_precip_means_mm)",
+      "power_total_mm": "sum(two daily point precipitation values)",
+      "destroyed_highway_per_1000_roads": "1000 * destroyed_highway_features / highway_features",
+      "surface_contrast_index": "(radar_vv_change_max_db - radar_vv_change_min_db) * annual_embedding_change_mean"
+    },
+    "thresholds": {
+      "rain_load_gate": "gpm_mean_mm >= 100 and power_total_mm >= 100 and gpm_max_to_mean >= 1.20",
+      "rain_variability_gate": "grid_mean_spread_fraction >= 1.0",
+      "route_dam_gate": "route_dam_markers >= 4",
+      "exposure_gate": "exposed_population_k >= 50 and building_features >= 20",
+      "access_gate": "bridge_features >= 5 and destroyed_highway_per_1000_roads >= 3.0",
+      "surface_contrast_gate": "surface_contrast_index >= 0.25 and radar_vv_change_mean_db < 0",
+      "final_label": "rainfall_wadi_dam_exposure_chain if chain_score >= 5 and route_dam_gate else insufficient_chain_score"
+    }
+  },
+  "key_values": {
+    "precip_means_mm": {
+      "high_resolution": 108.628,
+      "reanalysis": 77.286,
+      "daily_gauge_blend": 1.309
+    },
+    "high_resolution_precip_max_mm": 150.445,
+    "daily_point_precip_mm": {
+      "20230910": 89.81,
+      "20230911": 30.52
+    },
+    "route_terms_present": {
+      "wadi_derna": true,
+      "two_upstream_dams": true,
+      "long_narrow_valley": true,
+      "near_city_dam": true,
+      "flood_wave_height": true
+    },
+    "local_exposure": {
+      "population": 56113.05,
+      "map_elements": 1000,
+      "highway_features": 968,
+      "building_features": 25,
+      "bridge_features": 6,
+      "destroyed_highway_features": 3
+    },
+    "surface_values": {
+      "radar_mean_db": -1.108,
+      "radar_min_db": -10.254,
+      "radar_max_db": 8.505,
+      "annual_change_mean": 0.017515
+    }
+  },
+  "numeric_tolerances": {
+    "gpm_max_to_mean": {
+      "target": 1.385,
+      "absolute_tolerance": 0.001
+    },
+    "grid_mean_spread_fraction": {
+      "target": 1.7196,
+      "absolute_tolerance": 0.0001
+    },
+    "power_total_mm": {
+      "target": 120.33,
+      "absolute_tolerance": 0.01
+    },
+    "exposed_population_k": {
+      "target": 56.113,
+      "absolute_tolerance": 0.001
+    },
+    "destroyed_highway_per_1000_roads": {
+      "target": 3.099,
+      "absolute_tolerance": 0.001
+    },
+    "surface_contrast_index": {
+      "target": 0.329,
+      "absolute_tolerance": 0.001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Storm_Daniel_Derna_flood.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Storm_aftermath_in_Derna_Libya.html",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

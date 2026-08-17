@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-105_Q2",
+  "event_id": "CSX-105",
+  "target_family": "ian_landfall_threshold_window_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "all_five_tests_pass",
+    "target_family": "ian_landfall_threshold_window_ledger",
+    "required_rows": [
+      "wind_pressure_window",
+      "rainfall_concentration_window",
+      "peak_timing_window",
+      "catalog_station_wind_check",
+      "precipitation_product_check"
+    ],
+    "event_window": {
+      "start_date": "2022-09-23",
+      "end_date": "2022-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "final_classification": "all five Ian landfall threshold windows pass",
+    "tolerances": {
+      "kmh": 0.1,
+      "hpa": 0.1,
+      "mm": 0.1,
+      "hours": 0.1,
+      "ratio": 0.005,
+      "kmh2": 1.0
+    }
+  },
+  "key_values": {
+    "answer": "all_five_tests_pass",
+    "event_window": {
+      "start_date": "2022-09-23",
+      "end_date": "2022-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "passed_rows": 5,
+    "ledger_rows": [
+      {
+        "row": "wind_pressure_window",
+        "formula_or_test": "peak_gust_time == min_pressure_time and pressure_fall_24h_hpa >= 40",
+        "values": {
+          "local_peak_gust_kmh": 185.4,
+          "local_peak_gust_time": "2022-09-28T19:00",
+          "local_peak_wind_kmh": 105.7,
+          "local_peak_wind_time": "2022-09-28T18:00",
+          "gust_to_wind_ratio": 1.754,
+          "local_min_pressure_hpa": 966.9,
+          "local_min_pressure_time": "2022-09-28T19:00",
+          "pressure_fall_6h_hpa": 29.5,
+          "pressure_fall_12h_hpa": 35.9,
+          "pressure_fall_24h_hpa": 42.5,
+          "hours_gust_ge_100_kmh": 13,
+          "hours_gust_ge_119_kmh": 10,
+          "hours_wind_ge_63_kmh": 9,
+          "hours_wind_ge_100_kmh": 2
+        },
+        "pass": true,
+        "reason": "Peak gust and minimum pressure are simultaneous, and the 24-hour pressure fall is 42.5 hPa."
+      },
+      {
+        "row": "rainfall_concentration_window",
+        "formula_or_test": "event_precip_mm > 200 and wettest_24h_mm / event_precip_mm > 0.65",
+        "values": {
+          "event_precip_mm": 211.5,
+          "wettest_hour_mm": 14.4,
+          "wettest_hour_time": "2022-09-28T22:00",
+          "wettest_6h_mm": 67.0,
+          "wettest_6h_start": "2022-09-28T18:00",
+          "wettest_24h_mm": 149.9,
+          "wettest_24h_start": "2022-09-28T02:00",
+          "wettest_48h_mm": 188.0,
+          "wettest_48h_start": "2022-09-27T05:00",
+          "wettest_24h_share": 0.709,
+          "wettest_48h_share": 0.889
+        },
+        "pass": true,
+        "reason": "Event rainfall exceeds 200 mm and the wettest 24 hours contain 70.9 percent of the total."
+      },
+      {
+        "row": "peak_timing_window",
+        "formula_or_test": "wind_pressure_window_pass and rain_pressure_lag_hours <= 6",
+        "values": {
+          "gust_pressure_lag_hours": 0.0,
+          "peak_wind_pressure_lag_hours": 1.0,
+          "rain_pressure_lag_hours": 3.0
+        },
+        "pass": true,
+        "reason": "The wettest hour is 3 hours after the pressure minimum while gust and pressure extrema are simultaneous."
+      },
+      {
+        "row": "catalog_station_wind_check",
+        "formula_or_test": "catalog_alertlevel == 'Red' and local_gust_to_catalog_wind_ratio >= 0.70 and local_gust_squared_proxy_kmh2 >= 30000",
+        "values": {
+          "catalog_peak_wind_kmh": 250.0,
+          "catalog_alertlevel": "Red",
+          "local_gust_to_catalog_wind_ratio": 0.742,
+          "local_gust_squared_proxy_kmh2": 34373.2
+        },
+        "pass": true,
+        "reason": "The Red catalog entry and 0.742 local gust ratio pass the wind consistency thresholds."
+      },
+      {
+        "row": "precipitation_product_check",
+        "formula_or_test": "daily_total_precip_mm >= 150 and daily_peak_precip_mm >= 50 and min(grid_max_mean_ratios) >= 4",
+        "values": {
+          "daily_total_precip_mm": 157.7,
+          "daily_peak_precip_day": "20220927",
+          "daily_peak_precip_mm": 70.9,
+          "daily_peak_wind_day": "20220928",
+          "era5_precip_max_mm": 46.63,
+          "era5_precip_mean_mm": 9.55,
+          "era5_precip_max_mean_ratio": 4.882,
+          "gpm_precip_max_mm": 53.22,
+          "gpm_precip_mean_mm": 10.08,
+          "gpm_precip_max_mean_ratio": 5.281,
+          "chirps_precip_max_mm": 73.14,
+          "chirps_precip_mean_mm": 14.72,
+          "chirps_precip_max_mean_ratio": 4.968
+        },
+        "pass": true,
+        "reason": "The daily point total, peak daily rain, and all three gridded maximum-to-mean ratios pass their thresholds."
+      }
+    ],
+    "pressure_fall_24h_hpa": 42.5,
+    "event_precip_mm": 211.5,
+    "wettest_24h_share": 0.709,
+    "rain_pressure_lag_hours": 3.0,
+    "local_gust_to_catalog_wind_ratio": 0.742,
+    "min_precip_grid_max_mean_ratio": 4.882
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required JSON ledger",
+        "points": 4,
+        "description": "Returns target_family, exactly five named ledger_rows, formula_or_test, values, pass, reason, final_classification, and numeric_summary.",
+        "partial_credit": "Award 2-3 points for one missing row or minor schema omissions; award 1 point for prose with recognizable row labels."
+      },
+      {
+        "name": "Wind-pressure calculation",
+        "points": 4,
+        "description": "Computes peak gust, peak sustained wind, gust-to-wind ratio, pressure minimum, pressure falls, and wind-threshold hour counts accurately.",
+        "partial_credit": "Award 2-3 points for mostly correct wind and pressure values with one missing derived value; award 1 point for copied peaks only."
+      },
+      {
+        "name": "Rainfall and timing calculation",
+        "points": 4,
+        "description": "Computes event rainfall over the locked event window, wettest 6-hour/24-hour/48-hour windows, event shares, and pressure-linked timing lags accurately.",
+        "partial_credit": "Award 2-3 points for correct totals with one wrong rolling window or lag; award 1 point for qualitative rainfall statements without calculations."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 3,
+        "description": "Applies the 40 hPa, 200 mm, 0.65 share, 6-hour lag, 0.70 gust-ratio, 30000 kmh2, 150 mm, 50 mm, and grid-ratio thresholds correctly.",
+        "partial_credit": "Award 1-2 points for correct pass/fail calls with one or two threshold mistakes."
+      },
+      {
+        "name": "Catalog and precipitation cross-checks",
+        "points": 2,
+        "description": "Uses catalog wind and precipitation-product values as numeric checks, including grid ratios computed from source max/mean values before display rounding, without replacing station wind or mixing daily and hourly totals.",
+        "partial_credit": "Award 1 point for including these checks but omitting one required ratio or day."
+      },
+      {
+        "name": "Final result",
+        "points": 2,
+        "description": "Gives answer all_five_tests_pass and classification all five Ian landfall threshold windows pass.",
+        "partial_credit": "Award 1 point for an equivalent final result with incomplete wording."
+      },
+      {
+        "name": "Concise computed output",
+        "points": 1,
+        "description": "Keeps the answer calculation-led and avoids casualty totals, damage totals, or other claims not computed in the ledger.",
+        "partial_credit": "Award 0.5 points for one minor extra claim that does not alter the numeric result."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "event_name": "Hurricane Ian"
+  }
+}

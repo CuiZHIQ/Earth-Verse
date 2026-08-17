@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-295_Q2",
+  "event_id": "CSX-295",
+  "task_type": "short_answer",
+  "evaluation_mode": "deterministic",
+  "target_family": "saharan_dust_dci_transport_consistency_proof",
+  "primary_gt": {
+    "canonical_answer": {
+      "plume_length_km": 4000,
+      "north_delta_dci": 0.034708,
+      "south_delta_dci": -0.07372,
+      "full_delta_dci": -0.003583,
+      "ns_contrast_dci": 0.108428,
+      "contrast_to_abs_full": 30.262,
+      "precip_largest_cell_max_mm": 5.657702,
+      "conclusion": "north_weighted_transported_dust_consistent"
+    },
+    "diagnosis_label": "north_weighted_transported_dust_consistent",
+    "required_metrics": [
+      "plume_length_km",
+      "dci_delta_by_region",
+      "ns_contrast_dci",
+      "contrast_to_abs_full",
+      "precip_largest_cell_max_mm"
+    ],
+    "rules": {
+      "image_pass": "north_delta_dci>=0.02 and south_delta_dci<0 and ns_contrast_dci>=0.08 and contrast_to_abs_full>=10",
+      "plume_pass": "plume_length_km>=3000",
+      "low_rain_pass": "precip_largest_cell_max_mm<10"
+    },
+    "tolerances": {
+      "dci": 0.0005,
+      "ratio": 0.2,
+      "precip_mm": 0.01,
+      "plume_km": 1
+    }
+  },
+  "key_values": {
+    "event_name": "Saharan dust storm over the Atlantic Ocean",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_window": {
+      "start": "2022-01-18",
+      "end": "2022-01-21"
+    },
+    "formulas": {
+      "dci": "mean((R+G)/(2*max(B,1))) over valid pixels with 20<brightness<245",
+      "delta_dci": "event_dci-pre_dci",
+      "ns_contrast_dci": "north_delta_dci-south_delta_dci",
+      "contrast_to_abs_full": "ns_contrast_dci/max(abs(full_delta_dci),0.001)"
+    },
+    "thresholds": {
+      "plume_length_km_min": 3000,
+      "north_delta_dci_min": 0.02,
+      "ns_contrast_dci_min": 0.08,
+      "contrast_to_abs_full_min": 10.0,
+      "precip_cell_max_mm_wet_cutoff": 10.0
+    },
+    "image_regions": {
+      "full": {
+        "pre": {
+          "dci": 1.132456,
+          "red_minus_blue": 17.263591,
+          "valid_fraction": 0.861323
+        },
+        "event": {
+          "dci": 1.128873,
+          "red_minus_blue": 20.432558,
+          "valid_fraction": 0.884324
+        },
+        "delta_dci": -0.003583,
+        "delta_red_minus_blue": 3.168967
+      },
+      "north": {
+        "pre": {
+          "dci": 1.323652,
+          "red_minus_blue": 42.451265,
+          "valid_fraction": 0.848569
+        },
+        "event": {
+          "dci": 1.35836,
+          "red_minus_blue": 49.009188,
+          "valid_fraction": 0.932195
+        },
+        "delta_dci": 0.034708,
+        "delta_red_minus_blue": 6.557923
+      },
+      "south": {
+        "pre": {
+          "dci": 0.946838,
+          "red_minus_blue": -7.189048,
+          "valid_fraction": 0.874077
+        },
+        "event": {
+          "dci": 0.873118,
+          "red_minus_blue": -11.414981,
+          "valid_fraction": 0.836454
+        },
+        "delta_dci": -0.07372,
+        "delta_red_minus_blue": -4.225933
+      }
+    },
+    "precipitation": {
+      "summaries": {
+        "gpm": {
+          "mean_mm": 0.006546928958152219,
+          "cell_max_mm": 0.9899999499320984
+        },
+        "chirps": {
+          "mean_mm": 0.45659898237277236,
+          "cell_max_mm": 5.657702445983887
+        }
+      },
+      "largest_mean_mm": 0.456599,
+      "largest_cell_max_mm": 5.657702
+    },
+    "checks": {
+      "image_pass": true,
+      "plume_pass": true,
+      "low_rain_pass": true,
+      "uniform_scene_increase": false
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields with numeric values and the conclusion label.",
+        "partial_credit": "Award 1-2 points for mostly correct structure with missing fields or inconsistent rounding."
+      },
+      {
+        "name": "DCI formula",
+        "points": 4,
+        "description": "Applies the DCI formula and valid-pixel brightness filter correctly for full, northern, and southern regions.",
+        "partial_credit": "Award 2 points for using the DCI formula but omitting or misapplying the brightness filter."
+      },
+      {
+        "name": "Regional image anchors",
+        "points": 5,
+        "description": "Computes north delta near 0.034708, south delta near -0.073720, full delta near -0.003583, and north-south contrast near 0.108428.",
+        "partial_credit": "Award 1 point per correct image anchor, with 1 additional point for correct signs."
+      },
+      {
+        "name": "Threshold proof",
+        "points": 5,
+        "description": "Applies the threshold proof correctly, including the contrast-to-full ratio and pass state for the north-weighted image signal.",
+        "partial_credit": "Award 2 points for the correct qualitative pass state with incomplete arithmetic."
+      },
+      {
+        "name": "Length and precipitation checks",
+        "points": 2,
+        "description": "Uses the reported plume length and largest event-total precipitation cell maximum in the consistency test.",
+        "partial_credit": "Award 1 point for only one of these anchors."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Keeps the final computed consequence concise and does not assert measured aerosol concentration, surface damage, or realized impacts.",
+        "partial_credit": "Award 1 point for a correct label with one minor overstatement."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Saharan_dust_storm_over_the_Atlantic_Ocean.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "All values are computed from local CSX-295 package files; no network access is used."
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2015-10-17 to 2015-10-17",
+    "event_name": "Taan Fiord glacier-adjacent landslide tsunami",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "location": "Taan Fiord / Tyndall Glacier, Alaska, United States",
+    "package_id": "CSX-313"
+  },
+  "event_id": "CSX-313",
+  "formulae": {
+    "process_dominance_index": "100 * (0.65 * source_power_norm + 0.25 * report_mechanism_completeness + 0.10 * glacier_retreat_context_flag)",
+    "report_mechanism_completeness": "supported report mechanism terms / 5",
+    "scenario": "increase only runup by 15 percent and recompute source_power_norm and process_dominance_index",
+    "source_power_norm": "clip((mass_million_tons * runup_m) / 40000, 0, 1)"
+  },
+  "key_values": {
+    "glacier_retreat_context_flag": 1,
+    "mass_million_tons": 180.0,
+    "reasoning_depth": {
+      "counterfactual_rejection": "A weather, exposure, or generic remote-sensing explanation fails because the source mass and extreme runup already establish the landslide-tsunami mechanism.",
+      "evidence_weighting": "The report-confirmed rockslide mass, runup, fjord source setting, glacier-retreat context, and deep-water context are decisive; auxiliary products are not needed for the source-dominance label.",
+      "uncertainty_or_scale_caveat": "The 15 percent runup scenario is a sensitivity test, not a prediction of a second observed event."
+    },
+    "report_mechanism_completeness": 1.0,
+    "report_mechanism_terms": {
+      "deep_water_context": true,
+      "fjord_landslide_source": true,
+      "glacier_retreat_context": true,
+      "rock_mass_reported": true,
+      "tsunami_runup_reported": true
+    },
+    "runup_m": 193.0,
+    "source_power_norm": 0.8685,
+    "source_runup_load_million_ton_m": 34740.0
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "glacier_retreat_context_flag": 1,
+      "mass_million_tons": 180.0,
+      "process_dominance_index": 91.45,
+      "report_mechanism_completeness": 1.0,
+      "report_mechanism_terms": {
+        "deep_water_context": true,
+        "fjord_landslide_source": true,
+        "glacier_retreat_context": true,
+        "rock_mass_reported": true,
+        "tsunami_runup_reported": true
+      },
+      "runup_m": 193.0,
+      "source_power_norm": 0.869,
+      "source_runup_load_million_ton_m": 34740.0
+    },
+    "final_interpretation": "A very large rockslide entering a recently deglaciated deep-water fjord is the dominant process; the report-confirmed source mass and runup support a source-driven monitoring priority, and a modest runup-coupling increase would materially raise the index.",
+    "process_model": {
+      "classification": "source_dominated_landslide_tsunami_report_confirmed",
+      "event_window": "2015-10-17 to 2015-10-17",
+      "location": "Taan Fiord / Tyndall Glacier, Alaska, United States",
+      "mechanism_chain": [
+        "recent glacier retreat exposed unstable slopes",
+        "deep fjord water extended beneath slope margins",
+        "a 180 million ton rockslide entered Taan Fiord",
+        "impulsive displacement generated a tsunami with 193 m maximum runup",
+        "the source mechanics dominate the monitoring priority"
+      ]
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A weather, exposure, or generic remote-sensing explanation fails because the source mass and extreme runup already establish the landslide-tsunami mechanism.",
+      "evidence_weighting": "The report-confirmed rockslide mass, runup, fjord source setting, glacier-retreat context, and deep-water context are decisive; auxiliary products are not needed for the source-dominance label.",
+      "uncertainty_or_scale_caveat": "The 15 percent runup scenario is a sensitivity test, not a prediction of a second observed event."
+    },
+    "scenario_analysis": {
+      "runup_increase_percent": 15.0,
+      "scenario_delta_index": 8.47,
+      "scenario_process_dominance_index": 99.92,
+      "scenario_runup_m": 221.95,
+      "scenario_source_power_norm": 0.999
+    },
+    "scientific_use_notes": {
+      "decisive_evidence": "The event report supplies the source mechanism, mass, runup, timing, and retreat/deep-water fjord context.",
+      "interpretive_consequence": "The model emphasizes impulsive landslide-tsunami generation and monitoring sensitivity in deglaciating fjords rather than a rainfall-driven, image-product, or population-exposure-dominated disaster process.",
+      "weak_context": "Auxiliary precipitation, remote-sensing, exposure, and geocoding slices are not used for this source-dominance score; the report mechanics are sufficient."
+    },
+    "source_paths": {
+      "event_report": [
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+        "data/event_reports/event_reports_004_Locked_event_anchor_Taan_Fiord_glacier-adjacent_landslide_tsunami.json"
+      ],
+      "metadata_or_catalog_context": [
+        "metadata/event.json",
+        "metadata/files.csv",
+        "data/event_catalogs/event_catalogs_002_GLIMS_glacier_database_and_RGI_outlines.html"
+      ]
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "MINOR cleanup removed non-Alaska precipitation, remote-sensing, exposure, and geocoding products from the scoring path; the GT now relies on the report-confirmed source mechanics.",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Taan_Fiord_glacier-adjacent_landslide_tsunami.json",
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_catalogs/event_catalogs_002_GLIMS_glacier_database_and_RGI_outlines.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Finds the relevant event report, event anchor or metadata, and optional catalog context without exact filenames in the prompt, and cites package-relative paths.",
+        "name": "self_directed_package_discovery_and_citations",
+        "partial_credit": "Award 1-2 points for incomplete but relevant citations.",
+        "points": 3
+      },
+      {
+        "description": "Correctly identifies location, 17 October 2015 window, retreat/deep-water slope conditioning, rockslide entry into the fjord, and tsunami runup process.",
+        "name": "event_mechanism_reconstruction",
+        "partial_credit": "Award partial credit for partially correct mechanism chains.",
+        "points": 4
+      },
+      {
+        "description": "Extracts 180 million tons and 193 m; computes source load 34740.0 and source_power_norm 0.869 within tolerance.",
+        "name": "source_load_calculations",
+        "partial_credit": "Award partial credit for correct extraction with arithmetic or rounding mistakes.",
+        "points": 4
+      },
+      {
+        "description": "Correctly evaluates the five report mechanism terms, reports mechanism completeness 1.000, and sets glacier_retreat_context_flag = 1.",
+        "name": "report_mechanism_support",
+        "partial_credit": "Award partial credit for missing one report term or the glacier flag.",
+        "points": 3
+      },
+      {
+        "description": "Computes process_dominance_index = 91.45 and returns source_dominated_landslide_tsunami_report_confirmed using all rule conditions.",
+        "name": "process_index_and_classification",
+        "partial_credit": "Award partial credit for the right class with a flawed index, or the right index with incomplete rule logic.",
+        "points": 3
+      },
+      {
+        "description": "Applies the 15 percent runup-only perturbation and reports 221.95 m, 0.999, 99.92, and 8.47 within tolerance, with fjord-sensitivity interpretation.",
+        "name": "scenario_reasoning",
+        "partial_credit": "Award partial credit for one or two correct scenario values.",
+        "points": 2
+      },
+      {
+        "description": "Returns exactly the requested top-level JSON keys, keeps interpretation concise, and avoids unsupported casualty, damage, auxiliary-product, or outside-source claims. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "structured_scientific_answer_quality",
+        "partial_credit": "No partial credit unless the structure is effectively equivalent.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "landslide_tsunami_process_model",
+  "task_id": "CSX-313_Q1",
+  "task_type": "structured_reasoning",
+  "tolerances": {
+    "process_dominance_index": {
+      "absolute_tolerance": 0.02,
+      "units": "points"
+    },
+    "report_mechanism_completeness": {
+      "absolute_tolerance": 0.001,
+      "units": "unitless"
+    },
+    "scenario_delta_index": {
+      "absolute_tolerance": 0.02,
+      "units": "points"
+    },
+    "scenario_process_dominance_index": {
+      "absolute_tolerance": 0.02,
+      "units": "points"
+    },
+    "scenario_runup_m": {
+      "absolute_tolerance": 0.01,
+      "units": "m"
+    },
+    "source_power_norm": {
+      "absolute_tolerance": 0.001,
+      "units": "unitless"
+    },
+    "source_runup_load_million_ton_m": {
+      "absolute_tolerance": 0.05,
+      "units": "million ton m"
+    }
+  }
+}

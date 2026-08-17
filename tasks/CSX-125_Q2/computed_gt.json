@@ -1,0 +1,215 @@
+{
+  "decision_rule": {
+    "context_rows": [
+      "track_distance_check",
+      "wind_energy_check",
+      "rain_weather_context_check",
+      "image_receptor_context_check"
+    ],
+    "primary_row": "duration_record_test",
+    "requires_computation": true,
+    "summary": "Accept the duration-record label only when the WMO storm-status duration exceeds John's duration benchmark; use distance, wind, rain/weather, and image/receptor rows as computed context."
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_name": "Tropical Cyclone Freddy",
+    "event_window": "2023-02-04 to 2023-03-14",
+    "hazard_family": "tropical_cyclone",
+    "region": "Global oceans"
+  },
+  "event_id": "CSX-125",
+  "key_values": {
+    "annual_embedding_mean_change": 0.0146,
+    "catalog_alert_level": "Red",
+    "chirps_event_mean_precip_mm": 46.918,
+    "compact_region_population": 5286729.5,
+    "distance_ratio_vs_john": 0.972,
+    "duration_advantage_days": 6.25,
+    "duration_ratio_vs_john": 1.21,
+    "earth_circumference_fraction": 0.319,
+    "event_image_bytes": 125839,
+    "freddy_distance_km": 12785,
+    "gdacs_duration_days": 33.75,
+    "gdacs_max_wind_kmh": 250.0,
+    "gdacs_vs_wmo_duration_gap_days": 2.25,
+    "gridded_precip_max_mm": 192.2,
+    "john_distance_km": 13159,
+    "local_point_max_72h_precip_mm": 111.7,
+    "local_point_peak_gust_kmh": 65.9,
+    "local_point_pressure_range_hpa": 11.4,
+    "local_point_total_precip_mm": 375.2,
+    "local_point_wet_hours": 425,
+    "max_wind_hurricane_threshold_ratio": 2.101,
+    "pre_image_bytes": 135448,
+    "previous_record_john_days": 29.75,
+    "radar_abs_extreme_change_db": 14.572,
+    "radar_mean_change_db": 0.172,
+    "wind_energy_proxy_km2h2_days": 173608.9,
+    "wmo_duration_days": 36.0
+  },
+  "ledger_rows": [
+    {
+      "computed_value": {
+        "duration_advantage_days": 6.25,
+        "duration_ratio_vs_john": 1.21,
+        "gdacs_duration_days": 33.75,
+        "gdacs_vs_wmo_duration_gap_days": 2.25,
+        "previous_record_john_days": 29.75,
+        "wmo_duration_days": 36.0
+      },
+      "formula": "gap=wmo_duration_days-gdacs_duration_days; advantage=wmo_duration_days-previous_record_john_days; ratio=wmo_duration_days/previous_record_john_days",
+      "role": "duration_record_basis",
+      "row_id": "duration_record_test"
+    },
+    {
+      "computed_value": {
+        "distance_ratio_vs_john": 0.972,
+        "earth_circumference_fraction": 0.319,
+        "freddy_distance_km": 12785,
+        "john_distance_km": 13159
+      },
+      "formula": "distance_ratio=freddy_distance_km/john_distance_km; earth_fraction=freddy_distance_km/40075",
+      "role": "basinwide_support_not_distance_record",
+      "row_id": "track_distance_check"
+    },
+    {
+      "computed_value": {
+        "catalog_alert_level": "Red",
+        "gdacs_max_wind_kmh": 250.0,
+        "max_wind_hurricane_threshold_ratio": 2.101,
+        "wind_energy_proxy_km2h2_days": 173608.9
+      },
+      "formula": "threshold_ratio=max_wind_kmh/119; wind_energy_proxy=(max_wind_kmh/3.6)^2*wmo_duration_days",
+      "role": "intensity_context_not_record_basis",
+      "row_id": "wind_energy_check"
+    },
+    {
+      "computed_value": {
+        "chirps_event_mean_precip_mm": 46.918,
+        "gridded_precip_max_mm": 192.2,
+        "local_point_max_72h_precip_mm": 111.7,
+        "local_point_peak_gust_kmh": 65.9,
+        "local_point_pressure_range_hpa": 11.4,
+        "local_point_total_precip_mm": 375.2,
+        "local_point_wet_hours": 425
+      },
+      "formula": "sum local rain; count wet hours; maximize 72-hour rain; compare gridded rain, gust, and pressure range",
+      "role": "rain_weather_context_not_record_basis",
+      "row_id": "rain_weather_context_check"
+    },
+    {
+      "computed_value": {
+        "annual_embedding_mean_change": 0.0146,
+        "compact_region_population": 5286729.5,
+        "event_image_bytes": 125839,
+        "pre_image_bytes": 135448,
+        "radar_abs_extreme_change_db": 14.572,
+        "radar_mean_change_db": 0.172
+      },
+      "formula": "retain image-change, radar-change, receptor-count, and image-size values as context only",
+      "role": "image_receptor_context_only",
+      "row_id": "image_receptor_context_check"
+    }
+  ],
+  "primary_gt": {
+    "answer": "freddy_passes_duration_record_test",
+    "canonical_stance": "WMO duration gives the record proof: 36.0 d exceeds John by 6.25 d; distance ratio is 0.972, so distance does not set the record.",
+    "forbidden": [
+      "distance as the record basis",
+      "local rain or image/receptor values as the record basis",
+      "exact loss claims from receptor or image metrics"
+    ],
+    "required_rows": [
+      "duration_record_test",
+      "track_distance_check",
+      "wind_energy_check",
+      "rain_weather_context_check",
+      "image_receptor_context_check"
+    ],
+    "required_values": {
+      "adv_days": 6.25,
+      "dist_ratio": 0.972,
+      "dur_ratio": 1.21,
+      "energy": 173608.9,
+      "john_days": 29.75,
+      "wmo_days": 36.0
+    },
+    "tolerances": {
+      "days": 0.01,
+      "energy": 0.5,
+      "km": 1,
+      "population": 1.0,
+      "ratio": 0.005,
+      "weather": 0.1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Computed from local CSX-125 records only; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Tropical_Cyclone_Freddy.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_005_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_007_pre.jpg",
+      "data/remote_sensing/remote_sensing_008_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns duration_record_status, all five named ledger rows, correct row roles, and one concise proof_conclusion.",
+        "name": "Requested ledger structure",
+        "partial_credit": "Award 1-2 points for a mostly complete JSON object with one missing row or one role error.",
+        "points": 3
+      },
+      {
+        "description": "Computes 36.0 WMO days, 33.75 GDACS days, the 2.25-day gap, 29.75 previous John days, the 6.25-day advantage, and the 1.21 duration ratio within tolerance.",
+        "name": "Duration record arithmetic",
+        "partial_credit": "Award 2-4 points for correct direction but one or two missing or rounded values; award 1 point for identifying duration as decisive without the arithmetic.",
+        "points": 5
+      },
+      {
+        "description": "Computes 12,785 km versus 13,159 km, the 0.972 distance ratio, and the 0.319 Earth-circumference fraction, with distance below the previous benchmark.",
+        "name": "Track-distance check",
+        "partial_credit": "Award 1-2 points for correct distances or correct ratio but incomplete conclusion.",
+        "points": 3
+      },
+      {
+        "description": "Uses 250.0 km/h, Red alert, the 2.101 hurricane-threshold ratio, and the 173608.9 wind-energy proxy as intensity context rather than the record basis.",
+        "name": "Wind energy context",
+        "partial_credit": "Award 1-2 points for correct wind values but a weak or missing role assignment.",
+        "points": 3
+      },
+      {
+        "description": "Uses 375.2 mm, 425 wet hours, 111.7 mm max 72-hour rain, 46.918 mm CHIRPS event-accumulated gridded mean, 192.2 mm gridded maximum, 65.9 km/h gust, and 11.4 hPa pressure range as context.",
+        "name": "Rain and weather context",
+        "partial_credit": "Award 1-2 points for most values correct but one aggregation or unit error.",
+        "points": 3
+      },
+      {
+        "description": "Reports 0.0146 embedding mean change, 0.172 dB radar mean change, 14.572 dB radar absolute extreme, 5,286,729.5 compact-region population, and both image byte counts as context only.",
+        "name": "Image and receptor context",
+        "partial_credit": "Award 1 point for reporting the values but making the role unclear.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the final proof concise and avoids extra realized-loss claims beyond the computed values.",
+        "name": "Concise no-overclaim proof",
+        "partial_credit": "Award 0.5 points for a correct conclusion with unnecessary but non-conflicting prose.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "freddy_duration_record_consistency_ledger",
+  "task_id": "CSX-125_Q2",
+  "task_type": "short_answer"
+}

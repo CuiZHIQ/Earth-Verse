@@ -1,0 +1,183 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-199",
+  "formulas": {
+    "burn_index": "dNBR_mean*100 + dNBR_max*10 + alpha_mean_change*100",
+    "burn_smoke": "2*(burn_index>=40)+1*(dNBR_mean>=0.25)+1*(dNBR_max>=0.80)+1*(alpha_mean_change>=0.015)+1*(smoke_air_quality_text)+1*(smoke_health_text)+1*(out_of_control_fire_text)",
+    "dominance": "burn_smoke>=7 and burn_smoke-max(rainfall,heat,weak_signal)>=5",
+    "heat": "1*(peak_Tmax_C>=30)+1*(mean_Tmax_C>=25)",
+    "local_context": "1*(WorldPop_population<250)+1*(fire_station_count>=1)+1*(trunk_road_count>=10)",
+    "rainfall": "1*(GPM_mean_mm>=100)+1*(CHIRPS_mean_mm>=100)+1*(ERA5_precip_mean_mm>=150)",
+    "weak_signal": "1*(burn_index<25)+1*(dNBR_mean<0.10)+1*(not smoke_air_quality_text)+1*(not smoke_health_text)"
+  },
+  "key_values": {
+    "event": {
+      "event_name": "2023 Canadian wildfires and smoke",
+      "event_window_days": 153,
+      "event_window_end": "2023-09-30",
+      "event_window_start": "2023-05-01",
+      "hazard_family": "wildfire_burn_smoke",
+      "hazard_label": "Wildfire, burn scar, and smoke",
+      "hazard_window_days": 46,
+      "hazard_window_end": "2023-06-15",
+      "hazard_window_start": "2023-05-01",
+      "manifest_file_count": 31,
+      "region": "North America"
+    },
+    "numeric_tolerances": {
+      "alpha_mean_change": 0.002,
+      "burn_index": 1.0,
+      "dnbr_max": 0.02,
+      "dnbr_mean": 0.02,
+      "precip_mm": 2.0,
+      "temperature_c": 0.5,
+      "worldpop_population": 5.0
+    },
+    "raw_metrics": {
+      "alpha_mean_change": 0.02035,
+      "burn_index": 44.914,
+      "chirps_precip_mm": 76.56,
+      "dnbr_max": 1.002855,
+      "dnbr_mean": 0.328507,
+      "era5_precip_mm": 136.35,
+      "fire_station_count": 1,
+      "gpm_precip_mm": 70.6,
+      "mean_tmax_c": 16.64,
+      "peak_tmax_c": 19.06,
+      "trunk_road_count": 15,
+      "worldpop_population": 175.659
+    },
+    "score_components": {
+      "burn_smoke": 8,
+      "heat": 0,
+      "local_context": 3,
+      "rainfall": 0,
+      "weak_signal": 0
+    },
+    "severity_thresholds": {
+      "high": "burn_index >= 40",
+      "low": "burn_index < 25",
+      "moderate": "25 <= burn_index < 40"
+    },
+    "text_gates": {
+      "out_of_control_fire": true,
+      "smoke_air_quality": true,
+      "smoke_health": true
+    }
+  },
+  "primary_gt": {
+    "answer": "wildfire_burn_smoke_dominant",
+    "computed_consequence": "The ledger isolates a high burn-smoke signal while rainfall and heat counters remain below their trigger thresholds.",
+    "event_window": {
+      "days": 153,
+      "end": "2023-09-30",
+      "start": "2023-05-01"
+    },
+    "hazard_window": {
+      "days": 46,
+      "end": "2023-06-15",
+      "start": "2023-05-01"
+    },
+    "metrics": {
+      "alpha_mean_change": 0.02035,
+      "burn_index": 44.91,
+      "chirps_precip_mm": 76.56,
+      "dnbr_max": 1.003,
+      "dnbr_mean": 0.329,
+      "era5_precip_mm": 136.35,
+      "fire_station_count": 1,
+      "gpm_precip_mm": 70.6,
+      "mean_tmax_c": 16.64,
+      "peak_tmax_c": 19.06,
+      "trunk_road_count": 15,
+      "worldpop_population": 175.7
+    },
+    "score_comparison": {
+      "dominance_rule_pass": true,
+      "dominant_signal": "burn_smoke",
+      "margin": 8,
+      "secondary_signal": "rainfall_heat_weak_signal_tie"
+    },
+    "scores": {
+      "burn_smoke": 8,
+      "heat": 0,
+      "local_context": 3,
+      "rainfall": 0,
+      "weak_signal": 0
+    },
+    "severity_bin": "high",
+    "target_family": "candidate_explanation_score_ledger",
+    "text_gates": {
+      "out_of_control_fire": true,
+      "smoke_air_quality": true,
+      "smoke_health": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Canadian_wildfires_and_smoke.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields including event and hazard windows, severity_bin high, and answer wildfire_burn_smoke_dominant.",
+        "name": "requested_json_and_final_label",
+        "partial_credit": "Give partial credit for the correct answer with one or two missing fields.",
+        "points": 3
+      },
+      {
+        "description": "Uses the burn-index formula and reports burn index within 1.0 of 44.91, dNBR mean within 0.02 of 0.329, dNBR max within 0.02 of 1.003, and alpha mean change within 0.002 of 0.02035.",
+        "name": "burn_index_formula_and_values",
+        "partial_credit": "Give partial credit for the right formula with one incorrect or omitted metric.",
+        "points": 4
+      },
+      {
+        "description": "Sets smoke air quality, smoke health, and out-of-control fire gates to true.",
+        "name": "report_text_gates",
+        "partial_credit": "Give partial credit for two correct gates or for a correct smoke gate pair with the fire gate omitted.",
+        "points": 3
+      },
+      {
+        "description": "Reports GPM 70.6 mm, CHIRPS 76.56 mm, ERA5 precipitation 136.35 mm, peak Tmax 19.06 C, mean Tmax 16.64 C, identifies the 2023-05-01 to 2023-06-15 hazard diagnostic window, and marks rainfall and heat counters as zero.",
+        "name": "counter_metrics_and_thresholds",
+        "partial_credit": "Give partial credit for correct threshold states with one or two missing numeric values.",
+        "points": 3
+      },
+      {
+        "description": "Reports WorldPop population near 175.7, fire-station count 1, trunk-road count 15, and local_context score 3.",
+        "name": "local_context_score",
+        "partial_credit": "Give partial credit for two correct local context inputs or a correct score with one missing input.",
+        "points": 2
+      },
+      {
+        "description": "Computes burn_smoke 8, rainfall 0, heat 0, weak_signal 0, margin 8, and dominance_rule_pass true.",
+        "name": "score_arithmetic_and_dominance",
+        "partial_credit": "Give partial credit for one arithmetic error that does not change the final answer.",
+        "points": 4
+      },
+      {
+        "description": "Provides a one-sentence consequence tied to the ledger, with no added casualty, health-burden, evacuation, or loss totals.",
+        "name": "computed_consequence",
+        "partial_credit": "Give partial credit for a correct but verbose consequence.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-199_Q1",
+  "task_type": "numeric"
+}

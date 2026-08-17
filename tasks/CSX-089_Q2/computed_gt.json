@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-089_Q2",
+  "event_id": "CSX-089",
+  "task_type": "short_answer",
+  "target_family": "sandy_coastal_surge_rain_wind_process_model",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "process_model",
+    "dominant_process": "coastal_storm_tide_surge_wave_dominant",
+    "coastal_surge_index": 92.77,
+    "rainfall_runoff_index": 39.11,
+    "local_wind_stress_index": 42.13,
+    "process_contrast": 50.63,
+    "response_priority_score": 81.02,
+    "scenario_max_tide_m": 4.181,
+    "scenario_max_tide_ft": 13.72
+  },
+  "event": {
+    "event_name": "Hurricane Sandy New York and New Jersey coastal flooding",
+    "hazard_family": "river_coastal_flood",
+    "event_window": "2012-10-22 to 2012-10-31"
+  },
+  "answer": {
+    "process_model": {
+      "event_window": "2012-10-22 to 2012-10-31",
+      "dominant_process": "coastal_storm_tide_surge_wave_dominant",
+      "coastal_surge_index": 92.77,
+      "rainfall_runoff_index": 39.11,
+      "local_wind_stress_index": 42.13,
+      "process_contrast": 50.63,
+      "response_priority_score": 81.02
+    },
+    "computed_metrics": {
+      "coastal_water_level": {
+        "coastal_gage_count": 10,
+        "gages_above_major_flood_count": 10,
+        "major_flood_share": 1.0,
+        "gages_above_or_near_fema_100yr": 8,
+        "return_level_share": 0.8,
+        "max_tide_ft": 11.75,
+        "max_tide_m": 3.581,
+        "mean_tide_ft": 10.0,
+        "mean_to_max_tide_ratio": 0.851,
+        "surge_wave_report_flags": {
+          "landfall_near_brigantine": true,
+          "catastrophic_surge_ny_nj": true,
+          "greatest_inundation_region": true,
+          "nyc_metro_setting": true,
+          "damaging_waves": true
+        },
+        "surge_wave_report_share": 1.0
+      },
+      "rainfall": {
+        "event_hour_count": 240,
+        "point_event_rain_mm": 45.4,
+        "wettest_6h_rain_mm": 13.8,
+        "wettest_6h_rain_share": 0.304,
+        "peak_hour_rain_mm": 4.4,
+        "peak_hour_rain_share": 0.097,
+        "era5_mean_event_rain_mm": 38.96,
+        "gpm_mean_event_rain_mm": 50.5,
+        "chirps_mean_event_rain_mm": 123.89,
+        "precip_spread_ratio": 2.453
+      },
+      "wind": {
+        "point_peak_wind_kmh": 60.6,
+        "point_peak_wind_ms": 16.83,
+        "hours_wind_ge40_kmh": 15,
+        "wind_ge40_hour_share": 0.0625,
+        "catalog_peak_wind_kmh": 167.37,
+        "local_to_catalog_peak_ratio": 0.362
+      },
+      "response_observations": {
+        "storm_tide_sensor_count": 38,
+        "wave_sensor_count": 4,
+        "rapid_deployment_gage_count": 4,
+        "high_water_mark_min_count": 300,
+        "instrument_norm": 0.92,
+        "high_water_mark_norm": 1.0,
+        "response_observation_norm": 0.96
+      },
+      "remote_sensing_screening": {
+        "sentinel1_status": "no_sufficient_scenes",
+        "pre_count": 0,
+        "post_count": 0
+      }
+    },
+    "scenario_analysis": {
+      "water_level_offset_m": 0.6,
+      "scenario_max_tide_m": 4.181,
+      "scenario_max_tide_ft": 13.72,
+      "max_tide_increase_percent": 16.76
+    },
+    "mechanism_chain": [
+      "Official narrative links landfall near Brigantine to catastrophic New Jersey-New York storm surge, greatest inundation, New York City metropolitan exposure, and damaging waves.",
+      "USGS coastal gages show a complete major-flood exceedance and broad 100-year-level exceedance or near-exceedance.",
+      "Point and gridded precipitation show rain occurred, but rainfall concentration and the rainfall index are much weaker than the coastal water-level index.",
+      "Local point wind is modest relative to the broader cyclone-catalog peak, supporting regional surge generation without making local wind stress the main process.",
+      "A 0.60 m coastal water-level offset materially increases an already extreme observed maximum tide."
+    ],
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Sandy_New_York_and_New_Jersey_coastal_flooding.json",
+      "data/event_reports/event_reports_004_NOAA_NESDIS_-_Hurricane_Sandy.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/event_catalogs/event_catalogs_002_USGS_-_Hurricane_Sandy_in_New_York.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "final_interpretation": "Sandy's New York-New Jersey coastal flooding is best attributed to storm tide, surge, and damaging-wave water-level forcing: the coastal_surge_index exceeds the stronger of the rainfall and local-wind indices by 50.63 points, while the observation response score is high enough to treat the water-level evidence as operationally decisive."
+  },
+  "key_values": {
+    "coastal_gage_count": 10,
+    "gages_above_major_flood_count": 10,
+    "major_flood_share": 1.0,
+    "gages_above_fema_100yr": 7,
+    "gages_near_fema_100yr": 1,
+    "gages_above_or_near_fema_100yr": 8,
+    "return_level_share": 0.8,
+    "max_tide_ft": 11.75,
+    "max_tide_m": 3.581,
+    "mean_tide_ft": 10.0,
+    "mean_to_max_tide_ratio": 0.851,
+    "storm_tide_sensor_count": 38,
+    "wave_sensor_count": 4,
+    "rapid_deployment_gage_count": 4,
+    "high_water_mark_min_count": 300,
+    "instrument_norm": 0.92,
+    "high_water_mark_norm": 1.0,
+    "response_observation_norm": 0.96,
+    "landfall_near_brigantine": true,
+    "catastrophic_surge_ny_nj": true,
+    "greatest_inundation_region": true,
+    "nyc_metro_setting": true,
+    "damaging_waves": true,
+    "true_report_flags": 5,
+    "report_flag_count": 5,
+    "surge_wave_report_share": 1.0,
+    "event_hour_count": 240,
+    "point_event_rain_mm": 45.4,
+    "wettest_6h_rain_mm": 13.8,
+    "wettest_6h_rain_share": 0.304,
+    "peak_hour_rain_mm": 4.4,
+    "peak_hour_rain_share": 0.097,
+    "point_peak_wind_kmh": 60.6,
+    "point_peak_wind_ms": 16.83,
+    "hours_wind_ge40_kmh": 15,
+    "wind_ge40_hour_share": 0.0625,
+    "era5_mean_event_rain_mm": 38.96,
+    "gpm_mean_event_rain_mm": 50.5,
+    "chirps_mean_event_rain_mm": 123.89,
+    "precip_spread_ratio": 2.453,
+    "catalog_peak_wind_kmh": 167.37,
+    "catalog_duration_hours": 174.0,
+    "coastal_surge_index": 92.77,
+    "rainfall_runoff_index": 39.11,
+    "local_wind_stress_index": 42.13,
+    "process_contrast": 50.63,
+    "process_contrast_formula": "coastal_surge_index - max(rainfall_runoff_index, local_wind_stress_index)",
+    "response_priority_score": 81.02,
+    "local_to_catalog_peak_ratio": 0.362,
+    "water_level_offset_m": 0.6,
+    "scenario_max_tide_m": 4.181,
+    "scenario_max_tide_ft": 13.72,
+    "max_tide_increase_percent": 16.76
+  },
+  "tolerances": {
+    "indices": 0.05,
+    "shares": 0.005,
+    "ratios": 0.005,
+    "feet": 0.02,
+    "meters": 0.005,
+    "millimeters": 0.1,
+    "wind_kmh": 0.1,
+    "percent": 0.05
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Structured process-model output",
+        "points": 3,
+        "description": "Returns valid JSON matching the requested schema, including process model, computed metrics, scenario analysis, mechanism chain, source paths, and final interpretation.",
+        "partial_credit": "Award 1-2 points for mostly valid JSON with one missing section."
+      },
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Uses and cites package-relative paths for narrative, gage/catalog, point weather, gridded precipitation, cyclone catalog, and remote-sensing status evidence.",
+        "partial_credit": "Award 1-2 points for using several evidence families but omitting one important citation family."
+      },
+      {
+        "name": "Coastal water-level computation",
+        "points": 4,
+        "description": "Computes gage counts, major-flood share 1.0, return-level share 0.8, max tide 3.581 m, mean-to-max ratio 0.851, and coastal_surge_index 92.77 within tolerance.",
+        "partial_credit": "Award 2-3 points for mostly correct extraction with minor rounding or one missing component."
+      },
+      {
+        "name": "Rainfall and gridded-precipitation computation",
+        "points": 3,
+        "description": "Computes point rainfall, wettest 6-hour and peak-hour shares, GPM/ERA5/CHIRPS means, spread ratio 2.453, and rainfall_runoff_index 39.11 within tolerance.",
+        "partial_credit": "Award 1-2 points for correct point rainfall but incomplete gridded-product synthesis."
+      },
+      {
+        "name": "Wind normalization",
+        "points": 2,
+        "description": "Computes 60.6 km/h point wind, 16.83 m/s, 15 hours at or above 40 km/h, 167.37 km/h catalog peak, local-to-catalog ratio 0.362, and local_wind_stress_index 42.13 within tolerance.",
+        "partial_credit": "Award 1 point for correct local wind extraction but missing catalog normalization."
+      },
+      {
+        "name": "Response and water-level sensitivity",
+        "points": 2,
+        "description": "Computes response norm 0.96 using the conservative high-water-mark lower bound, priority score 81.02, scenario maximum 4.181 m/13.72 ft, and increase 16.76 percent within tolerance.",
+        "partial_credit": "Award 1 point for either the response score or the scenario calculation."
+      },
+      {
+        "name": "Disaster-process interpretation",
+        "points": 3,
+        "description": "Correctly concludes that storm tide, surge, and damaging waves dominate over rainfall-runoff and local wind stress, with process contrast about 50.63.",
+        "partial_credit": "Award 1-2 points for the correct dominant process but weak support from computed indices."
+      }
+    ]
+  },
+  "judge_anchors": [
+    "Dominant process must be coastal storm tide, surge, and damaging waves, not rainfall-runoff or local wind stress.",
+    "The answer should cite package-relative paths it found itself, including narrative, USGS gage, point weather, gridded precipitation, cyclone catalog, and Sentinel-1 status files.",
+    "Coastal_surge_index should be about 92.77 and exceed both rainfall_runoff_index and local_wind_stress_index by about 50.63 points.",
+    "The +0.60 m scenario should raise maximum tide to about 4.181 m or 13.72 ft."
+  ],
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Sandy_New_York_and_New_Jersey_coastal_flooding.json",
+      "data/event_reports/event_reports_004_NOAA_NESDIS_-_Hurricane_Sandy.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/event_catalogs/event_catalogs_002_USGS_-_Hurricane_Sandy_in_New_York.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

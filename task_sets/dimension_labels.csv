@@ -1,0 +1,406 @@
+﻿task_id,primary_dimension,dimension_labels,manual_rationale,status
+CSX-001_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation;spatiotemporal_process,"Select the correct heat source, reject the aggregate substitute, and compute event-window daily/hourly heat metrics.",manual_reviewed
+CSX-001_Q2,quantitative_calculation,quantitative_calculation;multi_source_evidence;spatiotemporal_process,"Forensic heat-load audit centered on event-window calculations, source contrast, and rolling-window reconstruction.",manual_reviewed
+CSX-001_Q3,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Mechanism-first heat physiology model with computed stress metrics and a chain from heat persistence to recovery failure and vulnerability.,manual_reviewed
+CSX-003_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation,"Evidence sufficiency ruling that compares heat timing, drought context, precipitation summaries, and rejected source bases.",manual_reviewed
+CSX-003_Q2,physical_mechanism,physical_mechanism;quantitative_calculation;multi_source_evidence,Audit of a moist-heat diagnosis using wet-bulb and heat-run calculations plus rejection of the wrong mechanism.,manual_reviewed
+CSX-004_Q1,multi_source_evidence,multi_source_evidence;remote_sensing_geospatial;quantitative_calculation,"Regional source arbitration requiring point-vs-AOI spatial checks, evidence selection, and numeric consequence calculation.",manual_reviewed
+CSX-004_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;multi_source_evidence,"Exposure-denominator audit using OSM/WorldPop-derived statistics, package paths, and population-scaled asset-density calculations.",manual_reviewed
+CSX-006_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;multi_source_evidence,Heat mechanism audit distinguishing dry-hot from humid dominance through hot-hour moisture and apparent-temperature calculations.,manual_reviewed
+CSX-006_Q2,multi_source_evidence,multi_source_evidence;quantitative_calculation,"Source-swap failure audit centered on missing variables, correct source priority, and numeric impact of the wrong source.",manual_reviewed
+CSX-008_Q1,remote_sensing_geospatial,remote_sensing_geospatial;multi_source_evidence;quantitative_calculation,"Burn-change arbitration built around direct remote-sensing product validity, event-window overlap, rejected substitutes, and dNBR statistics.",manual_reviewed
+CSX-008_Q2,multi_source_evidence,multi_source_evidence;quantitative_calculation;remote_sensing_geospatial,Aligns report narrative with local weather calculations and burn-change context while separating national claims from package evidence.,manual_reviewed
+CSX-013_Q1,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,"Heat-stress persistence model linking heat-dome physics, physiology, cooling priority, and computed local/regional stress values.",manual_reviewed
+CSX-013_Q2,multi_source_evidence,multi_source_evidence;quantitative_calculation,Text-numeric alignment task comparing NOAA language with local heat evidence and guarding against over-claiming.,manual_reviewed
+CSX-015_Q1,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,"Heat-drought lake-response scenario model linking persistent heat, drought, lake level context, and timeline evidence.",manual_reviewed
+CSX-015_Q2,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Ranks physical mechanisms by explanatory dominance for heat-drought diagnosis rather than computing a simple pass/fail ledger.,manual_reviewed
+CSX-016_Q1,ranking_decision,ranking_decision;multi_source_evidence;quantitative_calculation,Builds a hierarchy of heat-severity anchors and decides which package-local signal carries the regional diagnosis.,manual_reviewed
+CSX-016_Q2,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Separates cumulative heat stress from single-peak temperature through computed heat exposure and mechanism diagnosis.,manual_reviewed
+CSX-018_Q1,spatiotemporal_process,spatiotemporal_process;physical_mechanism;quantitative_calculation,Diagnoses continuous day-night heat persistence using event-window timing and day/night thermal metrics.,manual_reviewed
+CSX-018_Q2,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,"Operational heat-stress model combining event narrative, hourly heat, gridded context, and response-load reasoning.",manual_reviewed
+CSX-020_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Compound heat-exposure diagnosis separating cumulative stress from single peak-day explanations.,manual_reviewed
+CSX-020_Q2,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,"Dry-heat and fire-weather chain diagnosis linking atmospheric dryness, heat, and receptor stress.",manual_reviewed
+CSX-021_Q1,ranking_decision,ranking_decision;physical_mechanism;quantitative_calculation,Ranks intermediate variables by diagnostic leverage for persistent marine heatwave classification.,manual_reviewed
+CSX-021_Q2,spatiotemporal_process,spatiotemporal_process;physical_mechanism;quantitative_calculation,Reconstructs basin-scale marine heatwave persistence and phase evolution across the event window.,manual_reviewed
+CSX-022_Q1,causal_chain,causal_chain;quantitative_calculation;spatiotemporal_process,Heat-load recovery failure analysis linking cumulative daytime load and poor nighttime recovery.,manual_reviewed
+CSX-022_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Compact numeric diagnosis of persistent early-season dry heat and night recovery failure.,manual_reviewed
+CSX-025_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Numeric heat-wave diagnosis distinguishing sustained heat load from single peak-day and competing hazards.,manual_reviewed
+CSX-025_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Decomposes heat-wave persistence versus peak-day spike using daily and hourly meteorological timing.,manual_reviewed
+CSX-027_Q1,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,"Compound heat-water process diagnosis linking persistent heat, water stress, and supporting evidence.",manual_reviewed
+CSX-027_Q2,ranking_decision,ranking_decision;causal_chain;multi_source_evidence,"Response priority ranking for heat-drought operations using weather, precipitation, water-system report, and exposure context.",manual_reviewed
+CSX-028_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Heat-stress load attribution separating cumulative heat stress from a single peak-temperature story.,manual_reviewed
+CSX-028_Q2,physical_mechanism,physical_mechanism;quantitative_calculation;multi_source_evidence,Dry daytime heat dominance diagnosis testing dry-heat explanation against humid or threshold-only alternatives.,manual_reviewed
+CSX-031_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,"Cold-persistence dominance test using numeric cold, snow, and wind-stress timing metrics.",manual_reviewed
+CSX-031_Q2,physical_mechanism,physical_mechanism;spatiotemporal_process;quantitative_calculation,Cold-wave mechanism diagnosis distinguishing persistent cold from elevation-stratified snow or precipitation dominance.,manual_reviewed
+CSX-037_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Cold-stress numeric ledger separating sustained cold plus wind from snow-accumulation interpretation.,manual_reviewed
+CSX-037_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,"Cold-process fingerprint combines lowland temperature, wind chill, and report-coded high-ground ice signals.",manual_reviewed
+CSX-038_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Snow-phase and depth-scale ledger comparing point snowfall with reported highland snow-depth evidence.,manual_reviewed
+CSX-038_Q2,physical_mechanism,physical_mechanism;multi_source_evidence;quantitative_calculation,"Mechanism competition among highland snow, coastal rain, hard freeze, and point wind/snow explanations.",manual_reviewed
+CSX-039_Q1,physical_mechanism,physical_mechanism;spatiotemporal_process;quantitative_calculation,Snow-level stratification analysis diagnosing elevation and phase structure in a winter storm process.,manual_reviewed
+CSX-039_Q2,multi_source_evidence,multi_source_evidence;quantitative_calculation;physical_mechanism,"Cross-source numeric compression test across point, report, and gridded winter-storm evidence.",manual_reviewed
+CSX-040_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Snow phase ledger testing sustained snow accumulation followed by refreeze and wind exposure.,manual_reviewed
+CSX-040_Q2,multi_source_evidence,multi_source_evidence;physical_mechanism;remote_sensing_geospatial,"Reconciles high-elevation point weather, precipitation summaries, and storm-window image statistics.",manual_reviewed
+CSX-045_Q1,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,Infers compound cold-surge and winter-weather phase chain from the event package evidence.,manual_reviewed
+CSX-045_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,"Computes coupled cold-wave thermal-stress index from hourly weather, precipitation summaries, and paired image statistics.",manual_reviewed
+CSX-049_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;spatiotemporal_process,"Diagnoses concentrated pluvial rainfall by combining short-window timing, spatial concentration, and urban disruption evidence.",manual_reviewed
+CSX-049_Q2,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,Rainfall-disruption-exposure score ledger computing compact evidence signal for Hurricane Ida flooding.,manual_reviewed
+CSX-050_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation;spatiotemporal_process,Reconciles report text and gridded precipitation summaries for July 2021 Western Europe flood rainfall.,manual_reviewed
+CSX-050_Q2,quantitative_calculation,quantitative_calculation;causal_chain;spatiotemporal_process,Rainfall-runoff ledger translating concentrated rainfall into direct runoff scale for Western Europe floods.,manual_reviewed
+CSX-051_Q1,spatiotemporal_process,spatiotemporal_process;causal_chain;quantitative_calculation,Reconstructs Zhengzhou dual-pulse rainfall signature and how rainfall concentration translated into flood process.,manual_reviewed
+CSX-051_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Calibrates Zhengzhou peak-hour rainfall as isolated cloudburst versus embedded multi-hour wet spell.,manual_reviewed
+CSX-052_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Compound urban flood process model distinguishing rain-driven flood process from wind-only or imagery-only diagnosis.,manual_reviewed
+CSX-052_Q2,quantitative_calculation,quantitative_calculation;causal_chain;remote_sensing_geospatial,"Rainfall-runoff exposure ledger using masked exposure, OSM, WorldPop, and AOI-derived statistics.",manual_reviewed
+CSX-054_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,"Arid-wadi flood model linking rainfall, terrain/channel response, humanitarian access, and service disruption.",manual_reviewed
+CSX-054_Q2,physical_mechanism,physical_mechanism;remote_sensing_geospatial;quantitative_calculation,Diagnoses heavy rainfall despite weak mean surface-change proxy and weights surface evidence appropriately.,manual_reviewed
+CSX-055_Q1,physical_mechanism,physical_mechanism;spatiotemporal_process;quantitative_calculation,Persistent flood-signal diagnostic for Rio Grande do Sul using rainfall duration and flood process evidence.,manual_reviewed
+CSX-055_Q2,causal_chain,causal_chain;spatiotemporal_process;quantitative_calculation,Basin rainfall routing and flood-response model connecting rainfall persistence to basin response stress.,manual_reviewed
+CSX-057_Q1,causal_chain,causal_chain;quantitative_calculation;multi_source_evidence,"Hurricane Harvey rainfall-flood causal graph requiring calculated rainfall, volume, coverage, and population-density nodes.",manual_reviewed
+CSX-057_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Rainfall-volume diagnostic quantifying Harvey rainfall scale and flood-relevant accumulation.,manual_reviewed
+CSX-058_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation;physical_mechanism,Rainfall-load uncertainty propagation tests whether dry-city runoff mechanism is robust to ratio and anchor uncertainty.,manual_reviewed
+CSX-058_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Formula consistency proof for UAE rainfall load with countermetric or threshold-style checks.,manual_reviewed
+CSX-059_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Short-duration rainfall threshold ledger centered on intense rainfall calculations and event-window timing.,manual_reviewed
+CSX-059_Q2,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Urban pluvial overload and response-stress reconstruction links rainfall forcing to urban disruption and response context.,manual_reviewed
+CSX-060_Q1,physical_mechanism,physical_mechanism;causal_chain;spatiotemporal_process,"Compound mountain flood-landslide diagnostic linking monsoon rainfall, terrain response, and landslide/flood chain.",manual_reviewed
+CSX-060_Q2,multi_source_evidence,multi_source_evidence;physical_mechanism;quantitative_calculation,"Anchor diagnostic connecting station, river, and slope evidence for Nepal flood-landslide event.",manual_reviewed
+CSX-061_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation;spatiotemporal_process,Contrasts Ida station-hour rainfall and gridded rainfall scale to diagnose concentration.,manual_reviewed
+CSX-061_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Threshold-concentration diagnostic for Hurricane Ida rainfall timing and intensity.,manual_reviewed
+CSX-062_Q1,causal_chain,causal_chain;quantitative_calculation;spatiotemporal_process,Western Europe flood process chain from regional rainfall input to runoff translation and local amplification.,manual_reviewed
+CSX-062_Q2,quantitative_calculation,quantitative_calculation;causal_chain;spatiotemporal_process,Runoff translation consistency ledger for July 2021 Western Europe floods.,manual_reviewed
+CSX-063_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Zhengzhou rainfall threshold ledger quantifying extreme rainfall concentration.,manual_reviewed
+CSX-063_Q2,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,Rainfall-transport role diagnostic for Zhengzhou flood process and hydrometeorological mechanism.,manual_reviewed
+CSX-064_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Monsoon rainfall threshold proof using formula-derived event-window precipitation diagnostics.,manual_reviewed
+CSX-064_Q2,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Scenario sensitivity ranking for monsoon-flood mechanisms and flood process drivers.,manual_reviewed
+CSX-065_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;multi_source_evidence,Southeast Asia monsoon flood diagnostic combining rainfall and exposure evidence.,manual_reviewed
+CSX-065_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Monsoon rainfall storage score ledger measuring rainfall storage or persistence signal.,manual_reviewed
+CSX-066_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;causal_chain,Arba'at rainfall-exposure diagnostic combining rainfall evidence and exposure context.,manual_reviewed
+CSX-066_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;multi_source_evidence,Arba'at flood timing and exposure diagnostic centered on event timing plus exposure metrics.,manual_reviewed
+CSX-067_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Sao Sebastiao rainfall threshold ledger quantifying rainfall-trigger potential.,manual_reviewed
+CSX-067_Q2,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,Rainfall-slope trigger diagnostic linking intense rainfall to landslide/flood slope response.,manual_reviewed
+CSX-070_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,UAE rainfall-runoff diagnostic quantifying arid pluvial runoff conditions.,manual_reviewed
+CSX-070_Q2,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Arid pluvial runoff-scale diagnosis for UAE/Dubai linking rainfall load to runoff response.,manual_reviewed
+CSX-071_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Ida rainfall-scale numeric diagnostic measuring event rainfall scale.,manual_reviewed
+CSX-071_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Rainfall partition numeric diagnosis for Ida event concentration and distribution.,manual_reviewed
+CSX-072_Q1,quantitative_calculation,quantitative_calculation;causal_chain;spatiotemporal_process,Rainfall-river response score ledger linking precipitation load to river response.,manual_reviewed
+CSX-072_Q2,causal_chain,causal_chain;spatiotemporal_process;multi_source_evidence,"Kathmandu Valley access-corridor rainfall diagnostic connects intensity, persistence, corridor exposure, and access stress.",manual_reviewed
+CSX-073_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Hurricane Ida rainfall concentration test focused on short-window rainfall metrics.,manual_reviewed
+CSX-073_Q2,quantitative_calculation,quantitative_calculation;causal_chain;spatiotemporal_process,Short-window flood ledger scoring rainfall concentration and flood signal for Hurricane Ida.,manual_reviewed
+CSX-074_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Western Europe flood timing diagnosis centered on regional multi-day rainfall timing.,manual_reviewed
+CSX-074_Q2,spatiotemporal_process,spatiotemporal_process;causal_chain;quantitative_calculation,Rainfall-to-routing lag analysis reconstructing hydrologic timing and flood response delay.,manual_reviewed
+CSX-075_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Zhengzhou rainfall scale-partition ledger computing cross-scale rainfall metrics.,manual_reviewed
+CSX-075_Q2,causal_chain,causal_chain;spatiotemporal_process;quantitative_calculation,Cross-scale flood transition diagnosis linking peak rainfall partition to flood-process transition.,manual_reviewed
+CSX-076_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Pakistan monsoon flood load numeric diagnosis measuring persistent monsoon load.,manual_reviewed
+CSX-076_Q2,ranking_decision,ranking_decision;causal_chain;spatiotemporal_process,Ranks process-chain control points for Pakistan monsoon flood from rainfall to floodplain response.,manual_reviewed
+CSX-076_Q3,causal_chain,causal_chain;spatiotemporal_process;physical_mechanism,"Flagship floodplain-runoff memory model linking monsoon persistence, routing memory, and downstream response.",manual_reviewed
+CSX-078_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Arbaat Dam cascading flood mechanism diagnosis linking dam-area rainfall and cascade evidence.,manual_reviewed
+CSX-078_Q2,causal_chain,causal_chain;multi_source_evidence;spatiotemporal_process,Rainfall-report cascade alignment for Arbaat Dam event and temporal/source consistency.,manual_reviewed
+CSX-079_Q1,physical_mechanism,physical_mechanism;causal_chain;spatiotemporal_process,Atmospheric-river rainfall routing diagnosis for Central Chile flood process.,manual_reviewed
+CSX-079_Q2,multi_source_evidence,multi_source_evidence;causal_chain,"Central Chile flood uncertainty propagation across rainfall, topographic amplification, impact, imagery, and exposure evidence.",manual_reviewed
+CSX-081_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Ida Northeast rainfall concentration numeric check.,manual_reviewed
+CSX-081_Q2,causal_chain,causal_chain;spatiotemporal_process;physical_mechanism,Post-tropical rainfall chain diagnosis for Hurricane Ida Northeast flooding.,manual_reviewed
+CSX-082_Q1,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,"Storm Boris basin-flood score ledger combining rainfall, basin, and flood indicators.",manual_reviewed
+CSX-082_Q2,physical_mechanism,physical_mechanism;causal_chain;spatiotemporal_process,Multibasin hydrologic pressure diagnosis for Storm Boris rainfall and river response.,manual_reviewed
+CSX-083_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Rainfall concentration ratio numeric task.,manual_reviewed
+CSX-083_Q2,causal_chain,causal_chain;quantitative_calculation;spatiotemporal_process,Doksuri Haihe rainfall-runoff routing ledger linking typhoon rainfall to basin routing.,manual_reviewed
+CSX-084_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Mumbai record rainfall concentration check.,manual_reviewed
+CSX-084_Q2,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,Mumbai pluvial overload process diagnosis from record rainfall to urban flooding.,manual_reviewed
+CSX-085_Q1,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,Super Typhoon Yagi rainfall-impact ratio ledger.,manual_reviewed
+CSX-085_Q2,causal_chain,causal_chain;spatiotemporal_process;multi_source_evidence,Yagi rainfall persistence and service-disruption diagnosis linking rainfall timing to service context.,manual_reviewed
+CSX-089_Q1,ranking_decision,ranking_decision;physical_mechanism;multi_source_evidence,Ranks Hurricane Sandy coastal mechanisms by explanatory dominance.,manual_reviewed
+CSX-089_Q2,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,"Attribution model comparing coastal surge, rainfall, and wind processes for Sandy.",manual_reviewed
+CSX-090_Q1,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,Derna rainfall-routing-exposure score ledger.,manual_reviewed
+CSX-090_Q2,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,Derna flood-wave amplification chain diagnosis connecting rainfall routing to flood-wave impact.,manual_reviewed
+CSX-092_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Monsoon rainfall window test for Uttarakhand-Western Nepal mountain hazard timing.,manual_reviewed
+CSX-092_Q2,causal_chain,causal_chain;spatiotemporal_process;physical_mechanism,Persistent monsoon mountain hazard chain diagnosis.,manual_reviewed
+CSX-093_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,NYC Ida pluvial signal score ledger.,manual_reviewed
+CSX-093_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Ida Northeast rainfall concentration ledger.,manual_reviewed
+CSX-094_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;causal_chain,Storm Boris rainfall-exposure diagnostic.,manual_reviewed
+CSX-094_Q2,spatiotemporal_process,spatiotemporal_process;causal_chain;physical_mechanism,Storm Boris rainfall-river timing diagnosis.,manual_reviewed
+CSX-095_Q1,spatiotemporal_process,spatiotemporal_process;physical_mechanism;quantitative_calculation,Typhoon Doksuri remnant rainfall phase segmentation.,manual_reviewed
+CSX-095_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;causal_chain,Doksuri Haihe basin routing persistence and peak ledger.,manual_reviewed
+CSX-096_Q1,spatiotemporal_process,spatiotemporal_process;physical_mechanism;causal_chain,Pakistan persistent monsoon national flood-scale diagnosis.,manual_reviewed
+CSX-096_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Pakistan monsoon persistence gate for Indus flood process.,manual_reviewed
+CSX-097_Q1,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,Yagi rainfall-impact consistency check linking persistent rainfall metrics with reported impact evidence.,manual_reviewed
+CSX-097_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Yagi rainfall persistence threshold proof using event-window rainfall timing and persistence.,manual_reviewed
+CSX-101_Q1,physical_mechanism,physical_mechanism;causal_chain;spatiotemporal_process,"North Sea 1953 coastal flood diagnosis focused on pressure, surge, and wave mechanism.",manual_reviewed
+CSX-101_Q2,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,"Surge amplification process analysis linking pressure forcing, coastal surge, and wave amplification.",manual_reviewed
+CSX-102_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Indus persistent monsoon flood ledger quantifying rainfall persistence and flood consistency.,manual_reviewed
+CSX-102_Q2,causal_chain,causal_chain;spatiotemporal_process;physical_mechanism,"Pakistan Indus process chain reconstructing rainfall, routing, storage, and downstream amplification.",manual_reviewed
+CSX-103_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,"Hurricane Sandy coastal-forcing causal graph comparing wind, rain, water-level, wave, exposure, and imagery evidence.",manual_reviewed
+CSX-103_Q2,physical_mechanism,physical_mechanism;multi_source_evidence,"Sandy coastal-forcing mechanism competition across surge/waves, rainfall runoff, and local wind stress.",manual_reviewed
+CSX-104_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Kedarnath rainfall-concentration ledger measuring concentrated mountain rainfall.,manual_reviewed
+CSX-104_Q2,physical_mechanism,physical_mechanism;spatiotemporal_process;causal_chain,Persistent rainfall corridor loading diagnosis for Kedarnath mountain flood process.,manual_reviewed
+CSX-105_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Hurricane Ian landfall threshold-window ledger.,manual_reviewed
+CSX-105_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Ian threshold-window ledger checking landfall timing and intensity conditions.,manual_reviewed
+CSX-106_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Ophelia peak-timing ledger centered on temporal consistency of peak hazard signals.,manual_reviewed
+CSX-106_Q2,spatiotemporal_process,spatiotemporal_process;physical_mechanism;quantitative_calculation,"Ophelia wind-rain phase ledger reconstructing wind, pressure, and rain phase timing.",manual_reviewed
+CSX-110_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,"Cyclone Freddy load ledger measuring duration, rainfall, and cyclone load.",manual_reviewed
+CSX-110_Q2,ranking_decision,ranking_decision;spatiotemporal_process;physical_mechanism,"Scenario sensitivity ranking for Freddy duration, wind, rain, and lag controls.",manual_reviewed
+CSX-110_Q3,causal_chain,causal_chain;spatiotemporal_process;multi_source_evidence,"Flagship Freddy model linking rainfall lag, flood response, and humanitarian access.",manual_reviewed
+CSX-113_Q1,spatiotemporal_process,spatiotemporal_process;physical_mechanism;quantitative_calculation,Late-phase segmentation of Tropical Cyclone Freddy rainfall process.,manual_reviewed
+CSX-113_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;causal_chain,March rain-runoff lag proof for Cyclone Freddy.,manual_reviewed
+CSX-114_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Cyclone Gonu severity ledger quantifying tropical cyclone severity signals.,manual_reviewed
+CSX-114_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Local Cyclone Gonu numeric consistency ledger for Muscat land-stage conditions.,manual_reviewed
+CSX-117_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Hurricane Ian peak-timing ledger.,manual_reviewed
+CSX-117_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Ian landfall-core timing and rainfall concentration ledger.,manual_reviewed
+CSX-118_Q1,multi_source_evidence,multi_source_evidence;spatiotemporal_process;quantitative_calculation,Timing-intensity reconciliation task comparing cyclone evidence sources and timing signals.,manual_reviewed
+CSX-118_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Cyclone wind-pressure exposure and response-priority model linking physical intensity to exposed assets and response posture.,manual_reviewed
+CSX-122_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Cyclone Freddy late-phase rainfall signal ledger.,manual_reviewed
+CSX-122_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Temporal rainfall-concentration test for Cyclone Freddy.,manual_reviewed
+CSX-124_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,"Cyclone Gabrielle compound-signal ledger combining rainfall, wind, and impact indicators.",manual_reviewed
+CSX-124_Q2,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Compound rainfall-wind exposure stress model for Cyclone Gabrielle.,manual_reviewed
+CSX-125_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;causal_chain,Tropical Cyclone Freddy persistence-rainfall exposure ledger.,manual_reviewed
+CSX-125_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;multi_source_evidence,Duration-record consistency ledger for Cyclone Freddy.,manual_reviewed
+CSX-126_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,"Oman landfall phase severity proof for Gonu rain, gust, pressure, and window consistency.",manual_reviewed
+CSX-126_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Gonu landfall-day rain-wind concentration test.,manual_reviewed
+CSX-129_Q1,multi_source_evidence,multi_source_evidence;quantitative_calculation;remote_sensing_geospatial,Ian point-and-box consistency ledger comparing point signals and remote/box evidence.,manual_reviewed
+CSX-129_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,"Ian compound-load index check across wind, rain, and pressure load.",manual_reviewed
+CSX-130_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Ophelia wind-rain phase score ledger.,manual_reviewed
+CSX-130_Q2,spatiotemporal_process,spatiotemporal_process;physical_mechanism;multi_source_evidence,Ophelia European wind-risk transition timing proof.,manual_reviewed
+CSX-132_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Northern Italy giant-hail severity ledger.,manual_reviewed
+CSX-132_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Giant-hail severity formula consistency proof.,manual_reviewed
+CSX-133_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Yagi wind-rain peak window test.,manual_reviewed
+CSX-133_Q2,quantitative_calculation,quantitative_calculation;causal_chain;spatiotemporal_process,Compound passage consistency proof for Super Typhoon Yagi.,manual_reviewed
+CSX-139_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,"Storm Ciaran process model linking rapid deepening, wind-rain forcing, and exposure load.",manual_reviewed
+CSX-139_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Storm Ciaran pressure-wind consistency ledger.,manual_reviewed
+CSX-140_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Atacama Desert rainfall-pulse numeric ledger.,manual_reviewed
+CSX-140_Q2,ranking_decision,ranking_decision;physical_mechanism;quantitative_calculation,Ranks key variables for Atacama rainfall outlier diagnosis.,manual_reviewed
+CSX-141_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Tornado concentration and rating ledger.,manual_reviewed
+CSX-141_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Severe-convection threshold ledger.,manual_reviewed
+CSX-144_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Northern Italy severe hailstorm threshold-context score ledger.,manual_reviewed
+CSX-144_Q2,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,Giant-hail convective stress and response-load model.,manual_reviewed
+CSX-145_Q1,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Compound typhoon consistency ledger.,manual_reviewed
+CSX-145_Q2,quantitative_calculation,quantitative_calculation;causal_chain;multi_source_evidence,Super Typhoon Yagi compound wind-rain impact load index.,manual_reviewed
+CSX-147_Q1,causal_chain,causal_chain;multi_source_evidence;quantitative_calculation,Bangladesh storm-flood process evidence ledger.,manual_reviewed
+CSX-147_Q2,ranking_decision,ranking_decision;causal_chain;spatiotemporal_process,Ranks process-chain control points for Bangladesh storm-flood event.,manual_reviewed
+CSX-148_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;causal_chain,Free State storm damage impact-count reconciliation.,manual_reviewed
+CSX-148_Q2,quantitative_calculation,quantitative_calculation;multi_source_evidence;physical_mechanism,Free State severe-storm impact threshold ledger.,manual_reviewed
+CSX-159_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Koror rainfall-deficit water-balance numeric diagnosis.,manual_reviewed
+CSX-159_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Koror water-stress index check.,manual_reviewed
+CSX-171_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Pacific drought deficit ledger.,manual_reviewed
+CSX-171_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,ENSO-driven island drought response-pressure model.,manual_reviewed
+CSX-175_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Smoke-burden calculation ledger using AOD or smoke metrics.,manual_reviewed
+CSX-175_Q2,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Future risk amplification pathway ranking for Canadian wildfire smoke.,manual_reviewed
+CSX-175_Q3,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,"Flagship boreal fire source, smoke transport, and health-response model.",manual_reviewed
+CSX-176_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Greece wildfires late-August phase ledger.,manual_reviewed
+CSX-176_Q2,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,Greece wildfire smoke-transport score ledger.,manual_reviewed
+CSX-177_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Uljin-Samcheok wind-dry-burn forcing index.,manual_reviewed
+CSX-177_Q2,physical_mechanism,physical_mechanism;multi_source_evidence;quantitative_calculation,Wildfire mechanism competition comparing dry windy spread with later rain relief.,manual_reviewed
+CSX-178_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;physical_mechanism,Nepal fire-smoke reported numeric signature.,manual_reviewed
+CSX-178_Q2,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,"Coupled fire-weather, smoke transport, and burn-activity index.",manual_reviewed
+CSX-179_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Southeast Asia haze severity and transport metric diagnosis.,manual_reviewed
+CSX-179_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Peat-smoke gas-signal ledger.,manual_reviewed
+CSX-180_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Southern Africa smoke-aerosol threshold ledger.,manual_reviewed
+CSX-180_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Smoke-window consistency ledger for wildfire smoke/aerosol timing.,manual_reviewed
+CSX-182_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Black Summer numeric fingerprint score ledger.,manual_reviewed
+CSX-182_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Early fire-weather and surface-change ledger.,manual_reviewed
+CSX-186_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Cameron Peak and East Troublesome growth ledger.,manual_reviewed
+CSX-186_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Wildfire snow-interruption threshold ledger.,manual_reviewed
+CSX-187_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,2023 Canadian wildfire smoke threshold ledger.,manual_reviewed
+CSX-187_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Wildfire-smoke threshold ledger.,manual_reviewed
+CSX-188_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Greece wildfire smoke-response process model.,manual_reviewed
+CSX-188_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Wildfire-smoke burn threshold ledger.,manual_reviewed
+CSX-189_Q1,multi_source_evidence,multi_source_evidence;remote_sensing_geospatial;quantitative_calculation,Uljin report and burn-change consistency ledger.,manual_reviewed
+CSX-189_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Uljin event-window spread-pressure evidence score.,manual_reviewed
+CSX-191_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Southeast Asia haze threshold ledger.,manual_reviewed
+CSX-191_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Peat-smoke haze severity ledger.,manual_reviewed
+CSX-192_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Western Cape report/gridded burn threshold ledger.,manual_reviewed
+CSX-192_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Western Cape reported wildfire process and response-pressure scenario model.,manual_reviewed
+CSX-194_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,"Black Summer fire-weather, pyroconvection, and receptor-stress model.",manual_reviewed
+CSX-194_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Black Summer fire-weather phase ledger.,manual_reviewed
+CSX-195_Q1,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Australian smoke upper-air transport ledger.,manual_reviewed
+CSX-195_Q2,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Pyroconvective smoke injection and response-load model.,manual_reviewed
+CSX-198_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Caldor Fire threshold score ledger.,manual_reviewed
+CSX-198_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;multi_source_evidence,Caldor Fire damage-window ledger.,manual_reviewed
+CSX-199_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Canadian wildfire burn-smoke signal ledger.,manual_reviewed
+CSX-199_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Burn-index threshold ledger for Canadian wildfires.,manual_reviewed
+CSX-200_Q1,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,Greece wildfire smoke-chain score ledger.,manual_reviewed
+CSX-200_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Post-fire surface-change consistency check.,manual_reviewed
+CSX-202_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Compound air-hazard numeric ledger.,manual_reviewed
+CSX-202_Q2,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Mediterranean compound atmospheric stress diagnosis.,manual_reviewed
+CSX-203_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;causal_chain,Air-quality exposure consistency ledger.,manual_reviewed
+CSX-203_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Severe haze meteorology consistency proof.,manual_reviewed
+CSX-206_Q1,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Smoke-transport threshold ledger.,manual_reviewed
+CSX-206_Q2,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Southern Africa smoke transport numeric ledger.,manual_reviewed
+CSX-207_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,"Fire-weather, smoke-transport, and exposure stress model.",manual_reviewed
+CSX-207_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Wildfire-smoke consistency proof.,manual_reviewed
+CSX-208_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Australian bushfire air-smoke-fire consistency ledger.,manual_reviewed
+CSX-208_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Fire-smoke threshold ledger.,manual_reviewed
+CSX-209_Q1,physical_mechanism,physical_mechanism;spatiotemporal_process;quantitative_calculation,Singapore severe CO haze with partial rain clearing diagnosis.,manual_reviewed
+CSX-209_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Smoke-plume threshold ledger.,manual_reviewed
+CSX-211_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Smoke-window threshold score ledger.,manual_reviewed
+CSX-211_Q2,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Vertical smoke exposure ledger.,manual_reviewed
+CSX-212_Q1,spatiotemporal_process,spatiotemporal_process;causal_chain;multi_source_evidence,Kathmandu smoke-health exposure window diagnosis.,manual_reviewed
+CSX-212_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Kathmandu gridded smoke-persistence threshold ledger.,manual_reviewed
+CSX-215_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Stagnant winter aerosol exposure-load reconstruction.,manual_reviewed
+CSX-215_Q2,physical_mechanism,physical_mechanism;spatiotemporal_process;causal_chain,Beijing-Tianjin-Hebei haze stagnation-exposure diagnosis.,manual_reviewed
+CSX-218_Q1,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Angola smoke-transport candidate score ledger.,manual_reviewed
+CSX-218_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Smoke persistence numeric proof.,manual_reviewed
+CSX-219_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Oso rainfall-relief-runout threshold ledger.,manual_reviewed
+CSX-219_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Oso landslide numeric diagnosis ledger.,manual_reviewed
+CSX-220_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Gjerdrum quick-clay landslide numeric diagnosis.,manual_reviewed
+CSX-220_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Threshold-window ledger diagnosis for landslide process.,manual_reviewed
+CSX-221_Q1,physical_mechanism,physical_mechanism;causal_chain;quantitative_calculation,Atami rainfall-loaded slope failure process diagnosis.,manual_reviewed
+CSX-221_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Rainfall-loaded debris-flow process and response priority model.,manual_reviewed
+CSX-223_Q1,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Guinsaugon rainfall window threshold ledger.,manual_reviewed
+CSX-223_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Guinsaugon rainfall window threshold ledger consistency task.,manual_reviewed
+CSX-224_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Freetown rain-runout candidate ledger.,manual_reviewed
+CSX-224_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,"Rainfall-runout landslide response model connecting rain forcing, runout, and response posture.",manual_reviewed
+CSX-225_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Mocoa rain-window runout score ledger.,manual_reviewed
+CSX-225_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Mocoa threshold ledger consistency check.,manual_reviewed
+CSX-226_Q1,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Enga landslide surface-rain threshold ledger.,manual_reviewed
+CSX-226_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Locked-date precipitation score ledger for Enga landslide context.,manual_reviewed
+CSX-227_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Taan Fiord mechanism candidate score ledger.,manual_reviewed
+CSX-227_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Taan Fiord mass-runup SAR exposure gate ledger.,manual_reviewed
+CSX-228_Q1,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,La Conchita threshold-window candidate score ledger.,manual_reviewed
+CSX-228_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,La Conchita rainfall threshold-window ledger.,manual_reviewed
+CSX-230_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Langtang seismic-avalanche threshold-window ledger.,manual_reviewed
+CSX-230_Q2,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Langtang mixed avalanche-obstruction process diagnosis.,manual_reviewed
+CSX-232_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Kahramanmaras sequence severity ledger.,manual_reviewed
+CSX-232_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Earthquake cascade response-stress model.,manual_reviewed
+CSX-232_Q3,causal_chain,causal_chain;physical_mechanism;ranking_decision,"Flagship earthquake rupture, access fragility, and cold-rescue window model.",manual_reviewed
+CSX-233_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Noto Peninsula earthquake consistency ledger.,manual_reviewed
+CSX-233_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Noto Peninsula earthquake surface-change numeric ledger.,manual_reviewed
+CSX-234_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Gorkha earthquake numeric consistency proof.,manual_reviewed
+CSX-234_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,Gorkha May 12 seismic consistency ledger.,manual_reviewed
+CSX-235_Q1,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,Palu coupled geophysical hazard-chain score.,manual_reviewed
+CSX-235_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Palu coupled-rupture numeric ledger.,manual_reviewed
+CSX-236_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Near-term earthquake response triage for Morocco Al Haouz.,manual_reviewed
+CSX-236_Q2,remote_sensing_geospatial,remote_sensing_geospatial;physical_mechanism;quantitative_calculation,Localized coseismic patchiness diagnosis using surface-change or spatial evidence.,manual_reviewed
+CSX-237_Q1,quantitative_calculation,quantitative_calculation;multi_source_evidence;physical_mechanism,Maule event-data consistency score ledger.,manual_reviewed
+CSX-237_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;causal_chain,Seismic facility-imbalance formula threshold ledger.,manual_reviewed
+CSX-238_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Christchurch liquefaction-weighted seismic score.,manual_reviewed
+CSX-238_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Christchurch ground-failure dominance numeric ledger.,manual_reviewed
+CSX-239_Q1,physical_mechanism,physical_mechanism;causal_chain;spatiotemporal_process,Indian Ocean tsunami mechanism briefing.,manual_reviewed
+CSX-239_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Indian Ocean tsunami arrival-window reconstruction ledger.,manual_reviewed
+CSX-240_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Bam earthquake response-priority diagnosis.,manual_reviewed
+CSX-240_Q2,causal_chain,causal_chain;ranking_decision;multi_source_evidence,Day-of-event shelter stress chain for earthquake impact response.,manual_reviewed
+CSX-242_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;multi_source_evidence,Gorkha shallow seismic dominance diagnosis.,manual_reviewed
+CSX-242_Q2,spatiotemporal_process,spatiotemporal_process;multi_source_evidence;quantitative_calculation,Gorkha later-alert timing anchor.,manual_reviewed
+CSX-245_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Noto Peninsula earthquake impact-priority diagnosis.,manual_reviewed
+CSX-245_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Noto fault-coupled severity ledger.,manual_reviewed
+CSX-246_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,First-response mechanism prioritization for geophysical event.,manual_reviewed
+CSX-246_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;multi_source_evidence,Earthquake-tsunami catalog sequence ledger.,manual_reviewed
+CSX-248_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Heat-dry onset index for Northern/Central Europe compound event.,manual_reviewed
+CSX-248_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Remote-sensing change ratios for 2018 Europe compound event.,manual_reviewed
+CSX-249_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Operational priority brief for 2022 China heat wave and Yangtze drought.,manual_reviewed
+CSX-249_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Heat-drought evidence score ledger.,manual_reviewed
+CSX-251_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Compound fire-haze response priority.,manual_reviewed
+CSX-251_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Haze-dryness score ledger.,manual_reviewed
+CSX-253_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Sao Sebastiao flood-landslide mechanism brief.,manual_reviewed
+CSX-253_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Sao Sebastiao rain-slope evidence ledger.,manual_reviewed
+CSX-254_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Black Summer fire-weather smoke threshold ledger.,manual_reviewed
+CSX-254_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Black Summer fire-smoke consistency score.,manual_reviewed
+CSX-255_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Cyclone Freddy compound response priority.,manual_reviewed
+CSX-255_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Cyclone Freddy rainfall-surface threshold ledger.,manual_reviewed
+CSX-256_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Post-fire debris-flow mechanism diagnosis.,manual_reviewed
+CSX-256_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Post-fire debris-flow coupling and response priority model.,manual_reviewed
+CSX-257_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Coastal cascade response priority for Sandy-like corridor hazard.,manual_reviewed
+CSX-257_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Hurricane Sandy coastal corridor consistency ledger.,manual_reviewed
+CSX-260_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Western Europe flood response diagnosis.,manual_reviewed
+CSX-260_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Western Europe flood window threshold ledger.,manual_reviewed
+CSX-263_Q1,causal_chain,causal_chain;physical_mechanism;ranking_decision,Peat-fire haze process stress and response priority model.,manual_reviewed
+CSX-263_Q2,ranking_decision,ranking_decision;physical_mechanism;quantitative_calculation,Carbon monoxide amplification and response triage.,manual_reviewed
+CSX-266_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Compound fire-atmosphere priority.,manual_reviewed
+CSX-266_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Black Summer monthly fire-weather ledger.,manual_reviewed
+CSX-267_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Coupled El Nino persistence score ledger.,manual_reviewed
+CSX-267_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,ENSO-linked wet-season exposure stress model.,manual_reviewed
+CSX-267_Q3,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,Flagship ENSO mature-core coupling and teleconnection-risk model.,manual_reviewed
+CSX-269_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,El Nino fire-haze preparedness brief.,manual_reviewed
+CSX-269_Q2,remote_sensing_geospatial,remote_sensing_geospatial;physical_mechanism;causal_chain,Indonesian fire-haze remote-sensing briefing.,manual_reviewed
+CSX-270_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Early wet-season event-consistency score ledger for East Africa flood.,manual_reviewed
+CSX-270_Q2,multi_source_evidence,multi_source_evidence;quantitative_calculation;spatiotemporal_process,East Africa multisource rainfall-structure ledger.,manual_reviewed
+CSX-271_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,ENSO-amplified coastal flood preparedness priority.,manual_reviewed
+CSX-271_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Peru-Ecuador ENSO-rainfall coupling score ledger.,manual_reviewed
+CSX-272_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Queensland La Nina rainfall load score ledger.,manual_reviewed
+CSX-272_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Queensland flood rainfall-timing ledger.,manual_reviewed
+CSX-274_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,El Nino winter impact priority.,manual_reviewed
+CSX-274_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,El Nino coupled-window threshold ledger.,manual_reviewed
+CSX-276_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Southern Africa drought readiness diagnosis.,manual_reviewed
+CSX-276_Q2,remote_sensing_geospatial,remote_sensing_geospatial;physical_mechanism;multi_source_evidence,Remote-sensing interpretation during Southern Africa drought.,manual_reviewed
+CSX-278_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Teleconnection-to-drought response priority.,manual_reviewed
+CSX-278_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Horn of Africa ENSO coupling ledger.,manual_reviewed
+CSX-279_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,El Nino drought response briefing.,manual_reviewed
+CSX-279_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,ENSO drought threshold ledger.,manual_reviewed
+CSX-280_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Ethiopia El Nino drought food-security planning priority.,manual_reviewed
+CSX-280_Q2,causal_chain,causal_chain;ranking_decision;physical_mechanism,El Nino drought stress and livelihood-response priority model.,manual_reviewed
+CSX-283_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Tropical Cyclone Freddy response-priority diagnosis.,manual_reviewed
+CSX-283_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;physical_mechanism,Freddy Mozambique phase persistence ledger.,manual_reviewed
+CSX-284_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Monsoon flood response diagnosis.,manual_reviewed
+CSX-284_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Pakistan monsoon flood threshold score ledger.,manual_reviewed
+CSX-285_Q1,causal_chain,causal_chain;physical_mechanism;ranking_decision,Monsoon-typhoon runoff and access-response stress model.,manual_reviewed
+CSX-285_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Storm-surface consistency ledger using rainfall and image/annual change evidence.,manual_reviewed
+CSX-286_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Flood response priority diagnosis.,manual_reviewed
+CSX-286_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;physical_mechanism,East Africa rainfall concentration ledger.,manual_reviewed
+CSX-287_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Central Chile flood response classification.,manual_reviewed
+CSX-287_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Central Chile rainfall-scale and surface-change consistency ledger.,manual_reviewed
+CSX-289_Q1,physical_mechanism,physical_mechanism;causal_chain;ranking_decision,Henan flood mechanism and response-priority diagnosis.,manual_reviewed
+CSX-289_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;causal_chain,Zhengzhou rainfall-concentration exposure threshold ledger.,manual_reviewed
+CSX-290_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,California atmospheric-river diagnostic ledger.,manual_reviewed
+CSX-290_Q2,quantitative_calculation,quantitative_calculation;spatiotemporal_process;causal_chain,Antecedent runoff persistence score ledger.,manual_reviewed
+CSX-292_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Monsoon-flood mechanism and response priority.,manual_reviewed
+CSX-292_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Pakistan monsoon wet-cooling pulse consistency test.,manual_reviewed
+CSX-295_Q1,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Saharan dust transport-scale consistency check.,manual_reviewed
+CSX-295_Q2,quantitative_calculation,quantitative_calculation;causal_chain;physical_mechanism,Saharan dust DCI transport consistency proof.,manual_reviewed
+CSX-297_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Smoke-haze mechanism and response priority.,manual_reviewed
+CSX-297_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Indonesia haze rainfall-contrast consistency test.,manual_reviewed
+CSX-298_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,June 2020 Saharan dust response priority.,manual_reviewed
+CSX-298_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,"Godzilla dust-veil consistency test using true-color, surface, and rainfall indicators.",manual_reviewed
+CSX-299_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Patagonian dust-streamer dry-transport threshold proof.,manual_reviewed
+CSX-299_Q2,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Patagonian dust streamer source-gate consistency proof.,manual_reviewed
+CSX-300_Q1,physical_mechanism,physical_mechanism;quantitative_calculation;causal_chain,Australian dust wind-dryness-receptor transport consistency check.,manual_reviewed
+CSX-300_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Dust-veil consistency calculation using tan brightening and dry-wind evidence.,manual_reviewed
+CSX-301_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Dust-storm response priority diagnosis.,manual_reviewed
+CSX-301_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Dust mobility wetness index.,manual_reviewed
+CSX-302_Q1,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,Trans-Atlantic dust receptor transport diagnosis.,manual_reviewed
+CSX-302_Q2,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Saharan dust transport stress and downwind exposure model.,manual_reviewed
+CSX-303_Q1,causal_chain,causal_chain;quantitative_calculation;physical_mechanism,Celia Saharan dust pathway index with countermetric checks.,manual_reviewed
+CSX-303_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Saharan dust optical-veil consistency check from RGB imagery and precipitation/surface countermetrics.,manual_reviewed
+CSX-304_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Iraq multiday dust-transport threshold check.,manual_reviewed
+CSX-304_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Iraq dust-storm wind-rain threshold consistency check.,manual_reviewed
+CSX-306_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Barren Island ash-plume rain/change gate consistency calculation.,manual_reviewed
+CSX-306_Q2,causal_chain,causal_chain;multi_source_evidence;physical_mechanism,"L5 volcanic ash research-synthesis task: formulate and test source, rainfall/weather, surface-change, and exposure hypotheses using report evidence, computed counter-evidence, confidence modelling, scenario sensitivity, and validation planning. Primary scoring dimensions are causal synthesis, multi-source evidence use, and physical mechanism interpretation.",manual_reviewed
+CSX-307_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Merapi compound pyroclastic-lahar-ash pressure diagnosis.,manual_reviewed
+CSX-307_Q2,causal_chain,causal_chain;physical_mechanism;quantitative_calculation,Merapi volcanic rainfall and lahar-response stress model.,manual_reviewed
+CSX-308_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Nyiragongo impact-chain priority for lava and eruption response.,manual_reviewed
+CSX-308_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Nyiragongo surface-impact threshold ledger.,manual_reviewed
+CSX-309_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Calbuco eruption response priority.,manual_reviewed
+CSX-309_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Calbuco eruption observation ledger.,manual_reviewed
+CSX-310_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Emergency priority diagnosis for compound Hunga Tonga eruption and tsunami event.,manual_reviewed
+CSX-310_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Hunga Tonga surface-change consistency test with weather-null guardrail.,manual_reviewed
+CSX-311_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Mount Ontake phreatic rain-gate consistency check.,manual_reviewed
+CSX-311_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Mount Ontake signal ledger distinguishing sudden phreatic plume from rain or surface-change signals.,manual_reviewed
+CSX-312_Q1,causal_chain,causal_chain;quantitative_calculation;physical_mechanism,Kilauea volcanic chain score ledger for lava and summit-collapse coupling.,manual_reviewed
+CSX-312_Q2,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Kilauea coupled-system diagnosis for lower-rift lava and summit-collapse crisis.,manual_reviewed
+CSX-313_Q1,physical_mechanism,physical_mechanism;causal_chain;multi_source_evidence,Taan Fiord landslide-tsunami source dominance model.,manual_reviewed
+CSX-313_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;causal_chain,Taan Fiord landslide-tsunami severity signature.,manual_reviewed
+CSX-314_Q1,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Chamoli rock-ice-sediment-water cascade consistency model.,manual_reviewed
+CSX-314_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Chamoli source-class consistency ledger using terrain-change and weather evidence.,manual_reviewed
+CSX-315_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Puncak Jaya tropical glacier retreat priority.,manual_reviewed
+CSX-315_Q2,physical_mechanism,physical_mechanism;remote_sensing_geospatial;spatiotemporal_process,Puncak Jaya glacier retreat consistency diagnosis.,manual_reviewed
+CSX-316_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Kilimanjaro cryosphere priority diagnosis.,manual_reviewed
+CSX-316_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;spatiotemporal_process,Kilimanjaro retreat window-scene consistency index.,manual_reviewed
+CSX-317_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Lake Palcacocha rapid-impact priority.,manual_reviewed
+CSX-317_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;causal_chain,Lake Palcacocha rapid-route consistency check.,manual_reviewed
+CSX-318_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Tasman Glacier lake-impact diagnosis.,manual_reviewed
+CSX-318_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Tasman seismic-calving consistency index with weather counterweight.,manual_reviewed
+CSX-319_Q1,physical_mechanism,physical_mechanism;ranking_decision;causal_chain,Aru Glacier collapse mechanism brief.,manual_reviewed
+CSX-319_Q2,remote_sensing_geospatial,remote_sensing_geospatial;quantitative_calculation;physical_mechanism,Surface-change consistency ledger for Aru glacier collapse.,manual_reviewed
+CSX-320_Q1,ranking_decision,ranking_decision;causal_chain;physical_mechanism,Glacier outburst flood response priority for Mendenhall/Suicide Basin pathway.,manual_reviewed
+CSX-320_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Mendenhall GLOF release-gate consistency test.,manual_reviewed
+CSX-321_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Marmolada glacier collapse impact priority.,manual_reviewed
+CSX-321_Q2,quantitative_calculation,quantitative_calculation;remote_sensing_geospatial;physical_mechanism,Marmolada localized collapse signal check.,manual_reviewed
+CSX-322_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;ranking_decision,Hassanabad/Shishper GLOF heat-melt versus rainfall priority index.,manual_reviewed
+CSX-322_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;remote_sensing_geospatial,Hassanabad GLOF pathway-signal margin consistency.,manual_reviewed
+CSX-323_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Marine heatwave impact priority distinguishing basin-scale ocean heat stress from competing pathways.,manual_reviewed
+CSX-323_Q2,spatiotemporal_process,spatiotemporal_process;quantitative_calculation;multi_source_evidence,Scale-window evidence summary for Northeast Pacific marine heatwave.,manual_reviewed
+CSX-324_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Marine heat-stress priority reasoning for Northern Indian Ocean/Arabian Sea context.,manual_reviewed
+CSX-324_Q2,physical_mechanism,physical_mechanism;spatiotemporal_process;quantitative_calculation,Arabian Sea sustained marine heat-stress diagnosis.,manual_reviewed
+CSX-325_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Coral bleaching accumulated heat-stress extent escalation test.,manual_reviewed
+CSX-325_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Southeast Asia coral bleaching heat-stress gate test with land/weather and surface-change countermetrics.,manual_reviewed
+CSX-328_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Great Barrier Reef bleaching priority brief.,manual_reviewed
+CSX-328_Q2,causal_chain,causal_chain;physical_mechanism;multi_source_evidence,Marine heat-stress persistence and reef-bleaching severity model.,manual_reviewed
+CSX-329_Q1,quantitative_calculation,quantitative_calculation;physical_mechanism;spatiotemporal_process,Northwest Pacific reef heat-stress dominance consistency check.,manual_reviewed
+CSX-329_Q2,quantitative_calculation,quantitative_calculation;physical_mechanism;multi_source_evidence,Northwest Pacific bleaching alert score consistency check against non-marine proxies.,manual_reviewed
+CSX-330_Q1,ranking_decision,ranking_decision;physical_mechanism;causal_chain,Marine heat-stress priority diagnosis for Florida Keys coral bleaching emergency.,manual_reviewed
+CSX-330_Q2,causal_chain,causal_chain;physical_mechanism;ranking_decision,Florida Keys marine heat-stress persistence and coral-rescue triage model.,manual_reviewed
+CSX-330_Q3,causal_chain,causal_chain;physical_mechanism;spatiotemporal_process,Flagship coral bleaching rescue clock under accumulated degree-heating stress.,manual_reviewed

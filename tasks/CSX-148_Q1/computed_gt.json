@@ -1,0 +1,154 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-148",
+  "key_values": {
+    "answer_template": {
+      "conclusion": "Reported impact counts set the residential ledger; rainfall and wind diagnostics support a severe storm day but are not damage counts.",
+      "label": "reported_convective_damage_ledger"
+    },
+    "event": {
+      "correspondence_score": 86,
+      "country_or_region": "South Africa",
+      "date": "2023-12-06",
+      "event_name": "December 2023 Free State severe thunderstorms and hail",
+      "existence_verdict": "confirmed",
+      "location": "Free State Province"
+    },
+    "reported_counts": {
+      "bloemfontein_houses_roofs_blown_off": 16,
+      "bohlokong_houses_damaged": 250,
+      "bohlokong_shacks_affected": 50,
+      "churches_damaged": 1,
+      "dewetsdorp_houses_damaged": 24,
+      "electrical_substations_struck": 7,
+      "fatalities": 1,
+      "hospital_admissions": 3,
+      "house_total": 292,
+      "madikgetla_houses_roofs_blown_off": 2,
+      "residential_total_including_shacks": 342,
+      "schools_damaged": 1,
+      "stadiums_damaged": 2
+    },
+    "weather_diagnostics": {
+      "chirps_event_precip_mm": {
+        "chirps_event_precip_mm_max": 12.291369438171387,
+        "chirps_event_precip_mm_mean": 1.4474823063114926,
+        "chirps_event_precip_mm_min": 0,
+        "chirps_event_precip_mm_stdDev": 3.092560112811838
+      },
+      "era5_land_event_stats": {
+        "precipitation_sum_mm_max": 9.78502631187439,
+        "precipitation_sum_mm_mean": 1.808190412592159,
+        "precipitation_sum_mm_min": 0.49355626106262207,
+        "precipitation_sum_mm_stdDev": 2.0042471016905647,
+        "temperature_2m_max_c_max": 34.063943481445335,
+        "temperature_2m_max_c_mean": 31.691351554017206,
+        "temperature_2m_max_c_min": 27.916848754882835,
+        "temperature_2m_max_c_stdDev": 1.5386538408248134,
+        "u_component_of_wind_10m_max": -1.340563456217448,
+        "u_component_of_wind_10m_mean": -2.4507533108592487,
+        "u_component_of_wind_10m_min": -3.5234247843424478,
+        "u_component_of_wind_10m_stdDev": 0.4986204498434473,
+        "v_component_of_wind_10m_max": -1.1281496683756511,
+        "v_component_of_wind_10m_mean": -2.6367705519627354,
+        "v_component_of_wind_10m_min": -3.808935801188151,
+        "v_component_of_wind_10m_stdDev": 0.755179534841168
+      },
+      "gpm_event_precip_mm": {
+        "gpm_event_precip_mm_max": 20.264999739825726,
+        "gpm_event_precip_mm_mean": 5.626250460105969,
+        "gpm_event_precip_mm_min": 0.3699999861419201,
+        "gpm_event_precip_mm_stdDev": 4.157221253714265
+      },
+      "gpm_to_openmeteo_precip_ratio": 33.775,
+      "nasa_power_2023_12_06": {
+        "precipitation_mm_day": 10.68,
+        "temperature_2m_max_c": 33.07,
+        "wind_speed_10m_m_s": 5.15
+      },
+      "open_meteo_2023_12_06": {
+        "precipitation_sum_mm": 0.6,
+        "temperature_2m_max_c": 31.0,
+        "wind_speed_10m_max_kmh": 29.0
+      }
+    }
+  },
+  "primary_gt": {
+    "conclusion": "Reported impact counts set the residential ledger; rainfall and wind diagnostics support a severe storm day but are not damage counts.",
+    "gpm_max_mm": 20.265,
+    "gpm_to_openmeteo_precip_ratio": 33.775,
+    "house_total": 292,
+    "human_impacts": {
+      "fatalities": 1,
+      "hospital_admissions": 3
+    },
+    "label": "reported_convective_damage_ledger",
+    "residential_total_including_shacks": 342,
+    "substations_struck": 7
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "note": "Values are read from local CSX-148 records and weather diagnostic files.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_National_government_statement_citing_SAWS_severe_weather.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_December_2023_Free_State_severe_thunderstorms_and_hail.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the compact label and final ledger values: 292 houses, 342 residential structures including shacks, 1 fatality, 3 hospital admissions, and 7 substations.",
+        "name": "Final ledger",
+        "partial_credit": "Award 2-3 points for the right label with one or two minor count errors.",
+        "points": 4
+      },
+      {
+        "description": "Shows 16 + 24 + 2 + 250 = 292 and 292 + 50 = 342.",
+        "name": "Residential arithmetic",
+        "partial_credit": "Award 2 points for computing only the house total or only the shack-inclusive total.",
+        "points": 4
+      },
+      {
+        "description": "Uses 1 fatality, 3 hospital admissions, and 7 lightning-struck substations accurately.",
+        "name": "Human and infrastructure counts",
+        "partial_credit": "Award 1-2 points for naming these impacts but omitting one count.",
+        "points": 3
+      },
+      {
+        "description": "Reports weather diagnostics with units, especially GPM maximum 20.265 mm and Open-Meteo precipitation 0.6 mm.",
+        "name": "Weather diagnostics",
+        "partial_credit": "Award 1-2 points for precipitation support with rounding errors or one missing unit.",
+        "points": 3
+      },
+      {
+        "description": "Computes and interprets the GPM-to-Open-Meteo precipitation ratio of 33.775.",
+        "name": "Precipitation ratio",
+        "partial_credit": "Award 1-2 points for a correct comparison without the ratio or a small arithmetic error.",
+        "points": 3
+      },
+      {
+        "description": "Explains that weather diagnostics support the storm setting but do not replace reported damage counts.",
+        "name": "Diagnostic separation",
+        "partial_credit": "Award 1 point for making the distinction in vague terms.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the final answer concise, structured, and limited to the local record and diagnostics.",
+        "name": "Concise structure",
+        "partial_credit": "Award 0.5 points for a mostly concise answer with minor extra narrative.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "impact_count_reconciliation",
+  "task_id": "CSX-148_Q1",
+  "task_type": "short_answer"
+}

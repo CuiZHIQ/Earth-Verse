@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-228_Q2",
+  "event_id": "CSX-228",
+  "target_family": "la_conchita_rainfall_threshold_window_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "score_6_of_6_rainfall_trigger_confirmed",
+    "score": 6,
+    "removed_source": "gpm_imerg_mean",
+    "precipitation_mm": {
+      "removed": 85.9,
+      "retained_mean": 60.8,
+      "retained_min": 48.3,
+      "retained_spread": 23.1
+    },
+    "counts": {
+      "retained_sources": 4,
+      "retained_ge_45mm": 4
+    },
+    "points": {
+      "retained_ge_45": 2,
+      "mean_ge_55": 1,
+      "spread_le_25": 1,
+      "report_chain": 1,
+      "image_neutral": 1
+    },
+    "classification": "rainfall_infiltration_deep_seated_slope_failure",
+    "reason": "retained_mean_60.8_all_4_ge_45_report_chain_image_neutral"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Source extraction and wettest removal",
+        "points": 4,
+        "description": "Extracts the five event-window precipitation estimates, identifies GPM IMERG mean as the wettest value, and removes only that value for the stress test.",
+        "partial_credit": "Award 2-3 points for correct wettest-source identification with one missing or mislabeled precipitation value."
+      },
+      {
+        "name": "Retained-source arithmetic",
+        "points": 4,
+        "description": "Computes retained mean, minimum, spread, retained-source count, and count at or above 45 mm.",
+        "partial_credit": "Award 2-3 points for a correct retained mean with one count, minimum, or spread error."
+      },
+      {
+        "name": "Threshold ledger formula",
+        "points": 4,
+        "description": "Applies the 2+1+1+1+1 point formula exactly and reports the final score as 6 of 6.",
+        "partial_credit": "Award 2-3 points for a correct score with an incomplete component ledger, or for one component error that still shows the formula."
+      },
+      {
+        "name": "Report-chain extraction",
+        "points": 3,
+        "description": "Uses the USGS report text to connect the storm date, deep-seated landslide wording, 13 destroyed houses, and 10 fatalities.",
+        "partial_credit": "Award 1-2 points for using the report text but missing either the impact numbers or the deep-seated wording."
+      },
+      {
+        "name": "Sentinel scene-pair term",
+        "points": 2,
+        "description": "Reads both Sentinel summaries and assigns the image-neutral point because neither has sufficient pre/post scene pairs.",
+        "partial_credit": "Award 1 point for recognizing one Sentinel summary or the no-scene-pair status without the formula point."
+      },
+      {
+        "name": "Final JSON and classification",
+        "points": 2,
+        "description": "Returns compact JSON with the requested fields, units in field names, and the rainfall infiltration deep-seated slope-failure classification.",
+        "partial_credit": "Award 1 point for mostly correct values with minor JSON or label problems."
+      },
+      {
+        "name": "Data-bounded reasoning",
+        "points": 1,
+        "description": "Keeps the conclusion tied to the computed ledger and report text without inventing geotechnical parameter values.",
+        "partial_credit": "Award 0.5 points for a mostly bounded explanation with one minor overreach."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-228",
+    "event_name": "La Conchita landslide",
+    "hazard_family": "landslide_mass_movement",
+    "event_date_or_window": "2005-01-10"
+  },
+  "key_values": {
+    "target_family": "la_conchita_rainfall_threshold_window_ledger",
+    "all_precipitation_mm": {
+      "open_meteo_daily": 71.4,
+      "nasa_power_daily": 48.3,
+      "era5_land_mean": 69.2,
+      "gpm_imerg_mean": 85.9,
+      "chirps_mean": 54.2
+    },
+    "retained_precipitation_mm": {
+      "open_meteo_daily": 71.4,
+      "nasa_power_daily": 48.3,
+      "era5_land_mean": 69.2,
+      "chirps_mean": 54.2
+    },
+    "thresholds": {
+      "source_ge_mm": 45.0,
+      "mean_ge_mm": 55.0,
+      "spread_le_mm": 25.0,
+      "confirmed_score_ge": 5
+    },
+    "report_markers": {
+      "storm_date": true,
+      "deep_seated": true,
+      "destroyed_houses_13": true,
+      "fatalities_10": true
+    },
+    "impact_numbers": {
+      "destroyed_houses": 13,
+      "fatalities": 10
+    },
+    "sentinel_counts": {
+      "s1_pre": 0,
+      "s1_post": 0,
+      "s2_pre": 0,
+      "s2_post": 0
+    },
+    "sentinel_status": {
+      "s1": "no_sufficient_scenes",
+      "s2": "no_sufficient_scenes"
+    },
+    "formula": "score = retained_ge_45 + mean_ge_55 + spread_le_25 + report_chain + image_neutral",
+    "numeric_tolerance_mm": 0.2
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_data_report.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_La_Conchita_landslide.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_007_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  }
+}

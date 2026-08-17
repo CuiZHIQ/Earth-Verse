@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-039_Q2",
+  "event_id": "CSX-039",
+  "task_type": "short_answer",
+  "target_family": "cross_source_numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_label": "report_grid_gap_with_elevation_snow_gradient",
+    "metrics": {
+      "low_point": {
+        "snow_in": 0.303,
+        "temp_hours_le4": 11,
+        "max_gust_kmh": 75.6,
+        "gust_hours_ge65": 4,
+        "gust_kmh2": 5715.4
+      },
+      "report_snow_in": {
+        "high_elevation": 96.0,
+        "la_crescenta": 2.0
+      },
+      "snow_ratios": {
+        "mountain_to_lacrescenta": 48.0,
+        "mountain_to_low_point": 316.7
+      },
+      "rain_mm_range": [
+        101.6,
+        152.4
+      ],
+      "grid_gap_ratios": {
+        "rain_min_to_chirps_max": 4.97,
+        "rain_max_to_gpm_max": 4.77
+      },
+      "annual_embedding_change": {
+        "mean": 0.015983,
+        "max": 0.489133,
+        "max_to_mean": 30.6
+      }
+    },
+    "decisive_tests": [
+      "The report rainfall range is about five times the GPM and CHIRPS event maxima used in the package summary.",
+      "The snow gradient is much larger than the low-point snow amount: 48.0x from high mountain to La Crescenta and 316.7x from high mountain to the 90 m point."
+    ],
+    "data_read": {
+      "point_weather": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "report_snow_and_rain": "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "gpm_precipitation_max": "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "chirps_precipitation_max": "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "annual_embedding_change": "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    }
+  },
+  "event": {
+    "package_id": "CSX-039",
+    "event_name": "February 2023 Southern California winter storm",
+    "hazard_family": "cold_wave_winter_storm",
+    "event_window": "2023-02-23 to 2023-02-26"
+  },
+  "decision_rule": {
+    "summary": "The final label must be driven by the near-fivefold report-to-grid rainfall gaps and the large elevation snow ratios; low-point wind and annual embedding change are secondary numeric checks.",
+    "accepted_label_family": "report_grid_gap_with_elevation_snow_gradient"
+  },
+  "key_values": {
+    "source_report_values": {
+      "high_snow_ft": 8.0,
+      "high_snow_in": 96.0,
+      "lacrescenta_snow_in": 2.0,
+      "rain_range_in": [
+        4.0,
+        6.0
+      ]
+    },
+    "source_grid_values": {
+      "gpm_max_mm": 31.98,
+      "chirps_max_mm": 20.463
+    },
+    "source_point_values": {
+      "elevation_m": 90.0,
+      "snow_cm": 0.77,
+      "temp_longest_le4_hours": 10
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Source-role mapping",
+        "points": 3,
+        "description": "Uses the point weather file, report HTML, GPM, CHIRPS, and annual embedding-change product for their intended numeric roles.",
+        "partial_credit": "Partial credit for using most source roles correctly while confusing one gridded or embedding product."
+      },
+      {
+        "name": "Low-point cold and wind ledger",
+        "points": 4,
+        "description": "Computes the low-point snowfall, cold-hour count, maximum gust, gust-hour count, and gust-energy proxy correctly.",
+        "partial_credit": "Partial credit for small rounding errors or for getting only the temperature or wind half of the ledger correct."
+      },
+      {
+        "name": "Report snow and rain conversions",
+        "points": 4,
+        "description": "Extracts and converts the report snow and rain anchors, including the high-mountain snow and local rainfall range.",
+        "partial_credit": "Partial credit for correct extraction but one unit conversion or ratio error."
+      },
+      {
+        "name": "Grid-report gap ratios",
+        "points": 3,
+        "description": "Compares report rainfall with GPM and CHIRPS maxima and reports the near-fivefold gap ratios.",
+        "partial_credit": "Partial credit for identifying the gap direction but missing one exact ratio."
+      },
+      {
+        "name": "Embedding-change separation",
+        "points": 3,
+        "description": "Uses the annual embedding mean, maximum, and max-to-mean ratio as a separate landscape-change check, not as event-window precipitation.",
+        "partial_credit": "Partial credit for computing the values but blending them with the precipitation diagnosis."
+      },
+      {
+        "name": "Final compact diagnosis",
+        "points": 3,
+        "description": "Returns the requested compact answer with a label equivalent to report_grid_gap_with_elevation_snow_gradient.",
+        "partial_credit": "Partial credit for a compatible label with incomplete but mostly correct numeric support."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "Values are rebuilt from local package files using unit conversion, hourly counts, and ratio checks."
+  }
+}

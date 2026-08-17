@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-004_Q1",
+  "event_id": "CSX-004",
+  "task_type": "short_answer",
+  "target_family": "expert_source_arbitration",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "expert_source_arbitration",
+    "decision": "select_regional_aoi_heat_not_point_series",
+    "selected_source": {
+      "path": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "role": "regional_aoi_temperature_severity",
+      "dataset": "ECMWF/ERA5_LAND/HOURLY",
+      "coverage_days_inclusive": 46
+    },
+    "rejected_point_source": {
+      "path": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "role": "single_high_elevation_point_weather",
+      "point_inside_aoi": false,
+      "point_elevation_m": 1606.0,
+      "point_coverage_days_inclusive": 61,
+      "rejection_reason": "full-window coverage does not overcome wrong spatial scale: the point is outside the compact AOI and much cooler than the regional AOI maximum"
+    },
+    "spatial_check": {
+      "aoi_path": "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "point_lat": 34.059753,
+      "point_lon": 74.8125,
+      "aoi_bounds": {
+        "min_lon": 78.4,
+        "min_lat": 19.9,
+        "max_lon": 79.6,
+        "max_lat": 21.1
+      },
+      "distance_point_to_aoi_centroid_km": 1563.074392
+    },
+    "numeric_consequence": {
+      "selected_tmax_max_c": 46.246698,
+      "selected_tmax_mean_c": 45.118824,
+      "wrong_point_apparent_max_c": 29.8,
+      "wrong_point_air_tmax_max_c": 27.9,
+      "selected_minus_point_apparent_c": 16.446698,
+      "selected_minus_point_air_tmax_c": 18.346698
+    },
+    "event_window_check": {
+      "anchor_path": "data/event_reports/event_reports_005_Locked_event_anchor_2015_India-Pakistan_heat_wave.json",
+      "official_window_days_inclusive": 61,
+      "selected_hazard_window_days_inclusive": 46,
+      "temporal_arbitration_note": "use the regional AOI hazard aggregate for the available heat-severity slice; the point file covers more days but is spatially non-interchangeable"
+    },
+    "wrong_variable_rejections": {
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json": "precipitation accumulation, not maximum-temperature heat severity",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json": "precipitation accumulation, not maximum-temperature heat severity",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json": "burn-index product with no sufficient scenes, not heat-wave temperature evidence"
+    },
+    "minimal_evidence_set": [
+      "data/event_reports/event_reports_005_Locked_event_anchor_2015_India-Pakistan_heat_wave.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    ],
+    "ruling": "not_interchangeable",
+    "reference_trace": [
+      "Read the locked event anchor to get the official 2015-05-01 to 2015-06-30 regional event window.",
+      "Read the compact AOI polygon and test whether the Open-Meteo point lies inside its bounds.",
+      "Read the ERA5-Land aggregate Tmax fields and select them as the regional AOI heat-severity basis.",
+      "Read the Open-Meteo daily point maxima and compute the temperature deltas from the selected regional maximum.",
+      "Reject precipitation and dNBR files because they do not provide maximum-temperature heat-severity evidence."
+    ]
+  },
+  "key_values": {
+    "official_window": {
+      "start_date": "2015-05-01",
+      "end_date": "2015-06-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "selected_hazard_window": {
+      "start": "2015-05-01",
+      "end": "2015-06-15"
+    },
+    "selected_temperature_fields": {
+      "temperature_2m_max_c_max": 46.2466979980469,
+      "temperature_2m_max_c_mean": 45.11882448571625
+    },
+    "point_weather_fields": {
+      "lat": 34.059753,
+      "lon": 74.8125,
+      "elevation_m": 1606.0,
+      "coverage_days": 61,
+      "max_apparent": 29.8,
+      "max_air_tmax": 27.9
+    },
+    "aoi_bounds": {
+      "min_lon": 78.4,
+      "min_lat": 19.9,
+      "max_lon": 79.6,
+      "max_lat": 21.1
+    },
+    "wrong_variable_products": {
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json": {
+        "dataset": "NASA/GPM_L3/IMERG_V07",
+        "field_family": "precipitation"
+      },
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json": {
+        "dataset": "UCSB-CHG/CHIRPS/DAILY",
+        "field_family": "precipitation"
+      },
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json": {
+        "dataset": "COPERNICUS/S2_SR_HARMONIZED",
+        "status": "no_sufficient_scenes"
+      }
+    }
+  },
+  "decision_rule": {
+    "selected_source_rule": "Use a regional/AOI maximum-temperature aggregate for regional heat severity.",
+    "rejected_point_rule": "Reject a point weather file when it lies outside the AOI and produces a materially cooler heat maximum.",
+    "wrong_variable_rule": "Reject precipitation or burn-index products for a maximum-temperature heat-severity answer."
+  },
+  "tolerances": {
+    "temperature_c": 0.01,
+    "distance_km": 1.0,
+    "coordinate_deg": 1e-06,
+    "day_count": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Schema and arbitration decision",
+        "points": 4,
+        "description": "Returns the exact JSON schema with answer_type expert_source_arbitration, decision select_regional_aoi_heat_not_point_series, and ruling not_interchangeable.",
+        "partial_credit": "Award up to 2 points for a mostly correct schema with minor field omissions; no credit for prose-only answers."
+      },
+      {
+        "name": "Selected regional heat source",
+        "points": 4,
+        "description": "Selects data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json, reports dataset ECMWF/ERA5_LAND/HOURLY, and computes 46 inclusive hazard-slice days.",
+        "partial_credit": "Award partial credit for correct path, dataset, or day count separately."
+      },
+      {
+        "name": "Rejected point-source shortcut",
+        "points": 4,
+        "description": "Rejects the Open-Meteo point source using outside-AOI status, 1606.0 m elevation, 61 point days, and the two source-swap temperature deltas.",
+        "partial_credit": "Award partial credit for correct path and either spatial or numeric rejection; reduce credit if the point file is treated as the regional answer."
+      },
+      {
+        "name": "Spatial calculation",
+        "points": 3,
+        "description": "Extracts AOI bounds, point coordinates, false point_inside_aoi, and point-to-centroid distance near 1563.074392 km.",
+        "partial_credit": "Award partial credit for bounds/inside test even if distance is rounded coarsely."
+      },
+      {
+        "name": "Event-window arbitration",
+        "points": 2,
+        "description": "Uses the locked anchor 61-day official window and explains that the point source's full-window coverage does not override spatial mismatch.",
+        "partial_credit": "Award 1 point for correct official window without the arbitration note."
+      },
+      {
+        "name": "Rejected wrong-variable alternatives",
+        "points": 2,
+        "description": "Rejects GPM, CHIRPS, and Sentinel-2 dNBR files as precipitation/burn-index or insufficient-scene products rather than Tmax evidence.",
+        "partial_credit": "Award partial credit for each correctly rejected source."
+      },
+      {
+        "name": "Trace and evidence discipline",
+        "points": 1,
+        "description": "Includes a concise reference trace and avoids web evidence, hidden answers, invented values, or broad disaster explanation.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "metadata/sources.csv",
+      "data/event_reports/event_reports_005_Locked_event_anchor_2015_India-Pakistan_heat_wave.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  }
+}

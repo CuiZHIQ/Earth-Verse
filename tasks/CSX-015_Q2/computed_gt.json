@@ -1,0 +1,276 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-015",
+  "judge_anchors": {
+    "acceptable_variants": [
+      "persistent heat load dominant with hydrologic low-water support",
+      "persistent_heat_load first, hydrologic_low_water_timing second, evaporative_demand third",
+      "persistent_heat_load_dominant_with_hydrologic_low_water_support"
+    ],
+    "canonical_stance": "Persistent heat load is the dominant explanatory mechanism, with hydrologic low-water timing as the strongest corroborating outcome and VPD as a demand amplifier.",
+    "do_not_add": [
+      "response-priority recommendations",
+      "AOI or population exposure dependency",
+      "mortality or exact economic-loss totals",
+      "formal attribution fractions",
+      "reported impacts treated as the physical mechanism"
+    ],
+    "required_elements": [
+      "Rank the listed mechanisms rather than giving response advice.",
+      "Compute heat persistence from daily maximum, minimum, and apparent-temperature series.",
+      "Compute humidity-derived VPD from hourly temperature and relative humidity.",
+      "Use Poyang low-water dates and levels to support the hydrologic timing rank.",
+      "Demote precipitation_deficit_only because available precipitation summaries end before the August low-water peak.",
+      "Reject reported_loss_or_exposure_only as consequence evidence, not a physical mechanism."
+    ],
+    "required_metrics": [
+      {
+        "name": "tmax35_run_days",
+        "tolerance": 1,
+        "value": 17
+      },
+      {
+        "name": "tmin28_run_days",
+        "tolerance": 1,
+        "value": 11
+      },
+      {
+        "name": "app40_run_days",
+        "tolerance": 1,
+        "value": 16
+      },
+      {
+        "name": "vpd_aug7_23_pm_mean_kpa",
+        "tolerance": 0.05,
+        "value": 2.77
+      },
+      {
+        "name": "vpd_max_kpa",
+        "tolerance": 0.05,
+        "value": 3.54
+      },
+      {
+        "name": "poyang_drop_m",
+        "tolerance": 0.05,
+        "value": 3.03
+      },
+      {
+        "name": "early_dry_days",
+        "tolerance": 10,
+        "value": 100
+      },
+      {
+        "name": "rain_gap_days",
+        "tolerance": 0,
+        "value": 45
+      }
+    ]
+  },
+  "key_values": {
+    "evaporative_demand_metrics": {
+      "event_hours_vpd_ge_2kpa": 229,
+      "event_hours_vpd_ge_3kpa": 27,
+      "event_max_vpd_kpa": 3.539,
+      "event_mean_vpd_kpa": 1.016,
+      "event_p90_vpd_kpa": 2.023,
+      "heatrun_afternoon_hours_vpd_ge_3kpa": 27,
+      "heatrun_afternoon_mean_vpd_kpa": 2.774,
+      "heatrun_afternoon_p90_vpd_kpa": 3.299,
+      "heatrun_hours_apparent_ge_40c": 97,
+      "heatrun_hours_vpd_ge_2kpa": 152,
+      "heatrun_hours_vpd_ge_3kpa": 27,
+      "heatrun_mean_vpd_kpa": 1.846,
+      "heatrun_p90_vpd_kpa": 2.817,
+      "hourly_apparent_max_c": 44.0
+    },
+    "event_name": "2022 China heat wave and drought",
+    "event_window": {
+      "end_date": "2022-08-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2022-06-01"
+    },
+    "heat_metrics": {
+      "app40_run": {
+        "days": 16,
+        "end": "2022-08-23",
+        "start": "2022-08-08"
+      },
+      "days_appmax_ge_40c": 35,
+      "days_tmax_ge_35c": 20,
+      "days_tmin_ge_28c": 25,
+      "heat_degree_days_over_35c": 21.8,
+      "max_apparent_c": 44.0,
+      "max_tmax_c": 37.8,
+      "tmax35_run": {
+        "days": 17,
+        "end": "2022-08-23",
+        "start": "2022-08-07"
+      },
+      "tmin28_run": {
+        "days": 11,
+        "end": "2022-08-22",
+        "start": "2022-08-12"
+      }
+    },
+    "hydrologic_low_water_metrics": {
+      "earliest_low_since_1951": true,
+      "early_dry_days": 100,
+      "highest_level_date": "2022-06-23",
+      "lack_of_rain_reported": true,
+      "poyang_drop_days": 24,
+      "poyang_drop_m": 3.03,
+      "poyang_drop_rate_m_per_day": 0.126,
+      "poyang_level_aug30_m": 8.96,
+      "poyang_level_aug6_m": 11.99,
+      "reported_consequence_anchor": true
+    },
+    "mechanism_score_logic": {
+      "evaporative_demand": "weighted VPD during the persistent heat run",
+      "hydrologic_low_water_timing": "weighted Poyang drop, early dry-season timing, drop rate, and record flag",
+      "persistent_heat_load": "weighted heat-run, warm-night, apparent-heat, and heat-degree support",
+      "precipitation_deficit_only": "text support demoted by early precipitation-window phase gap",
+      "reported_loss_or_exposure_only": "consequence-only frame, not a physical mechanism"
+    },
+    "precipitation_context": {
+      "chirps_end": "2022-07-16",
+      "chirps_mean_mm": 387.6,
+      "chirps_start": "2022-06-01",
+      "era5_mean_mm": 271.1,
+      "gpm_end": "2022-07-16",
+      "gpm_mean_mm": 519.7,
+      "gpm_start": "2022-06-01",
+      "phase_gap_days": 45
+    },
+    "remote_sensing_context": {
+      "alphaearth_annual_cosine_change_max": 0.2508,
+      "alphaearth_annual_cosine_change_mean": 0.0138,
+      "sentinel2_dnbr_max": 0.5386,
+      "sentinel2_dnbr_mean": 0.0093
+    }
+  },
+  "numeric_tolerances": {
+    "app40_run_days": {
+      "tolerance": 1,
+      "value": 16
+    },
+    "early_dry_days": {
+      "tolerance": 10,
+      "value": 100
+    },
+    "poyang_drop_m": {
+      "tolerance": 0.05,
+      "value": 3.03
+    },
+    "rain_gap_days": {
+      "tolerance": 0,
+      "value": 45
+    },
+    "tmax35_run_days": {
+      "tolerance": 1,
+      "value": 17
+    },
+    "tmin28_run_days": {
+      "tolerance": 1,
+      "value": 11
+    },
+    "vpd_aug7_23_pm_mean_kpa": {
+      "tolerance": 0.05,
+      "value": 2.77
+    },
+    "vpd_max_kpa": {
+      "tolerance": 0.05,
+      "value": 3.54
+    }
+  },
+  "primary_gt": {
+    "answer": "persistent_heat_load_dominant_with_hydrologic_low_water_support",
+    "computed_values": {
+      "app40_run_days": 16,
+      "early_dry_days": 100,
+      "poyang_drop_m": 3.03,
+      "rain_gap_days": 45,
+      "tmax35_run_days": 17,
+      "tmin28_run_days": 11,
+      "vpd_aug7_23_pm_mean_kpa": 2.77,
+      "vpd_max_kpa": 3.54
+    },
+    "dominant_mechanism": "persistent_heat_load",
+    "mechanism_scores": {
+      "evaporative_demand": 82,
+      "hydrologic_low_water_timing": 90,
+      "persistent_heat_load": 96,
+      "precipitation_deficit_only": 42,
+      "reported_loss_or_exposure_only": 8
+    },
+    "ranked_mechanisms": [
+      "persistent_heat_load",
+      "hydrologic_low_water_timing",
+      "evaporative_demand",
+      "precipitation_deficit_only",
+      "reported_loss_or_exposure_only"
+    ],
+    "reasoning_path": "Heat persistence is strongest: 17d Tmax>=35C, 11d Tmin>=28C, 16d apparent>=40C. VPD amplifies demand during Aug7-23, while Poyang drops 3.03m and dry season arrives about 100d early. Rain grids end 45d before Aug30 low-water, and reported losses are consequences, not mechanisms.",
+    "rejected_mechanism": "reported_loss_or_exposure_only",
+    "target_family": "heat_drought_mechanism_dominance_ranking"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Ranks persistent_heat_load first, hydrologic_low_water_timing second, evaporative_demand third, and gives the deterministic answer label.",
+        "name": "Final ranking and dominant mechanism",
+        "partial_credit": "Award 2-3 points if persistent heat is first but the second and third mechanisms are reversed; award 1 point for a heat-drought ranking without the specified labels.",
+        "points": 4
+      },
+      {
+        "description": "Computes 17 days of Tmax >= 35C, 11 days of Tmin >= 28C, 16 days of daily apparent temperature max >= 40C, and heat-degree support.",
+        "name": "Heat persistence calculations",
+        "partial_credit": "Award 2-3 points for correct heat and warm-night runs with missing apparent-heat detail; award 1 point for only counting hot days.",
+        "points": 4
+      },
+      {
+        "description": "Uses hourly temperature and relative humidity to compute VPD, including the heat-run afternoon mean near 2.77 kPa and maximum near 3.54 kPa.",
+        "name": "Evaporative-demand calculations",
+        "partial_credit": "Award 1-2 points for a humidity or apparent-heat demand proxy without a correct VPD calculation.",
+        "points": 3
+      },
+      {
+        "description": "Uses Poyang levels of 11.99 m on 2022-08-06 and 8.96 m on 2022-08-30, the 3.03 m drop over 24 days, and the roughly 100-day early dry-season timing.",
+        "name": "Hydrologic low-water timing",
+        "partial_credit": "Award 2-3 points for the drop without complete timing; award 1 point for only noting that Poyang Lake was low.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 2022-07-16 precipitation-summary end date and the 2022-08-30 low-water date to calculate the 45-day phase gap, while treating rainfall as context rather than the sole dominant mechanism.",
+        "name": "Precipitation-only demotion",
+        "partial_credit": "Award 1 point for mentioning rainfall context without the phase-gap calculation.",
+        "points": 2
+      },
+      {
+        "description": "Rejects reported_loss_or_exposure_only as a consequence frame, avoids AOI/population/exposure dependencies, and returns compact JSON with the requested top-level keys.",
+        "name": "Rejected non-mechanism and output discipline",
+        "partial_credit": "Award 1-2 points for the right physical stance with extra response-priority or exposure-only language; award no credit here if the answer is mainly advice or impact triage.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "heat_drought_mechanism_dominance_ranking",
+  "task_id": "CSX-015_Q2",
+  "task_subtype": "mechanism_dominance_ranking",
+  "task_type": "short_answer"
+}

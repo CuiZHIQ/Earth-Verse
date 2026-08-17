@@ -1,0 +1,106 @@
+{
+  "decision_rules": {
+    "answer": "passes_pluvial_burst_rule if both gates are true; otherwise does_not_pass_pluvial_burst_rule",
+    "ratio_gate": "hour_to_regional_floor_ratio >= 0.30",
+    "record_hour_gate": "record_hour_mm >= 75.0"
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-059",
+  "key_values": {
+    "hour_to_regional_floor_ratio": 0.347,
+    "record_hour_inches": 3.47,
+    "record_hour_mm_exact": 88.138,
+    "record_hour_window_local": [
+      "2021-09-01 19:51",
+      "2021-09-01 20:51"
+    ],
+    "regional_total_floor_inches": 10.0,
+    "regional_total_floor_mm": 254.0,
+    "thresholds": {
+      "hour_to_regional_floor_ratio": 0.3,
+      "record_hour_mm": 75.0
+    }
+  },
+  "numeric_tolerances": {
+    "hour_to_regional_floor_ratio": {
+      "target": 0.347,
+      "tolerance": 0.02
+    },
+    "record_hour_mm": {
+      "target": 88.1,
+      "tolerance": 0.5
+    },
+    "regional_total_floor_mm": {
+      "target": 254.0,
+      "tolerance": 5.0
+    }
+  },
+  "primary_gt": {
+    "answer": "passes_pluvial_burst_rule",
+    "computed_consequence": "The record hour supplied about 35% of the regional-total floor, so the New York City phase fits a short-duration urban pluvial drainage-overload diagnosis.",
+    "gates": {
+      "ratio_ge_0_30": true,
+      "record_hour_mm_ge_75": true
+    },
+    "metrics": {
+      "hour_to_regional_floor_ratio": 0.347,
+      "record_hour_mm": 88.1,
+      "record_hour_window_local": "2021-09-01 19:51-20:51",
+      "regional_total_floor_mm": 254.0
+    },
+    "rejected_alternative": "slow_routed_river_dominant",
+    "target_family": "rainfall_threshold_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are parsed from the local WPC Ida rainfall report and rounded according to the visible ledger instructions.",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns answer passes_pluvial_burst_rule and target_family rainfall_threshold_ledger.",
+        "name": "final_ledger_label",
+        "partial_credit": "Give 2 points for a correct pluvial-burst label with one missing exact field; give 1 point for a rain-intensity label without the pass result.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 3.47 inch Central Park record hour, the 2021-09-01 19:51-20:51 local window, and the 10.0 inch regional-total floor.",
+        "name": "rainfall_anchor_extraction",
+        "partial_credit": "Give 2-3 points for correct values with a missing window or floor wording; give 1 point for using only one anchor.",
+        "points": 4
+      },
+      {
+        "description": "Computes 88.1 mm, 254.0 mm, and 0.347 with the requested rounding.",
+        "name": "conversion_and_ratio_arithmetic",
+        "partial_credit": "Give 2-3 points for one rounding or denominator mistake; give 1 point for showing the formulas but not the correct values.",
+        "points": 4
+      },
+      {
+        "description": "Marks record_hour_mm_ge_75 and ratio_ge_0_30 as true using the specified thresholds.",
+        "name": "threshold_gate_logic",
+        "partial_credit": "Give 1-2 points for evaluating only one gate correctly or using the right thresholds with one arithmetic slip.",
+        "points": 3
+      },
+      {
+        "description": "Rejects slow_routed_river_dominant because both short-duration gates pass and gives a one-sentence consequence tied to the ledger.",
+        "name": "alternative_rejection_and_interpretation",
+        "partial_credit": "Give 1-2 points for a correct pluvial interpretation without the explicit rejection or with a vague consequence.",
+        "points": 3
+      },
+      {
+        "description": "Returns the requested six top-level fields without extra narrative.",
+        "name": "compact_json_structure",
+        "partial_credit": "Give 1 point for all substantive content in a less compact structure.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "rainfall_threshold_ledger",
+  "task_id": "CSX-059_Q1",
+  "task_type": "numeric"
+}

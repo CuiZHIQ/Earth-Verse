@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-203_Q1",
+  "event_id": "CSX-203",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "aqi_peak_ratio": 2.583,
+    "pm25_peak_ratio": 35.44,
+    "meteo_context": {
+      "max_tmax_c": 7.875,
+      "dry_day_fraction": 1.0,
+      "precip_fraction_max": 0.206,
+      "label": "cool_dry_low_precip"
+    },
+    "exposure_index": 10.972,
+    "counter_signal_count": 0,
+    "final_label": "air_quality_exposure_consistent"
+  },
+  "answer_metadata": {
+    "answer": "air_quality_exposure_consistent",
+    "schema": [
+      "aqi_peak_ratio",
+      "pm25_peak_ratio",
+      "meteo_context",
+      "exposure_index",
+      "counter_signal_count",
+      "final_label"
+    ],
+    "tolerances": {
+      "ratio": 0.01,
+      "temperature_c": 0.01,
+      "fraction": 0.001,
+      "exposure_index": 0.01
+    }
+  },
+  "event": {
+    "package_id": "CSX-203",
+    "event_id": "CSX-203",
+    "event_name": "January 2013 northern and eastern China severe haze episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_date_or_window": "2013-01-06 to 2013-01-16",
+    "region": "East Asia",
+    "scale": "national_admin"
+  },
+  "threshold_rules": {
+    "air_quality": "peak_AQI/300 > 1 and peak_PM25_ug_m3/25 > 1",
+    "meteo": "max_tmax_c < 10 and dry_day_fraction >= 0.8 and precip_fraction_max <= 1",
+    "exposure": "population_millions >= 1 and sensitive_amenity_count >= 50",
+    "counter_signal": "wildfire_event_count + burn_pre_count + burn_post_count == 0",
+    "final": "all four threshold labels pass"
+  },
+  "key_values": {
+    "air_quality": {
+      "aqi_values": [
+        341,
+        775
+      ],
+      "pm25_values_ug_m3": [
+        291,
+        886
+      ],
+      "aqi_hazard_threshold": 300,
+      "pm25_safe_threshold_ug_m3": 25,
+      "peak_aqi": 775,
+      "peak_pm25_ug_m3": 886,
+      "aqi_peak_ratio": 2.583,
+      "pm25_peak_ratio": 35.44
+    },
+    "open_meteo": {
+      "event_day_count": 11,
+      "max_temperature_c": 5.4,
+      "min_temperature_c": -4.6,
+      "total_precipitation_mm": 0.0,
+      "dry_day_count": 11,
+      "dry_day_fraction": 1.0,
+      "mean_daily_max_wind_kmh": 18.955,
+      "max_daily_wind_kmh": 27.2
+    },
+    "nasa_power": {
+      "max_temperature_c": 5.24,
+      "total_precipitation_mm": 0.22,
+      "dry_day_count": 9,
+      "mean_wind_speed_mps": 4.06,
+      "max_wind_speed_mps": 7.23
+    },
+    "era5_land": {
+      "temperature_2m_max_c_max": 7.875,
+      "precipitation_sum_mm_mean": 0.103
+    },
+    "precipitation_means_mm": {
+      "gpm_event_precip_mm_mean": 1.03,
+      "chirps_event_precip_mm_mean": 0.397
+    },
+    "precip_fraction_inputs": {
+      "chirps_event_mean": 0.079,
+      "era5_land_mean": 0.021,
+      "gpm_event_mean": 0.206,
+      "nasa_power_total": 0.044,
+      "open_meteo_total": 0.0
+    },
+    "exposure": {
+      "population": 9329558.632,
+      "population_millions": 9.33,
+      "amenity_counts": {
+        "fire_station": 11,
+        "hospital": 45,
+        "police": 70,
+        "school": 50
+      },
+      "sensitive_amenity_count": 176,
+      "exposure_index": 10.972
+    },
+    "counter_signals": {
+      "wildfire_event_count": 0,
+      "burn_pre_count": 0,
+      "burn_post_count": 0,
+      "counter_signal_count": 0
+    }
+  },
+  "ledger": [
+    {
+      "row": "air_quality",
+      "computed": {
+        "aqi_peak_ratio": 2.583,
+        "pm25_peak_ratio": 35.44
+      },
+      "label": "hazardous_air_quality_exceedance",
+      "pass": true
+    },
+    {
+      "row": "meteo_context",
+      "computed": {
+        "max_tmax_c": 7.875,
+        "dry_day_fraction": 1.0,
+        "precip_fraction_max": 0.206,
+        "label": "cool_dry_low_precip"
+      },
+      "label": "cool_dry_low_precip",
+      "pass": true
+    },
+    {
+      "row": "exposure",
+      "computed": {
+        "population_millions": 9.33,
+        "sensitive_amenity_count": 176,
+        "exposure_index": 10.972
+      },
+      "label": "high_receptor_exposure",
+      "pass": true
+    },
+    {
+      "row": "counter_signal",
+      "computed": {
+        "wildfire_event_count": 0,
+        "burn_pre_count": 0,
+        "burn_post_count": 0,
+        "counter_signal_count": 0
+      },
+      "label": "no_wildfire_burn_counter_signal",
+      "pass": true
+    }
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON schema",
+        "points": 4,
+        "description": "Returns exactly the requested six top-level fields and the nested meteo_context fields.",
+        "partial_credit": "Award 2-3 points for a mostly complete object with one missing or renamed field."
+      },
+      {
+        "name": "Air-quality ratios",
+        "points": 4,
+        "description": "Computes AQI ratio 2.583 and PM2.5 ratio 35.44 within stated tolerances.",
+        "partial_credit": "Award 2 points for one correct ratio or 3 points for both ratios with minor rounding issues."
+      },
+      {
+        "name": "Meteorology fields",
+        "points": 4,
+        "description": "Computes max_tmax_c 7.875, dry_day_fraction 1.0, precip_fraction_max 0.206, and meteo label cool_dry_low_precip.",
+        "partial_credit": "Award proportional credit for correct temperature, dry fraction, precipitation fraction, and label."
+      },
+      {
+        "name": "Exposure and counter fields",
+        "points": 5,
+        "description": "Computes exposure_index 10.972 and counter_signal_count 0 from the package exposure and counter-signal inputs.",
+        "partial_credit": "Award 2-3 points for one correct field and 4 points for both with minor rounding issues."
+      },
+      {
+        "name": "Final label rule",
+        "points": 3,
+        "description": "Applies the four threshold rows and returns final_label air_quality_exposure_consistent.",
+        "partial_credit": "Award 1-2 points if the row values are mostly correct but the final label is omitted or slightly misnamed."
+      }
+    ]
+  },
+  "question_leakage_audit": {
+    "lists_specific_files": false,
+    "names_concrete_data_products": false,
+    "summarizes_package_inventory": false,
+    "reveals_hidden_workflow": false,
+    "reveals_all_key_metrics": false,
+    "uses_benchmark_meta_wording": false
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2013_northern_and_eastern_China_severe_haze_episode.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_wildfire_events.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "notes": "All values are derived from local files in the CSX-203 standard event package; no network access is used."
+  }
+}

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use EarthVerse, please cite the associated paper and this repository."
+title: "EarthVerse: Evidence-Grounded Earth-System Research Agents"
+type: dataset
+authors:
+  - family-names: Cui
+    given-names: Zhiqing
+repository-code: "https://github.com/CuiZHIQ/Earth-Verse"
+url: "https://cuizhiq.github.io/EarthVerse/"
+date-released: 2026-08-18
+keywords:
+  - Earth system science
+  - natural hazards
+  - research agents
+  - tool use
+  - scientific reasoning

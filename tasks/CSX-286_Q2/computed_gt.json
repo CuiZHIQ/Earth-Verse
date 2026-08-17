@@ -1,0 +1,129 @@
+{
+  "calculation_rule": {
+    "local_series": "Average the two point precipitation values after matching dates.",
+    "regional_pair": "Average the GPM and CHIRPS event-accumulated precipitation means; hourly aggregate summaries are not part of this regional pair.",
+    "score": "Regional mean scaled by wet-day fraction, non-peak local share, and gridded-product agreement fraction."
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_name": "2024 East Africa exceptional rainfall and floods",
+    "event_period": "2024-04-23 to 2024-05-05",
+    "package_id": "CSX-286"
+  },
+  "event_id": "CSX-286",
+  "key_values": {
+    "chirps_mean_mm": 80.8,
+    "event_days": 13,
+    "gpm_mean_mm": 86.1,
+    "local_daily_mean_mm": 9.0,
+    "local_total_mm": 116.7,
+    "max_3day_end": "2024-04-26",
+    "max_3day_start": "2024-04-24",
+    "max_3day_total_mm": 49.7,
+    "max_5day_end": "2024-04-28",
+    "max_5day_share_pct": 60.7,
+    "max_5day_start": "2024-04-24",
+    "max_5day_total_mm": 70.8,
+    "peak_day": "2024-04-26",
+    "peak_day_mm": 20.9,
+    "peak_share_pct": 17.9,
+    "peak_to_mean_ratio": 2.32,
+    "persistence_weighted_regional_mm": 49.3,
+    "regional_mean_mm": 83.5,
+    "regional_spread_pct": 6.4,
+    "wet_days_ge_10mm": 5,
+    "wet_days_ge_5mm": 10
+  },
+  "numeric_tolerances": {
+    "dates": "exact",
+    "day_counts": 0,
+    "mm_values": 0.1,
+    "percent_values": 0.1,
+    "ratios": 0.01
+  },
+  "primary_gt": {
+    "answer": {
+      "event_days": 13,
+      "local_daily_mean_mm": 9.0,
+      "local_total_mm": 116.7,
+      "max_3day_end": "2024-04-26",
+      "max_3day_start": "2024-04-24",
+      "max_3day_total_mm": 49.7,
+      "max_5day_end": "2024-04-28",
+      "max_5day_start": "2024-04-24",
+      "max_5day_total_mm": 70.8,
+      "peak_day": "2024-04-26",
+      "peak_day_mm": 20.9,
+      "peak_share_pct": 17.9,
+      "peak_to_mean_ratio": 2.32,
+      "persistence_weighted_regional_mm": 49.3,
+      "regional_mean_mm": 83.5,
+      "regional_spread_pct": 6.4,
+      "wet_days_ge_10mm": 5,
+      "wet_days_ge_5mm": 10
+    },
+    "answer_name": "persistence_weighted_regional_mm",
+    "components": {
+      "event_days": 13,
+      "local_total_mm": 116.7,
+      "max_5day_total_mm": 70.8,
+      "peak_share_pct": 17.9,
+      "peak_to_mean_ratio": 2.32,
+      "regional_mean_mm": 83.5,
+      "regional_spread_pct": 6.4,
+      "wet_days_ge_5mm": 10
+    },
+    "formula": "regional_mean_mm*(wet_days_ge_5mm/event_days)*(1-peak_share_pct/100)*(1-regional_spread_pct/100)",
+    "score": 49.3,
+    "tolerance": 0.1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with the requested numeric fields and dates.",
+        "name": "Answer form",
+        "points": 3
+      },
+      {
+        "description": "Computes the two-product regional mean and spread from accumulated precipitation.",
+        "name": "Regional calculation",
+        "points": 4
+      },
+      {
+        "description": "Date-matches and averages the two point precipitation series before deriving total, mean, peak, and peak-share values.",
+        "name": "Local series calculation",
+        "points": 4
+      },
+      {
+        "description": "Computes rolling 3-day and 5-day maxima plus both wet-day threshold counts.",
+        "name": "Persistence calculation",
+        "points": 4
+      },
+      {
+        "description": "Applies the persistence-weighted regional formula with correct rounding.",
+        "name": "Score calculation",
+        "points": 3
+      },
+      {
+        "description": "Uses units, percentages, ratios, and dates consistently in a calculation-centered explanation.",
+        "name": "Numeric synthesis",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "rainfall_persistence_score_ledger",
+  "task_id": "CSX-286_Q2",
+  "task_type": "numeric"
+}

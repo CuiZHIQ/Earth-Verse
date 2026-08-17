@@ -1,0 +1,255 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-139",
+  "judge_anchors": {
+    "expected_baseline_tier": "elevated",
+    "expected_interpretation": "Rapid pressure deepening and wind impulse dominate; rainfall is a secondary compound load, and package AOI exposure raises response concern.",
+    "expected_process_class": "wind_dominant_compound_storm",
+    "expected_scenario_tier": "high"
+  },
+  "key_values": {
+    "normalization_terms": {
+      "exposure": {
+        "critical_facility_density": 0.6156049164795871,
+        "major_transport_features": 0.6916666666666667,
+        "population_density": 0.24707565555309055
+      },
+      "rainfall": {
+        "chirps_max": 0.7924994647502899,
+        "chirps_mean": 0.8116536682265982,
+        "era5_max": 0.6415375038909588,
+        "era5_mean": 0.3291435719495971,
+        "gpm_max": 0.9529333098232746,
+        "gpm_mean": 0.46635610064291855,
+        "hourly_event_total": 0.348,
+        "hourly_peak_utc_day": 0.36399999999999993
+      },
+      "remote_context": {
+        "embedding_change_max": 0.9782653037507678,
+        "embedding_change_mean": 0.5207276260239406,
+        "embedding_change_stdDev": 0.5720810594464054
+      },
+      "scenario_exposure": {
+        "critical_facility_density": 0.6156049164795871,
+        "major_transport_features": 0.6916666666666667,
+        "population_density": 0.2841370038860541
+      },
+      "scenario_rainfall": {
+        "chirps_max": 0.9509993577003479,
+        "chirps_mean": 0.9739844018719179,
+        "era5_max": 0.7698450046691505,
+        "era5_mean": 0.3949722863395165,
+        "gpm_max": 1.0,
+        "gpm_mean": 0.5596273207715023,
+        "hourly_event_total": 0.41759999999999997,
+        "hourly_peak_utc_day": 0.43679999999999986
+      }
+    },
+    "osm_counts": {
+      "amenity_counts": {
+        "fire_station": 3,
+        "hospital": 10,
+        "police": 9,
+        "school": 141
+      },
+      "building_count": 311,
+      "highway_counts": {
+        "secondary": 43,
+        "tertiary": 37,
+        "trunk": 3
+      }
+    },
+    "raw_components": {
+      "baseline_compound_index": 72.41058385374856,
+      "baseline_response_priority_score": 67.74401690471724,
+      "cyclogenesis_norm": 0.8666666666666667,
+      "exposure_load_norm": 0.5181157462331148,
+      "rainfall_spread_norm": 0.5882654524104546,
+      "remote_context_norm": 0.690357996407038,
+      "scenario_compound_index": 78.86914458631857,
+      "scenario_response_priority_score": 77.74930915365033,
+      "wind_impulse_norm": 0.763536611866969
+    }
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "aoi_area_km2": 17652.0,
+      "critical_facility_count": 163,
+      "critical_facility_density_per_1000km2": 9.234,
+      "event_location": "North Atlantic to western Europe",
+      "event_window": {
+        "end_date": "2023-11-03",
+        "start_date": "2023-10-29"
+      },
+      "gridded_precipitation": {
+        "chirps_max_mm": 31.7,
+        "chirps_mean_mm": 16.233,
+        "era5_max_mm": 16.038,
+        "era5_mean_mm": 3.291,
+        "gpm_max_mm": 71.47,
+        "gpm_mean_mm": 9.327
+      },
+      "gust_energy_ge_70": 13.56,
+      "gust_hours_ge_70": 11,
+      "gust_hours_ge_80": 4,
+      "hourly_peak_utc_day": "2023-10-30",
+      "hourly_peak_utc_day_rain_mm": 9.1,
+      "hourly_rain_total_mm": 17.4,
+      "major_transport_feature_count": 83,
+      "min_pressure_hpa": 977.6,
+      "min_pressure_time": "2023-11-02T07:00",
+      "peak_gust_kmh": 83.2,
+      "peak_gust_time": "2023-11-02T11:00",
+      "population": 1090345.7,
+      "population_density_per_km2": 61.8,
+      "pressure_drop_24h_hpa": 26.0,
+      "pressure_drop_window": {
+        "end_time": "2023-11-02T04:00",
+        "start_time": "2023-11-01T04:00"
+      },
+      "remote_embedding_change": {
+        "max": 0.489133,
+        "mean": 0.015622,
+        "stdDev": 0.008581
+      }
+    },
+    "final_interpretation": "Storm Ciaran is best represented as a wind-dominant compound storm: rapid pressure deepening and sustained damaging gusts dominate the baseline index, while gridded rainfall and AOI exposure raise operational concern and the counterfactual scenario pushes response priority into the high tier.",
+    "mechanism_chain": [
+      "A 26.0 hPa 24-hour pressure fall indicates explosive cyclogenesis over the event window.",
+      "The wind field produces 11 hours at or above 70 km/h and a peak gust of 83.2 km/h, so wind impulse is the leading immediate stressor.",
+      "Point rainfall is modest, but gridded products show a broader precipitation footprint, keeping rainfall as a secondary compound load.",
+      "The package AOI exposure layers add population and critical-service load to the physical storm signal.",
+      "Under the stronger gust, wetter, and higher-population scenario, response priority rises from elevated to high."
+    ],
+    "process_model": {
+      "baseline_compound_index": 72.411,
+      "cyclogenesis_norm": 0.867,
+      "exposure_load_norm": 0.518,
+      "process_class": "wind_dominant_compound_storm",
+      "rainfall_spread_norm": 0.588,
+      "remote_context_norm": 0.69,
+      "wind_impulse_norm": 0.764
+    },
+    "response_priorities": {
+      "baseline_response_priority_score": 67.744,
+      "baseline_response_tier": "elevated",
+      "priority_driver": "rapid_deepening_and_wind_impulse_with_moderate_rainfall_spread"
+    },
+    "scenario_analysis": {
+      "gust_multiplier": 1.1,
+      "population_multiplier": 1.15,
+      "rainfall_multiplier": 1.2,
+      "scenario_compound_index": 78.869,
+      "scenario_exposure_load_norm": 0.53,
+      "scenario_index_delta": 6.459,
+      "scenario_rainfall_spread_norm": 0.688,
+      "scenario_response_priority_delta": 10.005,
+      "scenario_response_priority_score": 77.749,
+      "scenario_response_tier": "high",
+      "scenario_wind_impulse_norm": 0.935
+    },
+    "source_paths": {
+      "event_narrative": [
+        "data/event_reports/event_reports_002_Locked_event_anchor_Storm_Ciaran_North_Atlantic_explosive_cyclogenesis.json",
+        "data/event_reports/event_reports_001_Locked_anchor_report.html",
+        "data/other/other_001_Met_Office_names_Storm_Ciaran.html"
+      ],
+      "exposure_and_aoi": [
+        "data/geospatial_context/geospatial_context_001_compact_per-event_AOI_derived_from_event_bbox.json",
+        "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+      ],
+      "gridded_precipitation": [
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+      ],
+      "hourly_hazard": [
+        "data/physical_hazard/physical_hazard_006_04_physical_hazard_api_Open-Meteo_historical_wind_rain_point_API.json.json"
+      ],
+      "remote_context": [
+        "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ]
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "AOI, WorldPop, and OpenStreetMap exposure values are evaluated as declared package-relative derived statistics.",
+      "Event-location validity is judged from declared package files, extracted numeric fields, formulas, and provenance completeness rather than internal georeferencing metadata in masked products."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_Storm_Ciaran_North_Atlantic_explosive_cyclogenesis.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report.html",
+      "data/other/other_001_Met_Office_names_Storm_Ciaran.html",
+      "data/physical_hazard/physical_hazard_006_04_physical_hazard_api_Open-Meteo_historical_wind_rain_point_API.json.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/geospatial_context/geospatial_context_001_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Finds the relevant package evidence without being given exact filenames and cites package-relative paths for event narrative, hourly hazard, gridded precipitation, AOI/exposure, and remote-context evidence.",
+        "name": "Self-directed package discovery and path citation",
+        "partial_credit": "1-2 points for using several correct paths but missing one or more evidence families.",
+        "points": 3
+      },
+      {
+        "description": "Computes the 26.0 hPa 24-hour pressure fall, its 2023-11-01T04:00 to 2023-11-02T04:00 window, the 977.6 hPa minimum, the 83.2 km/h peak gust, 11 hours at or above 70 km/h, 4 hours at or above 80 km/h, and the gust-energy term.",
+        "name": "Rapid-deepening and wind calculations",
+        "partial_credit": "About 0.5-1 point per correct value cluster, with little credit for a non-24-hour pressure fall.",
+        "points": 4
+      },
+      {
+        "description": "Combines hourly event rainfall and peak UTC-day rainfall with GPM, CHIRPS, and ERA5 mean/maximum precipitation terms using the specified clipping and averaging.",
+        "name": "Rainfall-spread synthesis",
+        "partial_credit": "1-2 points for correct hourly rainfall or gridded values but incomplete normalization.",
+        "points": 3
+      },
+      {
+        "description": "Computes AOI area, population density, OSM critical-facility count, critical-facility density, and major transport count from declared package-relative AOI, WorldPop, and OpenStreetMap derived statistics, then forms the exposure-load norm.",
+        "name": "Exposure and AOI load",
+        "partial_credit": "1-2 points for correct counts or population values with area or density mistakes.",
+        "points": 3
+      },
+      {
+        "description": "Applies all specified component weights to obtain the baseline compound index, response priority score, wind-dominant classification, and elevated response tier.",
+        "name": "Compound index and response priority",
+        "partial_credit": "1-2 points for mostly correct component values but incorrect weighting or tiering.",
+        "points": 3
+      },
+      {
+        "description": "Recomputes the +10% gust, +20% rainfall, and +15% population scenario and reports the compound-index and response-priority deltas with the high scenario tier.",
+        "name": "Counterfactual scenario reasoning",
+        "partial_credit": "1 point for applying only some scenario perturbations or omitting one delta.",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with the requested top-level keys and explains the physical chain without adding unsupported casualty, damage, closure, or outage claims.",
+        "name": "Structured disaster-process interpretation",
+        "partial_credit": "1 point for valid JSON with minor schema omissions or a thin interpretation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "cyclone_compound_process_model",
+  "task_id": "CSX-139_Q1",
+  "task_type": "structured_reasoning",
+  "tolerances": {
+    "area_km2": 0.5,
+    "counts": 0,
+    "density": 0.2,
+    "index_or_norm": 0.01,
+    "pressure_hpa": 0.1,
+    "rain_mm": 0.1,
+    "wind_kmh": 0.1
+  }
+}

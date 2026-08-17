@@ -1,0 +1,149 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-139",
+  "key_values": {
+    "computed_metrics": {
+      "latitude": 48.89279,
+      "rainfall_contrast": {
+        "gpm_max_mean_ratio": 7.66,
+        "gpm_max_mm": 71.47,
+        "gpm_mean_mm": 9.33,
+        "local_rain_dominant": false,
+        "nov2_point_mm": 2.2,
+        "nov2_share": 0.126,
+        "point_total_mm": 17.4
+      },
+      "rapid_deepening": {
+        "end_pressure_hpa": 978.0,
+        "fall_24h_hpa": 26.0,
+        "fall_end_time": "2023-11-02T04:00",
+        "fall_start_time": "2023-11-01T04:00",
+        "pass": true,
+        "ratio": 1.245,
+        "start_pressure_hpa": 1004.0,
+        "threshold_hpa": 20.9
+      },
+      "wind_persistence": {
+        "gust_lag_hr": 4.0,
+        "hours_gust_ge_70": 11,
+        "hours_gust_ge_80": 4,
+        "impulse_score": 19,
+        "max_gust_kmh": 83.2,
+        "max_gust_time": "2023-11-02T11:00",
+        "min_pressure_hpa": 977.6,
+        "min_pressure_time": "2023-11-02T07:00",
+        "pass": true
+      }
+    },
+    "event_name": "Storm Ciaran North Atlantic explosive cyclogenesis",
+    "event_window": "2023-10-29 to 2023-11-03",
+    "ledger_formulae": {
+      "gpm_max_mean_ratio": "GPM event accumulated precipitation maximum / mean",
+      "nov2_share": "2 November point precipitation / event-total point precipitation",
+      "pressure_fall": "max over hourly series of pressure(t-24h) - pressure(t)",
+      "rapid_deepening_ratio": "fall_24h_hpa / threshold_hpa",
+      "rapid_deepening_threshold": "24 * sin(abs(latitude)) / sin(60 degrees)",
+      "wind_impulse_score": "hours_gust_ge_70 + 2 * hours_gust_ge_80"
+    },
+    "pass_fail_rules": {
+      "local_rain_dominant": "point_total_mm >= 50 or nov2_share >= 0.50",
+      "rapid_deepening": "fall_24h_hpa >= threshold_hpa",
+      "wind_persistence": "0 <= gust_lag_hr <= 6 and impulse_score >= 15"
+    },
+    "required_rejected_alternative": "A rainfall-first or single-peak-gust explanation is inconsistent with the local rainfall thresholds and the multi-hour gust impulse after minimum pressure."
+  },
+  "numeric_tolerances": {
+    "counts": 0,
+    "gpm_ratio": 0.01,
+    "lag_hr": 0.1,
+    "pressure_hpa": 0.1,
+    "rain_mm": 0.1,
+    "ratio": 0.005,
+    "wind_kmh": 0.1
+  },
+  "primary_gt": {
+    "answer": "rapid_deepening_wind_led_secondary_rain",
+    "conclusion": "The ledger supports a rapid-deepening, wind-led Storm Ciaran diagnosis with rainfall as secondary local context.",
+    "rainfall_contrast": {
+      "gpm_max_mean_ratio": 7.66,
+      "local_rain_dominant": false,
+      "nov2_share": 0.126,
+      "point_total_mm": 17.4
+    },
+    "rapid_deepening": {
+      "fall_24h_hpa": 26.0,
+      "pass": true,
+      "ratio": 1.245,
+      "threshold_hpa": 20.9
+    },
+    "rejected_alternative": "A rainfall-first or single-peak-gust explanation fails because the local rainfall thresholds are not met and the gust signal persists after the pressure minimum.",
+    "wind_persistence": {
+      "gust_lag_hr": 4.0,
+      "hours_gust_ge_70": 11,
+      "hours_gust_ge_80": 4,
+      "impulse_score": 19,
+      "max_gust_kmh": 83.2,
+      "min_pressure_hpa": 977.6,
+      "pass": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_006_04_physical_hazard_api_Open-Meteo_historical_wind_rain_point_API.json.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON object with all six top-level fields and all required nested fields.",
+        "name": "Answer schema completeness",
+        "partial_credit": "Allow minor naming or ordering differences that preserve the same values.",
+        "points": 3
+      },
+      {
+        "description": "Computes 26.0 hPa maximum 24-hour pressure fall, 20.9 hPa threshold, 1.245 ratio, and pass true.",
+        "name": "Rapid-deepening calculation",
+        "partial_credit": "Credit correct pressure fall with incomplete threshold or ratio logic.",
+        "points": 5
+      },
+      {
+        "description": "Reports 977.6 hPa minimum pressure, 83.2 km/h maximum gust, 4.0 h lag, 11 hours >=70 km/h, 4 hours >=80 km/h, impulse score 19, and pass true.",
+        "name": "Wind-persistence calculation",
+        "partial_credit": "Credit correct peak values with incomplete duration or impulse logic.",
+        "points": 5
+      },
+      {
+        "description": "Reports 17.4 mm point total, 0.126 2 November share, 7.66 GPM max/mean ratio, and local_rain_dominant false.",
+        "name": "Rainfall contrast calculation",
+        "partial_credit": "Credit correct local precipitation or GPM ratio alone.",
+        "points": 3
+      },
+      {
+        "description": "Concludes that the ledger supports a rapid-deepening, wind-led diagnosis with rainfall secondary in the local ledger.",
+        "name": "Consistency conclusion",
+        "partial_credit": "Interpretation wording may vary if it follows the pass/fail results.",
+        "points": 2
+      },
+      {
+        "description": "Rejects rainfall-first and/or single-peak-gust interpretations using the computed thresholds.",
+        "name": "Rejected alternative",
+        "partial_credit": "No credit for generic storm description without computed support.",
+        "points": 1
+      },
+      {
+        "description": "Avoids extra exact damage, outage, casualty, or impact-location claims not established by the ledger.",
+        "name": "Answer discipline",
+        "partial_credit": "Minor non-scored context is acceptable if the numeric answer remains central.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "formula_derivation_consistency_proof",
+  "task_id": "CSX-139_Q2",
+  "task_type": "short_answer"
+}

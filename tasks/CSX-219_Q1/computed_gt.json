@@ -1,0 +1,174 @@
+{
+  "decision_rule": {
+    "final_label_rule": "rainfall_wetness, relief, and runout_area must pass; at least 4 of 5 groups must pass.",
+    "thresholds": {
+      "antecedent_share_min": 0.95,
+      "average_speed_mph_min": 30,
+      "event_day_mean_mm_max": 2.0,
+      "exposure_index_per_100k_min": 5.0,
+      "image_pair_score_min": 1,
+      "rainfall_load_mm_min": 150.0,
+      "relief_proxy_m_per_km_min": 100.0,
+      "runout_area_ratio_min": 1.5
+    }
+  },
+  "evaluation_mode": "rubric_numeric",
+  "event": {
+    "event_date_or_window": "2014-03-22",
+    "event_name": "Oso landslide",
+    "hazard_family": "landslide_mass_movement",
+    "package_id": "CSX-219"
+  },
+  "event_id": "CSX-219",
+  "key_values": {
+    "antecedent_precip_inputs_mm": {
+      "nasa_power_20140308_to_20140321": 182.62,
+      "open_meteo_2014_03_08_to_2014_03_21": 218.2,
+      "wetness_to_event_day_ratio": 275.5
+    },
+    "event_day_precip_inputs_mm": {
+      "chirps_mean": 0.0,
+      "era5_land_mean": 0.584,
+      "gpm_imerg_mean": 1.493,
+      "nasa_power": 1.56,
+      "open_meteo": 0.0
+    },
+    "exposure_inputs": {
+      "context_population": 754664.615,
+      "fatalities": 43,
+      "homes_or_structures": 40
+    },
+    "image_pair_inputs": {
+      "sentinel1_post_count": 0,
+      "sentinel1_pre_count": 0,
+      "sentinel2_post_count": 0,
+      "sentinel2_pre_count": 0
+    },
+    "relief_inputs": {
+      "distance_km": 2.033,
+      "lowland_point": {
+        "elevation_m": 85.0,
+        "lat": 48.260105,
+        "lon": -121.90636
+      },
+      "mountain_point": {
+        "elevation_m": 671.57,
+        "lat": 48.278,
+        "lon": -121.912
+      },
+      "relief_m": 586.57
+    },
+    "runout_report_inputs": {
+      "average_speed_mph": 40,
+      "dam_depth_ft": 25,
+      "mass_area_million_tons_per_sq_mi": 36.0,
+      "moved_million_tons": 18,
+      "overrun_area_sq_mi": 0.5,
+      "road_runout_mi": 1.0,
+      "temporary_lake_length_mi": 2.5
+    }
+  },
+  "primary_gt": {
+    "answer": "passes_rain_relief_runout_4of5_thresholds",
+    "passes": {
+      "exposure": true,
+      "image_pair_count": false,
+      "rainfall_wetness": true,
+      "relief": true,
+      "runout_area": true
+    },
+    "rule": "rainfall_wetness, relief, and runout_area must pass; passed_groups >= 4",
+    "target_family": "oso_rain_relief_runout_threshold_ledger",
+    "threshold": {
+      "mandatory_groups_pass": true,
+      "passed_groups": 4,
+      "total_groups": 5
+    },
+    "tolerances": {
+      "index": 0.1,
+      "mm": 0.01,
+      "ratio": 0.05,
+      "relief": 1.0,
+      "share": 0.002,
+      "slope_deg": 0.2
+    },
+    "values": {
+      "ante_share": 0.996,
+      "antecedent_mm": 200.41,
+      "event_day_mm": 0.728,
+      "exposure_idx": 11.0,
+      "image_pair_score": 0,
+      "rain_load_mm": 201.14,
+      "relief_m_km": 288.5,
+      "runout_area_ratio": 2.0,
+      "slope_deg": 16.1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_USGS_feature.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Oso_landslide.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the exact final label, the 4 of 5 pass count, and mandatory_groups_pass as true.",
+        "name": "Final label and pass count",
+        "partial_credit": "Award 1-2 points for the correct pass count or mandatory-group result with an incomplete label.",
+        "points": 3
+      },
+      {
+        "description": "Returns target_family, five group objects, threshold_pass_fail, final_label, and one_sentence_proof.",
+        "name": "Requested JSON ledger shape",
+        "partial_credit": "Award 1-2 points for a mostly correct structure with one missing group or minor field-name drift.",
+        "points": 3
+      },
+      {
+        "description": "Reports precipitation, antecedent share, relief, slope proxy, runout/area, speed, image-pair score, and exposure index within the stated tolerances.",
+        "name": "Numeric anchors",
+        "partial_credit": "Award 3-4 points for mostly correct values with one or two small arithmetic errors; award 1-2 points for copied values without the derived ratios.",
+        "points": 5
+      },
+      {
+        "description": "Applies the five-source event-day mean, two-source antecedent mean, load/share calculation, and per-100,000 exposure normalization.",
+        "name": "Rainfall and exposure formulas",
+        "partial_credit": "Award 1-2 points for correct formulas with missing rounding or one omitted input source.",
+        "points": 3
+      },
+      {
+        "description": "Applies haversine distance, arctangent slope proxy, road length divided by overrun area, and speed threshold.",
+        "name": "Relief and runout formulas",
+        "partial_credit": "Award 1-2 points for correct setup with a wrong distance convention or a missing speed comparison.",
+        "points": 3
+      },
+      {
+        "description": "Marks all five threshold states correctly and derives the final label from the mandatory-groups plus four-of-five rule.",
+        "name": "Threshold states and rule",
+        "partial_credit": "Award 1 point for the right label with one mistaken group state.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the proof concise and numeric, without adding unrelated narrative beyond the requested ledger.",
+        "name": "Concise numeric proof",
+        "partial_credit": "Award 0.5 points for a correct ledger with extra prose that does not change the result.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "oso_rain_relief_runout_threshold_ledger",
+  "task_id": "CSX-219_Q1",
+  "task_type": "short_answer"
+}

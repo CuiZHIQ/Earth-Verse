@@ -1,0 +1,105 @@
+{
+  "accepted_answer_formats": [
+    "A compact JSON object using the visible field names.",
+    "Numeric values may be numbers or numeric strings with millimeter units.",
+    "The ratio may be 3.38, about 3.4x, or another value within tolerance."
+  ],
+  "decision_rule": "Classify as a spatially concentrated extreme local maximum when reported_to_point_ratio >= 3.0.",
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-083",
+  "key_values": {
+    "concentration_class": "spatially concentrated extreme local maximum",
+    "daily_point_rainfall_mm": [
+      7.94,
+      97.29,
+      69.33,
+      37.7,
+      8.35
+    ],
+    "event_window": "2023-07-29 to 2023-08-02",
+    "point_event_total_mm": 220.61,
+    "reported_storm_total_mm": 744.8,
+    "reported_to_point_ratio": 3.38,
+    "threshold_ratio": 3.0
+  },
+  "out_of_scope_statements": [
+    "Do not convert the rainfall ratio into exact loss totals.",
+    "Do not treat the point total as the event-wide maximum rainfall amount.",
+    "Do not describe the reported total as comparable to the point-window total."
+  ],
+  "primary_gt": {
+    "answer": "ratio_3.38_extreme_local_maximum",
+    "decision_threshold_ratio": 3.0,
+    "structured_answer": {
+      "computed_interpretation": "The reported local maximum is more than three times the nearby point-window total, so it should be treated as a focused storm maximum rather than an ordinary wet-period accumulation.",
+      "concentration_class": "spatially concentrated extreme local maximum",
+      "point_event_total_mm": 220.61,
+      "reported_storm_total_mm": 744.8,
+      "reported_to_point_ratio": 3.38
+    },
+    "tolerances": {
+      "point_event_total_mm": 0.01,
+      "reported_storm_total_mm": 0.1,
+      "reported_to_point_ratio": 0.02
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Typhoon_Doksuri_Beijing-Tianjin-Hebei_and_Haihe_flood.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports reported_storm_total_mm as 744.8 mm within 0.1 mm and identifies it as the reported local storm total.",
+        "name": "Reported storm rainfall total",
+        "partial_credit": "Gives a nearby value or the right number without clear units or role.",
+        "points": 4
+      },
+      {
+        "description": "Sums the five daily point rainfall values to 220.61 mm within 0.01 mm.",
+        "name": "Point event-window rainfall total",
+        "partial_credit": "Uses most daily values correctly with a minor arithmetic or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Computes reported_to_point_ratio as 3.38 within 0.02, or an equivalent about-3.4x comparison.",
+        "name": "Rainfall concentration ratio",
+        "partial_credit": "Uses the correct numerator and denominator with modest rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Applies the 3.0 decision rule and labels the result as a spatially concentrated extreme local maximum.",
+        "name": "Threshold classification",
+        "partial_credit": "States that the reported total is much larger but omits the threshold test.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the reported storm maximum separate from the point rainfall sum and does not treat either as a basinwide mean.",
+        "name": "Local maximum versus point sum",
+        "partial_credit": "Has a minor wording issue that does not change the arithmetic.",
+        "points": 2
+      },
+      {
+        "description": "Gives a concise interpretation tied directly to the ratio and the Doksuri-remnant flood episode.",
+        "name": "Computed interpretation",
+        "partial_credit": "Gives a generic extreme-rainfall sentence that does not clearly use the ratio.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON-like object with clear units.",
+        "name": "Structured output clarity",
+        "partial_credit": "Mostly follows the fields with minor formatting or unit omissions.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-083_Q1",
+  "task_type": "numeric"
+}

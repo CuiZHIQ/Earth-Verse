@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-235_Q2",
+  "event_id": "CSX-235",
+  "target_family": "coupled_rupture_numeric_score_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": 22.445,
+    "S": 1.356,
+    "G": 9.937,
+    "R": 7.184,
+    "T": 1.35,
+    "P": 1.345,
+    "ratios": {
+      "liq_pop": 24.138,
+      "hazard": 4.091,
+      "precip_mm": 3.452
+    },
+    "units": "PGA_g,km,mm"
+  },
+  "calculation": {
+    "formula": "C=S*ln(G)*R*T/P",
+    "source_selection": {
+      "mmi": "USGS event GeoJSON top-level properties.mmi",
+      "pga_g": "USGS event GeoJSON products.shakemap[0].properties.maxpga (code=us1000h3p4)",
+      "reason": "The first listed ShakeMap product is treated as the primary package ShakeMap source to avoid ambiguity when multiple products are present."
+    },
+    "inputs": {
+      "magnitude": 7.5,
+      "mmi": 8.367,
+      "pga_g": 0.903,
+      "depth_km": 20.0,
+      "fault_length_km": 264.0,
+      "fault_width_km": 36.75,
+      "liq_pop": 140000,
+      "landslide_pop": 5800,
+      "liq_hazard": 450.0,
+      "landslide_hazard": 110.0,
+      "wave_m": 7,
+      "precip_means_mm": {
+        "gpm": 4.425479,
+        "chirps": 3.668446,
+        "era5": 2.262971
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Numeric anchors",
+        "points": 4,
+        "description": "Retrieves local values for shaking, depth, fault dimensions, ground-failure populations, hazard alert values, wave height, and precipitation means; uses event-level properties.mmi and products.shakemap[0].properties.maxpga as the primary ShakeMap source."
+      },
+      {
+        "name": "Component arithmetic",
+        "points": 5,
+        "description": "Computes S, G, R, T, and P with correct formula use and unit handling."
+      },
+      {
+        "name": "Final score",
+        "points": 4,
+        "description": "Computes C with the natural logarithm and rounds the result to three decimals."
+      },
+      {
+        "name": "Intermediate ledger",
+        "points": 4,
+        "description": "Shows the liquefaction-to-landslide, hazard, geometry, wave-depth, and precipitation terms clearly."
+      },
+      {
+        "name": "JSON precision",
+        "points": 3,
+        "description": "Returns the compact JSON object with consistent numeric precision."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_selection_note": "MMI is from event GeoJSON properties.mmi; PGA is from the first listed ShakeMap product properties.maxpga.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us1000h3p4.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

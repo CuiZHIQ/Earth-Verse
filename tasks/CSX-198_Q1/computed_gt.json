@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-198_Q1",
+  "event_id": "CSX-198",
+  "task_type": "short_answer",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "event_span_days": 68,
+    "progression_days": 53,
+    "progression_share": 0.779,
+    "precip_mean_mm": 436.451,
+    "precip_range_mm": 154.859,
+    "precip_window_share": 0.676,
+    "dnbr": {
+      "mean": -0.074973,
+      "max": 0.696927,
+      "areawide_high": false
+    },
+    "embedding_change": {
+      "mean": 0.019309,
+      "max": 0.502403,
+      "concentration_ratio": 26.019,
+      "localized_change": true
+    },
+    "final_score": "5/5"
+  },
+  "scoring_metadata": {
+    "score_tests": {
+      "large_long_fire": true,
+      "tracked_spread": true,
+      "precip_shorter_than_active_span": true,
+      "no_areawide_high_dnbr": true,
+      "localized_embedding_change": true
+    },
+    "thresholds": {
+      "large_fire_acres": 200000,
+      "long_fire_days": 60,
+      "structures_destroyed": 1000,
+      "spread_days": 50,
+      "spread_share_gte": 0.75,
+      "precip_share_lt": 0.75,
+      "dnbr_mean_gt": 0.2,
+      "dnbr_max_gte": 0.7,
+      "embedding_mean_lt": 0.05,
+      "embedding_max_gte": 0.5,
+      "embedding_ratio_gte": 20
+    },
+    "tolerances": {
+      "ratio": 0.001,
+      "precip_mm": 0.01,
+      "dnbr": 1e-06,
+      "embedding": 1e-06
+    },
+    "canonical_stance": "All five ledger tests pass, producing a 5/5 threshold score."
+  },
+  "key_values": {
+    "event_name": "2021 Caldor Fire near South Lake Tahoe",
+    "hazard_family": "wildfire_burn_smoke",
+    "incident": {
+      "acres": 221835,
+      "active_days": 68,
+      "structures_destroyed": 1005
+    },
+    "spread": {
+      "start": "2021-08-15",
+      "end": "2021-10-06",
+      "days": 53,
+      "share": 0.779,
+      "step_hours": 12
+    },
+    "precipitation": {
+      "means_mm": [
+        499.579,
+        344.72,
+        465.054
+      ],
+      "mean_mm": 436.451,
+      "range_mm": 154.859,
+      "window_days": 46,
+      "window_share": 0.676
+    },
+    "burn": {
+      "pre_scene_count": 86,
+      "post_scene_count": 150,
+      "mean_dnbr": -0.074973,
+      "max_dnbr": 0.696927,
+      "areawide_high": false
+    },
+    "embedding_change": {
+      "pre_year": 2020,
+      "post_year": 2021,
+      "mean": 0.019309,
+      "max": 0.502403,
+      "concentration_ratio": 26.019,
+      "localized_change": true
+    },
+    "score_tests": {
+      "large_long_fire": true,
+      "tracked_spread": true,
+      "precip_shorter_than_active_span": true,
+      "no_areawide_high_dnbr": true,
+      "localized_embedding_change": true
+    }
+  },
+  "tolerances": {
+    "progression_share": 0.001,
+    "precip_mean_mm": 0.01,
+    "precip_range_mm": 0.01,
+    "precip_window_share": 0.001,
+    "dnbr_mean": 1e-06,
+    "dnbr_max": 1e-06,
+    "embedding_mean": 1e-06,
+    "embedding_max": 1e-06,
+    "embedding_ratio": 0.001
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Structured JSON ledger",
+        "description": "Returns every requested numeric and boolean field with clear nesting.",
+        "points": 3,
+        "partial_credit": "Give partial credit for minor field-name or nesting errors when values remain clear."
+      },
+      {
+        "name": "Incident span and scale",
+        "description": "Uses 68 active days, 221835 acres, 1005 structures destroyed, and the prompt-stated large long-duration test.",
+        "points": 3,
+        "partial_credit": "Give partial credit for duration without both size anchors or for a small transcription error."
+      },
+      {
+        "name": "Spread-window reconstruction",
+        "description": "Computes August 15 to October 6 inclusive as 53 days, verifies 12-hour steps, and reports 0.779.",
+        "points": 3,
+        "partial_credit": "Give partial credit for correct dates with one arithmetic or rounding error."
+      },
+      {
+        "name": "Precipitation window ledger",
+        "description": "Computes mean 436.451 mm, range 154.859 mm, 46-day window, and 0.676 window share.",
+        "points": 3,
+        "partial_credit": "Give partial credit for correct precipitation means without the window-share test."
+      },
+      {
+        "name": "dNBR threshold logic",
+        "description": "Uses mean -0.074973 and maximum 0.696927 to set areawide_high to false.",
+        "points": 3,
+        "partial_credit": "Give partial credit for the false result without both numeric dNBR anchors."
+      },
+      {
+        "name": "Embedding-change calculation",
+        "description": "Uses mean 0.019309, maximum 0.502403, and ratio 26.019 to set localized_change to true.",
+        "points": 3,
+        "partial_credit": "Give partial credit for the true result with one missing component value."
+      },
+      {
+        "name": "Final score",
+        "description": "Reports final_score as 5/5 and ties it to the five stated tests.",
+        "points": 2,
+        "partial_credit": "Give partial credit for a correct score with one weak component explanation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Scientific_Visualization_Studio.html",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  }
+}

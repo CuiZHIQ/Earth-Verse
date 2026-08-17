@@ -1,0 +1,139 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-178",
+  "judge_anchors": [
+    "The event window is 2021-03-26 through 2021-04-15, giving 21 inclusive days.",
+    "The report says Nepal received just a quarter of normal January-April rainfall, so the fraction is 0.250 and the deficit is 0.750.",
+    "The report gives roughly 41,000 VIIRS hotspots, so hotspot_norm is 0.82.",
+    "The three required indices are 86.05, 100.00, and 89.20 after rounding to two decimals.",
+    "The narrative supports smoke, health, school, evacuation, fatality, and flight disruption signals, but not direct facility damage."
+  ],
+  "key_values": {
+    "event_name": "Nepal 2021 forest fires",
+    "formula_terms": {
+      "disruption_fraction": 1.0,
+      "hot_windy_norm": 1.0,
+      "hotspot_norm": 0.82,
+      "rainfall_deficit_norm": 0.75,
+      "second_rank_norm": 1.0,
+      "smoke_signal_fraction": 1.0,
+      "terrain_norm": 1.0,
+      "transport_path_norm": 1.0,
+      "uncontrolled_forest_burn_norm": 1.0
+    },
+    "hazard_family": "wildfire_burn_smoke",
+    "report_signals": {
+      "direct_damage_text": false,
+      "eastward_smoke": true,
+      "evacuations": true,
+      "fatalities": true,
+      "flight_cancellations": true,
+      "hot_windy": true,
+      "school_closures": true,
+      "second_rank_hotspots": true,
+      "smoke_countrywide": true,
+      "smoke_valleys": true,
+      "terrain_constraint": true,
+      "uncontrolled_forest_burn": true,
+      "unhealthy_air": true
+    },
+    "reported_fire_hotspots": 41000,
+    "window": {
+      "end_date": "2021-04-15",
+      "inclusive_days": 21,
+      "start_date": "2021-03-26"
+    }
+  },
+  "numeric_tolerances": {
+    "burn_activity_index": {
+      "tolerance": 0.05,
+      "value": 89.2
+    },
+    "fire_weather_index": {
+      "tolerance": 0.05,
+      "value": 86.05
+    },
+    "reported_rain_fraction_of_normal": {
+      "tolerance": 0.001,
+      "value": 0.25
+    },
+    "smoke_disruption_index": {
+      "tolerance": 0.05,
+      "value": 100.0
+    }
+  },
+  "primary_gt": {
+    "answer_type": "fire_smoke_reported_process_index",
+    "burn_activity_index": 89.2,
+    "direct_damage_reported": false,
+    "fire_weather_index": 86.05,
+    "formula_check": "pass",
+    "reported_rain_fraction_of_normal": 0.25,
+    "smoke_disruption_index": 100.0,
+    "window_days": 21
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event daily weather, dNBR, embedding, WorldPop, and OSM receptor products are not used in this ground truth.",
+      "The process indices are computed from declared event anchor metadata and NASA Earth Observatory report text."
+    ],
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Nepal_2021_forest_fires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports 21 inclusive days and the report-supported rainfall fraction 0.250.",
+        "name": "Event window and rainfall fraction",
+        "partial_credit": "Award 1-2 points for the correct window or severe rainfall-deficit reading with one missing numeric value.",
+        "points": 3
+      },
+      {
+        "description": "Recomputes 86.05 from rainfall deficit, hot/windy text, rugged terrain, and hotspot normalization.",
+        "name": "Fire-weather formula",
+        "partial_credit": "Award 1-3 points for the correct formula with one missing text signal or normalization.",
+        "points": 4
+      },
+      {
+        "description": "Recomputes 100.00 from four smoke signals, four disruption signals, and the eastward transport path.",
+        "name": "Smoke-disruption formula",
+        "partial_credit": "Award 1 point for each correct signal family and 1 point for the correct formula.",
+        "points": 4
+      },
+      {
+        "description": "Recomputes 89.20 from hotspot_norm 0.82, second-rank hotspot status, and uncontrolled forest-burn text.",
+        "name": "Burn-activity formula",
+        "partial_credit": "Award 1-2 points for using the right burn-activity inputs with one arithmetic error.",
+        "points": 3
+      },
+      {
+        "description": "Keeps direct_damage_reported false because smoke disruption and fatalities are not direct property/building/facility damage statements.",
+        "name": "Explicit damage flag",
+        "partial_credit": "Award 1 point for cautioning against a damage claim while omitting the required boolean.",
+        "points": 2
+      },
+      {
+        "description": "Uses the requested fields, rounds numeric values correctly, and sets formula_check to pass.",
+        "name": "Compact reproducible JSON",
+        "partial_credit": "Award 1 point for correct values in a less compact format.",
+        "points": 2
+      },
+      {
+        "description": "Bases the indices on report-supported values and does not use off-event weather, dNBR, embedding, or receptor counts as physical-process substitutes.",
+        "name": "Source discipline",
+        "partial_credit": "Award 1 point if the answer mostly uses report values but adds one unsupported physical-product claim.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "reported_fireweather_smoketransport_burnactivity_process_index",
+  "task_id": "CSX-178_Q2",
+  "task_subtype": "wildfire_smoke_reported_process_index",
+  "task_type": "numeric"
+}

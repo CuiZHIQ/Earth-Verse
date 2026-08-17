@@ -1,0 +1,190 @@
+{
+  "decision_rule": {
+    "fallback_label": "not_proven_by_these_gates",
+    "final_label_if_all_gates_pass": "collapse_led_shallow_earthquake_sequence",
+    "gate_thresholds": {
+      "collapse_exposure_gate": "destroyed/damaged>=1.0, destroyed_share>=0.60, low_quality_pct>=95",
+      "rainfall_not_primary_gate": "larger GPM/CHIRPS precipitation maximum<50 mm",
+      "secondary_ground_failure_gate": "at least 3 signals and landslides ranked second to structural collapse",
+      "shallow_shaking_gate": "M>=7.5, depth<=15 km, EMS midpoint>=6.0",
+      "strong_sequence_gate": "later_M6plus_ratio>=0.50, reported aftershock M>=7.0, lag<=20 days",
+      "surface_change_not_primary_gate": "reported no surface rupture and no usable Sentinel-1 pre/post pair establishing an image-led primary explanation"
+    },
+    "summary": "Compute six gates for shaking, strong-shock sequence, collapse exposure, secondary ground failure, surface-change nonlead status, and rainfall nonlead status. The final label is assigned only when all gates pass."
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2015-04-25 to 2015-05-12",
+    "event_id": "CSX-234",
+    "event_name": "2015 Gorkha Nepal earthquake sequence",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "location": "Kathmandu Valley and central Nepal",
+    "package_id": "CSX-234"
+  },
+  "event_id": "CSX-234",
+  "key_values": {
+    "collapse_exposure_gate": {
+      "destroyed_share": 0.65,
+      "destroyed_to_damaged_house_ratio": 1.86,
+      "fatalities_about": 9000,
+      "fatalities_injuries_mostly_poor_construction": true,
+      "houses_damaged": 269190,
+      "houses_destroyed": 500717,
+      "injuries": 23000,
+      "low_quality_building_pct": 98.0,
+      "people_per_destroyed_house": 6.38,
+      "population_sum_2015": 3193357.78,
+      "threshold_result": "pass"
+    },
+    "final_label": "collapse_led_shallow_earthquake_sequence",
+    "rainfall_not_primary_gate": {
+      "chirps_precip_max_mm": 26.02,
+      "chirps_precip_mean_mm": 3.158,
+      "gpm_precip_max_mm": 28.34,
+      "gpm_precip_mean_mm": 13.143,
+      "gpm_to_chirps_mean_precip_ratio": 4.16,
+      "larger_precip_max_mm": 28.34,
+      "threshold_result": "pass"
+    },
+    "secondary_ground_failure_gate": {
+      "landslides_second_to_structural_collapses": true,
+      "secondary_ground_failure_signal_count": 4,
+      "signals": {
+        "dammed_river_lake": true,
+        "landslides": true,
+        "liquefaction": true,
+        "progressive_slope_failure": true
+      },
+      "threshold_result": "pass"
+    },
+    "shallow_shaking_gate": {
+      "kathmandu_ems98_midpoint": 6.5,
+      "kathmandu_ems98_range": [
+        6,
+        7
+      ],
+      "mainshock_depth_km": 8.22,
+      "mainshock_id": "us20002926",
+      "mainshock_magnitude": 7.8,
+      "mainshock_time_utc": "2015-04-25T06:11:25Z",
+      "threshold_result": "pass"
+    },
+    "strong_sequence_gate": {
+      "catalog_count_scope": "Package ComCat query count; the report-cited May 12 M7.3 aftershock is recorded separately below.",
+      "largest_later_usgs_m6plus_id": "us200029bt",
+      "largest_later_usgs_m6plus_lag_hours": 24.96,
+      "largest_later_usgs_m6plus_magnitude": 6.7,
+      "later_m6plus_ratio": 0.75,
+      "reported_aftershock_lag_days": 17,
+      "reported_aftershock_magnitude": 7.3,
+      "reported_aftershock_source": "data/event_reports/event_reports_001_Locked_anchor_USGS.html",
+      "threshold_result": "pass",
+      "usgs_later_nepal_m6plus_count": 3,
+      "usgs_nepal_m6plus_count": 4
+    },
+    "surface_change_not_primary_gate": {
+      "no_surface_rupture_reported": true,
+      "radar_pair_available": false,
+      "radar_post_count": 0,
+      "radar_post_pre_ratio": 0.0,
+      "radar_pre_count": 2,
+      "surface_change_inference": "Sentinel-1 has no usable post-event pair here, so it does not prove absence of change; the non-primary gate relies on the report's no-surface-rupture statement and lack of image-led support.",
+      "threshold_result": "pass"
+    }
+  },
+  "primary_gt": {
+    "answer": "collapse_led_shallow_earthquake_sequence",
+    "gate_results": {
+      "collapse_exposure": "pass",
+      "rainfall_not_primary": "pass",
+      "secondary_ground_failure": "pass",
+      "shallow_shaking": "pass",
+      "strong_sequence": "pass",
+      "surface_change_not_primary": "pass"
+    },
+    "key_metrics": {
+      "depth_km": 8.22,
+      "destroyed_share": 0.65,
+      "destroyed_to_damaged_ratio": 1.86,
+      "ems_midpoint": 6.5,
+      "gpm_chirps_mean_ratio": 4.16,
+      "larger_precip_max_mm": 28.34,
+      "later_m6plus_ratio": 0.75,
+      "mainshock_mw": 7.8,
+      "radar_post_pre_ratio": 0.0,
+      "reported_aftershock_lag_days": 17,
+      "reported_aftershock_mw": 7.3,
+      "secondary_signal_count": 4
+    },
+    "rejected_leads": [
+      "landslide_led_primary",
+      "surface_change_or_image_led_primary",
+      "rainfall_led_primary"
+    ],
+    "target_family": "numeric_consistency_proof",
+    "tolerances": {
+      "depth_km": 0.1,
+      "magnitude": 0.1,
+      "precip_mm": 0.1,
+      "ratio": 0.02
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Computed from local CSX-234 package files only.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Gorkha_Nepal_earthquake_sequence.json",
+      "data/event_catalogs/event_catalogs_001_USGS_ComCat_earthquake_query.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns all six named gates, per-gate values, pass/fail results, final label, rejected leads, and one concise interpretation.",
+        "name": "Requested JSON structure",
+        "points": 4
+      },
+      {
+        "description": "Computes the specified magnitude, depth, EMS midpoint, sequence ratio, aftershock lag, housing ratios, exposure ratio, surface ratio, and precipitation metrics within tolerance, while distinguishing package-catalog sequence counts from the separately reported May 12 aftershock.",
+        "name": "Numeric calculations",
+        "points": 5
+      },
+      {
+        "description": "Applies all gate thresholds correctly and assigns the final label only after all six gates pass.",
+        "name": "Gate logic",
+        "points": 4
+      },
+      {
+        "description": "Explains how the values establish collapse-led shallow earthquake sequence consistency, keep ground failures secondary, and avoid treating missing Sentinel-1 post scenes as proof of no surface change.",
+        "name": "Proof reasoning",
+        "points": 3
+      },
+      {
+        "description": "Rejects at least two tempting lead interpretations using computed gates: landslide-led, image/surface-change-led, or rainfall-led; image-led rejection must be based on no surface rupture plus absent paired image support, not on a claim of observed no-change.",
+        "name": "Rejected leads",
+        "points": 2
+      },
+      {
+        "description": "Uses a short final mechanism label consistent with the calculations.",
+        "name": "Concise label",
+        "points": 1
+      },
+      {
+        "description": "Keeps the answer bounded to the numeric proof and requested computed fields, including the catalog/report sequence distinction and Sentinel-1 availability limit.",
+        "name": "Overclaim control",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "formula_derivation_consistency_proof",
+  "task_id": "CSX-234_Q1",
+  "task_type": "short_answer"
+}

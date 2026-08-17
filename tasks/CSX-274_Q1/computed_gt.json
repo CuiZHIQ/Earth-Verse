@@ -1,0 +1,266 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-274",
+  "forbidden_overclaims": [
+    "Do not claim exact national deaths, damage totals, insured losses, or national facility exposure from the package.",
+    "Do not claim every U.S. region faced equal winter flood or storm risk.",
+    "Do not infer vegetation burn-scar damage as the main impact pathway.",
+    "Do not treat a bounded exposure slice as a complete national exposure inventory.",
+    "Do not use the known error artifact as impact evidence."
+  ],
+  "judge_anchors": {
+    "acceptable_variants": [
+      "strong warm ENSO winter flood/storm readiness",
+      "high-priority El Nino teleconnection storm-preparedness frame",
+      "very strong warm ENSO with altered storm tracks and regional U.S. winter impacts"
+    ],
+    "canonical_stance": "The 1997-1998 El Nino should be framed as a strong warm-ENSO teleconnection with winter flood and storm readiness for affected U.S. regions.",
+    "forbidden_claims": [
+      "exact national deaths, damage totals, insured losses, or national facility exposure",
+      "uniform winter flood or storm risk across every U.S. region",
+      "vegetation or burn-scar damage as the main impact pathway",
+      "bounded exposure counts as complete national exposure",
+      "known error artifacts as impact evidence"
+    ],
+    "required_claims": [
+      "Classify the event as a strong warm-ENSO teleconnection planning priority.",
+      "Connect the warm ENSO state to altered jet stream, circulation, or storm-track behavior.",
+      "Use the atmospheric coupling index to support a mature coupled ENSO response.",
+      "Connect the mechanism to winter flood or storm readiness for affected U.S. regions.",
+      "Describe the planning-context count as a package-slice preparedness indicator, not a national exposure total.",
+      "Reject local-only precipitation, vegetation or burn-scar, and weak-anomaly framings."
+    ],
+    "required_metrics": [
+      {
+        "name": "peak_warm_anomaly_c",
+        "tolerance": 0.05,
+        "units": "deg C",
+        "value": 2.4
+      },
+      {
+        "name": "strong_warm_seasons",
+        "tolerance": 0,
+        "units": "seasons",
+        "value": 8
+      },
+      {
+        "name": "lowest_coupling_index",
+        "tolerance": 0.05,
+        "units": "index",
+        "value": -4.4
+      },
+      {
+        "name": "planning_context_count",
+        "tolerance": 0,
+        "units": "features",
+        "value": 714
+      }
+    ]
+  },
+  "key_values": {
+    "context_scope": "The planning_context_count is the count of emergency-relevant facilities in the package planning-context slice. It is used as preparedness context, not as a national exposure or loss total.",
+    "event_window": {
+      "end_date": "1998-05-31",
+      "start_date": "1997-05-01"
+    },
+    "key_metrics": {
+      "lowest_coupling_index": -4.4,
+      "peak_warm_anomaly_c": 2.4,
+      "planning_context_count": 714,
+      "strong_warm_seasons": 8
+    },
+    "priority_chain": [
+      "very_strong_warm_enso",
+      "altered_jet_stream_and_storm_tracks",
+      "winter_flood_storm_readiness_for_us_impact_regions"
+    ],
+    "rejected_alternatives": {
+      "localized_precipitation_episode": "misses the warm-ENSO teleconnection and winter storm-track mechanism",
+      "vegetation_or_burn_scar_problem": "not the primary impact pathway for this event",
+      "weak_climate_anomaly": "contradicted by the strong warm anomaly, persistence, and atmospheric coupling"
+    }
+  },
+  "numeric_tolerances": {
+    "lowest_coupling_index": {
+      "target": -4.4,
+      "tolerance": 0.05,
+      "units": "index"
+    },
+    "peak_warm_anomaly_c": {
+      "target": 2.4,
+      "tolerance": 0.05,
+      "units": "deg C"
+    },
+    "planning_context_count": {
+      "target": 714,
+      "tolerance": 0,
+      "units": "features"
+    },
+    "strong_warm_seasons": {
+      "target": 8,
+      "tolerance": 0,
+      "units": "seasons"
+    }
+  },
+  "primary_gt": {
+    "answer": "strong_warm_enso_teleconnection_winter_flood_storm_priority",
+    "canonical_answer": "strong_warm_enso_teleconnection_winter_flood_storm_priority",
+    "context_scope": "planning_context_count_is_emergency_relevant_facilities_in_the_package_context_slice_not_national_exposure",
+    "priority_chain": [
+      "very_strong_warm_enso",
+      "altered_jet_stream_and_storm_tracks",
+      "winter_flood_storm_readiness_for_us_impact_regions"
+    ],
+    "priority_level": "high",
+    "structured_answer": {
+      "key_metrics": {
+        "lowest_coupling_index": -4.4,
+        "peak_warm_anomaly_c": 2.4,
+        "planning_context_count": 714,
+        "strong_warm_seasons": 8
+      },
+      "preferred_planning_frame": "national_scale_teleconnection_priority_not_local_slice_or_vegetation_damage"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_Locked_event_anchor_1997-1998_El_Nino_and_winter_flood_storm_impacts_in_the_United_States.json",
+      "data/event_reports/event_reports_001_NOAA_CPC_Special_Climate_Summary_97-2.html",
+      "data/event_catalogs/event_catalogs_001_NOAA_CPC_1997_ENSO_assessment.html",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_009_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_010_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Connect the warm ENSO index strength to teleconnection-scale planning rather than treating the bounded exposure slice as the whole disaster.",
+    "Use atmospheric coupling and report/catalog claims to justify the storm-track and winter-impact mechanism.",
+    "Explain why localized precipitation, vegetation stress, burn scar, and weak-anomaly frames are weaker for this package.",
+    "Keep the exposure count as context for emergency planning rather than as a national impact total."
+  ],
+  "required_findings": [
+    {
+      "name": "warm_enso_strength",
+      "value": "The warm anomaly reaches about 2.4 C and persists through multiple strong seasons, making the event a very strong warm ENSO episode."
+    },
+    {
+      "name": "atmospheric_coupling",
+      "value": "The coupling index reaches about -4.4, consistent with a mature warm-ENSO atmospheric response."
+    },
+    {
+      "name": "impact_mechanism",
+      "value": "Local text anchors connect the event to altered circulation or storm tracks and U.S. winter rainfall, flood, or storm impacts."
+    },
+    {
+      "name": "response_priority",
+      "value": "The best planning frame is winter flood and storm readiness for affected U.S. regions, not a low-priority anomaly or vegetation/burn-scar diagnosis."
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives strong_warm_enso_teleconnection_winter_flood_storm_priority or a semantically equivalent compact priority label.",
+        "name": "Priority answer label",
+        "partial_credit": "Award 2-3 points for clearly selecting a strong El Nino winter flood/storm preparedness frame with a less exact label; award 1 point for only saying the event is high priority without the warm-ENSO teleconnection basis.",
+        "points": 4
+      },
+      {
+        "description": "Provides a priority chain equivalent to very strong warm ENSO, altered jet stream or storm tracks, and winter flood/storm readiness for affected U.S. regions.",
+        "name": "Priority chain",
+        "partial_credit": "Award 1 point for each correct chain element. Do not award the mechanism point for a local-only precipitation chain that omits circulation or storm tracks.",
+        "points": 3
+      },
+      {
+        "description": "Reports peak warm anomaly about 2.4 C, 8 strong warm seasons, lowest coupling index about -4.4, and package-slice planning-context count 714 within tolerance.",
+        "name": "Numeric anchors",
+        "partial_credit": "Award 1 point for each correct requested metric within tolerance. Minor rounding is acceptable for the two decimal values; no credit for the coupling index if the sign is reversed or for replacing the context count with a national exposure total.",
+        "points": 4
+      },
+      {
+        "description": "Explains how warm ENSO strength and atmospheric coupling support altered mid-latitude circulation or storm-track behavior.",
+        "name": "Physical mechanism",
+        "partial_credit": "Award 1-2 points for linking El Nino to winter weather impacts but missing either the atmospheric coupling evidence or the circulation/storm-track pathway.",
+        "points": 3
+      },
+      {
+        "description": "Connects the mechanism to U.S. winter rainfall, flood, and storm preparedness for affected regions rather than uniform national risk.",
+        "name": "Impact priority logic",
+        "partial_credit": "Award 1 point for identifying winter flood or storm preparedness but not limiting the planning implication to affected U.S. regions.",
+        "points": 2
+      },
+      {
+        "description": "Rejects local-only precipitation, vegetation or burn-scar, and weak-anomaly framings using mechanism-based reasoning.",
+        "name": "Alternative rejection",
+        "partial_credit": "Award 1 point for rejecting one or two major alternatives with valid reasoning. Do not award credit for rejecting alternatives only because of file availability or package-quality language.",
+        "points": 2
+      },
+      {
+        "description": "States that the planning-context count is package-slice preparedness context and avoids unsupported exact loss totals, nationwide exposure totals, uniform U.S. risk, and direct impact evidence from error artifacts.",
+        "name": "Overclaim control",
+        "partial_credit": "Award partial credit only if any overclaim is minor and does not change the planning conclusion; award 0 if the answer relies on unsupported national losses or treats bounded exposure as national exposure.",
+        "points": 1
+      },
+      {
+        "description": "Returns concise valid JSON with the requested fields and a one- or two-sentence rationale.",
+        "name": "Format and concision",
+        "partial_credit": "Award partial credit for including all requested fields with minor JSON or length issues; award 0 if the response is not structured enough to recover the requested answer, chain, metrics, and rationale.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "response_priority_expert_index_synthesis",
+  "supporting_metrics": {
+    "claim_flags": {
+      "california_claim": true,
+      "excessive_rainfall_claim": true,
+      "flood_claim": true,
+      "jet_stream_claim": true,
+      "southeast_claim": true,
+      "storm_claim": true
+    },
+    "computed_metrics": {
+      "event_window_end": "1998-05-31",
+      "event_window_start": "1997-05-01",
+      "local_critical_facility_count": 714,
+      "local_highway_feature_count": 286,
+      "local_population_context": 229270,
+      "local_precip_max_mm_a": 320.7,
+      "local_precip_max_mm_b": 233.2,
+      "local_precip_mean_mm_a": 123.8,
+      "local_precip_mean_mm_b": 92.1,
+      "lowest_coupling_index": -4.4,
+      "lowest_coupling_index_month": "Jan 1998",
+      "negative_coupling_months": 14,
+      "peak_monthly_warm_index": 2.4,
+      "peak_monthly_warm_index_month": "Nov 1997",
+      "peak_warm_anomaly_c": 2.4,
+      "peak_warm_season": "OND 1997",
+      "positive_warm_seasons": 12,
+      "strong_negative_coupling_months": 10,
+      "strong_warm_seasons": 8,
+      "very_strong_warm_seasons": 5
+    },
+    "local_exposure_counts": {
+      "amenity_counts": {
+        "fire_station": 78,
+        "hospital": 18,
+        "police": 67,
+        "school": 397,
+        "shelter": 154
+      },
+      "building_features": 2,
+      "critical_facilities": 714,
+      "highway_features": 286,
+      "total_elements": 1000
+    }
+  },
+  "task_id": "CSX-274_Q1",
+  "task_type": "short_answer"
+}

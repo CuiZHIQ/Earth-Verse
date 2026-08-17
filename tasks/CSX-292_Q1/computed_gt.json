@@ -1,0 +1,223 @@
+{
+  "answer_guidance": {
+    "answer": "monsoon_accumulation_basin_flooding_with_compound_melt_context",
+    "answer_type": "structured_json_with_expert_reasoning",
+    "consensus_precip_mean_mm": 238.6,
+    "forbidden_claims": [
+      "dominant mechanism is windstorm damage",
+      "dominant pathway is standalone heat-health emergency",
+      "annual remote-sensing change alone defines the flood impact",
+      "exact inundated area or province-level mortality attribution is computed here"
+    ],
+    "impact_chain": [
+      "monsoon_rainfall_accumulation",
+      "basin_scale_flooding",
+      "life_safety_access_shelter"
+    ],
+    "precip_product_spread_percent": 10.9,
+    "priority": "life_safety_access_and_shelter_priority",
+    "reported_damage_usd_billion": 40.0,
+    "reported_deaths": 1739,
+    "required_claims": [
+      "dominant mechanism is monsoon rainfall accumulation causing basin-scale flooding",
+      "compound melt after severe heat is context rather than the main computed driver",
+      "response priority is life safety, access restoration, and shelter"
+    ],
+    "severity_bin": "catastrophic",
+    "structured_answer": {
+      "answer": "monsoon_accumulation_basin_flooding_with_compound_melt_context",
+      "evidence_windows": {
+        "event_window": {
+          "end": "2022-09-30",
+          "start": "2022-06-15"
+        },
+        "gridded_precipitation_window": {
+          "end": "2022-07-30",
+          "start": "2022-06-15"
+        },
+        "point_sample_window": {
+          "end": "2022-06-29",
+          "start": "2022-06-15"
+        }
+      },
+      "impact_chain": [
+        "monsoon_rainfall_accumulation",
+        "basin_scale_flooding",
+        "life_safety_access_shelter"
+      ],
+      "key_metrics": {
+        "consensus_precip_mean_mm": 238.6,
+        "precip_product_spread_percent": 10.9,
+        "reported_damage_usd_billion": 40.0,
+        "reported_deaths": 1739
+      },
+      "priority": "life_safety_access_and_shelter_priority",
+      "severity_bin": "catastrophic"
+    }
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-292",
+  "key_values": {
+    "alphaearth_change_mean": 0.011,
+    "chirps_max_precip_mm": 267.0,
+    "chirps_mean_precip_mm": 231.5,
+    "consensus_precip_mean_mm": 238.6,
+    "era5_mean_precip_mm": 229.1,
+    "gpm_max_precip_mm": 318.7,
+    "gpm_mean_precip_mm": 255.1,
+    "open_meteo_peak_day": "2022-06-21",
+    "open_meteo_peak_precip_mm": 21.9,
+    "open_meteo_point_total_mm_20220615_20220629": 56.4,
+    "open_meteo_rain_days": 6,
+    "power_peak_day": "20220621",
+    "power_peak_precip_mm": 26.9,
+    "power_point_total_mm_20220615_20220629": 68.8,
+    "power_rain_days": 7,
+    "precip_product_spread_percent": 10.9,
+    "reported_damage_usd_billion": 40.0,
+    "reported_deaths": 1739,
+    "worldpop_population_sum": 14230.1
+  },
+  "primary_gt": {
+    "answer": "monsoon_accumulation_basin_flooding_with_compound_melt_context",
+    "evidence_windows": {
+      "event_window": {
+        "end": "2022-09-30",
+        "start": "2022-06-15"
+      },
+      "gridded_precipitation_window": {
+        "end": "2022-07-30",
+        "start": "2022-06-15"
+      },
+      "point_sample_window": {
+        "end": "2022-06-29",
+        "start": "2022-06-15"
+      }
+    },
+    "impact_chain": [
+      "monsoon_rainfall_accumulation",
+      "basin_scale_flooding",
+      "life_safety_access_shelter"
+    ],
+    "key_metrics": {
+      "consensus_precip_mean_mm": 238.6,
+      "precip_product_spread_percent": 10.9,
+      "reported_damage_usd_billion": 40.0,
+      "reported_deaths": 1739
+    },
+    "priority": "life_safety_access_and_shelter_priority",
+    "severity_bin": "catastrophic"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_extreme_monsoon_floods.json",
+      "data/event_reports/event_reports_002_Wikipedia_2022_Pakistan_floods.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns monsoon_accumulation_basin_flooding_with_compound_melt_context as the compact mechanism label.",
+        "name": "Mechanism label",
+        "partial_credit": "1-2 points for identifying monsoon flooding but omitting basin scale or compound melt context.",
+        "points": 3
+      },
+      {
+        "description": "Returns life_safety_access_and_shelter_priority as the response priority.",
+        "name": "Priority label",
+        "partial_credit": "1-2 points for prioritizing humanitarian response but missing access restoration or shelter.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 238.6 mm gridded precipitation evidence-window consensus mean and 10.9 percent product spread across ERA5-Land, GPM, and CHIRPS.",
+        "name": "Precipitation consensus",
+        "partial_credit": "1-3 points for using some precipitation values but missing either the consensus mean, spread, or product agreement interpretation.",
+        "points": 4
+      },
+      {
+        "description": "Uses the reported 1,739 deaths and about USD 40 billion in damage to justify catastrophic response priority.",
+        "name": "Impact magnitude",
+        "partial_credit": "1-2 points for mentioning severe impacts without both death and damage anchors.",
+        "points": 3
+      },
+      {
+        "description": "Connects monsoon rainfall accumulation to basin-scale flooding and then to life-safety, access, and shelter priorities.",
+        "name": "Impact-chain reasoning",
+        "partial_credit": "1-2 points for a partial chain that links rainfall to flooding but not to operational priorities.",
+        "points": 3
+      },
+      {
+        "description": "Treats heat and glacier melt as compound context rather than the dominant computed mechanism.",
+        "name": "Compound context handling",
+        "partial_credit": "1 point for mentioning melt but over-weighting it relative to monsoon rainfall accumulation.",
+        "points": 2
+      },
+      {
+        "description": "Rejects windstorm, heat-health-dominant, and remote-sensing-only interpretations and avoids unsupported inundation-area or province-level mortality claims.",
+        "name": "Competing mechanism rejection",
+        "partial_credit": "1 point for rejecting at least two alternatives or avoiding one major overclaim.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.011,
+      "chirps_max_precip_mm": 267.0,
+      "chirps_mean_precip_mm": 231.5,
+      "consensus_precip_mean_mm": 238.6,
+      "era5_mean_precip_mm": 229.1,
+      "gpm_max_precip_mm": 318.7,
+      "gpm_mean_precip_mm": 255.1,
+      "open_meteo_peak_day": "2022-06-21",
+      "open_meteo_peak_precip_mm": 21.9,
+      "open_meteo_point_total_mm_20220615_20220629": 56.4,
+      "open_meteo_rain_days": 6,
+      "power_peak_day": "20220621",
+      "power_peak_precip_mm": 26.9,
+      "power_point_total_mm_20220615_20220629": 68.8,
+      "power_rain_days": 7,
+      "precip_product_spread_percent": 10.9,
+      "reported_damage_usd_billion": 40.0,
+      "reported_deaths": 1739,
+      "worldpop_population_sum": 14230.1
+    },
+    "event_window": {
+      "end_date": "2022-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2022-06-15"
+    },
+    "evidence_windows": {
+      "event_window": {
+        "end": "2022-09-30",
+        "start": "2022-06-15"
+      },
+      "gridded_precipitation_window": {
+        "end": "2022-07-30",
+        "start": "2022-06-15"
+      },
+      "point_sample_window": {
+        "end": "2022-06-29",
+        "start": "2022-06-15"
+      }
+    },
+    "text_claim_flags": {
+      "compound_melt_context": true,
+      "flood_claim": true,
+      "monsoon_claim": true,
+      "sindh_balochistan_impact_context": true
+    }
+  },
+  "task_id": "CSX-292_Q1",
+  "task_type": "short_answer"
+}

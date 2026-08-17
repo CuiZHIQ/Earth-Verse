@@ -1,0 +1,188 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2007-06-01 to 2007-06-07",
+    "event_name": "Cyclone Gonu Oman and Arabian Sea",
+    "hazard_family": "tropical_cyclone"
+  },
+  "event_id": "CSX-114",
+  "key_values": {
+    "chirps_max_mm": 59.54,
+    "chirps_mean_mm": 45.483,
+    "gpm_max_mm": 84.427,
+    "gpm_mean_mm": 53.428,
+    "iran_damage_usd_million": 216,
+    "iran_deaths": 23,
+    "muscat_wind_kmh": 100,
+    "official_lowest_pressure_hpa": 920,
+    "official_peak_wind_kmh": 235.2,
+    "official_peak_wind_kt": 127,
+    "oman_damage_usd_million": 4000,
+    "oman_deaths": 49,
+    "oman_to_iran_damage_ratio": 18.519,
+    "oman_to_iran_death_ratio": 2.13,
+    "oman_wave_height_m": 10,
+    "point_event_precip_mm": 170.2,
+    "point_jun6_precip_mm": 148.6,
+    "point_jun6_share": 0.873,
+    "point_nonzero_precip_hours": 45,
+    "point_peak_gust_kmh": 109.1,
+    "point_peak_hourly_precip_mm": 15.7,
+    "point_peak_hourly_share": 0.092,
+    "point_peak_wind_kmh": 53.0,
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall-maximum-only reading fails because the 610 mm coastal report maximum is much larger than point and gridded totals and must remain a scale anchor, not a local substitution.",
+      "evidence_weighting": "The ledger should weight official cyclone intensity, Oman rainfall timing, and coastal wind-wave evidence as physical severity anchors, with Oman/Iran losses as impact contrast.",
+      "uncertainty_or_scale_caveat": "The point and gridded rainfall products support timing and contrast but do not prove exact local losses at the coastal maximum site."
+    },
+    "report_to_gpm_max_ratio": 7.225,
+    "report_to_point_precip_ratio": 3.584,
+    "reported_coastal_max_mm": 610,
+    "super_cyclone_duration_hours": 6
+  },
+  "primary_gt": {
+    "caution_note": "Keep the reported 610 mm coastal maximum distinct from point or gridded totals, and avoid exact local-loss inference from those lower totals.",
+    "final_classification": "gonu_oman_five_row_severity_ledger_all_pass",
+    "ledger": [
+      {
+        "computed_values": {
+          "official_lowest_pressure_hpa": 920,
+          "official_peak_wind_kmh": 235.2,
+          "severe_threshold_pass": true,
+          "super_cyclone_duration_h": 6
+        },
+        "formula_or_check": "127 kt * 1.852 = 235.204 km/h; 127 kt >= 64 kt",
+        "proof_note": "The official peak intensity is far above the severe tropical-cyclone threshold and is paired with a very low central pressure.",
+        "result": "pass",
+        "row_id": "intensity_conversion"
+      },
+      {
+        "computed_values": {
+          "event_precip_mm": 170.2,
+          "jun6_precip_mm": 148.6,
+          "jun6_share": 0.873,
+          "nonzero_precip_hours": 45,
+          "peak_hourly_precip_mm": 15.7,
+          "peak_hourly_share": 0.092
+        },
+        "formula_or_check": "148.6/170.2 >= 0.80, 15.7/170.2 < 0.15, and 45 >= 24",
+        "proof_note": "Most point rainfall fell on 2007-06-06, but the peak hour was only 9.2 percent of the event total.",
+        "result": "pass",
+        "row_id": "rainfall_timing"
+      },
+      {
+        "computed_values": {
+          "muscat_wind_kmh": 100,
+          "oman_wave_height_m": 10,
+          "point_peak_gust_kmh": 109.1,
+          "point_peak_wind_kmh": 53.0
+        },
+        "formula_or_check": "10 m >= 5 m and max(100, 109.1) km/h >= 100 km/h",
+        "proof_note": "The wind and wave values pass the coastal wind-wave threshold test.",
+        "result": "pass",
+        "row_id": "coastal_wind_wave"
+      },
+      {
+        "computed_values": {
+          "iran_damage_usd_million": 216,
+          "iran_deaths": 23,
+          "oman_damage_usd_million": 4000,
+          "oman_deaths": 49,
+          "oman_to_iran_damage_ratio": 18.519,
+          "oman_to_iran_death_ratio": 2.13
+        },
+        "formula_or_check": "(4.0 * 1000) / 216 and 49 / 23",
+        "proof_note": "Oman has about 18.52 times Iran's reported damage and 2.13 times its deaths.",
+        "result": "pass",
+        "row_id": "oman_iran_impact_ratio"
+      },
+      {
+        "computed_values": {
+          "chirps_max_mm": 59.54,
+          "gpm_max_mm": 84.427,
+          "point_event_precip_mm": 170.2,
+          "report_to_gpm_max_ratio": 7.225,
+          "report_to_point_precip_ratio": 3.584,
+          "reported_coastal_max_mm": 610
+        },
+        "formula_or_check": "610/170.2 and 610/84.427",
+        "proof_note": "The reported coastal maximum is much larger than the point and gridded totals, so it remains a distinct rainfall anchor.",
+        "result": "pass",
+        "row_id": "rainfall_measurement_contrast"
+      }
+    ],
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall-maximum-only reading fails because the 610 mm coastal report maximum is much larger than point and gridded totals and must remain a scale anchor, not a local substitution.",
+      "evidence_weighting": "The ledger should weight official cyclone intensity, Oman rainfall timing, and coastal wind-wave evidence as physical severity anchors, with Oman/Iran losses as impact contrast.",
+      "uncertainty_or_scale_caveat": "The point and gridded rainfall products support timing and contrast but do not prove exact local losses at the coastal maximum site."
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are parsed from local CSX-114 report and hazard data; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_006_IMD_RSMC_New_Delhi_Cyclone_Gonu_PDF.pdf",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns one ledger array with all five required row IDs exactly once, plus final_classification and caution_note.",
+        "name": "Requested JSON shape",
+        "partial_credit": "Award 1 point for mostly valid JSON with one missing top-level field or one row-name error.",
+        "points": 2
+      },
+      {
+        "description": "Computes 127 kt as about 235.2 km/h, includes 920 hPa and 6 h, and marks the 64 kt threshold test as pass.",
+        "name": "Intensity conversion row",
+        "partial_credit": "Award 2 points for the correct conversion but missing pressure or duration; 1 point for the right pass result with incomplete arithmetic.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 2007-06-06 point rainfall share 148.6/170.2 as about 0.873, 15.7/170.2 as about 0.092, includes 45 wet hours, and marks the row pass.",
+        "name": "Rainfall timing row",
+        "partial_credit": "Award 2 points for two of the three numeric anchors; 1 point for a correct pass result without the full calculation.",
+        "points": 4
+      },
+      {
+        "description": "Uses 10 m waves, 100 km/h Muscat wind, and 109.1 km/h point gust to support a pass for the threshold test.",
+        "name": "Coastal wind-wave row",
+        "partial_credit": "Award 1-2 points for using the right values but omitting one threshold or pass condition.",
+        "points": 3
+      },
+      {
+        "description": "Computes Oman/Iran damage ratio about 18.52 and death ratio about 2.13, with Oman as the larger-impact side.",
+        "name": "Oman/Iran impact ratios",
+        "partial_credit": "Award 1-2 points for one correct ratio or for using the right comparison but missing the USD million conversion.",
+        "points": 3
+      },
+      {
+        "description": "Computes 610/170.2 about 3.58 and 610/84.427 about 7.23, and keeps the 610 mm coastal maximum distinct from point and grid totals.",
+        "name": "Rainfall measurement contrast",
+        "partial_credit": "Award 1 point for one correct ratio or for a correct caution without the ratios.",
+        "points": 2
+      },
+      {
+        "description": "Labels the result as gonu_oman_five_row_severity_ledger_all_pass or an equivalent all-pass severity-ledger label.",
+        "name": "Compact classification",
+        "partial_credit": "Award 0.5 points for a recognizable but less precise all-pass label.",
+        "points": 1
+      },
+      {
+        "description": "Keeps the answer concise and does not infer exact local losses from point or gridded rainfall values. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Concise calculation discipline",
+        "partial_credit": "Award 0.5 points for concise formatting with minor extra claims.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "tropical_cyclone_severity_ledger",
+  "task_id": "CSX-114_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,179 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-062",
+  "key_values": {
+    "calculation_window": "2021-07-13T06:00Z_to_2021-07-15T06:00Z",
+    "computed_interpretation": "The pass state is driven by a 20.8-26.0 mm rapid-runoff depth and two station totals above twice the area-rain baseline.",
+    "event_name": "July 2021 Western Europe floods",
+    "event_window": "2021-07-12_to_2021-07-16",
+    "formulae": {
+      "runoff_depth_mm": "area_48h_rain_mm * runoff_fraction_pct / 100",
+      "station_to_area_ratio": "station_48h_mm / area_48h_rain_mm"
+    },
+    "inputs": {
+      "area_48h_rain_mm": 104,
+      "runoff_fraction_pct": [
+        20,
+        25
+      ],
+      "station_48h_mm": {
+        "german_min": 150,
+        "jalhay": 271,
+        "spa": 217
+      }
+    },
+    "thresholds": {
+      "runoff_low_mm_min": 20,
+      "station_ratio_count_min": 2,
+      "station_ratio_min": 2.0
+    }
+  },
+  "numeric_tolerances": {
+    "area_48h_rain_mm": {
+      "tolerance": 1,
+      "value": 104
+    },
+    "german_min_ratio": {
+      "tolerance": 0.02,
+      "value": 1.44
+    },
+    "jalhay_ratio": {
+      "tolerance": 0.02,
+      "value": 2.61
+    },
+    "runoff_high_mm": {
+      "tolerance": 0.1,
+      "value": 26.0
+    },
+    "runoff_low_mm": {
+      "tolerance": 0.1,
+      "value": 20.8
+    },
+    "spa_ratio": {
+      "tolerance": 0.02,
+      "value": 2.09
+    },
+    "station_amplification_count": {
+      "tolerance": 0,
+      "value": 2
+    }
+  },
+  "primary_gt": {
+    "answer": "rapid_runoff_load_pass",
+    "area_48h_rain_mm": 104,
+    "gate_results": {
+      "runoff_load_pass": true,
+      "station_amplification_pass": true
+    },
+    "process_chain": [
+      {
+        "computed_values": {
+          "area_48h_rain_mm": 104
+        },
+        "process_role": "A 48-hour basin-scale rainfall load supplies the regional hydrologic input.",
+        "stage": "regional_rainfall_input"
+      },
+      {
+        "computed_values": {
+          "runoff_depth_range_mm": [
+            20.8,
+            26.0
+          ],
+          "runoff_fraction_range": [
+            0.2,
+            0.25
+          ]
+        },
+        "process_role": "The documented rapid-runoff fraction converts the rainfall field into at least 20.8 mm of fast runoff depth.",
+        "stage": "rapid_runoff_conversion"
+      },
+      {
+        "computed_values": {
+          "station_to_area_ratios": {
+            "german_min": 1.44,
+            "jalhay": 2.61,
+            "spa": 2.09
+          }
+        },
+        "process_role": "Two Belgian station totals exceed twice the area rainfall, showing local amplification on top of the regional input.",
+        "stage": "station_scale_amplification"
+      },
+      {
+        "computed_values": {
+          "runoff_load_pass": true,
+          "station_amplification_pass": true
+        },
+        "process_role": "The combined rainfall-runoff and station-amplification evidence supports the rapid runoff-load process label.",
+        "stage": "flood_process_label"
+      }
+    ],
+    "runoff_depth_range_mm": [
+      20.8,
+      26.0
+    ],
+    "station_to_area_ratios": {
+      "german_min": 1.44,
+      "jalhay": 2.61,
+      "spa": 2.09
+    },
+    "target_family": "western_europe_rainfall_runoff_process_chain"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_floods.json",
+      "data/other/other_003_03_ECMWF_-_Extreme_rain_in_Germany_and_Belgium_in_July_2021.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON shape with target family, four process-chain stages, gate results, and final answer.",
+        "name": "Process-chain JSON",
+        "partial_credit": "Award 1-2 points for the right answer with one missing stage.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 13 July 2021 06 UTC to 15 July 2021 06 UTC window with 104 mm area rainfall, 20-25 percent runoff fraction, 271 mm Jalhay, 217 mm Spa, and German stations above 150 mm.",
+        "name": "Input extraction and window",
+        "partial_credit": "Award 1 point for each correct input family, with no more than 2 points if the 48-hour window is wrong.",
+        "points": 4
+      },
+      {
+        "description": "Computes the runoff-equivalent range as 104 * 0.20 = 20.8 mm and 104 * 0.25 = 26.0 mm, then compares the lower value with the 20 mm threshold.",
+        "name": "Runoff arithmetic",
+        "partial_credit": "Award 2-3 points for the correct formula with rounding or percent-conversion mistakes; award 1 point for naming runoff conversion without computing the range.",
+        "points": 4
+      },
+      {
+        "description": "Computes station-to-area ratios of 2.61 for Jalhay, 2.09 for Spa, and 1.44 for the German lower bound, then counts exactly two ratios at or above 2.0.",
+        "name": "Station amplification",
+        "partial_credit": "Award 1-2 points for two correct ratios or for correct ratios with the count rule applied incorrectly.",
+        "points": 3
+      },
+      {
+        "description": "Explains the ordered rainfall input -> rapid runoff -> station amplification process rather than giving only a final label.",
+        "name": "Ordered process reasoning",
+        "partial_credit": "Award 1-2 points for correct gates without process ordering.",
+        "points": 3
+      },
+      {
+        "description": "Rejects a ponding-only or image-led interpretation by grounding the answer in rainfall conversion and station amplification.",
+        "name": "Competing reading control",
+        "partial_credit": "Award 1 point for one bounded rejection.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the answer concise and does not add uncomputed loss or response claims.",
+        "name": "Concise bounds",
+        "partial_credit": "No credit for unsupported impact expansion.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "western_europe_rainfall_runoff_process_chain",
+  "task_id": "CSX-062_Q1",
+  "task_type": "short_answer"
+}

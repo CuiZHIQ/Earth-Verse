@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-081_Q2",
+  "event_id": "CSX-081",
+  "task_type": "structured_reasoning",
+  "target_family": "post_tropical_rainfall_chain_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "post_tropical_rainfall_chain_consistent",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+    "computed_evidence": {
+      "required_fields": [
+        "target_family",
+        "values",
+        "tests",
+        "rejected_alternatives",
+        "final_label"
+      ],
+      "key_values": {
+        "regional_floor_mm": 254.0,
+        "record_hour_mm": 88.1,
+        "record_hour_mm_unrounded": 88.138,
+        "event_total_mm": 133.9,
+        "wettest_6h_mm": 98.3,
+        "six_hour_concentration": 0.734,
+        "wet_hours": 23,
+        "longest_wet_run_hours": 23,
+        "max_wind_kmh": 45.2
+      },
+      "required_passes": [
+        "regional_rainfall_floor",
+        "record_hour_burst",
+        "six_hour_concentration",
+        "wet_run_persistence",
+        "secondary_wind_context"
+      ],
+      "required_rejections": [
+        "single_hour_only",
+        "wind_primary"
+      ]
+    },
+    "mechanism_chain": [
+      "rainfall burst or accumulation",
+      "duration/intensity or areal-load calculation",
+      "urban runoff or receptor context",
+      "single-number simplification rejection"
+    ],
+    "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+    "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+    "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals."
+  },
+  "event": {
+    "event_name": "September 2021 Hurricane Ida Northeast flooding",
+    "hazard_family": "river_coastal_flood",
+    "event_date_or_window": "2021-09-01 to 2021-09-03"
+  },
+  "key_values": {
+    "regional_floor_mm": 254.0,
+    "record_hour_mm": 88.1,
+    "record_hour_mm_unrounded": 88.138,
+    "event_total_mm": 133.9,
+    "wettest_6h_mm": 98.3,
+    "six_hour_concentration": 0.734,
+    "wet_hours": 23,
+    "longest_wet_run_hours": 23,
+    "max_wind_kmh": 45.2
+  },
+  "decision_rule": {
+    "final_label": "post_tropical_rainfall_chain_consistent",
+    "required_thresholds": {
+      "regional_floor_mm": ">= 250.0",
+      "record_hour_mm": ">= 75.0",
+      "wettest_6h_mm": ">= 90.0",
+      "six_hour_concentration": ">= 0.70",
+      "wet_hours": ">= 20",
+      "longest_wet_run_hours": ">= 20",
+      "max_wind_kmh": ">= 40.0 but secondary"
+    },
+    "tests": [
+      {
+        "test_id": "regional_rainfall_floor",
+        "formula": "10.0 in * 25.4 mm/in",
+        "value": 254.0,
+        "threshold": ">= 250.0 mm",
+        "pass_fail": "pass"
+      },
+      {
+        "test_id": "record_hour_burst",
+        "formula": "3.47 in * 25.4 mm/in",
+        "value": 88.1,
+        "threshold": ">= 75.0 mm",
+        "pass_fail": "pass"
+      },
+      {
+        "test_id": "six_hour_concentration",
+        "formula": "wettest_6h_mm / event_total_mm",
+        "value": 0.734,
+        "components": {
+          "wettest_6h_mm": 98.3,
+          "event_total_mm": 133.9
+        },
+        "threshold": "wettest_6h_mm >= 90.0 mm and ratio >= 0.70",
+        "pass_fail": "pass"
+      },
+      {
+        "test_id": "wet_run_persistence",
+        "formula": "count wet hours and longest consecutive wet-hour run",
+        "value": {
+          "wet_hours": 23,
+          "longest_wet_run_hours": 23
+        },
+        "threshold": "both >= 20 hours",
+        "pass_fail": "pass"
+      },
+      {
+        "test_id": "secondary_wind_context",
+        "formula": "max_wind_kmh >= 40.0",
+        "value": 45.2,
+        "threshold": ">= 40.0 km/h, context only",
+        "pass_fail": "pass_context_only"
+      }
+    ],
+    "rejected_alternatives": {
+      "single_hour_only": "fails because the wettest 6 hours reach 98.3 mm and the wet run lasts 23 hours",
+      "wind_primary": "fails because wind is only a secondary context test while the rainfall tests all pass"
+    }
+  },
+  "tolerances": {
+    "regional_floor_mm": {
+      "target": 254.0,
+      "absolute_tolerance": 0.1
+    },
+    "record_hour_mm": {
+      "target": 88.1,
+      "absolute_tolerance": 0.1
+    },
+    "record_hour_mm_unrounded": {
+      "target": 88.138,
+      "absolute_tolerance": 0.001
+    },
+    "event_total_mm": {
+      "target": 133.9,
+      "absolute_tolerance": 0.1
+    },
+    "wettest_6h_mm": {
+      "target": 98.3,
+      "absolute_tolerance": 0.1
+    },
+    "six_hour_concentration": {
+      "target": 0.734,
+      "absolute_tolerance": 0.001
+    },
+    "max_wind_kmh": {
+      "target": 45.2,
+      "absolute_tolerance": 0.1
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2021_Hurricane_Ida_Northeast_flooding.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Hurricane Ida Northeast Post-Tropical Rainfall Chain"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "post_tropical_rainfall_chain_consistent",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+      "computed_evidence": {
+        "required_fields": [
+          "target_family",
+          "values",
+          "tests",
+          "rejected_alternatives",
+          "final_label"
+        ],
+        "key_values": {
+          "regional_floor_mm": 254.0,
+          "record_hour_mm": 88.1,
+          "record_hour_mm_unrounded": 88.138,
+          "event_total_mm": 133.9,
+          "wettest_6h_mm": 98.3,
+          "six_hour_concentration": 0.734,
+          "wet_hours": 23,
+          "longest_wet_run_hours": 23,
+          "max_wind_kmh": 45.2
+        },
+        "required_passes": [
+          "regional_rainfall_floor",
+          "record_hour_burst",
+          "six_hour_concentration",
+          "wet_run_persistence",
+          "secondary_wind_context"
+        ],
+        "required_rejections": [
+          "single_hour_only",
+          "wind_primary"
+        ]
+      },
+      "mechanism_chain": [
+        "rainfall burst or accumulation",
+        "duration/intensity or areal-load calculation",
+        "urban runoff or receptor context",
+        "single-number simplification rejection"
+      ],
+      "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+      "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+      "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals."
+    },
+    "answer": "post_tropical_rainfall_chain_consistent"
+  }
+}

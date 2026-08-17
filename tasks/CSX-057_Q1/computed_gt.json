@@ -1,0 +1,184 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-057",
+  "key_values": {
+    "causal_support_tests": {
+      "hobby_total_to_20in_ratio_ge_1_5": true,
+      "houston_month_record_ratio_ge_2": true,
+      "min_20in_area_volume_trillion_gal_ge_10": true,
+      "peak_to_20in_ratio_ge_2": true
+    },
+    "derived_values": {
+      "exposed_density_per_sq_mi": 231.03,
+      "hobby_4day_mean_in_per_day": 8.9,
+      "hobby_total_to_20in_ratio": 1.78,
+      "houston_month_record_ratio": 2.04,
+      "min_20in_area_volume_trillion_gal": 10.08,
+      "peak_to_20in_ratio": 2.41
+    },
+    "event_name": "Hurricane Harvey Houston catastrophic rainfall flooding",
+    "event_window": {
+      "end_date": "2017-08-31",
+      "start_date": "2017-08-25"
+    },
+    "formulas": {
+      "exposed_density_per_sq_mi": "people_receiving_at_least_20in / area_receiving_at_least_20in_sq_mi",
+      "hobby_4day_mean_in_per_day": "hobby_aug26_29_inches / 4",
+      "hobby_total_to_20in_ratio": "hobby_aug26_29_inches / 20",
+      "houston_month_record_ratio": "houston_august_total_inches / previous_wettest_month_inches",
+      "min_20in_area_volume_trillion_gal": "20 * area_sq_mi * 17378742.857 / 1e12",
+      "peak_to_20in_ratio": "peak_storm_rainfall_inches / 20"
+    },
+    "input_values": {
+      "area_receiving_at_least_20in_sq_mi": 29000,
+      "hobby_aug26_29_inches": 35.6,
+      "houston_august_total_inches": 39.11,
+      "peak_storm_rainfall_inches": 48.2,
+      "people_receiving_at_least_20in_million": 6.7,
+      "previous_wettest_month_inches": 19.21
+    },
+    "numeric_tolerances": {
+      "ratios_and_density": 0.01,
+      "volume_trillion_gal": 0.02
+    },
+    "thresholds": {
+      "hobby_total_to_20in_ratio": 1.5,
+      "houston_month_record_ratio": 2.0,
+      "min_20in_area_volume_trillion_gal": 10.0,
+      "peak_to_20in_ratio": 2.0
+    }
+  },
+  "primary_gt": {
+    "causal_discriminators": {
+      "exposure_density_context": true,
+      "large_area_water_volume": true,
+      "persistent_accumulation": true,
+      "short_isolated_downpour_rejected": true
+    },
+    "causal_graph": {
+      "edges": [
+        {
+          "from": "peak_extreme_rainfall",
+          "relationship": "peak rainfall is embedded in a sustained multi-day load",
+          "to": "multi_day_accumulation"
+        },
+        {
+          "from": "multi_day_accumulation",
+          "relationship": "persistent rainfall over a broad footprint creates large water volume",
+          "to": "large_area_water_volume"
+        },
+        {
+          "from": "monthly_record_context",
+          "relationship": "monthly record ratio confirms persistence beyond one storm hour",
+          "to": "multi_day_accumulation"
+        },
+        {
+          "from": "large_area_water_volume",
+          "relationship": "large water volume intersects populated heavy-rain area",
+          "to": "heavy_rain_footprint_receptors"
+        },
+        {
+          "from": "multi_day_accumulation",
+          "relationship": "multi-day and monthly accumulation contradict a short isolated downpour framing",
+          "to": "short_isolated_downpour"
+        }
+      ],
+      "nodes": [
+        {
+          "evidence": "peak_to_20in_ratio=2.41",
+          "id": "peak_extreme_rainfall",
+          "role": "trigger"
+        },
+        {
+          "evidence": "hobby_4day_mean=8.90 in/day; hobby_total_to_20in_ratio=1.78",
+          "id": "multi_day_accumulation",
+          "role": "trigger"
+        },
+        {
+          "evidence": "houston_month_record_ratio=2.04",
+          "id": "monthly_record_context",
+          "role": "amplifier"
+        },
+        {
+          "evidence": "min_20in_area_volume=10.08 trillion gal",
+          "id": "large_area_water_volume",
+          "role": "amplifier"
+        },
+        {
+          "evidence": "exposed_density=231.03 people/sq mi",
+          "id": "heavy_rain_footprint_receptors",
+          "role": "receptor"
+        },
+        {
+          "evidence": "four-day and monthly ratios also exceed the relevant scales",
+          "id": "short_isolated_downpour",
+          "role": "rejected_alternative"
+        }
+      ]
+    },
+    "interpretation": "Harvey is best represented as persistent extreme rainfall accumulation because the peak, four-day, monthly-record, large-area water-volume, and exposed-footprint metrics reinforce the same flood pathway.",
+    "key_values": {
+      "exposed_density_per_sq_mi": 231.03,
+      "hobby_4day_mean_in_per_day": 8.9,
+      "hobby_total_to_20in_ratio": 1.78,
+      "houston_month_record_ratio": 2.04,
+      "min_20in_area_volume_trillion_gal": 10.08,
+      "peak_to_20in_ratio": 2.41
+    },
+    "label": "persistent_extreme_rainfall_accumulation"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from the local Harvey technical record and converted with the stated gallons-per-inch-square-mile constant.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Harvey_Houston_catastrophic_rainfall_flooding.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives persistent_extreme_rainfall_accumulation and returns the requested causal-graph JSON object.",
+        "name": "Final JSON label and fields",
+        "partial_credit": "Award 1 point for the correct label with malformed JSON, or 2 points for a mostly complete object with one or two missing fields.",
+        "points": 3
+      },
+      {
+        "description": "Uses 48.20 inches, 35.6 inches, 39.11 inches, 19.21 inches, 6.7 million people, and 29,000 square miles.",
+        "name": "Extracted input values",
+        "partial_credit": "Award 1-3 points in proportion to the number of correct values with units.",
+        "points": 4
+      },
+      {
+        "description": "Correctly computes 2.41, 8.90 inches per day, 1.78, and 2.04 with appropriate rounding.",
+        "name": "Rainfall ratio arithmetic",
+        "partial_credit": "Award 1 point for each correct rainfall-derived value; subtract for wrong denominators or missing rounding.",
+        "points": 4
+      },
+      {
+        "description": "Computes 231.03 people per square mile and 10.08 trillion gallons using the stated conversion constant.",
+        "name": "Exposure density and water-volume conversion",
+        "partial_credit": "Award 2 points for one of the two derived exposure values, or 3 points if both are structurally correct but one has a rounding or scale error.",
+        "points": 4
+      },
+      {
+        "description": "Applies all four stated cutoffs and explains that each one passes.",
+        "name": "Classification rule",
+        "partial_credit": "Award 1-2 points for applying only some cutoffs or giving the right label without showing the pass tests.",
+        "points": 3
+      },
+      {
+        "description": "Gives a one-sentence interpretation tied to persistent accumulation across the event, four-day, monthly, and large-area metrics without adding extra loss claims.",
+        "name": "Concise interpretation",
+        "partial_credit": "Award 1 point for a relevant but incomplete interpretation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "harvey_rainfall_flood_causal_graph",
+  "task_id": "CSX-057_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-300_Q2",
+  "event_id": "CSX-300",
+  "target_family": "australia_2009_dust_tan_brightening_dry_wind_consistency",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": {
+      "pre_mean_luminance": 84.432,
+      "event_mean_luminance": 115.658,
+      "luminance_delta": 31.226,
+      "tan_fraction_delta": 0.0245,
+      "red_excess_delta": 2.4108,
+      "dry_wind_index": 11.639,
+      "dust_veil_score": 4,
+      "classification": "dry_wind_tan_brightening_dust_veil"
+    },
+    "interpretation": "All four tests pass, so the computed consequence is a dry, wind-supported tan brightening signal rather than a rainfall or wet-surface signal.",
+    "canonical_answer": "dry_wind_tan_brightening_dust_veil",
+    "tolerances": {
+      "pre_mean_luminance": 0.005,
+      "event_mean_luminance": 0.005,
+      "luminance_delta": 0.005,
+      "tan_fraction_delta": 0.0002,
+      "red_excess_delta": 0.0002,
+      "dry_wind_index": 0.005,
+      "dust_veil_score": 0
+    },
+    "thresholds": {
+      "luminance_delta_min": 25,
+      "tan_fraction_delta_min": 0.02,
+      "red_excess_delta_min": 2,
+      "dry_wind_index_min": 10,
+      "point_precip_total_max_mm": 0.5
+    },
+    "rejected": "rainfall_wet_surface_signal",
+    "evidence_roles": {
+      "image_pair": "dust-veil color and brightness tests",
+      "package_point_weather": "dry-wind comparator only",
+      "regional_precipitation": "supporting wetness context only"
+    }
+  },
+  "event": {
+    "package_id": "CSX-300",
+    "event_name": "September 2009 Australian dust storm",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_date_or_window": "2009-09-22 to 2009-09-23",
+    "location": "Sydney and eastern Australia"
+  },
+  "decision_rule": {
+    "summary": "Classify the event image pair by thresholded tan brightening plus a dry-wind index.",
+    "requires_computation": true,
+    "score_rule": "One point for each passed threshold; score 4 gives the dust-veil classification.",
+    "tests": {
+      "luminance_delta": true,
+      "tan_fraction_delta": true,
+      "red_excess_delta": true,
+      "dry_wind": true
+    }
+  },
+  "key_values": {
+    "pre_image": {
+      "width": 1024,
+      "height": 768,
+      "mean_rgb": [
+        88.381,
+        84.648,
+        80.268
+      ],
+      "mean_luminance": 84.432,
+      "tan_fraction": 0.1495,
+      "red_excess": 8.1127
+    },
+    "event_image": {
+      "width": 1024,
+      "height": 768,
+      "mean_rgb": [
+        121.063,
+        115.371,
+        110.54
+      ],
+      "mean_luminance": 115.658,
+      "tan_fraction": 0.174,
+      "red_excess": 10.5235
+    },
+    "image_deltas": {
+      "luminance_delta": 31.226,
+      "tan_fraction_delta": 0.0245,
+      "red_excess_delta": 2.4108
+    },
+    "point_weather": {
+      "point_precip_total_mm": 0.0,
+      "max_point_wind_m_s": 11.639,
+      "dry_wind_index": 11.639
+    },
+    "regional_precip": {
+      "regional_precip_mean_mm": 0.043150039616169804,
+      "regional_precip_max_mm": 2.1649998873472214
+    },
+    "threshold_tests": {
+      "luminance_delta": true,
+      "tan_fraction_delta": true,
+      "red_excess_delta": true,
+      "dry_wind": true
+    },
+    "classification": "dry_wind_tan_brightening_dust_veil"
+  },
+  "numeric_tolerances": {
+    "pre_mean_luminance": {
+      "target": 84.432,
+      "absolute_tolerance": 0.005
+    },
+    "event_mean_luminance": {
+      "target": 115.658,
+      "absolute_tolerance": 0.005
+    },
+    "luminance_delta": {
+      "target": 31.226,
+      "absolute_tolerance": 0.005
+    },
+    "tan_fraction_delta": {
+      "target": 0.0245,
+      "absolute_tolerance": 0.0002
+    },
+    "red_excess_delta": {
+      "target": 2.4108,
+      "absolute_tolerance": 0.0002
+    },
+    "dry_wind_index": {
+      "target": 11.639,
+      "absolute_tolerance": 0.005
+    },
+    "dust_veil_score": {
+      "target": 4,
+      "absolute_tolerance": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer form",
+        "points": 3,
+        "description": "Returns compact JSON with the requested numeric fields, classification, and one short interpretation.",
+        "partial_credit": "Award 1-2 points if the numeric answer is recoverable but field names or nesting differ."
+      },
+      {
+        "name": "Pixel formulas",
+        "points": 3,
+        "description": "Uses mean luminance, tan-pixel fraction, and mean red-minus-blue excess exactly as defined.",
+        "partial_credit": "Award 1-2 points for using two of the three formulas correctly."
+      },
+      {
+        "name": "Image deltas",
+        "points": 5,
+        "description": "Reports the event-minus-pre values within tolerance: luminance +31.226, tan fraction +0.0245, and red excess +2.4108.",
+        "partial_credit": "Award about 1.5 points per correct delta, with small rounding tolerance."
+      },
+      {
+        "name": "Dry-wind calculation",
+        "points": 3,
+        "description": "Computes package point precipitation as 0.0 mm, maximum package point wind as 11.639 m/s, and dry-wind index as 11.639 while treating point weather as a dry-wind comparator.",
+        "partial_credit": "Award 1-2 points for correct dry or wind components with an error in the combined index."
+      },
+      {
+        "name": "Threshold score",
+        "points": 4,
+        "description": "Applies all four threshold tests and returns dust_veil_score = 4 with the dry_wind_tan_brightening_dust_veil classification.",
+        "partial_credit": "Award 1 point per correctly evaluated threshold test."
+      },
+      {
+        "name": "Computed consequence",
+        "points": 2,
+        "description": "Rejects a rainfall or wet-surface reading from the near-zero precipitation and avoids treating the image metric as calibrated dust concentration.",
+        "partial_credit": "Award 1 point for either the wet-surface rejection or the calibration caution."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2009_Australian_dust_storm.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ],
+    "notes": "All numeric anchors are recomputed from local CSX-300 image and weather data."
+  },
+  "supporting_metrics": {
+    "point_weather_scope": "package point-weather values are used only as dry-wind comparators, not as complete corridor wind evidence"
+  }
+}

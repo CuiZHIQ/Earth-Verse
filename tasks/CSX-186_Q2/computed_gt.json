@@ -1,0 +1,135 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-186",
+  "key_values": {
+    "event_name": "2020 East Troublesome fire",
+    "event_window": {
+      "end_date": "2020-12-02",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2020-08-13"
+    },
+    "expected_values": {
+      "growth_increase_acres": 140000,
+      "growth_rate_acres_per_hour": 5833.3,
+      "ledger_pass_count": 3,
+      "not_contained_percent": 85,
+      "snow_midpoint_inches": 9.0
+    },
+    "final_state": "temporary_snow_slowdown_residual_risk",
+    "formulae": {
+      "growth_increase_acres": "growth_end_acres - growth_start_acres",
+      "growth_rate_acres_per_hour": "growth_increase_acres / 24",
+      "not_contained_percent": "100 - containment_percent",
+      "snow_midpoint_inches": "(snow_min_inches + snow_max_inches) / 2"
+    },
+    "hazard_family": "wildfire_burn_smoke",
+    "location": "Colorado Rocky Mountains",
+    "source_values": {
+      "containment_percent": 15,
+      "growth_end_acres": 170000,
+      "growth_hours": 24,
+      "growth_start_acres": 30000,
+      "snow_range_inches": [
+        6.0,
+        12.0
+      ]
+    },
+    "threshold_flags": {
+      "explosive_growth": "pass",
+      "residual_control_gap": "pass",
+      "snow_moderation": "pass"
+    }
+  },
+  "primary_gt": {
+    "answer": "temporary_snow_slowdown_residual_risk",
+    "decision_rule": "Classify as temporary_snow_slowdown_residual_risk when residual_control_gap passes; snow_ends_incident requires residual_control_gap to fail.",
+    "expected_values": {
+      "growth_increase_acres": 140000,
+      "growth_rate_acres_per_hour": 5833.3,
+      "ledger_pass_count": 3,
+      "not_contained_percent": 85,
+      "snow_midpoint_inches": 9.0
+    },
+    "required_fields": [
+      "growth_increase_acres",
+      "growth_rate_acres_per_hour",
+      "not_contained_percent",
+      "snow_midpoint_inches",
+      "threshold_flags",
+      "ledger_pass_count",
+      "final_state",
+      "one_sentence_interpretation"
+    ],
+    "target_family": "threshold_ledger",
+    "threshold_flags": {
+      "explosive_growth": "pass",
+      "residual_control_gap": "pass",
+      "snow_moderation": "pass"
+    },
+    "thresholds": {
+      "explosive_growth_acres_per_hour_gt": 5000,
+      "residual_control_gap_percent_ge": 80,
+      "snow_moderation_inches_ge": 6
+    },
+    "tolerances": {
+      "growth_increase_acres": 1000,
+      "growth_rate_acres_per_hour": 50,
+      "not_contained_percent": 1,
+      "snow_midpoint_inches": 0.5
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_Cameron_Peak_and_East_Troublesome_fires.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON ledger and the final_state temporary_snow_slowdown_residual_risk.",
+        "name": "final state and schema",
+        "partial_credit": "Award 2-3 points for the correct state with missing fields; award 0-1 for snow_ends_incident or a choice-list answer.",
+        "points": 4
+      },
+      {
+        "description": "Correctly computes the 140,000-acre increase, 5,833.3-acre-per-hour growth rate, 85 percent not contained, and 9.0-inch snow midpoint.",
+        "name": "metric extraction and formulas",
+        "partial_credit": "Award about 1 point per correct metric within tolerance; withhold credit for values copied without the required derived operation.",
+        "points": 4
+      },
+      {
+        "description": "Applies the three inequalities correctly: growth rate > 5,000, not-contained share >= 80, and snow midpoint >= 6, yielding three pass flags.",
+        "name": "threshold flags",
+        "partial_credit": "Award 2-3 points for one wrong flag or minor inequality confusion; award 1 point for recognizing only the snow threshold.",
+        "points": 4
+      },
+      {
+        "description": "Shows that the residual-control-gap pass blocks an incident-ending classification even though the snow-moderation test passes.",
+        "name": "decision-rule proof",
+        "partial_credit": "Award 2-3 points for the right conclusion without explicit rule logic; award 0-1 for treating snow magnitude alone as decisive.",
+        "points": 4
+      },
+      {
+        "description": "Rejects snow_ends_incident or perimeter-only reasoning using the computed growth and containment thresholds.",
+        "name": "rejected state",
+        "partial_credit": "Award 1-2 points for rejecting the weaker state without citing both threshold anchors.",
+        "points": 3
+      },
+      {
+        "description": "Uses units, reasonable rounding, and a one-sentence interpretation that stays within the computed threshold result.",
+        "name": "precision and restraint",
+        "partial_credit": "Award partial credit for a readable answer with minor rounding or wording issues.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "threshold_ledger",
+  "task_id": "CSX-186_Q2",
+  "task_type": "short_answer"
+}

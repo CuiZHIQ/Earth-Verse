@@ -1,0 +1,130 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-239",
+  "formulas": {
+    "arrival_clock_window": "GDACS origin UTC plus report lag bounds in minutes",
+    "consistency_label": "all three report windows present and Red M>=8 GDACS EQ and GPM mean < 1 mm",
+    "lag_span_min": "Sri Lanka latest lag minus northern Sumatra earliest lag"
+  },
+  "numeric_tolerances": {
+    "gpm_mean_mm": {
+      "tolerance": 0.001,
+      "value": 0.214
+    },
+    "lag_span_min": {
+      "tolerance": 0,
+      "value": 150
+    },
+    "main_eq_magnitude": {
+      "tolerance": 0.0,
+      "value": 8.5
+    }
+  },
+  "primary_gt": {
+    "answer": "tsunami_timing_ledger_consistent",
+    "catalog_counts": {
+      "eq_features": 5,
+      "fl_features": 1,
+      "main_eq_alert": "Red",
+      "main_eq_magnitude": 8.5
+    },
+    "gpm_mean_mm": 0.214,
+    "lag_span_min": 150,
+    "origin_utc": "2004-12-26T00:58:50",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall-flood timing explanation fails because the rounded GPM mean is below 1 mm while the report supplies coherent tsunami lag windows.",
+      "evidence_weighting": "GDACS origin time and USGS lag text are decisive for arrival windows; GPM precipitation is an exclusion check against rainfall-driven timing.",
+      "uncertainty_or_scale_caveat": "The GDACS magnitude is used as the local clock anchor and should not be confused with the USGS magnitude used in broader mechanism discussion."
+    },
+    "sri_lanka_window_utc": "2004-12-26T02:58:50/2004-12-26T03:58:50",
+    "sumatra_arrival_utc": "2004-12-26T01:28:50",
+    "thailand_window_utc": "2004-12-26T02:28:50/2004-12-26T02:58:50"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2004_Indian_Ocean_tsunami.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_feature.html",
+      "data/event_catalogs/event_catalogs_010_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Uses the Red Indonesia earthquake entry, origin 2004-12-26T00:58:50, magnitude 8.5, and reports 5 EQ plus 1 FL GDACS features.",
+        "name": "GDACS clock anchor",
+        "points": 4
+      },
+      {
+        "description": "Parses the three stated report lag bounds from text: northern Sumatra 30 minutes, Thailand 90-120 minutes, and Sri Lanka 120-180 minutes.",
+        "name": "Report lag extraction",
+        "points": 4
+      },
+      {
+        "description": "Adds the lag bounds to the origin time and returns the three UTC windows with seconds preserved.",
+        "name": "UTC window reconstruction",
+        "points": 4
+      },
+      {
+        "description": "Computes lag_span_min = 150 and rounds GPM mean precipitation to 0.214 mm while applying the <1 mm threshold.",
+        "name": "Threshold ledger",
+        "points": 4
+      },
+      {
+        "description": "Returns the deterministic label and requested fields while limiting conclusions to computed timing fields. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Compact final JSON",
+        "points": 4
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "source_values": {
+    "arrival_lags_min": {
+      "northern_sumatra": {
+        "max": 30,
+        "min": 30
+      },
+      "sri_lanka": {
+        "max": 180,
+        "min": 120
+      },
+      "thailand": {
+        "max": 120,
+        "min": 90
+      }
+    },
+    "event_name": "2004 Indian Ocean tsunami",
+    "event_window": {
+      "end_date": "2004-12-26",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2004-12-26"
+    },
+    "gdacs_anchor": {
+      "alert": "Red",
+      "country": "Indonesia",
+      "eq_count": 5,
+      "eventid": 9059,
+      "fl_count": 1,
+      "magnitude": 8.5,
+      "origin_utc": "2004-12-26T00:58:50"
+    },
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "lag_extraction_notes": {
+      "northern_sumatra": "Parsed numeric minutes from the report phrase.",
+      "sri_lanka": "Parsed the report phrase 'two to three hours' as 120-180 minutes.",
+      "thailand": "Parsed the report phrase 'an hour and a half to two hours' as 90-120 minutes."
+    },
+    "precipitation_mm": {
+      "chirps_mean": 0.812,
+      "gpm_max": 3.125,
+      "gpm_mean": 0.214
+    }
+  },
+  "target_family": "tsunami_arrival_window_reconstruction_ledger",
+  "task_id": "CSX-239_Q2",
+  "task_type": "numeric"
+}

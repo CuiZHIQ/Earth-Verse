@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-063_Q2",
+  "event_id": "CSX-063",
+  "task_type": "short_answer",
+  "target_family": "formula_threshold_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "peak_burst_window_transport_context_ledger",
+    "row_ids": [
+      "burst_runoff_threshold",
+      "event_window_loading",
+      "gridded_precipitation_check",
+      "transport_receptor_check",
+      "remote_change_check"
+    ],
+    "required_metrics": [
+      "runoff_index=1.716",
+      "three_day_to_peak=3.056",
+      "strongest_mean_to_3day=0.746",
+      "road_share=0.644",
+      "radar_ratio=3.124"
+    ],
+    "decision_rule": "rainfall/runoff rows define the threshold; gridded, receptor, and remote rows remain context",
+    "tolerances": {
+      "rain_mm": 0.1,
+      "ratio": 0.005,
+      "count": 0
+    }
+  },
+  "event": {
+    "event_name": "July 2021 Henan Zhengzhou extreme rainfall and flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_window": {
+      "start": "2021-07-17",
+      "end": "2021-07-23"
+    }
+  },
+  "key_values": {
+    "final_label": "peak_burst_window_transport_context_ledger",
+    "rows": {
+      "burst_runoff_threshold": {
+        "reported_hourly_peak_mm": 201.9,
+        "water_volume_m3_per_km2": 201900,
+        "runoff_volume_m3_per_km2": 171615,
+        "normalized_runoff_index": 1.716,
+        "threshold": "normalized_runoff_index > 1"
+      },
+      "event_window_loading": {
+        "three_day_to_peak_hour_ratio": 3.056,
+        "peak_hour_share": 0.327,
+        "three_day_to_annual_average_ratio": 0.963
+      },
+      "gridded_precipitation_check": {
+        "gpm_event_mean_mm": 460.551,
+        "chirps_event_mean_mm": 245.924,
+        "era5_land_event_mean_mm": 217.454,
+        "multi_product_mean_event_precip_mm": 307.976,
+        "products_above_200mm": 3,
+        "product_mean_range_mm": 243.098,
+        "strongest_mean_to_reported_3day_ratio": 0.746
+      },
+      "transport_receptor_check": {
+        "highway_total": 618,
+        "high_capacity_road_features": 398,
+        "high_capacity_road_share": 0.644,
+        "bridge_tagged_features": 172,
+        "bridge_tagged_share": 0.278,
+        "tunnel_tagged_features": 2,
+        "critical_service_features": 48,
+        "population_rounded": 5263000,
+        "train_suspensions_per_million_population_lower_bound": 30.401
+      },
+      "remote_change_check": {
+        "radar_mean_vv_change_db": 0.647,
+        "radar_p90_vv_change_db": 2.0230129639546166,
+        "radar_p90_to_mean_vv_change_ratio": 3.124,
+        "alphaearth_mean_annual_change": 0.044,
+        "alphaearth_max_annual_change": 0.341,
+        "truecolor_mean_abs_rgb_difference": 13.74
+      }
+    },
+    "tolerances": {
+      "rain_mm": 0.1,
+      "precip_product_mm": 0.01,
+      "ratio": 0.005,
+      "volume_m3_per_km2": 1,
+      "count": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "output_ledger_and_final_label",
+        "points": 3,
+        "description": "Returns valid JSON with all five required row ids, formulas, computed values, threshold decisions, failed substitutions, and the final label.",
+        "partial_credit": "Award 1-2 points for a parsable ledger that omits one row or has minor field-name drift while preserving the five-row structure."
+      },
+      {
+        "name": "burst_runoff_threshold",
+        "points": 4,
+        "description": "Computes 201.9 mm, 201900 m3/km2, 171615 m3/km2, normalized runoff index 1.716, and the greater-than-1 threshold result.",
+        "partial_credit": "Award 2-3 points for the correct formula with one arithmetic or rounding error that does not reverse the threshold result."
+      },
+      {
+        "name": "event_window_loading",
+        "points": 3,
+        "description": "Computes ratios 3.056, 0.327, and 0.963 and concludes that both the peak burst and multi-day load are needed.",
+        "partial_credit": "Award 1-2 points for two correct ratios or a correct conclusion with one missing ratio."
+      },
+      {
+        "name": "gridded_precipitation_check",
+        "points": 4,
+        "description": "Reports means 460.551, 245.924, and 217.454 mm; mean 307.976 mm; three products above 200 mm; range 243.098 mm; ratio 0.746; and the no-substitution conclusion.",
+        "partial_credit": "Award 2-3 points when most numeric values are correct but one aggregation or the substitution explanation is missing."
+      },
+      {
+        "name": "transport_receptor_check",
+        "points": 3,
+        "description": "Computes road share 0.644, bridge share 0.278, tunnel count 2, critical service count 48, population 5263000, and train-suspension lower bound about 30.4 per million.",
+        "partial_credit": "Award 1-2 points for correct counts with one missing derived share or the per-million rate omitted."
+      },
+      {
+        "name": "remote_change_check",
+        "points": 2,
+        "description": "Computes radar ratio 3.124 and reports annual embedding values 0.044 and 0.341 plus true-color difference 13.740 as context metrics.",
+        "partial_credit": "Award 1 point for two of the three metric groups correct."
+      },
+      {
+        "name": "reasoning_discipline",
+        "points": 1,
+        "description": "Keeps the rainfall/runoff rows as the physical threshold test and treats gridded means, receptors, and overhead change as context checks.",
+        "partial_credit": "Award 0.5 point for rejecting at least three weak substitutions without adding extra uncomputed claims."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Henan_Zhengzhou_extreme_rainfall_and_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change_raster.zip",
+      "data/remote_sensing/remote_sensing_007_pre.jpg",
+      "data/remote_sensing/remote_sensing_008_event.jpg"
+    ],
+    "notes": "Numeric anchors are read from local CSX-063 records; Sentinel-1 p90 is computed from the local raster and true-color mean absolute RGB difference is computed from the local pre/event image pair."
+  }
+}

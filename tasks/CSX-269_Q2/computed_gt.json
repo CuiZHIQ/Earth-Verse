@@ -1,0 +1,122 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-269",
+  "key_values": {
+    "classification_confidence": "high",
+    "classification_rule": {
+      "minimum_snapshot_gap_days": 200,
+      "requires_satellite_attribution_caution": true,
+      "requires_smoke_region_claim": true,
+      "requires_visibility_transport_impact": true
+    },
+    "event_name": "2015-2016 El Nino and Indonesian drought/fire haze",
+    "expected_remote_sensing_role": [
+      "event_period_smoke_context",
+      "visibility_and_transport_disruption",
+      "no_parcel_level_blame_from_imagery_alone"
+    ],
+    "hazard_type": "drought_amplified_fire_smoke_haze",
+    "snapshot_metrics": {
+      "event_image_bytes": 206424,
+      "event_snapshot_date": "2015-10-30",
+      "pre_image_bytes": 216455,
+      "pre_snapshot_date": "2015-01-30",
+      "snapshot_dimensions": "1024x768",
+      "snapshot_gap_days": 273
+    },
+    "text_claim_flags": {
+      "ground_investigation_needed": true,
+      "peat_fire_context": true,
+      "satellite_alone_blame_caution": true,
+      "smoke_drifting_region_claim": true,
+      "visibility_flight_impact_claim": true
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "regional smoke-haze with attribution caution",
+      "smoke transport and visibility disruption, not parcel-level blame",
+      "fire-haze remote-sensing context with ground-investigation caveat"
+    ],
+    "answer": "regional_smoke_haze_with_attribution_caution",
+    "answer_type": "diagnostic_label_plus_structured_brief",
+    "canonical_stance": "The event-period visual context is regional Indonesian smoke haze with visibility and transport impacts; imagery alone cannot assign parcel-level fire responsibility.",
+    "forbidden_claims": [
+      "specific actors or ignition sources are responsible from snapshots alone",
+      "the primary signal is floodwater, cyclone cloud tracking, or heat-only stress",
+      "the snapshots quantify exact burned area, losses, mortality, or legal causality"
+    ],
+    "required_claims": [
+      "regional smoke or haze is the best visual diagnosis",
+      "smoke haze links to visibility and transport disruption",
+      "imagery alone cannot assign parcel-level fire responsibility",
+      "the image pair is contextual, not a burned-area or legal-attribution product"
+    ],
+    "required_metrics": {
+      "event_snapshot_date": "2015-10-30",
+      "pre_snapshot_date": "2015-01-30",
+      "snapshot_dimensions": "1024x768",
+      "snapshot_gap_days": 273
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the best-supported diagnosis as regional smoke haze with attribution caution.",
+        "name": "Correct final diagnosis",
+        "partial_credit": "Award partial credit for naming smoke or fire haze without the attribution caveat, or for naming fires without the regional haze interpretation.",
+        "points": 3
+      },
+      {
+        "description": "Reports the pre-event date, event-period date, 273-day gap, and 1024x768 image dimensions with correct units or formatting.",
+        "name": "Key timing and image metrics",
+        "partial_credit": "Award partial credit for two or three correct values, minor formatting differences, or a correct date pair with a small arithmetic error.",
+        "points": 4
+      },
+      {
+        "description": "Explains that the event-period visual context supports regional smoke or haze rather than floodwater mapping, cyclone cloud tracking, or heat-only stress.",
+        "name": "Remote-sensing interpretation",
+        "partial_credit": "Award partial credit for a generic fire/smoke reading that lacks scale, timing, or contrast with competing hazard interpretations.",
+        "points": 3
+      },
+      {
+        "description": "Links smoke haze to decreased visibility, hazardous travel, flight cancellations, or broader transport disruption.",
+        "name": "Impact-chain reasoning",
+        "partial_credit": "Award partial credit for mentioning visibility or air-quality effects without connecting them to operational disruption.",
+        "points": 3
+      },
+      {
+        "description": "States that satellite observations alone cannot assign parcel-level fire responsibility and that ground-based investigation is needed for such claims.",
+        "name": "Attribution caution",
+        "partial_credit": "Award partial credit for a vague uncertainty warning that does not clearly explain the parcel-level attribution limit.",
+        "points": 3
+      },
+      {
+        "description": "Avoids or rejects unsupported flood, cyclone, heat-only, burn-scar-only, legal blame, exact burned-area, loss, mortality, or causality claims.",
+        "name": "Rejects competing interpretations and overclaims",
+        "partial_credit": "Award partial credit for rejecting only some close alternatives or for avoiding overclaims without explaining why they are unsupported.",
+        "points": 2
+      },
+      {
+        "description": "Uses compact JSON with the requested fields and a concise interpretation tied to the event.",
+        "name": "Structured concise response",
+        "partial_credit": "Award partial credit for a readable structured answer that omits one field or uses concise prose while preserving the required substance.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-269_Q2",
+  "task_type": "short_answer"
+}

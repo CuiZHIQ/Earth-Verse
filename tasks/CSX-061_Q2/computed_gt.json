@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-061_Q2",
+  "event_id": "CSX-061",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "rainfall_threshold_concentration_diagnostic",
+  "primary_gt": {
+    "record_hour": {
+      "value_mm": 88.138,
+      "threshold_mm": 75.0,
+      "margin_mm": 13.138,
+      "ratio_to_threshold": 1.175,
+      "passes": true
+    },
+    "regional_total": {
+      "value_mm": 254.0,
+      "threshold_mm": 250.0,
+      "margin_mm": 4.0,
+      "ratio_to_threshold": 1.016,
+      "passes": true
+    },
+    "concentration": {
+      "record_hour_share_percent": 34.7,
+      "classification": "high_hour_share"
+    },
+    "final_label": "dual_threshold_high_concentration_rainfall",
+    "interpretation": "Ida's New York City calibration is supported by both a record-hour extreme and a storm-total lower-bound extreme, with the record hour alone equal to about one third of the regional reference."
+  },
+  "key_values": {
+    "inputs": {
+      "central_park_record_hour_inches": 3.47,
+      "regional_total_reference_inches": 10.0,
+      "regional_total_reference_note": "The report phrase 'just above 10 inches' is scored as a conservative 10.0-inch lower-bound reference.",
+      "mm_per_inch": 25.4
+    },
+    "thresholds": {
+      "record_hour_mm": 75.0,
+      "regional_total_mm": 250.0,
+      "high_hour_share_percent": 30.0
+    },
+    "computed": {
+      "record_hour_mm": 88.138,
+      "regional_total_mm": 254.0,
+      "record_hour_share_percent": 34.7,
+      "record_hour_pass": true,
+      "regional_total_pass": true,
+      "concentration_classification": "high_hour_share",
+      "record_hour_margin_mm": 13.138,
+      "record_hour_ratio": 1.175,
+      "regional_total_margin_mm": 4.0,
+      "regional_total_ratio": 1.016,
+      "final_label": "dual_threshold_high_concentration_rainfall"
+    },
+    "decision_rule": "The final label is dual_threshold_high_concentration_rainfall when both rainfall thresholds pass and the record-hour share is at least 30%."
+  },
+  "event": {
+    "event_name": "September 2021 Hurricane Ida rainfall flooding in New York City",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2021-09-01 to 2021-09-02",
+    "duration_days_inclusive": 2
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and pass states",
+        "points": 3,
+        "description": "Returns dual_threshold_high_concentration_rainfall, marks both rainfall tests true, and uses high_hour_share.",
+        "partial_credit": "Award 1-2 points for the right severe-rainfall direction with one missing or mislabeled state."
+      },
+      {
+        "name": "Record-hour conversion",
+        "points": 4,
+        "description": "Computes 3.47 in * 25.4 = 88.138 mm, margin above 75 mm = 13.138 mm, ratio 1.175, and a passing threshold state.",
+        "partial_credit": "Award 2-3 points for correct conversion with a rounding or margin error; award 1 point for using the conversion but comparing to the wrong threshold."
+      },
+      {
+        "name": "Regional-total conversion",
+        "points": 3,
+        "description": "Treats the report phrase 'just above 10 inches' as a conservative 10.0-inch lower-bound reference, then computes 10.0 in * 25.4 = 254.0 mm, margin above 250 mm = 4.0 mm, ratio 1.016, and a passing threshold state.",
+        "partial_credit": "Award 1-2 points for a correct conversion but incomplete margin or ratio reasoning."
+      },
+      {
+        "name": "Concentration calculation",
+        "points": 3,
+        "description": "Computes 88.138 / 254.0 * 100 = 34.7% and classifies it as high_hour_share under the 30% rule.",
+        "partial_credit": "Award 1-2 points for an approximate share with an omitted or misapplied class threshold."
+      },
+      {
+        "name": "Decision-rule reasoning",
+        "points": 3,
+        "description": "Connects the two passed thresholds and the high-hour-share class to the final label, and rejects a single-axis rainfall label.",
+        "partial_credit": "Award 1-2 points for reaching the label without clearly showing all rule components."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Gives one event-specific sentence tying the numbers to short-duration extreme rainfall embedded in a broader high-total episode.",
+        "partial_credit": "Award 1 point for a plausible but generic interpretation that is not tied to the values."
+      },
+      {
+        "name": "Concise structured output",
+        "points": 2,
+        "description": "Returns valid JSON with the requested fields and no extra planning material.",
+        "partial_credit": "Award 1 point for mostly correct fields with minor formatting issues."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2021_Hurricane_Ida_rainfall_flooding_in_New_York_City.json"
+    ]
+  }
+}

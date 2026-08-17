@@ -1,0 +1,190 @@
+{
+  "decision_rule": {
+    "formulas": {
+      "grid_peak_to_mean": "grid_peak_mm / grid_mean_mm",
+      "local_day_max_to_min": "max(local_daily_rainfall_mm) / min(local_daily_rainfall_mm)",
+      "local_two_day_mm": "sum(local_daily_rainfall_mm)",
+      "point_to_local_two_day_ratio": "sum(independent_point_sample_daily_rainfall_mm) / local_two_day_mm",
+      "population_k": "exposed_population / 1000",
+      "radar_total_images": "radar_pre_count + radar_post_count",
+      "report_markers": "count of four fixed report markers present",
+      "window_days": "inclusive_days(start_date, end_date)"
+    },
+    "summary": "Six fixed gates score rainfall window, daily distribution, gridded peak contrast, report markers, population, and radar count.",
+    "thresholds": {
+      "daily_distribution_gate": "local_min_day_mm >= 30 and local_day_max_to_min <= 1.10",
+      "final_label": "mocoa_rain_window_runout_chain_confirmed if chain_score >= 5 and report_chain_gate else mocoa_chain_not_confirmed",
+      "grid_peak_gate": "grid_peak_mm >= 50 and grid_peak_to_mean >= 20",
+      "population_gate": "population_k >= 25",
+      "radar_context_gate": "radar_total_images >= 60",
+      "report_chain_gate": "report_markers == 4",
+      "window_gate": "window_days == 2 and local_two_day_mm >= 60"
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_name": "April 2017 Mocoa landslide and debris flow",
+    "event_window": {
+      "end_date": "2017-04-01",
+      "start_date": "2017-03-31"
+    },
+    "hazard_family": "landslide_mass_movement",
+    "location": "Mocoa, Colombia"
+  },
+  "event_id": "CSX-225",
+  "key_values": {
+    "chirps_event_max_mm": 25.009,
+    "era5_event_mean_mm": 0.449,
+    "gpm_event_mean_mm": 1.452,
+    "local_daily_mm": [
+      30.1,
+      31.6
+    ],
+    "optical_counts": {
+      "post_count": 12,
+      "pre_count": 4
+    },
+    "optical_mean_change": -0.046,
+    "point_daily_mm": [
+      32.23,
+      4.28
+    ],
+    "point_two_day_mm": 36.51,
+    "radar_counts": {
+      "post_count": 32,
+      "pre_count": 40
+    },
+    "radar_mean_db_change": -0.179,
+    "report_terms": {
+      "heavy_rain_trigger": true,
+      "mountain_movement": true,
+      "mud_across_city": true,
+      "river_crossing": true
+    }
+  },
+  "numeric_tolerances": {
+    "grid_peak_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 51.711
+    },
+    "grid_peak_to_mean": {
+      "absolute_tolerance": 0.001,
+      "target": 35.614
+    },
+    "integer_counts": {
+      "absolute_tolerance": 0
+    },
+    "local_day_max_to_min": {
+      "absolute_tolerance": 0.001,
+      "target": 1.05
+    },
+    "local_two_day_mm": {
+      "absolute_tolerance": 0.1,
+      "target": 61.7
+    },
+    "population_k": {
+      "absolute_tolerance": 0.001,
+      "target": 38.608
+    }
+  },
+  "primary_gt": {
+    "chain_score": 6,
+    "computed_consequence": "six_passes_require_rain_window_grid_peak_report_markers_population_and_radar_context",
+    "final_label": "mocoa_rain_window_runout_chain_confirmed",
+    "gates": {
+      "daily_distribution_gate": true,
+      "grid_peak_gate": true,
+      "population_gate": true,
+      "radar_context_gate": true,
+      "report_chain_gate": true,
+      "window_gate": true
+    },
+    "metrics": {
+      "grid_peak_mm": 51.711,
+      "grid_peak_to_mean": 35.614,
+      "local_day_max_to_min": 1.05,
+      "local_min_day_mm": 30.1,
+      "local_two_day_mm": 61.7,
+      "population_k": 38.608,
+      "radar_total_images": 72,
+      "report_markers": 4,
+      "window_days": 2
+    },
+    "source_comparison": {
+      "local_series_two_day_mm": 61.7,
+      "point_sample_min_day_mm": 4.28,
+      "point_sample_two_day_mm": 36.51,
+      "point_to_local_two_day_ratio": 0.592,
+      "rainfall_gate_source_policy": "local_daily_series_controls_window_and_daily_distribution_gates",
+      "source_conflict_flag": "independent_point_sample_reported_but_not_substituted_into_local_gates"
+    },
+    "target_family": "mocoa_rain_window_runout_score_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Package_locked_anchor.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_April_2017_Mocoa_landslide_and_debris_flow.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_007_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_009_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_005_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_007_salvaged_existing_stage8_file.json",
+      "data/exposure_impact/exposure_impact_005_salvaged_existing_stage8_file.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with target_family, metrics, gates, chain_score, final_label, and computed_consequence.",
+        "name": "Requested JSON form",
+        "partial_credit": "Award 1-2 points for minor key-name differences when all scored content is recoverable.",
+        "points": 3
+      },
+      {
+        "description": "Computes the two-day window, local rainfall total, minimum daily value, day-balance ratio, and keeps the local daily series as the rain-window gate source.",
+        "name": "Window and local rainfall arithmetic",
+        "partial_credit": "Award 2-3 points for correct formulas with one rounding or date-window error.",
+        "points": 4
+      },
+      {
+        "description": "Computes the gridded peak, peak-to-mean ratio, passing grid peak gate, and reports the independent point rainfall sample as a source-comparison diagnostic rather than silently substituting it into local gates.",
+        "name": "Gridded rainfall proof",
+        "partial_credit": "Award 1-2 points for one correct value or for the right gate state with incomplete arithmetic.",
+        "points": 3
+      },
+      {
+        "description": "Counts all four fixed report markers and passes report_chain_gate.",
+        "name": "Report marker count",
+        "partial_credit": "Award 1-2 points for three markers or for a correct count with unclear marker naming.",
+        "points": 3
+      },
+      {
+        "description": "Computes population_k and radar_total_images, with both gates passing.",
+        "name": "Population and radar metrics",
+        "partial_credit": "Award 1 point for one correct metric and its gate.",
+        "points": 2
+      },
+      {
+        "description": "Applies all six gates, returns chain_score of 6, and sets the final label correctly.",
+        "name": "Gate score and final label",
+        "partial_credit": "Award 1-2 points for the right label with one gate error, or the right score with a missing label.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the result tied to formulas and thresholds without adding loss inventories or procedure notes.",
+        "name": "Compact bounded computation",
+        "partial_credit": "Award 1 point for small extra prose that leaves the computed result unchanged.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "mocoa_rain_window_runout_score_ledger",
+  "task_id": "CSX-225_Q1",
+  "task_type": "numeric"
+}

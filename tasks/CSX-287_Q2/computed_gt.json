@@ -1,0 +1,146 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_span": "2023-08-19 to 2023-08-22",
+    "event_name": "August 2023 Central Chile atmospheric rivers",
+    "region": "Central Chile"
+  },
+  "event_id": "CSX-287",
+  "key_values": {
+    "annual_change": {
+      "max": 0.485305,
+      "max_to_mean": 7.94,
+      "mean": 0.061124
+    },
+    "image_fractions": {
+      "blue_delta": -0.011915,
+      "bright_delta": -0.0353,
+      "event_blue": 0.033638,
+      "event_bright": 0.20369,
+      "pre_blue": 0.045553,
+      "pre_bright": 0.23899
+    },
+    "local_point_series_mm": {
+      "nasa_power_mm": [
+        18.14,
+        11.6,
+        23.77,
+        13.39
+      ],
+      "open_meteo_mm": [
+        54.5,
+        27.2,
+        51.9,
+        40.9
+      ]
+    },
+    "local_total_mm": {
+      "nasa_power_mm": 66.9,
+      "open_meteo_mm": 174.5
+    },
+    "regional_mean_precip_mm": {
+      "chirps": 8.871,
+      "era5_land": 0.57,
+      "gpm_imerg": 0.019
+    },
+    "threshold_flags": {
+      "heavy_day_fraction_eq_1": true,
+      "score_ge_0_80": true
+    }
+  },
+  "primary_gt": {
+    "anchors": {
+      "annual_change_mean": 0.0611,
+      "event_span_days": 4,
+      "heavy_day_fraction": 1.0,
+      "image_shift_index": 0.651,
+      "local_max_daily_mm": 54.5,
+      "local_total_mean_mm": 120.7,
+      "point_to_regional_ratio": 13.606,
+      "regional_mean_max_mm": 8.871
+    },
+    "answer": 0.874,
+    "class_label": "localized_persistent_rainfall_dominant",
+    "components": {
+      "annual_c": 0.389,
+      "image_c": 0.349,
+      "peak_c": 1.0,
+      "persistence_c": 1.0,
+      "scale_c": 1.0,
+      "total_c": 1.0
+    },
+    "formula": "0.25*total_c+0.20*peak_c+0.15*persistence_c+0.20*scale_c+0.10*image_c+0.10*annual_c",
+    "rainfall_scale_score": 0.874,
+    "threshold": "score>=0.80 and heavy_day_fraction==1.0",
+    "tolerance": 0.005
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August_2023_Central_Chile_atmospheric_rivers.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes the inclusive four-day span, both local point totals, their 120.7 mm mean, and the 54.5 mm daily maximum.",
+        "name": "local_rainfall_extraction",
+        "partial_credit": "Credit correct series extraction with small rounding errors or one missing local aggregate.",
+        "points": 4
+      },
+      {
+        "description": "Counts days at or above 10 mm in both local series and computes the conservative fraction as 1.000.",
+        "name": "persistence_fraction",
+        "partial_credit": "Credit correct heavy-day counting for one series or a correct numerator with an incorrect span.",
+        "points": 4
+      },
+      {
+        "description": "Extracts the three regional mean precipitation values, uses 8.871 mm as the maximum, and computes the 13.606 point-to-regional ratio.",
+        "name": "regional_scale_ratio",
+        "partial_credit": "Credit correct regional extraction or a correct ratio formula with minor rounding drift.",
+        "points": 3
+      },
+      {
+        "description": "Computes the image-shift index of 0.651 from all RGB pixels in the package JPEG images as delivered, and extracts annual_change_mean of 0.0611.",
+        "name": "image_and_annual_terms",
+        "partial_credit": "Credit correct image fractions or annual extraction when the combined image index is incomplete.",
+        "points": 3
+      },
+      {
+        "description": "Applies all capped component formulas and the weighted sum to reach rainfall_scale_score 0.874 within 0.005.",
+        "name": "component_score",
+        "partial_credit": "Credit a correct component ledger with an arithmetic slip in the weighted sum.",
+        "points": 4
+      },
+      {
+        "description": "Returns compact JSON containing anchors, components, the score, and the class label localized_persistent_rainfall_dominant.",
+        "name": "json_result",
+        "partial_credit": "Credit the correct score and class when the JSON shape needs minor cleanup.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "supporting_metrics": {
+    "image_method": {
+      "blue_fraction_rule": "B > R + 20 and B > G + 10",
+      "bright_fraction_rule": "mean RGB brightness > 180",
+      "no_data_handling": "no separate no-data mask is applied to the JPEG browse images",
+      "pixel_scope": "all RGB pixels in each package JPEG image as delivered"
+    }
+  },
+  "target_family": "central_chile_rainfall_scale_surface_consistency_ledger",
+  "task_id": "CSX-287_Q2",
+  "task_subtype": "rainfall_scale_surface_change_threshold_ledger",
+  "task_type": "numeric"
+}

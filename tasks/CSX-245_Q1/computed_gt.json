@@ -1,0 +1,152 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-245",
+  "key_values": {
+    "classification_flags": {
+      "broad_landcover_loss": false,
+      "liquefaction_priority": true,
+      "rainfall_disruption": false,
+      "shaking_severe": true,
+      "tsunami_secondary": true
+    },
+    "event": {
+      "event_window": {
+        "end_date": "2024-01-01",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2024-01-01"
+      },
+      "hazard_family": "earthquake_tsunami_geophysical",
+      "name": "2024 Noto Peninsula earthquake",
+      "region": "East Asia"
+    },
+    "metrics": {
+      "alert": "red",
+      "alphaearth_change_mean": 0.0116,
+      "chirps_precip_mm_mean": 1.275,
+      "depth_km": 10.0,
+      "era5_precipitation_sum_mm_mean": 0.0009,
+      "gpm_precip_mm_max": 0.37,
+      "landslide_alert": "orange",
+      "landslide_exposed_population": 3800,
+      "landslide_hazard_index": 89.0,
+      "liquefaction_alert": "red",
+      "liquefaction_exposed_population": 710000,
+      "liquefaction_hazard_index": 780.0,
+      "liquefaction_share_of_worldpop_percent": 28.6,
+      "liquefaction_to_landslide_population_ratio": 186.8,
+      "magnitude": 7.5,
+      "max_mmi": 8.793,
+      "max_pga_g": 1.669,
+      "max_pgv_cms": 120.336,
+      "maximum_slip_m": 6.03,
+      "rupture_length_km": 175.0,
+      "sentinel1_vv_change_mean_db": -2.157,
+      "tsunami_flag": 1,
+      "worldpop_population": 2485012.3
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A tsunami-only or weather-disruption answer fails because the liquefaction exposure ratio and severe shaking metrics are much stronger than the competing signals.",
+      "evidence_weighting": "USGS shaking and finite-fault metrics plus liquefaction exposure dominate; tsunami, precipitation, radar, and embedding metrics are secondary or exclusion checks.",
+      "uncertainty_or_scale_caveat": "Liquefaction-exposed population is an exposure-priority index, not a count of harmed people or building losses."
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "severe_shaking_liquefaction_priority_tsunami_secondary",
+      "severe earthquake shaking with liquefaction exposure, tsunami secondary",
+      "shaking and liquefaction first; tsunami as secondary coastal concern"
+    ],
+    "answer": "severe_shaking_liquefaction_priority_tsunami_secondary",
+    "canonical_stance": "Prioritize severe earthquake shaking and major liquefaction-prone exposure; treat tsunami as a secondary coastal concern and reject weather disruption or broad land-surface change as primary mechanisms.",
+    "forbidden_claims": [
+      "Do not claim the task proves precise casualties, building losses, or economic losses.",
+      "Do not claim observed tsunami height or inundation depth from the metrics used here.",
+      "Do not treat liquefaction-exposed population as the number of people harmed.",
+      "Do not treat radar or embedding change as direct proof of individual building collapse."
+    ],
+    "priority_chain": [
+      "shallow_mw7_5_rupture",
+      "severe_shaking_and_liquefaction_exposure",
+      "tsunami_secondary_rainfall_and_landcover_not_primary"
+    ],
+    "reasoning_depth": {
+      "counterfactual_rejection": "A tsunami-only or weather-disruption answer fails because the liquefaction exposure ratio and severe shaking metrics are much stronger than the competing signals.",
+      "evidence_weighting": "USGS shaking and finite-fault metrics plus liquefaction exposure dominate; tsunami, precipitation, radar, and embedding metrics are secondary or exclusion checks.",
+      "uncertainty_or_scale_caveat": "Liquefaction-exposed population is an exposure-priority index, not a count of harmed people or building losses."
+    },
+    "required_claims": [
+      "The dominant driver is a shallow magnitude 7.5 earthquake with severe shaking indicators.",
+      "Liquefaction is the standout ground-failure exposure priority.",
+      "Tsunami concern is secondary rather than the sole supported priority.",
+      "Rainfall or winter-weather disruption and broad land-surface change are not the main mechanisms."
+    ],
+    "required_metrics": {
+      "alert": "red",
+      "depth_km": 10.0,
+      "landslide_exposed_population": 3800,
+      "liquefaction_exposed_population": 710000,
+      "liquefaction_to_landslide_population_ratio": 186.8,
+      "magnitude": 7.5,
+      "max_mmi": 8.793,
+      "tsunami_flag": 1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2024_Noto_Peninsula_earthquake.json",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us6000m0xl.json",
+      "data/physical_hazard/physical_hazard_001_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies severe earthquake shaking with major liquefaction-prone exposure as the dominant priority and keeps tsunami as a secondary coastal concern.",
+        "name": "Correct operational priority",
+        "partial_credit": "Award 2-3 points for prioritizing severe earthquake shaking but omitting liquefaction or overstating tsunami; award 1 point for only a generic earthquake label.",
+        "points": 4
+      },
+      {
+        "description": "Reports the key event metrics with correct meanings: magnitude 7.5, depth about 10 km, maximum MMI about 8.8, red alert, and tsunami flag 1.",
+        "name": "Core earthquake metrics",
+        "partial_credit": "Award 1 point per substantially correct metric group, up to 3 points if one major metric is missing or mislabeled.",
+        "points": 4
+      },
+      {
+        "description": "Uses the red liquefaction alert, about 710,000 liquefaction-exposed people, about 3,800 landslide-exposed people, and the roughly 187:1 exposure ratio to justify liquefaction as the standout ground-failure priority.",
+        "name": "Ground-failure exposure diagnosis",
+        "partial_credit": "Award 2-3 points for recognizing liquefaction exposure with approximate values but missing the ratio or landslide contrast; award 1 point for mentioning ground failure without exposure support.",
+        "points": 4
+      },
+      {
+        "description": "Explains why tsunami-only response, rainfall or winter-weather disruption, and broad land-surface change are weaker primary interpretations.",
+        "name": "Competing mechanism rejection",
+        "partial_credit": "Award 1 point for each correctly rejected competing mechanism when the explanation is tied to a relevant metric or task context.",
+        "points": 3
+      },
+      {
+        "description": "Connects shallow rupture and severe shaking to liquefaction-prone exposure, infrastructure or access concerns, and coastal secondary response implications.",
+        "name": "Mechanism-impact chain",
+        "partial_credit": "Award 1-2 points for a plausible but generic earthquake impact chain that does not fully connect the numeric indicators to operations.",
+        "points": 3
+      },
+      {
+        "description": "Provides concise JSON-compatible output and avoids unsupported casualty, economic-loss, observed tsunami-height, inundation-depth, or parcel-level damage claims. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Answer discipline and uncertainty",
+        "partial_credit": "Award 1 point for a mostly clear answer with minor formatting problems or mild overstatement that does not alter the main conclusion.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-245_Q1",
+  "task_type": "short_answer"
+}

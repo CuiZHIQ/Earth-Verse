@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-084_Q2",
+  "event_id": "CSX-084",
+  "target_family": "mumbai_pluvial_overload_process_diagnosis",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "mumbai_pluvial_overload_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+    "computed_evidence": {
+      "pluvial_evidence_synthesis": [
+        {
+          "row_id": "record_24h_rainfall_anchor",
+          "formula": "average_24h_rate_mm_h = anchor_24h_mm / 24",
+          "computed_values": {
+            "anchor_24h_mm": 942.0,
+            "anchor_24h_inches": 37.1,
+            "average_24h_rate_mm_h": 39.25
+          },
+          "diagnostic_diagnostic_test_or_test": "anchor_24h_mm >= 900 and average_24h_rate_mm_h >= 35",
+          "result": "pass_record_pluvial_load",
+          "pluvial_implication": "The local 24-hour load is sufficient for compact pluvial overload."
+        },
+        {
+          "row_id": "record_excess_and_peak_rate",
+          "formula": "record_excess_mm = anchor_24h_mm - previous_record_mm; record_excess_percent = record_excess_mm / previous_record_mm * 100; peak_rate_to_24h_mean_ratio = trmm_peak_rate_mm_h / average_24h_rate_mm_h",
+          "computed_values": {
+            "previous_record_mm": 838.0,
+            "record_excess_mm": 104.0,
+            "record_excess_percent": 12.41,
+            "trmm_peak_rate_mm_h": 50.0,
+            "peak_rate_to_24h_mean_ratio": 1.274
+          },
+          "diagnostic_diagnostic_test_or_test": "record_excess_mm >= 100, record_excess_percent >= 10, trmm_peak_rate_mm_h >= 50, and 1.2 <= peak_rate_to_24h_mean_ratio <= 1.4",
+          "result": "pass_sustained_extreme_with_embedded_peak",
+          "pluvial_implication": "The peak-rate cue is embedded in a sustained daily extreme."
+        },
+        {
+          "row_id": "gridded_smoothing_check",
+          "formula": "gpm_max_fraction_of_anchor = gpm_event_max_mm / anchor_24h_mm",
+          "computed_values": {
+            "openmeteo_max_24h_mm": 75.1,
+            "nasa_power_day1_mm": 210.55,
+            "gpm_event_mean_mm": 441.7,
+            "gpm_event_max_mm": 519.7,
+            "gpm_max_fraction_of_anchor": 0.552,
+            "product_maximum_mm": 519.7
+          },
+          "diagnostic_diagnostic_test_or_test": "reject replacing the local anchor when gpm_max_fraction_of_anchor < 0.60 and product_maximum_mm < anchor_24h_mm",
+          "result": "reject_gridded_replacement",
+          "pluvial_implication": "Regional gridded products are heavy but smoothed relative to the local record."
+        },
+        {
+          "row_id": "depth_volume_exposure_context",
+          "formula": "V_km3 = rainfall_mm / 1000 * area_km2 / 1000; density = population / area_km2",
+          "computed_values": {
+            "area_km2": 1191.3,
+            "anchor_depth_over_area_volume_km3": 1.122,
+            "gpm_mean_over_area_volume_km3": 0.526,
+            "one_foot_rain_over_area_volume_km3": 0.363,
+            "population_millions": 11.35,
+            "population_density_per_km2": 9528.4,
+            "osm_hospital_count": 817
+          },
+          "diagnostic_diagnostic_test_or_test": "treat depth-volume and dense receptor values as context calculations, not observed runoff or service failure",
+          "result": "context_or_scenario_only",
+          "pluvial_implication": "The rainfall load occurred over a dense metro setting, but the computed values are not direct failure measurements."
+        },
+        {
+          "row_id": "basin_coastal_image_vetoes",
+          "formula": "direct_radar_support_count = sentinel1_pre_count + sentinel1_post_count; routing_metric_present = 0; tide_or_outfall_metric_present = 0",
+          "computed_values": {
+            "river_stage_or_routing_lag_metric_present": false,
+            "tide_sea_level_or_outfall_timing_metric_present": false,
+            "sentinel1_pre_count": 0,
+            "sentinel1_post_count": 0,
+            "direct_radar_support_count": 0
+          },
+          "diagnostic_diagnostic_test_or_test": "reject basin, coastal, or image dominance when routing/tide metrics are absent and direct radar pre/post counts are 0/0",
+          "result": "reject_basin_coastal_image_dominance",
+          "pluvial_implication": "Those candidate explanations cannot outrank the rainfall-load evidence synthesis."
+        },
+        {
+          "row_id": "loss_context_guardrail",
+          "formula": "physical_mechanism_metric_from_loss_counts = 0",
+          "computed_values": {
+            "maharashtra_fatalities_floor": 500,
+            "mumbai_fatalities_as_of_july_28": 273,
+            "physical_mechanism_metric_from_loss_counts": 0
+          },
+          "diagnostic_diagnostic_test_or_test": "loss counts may describe severity but do not supply rainfall, routing, tide, or inundation mechanics",
+          "result": "context_only_not_mechanism_metric",
+          "pluvial_implication": "Loss context cannot define the physical mechanism."
+        }
+      ],
+      "rejected_overreads": [
+        "basin_routing_dominance",
+        "peak_only_cloudburst",
+        "regional_wetness_replacement",
+        "coastal_backwater_dominance",
+        "image_led_flood_mask",
+        "exposure_led_functional_failure",
+        "loss_led_mechanism"
+      ],
+      "final_pluvial_label": "compact urban pluvial overload driven by record local 24-hour rainfall"
+    },
+    "mechanism_chain": [
+      "rainfall burst or accumulation",
+      "duration/intensity or areal-load calculation",
+      "urban runoff or receptor context",
+      "single-number simplification rejection"
+    ],
+    "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+    "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+    "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals.",
+    "formula_derivation": "When converting rainfall to runoff pressure, use V = rainfall_mm / 1000 * area_m2 and explain any runoff coefficient or normalized index."
+  },
+  "event": {
+    "package_id": "CSX-084",
+    "event_name": "26 July 2005 Mumbai flood",
+    "hazard_family": "river_coastal_flood",
+    "event_date_or_window": "2005-07-26 to 2005-07-27"
+  },
+  "decision_rule": {
+    "summary": "The ledger passes when the local 24-hour rainfall anchor and record-excess/peak-rate tests pass, broader products are treated as smoothed regional estimates, dense-metro volume calculations remain contextual, and basin/coastal/image/exposure/loss overreads are rejected.",
+    "pass_rows": [
+      "record_24h_rainfall_anchor",
+      "record_excess_and_peak_rate"
+    ],
+    "context_rows": [
+      "depth_volume_exposure_context",
+      "loss_context_guardrail"
+    ],
+    "rejection_rows": [
+      "gridded_smoothing_check",
+      "basin_coastal_image_vetoes"
+    ]
+  },
+  "key_values": {
+    "event_name": "26 July 2005 Mumbai flood",
+    "hazard_label": "River and coastal flooding",
+    "event_dates": [
+      "2005-07-26",
+      "2005-07-27"
+    ],
+    "anchor_24h_mm": 942.0,
+    "anchor_24h_inches": 37.1,
+    "previous_india_record_mm": 838.0,
+    "record_excess_mm": 104.0,
+    "record_excess_percent": 12.41,
+    "average_24h_rate_mm_per_hour": 39.25,
+    "trmm_peak_rate_mm_per_hour": 50.0,
+    "peak_rate_to_24h_mean_ratio": 1.274,
+    "openmeteo_max_24h_mm": 75.1,
+    "nasa_power_day1_mm": 210.55,
+    "gpm_event_mean_mm": 441.7,
+    "gpm_event_max_mm": 519.7,
+    "gpm_max_fraction_of_anchor": 0.552,
+    "era5_land_event_mean_mm": 120.3,
+    "era5_land_event_max_mm": 169.7,
+    "product_maximum_mm": 519.7,
+    "area_km2": 1191.3,
+    "worldpop_population_millions": 11.35,
+    "population_density_per_km2": 9528.4,
+    "anchor_depth_over_area_volume_km3": 1.122,
+    "gpm_mean_over_area_volume_km3": 0.526,
+    "one_foot_rain_over_area_volume_km3": 0.363,
+    "osm_hospital_count": 817,
+    "sentinel1_pre_count": 0,
+    "sentinel1_post_count": 0,
+    "maharashtra_fatalities_floor": 500,
+    "mumbai_fatalities_as_of_july_28": 273
+  },
+  "tolerances": {
+    "rainfall_depth_mm": 0.1,
+    "rainfall_rate_mm_per_hour": 0.01,
+    "percentage_points": 0.05,
+    "ratios": 0.005,
+    "area_km2": 0.1,
+    "volume_km3": 0.005,
+    "population_millions": 0.01,
+    "population_density_per_km2": 0.1,
+    "counts": 0,
+    "result_states_exact": true,
+    "row_ids_exact": true
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_26_July_2005_Mumbai_flood.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_osm_overpass_exposure_slice.json.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Mumbai Record-Rainfall Pluvial Overload Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "mumbai_pluvial_overload_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+      "computed_evidence": {
+        "pluvial_evidence_synthesis": [
+          {
+            "row_id": "record_24h_rainfall_anchor",
+            "formula": "average_24h_rate_mm_h = anchor_24h_mm / 24",
+            "computed_values": {
+              "anchor_24h_mm": 942.0,
+              "anchor_24h_inches": 37.1,
+              "average_24h_rate_mm_h": 39.25
+            },
+            "diagnostic_diagnostic_test_or_test": "anchor_24h_mm >= 900 and average_24h_rate_mm_h >= 35",
+            "result": "pass_record_pluvial_load",
+            "pluvial_implication": "The local 24-hour load is sufficient for compact pluvial overload."
+          },
+          {
+            "row_id": "record_excess_and_peak_rate",
+            "formula": "record_excess_mm = anchor_24h_mm - previous_record_mm; record_excess_percent = record_excess_mm / previous_record_mm * 100; peak_rate_to_24h_mean_ratio = trmm_peak_rate_mm_h / average_24h_rate_mm_h",
+            "computed_values": {
+              "previous_record_mm": 838.0,
+              "record_excess_mm": 104.0,
+              "record_excess_percent": 12.41,
+              "trmm_peak_rate_mm_h": 50.0,
+              "peak_rate_to_24h_mean_ratio": 1.274
+            },
+            "diagnostic_diagnostic_test_or_test": "record_excess_mm >= 100, record_excess_percent >= 10, trmm_peak_rate_mm_h >= 50, and 1.2 <= peak_rate_to_24h_mean_ratio <= 1.4",
+            "result": "pass_sustained_extreme_with_embedded_peak",
+            "pluvial_implication": "The peak-rate cue is embedded in a sustained daily extreme."
+          },
+          {
+            "row_id": "gridded_smoothing_check",
+            "formula": "gpm_max_fraction_of_anchor = gpm_event_max_mm / anchor_24h_mm",
+            "computed_values": {
+              "openmeteo_max_24h_mm": 75.1,
+              "nasa_power_day1_mm": 210.55,
+              "gpm_event_mean_mm": 441.7,
+              "gpm_event_max_mm": 519.7,
+              "gpm_max_fraction_of_anchor": 0.552,
+              "product_maximum_mm": 519.7
+            },
+            "diagnostic_diagnostic_test_or_test": "reject replacing the local anchor when gpm_max_fraction_of_anchor < 0.60 and product_maximum_mm < anchor_24h_mm",
+            "result": "reject_gridded_replacement",
+            "pluvial_implication": "Regional gridded products are heavy but smoothed relative to the local record."
+          },
+          {
+            "row_id": "depth_volume_exposure_context",
+            "formula": "V_km3 = rainfall_mm / 1000 * area_km2 / 1000; density = population / area_km2",
+            "computed_values": {
+              "area_km2": 1191.3,
+              "anchor_depth_over_area_volume_km3": 1.122,
+              "gpm_mean_over_area_volume_km3": 0.526,
+              "one_foot_rain_over_area_volume_km3": 0.363,
+              "population_millions": 11.35,
+              "population_density_per_km2": 9528.4,
+              "osm_hospital_count": 817
+            },
+            "diagnostic_diagnostic_test_or_test": "treat depth-volume and dense receptor values as context calculations, not observed runoff or service failure",
+            "result": "context_or_scenario_only",
+            "pluvial_implication": "The rainfall load occurred over a dense metro setting, but the computed values are not direct failure measurements."
+          },
+          {
+            "row_id": "basin_coastal_image_vetoes",
+            "formula": "direct_radar_support_count = sentinel1_pre_count + sentinel1_post_count; routing_metric_present = 0; tide_or_outfall_metric_present = 0",
+            "computed_values": {
+              "river_stage_or_routing_lag_metric_present": false,
+              "tide_sea_level_or_outfall_timing_metric_present": false,
+              "sentinel1_pre_count": 0,
+              "sentinel1_post_count": 0,
+              "direct_radar_support_count": 0
+            },
+            "diagnostic_diagnostic_test_or_test": "reject basin, coastal, or image dominance when routing/tide metrics are absent and direct radar pre/post counts are 0/0",
+            "result": "reject_basin_coastal_image_dominance",
+            "pluvial_implication": "Those candidate explanations cannot outrank the rainfall-load evidence synthesis."
+          },
+          {
+            "row_id": "loss_context_guardrail",
+            "formula": "physical_mechanism_metric_from_loss_counts = 0",
+            "computed_values": {
+              "maharashtra_fatalities_floor": 500,
+              "mumbai_fatalities_as_of_july_28": 273,
+              "physical_mechanism_metric_from_loss_counts": 0
+            },
+            "diagnostic_diagnostic_test_or_test": "loss counts may describe severity but do not supply rainfall, routing, tide, or inundation mechanics",
+            "result": "context_only_not_mechanism_metric",
+            "pluvial_implication": "Loss context cannot define the physical mechanism."
+          }
+        ],
+        "rejected_overreads": [
+          "basin_routing_dominance",
+          "peak_only_cloudburst",
+          "regional_wetness_replacement",
+          "coastal_backwater_dominance",
+          "image_led_flood_mask",
+          "exposure_led_functional_failure",
+          "loss_led_mechanism"
+        ],
+        "final_pluvial_label": "compact urban pluvial overload driven by record local 24-hour rainfall"
+      },
+      "mechanism_chain": [
+        "rainfall burst or accumulation",
+        "duration/intensity or areal-load calculation",
+        "urban runoff or receptor context",
+        "single-number simplification rejection"
+      ],
+      "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+      "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+      "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals.",
+      "formula_derivation": "When converting rainfall to runoff pressure, use V = rainfall_mm / 1000 * area_m2 and explain any runoff coefficient or normalized index."
+    },
+    "answer": "mumbai_pluvial_overload_supported"
+  }
+}

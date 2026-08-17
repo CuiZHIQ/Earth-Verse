@@ -1,0 +1,145 @@
+{
+  "answer_guidance": {
+    "answer": "atmospheric_river_rainfall_routing_supported",
+    "structured_answer": {
+      "answer": "atmospheric_river_rainfall_routing_supported",
+      "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+      "computed_evidence": {
+        "computed_values": {
+          "foothill_to_el_paico_ratio": 4.625,
+          "foothill_to_nasa_power_ratio": 7.403,
+          "foothill_to_open_meteo_ratio": 2.765,
+          "nasa_power_first_3_day_share_percent": 98.26,
+          "open_meteo_first_72h_share_percent": 99.33,
+          "open_meteo_max_hour_share_percent": 5.08,
+          "rain_peak_to_sediment_plume_lag_days": 5
+        },
+        "decision_tests": {
+          "lagged_river_routing": "pass",
+          "sustained_early_rainfall": "pass",
+          "terrain_amplification": "pass"
+        },
+        "final_process_alignment_label": "orographic_rainfall_river_routing_consistent",
+        "rejected_alternative": "Reject a single-hour rainfall-peak explanation because the maximum hour is only 5.08% of the point total while the first 72 hours hold 99.33% and the river-plume signal lags the rainfall peak by 5 days."
+      },
+      "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+      "mechanism_chain": [
+        "multiday rainfall loading",
+        "basin or terrain routing",
+        "river-response timing",
+        "instantaneous simplification rejection"
+      ],
+      "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+      "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Central Chile Atmospheric-River Rainfall Routing Diagnosis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-079",
+  "key_values": {
+    "el_paico_rain_mm": 80.0,
+    "event_window": "2023-08-20 to 2023-08-26",
+    "foothills_rain_mm": 370.0,
+    "nasa_power_first_3_day_mm": 49.11,
+    "nasa_power_total_mm": 49.98,
+    "open_meteo_first_72h_mm": 132.9,
+    "open_meteo_max_hour_mm": 6.8,
+    "open_meteo_total_mm": 133.8,
+    "rain_peak_date": "2023-08-21",
+    "sediment_plume_date": "2023-08-26"
+  },
+  "primary_gt": {
+    "answer": "atmospheric_river_rainfall_routing_supported",
+    "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+    "computed_evidence": {
+      "computed_values": {
+        "foothill_to_el_paico_ratio": 4.625,
+        "foothill_to_nasa_power_ratio": 7.403,
+        "foothill_to_open_meteo_ratio": 2.765,
+        "nasa_power_first_3_day_share_percent": 98.26,
+        "open_meteo_first_72h_share_percent": 99.33,
+        "open_meteo_max_hour_share_percent": 5.08,
+        "rain_peak_to_sediment_plume_lag_days": 5
+      },
+      "decision_tests": {
+        "lagged_river_routing": "pass",
+        "sustained_early_rainfall": "pass",
+        "terrain_amplification": "pass"
+      },
+      "final_process_alignment_label": "orographic_rainfall_river_routing_consistent",
+      "rejected_alternative": "Reject a single-hour rainfall-peak explanation because the maximum hour is only 5.08% of the point total while the first 72 hours hold 99.33% and the river-plume signal lags the rainfall peak by 5 days."
+    },
+    "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+    "mechanism_chain": [
+      "multiday rainfall loading",
+      "basin or terrain routing",
+      "river-response timing",
+      "instantaneous simplification rejection"
+    ],
+    "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+    "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Report rainfall anchors and sediment-plume date are parsed from the local NASA report; point totals and concentration metrics are computed from local Open-Meteo and NASA POWER files.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August_2023_central_Chile_atmospheric-river_floods.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Atmospheric_rivers_swamp_central_Chile.html",
+      "data/other/other_001_SENAPRED_-_Disaster_risk_committee_coordination_for_August_2023_frontal_system.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 4
+      },
+      {
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values.",
+        "name": "computed_evidence",
+        "points": 5
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 4
+      },
+      {
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "atmospheric_river_rainfall_routing_diagnosis",
+  "task_id": "CSX-079_Q1",
+  "task_type": "structured_reasoning",
+  "tolerances": {
+    "lag_days_abs": 0,
+    "percent_abs": 0.05,
+    "ratio_abs": 0.005
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "end_date": "2020-07-31",
+    "hazard_family": "flood",
+    "name": "July 2020 South and East Asia monsoon floods",
+    "region": "South and East Asia monsoon belt",
+    "start_date": "2020-07-01"
+  },
+  "event_id": "CSX-064",
+  "key_values": {
+    "judge_anchor": "The sampled precipitation maximum is below the 1000 mm threshold; the Poyang Lake excess is a separate floodplain high-water anchor.",
+    "required_metrics": {
+      "chirps_max_mm": 382.717,
+      "era5_max_mm": 491.133,
+      "gpm_max_mm": 466.113,
+      "max_sample_mm": 491.133,
+      "poyang_average_annual_max_m": 19.2,
+      "poyang_excess_m": 3.4,
+      "poyang_record_m": 22.6,
+      "regional_threshold_cm": 100,
+      "regional_threshold_mm": 1000,
+      "shortfall_mm": 508.867,
+      "threshold_ratio": 0.491
+    },
+    "tolerances": {
+      "max_sample_mm": 0.01,
+      "poyang_excess_m": 0.01,
+      "shortfall_mm": 0.01,
+      "threshold_ratio": 0.001
+    }
+  },
+  "primary_gt": {
+    "answer": "sampled_rain_below_1000mm_with_poyang_high_water_excess",
+    "classification": "sampled_rain_below_1000mm_with_poyang_high_water_excess",
+    "max_sample_mm": 491.133,
+    "poyang_excess_m": 3.4,
+    "required_fields": [
+      "threshold_mm",
+      "max_sample_mm",
+      "threshold_ratio",
+      "shortfall_mm",
+      "poyang_excess_m",
+      "classification"
+    ],
+    "shortfall_mm": 508.867,
+    "threshold_mm": 1000,
+    "threshold_ratio": 0.491
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_South_and_East_Asia_monsoon_floods.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the six requested fields and gives sampled_rain_below_1000mm_with_poyang_high_water_excess or an equivalent snake_case classification.",
+        "name": "Final JSON and label",
+        "partial_credit": "Give 2-3 points if the conclusion is correct but one field is missing or the label is not compact; give 1 point if the answer is mostly prose but the threshold failure is clear.",
+        "points": 4
+      },
+      {
+        "description": "Converts 100 cm to 1000 mm and uses 491.133 mm as the maximum across the sampled precipitation diagnostics.",
+        "name": "Threshold conversion and sampled maximum",
+        "partial_credit": "Give 2-3 points for using the correct threshold with a non-maximum sampled value such as 466.113 mm; give 1 point for correct units but weak comparison logic.",
+        "points": 4
+      },
+      {
+        "description": "Computes threshold_ratio = 0.491 and shortfall_mm = 508.867 with acceptable rounding.",
+        "name": "Ratio and shortfall arithmetic",
+        "partial_credit": "Give 2-3 points if one derived value is correct; give 1 point if the arithmetic setup is right but the rounded numbers are off.",
+        "points": 4
+      },
+      {
+        "description": "Computes 22.6 - 19.2 = 3.4 m and treats it as a separate high-water anchor.",
+        "name": "Poyang high-water calculation",
+        "partial_credit": "Give 1-2 points for naming the two lake levels but omitting or misrounding the excess.",
+        "points": 3
+      },
+      {
+        "description": "Explains that the sampled rainfall diagnostics fail the >100 cm threshold while the lake level still supports floodplain high-water conditions.",
+        "name": "Consistency proof",
+        "partial_credit": "Give 1-2 points if only one side of this distinction is explained.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the answer concise, uses the requested rounding, and avoids adding loss totals or action advice beyond the computed ledger.",
+        "name": "Precision and bounded interpretation",
+        "partial_credit": "Give 1 point if the values are mostly correct but the output is cluttered or over-interpreted.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "formula_derivation_consistency_proof",
+  "task_id": "CSX-064_Q1",
+  "task_type": "short_answer"
+}

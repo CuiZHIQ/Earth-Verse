@@ -1,0 +1,116 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-228",
+  "event_name": "2005 La Conchita landslide",
+  "key_values": {
+    "destroyed_houses": 13,
+    "fatalities": 10,
+    "hazard_family": "landslide_mass_movement",
+    "impact_index_0_100": 76,
+    "precip_threshold_mm": 45.0,
+    "precip_values": {
+      "chirps_mean_mm": 54.2,
+      "era5_land_mean_mm": 69.2,
+      "gpm_imerg_mean_mm": 85.9,
+      "nasa_power_daily_mm": 48.3,
+      "open_meteo_daily_mm": 71.4
+    },
+    "process_text_index_0_100": 100,
+    "rainfall_index_0_100": 87.7,
+    "sensor_window_index_0_100": 0,
+    "sentinel1_status": "no_sufficient_scenes",
+    "sentinel2_status": "no_sufficient_scenes",
+    "source_checks": {
+      "anchor_storm_trigger": true,
+      "metadata_landslide_family": true,
+      "report_deep_seated": true,
+      "report_fatal_housing_impacts": true,
+      "report_following_storm": true
+    }
+  },
+  "primary_gt": {
+    "answer": "rainfall_threshold_confirmed_deep_landslide_highest_field_urgency",
+    "formula_proof": "The rainfall-process ledger wins because all five precipitation sources exceed 45 mm, process text support is complete, and the rainfall-process score is 86 versus an image-change score of 27. The image-change ledger cannot carry the diagnosis because both Sentinel streams have 0/0 usable pre/post scenes.",
+    "numeric_diagnosis": {
+      "image_change_score": 27,
+      "impact_index_0_100": 76,
+      "rainfall_index_0_100": 87.7,
+      "rainfall_process_score": 86,
+      "score_margin": 59,
+      "sensor_window_index_0_100": 0
+    },
+    "threshold_window_ledger": {
+      "event_window_days": 1,
+      "mean_consensus_mm": 65.8,
+      "rain_sources_ge_45mm": 5,
+      "sentinel_scene_counts": "S1 0/0, S2 0/0"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Deterministic local computation from event metadata, reports, precipitation products, and Sentinel scene-count ledgers.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_La_Conchita_landslide.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_data_report.html",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_007_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives 5 sources at or above 45 mm and mean consensus precipitation of 65.8 mm within 0.2 mm.",
+        "name": "Rainfall threshold ledger",
+        "partial_credit": "Award 2-3 points for a correct count with an imprecise mean, or a correct mean with a missing threshold count; award 1 point for qualitative heavy-rain language only.",
+        "points": 4
+      },
+      {
+        "description": "Gives the inclusive 1-day event window and Sentinel counts of S1 0/0 and S2 0/0, leading to sensor_window_index = 0.",
+        "name": "Window ledger",
+        "partial_credit": "Award 1-2 points for correct scene-count logic with one missing sensor stream or a wrong inclusive-day convention.",
+        "points": 3
+      },
+      {
+        "description": "Uses 10 fatalities and 13 destroyed houses to compute impact_index = 76.",
+        "name": "Impact arithmetic",
+        "partial_credit": "Award 2 points for one correct impact input with the right formula; award 1 point for naming severe impacts without the arithmetic.",
+        "points": 3
+      },
+      {
+        "description": "Computes rainfall_index = 87.7, rainfall_process_score = 86, image_change_score = 27, and score_margin = 59.",
+        "name": "Score formula chain",
+        "partial_credit": "Award 2-3 points for using the right formulas with one arithmetic or rounding error; award 1 point for comparing the ledgers without numeric scores.",
+        "points": 4
+      },
+      {
+        "description": "Connects metadata, storm triggering, following-storm report language, and deep-seated landslide movement to process_text_index = 100.",
+        "name": "Physical process support",
+        "partial_credit": "Award 1 point for naming rainfall-triggered landslide without the source-check chain.",
+        "points": 2
+      },
+      {
+        "description": "Returns rainfall_threshold_confirmed_deep_landslide_highest_field_urgency or an equivalent label with rainfall threshold confirmation, deep landslide movement, and highest field urgency.",
+        "name": "Final diagnosis label",
+        "partial_credit": "Award 1 point for the right ledger but an incomplete label.",
+        "points": 2
+      },
+      {
+        "description": "Includes the requested formula_proof explaining that the rainfall-process ledger wins by an 86-to-27 score because all precipitation sources pass, process support is complete, and both Sentinel streams have 0/0 usable pre/post scenes; keeps the interpretation bounded to a threshold-window score diagnosis rather than exact failure-depth or satellite-confirmed damage mapping.",
+        "name": "Formula proof and interpretation bound",
+        "partial_credit": "Award 1 point for either the correct formula_proof logic or a clear interpretation bound.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-228_Q1",
+  "task_type": "short_answer"
+}

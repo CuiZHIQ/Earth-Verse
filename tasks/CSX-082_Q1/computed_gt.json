@@ -1,0 +1,117 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-082",
+  "key_values": {
+    "countries_named_in_report": [
+      "Austria",
+      "Czechia",
+      "Slovakia",
+      "Poland",
+      "Romania",
+      "Hungary"
+    ],
+    "event_name": "Storm Boris Central and Eastern Europe floods",
+    "event_window": {
+      "end_date": "2024-09-20",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2024-09-11"
+    },
+    "flash_fatality_share_exact": 0.25925925925925924,
+    "forecast_timing": {
+      "first_severe_signal_run": "9 September 12 UTC",
+      "upper_danube_signal_run": "10 September 12 UTC"
+    },
+    "hazard_family": "river_coastal_flood",
+    "ledger_tests": {
+      "extreme_multiday_rain": true,
+      "flash_only_explanation_rejected": true,
+      "severe_oder_threshold": true,
+      "widespread_river_amplification": true
+    },
+    "reported_deaths": 27,
+    "romania_flash_deaths": 7,
+    "thresholds": {
+      "flash_fatality_share_max_for_flash_only": 0.3333333333333333,
+      "oder_return_period_years_min": 20,
+      "river_length_gt2x_aam_km_min": 5000,
+      "three_day_rain_mm_min": 300
+    },
+    "tolerances": {
+      "oder_rp_years_min": 0,
+      "river_length_gt2x_aam_km": 0,
+      "romania_fatality_share": 0.005,
+      "score": 0,
+      "three_day_rain_mm": 0
+    }
+  },
+  "primary_gt": {
+    "answer": "basin_river_flood_dominant",
+    "decision_rule": "all four ledger tests pass",
+    "flash_only_test": "rejected",
+    "oder_rp_years_min": 20,
+    "river_length_gt2x_aam_km": 8500,
+    "romania_fatality_share": 0.259,
+    "score": 4,
+    "three_day_rain_mm": 442
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Ground truth is regenerated from package metadata, the locked event anchor, and the ECMWF Storm Boris report.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Storm_Boris_Central_and_Eastern_Europe_floods.json",
+      "data/other/other_001_ECMWF_-_Storm_Boris_and_European_flooding_September_2024.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the label basin_river_flood_dominant with a score of 4 out of 4.",
+        "name": "Final ledger result",
+        "partial_credit": "Award 2 points for the right label with no score or a score off by one; 1 point for a vague river-flood conclusion.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 442 mm three-day rainfall value and correctly marks the 300 mm threshold test as passed.",
+        "name": "Rainfall threshold test",
+        "partial_credit": "Award 1-2 points for a correct extreme-rain claim with a missing threshold, wrong unit, or minor value error.",
+        "points": 3
+      },
+      {
+        "description": "Uses the at-least-20-year Oder River basin signal and correctly marks the return-period threshold test as passed.",
+        "name": "Oder severity test",
+        "partial_credit": "Award 1-2 points for recognizing severe Oder flooding but omitting the at-least qualifier or threshold comparison.",
+        "points": 3
+      },
+      {
+        "description": "Uses 8,500 km of rivers beyond twice average annual maximum flow and correctly marks the 5,000 km extent test as passed.",
+        "name": "River amplification test",
+        "partial_credit": "Award 1-2 points for mentioning widespread high flows with an incomplete value or comparison.",
+        "points": 3
+      },
+      {
+        "description": "Computes 7 divided by 27 as about 0.259 and rejects a flash-flood-only explanation because it is below one third.",
+        "name": "Flash-only rejection",
+        "partial_credit": "Award 1-2 points for using the 7 and 27 counts but missing the ratio or the one-third comparison.",
+        "points": 3
+      },
+      {
+        "description": "States or clearly applies the four pass/fail tests and the all-four-pass decision rule.",
+        "name": "Formula and threshold clarity",
+        "partial_credit": "Award 1 point if the tests are implicit but the arithmetic mostly supports the final label.",
+        "points": 2
+      },
+      {
+        "description": "Returns a compact JSON-style answer with the requested fields and no action advice or broad event essay.",
+        "name": "Concise constrained output",
+        "partial_credit": "Award 1 point for a readable answer that has minor formatting problems or extra prose but remains scoreable.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-082_Q1",
+  "task_type": "short_answer"
+}

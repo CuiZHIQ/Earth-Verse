@@ -1,0 +1,141 @@
+{
+  "calculation": {
+    "oni": {
+      "count": 7,
+      "mean_c": 2.22,
+      "peak_c": 2.75,
+      "values_c": {
+        "DJF_2016": 2.63,
+        "FMA_2016": 1.71,
+        "JFM_2016": 2.28,
+        "MAM_2016": 1.05,
+        "NDJ_2015": 2.75,
+        "OND_2015": 2.64,
+        "SON_2015": 2.47
+      }
+    },
+    "precipitation": {
+      "chirps_mean_mm": 173.648,
+      "chirps_min_mm": 45.913,
+      "chirps_ratio": 0.264401,
+      "gpm_mean_mm": 183.437,
+      "gpm_min_mm": 47.942,
+      "gpm_ratio": 0.261356
+    },
+    "score_components": {
+      "agreement": 0.695535,
+      "dry": 1.0,
+      "oni": 1.0,
+      "soi": 1.0,
+      "temperature": 1.0
+    },
+    "soi": {
+      "below_zero_count": 7,
+      "below_zero_frac": 1.0,
+      "count": 7,
+      "mean": -1.91,
+      "minimum": -3.6,
+      "values": {
+        "Apr_2016": -2.0,
+        "Dec_2015": -0.9,
+        "Feb_2016": -3.2,
+        "Jan_2016": -3.6,
+        "Mar_2016": -0.1,
+        "Nov_2015": -0.8,
+        "Oct_2015": -2.8
+      }
+    },
+    "temperature": {
+      "max_c": 37.64,
+      "mean_c": 33.54,
+      "spread_c": 4.1
+    },
+    "threshold_count": 5,
+    "thresholds": {
+      "agreement_delta_lte_0_01": true,
+      "dry_deficit_gte_0_70": true,
+      "oni_peak_gte_2_0": true,
+      "soi_neg_frac_gte_0_80": true,
+      "tmax_spread_gte_4_0": true
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_id": "CSX-279",
+    "event_name": "2015-2016 El Nino and Pacific Island drought emergencies",
+    "event_window": "2015-10-01 to 2016-04-30",
+    "rainfall_slice": "2015-10-01 to 2015-11-15"
+  },
+  "primary_gt": {
+    "agreement_delta": 0.003,
+    "answer": "all_5_thresholds_met",
+    "dry_deficit_mean": 0.737,
+    "dry_ratio_mean": 0.263,
+    "ledger_score": 93.91,
+    "oni_peak_c": 2.75,
+    "soi_neg_frac": 1.0,
+    "tmax_spread_c": 4.1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015-2016_El_Nino_and_Pacific_Island_drought_emergencies.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_009_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_010_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_011_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "quality_checks": {
+    "primary_gt_compact_bytes": 183,
+    "primary_gt_top_level_keys": 8,
+    "threshold_count": 5
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes GPM and CHIRPS min/mean ratios before averaging them.",
+        "name": "Precipitation ratios",
+        "partial_credit": "Award 2-3 points if both products are used but one ratio or rounding step is wrong.",
+        "points": 4
+      },
+      {
+        "description": "Derives dry deficit and cross-product agreement delta with correct rounding.",
+        "name": "Dryness and agreement math",
+        "partial_credit": "Award 2 points if either the deficit or agreement calculation is correct.",
+        "points": 4
+      },
+      {
+        "description": "Extracts SON 2015 through MAM 2016 ONI values and reports the peak.",
+        "name": "ONI parsing",
+        "partial_credit": "Award 2-3 points for the correct source and season span with a minor extraction error.",
+        "points": 4
+      },
+      {
+        "description": "Extracts October 2015 through April 2016 SOI values and computes the below-zero fraction.",
+        "name": "SOI persistence",
+        "partial_credit": "Award 1-2 points for the correct months with one sign/count error.",
+        "points": 3
+      },
+      {
+        "description": "Computes the ERA5-Land temperature spread and applies the five tests.",
+        "name": "Temperature spread and thresholds",
+        "partial_credit": "Award 1-2 points for the correct spread or most threshold booleans.",
+        "points": 3
+      },
+      {
+        "description": "Evaluates the weighted formula and returns the requested compact JSON.",
+        "name": "Ledger score",
+        "partial_credit": "Award 1 point for valid compact JSON or a mostly correct score with one component error.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "enso_drought_threshold_ledger",
+  "task_id": "CSX-279_Q2",
+  "task_type": "numeric"
+}

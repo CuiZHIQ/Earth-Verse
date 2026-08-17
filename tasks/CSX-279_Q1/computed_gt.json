@@ -1,0 +1,283 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "ENSO-driven Pacific Island drought with freshwater and food-security priority",
+      "El Nino teleconnection drought caused by Walker Circulation and rainfall displacement",
+      "climate-mode drought emergency focused on water supply, crops, and food security"
+    ],
+    "answer": "enso_walker_shift_freshwater_and_crop_drought",
+    "answer_type": "hybrid_mechanism_priority_briefing",
+    "canonical_stance": "The 2015-2016 Pacific Island emergencies are best explained as a strong, coupled El Nino teleconnection drought driven by Walker Circulation and rainfall displacement, with freshwater supply and food security as the first response priority.",
+    "forbidden_claims": [
+      "Treats tropical cyclone wind, storm surge, flooding, landslides, or direct heat as the dominant event mechanism.",
+      "Claims exact island-by-island mortality, disease burden, economic loss, or formal drought return period.",
+      "Treats regional gridded precipitation statistics as direct observations for one named station or island.",
+      "Claims all Pacific islands experienced identical severity."
+    ],
+    "impact_chain": [
+      "strong_el_nino_coupling",
+      "walker_circulation_rainfall_shift",
+      "freshwater_and_crop_stress"
+    ],
+    "mechanism_label": "enso_walker_shift_freshwater_and_crop_drought",
+    "priority_focus": "freshwater_supply_and_food_security",
+    "required_claims": [
+      "Identifies a strong El Nino or ENSO teleconnection as the dominant driver.",
+      "Uses negative SOI values as evidence of atmospheric coupling during the event window.",
+      "Connects shifted Walker Circulation or eastward rainfall displacement to western Pacific dryness.",
+      "Interprets the dry-pocket precipitation signal as drought stress rather than flood dominance.",
+      "Prioritizes drinking-water supply, water rationing, crops, and food security impacts."
+    ],
+    "required_metrics": [
+      {
+        "name": "peak_oni_anomaly_c",
+        "tolerance": 0.05,
+        "unit": "deg C",
+        "value": 2.75
+      },
+      {
+        "name": "mean_event_oni_anomaly_c",
+        "tolerance": 0.05,
+        "unit": "deg C",
+        "value": 2.18
+      },
+      {
+        "name": "mean_event_soi",
+        "tolerance": 0.05,
+        "unit": "index",
+        "value": -1.91
+      },
+      {
+        "name": "negative_soi_months",
+        "tolerance": 0,
+        "unit": "months",
+        "value": 7
+      },
+      {
+        "name": "dry_pocket_ratio",
+        "tolerance": 0.01,
+        "unit": "ratio",
+        "value": 0.737
+      },
+      {
+        "name": "exposed_population_millions",
+        "tolerance": 0.05,
+        "unit": "million people",
+        "value": 4.23
+      }
+    ],
+    "severity_tier": "high_priority_drought_emergency",
+    "structured_answer": {
+      "briefing_note": "Strong positive ONI and persistently negative SOI indicate a coupled El Nino atmosphere-ocean state, while the precipitation-product evidence window shows a strong dry-pocket contrast rather than flood-dominant rainfall. Reported impacts emphasize water rationing, crop stress, food security, and public-health concerns, so freshwater supply and food security are the first response priority.",
+      "dominant_mechanism": "enso_walker_shift_freshwater_and_crop_drought",
+      "evidence_windows": {
+        "event_window": "2015-10-01_to_2016-04-30",
+        "precipitation_evidence_window": "2015-10-01_to_2015-11-15"
+      },
+      "impact_chain": [
+        "strong_el_nino_coupling",
+        "walker_circulation_rainfall_shift",
+        "freshwater_and_crop_stress"
+      ],
+      "key_indices": {
+        "dry_pocket_ratio": 0.737,
+        "exposed_population_millions": 4.23,
+        "mean_event_soi": -1.91,
+        "peak_oni_anomaly_c": 2.75
+      },
+      "priority_focus": "freshwater_supply_and_food_security"
+    }
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-279",
+  "key_values": {
+    "computed_metrics": {
+      "chirps_dry_pocket_ratio": 0.736,
+      "dry_pocket_ratio": 0.737,
+      "exposed_population_millions": 4.23,
+      "gpm_dry_pocket_ratio": 0.739,
+      "mean_event_oni_anomaly_c": 2.18,
+      "mean_event_soi": -1.91,
+      "minimum_event_soi": -3.6,
+      "negative_soi_months": 7,
+      "oni_seasons_ge_1p5_c": 5,
+      "oni_seasons_ge_2p0_c": 4,
+      "peak_oni_anomaly_c": 2.75
+    },
+    "event_window": {
+      "end_date": "2016-04-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2015-10-01"
+    },
+    "oni_rows": [
+      {
+        "anomaly_c": 2.64,
+        "season": "OND",
+        "total_c": 29.25,
+        "year": "2015"
+      },
+      {
+        "anomaly_c": 2.75,
+        "season": "NDJ",
+        "total_c": 29.26,
+        "year": "2015"
+      },
+      {
+        "anomaly_c": 2.63,
+        "season": "DJF",
+        "total_c": 29.12,
+        "year": "2016"
+      },
+      {
+        "anomaly_c": 2.28,
+        "season": "JFM",
+        "total_c": 29.01,
+        "year": "2016"
+      },
+      {
+        "anomaly_c": 1.71,
+        "season": "FMA",
+        "total_c": 28.88,
+        "year": "2016"
+      },
+      {
+        "anomaly_c": 1.05,
+        "season": "MAM",
+        "total_c": 28.62,
+        "year": "2016"
+      }
+    ],
+    "precipitation_evidence_window": {
+      "chirps": {
+        "end": "2015-11-15",
+        "start": "2015-10-01"
+      },
+      "gpm": {
+        "end": "2015-11-15",
+        "start": "2015-10-01"
+      }
+    },
+    "soi_rows": [
+      {
+        "month": 10,
+        "soi": -2.8,
+        "year": "2015"
+      },
+      {
+        "month": 11,
+        "soi": -0.8,
+        "year": "2015"
+      },
+      {
+        "month": 12,
+        "soi": -0.9,
+        "year": "2015"
+      },
+      {
+        "month": 1,
+        "soi": -3.6,
+        "year": "2016"
+      },
+      {
+        "month": 2,
+        "soi": -3.2,
+        "year": "2016"
+      },
+      {
+        "month": 3,
+        "soi": -0.1,
+        "year": "2016"
+      },
+      {
+        "month": 4,
+        "soi": -2.0,
+        "year": "2016"
+      }
+    ],
+    "text_claim_flags": {
+      "el_nino_dominated_atmosphere": true,
+      "emergency_declarations": true,
+      "food_security_or_crops": true,
+      "lack_of_rainfall": true,
+      "public_health": true,
+      "walker_circulation_shift": true,
+      "water_rationing": true
+    }
+  },
+  "primary_gt": {
+    "briefing_note": "Strong positive ONI and persistently negative SOI indicate a coupled El Nino atmosphere-ocean state, while the precipitation-product evidence window shows a strong dry-pocket contrast rather than flood-dominant rainfall. Reported impacts emphasize water rationing, crop stress, food security, and public-health concerns, so freshwater supply and food security are the first response priority.",
+    "dominant_mechanism": "enso_walker_shift_freshwater_and_crop_drought",
+    "evidence_windows": {
+      "event_window": "2015-10-01_to_2016-04-30",
+      "precipitation_evidence_window": "2015-10-01_to_2015-11-15"
+    },
+    "impact_chain": [
+      "strong_el_nino_coupling",
+      "walker_circulation_rainfall_shift",
+      "freshwater_and_crop_stress"
+    ],
+    "key_indices": {
+      "dry_pocket_ratio": 0.737,
+      "exposed_population_millions": 4.23,
+      "mean_event_soi": -1.91,
+      "peak_oni_anomaly_c": 2.75
+    },
+    "priority_focus": "freshwater_supply_and_food_security"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015-2016_El_Nino_and_Pacific_Island_drought_emergencies.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NOAA_Climate.gov.html",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_010_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_011_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies an ENSO/El Nino teleconnection drought as the dominant mechanism and freshwater supply plus food security as the first response priority.",
+        "name": "Final mechanism and response priority",
+        "partial_credit": "Award up to 2 points for naming drought or freshwater stress without the ENSO/Walker Circulation driver, and up to 3 points for identifying ENSO drought but omitting or weakening the priority focus.",
+        "points": 4
+      },
+      {
+        "description": "Uses peak ONI anomaly 2.75 C, mean event ONI anomaly 2.18 C, mean SOI -1.91, and seven negative SOI months to support coupled El Nino forcing.",
+        "name": "ENSO index computation",
+        "partial_credit": "Award partial credit for reasonable rounding, for using only ONI or only SOI, or for correctly describing strong positive ONI and negative SOI without all exact values.",
+        "points": 4
+      },
+      {
+        "description": "Uses the precipitation-product evidence-window dry-pocket ratio near 0.737 and exposed population near 4.23 million to support a regional drought-priority interpretation without treating the rainfall files as a full island-by-island event-period reconstruction.",
+        "name": "Rainfall and exposure anchors",
+        "partial_credit": "Award partial credit for using one precipitation-product ratio, describing spatial dryness without the exact ratio, or mentioning population scale without connecting it to priority.",
+        "points": 3
+      },
+      {
+        "description": "Connects strong El Nino coupling to shifted Walker Circulation, eastward rainfall displacement, western Pacific rainfall deficits, freshwater shortage, and crop stress.",
+        "name": "Physical mechanism and process chain",
+        "partial_credit": "Award partial credit for a correct but incomplete chain or for omitting one major process link.",
+        "points": 4
+      },
+      {
+        "description": "Translates the physical diagnosis into practical response logic centered on water access, food-security support, and monitoring public-health consequences.",
+        "name": "Disaster interpretation and operational implication",
+        "partial_credit": "Award partial credit for discussing impacts generally without clear operational prioritization.",
+        "points": 3
+      },
+      {
+        "description": "Rejects cyclone, flood/landslide, and direct heat as dominant mechanisms, avoids unsupported exact loss, return-period, or uniform-severity claims, and returns a concise structured answer.",
+        "name": "Competing explanations, uncertainty, and answer format",
+        "partial_credit": "Award partial credit for rejecting only some competing mechanisms or for a mostly correct answer with minor structure or overstatement issues.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-279_Q1",
+  "task_type": "short_answer"
+}

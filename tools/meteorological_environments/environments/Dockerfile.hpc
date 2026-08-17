@@ -1,0 +1,18 @@
+FROM mambaorg/micromamba:1.5.10
+
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential gfortran gcc g++ make cmake perl csh m4 git curl ca-certificates \
+    libopenmpi-dev openmpi-bin libnetcdf-dev libnetcdff-dev libhdf5-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --chown=$MAMBA_USER:$MAMBA_USER conda-core.yml /tmp/conda-core.yml
+COPY --chown=$MAMBA_USER:$MAMBA_USER conda-specialists.yml /tmp/conda-specialists.yml
+
+USER $MAMBA_USER
+RUN micromamba install -y -n base -f /tmp/conda-core.yml \
+    && micromamba install -y -n base -f /tmp/conda-specialists.yml \
+    && micromamba clean --all --yes
+
+ENV PATH=/opt/conda/bin:$PATH
+WORKDIR /workspace

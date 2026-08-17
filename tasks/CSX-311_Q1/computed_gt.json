@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-311_Q1",
+  "event_id": "CSX-311",
+  "task_type": "numeric",
+  "target_family": "ontake_phreatic_rain_gate_consistency",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "phreatic_report_dry_window",
+    "max_precip_mm": 0.536591,
+    "dry_margin_mm": 0.463409,
+    "sources_below_1mm": 5,
+    "anchor_score": 8,
+    "reported_hikers": 36,
+    "rain_gate": "fail_lt_1mm",
+    "consistency_note": "All five event-day precipitation summaries are below 1 mm while the phreatic narrative anchor score is 8, so the computed label is phreatic_report_dry_window."
+  },
+  "key_values": {
+    "event_name": "Mount Ontake eruption",
+    "event_date": "2014-09-27",
+    "hazard_family": "volcano_ash_lahar",
+    "rain_threshold_mm": 1.0,
+    "precipitation_mm": {
+      "nasa_power_mm": 0.01,
+      "open_meteo_mm": 0.0,
+      "era5_land_max_mm": 0.536591,
+      "gpm_imerg_max_mm": 0.115,
+      "chirps_max_mm": 0.0
+    },
+    "anchor_counts": {
+      "phreatic": 2,
+      "ash": 2,
+      "ballistic": 1,
+      "hikers": 1,
+      "little_warning": 1,
+      "unexpectedly": 1
+    },
+    "narrative_terms_scored": [
+      "phreatic",
+      "ash",
+      "ballistic",
+      "hikers",
+      "little_warning",
+      "unexpectedly"
+    ]
+  },
+  "tolerances": {
+    "max_precip_mm": 1e-06,
+    "dry_margin_mm": 1e-06,
+    "integer_counts": 0
+  },
+  "decision_rule": {
+    "precip_formula": "max_precip_mm=max(five event-day precipitation summaries)",
+    "dry_margin_formula": "dry_margin_mm=1.0-max_precip_mm",
+    "anchor_score_formula": "sum exact counts for phreatic, ash, ballistic, hikers, little warning, unexpectedly",
+    "label_rule": "phreatic_report_dry_window when max_precip_mm<1.0, anchor_score>=6, and reported_hikers>0",
+    "determinism": "fixed local files, explicit regular expressions, fixed threshold, and stated numeric tolerances"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Output schema",
+        "points": 3,
+        "description": "Returns compact JSON with answer, max_precip_mm, dry_margin_mm, sources_below_1mm, anchor_score, reported_hikers, rain_gate, and one calculation-tied note."
+      },
+      {
+        "name": "Precipitation aggregation",
+        "points": 5,
+        "description": "Computes max_precip_mm as 0.536591 mm from the five event-day precipitation summaries, dry_margin_mm as 0.463409 mm, and sources_below_1mm as 5."
+      },
+      {
+        "name": "Narrative anchor extraction",
+        "points": 5,
+        "description": "Uses exact whole-word or phrase counting to get phreatic=2, ash=2, ballistic=1, hikers=1, little_warning=1, unexpectedly=1, anchor_score=8, and reported_hikers=36."
+      },
+      {
+        "name": "Threshold proof",
+        "points": 4,
+        "description": "Applies the 1.0 mm rain threshold, marks rain_gate as fail_lt_1mm, and returns the label phreatic_report_dry_window."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 2,
+        "description": "Keeps the interpretation to a short computed consequence and avoids extra inferences beyond the threshold and count results."
+      },
+      {
+        "name": "Units and rounding",
+        "points": 1,
+        "description": "Reports millimeter values to about 1e-6 precision or an equivalent clearly rounded tolerance."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Mount_Ontake_eruption.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

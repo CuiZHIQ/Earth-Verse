@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-072_Q1",
+  "event_id": "CSX-072",
+  "task_type": "short_answer",
+  "target_family": "rainfall_river_response_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "score_ledger",
+    "test_scores": {
+      "station_load": "pass",
+      "record_spread": "pass",
+      "river_response": "pass",
+      "point_persistence": "pass",
+      "grid_contrast": "pass"
+    },
+    "pass_count": 5,
+    "pass_threshold": 4,
+    "final_label": "persistent_rainfall_lagged_river_response_consistent",
+    "rejected_alternative": "single_hour_or_single_basin_only",
+    "numeric_tolerances": {
+      "rainfall_mm": 0.1,
+      "river_m": 0.01,
+      "ratio": 0.01,
+      "counts": 0
+    }
+  },
+  "key_values": {
+    "event_name": "September 2024 Nepal floods and landslides",
+    "event_window": "2024-09-27 to 2024-09-29",
+    "location_text": "Kathmandu Valley and 21 districts",
+    "daman_three_day_mm": 517.0,
+    "daman_24h_record_mm": 410.0,
+    "daman_previous_24h_record_mm": 373.2,
+    "three_day_to_24h_ratio": 1.261,
+    "record_to_previous_ratio": 1.099,
+    "record_excess_mm": 36.8,
+    "record_stations_per_district": 1.786,
+    "kathmandu_valley_record_share": 0.44,
+    "compact_record_density_per_100_sq_km": 1.6,
+    "stations_over_50mm": 183,
+    "stations_over_400mm": 6,
+    "positive_river_exceedance_rows": 5,
+    "river_table_rows": 7,
+    "positive_river_exceedance_fraction": 0.714,
+    "max_exceedance_station": "Narayani River at Devghat",
+    "max_river_exceedance_m": 3.52,
+    "max_observed_to_historic_ratio": 1.349,
+    "openmeteo_total_mm": 256.0,
+    "openmeteo_daily_mm": {
+      "2024-09-27": 174.2,
+      "2024-09-28": 79.8,
+      "2024-09-29": 2.0
+    },
+    "openmeteo_peak_hour_mm": 15.6,
+    "openmeteo_wet_hours_ge_1mm": 41,
+    "openmeteo_wet_hours_ge_5mm": 20,
+    "openmeteo_last_nonzero_time_utc": "2024-09-29T10:00",
+    "max_gridded_event_precip_mm": 63.06678009033203,
+    "daman_three_day_to_max_grid_ratio": 8.2,
+    "daman_24h_to_max_grid_ratio": 6.5,
+    "openmeteo_total_to_max_grid_ratio": 4.06
+  },
+  "decision_rule": {
+    "tests": {
+      "station_load": "three_day_to_24h_ratio >= 1.2 and record_to_previous_ratio > 1.0",
+      "record_spread": "record_station_count >= 20 and record_district_count >= 10",
+      "river_response": "positive_river_exceedance_rows >= 4 and max_river_exceedance_m >= 3.0",
+      "point_persistence": "openmeteo_total_mm >= 200 and openmeteo_wet_hours_ge_1mm >= 24",
+      "grid_contrast": "daman_24h_to_max_grid_ratio >= 5.0 and openmeteo_total_to_max_grid_ratio >= 3.0"
+    },
+    "pass_threshold": 4
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final score and label",
+        "points": 3,
+        "description": "Gives five passing tests, pass_count 5, pass threshold 4, and the final label persistent_rainfall_lagged_river_response_consistent.",
+        "partial_credit": "Award 1-2 points if the label is correct but pass_count or threshold logic is incomplete."
+      },
+      {
+        "name": "Station rainfall calculations",
+        "points": 4,
+        "description": "Computes 517.0/410.0 = 1.261, 410.0/373.2 = 1.099, and 410.0-373.2 = 36.8 mm with correct pass state.",
+        "partial_credit": "Award 2-3 points for correct source values with one ratio or rounding error; award 1 point for only identifying the Daman record values."
+      },
+      {
+        "name": "Record-spread calculations",
+        "points": 3,
+        "description": "Computes 25/14 = 1.786, 11/25 = 0.44, 16/1000*100 = 1.6 per 100 sq km, and includes 183 stations above 50 mm and 6 above 400 mm.",
+        "partial_credit": "Award 1-2 points if only some count ratios are correct or the threshold station counts are missing."
+      },
+      {
+        "name": "River exceedance calculations",
+        "points": 4,
+        "description": "Computes observed-minus-historic and observed-to-historic river values, identifies 5/7 positive exceedances, Devghat as maximum, 3.52 m, and 1.349.",
+        "partial_credit": "Award 2-3 points for the correct pass state with one missing metric; award 1 point for recognizing multi-gauge exceedance without correct arithmetic."
+      },
+      {
+        "name": "Point persistence and grid contrast",
+        "points": 3,
+        "description": "Uses 256.0 mm point total, 174.2/79.8/2.0 mm daily sequence, 41 and 20 wet-hour counts, 63.067 mm grid maximum, and ratios 8.2, 6.5, and 4.06.",
+        "partial_credit": "Award 1-2 points if persistence values are correct but the grid-ratio test is absent or miscomputed."
+      },
+      {
+        "name": "Rejected alternative",
+        "points": 2,
+        "description": "Rejects single_hour_or_single_basin_only using both persistence and river-response tests.",
+        "partial_credit": "Award 1 point if the rejected alternative is stated but tied to only one of the required tests."
+      },
+      {
+        "name": "Compact requested output",
+        "points": 1,
+        "description": "Returns concise JSON with the requested fields and avoids extra impact or response assertions.",
+        "partial_credit": "Award 0.5 point for minor formatting drift that does not obscure the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2024_Nepal_floods_and_landslides.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-060_Q2",
+  "event_id": "CSX-060",
+  "task_type": "short_answer",
+  "target_family": "station_river_slope_anchor_diagnostic",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "score_ledger": {
+      "station_rainfall_cluster": {
+        "pass": true,
+        "supporting_values": {
+          "station_max_to_weighted_mean_ratio": 2.333,
+          "three_day_share_above_200mm": 0.574,
+          "three_day_station_count": 183
+        },
+        "reason": "All three station-rainfall thresholds are met."
+      },
+      "river_historic_exceedance": {
+        "pass": true,
+        "supporting_values": {
+          "river_historic_exceedance_share": 0.714,
+          "max_river_exceedance_m": 3.52
+        },
+        "reason": "Five of seven checked rivers exceeded historic levels, and the largest exceedance is above 2 m."
+      },
+      "record_station_cluster": {
+        "pass": true,
+        "supporting_values": {
+          "record_stations_in_approx_1000km2": 16,
+          "record_station_density_per_1000km2": 16.0,
+          "approx_record_station_spacing_km": 7.906
+        },
+        "reason": "The record-station cluster clears the count, density, and spacing thresholds."
+      },
+      "gridded_rainfall_primary": {
+        "pass": false,
+        "supporting_values": {
+          "gpm_max_share_of_station_max": 0.142,
+          "chirps_max_share_of_station_max": 0.122,
+          "era5_max_share_of_station_max": 0.094
+        },
+        "reason": "The gridded maxima are all below one half of the station maximum."
+      },
+      "public_warning_volume_primary": {
+        "pass": false,
+        "supporting_values": {
+          "sms_alerts_per_1000_worldpop": 816.7
+        },
+        "reason": "The normalized warning count is below the 1000 per 1000 people threshold."
+      },
+      "image_change_primary": {
+        "pass": false,
+        "supporting_values": {
+          "sentinel1_vv_change_mean_db": 0.546,
+          "alphaearth_change_max": 0.599
+        },
+        "reason": "Neither the mean radar-change threshold nor the embedding-change threshold is met."
+      }
+    },
+    "final_label": "station_river_slope_joint_anchor",
+    "failed_primary_candidates": [
+      {
+        "test_id": "gridded_rainfall_primary",
+        "deciding_value": {
+          "gpm": 0.142,
+          "chirps": 0.122,
+          "era5_land": 0.094
+        },
+        "reason": "All gridded maxima are below one half of the station maximum."
+      },
+      {
+        "test_id": "public_warning_volume_primary",
+        "deciding_value": 816.7,
+        "reason": "Warning volume per 1000 people is below the stated threshold."
+      },
+      {
+        "test_id": "image_change_primary",
+        "deciding_value": {
+          "sentinel1_vv_change_mean_db": 0.546,
+          "alphaearth_change_max": 0.599
+        },
+        "reason": "The radar and embedding changes both miss the primary-signal thresholds."
+      }
+    ],
+    "computed_interpretation": "The event is best anchored by concentrated station rainfall, historic river exceedance, and a dense cluster of record rainfall stations rather than by gridded rainfall, warning volume, or image-change maxima."
+  },
+  "event": {
+    "event_name": "September 2024 Nepal floods and landslides",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2024-09-27 to 2024-09-29",
+    "region": "Nepal, with emphasis on Kathmandu Valley and affected river basins"
+  },
+  "key_values": {
+    "judge_anchors": [
+      "Score the six threshold tests from numeric values; first three pass and last three fail.",
+      "The final label must follow the pass/fail pattern, not a broad mechanism narrative."
+    ],
+    "required_metrics": {
+      "event_name": "September 2024 Nepal floods and landslides",
+      "hazard_family": "extreme_precip_pluvial_flood",
+      "start_date": "2024-09-27",
+      "end_date": "2024-09-29",
+      "event_window_days": 3,
+      "max_3day_station_mm": 517.0,
+      "three_day_station_count": 183,
+      "three_day_weighted_mean_mm": 221.585,
+      "stations_above_200mm": 105,
+      "stations_above_300mm": 37,
+      "stations_above_400mm": 6,
+      "three_day_share_above_200mm": 0.574,
+      "three_day_share_above_300mm": 0.202,
+      "three_day_share_above_400mm": 0.033,
+      "record_24h_station_count": 25,
+      "record_24h_district_count": 14,
+      "record_stations_in_kathmandu_valley": 11,
+      "record_stations_in_approx_1000km2": 16,
+      "record_station_density_per_1000km2": 16.0,
+      "approx_record_station_spacing_km": 7.906,
+      "max_24h_record_mm": 410.0,
+      "mean_24h_record_mm": 244.808,
+      "max_record_ratio": 2.788,
+      "largest_record_ratio_station": "Baldyanggadi",
+      "rivers_checked": 7,
+      "rivers_above_historic_count": 5,
+      "max_river_exceedance_m": 3.52,
+      "max_river_exceedance_station": "Narayani River at Devghat",
+      "max_river_level_ratio": 1.349,
+      "max_river_level_ratio_station": "Narayani River at Devghat",
+      "gpm_event_mean_mm": 21.42,
+      "gpm_event_max_mm": 73.33,
+      "chirps_event_mean_mm": 16.991,
+      "chirps_event_max_mm": 63.067,
+      "era5_land_precip_mean_mm": 18.6,
+      "era5_land_precip_max_mm": 48.637,
+      "station_max_to_weighted_mean_ratio": 2.333,
+      "river_historic_exceedance_share": 0.714,
+      "gpm_max_share_of_station_max": 0.142,
+      "chirps_max_share_of_station_max": 0.122,
+      "era5_max_share_of_station_max": 0.094,
+      "worldpop_population_rounded": 5013000,
+      "sms_alerts": 4093795,
+      "sms_alerts_per_1000_worldpop": 816.7,
+      "sentinel1_pre_count": 27,
+      "sentinel1_post_count": 24,
+      "sentinel1_vv_change_mean_db": 0.546,
+      "sentinel1_vv_change_range_db": 34.4,
+      "alphaearth_change_mean": 0.025,
+      "alphaearth_change_max": 0.599
+    },
+    "score_ledger": {
+      "station_rainfall_cluster": {
+        "pass": true,
+        "supporting_values": {
+          "station_max_to_weighted_mean_ratio": 2.333,
+          "three_day_share_above_200mm": 0.574,
+          "three_day_station_count": 183
+        },
+        "reason": "All three station-rainfall thresholds are met."
+      },
+      "river_historic_exceedance": {
+        "pass": true,
+        "supporting_values": {
+          "river_historic_exceedance_share": 0.714,
+          "max_river_exceedance_m": 3.52
+        },
+        "reason": "Five of seven checked rivers exceeded historic levels, and the largest exceedance is above 2 m."
+      },
+      "record_station_cluster": {
+        "pass": true,
+        "supporting_values": {
+          "record_stations_in_approx_1000km2": 16,
+          "record_station_density_per_1000km2": 16.0,
+          "approx_record_station_spacing_km": 7.906
+        },
+        "reason": "The record-station cluster clears the count, density, and spacing thresholds."
+      },
+      "gridded_rainfall_primary": {
+        "pass": false,
+        "supporting_values": {
+          "gpm_max_share_of_station_max": 0.142,
+          "chirps_max_share_of_station_max": 0.122,
+          "era5_max_share_of_station_max": 0.094
+        },
+        "reason": "The gridded maxima are all below one half of the station maximum."
+      },
+      "public_warning_volume_primary": {
+        "pass": false,
+        "supporting_values": {
+          "sms_alerts_per_1000_worldpop": 816.7
+        },
+        "reason": "The normalized warning count is below the 1000 per 1000 people threshold."
+      },
+      "image_change_primary": {
+        "pass": false,
+        "supporting_values": {
+          "sentinel1_vv_change_mean_db": 0.546,
+          "alphaearth_change_max": 0.599
+        },
+        "reason": "Neither the mean radar-change threshold nor the embedding-change threshold is met."
+      }
+    },
+    "failed_primary_candidates": [
+      {
+        "test_id": "gridded_rainfall_primary",
+        "deciding_value": {
+          "gpm": 0.142,
+          "chirps": 0.122,
+          "era5_land": 0.094
+        },
+        "reason": "All gridded maxima are below one half of the station maximum."
+      },
+      {
+        "test_id": "public_warning_volume_primary",
+        "deciding_value": 816.7,
+        "reason": "Warning volume per 1000 people is below the stated threshold."
+      },
+      {
+        "test_id": "image_change_primary",
+        "deciding_value": {
+          "sentinel1_vv_change_mean_db": 0.546,
+          "alphaearth_change_max": 0.599
+        },
+        "reason": "The radar and embedding changes both miss the primary-signal thresholds."
+      }
+    ]
+  },
+  "decision_rule": {
+    "final_label_rule": "station_river_slope_joint_anchor when station_rainfall_cluster, river_historic_exceedance, and record_station_cluster pass while gridded_rainfall_primary, public_warning_volume_primary, and image_change_primary fail; otherwise mixed_or_secondary_anchor.",
+    "thresholds": {
+      "station_rainfall_cluster": {
+        "station_max_to_weighted_mean_ratio_min": 2.0,
+        "three_day_share_above_200mm_min": 0.5,
+        "three_day_station_count_min": 150
+      },
+      "river_historic_exceedance": {
+        "historic_exceedance_share_min": 0.6,
+        "max_river_exceedance_m_min": 2.0
+      },
+      "record_station_cluster": {
+        "record_count_min": 15,
+        "density_per_1000km2_min": 15,
+        "spacing_km_max": 8.5
+      },
+      "gridded_rainfall_primary": {
+        "gpm_station_share_min": 0.5,
+        "any_gridded_station_share_min": 0.5
+      },
+      "public_warning_volume_primary": {
+        "alerts_per_1000_min": 1000
+      },
+      "image_change_primary": {
+        "sentinel1_mean_abs_db_min": 3.0,
+        "alphaearth_max_min": 0.8
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and diagnostic structure",
+        "points": 4,
+        "description": "Returns score_ledger, final_label, failed_primary_candidates, and computed_interpretation, with final_label equal to station_river_slope_joint_anchor.",
+        "partial_credit": "Award 1 point for each required field that is present and usable; withhold the final-label point if the label is wrong."
+      },
+      {
+        "name": "Station rainfall calculations",
+        "points": 4,
+        "description": "Computes station maximum, weighted mean, max-to-mean ratio, station count, and rainfall-threshold shares correctly.",
+        "partial_credit": "Award up to 4 points in proportion to the correctly computed station values within tolerance."
+      },
+      {
+        "name": "River exceedance calculations",
+        "points": 3,
+        "description": "Computes 5 of 7 historic river exceedances, share 0.714, and maximum exceedance 3.52 m.",
+        "partial_credit": "Award 1.5 points for the correct exceedance share and 1.5 points for the correct maximum exceedance."
+      },
+      {
+        "name": "Record-station cluster calculations",
+        "points": 3,
+        "description": "Computes cluster count 16, density 16.0 per 1000 km2, and spacing 7.906 km.",
+        "partial_credit": "Award 1 point for each correct cluster value within tolerance."
+      },
+      {
+        "name": "Secondary signal calculations",
+        "points": 3,
+        "description": "Computes gridded-to-station ratios, warning normalization, Sentinel-1 mean change, and AlphaEarth maximum.",
+        "partial_credit": "Award up to 3 points for correctly computing most secondary values within tolerance."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 2,
+        "description": "Marks station, river, and record-station tests as passing and gridded, warning-volume, and image-change tests as failing.",
+        "partial_credit": "Award 1 point for the correct three passing tests and 1 point for the correct three failing tests."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Gives a one-sentence interpretation tied to the computed diagnostic without adding claims beyond the event diagnosis.",
+        "partial_credit": "Award 0.5 points if the interpretation is directionally correct but too broad."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2024_Nepal_floods_and_landslides.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "Report-derived station-rainfall, record-station, river, and SMS anchors are parsed from the local PDF; gridded, exposure, and remote-sensing metrics are read from local JSON summaries."
+  }
+}

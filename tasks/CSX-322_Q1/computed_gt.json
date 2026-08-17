@@ -1,0 +1,123 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date": "2022-05-07",
+    "event_name": "Hassanabad / Shishper Glacier GLOF",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "package_id": "CSX-322"
+  },
+  "event_id": "CSX-322",
+  "formulas": {
+    "dryness_score": "clamp(1 - point_precip_mm / 10)",
+    "exposure_score": "clamp(population_sum / 50000)",
+    "heat_melt_glof_index": "100*(0.40*temperature + 0.25*dryness + 0.15*rainfall + 0.10*surface + 0.10*exposure)",
+    "rainfall_flood_index": "100*(0.55*rainfall + 0.20*(1-dryness) + 0.15*surface + 0.10*exposure)",
+    "rainfall_score": "clamp(grid_precip_mm / 25)",
+    "rule": "answer is heat_melt_glof_consistent when margin >= 20.0 and point_precip_mm <= 1.0",
+    "surface_score": "mean(clamp(abs(radar_vv_change_db)/2), clamp(abs(optical_dnbr)/0.3), clamp(embedding_change/0.05))",
+    "temperature_score": "clamp((mean_temp_c - 20) / 15)"
+  },
+  "input_values": {
+    "chirps_precip_mean_mm": 0.6202,
+    "embedding_change": 0.0109,
+    "era5_precip_mean_mm": 2.7265,
+    "gpm_precip_mean_mm": 2.982,
+    "nasa_precip_mm": 0.0,
+    "nasa_t2m_c": 28.04,
+    "optical_dnbr": -0.1587,
+    "point_precip_mm": 0.0,
+    "point_tmax_c": 35.2,
+    "population_sum": 14230.102,
+    "radar_vv_change_db": 0.5554,
+    "reanalysis_tmax_c": 31.2392
+  },
+  "primary_gt": {
+    "answer": "heat_melt_glof_consistent",
+    "component_scores": {
+      "dryness": 1.0,
+      "exposure": 0.2846,
+      "rainfall": 0.0844,
+      "surface": 0.3413,
+      "temperature": 0.7662
+    },
+    "grid_precip_mm": 2.11,
+    "indices": {
+      "heat_melt_glof": 63.2,
+      "margin": 50.6,
+      "rainfall_flood": 12.6
+    },
+    "mean_temp_c": 31.49,
+    "point_precip_mm": 0.0,
+    "rejected_alternative": "rainfall_runoff_competitive",
+    "tolerances": {
+      "indices": 0.05,
+      "scores": 0.0005,
+      "temp_precip": 0.02
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hassanabad_Shishper_Glacier_GLOF.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the required compact JSON fields with temperatures and precipitation to 2 decimals, scores to 4 decimals, and indices to 1 decimal.",
+        "name": "JSON schema and rounding",
+        "points": 3
+      },
+      {
+        "description": "Uses the correct event-day temperature, precipitation, surface-change, and population inputs from the package diagnostics.",
+        "name": "Input extraction",
+        "points": 4
+      },
+      {
+        "description": "Computes the five clamped component scores correctly: 0.7662, 1.0000, 0.0844, 0.3413, and 0.2846.",
+        "name": "Component formulas",
+        "points": 4
+      },
+      {
+        "description": "Computes the two weighted indices and margin correctly: 63.2, 12.6, and 50.6.",
+        "name": "Weighted indices",
+        "points": 4
+      },
+      {
+        "description": "Applies both deterministic thresholds, margin >= 20.0 and point precipitation <= 1.0 mm.",
+        "name": "Threshold rule",
+        "points": 2
+      },
+      {
+        "description": "Identifies rainfall_runoff_competitive as rejected by the numeric tests.",
+        "name": "Rejected alternative",
+        "points": 1
+      },
+      {
+        "description": "Keeps the final mechanism label short and tied to the computed consequence.",
+        "name": "Concise label",
+        "points": 1
+      },
+      {
+        "description": "Does not infer asset-level damage or broad regional scale from these indices alone.",
+        "name": "Scope control",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "hassanabad_shishper_heat_melt_vs_rainfall_priority_index",
+  "task_id": "CSX-322_Q1",
+  "task_type": "numeric"
+}

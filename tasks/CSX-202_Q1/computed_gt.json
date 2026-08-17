@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-202_Q1",
+  "event_id": "CSX-202",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "compound_component_count": 3,
+    "pollutant_component_count": 2,
+    "gridded_heat_score": 3,
+    "gridded_stagnation_proxy_score": 4,
+    "surface_fire_signal_score": 4,
+    "compound_air_load_index": 15,
+    "diagnosis_label": "compound_heat_dust_smoke_air_hazard_with_gridded_stagnation_screen"
+  },
+  "event": {
+    "package_id": "CSX-202",
+    "event_name": "Mediterranean heatwave wildfire smoke and dust episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_date_or_window": "2023-07-17 to 2023-07-25",
+    "event_window_days": 9,
+    "region": "Europe",
+    "scale": "regional_basin"
+  },
+  "decision_rule": {
+    "label_if": {
+      "compound_component_count": 3,
+      "pollutant_component_count": 2,
+      "gridded_heat_score_min": 2,
+      "gridded_stagnation_proxy_score_min": 3,
+      "surface_fire_signal_score_min": 3
+    },
+    "formula": "compound_air_load_index = 2 * pollutant_component_count + gridded_heat_score + gridded_stagnation_proxy_score + surface_fire_signal_score"
+  },
+  "key_values": {
+    "component_flags": {
+      "heat_or_extreme_heat": true,
+      "saharan_dust": true,
+      "wildfire_or_smoke": true
+    },
+    "era5_window": {
+      "start": "2023-07-17",
+      "end": "2023-07-25"
+    },
+    "era5_temperature_c": {
+      "max": 30.426,
+      "mean": 27.447,
+      "min": 23.759
+    },
+    "era5_precipitation_mm": {
+      "mean": 15.64,
+      "min": 6.428
+    },
+    "era5_wind_mps": {
+      "mean_u": 2.429,
+      "mean_v": 0.321,
+      "mean_speed": 2.45,
+      "max_u": 3.384,
+      "max_v": 0.775,
+      "max_vector_screen": 3.471
+    },
+    "surface_change": {
+      "sentinel2_dnbr_mean": 0.0968,
+      "sentinel2_dnbr_max": 1.0904,
+      "alphaearth_1_minus_cosine_mean": 0.0351,
+      "alphaearth_1_minus_cosine_max": 0.5256
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Mediterranean_heatwave_wildfire_smoke_and_dust_episode.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_Copernicus_Atmosphere.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "Core scoring uses report text, ERA5-Land gridded aggregate statistics, Sentinel-2 dNBR, and AlphaEarth annual change. Off-event point weather fills and EONET catalog counts are not used in the diagnosis."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON schema",
+        "points": 4,
+        "description": "Returns all seven requested ledger fields with no unrelated action or briefing content.",
+        "partial_credit": "Award 2-3 points for a mostly complete JSON ledger with one missing or renamed field."
+      },
+      {
+        "name": "Report component extraction",
+        "points": 3,
+        "description": "Finds all three report-confirmed components and the two pollutant components from the Copernicus report text.",
+        "partial_credit": "Award 1-2 points if one component or pollutant flag is missed."
+      },
+      {
+        "name": "ERA5 gridded heat and stagnation screen",
+        "points": 4,
+        "description": "Computes gridded heat score 3, mean wind speed near 2.45 m/s, maximum wind-vector screen near 3.471 m/s, precipitation mean near 15.640 mm, and stagnation proxy score 4.",
+        "partial_credit": "Award proportional credit for correct heat score, wind vector calculation, precipitation screen, or stagnation score."
+      },
+      {
+        "name": "Surface fire signal",
+        "points": 3,
+        "description": "Uses dNBR and AlphaEarth metrics to compute surface_fire_signal_score 4.",
+        "partial_credit": "Award 1-2 points for correct use of only one surface-change family."
+      },
+      {
+        "name": "Load index and diagnosis",
+        "points": 4,
+        "description": "Computes compound_air_load_index 15 and returns compound_heat_dust_smoke_air_hazard_with_gridded_stagnation_screen.",
+        "partial_credit": "Award 2-3 points for the correct direction with one arithmetic or threshold error."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 2,
+        "description": "Keeps the explanation tied to report, gridded weather, and surface-change evidence without using off-event point weather, EONET fire catalogs, or health-outcome overclaims.",
+        "partial_credit": "Award 1 point if one unsupported evidence family is mentioned but does not alter the final label."
+      }
+    ]
+  }
+}

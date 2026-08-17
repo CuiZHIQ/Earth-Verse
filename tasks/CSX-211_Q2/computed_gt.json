@@ -1,0 +1,110 @@
+{
+  "evaluation_mode": "deterministic_numeric_json",
+  "event_id": "CSX-211",
+  "judge_anchors": {
+    "answer": 0.25,
+    "event_days": 3,
+    "high_lag_days": 34,
+    "label": "surface_coupled_low_layer_with_old_high_layer",
+    "pm25_floor": 400,
+    "tolerance": 0.001,
+    "units": "share"
+  },
+  "key_values": {
+    "event_name": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+    "event_window": {
+      "duration_days": 3,
+      "end_date": "2023-06-08",
+      "start_date": "2023-06-06"
+    },
+    "evidence_flags": {
+      "multilayer_present": true,
+      "near_surface_present": true,
+      "old_high_layer": true,
+      "surface_air_degraded": true
+    },
+    "hazard_family": "air_pollution_smoke_heat",
+    "high_layer_lag_days": 34,
+    "high_layer_source_date": "2023-05-05",
+    "high_to_low_ratio": 4.0,
+    "lag_to_window_ratio": 11.333,
+    "layer_km": {
+      "high": 12,
+      "low_top": 3,
+      "mid": 6
+    },
+    "low_to_high_gap_km": 9.0,
+    "near_surface_share": 0.25,
+    "pm25_floor_ug_m3": 400
+  },
+  "primary_gt": {
+    "consistency_proof": "The low smoke layer reaches from near the surface to about 3 km, so it is the surface-coupled exposure layer; the 12 km layer is four times that height and traces back 34 days to Alberta, so it is old high-layer transport context.",
+    "event_window": {
+      "duration_days": 3,
+      "end_date": "2023-06-08",
+      "start_date": "2023-06-06"
+    },
+    "high_layer_lag_days": 34,
+    "high_to_low_ratio": 4.0,
+    "layer_km": {
+      "high": 12,
+      "low_top": 3,
+      "mid": 6
+    },
+    "near_surface_share": 0.25,
+    "pm25_floor_ug_m3": 400
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2023_Canadian_wildfire_smoke_over_New_York_City_and_the_U.S._Nort.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports 2023-06-06 to 2023-06-08 as a 3-day window.",
+        "name": "Event window reconstruction",
+        "partial_credit": "Award 1-2 points for correct dates with an arithmetic slip or correct duration with incomplete dates.",
+        "points": 3
+      },
+      {
+        "description": "Extracts low-top, middle, and high smoke layers as 3, 6, and 12 km.",
+        "name": "Layer-height extraction",
+        "partial_credit": "Award partial credit for each correctly reported height with km units.",
+        "points": 4
+      },
+      {
+        "description": "Computes near-surface share as 3/12 = 0.25 and high-to-low ratio as 12/3 = 4.0.",
+        "name": "Vertical fraction arithmetic",
+        "partial_credit": "Award 1-3 points for a correct setup with one missing or rounded derived value.",
+        "points": 4
+      },
+      {
+        "description": "Uses the report's PM2.5 lower bound above 400 micrograms per cubic meter as a surface-air anchor.",
+        "name": "Surface-severity anchor",
+        "partial_credit": "Award 1-2 points for recognizing the surface-air evidence without the numeric lower bound.",
+        "points": 3
+      },
+      {
+        "description": "Computes the Alberta May 5 to 2023-06-08 lag as 34 days and ties it to the 12 km layer.",
+        "name": "Old high-layer lag",
+        "partial_credit": "Award 1-2 points for correct source date or approximate month-old interpretation without exact lag.",
+        "points": 3
+      },
+      {
+        "description": "States that the low layer is the surface-coupled exposure layer while the high layer is older transport context using only computed layer and PM2.5 fields.",
+        "name": "Compact consistency proof",
+        "partial_credit": "Award 1-2 points for a concise proof missing one of the two contrasts.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "vertical_smoke_exposure_ledger",
+  "task_id": "CSX-211_Q2",
+  "task_type": "numeric"
+}

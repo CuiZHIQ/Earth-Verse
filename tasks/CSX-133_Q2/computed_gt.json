@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-133_Q2",
+  "event_id": "CSX-133",
+  "task_type": "short_answer",
+  "target_family": "formula_derivation_consistency_proof",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "metrics": {
+      "catalog_peak_wind_kmh": 240.7,
+      "local_peak_gust_kmh": 116.6,
+      "gust_energy_proxy_kmh2_per_1000": 13.6,
+      "pressure_drop_hpa": 28.0,
+      "event_precip_mm": 165.3,
+      "wettest_24h_mm": 120.3,
+      "rainfall_concentration_24h": 0.728,
+      "peak_sync_lag_hours": 1
+    },
+    "threshold_tests": {
+      "wind": true,
+      "pressure": true,
+      "rain_concentration": true,
+      "timing": true
+    },
+    "conclusion": "compound_typhoon_passage_consistent",
+    "rejected_alternative": "single_driver_wind_or_rain",
+    "proof": "The point record passes all four tests: 116.6 km/h >= 90 km/h, 28.0 hPa >= 20 hPa, 120.3/165.3 = 0.728 >= 0.70, and the peak gust, minimum pressure, and wettest hour are within 1 hour. Because wind, pressure fall, and concentrated rainfall pass together, a wind-only or rain-only diagnosis is rejected."
+  },
+  "event": {
+    "package_id": "CSX-133",
+    "event_name": "Super Typhoon Yagi severe wind and rainfall impacts",
+    "event_date_or_window": "2024-09-01 to 2024-09-07",
+    "hazard_family": "tropical_cyclone_compound_wind_pressure_rainfall"
+  },
+  "decision_rule": {
+    "summary": "Pass only when the local point record satisfies damaging gust, pressure drop, rainfall concentration, and peak-timing coherence thresholds.",
+    "thresholds": {
+      "wind_kmh": 90.0,
+      "pressure_drop_hpa": 20.0,
+      "rainfall_concentration_24h": 0.7,
+      "peak_sync_lag_hours": 1
+    },
+    "requires_computation": true
+  },
+  "key_values": {
+    "metrics": {
+      "catalog_peak_wind_kmh": 240.7,
+      "local_peak_gust_kmh": 116.6,
+      "gust_energy_proxy_kmh2_per_1000": 13.6,
+      "pressure_drop_hpa": 28.0,
+      "event_precip_mm": 165.3,
+      "wettest_24h_mm": 120.3,
+      "rainfall_concentration_24h": 0.728,
+      "peak_sync_lag_hours": 1
+    },
+    "threshold_tests": {
+      "wind": true,
+      "pressure": true,
+      "rain_concentration": true,
+      "timing": true
+    },
+    "thresholds": {
+      "wind_kmh": 90.0,
+      "pressure_drop_hpa": 20.0,
+      "rainfall_concentration_24h": 0.7,
+      "peak_sync_lag_hours": 1
+    },
+    "conclusion": "compound_typhoon_passage_consistent",
+    "rejected_alternative": "single_driver_wind_or_rain",
+    "local_point_window_basis": "Use the full package hourly point record for 2024-09-01 through 2024-09-07 inclusive; GDACS exact todate is not used to truncate the local point series."
+  },
+  "numeric_tolerances": {
+    "catalog_peak_wind_kmh": {
+      "target": 240.7,
+      "absolute_tolerance": 0.1
+    },
+    "local_peak_gust_kmh": {
+      "target": 116.6,
+      "absolute_tolerance": 0.1
+    },
+    "gust_energy_proxy_kmh2_per_1000": {
+      "target": 13.6,
+      "absolute_tolerance": 0.1
+    },
+    "pressure_drop_hpa": {
+      "target": 28.0,
+      "absolute_tolerance": 0.1
+    },
+    "event_precip_mm": {
+      "target": 165.3,
+      "absolute_tolerance": 0.1
+    },
+    "wettest_24h_mm": {
+      "target": 120.3,
+      "absolute_tolerance": 0.1
+    },
+    "rainfall_concentration_24h": {
+      "target": 0.728,
+      "absolute_tolerance": 0.001
+    },
+    "peak_sync_lag_hours": {
+      "target": 1,
+      "absolute_tolerance": 0
+    }
+  },
+  "supporting_metrics": {
+    "catalog": {
+      "gdacs_eventname": "YAGI-24",
+      "gdacs_eventtype": "TC",
+      "gdacs_alert_level": "Red",
+      "gdacs_country_text": "China, Viet Nam, Philippines",
+      "gdacs_duration_hours": 138.0
+    },
+    "point_weather": {
+      "latitude": 21.05448,
+      "longitude": 105.898476,
+      "max_pressure_hpa": 1010.0,
+      "min_pressure_hpa": 982.0,
+      "local_peak_gust_time": "2024-09-07T12:00",
+      "min_pressure_time": "2024-09-07T13:00",
+      "wettest_hour_mm": 17.8,
+      "wettest_hour_time": "2024-09-07T13:00",
+      "wettest_24h_start": "2024-09-06T23:00"
+    },
+    "calculation_trace": {
+      "rainfall_concentration_formula": "wettest_24h_mm / event_precip_mm",
+      "rainfall_concentration_unrounded": 0.7277676950998184,
+      "gust_energy_formula": "local_peak_gust_kmh^2 / 1000",
+      "gust_energy_unrounded": 13.595559999999999,
+      "pressure_drop_formula": "max_pressure_msl_hpa - min_pressure_msl_hpa"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON structure and conclusion",
+        "points": 4,
+        "description": "Returns the requested five-key JSON structure and the exact conclusion label.",
+        "partial_credit": "Award 2-3 points for a mostly complete structure with a correct but misplaced conclusion."
+      },
+      {
+        "name": "Numeric ledger",
+        "points": 5,
+        "description": "Computes all requested values within tolerance: catalog wind, local gust, gust-energy proxy, pressure drop, total precipitation, wettest 24-hour precipitation, concentration ratio, and timing lag.",
+        "partial_credit": "Award partial credit by metric family when formulas are recognizable and units are preserved."
+      },
+      {
+        "name": "Formula use",
+        "points": 4,
+        "description": "Uses the specified rolling-sum, ratio, squared-gust, pressure-range, and time-lag formulas.",
+        "partial_credit": "Award 1 point per correctly applied formula family, up to 4."
+      },
+      {
+        "name": "Threshold proof",
+        "points": 3,
+        "description": "Applies the four inequalities correctly and recognizes that all four tests pass.",
+        "partial_credit": "Award 1-2 points for mostly correct threshold logic with one missing or misclassified test."
+      },
+      {
+        "name": "Rejected alternative",
+        "points": 2,
+        "description": "Rejects a single wind or rain reading because wind, pressure fall, and concentrated rainfall pass together.",
+        "partial_credit": "Award 1 point for rejecting a one-driver reading without tying it to the full calculation."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 1,
+        "description": "Gives a compact interpretation consistent with coupled typhoon passage forcing.",
+        "partial_credit": "Award 0.5 point for a correct but wordy interpretation."
+      },
+      {
+        "name": "Claim control",
+        "points": 1,
+        "description": "Avoids unjustified exact loss, outage, road-closure, or flood-depth claims.",
+        "partial_credit": "Award 0.5 point if such claims are clearly secondary and do not drive the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_Copernicus_EMS_event_search.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  }
+}

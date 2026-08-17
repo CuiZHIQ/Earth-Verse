@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-267_Q1",
+  "event_id": "CSX-267",
+  "task_type": "numeric",
+  "target_family": "coupled_el_nino_persistence_score_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": 74.09,
+    "score_name": "coupled_persistence_score",
+    "tolerance": 0.02,
+    "formula": "40*(warm_run/12)+25*(strong_run/12)+15*(peak_oni/2.5)+15*(soi_negative_months/12)+5*min(abs(soi_mean),1)-10*max(0,0.5-final_oni)",
+    "inputs": {
+      "oni_n": 12,
+      "warm_run": 11,
+      "strong_run": 6,
+      "peak_oni": 2.06,
+      "final_oni": 0.49,
+      "soi_n": 12,
+      "soi_mean": -0.53,
+      "soi_negative_months": 8
+    },
+    "components": {
+      "warm": 36.67,
+      "strong": 12.5,
+      "peak": 12.36,
+      "soi_count": 10.0,
+      "soi_mean": 2.67,
+      "late_penalty": 0.1
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "ONI event extraction",
+        "points": 4,
+        "description": "Uses the 12 stated overlapping ONI seasons in order."
+      },
+      {
+        "name": "ONI threshold ledger",
+        "points": 4,
+        "description": "Computes warm_run 11, strong_run 6, peak_oni 2.06, and final_oni 0.49."
+      },
+      {
+        "name": "SOI ledger",
+        "points": 4,
+        "description": "Uses the 12 event SOI months and computes mean -0.53 with 8 negative months."
+      },
+      {
+        "name": "Score arithmetic",
+        "points": 5,
+        "description": "Applies the formula terms, cap, and late-row deduction to obtain 74.09 within 0.02."
+      },
+      {
+        "name": "Auditable derivation",
+        "points": 3,
+        "description": "Shows enough intermediate arithmetic to reproduce the numeric result."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-267",
+    "event_name": "2023-2024 El Nino episode",
+    "event_date_or_window": "2023-06-01/2024-05-31",
+    "scale": "global_synoptic",
+    "region": "Global oceans"
+  },
+  "key_values": {
+    "manifest_file_count": 31,
+    "anchor_scope": "global",
+    "oni_first": "MJJ 2023 0.84",
+    "oni_peak": "NDJ 2023 2.06",
+    "oni_final": "AMJ 2024 0.49",
+    "oni_mean": 1.41,
+    "oni_warm_load_above_0p5": 10.93,
+    "soi_longest_negative_run": 6,
+    "score_terms": {
+      "warm": 36.67,
+      "strong": 12.5,
+      "peak": 12.36,
+      "soi_count": 10.0,
+      "soi_mean": 2.67,
+      "late_penalty": 0.1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2023-2024_El_Nino_episode.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data"
+    ]
+  }
+}

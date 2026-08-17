@@ -1,0 +1,313 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-070_Q2",
+  "event_id": "CSX-070",
+  "task_type": "structured_reasoning",
+  "target_family": "arid_pluvial_runoff_scale_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "arid_pluvial_runoff_scale_consistent",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+    "computed_evidence": {
+      "rainfall_ratios": {
+        "eastern_less_than_24h_mm": 250.0,
+        "dubai_airport_daily_mm": 119.0,
+        "annual_midpoint_mm": 170.0,
+        "eastern_less_than_24h_to_annual_midpoint": 1.47,
+        "dubai_airport_daily_to_annual_midpoint": 0.7,
+        "airport_to_eastern_less_than_24h": 0.48,
+        "result": "short_window_load_exceeds_annual_midpoint"
+      },
+      "runoff_equivalent": [
+        {
+          "coefficient": 0.05,
+          "runoff_depth_mm": 12.5,
+          "runoff_volume_m3_per_km2": 12500.0
+        },
+        {
+          "coefficient": 0.15,
+          "runoff_depth_mm": 37.5,
+          "runoff_volume_m3_per_km2": 37500.0
+        },
+        {
+          "coefficient": 0.3,
+          "runoff_depth_mm": 75.0,
+          "runoff_volume_m3_per_km2": 75000.0
+        }
+      ],
+      "scale_concentration": {
+        "gridded_event_max_mm": 56.76,
+        "gridded_event_mean_mm": 7.088,
+        "gridded_max_to_mean": 8.01,
+        "report_short_window_to_gridded_max": 4.4,
+        "report_short_window_to_gridded_mean": 35.27,
+        "result": "scale_mismatch_context_not_report_refutation"
+      },
+      "surface_change": {
+        "radar_pre_count": 44,
+        "radar_post_count": 39,
+        "radar_scene_count_change_pct": -11.36,
+        "radar_post_minus_pre_db_mean": 0.524,
+        "embedding_change_mean": 0.0216,
+        "embedding_change_max": 0.2791,
+        "result": "surface_change_context_not_depth_calibration"
+      },
+      "population_normalized_midrunoff": {
+        "mapped_population": 632943.1,
+        "population_thousands": 632.94,
+        "runoff_volume_c015_m3_per_km2": 37500.0,
+        "runoff_volume_c015_m3_per_km2_per_1000_people": 59.25,
+        "result": "population_normalizer_not_observed_loss"
+      },
+      "final_label": "arid_pluvial_runoff_scale_consistent",
+      "rejected_substitutions": [
+        "airport_only_denominator",
+        "gridded_downgrade_of_report_rainfall",
+        "surface_signal_depth_calibration",
+        "population_normalizer_as_loss_total",
+        "slow_routing_primary_process"
+      ]
+    },
+    "mechanism_chain": [
+      "rainfall burst or accumulation",
+      "duration/intensity or areal-load calculation",
+      "urban runoff or receptor context",
+      "single-number simplification rejection"
+    ],
+    "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+    "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+    "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals.",
+    "formula_derivation": "When converting rainfall to runoff pressure, use V = rainfall_mm / 1000 * area_m2 and explain any runoff coefficient or normalized index."
+  },
+  "key_values": {
+    "rainfall_ratios": {
+      "eastern_less_than_24h_mm": 250.0,
+      "dubai_airport_daily_mm": 119.0,
+      "annual_midpoint_mm": 170.0,
+      "eastern_less_than_24h_to_annual_midpoint": 1.47,
+      "dubai_airport_daily_to_annual_midpoint": 0.7,
+      "airport_to_eastern_less_than_24h": 0.48,
+      "result": "short_window_load_exceeds_annual_midpoint"
+    },
+    "runoff_equivalent": [
+      {
+        "coefficient": 0.05,
+        "runoff_depth_mm": 12.5,
+        "runoff_volume_m3_per_km2": 12500.0
+      },
+      {
+        "coefficient": 0.15,
+        "runoff_depth_mm": 37.5,
+        "runoff_volume_m3_per_km2": 37500.0
+      },
+      {
+        "coefficient": 0.3,
+        "runoff_depth_mm": 75.0,
+        "runoff_volume_m3_per_km2": 75000.0
+      }
+    ],
+    "scale_concentration": {
+      "gridded_event_max_mm": 56.76,
+      "gridded_event_mean_mm": 7.088,
+      "gridded_max_to_mean": 8.01,
+      "report_short_window_to_gridded_max": 4.4,
+      "report_short_window_to_gridded_mean": 35.27,
+      "result": "scale_mismatch_context_not_report_refutation"
+    },
+    "surface_change": {
+      "radar_pre_count": 44,
+      "radar_post_count": 39,
+      "radar_scene_count_change_pct": -11.36,
+      "radar_post_minus_pre_db_mean": 0.524,
+      "embedding_change_mean": 0.0216,
+      "embedding_change_max": 0.2791,
+      "result": "surface_change_context_not_depth_calibration"
+    },
+    "population_normalized_midrunoff": {
+      "mapped_population": 632943.1,
+      "population_thousands": 632.94,
+      "runoff_volume_c015_m3_per_km2": 37500.0,
+      "runoff_volume_c015_m3_per_km2_per_1000_people": 59.25,
+      "result": "population_normalizer_not_observed_loss"
+    },
+    "report_rainfall_anchors": {
+      "eastern_less_than_24h_mm": 250.0,
+      "dubai_airport_daily_mm": 119.0,
+      "annual_low_mm": 140.0,
+      "annual_high_mm": 200.0,
+      "annual_midpoint_mm": 170.0,
+      "jaxa_single_day_wide_area_threshold_mm": 100.0
+    },
+    "answer_type": "five_part_numeric_diagnostic",
+    "tolerances": {
+      "ratios": 0.02,
+      "percentages": 0.05,
+      "runoff_depth_mm": 0.1,
+      "runoff_volume_m3_per_km2": 1.0,
+      "embedding": 0.0002
+    },
+    "decision_state": "consistent_if_all_five_sections_pass"
+  },
+  "decision_rule": {
+    "summary": "Use the report-derived eastern short-window rainfall as the storm-load denominator, show material runoff for modest coefficients, read lower gridded totals as scale context, and keep surface-change and population metrics as context rather than direct depth or loss calibration.",
+    "pass_sections": {
+      "rainfall_ratios": "short_window_load_exceeds_annual_midpoint",
+      "scale_concentration": "scale_mismatch_context_not_report_refutation",
+      "surface_change": "surface_change_context_not_depth_calibration",
+      "population_normalized_midrunoff": "population_normalizer_not_observed_loss"
+    },
+    "minimum_rejected_substitutions": 4,
+    "required_rejections": [
+      "airport_only_denominator",
+      "gridded_downgrade_of_report_rainfall",
+      "surface_signal_depth_calibration",
+      "population_normalizer_as_loss_total",
+      "slow_routing_primary_process"
+    ]
+  },
+  "event": {
+    "event_name": "April 2024 UAE and Dubai record rainfall flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2024-04-15 to 2024-04-17",
+    "duration_days_inclusive": 3
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_April_2024_UAE_and_Dubai_record_rainfall_flood.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/event_reports/event_reports_005_03_JAXA_GSMaP_quick_report_-_UAE_extreme_heavy_rainfall.html.html",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "Rainfall anchors are parsed from the local NASA/JAXA report files; no network access is used."
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "UAE-Dubai Arid Pluvial Runoff-Scale Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "arid_pluvial_runoff_scale_consistent",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "reconstruct how rainfall concentration translates into pluvial or urban runoff pressure rather than a generic wet-period label",
+      "computed_evidence": {
+        "rainfall_ratios": {
+          "eastern_less_than_24h_mm": 250.0,
+          "dubai_airport_daily_mm": 119.0,
+          "annual_midpoint_mm": 170.0,
+          "eastern_less_than_24h_to_annual_midpoint": 1.47,
+          "dubai_airport_daily_to_annual_midpoint": 0.7,
+          "airport_to_eastern_less_than_24h": 0.48,
+          "result": "short_window_load_exceeds_annual_midpoint"
+        },
+        "runoff_equivalent": [
+          {
+            "coefficient": 0.05,
+            "runoff_depth_mm": 12.5,
+            "runoff_volume_m3_per_km2": 12500.0
+          },
+          {
+            "coefficient": 0.15,
+            "runoff_depth_mm": 37.5,
+            "runoff_volume_m3_per_km2": 37500.0
+          },
+          {
+            "coefficient": 0.3,
+            "runoff_depth_mm": 75.0,
+            "runoff_volume_m3_per_km2": 75000.0
+          }
+        ],
+        "scale_concentration": {
+          "gridded_event_max_mm": 56.76,
+          "gridded_event_mean_mm": 7.088,
+          "gridded_max_to_mean": 8.01,
+          "report_short_window_to_gridded_max": 4.4,
+          "report_short_window_to_gridded_mean": 35.27,
+          "result": "scale_mismatch_context_not_report_refutation"
+        },
+        "surface_change": {
+          "radar_pre_count": 44,
+          "radar_post_count": 39,
+          "radar_scene_count_change_pct": -11.36,
+          "radar_post_minus_pre_db_mean": 0.524,
+          "embedding_change_mean": 0.0216,
+          "embedding_change_max": 0.2791,
+          "result": "surface_change_context_not_depth_calibration"
+        },
+        "population_normalized_midrunoff": {
+          "mapped_population": 632943.1,
+          "population_thousands": 632.94,
+          "runoff_volume_c015_m3_per_km2": 37500.0,
+          "runoff_volume_c015_m3_per_km2_per_1000_people": 59.25,
+          "result": "population_normalizer_not_observed_loss"
+        },
+        "final_label": "arid_pluvial_runoff_scale_consistent",
+        "rejected_substitutions": [
+          "airport_only_denominator",
+          "gridded_downgrade_of_report_rainfall",
+          "surface_signal_depth_calibration",
+          "population_normalizer_as_loss_total",
+          "slow_routing_primary_process"
+        ]
+      },
+      "mechanism_chain": [
+        "rainfall burst or accumulation",
+        "duration/intensity or areal-load calculation",
+        "urban runoff or receptor context",
+        "single-number simplification rejection"
+      ],
+      "decisive_evidence": "Rainfall concentration and areal or urban-response evidence should dominate; exposure and image products are supporting context.",
+      "rejected_simplifications": "Reject a one-gauge, one-hour, exposure-only, or image-primary explanation if the computed rainfall-runoff chain is stronger.",
+      "bounded_interpretation": "The task diagnoses flood pressure and process, not exact inundation depth, building damage, or final loss totals.",
+      "formula_derivation": "When converting rainfall to runoff pressure, use V = rainfall_mm / 1000 * area_m2 and explain any runoff coefficient or normalized index."
+    },
+    "answer": "arid_pluvial_runoff_scale_consistent"
+  }
+}

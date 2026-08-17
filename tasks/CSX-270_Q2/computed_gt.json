@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-270_Q2",
+  "event_id": "CSX-270",
+  "task_type": "numeric",
+  "target_family": "east_africa_multisource_rainfall_structure_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "east_africa_multisource_rainfall_structure_ledger",
+    "score": 7,
+    "cv_order": [
+      "GPM_IMERG",
+      "ERA5_Land",
+      "CHIRPS"
+    ],
+    "strongest_peak_to_mean_product": "GPM_IMERG",
+    "product_metrics": {
+      "GPM_IMERG": {
+        "mean_mm": 295.427,
+        "stddev_mm": 40.951,
+        "min_mm": 226.632,
+        "max_mm": 403.751,
+        "cv": 0.138616,
+        "peak_to_mean": 1.366667,
+        "normalized_range": 0.599535,
+        "range_mm": 177.119
+      },
+      "ERA5_Land": {
+        "mean_mm": 294.239,
+        "stddev_mm": 34.354,
+        "min_mm": 236.09,
+        "max_mm": 392.549,
+        "cv": 0.116756,
+        "peak_to_mean": 1.334116,
+        "normalized_range": 0.531741,
+        "range_mm": 156.459
+      },
+      "CHIRPS": {
+        "mean_mm": 280.668,
+        "stddev_mm": 14.432,
+        "min_mm": 232.946,
+        "max_mm": 333.161,
+        "cv": 0.051422,
+        "peak_to_mean": 1.187026,
+        "normalized_range": 0.357059,
+        "range_mm": 100.215
+      }
+    },
+    "ledger": {
+      "mean_ge_280_count": 3,
+      "cv_ge_0_10_count": 2,
+      "cv_order_pass": 1,
+      "chirps_smoother_pass": 1,
+      "inside_point_samples": 0
+    },
+    "inside_point_samples": 0,
+    "sampling_scope": "Point-sample/AOI overlap is reported as a package diagnostic only; it is not part of the score and is not used to judge event-location validity.",
+    "final_label": "localized_gridded_rainfall_structure_score_7"
+  },
+  "event": {
+    "package_id": "CSX-270",
+    "event_name": "2019 positive Indian Ocean Dipole and East Africa floods",
+    "hazard_family": "climate_teleconnection_enso_iod_mjo",
+    "event_date_or_window": "2019-09-01 to 2019-12-31"
+  },
+  "calculation_rule": {
+    "rainfall_window": "2019-09-01 to 2019-10-16",
+    "formula": "score = mean_ge_280_count + cv_ge_0_10_count + cv_order_pass + chirps_smoother_pass",
+    "thresholds": {
+      "mean_mm": 280.0,
+      "cv_structured": 0.1,
+      "chirps_smooth_cv": 0.06,
+      "point_wet_day_mm": 1.0
+    },
+    "numeric_tolerances": {
+      "mm": 0.01,
+      "ratio": 0.0005,
+      "score": 0
+    }
+  },
+  "key_values": {
+    "products": {
+      "GPM_IMERG": {
+        "mean_mm": 295.427,
+        "stddev_mm": 40.951,
+        "min_mm": 226.632,
+        "max_mm": 403.751,
+        "cv": 0.138616,
+        "peak_to_mean": 1.366667,
+        "normalized_range": 0.599535,
+        "range_mm": 177.119
+      },
+      "ERA5_Land": {
+        "mean_mm": 294.239,
+        "stddev_mm": 34.354,
+        "min_mm": 236.09,
+        "max_mm": 392.549,
+        "cv": 0.116756,
+        "peak_to_mean": 1.334116,
+        "normalized_range": 0.531741,
+        "range_mm": 156.459
+      },
+      "CHIRPS": {
+        "mean_mm": 280.668,
+        "stddev_mm": 14.432,
+        "min_mm": 232.946,
+        "max_mm": 333.161,
+        "cv": 0.051422,
+        "peak_to_mean": 1.187026,
+        "normalized_range": 0.357059,
+        "range_mm": 100.215
+      }
+    },
+    "cv_order_high_to_low": [
+      "GPM_IMERG",
+      "ERA5_Land",
+      "CHIRPS"
+    ],
+    "strongest_peak_to_mean_product": "GPM_IMERG",
+    "compact_aoi_bounds": {
+      "min_lon": 15.4,
+      "max_lon": 16.6,
+      "min_lat": 0.9,
+      "max_lat": 2.1
+    },
+    "point_samples": {
+      "Open_Meteo": {
+        "lat": 57.680138,
+        "lon": 12.025863,
+        "total_mm": 487.3,
+        "wet_days_ge_1mm": 74,
+        "max_wet_run_ge_1mm": 13,
+        "inside_compact_aoi": false
+      },
+      "NASA_POWER": {
+        "lat": 57.72,
+        "lon": 11.948,
+        "total_mm": 459.16,
+        "wet_days_ge_1mm": 73,
+        "max_wet_run_ge_1mm": 14,
+        "inside_compact_aoi": false
+      }
+    },
+    "sampling_scope": "Point-sample/AOI overlap is reported as a package diagnostic only; it is not part of the score and is not used to judge event-location validity."
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019_positive_Indian_Ocean_Dipole_and_East_Africa_floods.json",
+      "data/physical_hazard/physical_hazard_011_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_010_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_012_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/physical_hazard/physical_hazard_008_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_009_NASA_POWER_daily_point_sample.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Structured product extraction",
+        "points": 4,
+        "description": "Extracts mean, standard deviation, minimum, and maximum from all three gridded rainfall JSON summaries with units preserved.",
+        "partial_credit": "Award 2-3 points if two products are complete or one field is missing across products."
+      },
+      {
+        "name": "Derived rainfall ratios",
+        "points": 4,
+        "description": "Computes CV, peak-to-mean, and normalized range for each product within tolerance.",
+        "partial_credit": "Award 2-3 points for correct formulas with one product or rounding error."
+      },
+      {
+        "name": "Threshold ledger arithmetic",
+        "points": 4,
+        "description": "Computes the four score components and final score of 7 from the stated formula.",
+        "partial_credit": "Award 1 point for each correctly computed score component."
+      },
+      {
+        "name": "Point-sample/AOI overlap diagnostic",
+        "points": 3,
+        "description": "Reports point-sample/AOI overlap as a package diagnostic and keeps it out of the rainfall-structure score.",
+        "partial_credit": "Award 1-2 points for reporting the overlap result but not clearly stating its diagnostic-only role."
+      },
+      {
+        "name": "Source ranking and strongest signal",
+        "points": 3,
+        "description": "Reports CV order as GPM_IMERG, ERA5_Land, CHIRPS and identifies GPM_IMERG as the highest peak-to-mean product.",
+        "partial_credit": "Award 1-2 points if either the CV order or strongest peak-to-mean product is correct."
+      },
+      {
+        "name": "Compact numeric JSON",
+        "points": 2,
+        "description": "Returns the requested compact JSON with numeric anchors, ledger counts, score, and final label.",
+        "partial_credit": "Award 1 point for valid compact JSON with one missing requested field."
+      }
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "answer_guidance": {
+    "answer": "sustained_marine_heat_stress",
+    "structured_answer": {
+      "answer": "sustained_marine_heat_stress",
+      "bounded_interpretation": "The task does not estimate full coral mortality, fisheries loss, or ecological recovery.",
+      "computed_evidence": {
+        "evidence_synthesis_values": {
+          "crw_core_product_count": 4,
+          "crw_core_product_ratio": 1.0,
+          "dhw_proxy_c_weeks": 26.143,
+          "duration_days": 183,
+          "evidence_score": 6,
+          "land_counter_passes": 6,
+          "sst_anom_hits_2023": 1
+        },
+        "land_counter_values": {
+          "dnbr_abs_mean": 0.066,
+          "embedding_mean": 0.023,
+          "gpm_peak_mean_ratio": 1.437,
+          "land_sample_ratio": 0.251,
+          "population_file_share": 0.4,
+          "visual_luma_delta_norm": 0.149
+        },
+        "tolerances": {
+          "crw_core_product_ratio": 0.001,
+          "dhw_proxy_c_weeks": 0.002,
+          "duration_days": 0,
+          "evidence_score": 0,
+          "land_counter_passes": 0,
+          "land_ratios": 0.002,
+          "sst_anom_hits_2023": 0
+        }
+      },
+      "decisive_evidence": "SST anomaly and persistence should decide the marine mechanism; land precipitation or exposure is contextual.",
+      "formula_derivation": "Use thermal excess times duration, analogous to degree-heating accumulation where supported by package fields.",
+      "mechanism_chain": [
+        "sea-surface thermal anomaly",
+        "duration or persistence",
+        "land-context countercheck",
+        "marine-stress conclusion"
+      ],
+      "mechanism_question": "diagnose whether sustained sea-surface thermal stress dominates over land-weather or generic coastal context",
+      "rejected_simplifications": "Reject land-weather or generic coastal-impact explanations if marine thermal stress is dominant.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Arabian Sea Sustained Marine Heat-Stress Diagnosis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-324",
+  "key_values": {
+    "event": {
+      "event_name": "2023 Indian Ocean/Arabian Sea marine heatwave context",
+      "hazard_family": "marine_heatwave_coastal_ecosystem",
+      "hazard_label": "Marine heatwave and coastal ecosystem impact",
+      "location": "Northern Indian Ocean / Arabian Sea",
+      "span_end": "2023-09-30",
+      "span_start": "2023-04-01"
+    },
+    "land_counter_flags": {
+      "dnbr_abs_mean_lt_0_10": true,
+      "embedding_mean_lt_0_05": true,
+      "gpm_peak_mean_ratio_lt_1_50": true,
+      "land_sample_ratio_lt_0_30": true,
+      "population_file_share_lt_0_50": true,
+      "visual_luma_delta_norm_lt_0_20": true
+    },
+    "marine_product_hits": {
+      "baa7": true,
+      "dhw": true,
+      "hotspot": true,
+      "ssta": true
+    },
+    "raw_context": {
+      "event_luma": 144.471,
+      "gpm_max_mm": 152.471,
+      "gpm_mean_mm": 106.104,
+      "land_sample_days": 46,
+      "population_sum": 11398880.519,
+      "pre_luma": 106.506
+    },
+    "threshold_flags": {
+      "crw_core_product_count_eq_4": true,
+      "crw_core_product_ratio_eq_1": true,
+      "dhw_proxy_c_weeks_ge_4": true,
+      "duration_days_ge_90": true,
+      "land_counter_passes_ge_5": true,
+      "sst_anom_hits_2023_ge_1": true
+    }
+  },
+  "primary_gt": {
+    "answer": "sustained_marine_heat_stress",
+    "bounded_interpretation": "The task does not estimate full coral mortality, fisheries loss, or ecological recovery.",
+    "computed_evidence": {
+      "evidence_synthesis_values": {
+        "crw_core_product_count": 4,
+        "crw_core_product_ratio": 1.0,
+        "dhw_proxy_c_weeks": 26.143,
+        "duration_days": 183,
+        "evidence_score": 6,
+        "land_counter_passes": 6,
+        "sst_anom_hits_2023": 1
+      },
+      "land_counter_values": {
+        "dnbr_abs_mean": 0.066,
+        "embedding_mean": 0.023,
+        "gpm_peak_mean_ratio": 1.437,
+        "land_sample_ratio": 0.251,
+        "population_file_share": 0.4,
+        "visual_luma_delta_norm": 0.149
+      },
+      "tolerances": {
+        "crw_core_product_ratio": 0.001,
+        "dhw_proxy_c_weeks": 0.002,
+        "duration_days": 0,
+        "evidence_score": 0,
+        "land_counter_passes": 0,
+        "land_ratios": 0.002,
+        "sst_anom_hits_2023": 0
+      }
+    },
+    "decisive_evidence": "SST anomaly and persistence should decide the marine mechanism; land precipitation or exposure is contextual.",
+    "formula_derivation": "Use thermal excess times duration, analogous to degree-heating accumulation where supported by package fields.",
+    "mechanism_chain": [
+      "sea-surface thermal anomaly",
+      "duration or persistence",
+      "land-context countercheck",
+      "marine-stress conclusion"
+    ],
+    "mechanism_question": "diagnose whether sustained sea-surface thermal stress dominates over land-weather or generic coastal context",
+    "rejected_simplifications": "Reject land-weather or generic coastal-impact explanations if marine thermal stress is dominant.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Indian_Ocean_Arabian_Sea_marine_heatwave_context.json",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/event_catalogs/event_catalogs_002_NOAA_OISST_PSL_ERDDAP_sea-surface_temperature_THREDDS_catalog_XML.xml",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_pre.jpg",
+      "data/remote_sensing/remote_sensing_004_event.jpg"
+    ]
+  },
+  "requires_computation": true,
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 3
+      },
+      {
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding.",
+        "name": "computed_evidence",
+        "points": 4
+      },
+      {
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values.",
+        "name": "formula_derivation",
+        "points": 3
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 3
+      },
+      {
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "sustained_marine_heat_stress_diagnosis",
+  "task_id": "CSX-324_Q2",
+  "task_type": "structured_reasoning"
+}

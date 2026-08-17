@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-130_Q2",
+  "event_id": "CSX-130",
+  "task_type": "short_answer",
+  "target_family": "ophelia_european_wind_risk_transition_timing_consistency_proof",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "five_row_proof_ledger",
+    "family": "ophelia_european_wind_risk_transition_timing_consistency_proof",
+    "final_stance": "post-transition wind risk; rainfall secondary; image/pop/catalog context only.",
+    "required_rows": [
+      "transition_to_wind_peak_timing",
+      "pressure_fall_wind_severity",
+      "gust_persistence",
+      "rainfall_secondary_test",
+      "image_population_guardrail"
+    ],
+    "required_metrics": {
+      "lag_h": 20.0,
+      "gust_kmh": 111.6,
+      "pmin_hpa": 989.6,
+      "fall24_hpa": 21.2,
+      "fall12_hpa": 19.6,
+      "gust70_h": 14,
+      "gust90_h": 6,
+      "rain_mm": 13.1,
+      "wet24_mm": 5.4,
+      "cloud_delta": 0.118,
+      "pop": 2642987,
+      "cat_hits": 0
+    },
+    "numeric_tolerances": {
+      "kmh": 0.2,
+      "hpa": 0.2,
+      "h": 0.2,
+      "mm": 0.2,
+      "share": 0.002,
+      "pop": 1
+    },
+    "forbidden_claims": [
+      "rainfall-dominant diagnosis",
+      "image proves local damage",
+      "population/catalog proves loss"
+    ],
+    "canonical_checks": {
+      "rainfall_secondary": true,
+      "image_damage_proof": false,
+      "ledger_rows": 5
+    }
+  },
+  "key_values": {
+    "peak_gust_kmh": 111.6,
+    "post_transition_reference_time": "2017-10-15T18:00",
+    "post_transition_source_phrase": "post-tropical cyclone on the evening of October 15, 2017",
+    "post_transition_time_basis": "benchmark convention: report phrase 'evening of October 15, 2017' is represented as 18:00 UTC",
+    "peak_gust_time": "2017-10-16T14:00",
+    "min_pressure_hpa": 989.6,
+    "min_pressure_time": "2017-10-16T15:00",
+    "pressure_min_lag_after_peak_gust_h": 1.0,
+    "post_tropical_to_peak_gust_lag_h": 20.0,
+    "pressure_fall_24h_hpa": 21.2,
+    "pressure_fall_12h_hpa": 19.6,
+    "event_hours": 192,
+    "hours_gust_ge_70_kmh": 14,
+    "hours_gust_ge_90_kmh": 6,
+    "share_gust_ge_70_kmh": 0.073,
+    "share_gust_ge_90_kmh": 0.031,
+    "event_precip_mm": 13.1,
+    "oct16_precip_mm": 2.4,
+    "wettest_24h_mm": 5.4,
+    "wettest_24h_start": "2017-10-15T08:00",
+    "event_minus_pre_cloud_proxy": 0.118,
+    "population_context": 2642987.0,
+    "catalog_ophelia_hit_count": 0,
+    "image_can_prove_local_damage": false
+  },
+  "event": {
+    "package_id": "CSX-130",
+    "event_name": "Hurricane Ophelia eastern Atlantic-to-Europe track",
+    "hazard_family": "tropical_cyclone",
+    "event_date_or_window": "2017-10-09 to 2017-10-16"
+  },
+  "proof_rows": [
+    {
+      "row_id": "transition_to_wind_peak_timing",
+      "expected": "Report phrase says post-tropical on the evening of October 15; benchmark time basis maps that reference to 2017-10-15T18:00, giving 20.0 h to peak gust and a pressure minimum 1.0 h after gust peak."
+    },
+    {
+      "row_id": "pressure_fall_wind_severity",
+      "expected": "111.6 km/h gust, 989.6 hPa minimum pressure, 21.2 hPa 24 h fall, 19.6 hPa 12 h fall."
+    },
+    {
+      "row_id": "gust_persistence",
+      "expected": "14/192 = 0.073 for gusts >=70 km/h; 6/192 = 0.031 for gusts >=90 km/h."
+    },
+    {
+      "row_id": "rainfall_secondary_test",
+      "expected": "13.1 mm total, 2.4 mm on 2017-10-16, 5.4 mm wettest 24 h; rainfall is secondary."
+    },
+    {
+      "row_id": "image_population_guardrail",
+      "expected": "0.118 cloud proxy change, population 2642987, zero catalog hits, image cannot prove local damage."
+    }
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Family and stance",
+        "points": 2,
+        "description": "Names the requested proof family and concludes that Ophelia's European phase is transition-related wind risk.",
+        "partial_credit": "Award 1 point for a wind-risk stance that omits either the family label or the transition timing."
+      },
+      {
+        "name": "Transition timing",
+        "points": 4,
+        "description": "Gives the local report phrase for the evening October 15 post-tropical transition, the benchmark 2017-10-15T18:00 representation, the 2017-10-16T14:00 gust peak, the 2017-10-16T15:00 pressure minimum, the 20.0 h post-transition lag, and the 1.0 h pressure lag after peak gust.",
+        "partial_credit": "Award 2-3 points for most timing anchors but missing the source phrase or time-basis note; award 1 point for only naming the impact date."
+      },
+      {
+        "name": "Wind-pressure severity",
+        "points": 4,
+        "description": "Gives 111.6 km/h, 989.6 hPa, 21.2 hPa over 24 h, and 19.6 hPa over 12 h, with units.",
+        "partial_credit": "Award 2-3 points for correct gust and pressure with one missing fall window; award 1 point for generic strong wind or low pressure."
+      },
+      {
+        "name": "Gust persistence",
+        "points": 4,
+        "description": "Gives 14 hours at or above 70 km/h and 6 hours at or above 90 km/h, plus shares near 0.073 and 0.031 over 192 hours.",
+        "partial_credit": "Award 2-3 points for correct counts without shares; award 1 point for one correct threshold count."
+      },
+      {
+        "name": "Rainfall test",
+        "points": 3,
+        "description": "Gives 13.1 mm total, 2.4 mm on 16 October, and 5.4 mm wettest 24 h, then rejects rainfall-dominant local diagnosis.",
+        "partial_credit": "Award 1-2 points for two rainfall anchors or a correct but weak contrast."
+      },
+      {
+        "name": "Context guardrail",
+        "points": 1,
+        "description": "Uses cloud proxy change, population, catalog count, and image-damage flag only as context.",
+        "partial_credit": "Award 0.5 points for a correct context limit with little numeric support."
+      },
+      {
+        "name": "Timing-chain consistency",
+        "points": 2,
+        "description": "Links post-transition timing, pressure fall, and persistent gusts into one coherent proof.",
+        "partial_credit": "Award 1 point for a generic wind statement without the timing chain."
+      }
+    ]
+  },
+  "quality_constraints": {
+    "rubric_total": 20,
+    "timing_chain_points": 2,
+    "context_points": 1,
+    "numeric_timing_points": 15
+  },
+  "context_checks": {
+    "pre_thumbnail_contains_point": true,
+    "event_thumbnail_contains_point": true,
+    "catalog_names_in_local_query": [
+      "LAN-17",
+      "KHANUN-17"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_005_Locked_event_anchor_Hurricane_Ophelia_eastern_Atlantic-to-Europe_track.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/remote_sensing/remote_sensing_004_Worldview_pre-event_thumbnail.jpg",
+      "data/remote_sensing/remote_sensing_005_Worldview_in-event_thumbnail.jpg"
+    ]
+  }
+}

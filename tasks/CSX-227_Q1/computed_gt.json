@@ -1,0 +1,223 @@
+{
+  "eval_mode": "hybrid",
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-227",
+  "judge_anchors": {
+    "acceptable_variants": [
+      "landslide displacement tsunami",
+      "fjord landslide tsunami score winner",
+      "mass runup ledger winner"
+    ],
+    "do_not_infer": [
+      "casualty counts",
+      "damage totals",
+      "evacuation counts",
+      "regional resident totals beyond the package population sum"
+    ],
+    "required_elements": [
+      "Extract rock mass, maximum runup, Sentinel-1 absolute change, median precipitation, population sum, and event-window day count.",
+      "Apply all threshold flags before scoring the candidates.",
+      "Return the candidate scores and the winning-score gap.",
+      "Tie the final interpretation to the score ledger rather than broad prose."
+    ],
+    "required_metrics": [
+      {
+        "name": "rock_mass_million_tons",
+        "tolerance": 2.0,
+        "value": 180.0
+      },
+      {
+        "name": "max_runup_m",
+        "tolerance": 2.0,
+        "value": 193.0
+      },
+      {
+        "name": "s1_abs_change_db",
+        "tolerance": 0.2,
+        "value": 50.5
+      },
+      {
+        "name": "precip_median_mm",
+        "tolerance": 0.2,
+        "value": 39.7
+      },
+      {
+        "name": "population_sum",
+        "tolerance": 0.02,
+        "value": 0.088
+      }
+    ]
+  },
+  "key_values": {
+    "computed_interpretation": "The mass and runup thresholds dominate the ledger; precipitation and population tests do not make the non-landslide candidates competitive.",
+    "event_date": "2015-10-17",
+    "event_name": "Taan Fiord landslide tsunami",
+    "region": "Taan Fiord, Alaska",
+    "score_formula": {
+      "landslide_displacement_tsunami": "3*mass_ge_100 + 3*runup_ge_100 + radar_abs_ge_30 + event_window_eq_1_day + population_lt_1",
+      "population_broad_impact": "3*I(population_ge_100) + runup_ge_100",
+      "radar_change_standalone": "2*radar_abs_ge_30 + 2*I(mass_lt_100) + 2*I(runup_lt_100)",
+      "rain_flood_pulse": "3*precip_median_ge_50 + I(mass_lt_100) + I(runup_lt_100)"
+    }
+  },
+  "numeric_tolerances": {
+    "max_runup_m": {
+      "tolerance": 2.0,
+      "value": 193.0
+    },
+    "population_sum": {
+      "tolerance": 0.02,
+      "value": 0.088
+    },
+    "precip_median_mm": {
+      "tolerance": 0.2,
+      "value": 39.7
+    },
+    "rock_mass_million_tons": {
+      "tolerance": 2.0,
+      "value": 180.0
+    },
+    "s1_abs_change_db": {
+      "tolerance": 0.2,
+      "value": 50.5
+    },
+    "score_gap": {
+      "tolerance": 0,
+      "value": 7
+    }
+  },
+  "primary_gt": {
+    "candidate_scores": {
+      "landslide_displacement_tsunami": 9,
+      "population_broad_impact": 1,
+      "radar_change_standalone": 2,
+      "rain_flood_pulse": 0
+    },
+    "computed_interpretation": "The mass and runup thresholds dominate the ledger; precipitation and population tests do not make the non-landslide candidates competitive.",
+    "diagnostic_indices": {
+      "max_runup_m": 193.0,
+      "population_sum": 0.088,
+      "precip_median_mm": 39.7,
+      "rock_mass_million_tons": 180.0,
+      "s1_abs_change_db": 50.5
+    },
+    "score_summary": {
+      "runner_up_label": "radar_change_standalone",
+      "score_gap": 7,
+      "winning_score": 9
+    },
+    "threshold_flags": {
+      "event_window_eq_1_day": true,
+      "mass_ge_100": true,
+      "population_lt_1": true,
+      "precip_median_ge_50": false,
+      "radar_abs_ge_30": true,
+      "runup_ge_100": true
+    },
+    "window_ledger": {
+      "event_window_days": 1,
+      "sentinel1_post_count": 5,
+      "sentinel1_pre_count": 7
+    },
+    "winning_label": "landslide_displacement_tsunami"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_Taan_Fiord_landslide_tsunami.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_publication.html",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns landslide_displacement_tsunami as the winner with score 9, runner-up radar_change_standalone, and gap 7.",
+        "name": "Final label and score gap",
+        "partial_credit": "Award 2-3 points for the correct winner with an incomplete gap or runner-up; award 1 point for a landslide-tsunami label without a computed score.",
+        "points": 4
+      },
+      {
+        "description": "Extracts about 180 million tons and about 193 m, then marks both mass_ge_100 and runup_ge_100 true.",
+        "name": "Report-text numeric extraction",
+        "partial_credit": "Award 1-2 points for one correct report-text value or for correct values with one threshold flag reversed.",
+        "points": 3
+      },
+      {
+        "description": "Computes Sentinel-1 absolute change near 50.5 dB, uses counts 7 and 5, and computes a one-day locked event window.",
+        "name": "Radar and window ledger",
+        "partial_credit": "Award 1-2 points for the radar magnitude or the window count if the other part is missing.",
+        "points": 3
+      },
+      {
+        "description": "Uses the four non-null precipitation estimates to get a median near 39.7 mm and marks precip_median_ge_50 false.",
+        "name": "Precipitation median test",
+        "partial_credit": "Award 1-2 points for using the right precipitation sources with a small rounding or median error.",
+        "points": 3
+      },
+      {
+        "description": "Uses WorldPop population sum near 0.088 and marks population_lt_1 true.",
+        "name": "Population threshold test",
+        "partial_credit": "Award 1 point for the correct low-population direction without the numeric value.",
+        "points": 2
+      },
+      {
+        "description": "Computes the candidate scores as 9, 0, 2, and 1 from the stated formulas.",
+        "name": "Candidate score arithmetic",
+        "partial_credit": "Award 1-2 points for mostly correct score components with one candidate arithmetic error.",
+        "points": 3
+      },
+      {
+        "description": "Explains that the mass and runup thresholds dominate while rainfall and population tests do not beat the score ledger.",
+        "name": "Compact computed interpretation",
+        "partial_credit": "Award 1 point for a concise interpretation tied to some, but not all, decisive score components.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "supporting_metrics": {
+    "candidate_scores": {
+      "landslide_displacement_tsunami": 9,
+      "population_broad_impact": 1,
+      "radar_change_standalone": 2,
+      "rain_flood_pulse": 0
+    },
+    "diagnostic_indices": {
+      "max_runup_m": 193.0,
+      "population_sum": 0.088,
+      "precip_median_mm": 39.7,
+      "rock_mass_million_tons": 180.0,
+      "s1_abs_change_db": 50.5
+    },
+    "precip_sources_mm": {
+      "era5_land_mean": 42.9,
+      "gpm_imerg_mean": 30.7,
+      "nasa_power": 36.6,
+      "open_meteo": 45.7
+    },
+    "threshold_flags": {
+      "event_window_eq_1_day": true,
+      "mass_ge_100": true,
+      "population_lt_1": true,
+      "precip_median_ge_50": false,
+      "radar_abs_ge_30": true,
+      "runup_ge_100": true
+    },
+    "window_ledger": {
+      "event_window_days": 1,
+      "sentinel1_post_count": 5,
+      "sentinel1_pre_count": 7
+    }
+  },
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-227_Q1",
+  "task_subtype": "mechanism_candidate_score_ledger",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-256_Q2",
+  "event_id": "CSX-256",
+  "target_family": "montecito_post_fire_debris_flow_process_model",
+  "task_type": "numeric_reasoning",
+  "evaluation_mode": "deterministic_with_structured_explanation",
+  "primary_gt": {
+    "answer": "very_high_post_fire_debris_flow_coupling",
+    "target_family": "montecito_post_fire_debris_flow_process_model",
+    "process_model": {
+      "event_window_days": 1,
+      "mechanism_chain": [
+        "A one-day rainfall trigger produced a 68.2 mm gridded peak and at least 39.0 mm at the drier point sample.",
+        "The triggering rain arrived 21 days after the Thomas Fire, with mean dNBR about 2.95 times the annual surface-change mean.",
+        "Debris flows traveled at least 3.0 km along five main runout paths across alluvial fans.",
+        "The exposed AOI contains about 120050 people, 52 critical facilities, and 947 mapped road ways, so response load extends beyond the hillslope source area."
+      ]
+    },
+    "computed_metrics": {
+      "rainfall_trigger": {
+        "grid_peak_product": "GPM",
+        "grid_peak_mm": 68.2,
+        "grid_peak_mean_mm": 52.1,
+        "grid_peak_to_mean_ratio": 1.31,
+        "spatial_concentration_product": "CHIRPS",
+        "spatial_concentration_ratio": 4.52,
+        "point_precip_floor_mm": 39.0,
+        "point_precip_ceiling_mm": 62.4,
+        "grid_peak_to_point_floor_ratio": 1.75,
+        "rainfall_trigger_norm": 0.91
+      },
+      "burn_scar_conditioning": {
+        "fire_lag_days": 21,
+        "fire_area_km2": 1140,
+        "dnbr_mean": 0.26,
+        "dnbr_max": 1.578,
+        "annual_change_mean": 0.088,
+        "annual_change_max": 0.412,
+        "dnbr_mean_to_annual_change_ratio": 2.95,
+        "dnbr_max_to_annual_change_ratio": 3.83,
+        "burn_conditioning_norm": 0.89
+      },
+      "runout_and_exposure": {
+        "runout_km_min": 3.0,
+        "runout_paths": 5,
+        "fatalities": 23,
+        "homes_damaged_min": 400,
+        "population_exposed": 120050,
+        "critical_facilities": 52,
+        "road_ways": 947,
+        "fatalities_per_100k_population": 19.16,
+        "critical_facilities_per_100k_population": 43.32,
+        "damaged_homes_per_runout_path_min": 80.0,
+        "runout_exposure_norm": 0.92,
+        "impact_norm": 0.87
+      },
+      "process_scores": {
+        "post_fire_debris_flow_process_index": 90.44,
+        "process_label": "very_high_post_fire_debris_flow_coupling",
+        "response_priority_score": 82.85,
+        "response_priority_label": "high_response_priority"
+      }
+    },
+    "scenario_analysis": {
+      "assumptions": {
+        "daily_rainfall_multiplier": 1.15,
+        "population_multiplier": 1.2,
+        "critical_facility_multiplier": 1.25,
+        "spatial_pattern_and_reported_impact_held_constant": true
+      },
+      "scenario_grid_peak_mm": 78.4,
+      "scenario_population_exposed": 144060,
+      "scenario_critical_facilities": 65.0,
+      "scenario_rainfall_trigger_norm": 0.97,
+      "scenario_runout_exposure_norm": 0.97,
+      "scenario_process_index": 94.06,
+      "scenario_response_priority_score": 91.58,
+      "process_index_delta": 3.62,
+      "response_priority_delta": 8.74,
+      "priority_label_shift": "high_response_priority_to_extreme_escalation_priority"
+    },
+    "source_paths": [
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_data_release.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2018_Montecito_post-fire_debris_flows.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "final_interpretation": "The package supports a very high post-fire debris-flow coupling: intense one-day rainfall arrived only 21 days after the Thomas Fire, burn-scar metrics are much stronger than annual background surface change, and multi-kilometer runout crossed populated alluvial-fan corridors with dense road and critical-facility exposure.",
+    "tolerances": {
+      "mm": 0.1,
+      "ratio": 0.01,
+      "score": 0.01,
+      "count": 0,
+      "days": 0
+    }
+  },
+  "event": {
+    "event_id": "CSX-256",
+    "event_name": "2018 Montecito post-fire debris flows",
+    "hazard_family": "compound_cascading_events",
+    "event_date_or_window": {
+      "start_date": "2018-01-09",
+      "end_date": "2018-01-09",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "location": "Montecito and Carpinteria, California"
+  },
+  "key_values": {
+    "grid_products": [
+      {
+        "name": "GPM",
+        "max_mm": 68.2,
+        "mean_mm": 52.1,
+        "peak_mean_ratio": 1.31
+      },
+      {
+        "name": "CHIRPS",
+        "max_mm": 62.8,
+        "mean_mm": 13.9,
+        "peak_mean_ratio": 4.52
+      },
+      {
+        "name": "ERA5-Land",
+        "max_mm": 53.3,
+        "mean_mm": 51.4,
+        "peak_mean_ratio": 1.04
+      }
+    ],
+    "point_precip_mm": {
+      "floor": 39.0,
+      "ceiling": 62.4
+    },
+    "normalization_inputs": {
+      "rain_peak_reference_mm": 75.0,
+      "spatial_concentration_reference": 5.0,
+      "dnbr_mean_reference": 0.3,
+      "burn_anomaly_reference": 3.0,
+      "burn_recency_reference_days": 90,
+      "runout_reference_km": 3.0,
+      "runout_path_reference": 5,
+      "critical_facility_reference": 75,
+      "population_reference": 150000,
+      "fatality_reference": 25,
+      "damaged_home_reference": 500
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Finds relevant event report, precipitation, burn-scar, annual-change, population, and map-exposure records, and cites package-relative paths for values used.",
+        "partial_credit": "Award up to 2 points for incomplete but plausible source discovery; no full credit without package-relative citations."
+      },
+      {
+        "name": "Event and report anchor extraction",
+        "points": 3,
+        "description": "Extracts the one-day event window, 21-day burn lag, 1140 km2 fire area, at least 3 km runout, five runout paths, 23 fatalities, and at least 400 damaged homes.",
+        "partial_credit": "Award proportional credit for correct report values and unit conversions."
+      },
+      {
+        "name": "Rainfall trigger calculations",
+        "points": 3,
+        "description": "Computes the gridded peak rainfall, same-source mean ratio, largest spatial concentration ratio, point rainfall floor/ceiling, grid-to-point ratio, and rainfall-trigger normalization.",
+        "partial_credit": "Award partial credit for correct formulas with minor source-selection or rounding mistakes."
+      },
+      {
+        "name": "Burn-scar conditioning calculations",
+        "points": 3,
+        "description": "Uses dNBR and annual embedding-change statistics to compute burn-severity ratios and the burn-conditioning normalization.",
+        "partial_credit": "Award partial credit for correct extraction but incomplete normalization."
+      },
+      {
+        "name": "Exposure and impact synthesis",
+        "points": 3,
+        "description": "Counts population, critical facilities, road ways, and impact rates, then derives runout-exposure and impact normalizations.",
+        "partial_credit": "Award proportional credit for correct counts and rates."
+      },
+      {
+        "name": "Process and scenario model",
+        "points": 4,
+        "description": "Applies the specified weighted formulas, reports the baseline process index and response score, recomputes the wetter/higher-exposure scenario, and gives deltas and label shift.",
+        "partial_credit": "Award partial credit for correct baseline or scenario calculations when the other is incomplete."
+      },
+      {
+        "name": "Structured scientific interpretation",
+        "points": 1,
+        "description": "Provides valid JSON and a concise mechanism-based interpretation tied to rainfall, burn conditioning, runout, and exposure.",
+        "partial_credit": "Award this point only when the interpretation is grounded in computed package evidence."
+      }
+    ]
+  },
+  "numeric_tolerances": {
+    "grid_peak_mm": {
+      "target": 68.2,
+      "absolute_tolerance": 0.1
+    },
+    "spatial_concentration_ratio": {
+      "target": 4.52,
+      "absolute_tolerance": 0.01
+    },
+    "burn_conditioning_norm": {
+      "target": 0.89,
+      "absolute_tolerance": 0.01
+    },
+    "runout_exposure_norm": {
+      "target": 0.92,
+      "absolute_tolerance": 0.01
+    },
+    "post_fire_debris_flow_process_index": {
+      "target": 90.44,
+      "absolute_tolerance": 0.01
+    },
+    "response_priority_score": {
+      "target": 82.85,
+      "absolute_tolerance": 0.01
+    },
+    "scenario_process_index": {
+      "target": 94.06,
+      "absolute_tolerance": 0.01
+    },
+    "scenario_response_priority_score": {
+      "target": 91.58,
+      "absolute_tolerance": 0.01
+    },
+    "response_priority_delta": {
+      "target": 8.74,
+      "absolute_tolerance": 0.01
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_data_release.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2018_Montecito_post-fire_debris_flows.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "notes": "Ground truth is derived from local package report text plus precipitation, dNBR, annual surface-change, population, and OSM-style exposure records."
+  }
+}

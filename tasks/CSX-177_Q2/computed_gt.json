@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-177_Q2",
+  "event_id": "CSX-177",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "mechanism_competition",
+  "primary_gt": {
+    "formula": "early_spread_score = A * (E / N) * Hkha; late_moderation_score = M * ((N - E) / N) * 5 * C",
+    "mechanism_competition": [
+      {
+        "mechanism": "early_dry_wind_fire_spread",
+        "supporting_values": {
+          "A_report_anchor_count": 3,
+          "E_early_active_days": 4,
+          "N_event_days": 10,
+          "H_burned_area_kha": 17.0,
+          "score": 20.4
+        },
+        "status": "dominant"
+      },
+      {
+        "mechanism": "late_wind_slackening_fog_moderation",
+        "supporting_values": {
+          "M_moderation_anchor_count": 3,
+          "late_days": 6,
+          "continuation_discount": 0.5,
+          "score": 4.5
+        },
+        "status": "secondary_moderation_not_dominant"
+      }
+    ],
+    "phase_scores": {
+      "early_spread_score": 20.4,
+      "late_moderation_score": 4.5,
+      "early_late_ratio": 4.53
+    },
+    "top_evidence_stage": "early_dry_wind_fire_spread",
+    "first_moderation_day": "2022-03-07",
+    "diagnosis": "early_dry_wind_spread_dominant",
+    "computed_consequence": "The early dry-wind mechanism dominates because the report gives all early spread anchors, large burned area, and continued fire detection even on the first moderation day."
+  },
+  "key_values": {
+    "event_name": "2022 Uljin-Samcheok wildfire in South Korea",
+    "hazard_family": "wildfire_burn_smoke",
+    "event_window": {
+      "start_date": "2022-03-04",
+      "end_date": "2022-03-13",
+      "inclusive_days": 10
+    },
+    "early_anchors": {
+      "dry_weather_text": true,
+      "strong_winds_text": true,
+      "westerly_smoke_transport_text": true
+    },
+    "late_anchors": {
+      "smoke_thinned_text": true,
+      "winds_slackened_text": true,
+      "foggy_weather_text": true
+    },
+    "continued_fire_activity": true,
+    "burned_hectares": 17000,
+    "threshold_ledger": {
+      "early_score_higher": true,
+      "ratio_at_least_1_5": true,
+      "continued_fire_on_first_moderation_day": true,
+      "diagnosis": "early_dry_wind_spread_dominant"
+    }
+  },
+  "numeric_tolerances": {
+    "phase_scores.early_spread_score": 0.05,
+    "phase_scores.late_moderation_score": 0.05,
+    "phase_scores.early_late_ratio": 0.02,
+    "mechanism_competition.supporting_values.H_burned_area_kha": 0.05
+  },
+  "judge_anchors": {
+    "required_claims": [
+      "Uses March 4-13, 2022 as a 10-day inclusive event window.",
+      "Uses March 7 as the first moderation day and March 4-7 as the 4-day early active interval.",
+      "Counts A=3 early anchors and M=3 late moderation anchors.",
+      "Applies C=0.5 because fire activity was still detected on the moderation day.",
+      "Computes early score 20.40, late score 4.50, and ratio 4.53.",
+      "Diagnoses early_dry_wind_spread_dominant."
+    ],
+    "forbidden_claims": [
+      "Using off-event Open-Meteo, NASA POWER, GPM, or CHIRPS values as local Uljin-Samcheok daily weather.",
+      "Claiming measured PM2.5 concentration, exact smoke dose, exact fire perimeter, or health outcomes."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Mechanism schema and diagnosis",
+        "points": 3,
+        "description": "Provides the requested JSON mechanism competition and final diagnosis early_dry_wind_spread_dominant.",
+        "partial_credit": "Award partial credit for the correct diagnosis with missing or malformed ledger fields."
+      },
+      {
+        "name": "Early spread evidence",
+        "points": 4,
+        "description": "Finds all three early anchors: dry weather, strong winds, and westerly smoke transport toward southern Japan.",
+        "partial_credit": "Award 1 point for each correct anchor and 1 point for the correct count A=3."
+      },
+      {
+        "name": "Late moderation evidence",
+        "points": 3,
+        "description": "Finds smoke thinning, winds slackening, foggy weather, and continued fire activity on March 7.",
+        "partial_credit": "Award partial credit for correct moderation anchors but missing the continued-fire discount."
+      },
+      {
+        "name": "Timing and burned-area calculations",
+        "points": 4,
+        "description": "Computes N=10, E=4, late_days=6, Hkha=17.0, early_fraction=0.4, and late_fraction=0.6.",
+        "partial_credit": "Award partial credit for correct dates or burned area with one arithmetic or conversion error."
+      },
+      {
+        "name": "Score comparison",
+        "points": 3,
+        "description": "Computes early score 20.40, late score 4.50, ratio 4.53, and applies the >=1.5 dominance rule.",
+        "partial_credit": "Award partial credit for a correct qualitative comparison with one incorrect score."
+      },
+      {
+        "name": "Computed consequence",
+        "points": 2,
+        "description": "Keeps the consequence tied to the computed mechanism competition rather than action guidance or broad wildfire explanation.",
+        "partial_credit": "Award partial credit for a mostly numeric answer with extra but harmless prose."
+      },
+      {
+        "name": "Extra-claim control",
+        "points": 1,
+        "description": "Avoids claiming the score is calibrated fire danger, exact perimeter, exact smoke dose, or a measured health impact.",
+        "partial_credit": "Award no credit if the answer makes multiple unsupported escalations."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Uljin-Samcheok_wildfire_in_South_Korea.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ],
+    "notes": [
+      "Off-event daily weather and gridded precipitation files are not used in this ground truth.",
+      "The mechanism competition is computed from declared event anchor metadata and NASA Earth Observatory report text."
+    ]
+  }
+}

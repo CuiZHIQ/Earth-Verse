@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-318_Q2",
+  "event_id": "CSX-318",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "tasman_seismic_calving_weather_counterweight_test",
+  "primary_gt": {
+    "answer": "seismic_calving_lake_iceberg_consistent",
+    "consistency_label": "seismic_calving_lake_iceberg_consistent",
+    "chain_score_0_5": 5,
+    "mass_million_tons": 30.0,
+    "image_lag_days": 8,
+    "point_precip": {
+      "total_mm": 42.88,
+      "peak_share": 0.389
+    },
+    "wind_peak": {
+      "kmh": 21.1,
+      "lag_days": 8
+    },
+    "tsci_0_10": 10,
+    "computed_consequence": "weather_counterweight_below_threshold"
+  },
+  "event": {
+    "package_id": "CSX-318",
+    "event_name": "2011 Tasman Glacier earthquake-triggered ice calving and lake iceberg event",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date_or_window": "2011-02-22 to 2011-03-02"
+  },
+  "key_values": {
+    "formulas": {
+      "chain_score_0_5": "count true values for earthquake magnitude, Tasman Glacier source, Tasman Lake medium, iceberg expression, and final-pulse timing",
+      "point_precip_total_mm": "sum NASA POWER PRECTOTCORR values over 2011-02-22 through 2011-03-02",
+      "point_precip_peak_share": "max_daily_PRECTOTCORR / point_precip_total_mm",
+      "wind_peak_lag_days": "date(max Open-Meteo daily wind_speed_10m_max) - 2011-02-22",
+      "tsci_0_10": "chain_score_0_5 + mass_gate + image_lag_gate + weather_counterweight_gate"
+    },
+    "gates": {
+      "mass_gate": 1,
+      "mass_gate_rule": "1 if mass_million_tons >= 30, else 0",
+      "image_lag_gate": 1,
+      "image_lag_gate_rule": "1 if 1 <= image_lag_days <= 14, else 0",
+      "weather_counterweight_gate": 3,
+      "weather_counterweight_rule": "3 if point_precip_total_mm < 50, point_precip_peak_share < 0.5, wind_peak_kmh < 30, and wind_peak_lag_days > 0; else 0"
+    },
+    "component_checks": {
+      "earthquake_magnitude_present": true,
+      "tasman_glacier_source_present": true,
+      "tasman_lake_medium_present": true,
+      "iceberg_expression_present": true,
+      "final_pulse_timing_present": true
+    },
+    "weather_checks": {
+      "point_precip_total_lt_50_mm": true,
+      "point_precip_peak_share_lt_0_5": true,
+      "wind_peak_lt_30_kmh": true,
+      "wind_peak_after_start": true
+    },
+    "raw_anchors": {
+      "earthquake_magnitude": 6.3,
+      "image_date": "2011-03-02",
+      "precip_peak_day_yyyymmdd": "20110222",
+      "precip_peak_mm": 16.7,
+      "wind_peak_date": "2011-03-02"
+    },
+    "tolerances": {
+      "mass_million_tons": {
+        "absolute": 0.1,
+        "unit": "million tons"
+      },
+      "image_lag_days": {
+        "absolute": 0,
+        "unit": "days"
+      },
+      "point_precip_total_mm": {
+        "absolute": 0.01,
+        "unit": "mm"
+      },
+      "point_precip_peak_share": {
+        "absolute": 0.001,
+        "unit": "ratio"
+      },
+      "wind_peak_kmh": {
+        "absolute": 0.1,
+        "unit": "km/h"
+      },
+      "tsci_0_10": {
+        "absolute": 0,
+        "unit": "index points"
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON contract",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields with numeric values in the expected units and a concise label.",
+        "partial_credit": "Award 1-2 points if the returned JSON is parseable but omits one or two requested fields."
+      },
+      {
+        "name": "Chain score",
+        "points": 4,
+        "description": "Computes chain_score_0_5 as 5 from the five report-derived components.",
+        "partial_credit": "Award 0.8 points for each correctly identified component in the count."
+      },
+      {
+        "name": "Mass and lag gates",
+        "points": 3,
+        "description": "Reports 30.0 million tons, 8 image-lag days, and applies the mass and lag gates correctly.",
+        "partial_credit": "Award 1 point each for mass, lag, and gate application."
+      },
+      {
+        "name": "Precipitation calculations",
+        "points": 4,
+        "description": "Computes point precipitation total as 42.88 mm and peak share as 0.389 within tolerance.",
+        "partial_credit": "Award 2 points for the total and 2 points for the ratio."
+      },
+      {
+        "name": "Wind and weather gate",
+        "points": 3,
+        "description": "Computes wind peak as 21.1 km/h at an 8-day lag and sets the weather counterweight gate to 3.",
+        "partial_credit": "Award 1 point each for wind speed, wind lag, and the gate result."
+      },
+      {
+        "name": "Final index and consequence",
+        "points": 3,
+        "description": "Computes TSCI as 10 and returns seismic_calving_lake_iceberg_consistent with a short weather-counterweight consequence.",
+        "partial_credit": "Award 1 point each for index, label, and concise consequence."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2011_Tasman_Glacier_earthquake-triggered_ice_calving_and_lake_iceberg.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json"
+    ]
+  }
+}

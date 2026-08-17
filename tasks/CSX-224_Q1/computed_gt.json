@@ -1,0 +1,188 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-224",
+  "judge_anchors": {
+    "canonical_stance": "The deterministic ledger returns rain_runout_loss with a 24.33 point margin over the next score.",
+    "do_not_add": [
+      "new casualty estimates",
+      "policy advice",
+      "field validation conclusions",
+      "source material outside the local package"
+    ],
+    "required_elements": [
+      "Use all nine extracted package metrics.",
+      "Apply the capped component formulas before candidate scores; compute scores from unrounded components.",
+      "Report rain_runout_loss as the best label.",
+      "Keep the final statement tied to the numeric ledger."
+    ]
+  },
+  "key_values": {
+    "expected_output": {
+      "best_label": "rain_runout_loss",
+      "candidate_scores": {
+        "context_only": 60.67,
+        "loss_only": 75.0,
+        "rain_only": 75.0,
+        "rain_runout_loss": 99.33
+      },
+      "components": {
+        "context": 0.933,
+        "damage": 1.0,
+        "loss": 1.0,
+        "path": 1.0,
+        "precip_pair": 1.0
+      },
+      "interpretation": "The score ledger favors rain_runout_loss because rainfall, path, damage, and loss components all reach their caps while the context component is lower.",
+      "margin_to_second": 24.33,
+      "metrics": {
+        "areal_precip_mm": 112.67,
+        "damaged_roads_km": 1.3,
+        "damaged_structures": 349,
+        "deaths_lower_bound": 1141,
+        "forest_decline_percent": 52,
+        "local_population": 1099869,
+        "path_length_km": 6.0,
+        "people_lost_homes": 3000,
+        "point_precip_mm": 233.39
+      },
+      "target_family": "candidate_score_ledger"
+    },
+    "formula_thresholds": {
+      "areal_precip_mm": 100,
+      "damaged_roads_km": 1,
+      "damaged_structures": 300,
+      "deaths_lower_bound": 1000,
+      "forest_decline_percent": 60,
+      "local_population": 1000000,
+      "path_length_km": 5,
+      "people_lost_homes": 3000,
+      "point_precip_mm": 200
+    },
+    "score_details": {
+      "component_rounding_policy": "Components are reported to three decimals, but candidate scores are computed from unrounded component values and then rounded to two decimals.",
+      "second_best_score": 75.0
+    },
+    "source_date_note": {
+      "event_precipitation_anchor_date": "2017-08-14",
+      "hdx_unosat_note_date": "2017-08-15",
+      "interpretation": "The ledger uses the package precipitation/event anchor date for rainfall metrics and treats the HDX date as product/source metadata for damage/path evidence."
+    }
+  },
+  "numeric_tolerances": {
+    "areal_precip_mm": {
+      "tolerance": 0.05,
+      "value": 112.67
+    },
+    "damaged_roads_km": {
+      "tolerance": 0.05,
+      "value": 1.3
+    },
+    "margin_to_second": {
+      "tolerance": 0.02,
+      "value": 24.33
+    },
+    "path_length_km": {
+      "tolerance": 0.05,
+      "value": 6.0
+    },
+    "point_precip_mm": {
+      "tolerance": 0.05,
+      "value": 233.39
+    }
+  },
+  "primary_gt": {
+    "best_label": "rain_runout_loss",
+    "candidate_scores": {
+      "context_only": 60.67,
+      "loss_only": 75.0,
+      "rain_only": 75.0,
+      "rain_runout_loss": 99.33
+    },
+    "components": {
+      "context": 0.933,
+      "damage": 1.0,
+      "loss": 1.0,
+      "path": 1.0,
+      "precip_pair": 1.0
+    },
+    "interpretation": "The score ledger favors rain_runout_loss because rainfall, path, damage, and loss components all reach their caps while the context component is lower.",
+    "margin_to_second": 24.33,
+    "metrics": {
+      "areal_precip_mm": 112.67,
+      "damaged_roads_km": 1.3,
+      "damaged_structures": 349,
+      "deaths_lower_bound": 1141,
+      "forest_decline_percent": 52,
+      "local_population": 1099869,
+      "path_length_km": 6.0,
+      "people_lost_homes": 3000,
+      "point_precip_mm": 233.39
+    },
+    "target_family": "candidate_score_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "event_name": "August 2017 Freetown mudslide",
+    "notes": "Candidate scores are computed from unrounded component values and rounded only at the final score step. HDX/UNOSAT notes reference 15 August imagery/product metadata; precipitation and event metrics use the package's 14 August event anchor.",
+    "package_id": "CSX-224",
+    "source_files": [
+      "metadata/event.json",
+      "data/other/other_001_NASA_Earth_Observatory_Freetown_landslide.html",
+      "data/exposure_impact/exposure_impact_001_HDX_CKAN_package_search.json",
+      "data/exposure_impact/exposure_impact_005_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_006_salvaged_existing_stage8_file.json"
+    ]
+  },
+  "quality_checks": {
+    "primary_gt_compact_bytes": 692,
+    "primary_gt_top_level_keys": 7,
+    "rubric_criteria_count": 6,
+    "rubric_total_points": 20
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with target_family, metrics, components, candidate_scores, best_label, margin_to_second, and interpretation; best_label is rain_runout_loss.",
+        "name": "Output label and JSON shape",
+        "partial_credit": "Award 1-2 points for the right label with one missing field or minor naming drift.",
+        "points": 3
+      },
+      {
+        "description": "Extracts the precipitation, path, damage, loss, forest, and population values from the local package.",
+        "name": "Package value extraction",
+        "partial_credit": "Award credit value by value; small rounding differences are acceptable for continuous quantities.",
+        "points": 4
+      },
+      {
+        "description": "Computes precip_pair, path, damage, loss, and context using the stated caps and weights.",
+        "name": "Component formulas",
+        "partial_credit": "Award 1 point for each mostly correct component; reduce credit for missing caps or swapped weights.",
+        "points": 4
+      },
+      {
+        "description": "Applies all four candidate formulas using unrounded component values, then rounds final candidate scores to two decimals.",
+        "name": "Candidate score formulas",
+        "partial_credit": "Award partial credit for correct formulas with arithmetic or rounding errors in one or two candidates.",
+        "points": 4
+      },
+      {
+        "description": "Identifies the second-best score as 75.0 and computes a 24.33 point margin.",
+        "name": "Comparison arithmetic",
+        "partial_credit": "Award 1-2 points for the correct best label with an incorrect or missing margin.",
+        "points": 3
+      },
+      {
+        "description": "Explains the result as a formula outcome from saturated rainfall, path, damage, and loss components, not as a broad narrative.",
+        "name": "Computed interpretation",
+        "partial_credit": "Award 1 point for a concise statement that names the best label but omits the component reason.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_score_ledger",
+  "task_id": "CSX-224_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,123 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "date": "2023-12-06",
+    "hazard_family": "extratropical_storm_severe_convection",
+    "location": "Free State Province",
+    "name": "December 2023 Free State severe thunderstorms and hail"
+  },
+  "event_id": "CSX-148",
+  "formula_rules": {
+    "public_cbd_assets": "2 + 1 + 1 + 1",
+    "reported_houses": "16 + 24 + 2 + 250",
+    "residential_structures": "reported_houses + 50",
+    "shelter_index": "100*fatalities + 25*hospital_admissions + residential_structures + 10*public_cbd_assets",
+    "threshold_met": "shelter_index >= 4*utility_index and residential_structures >= 300 and public_cbd_assets >= 5",
+    "utility_index": "15*utility_substations + power_bonus"
+  },
+  "numeric_tolerances": {
+    "integer_fields": 0,
+    "ratio": 0.001
+  },
+  "primary_gt": {
+    "answer": "shelter_utility_threshold_met",
+    "class_label": "shelter_utility_threshold_met",
+    "counts": {
+      "fatalities": 1,
+      "hospital_admissions": 3,
+      "public_cbd_assets": 5,
+      "qualitative_pathways": 4,
+      "reported_houses": 292,
+      "residential_structures": 342,
+      "utility_substations": 7
+    },
+    "indices": {
+      "shelter_index": 567,
+      "shelter_utility_ratio": 4.536,
+      "threshold_margin": 67,
+      "utility_index": 125
+    },
+    "threshold_met": true
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_National_government_statement_citing_SAWS_severe_weather.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_December_2023_Free_State_severe_thunderstorms_and_hail.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports threshold_met = true with class_label = shelter_utility_threshold_met and no contradictory label.",
+        "name": "Final threshold ledger",
+        "partial_credit": "Award 2 points for the correct boolean without the label, or 1 point for a threshold-met conclusion with incomplete JSON.",
+        "points": 3
+      },
+      {
+        "description": "Extracts 1 fatality, 3 hospital admissions, 7 utility substations, and the four place-specific house counts.",
+        "name": "Core report counts",
+        "partial_credit": "Award 1 point per correctly extracted group; do not award credit for values invented outside the record.",
+        "points": 4
+      },
+      {
+        "description": "Computes reported_houses = 292, residential_structures = 342, and public_cbd_assets = 5.",
+        "name": "Residential and public asset arithmetic",
+        "partial_credit": "Award 1 point for each correct derived value.",
+        "points": 3
+      },
+      {
+        "description": "Uses 7 lightning-struck substations, applies the power-supply bonus, and counts four qualitative pathways.",
+        "name": "Utility and qualitative pathway ledger",
+        "partial_credit": "Award 1 point for the substations, 1 point for applying or explaining the bonus, and 1 point for the four-pathway count.",
+        "points": 3
+      },
+      {
+        "description": "Computes shelter_index = 567, utility_index = 125, shelter_utility_ratio = 4.536, and threshold_margin = 67.",
+        "name": "Index and margin arithmetic",
+        "partial_credit": "Award 1 point for each correct computed value, allowing a ratio tolerance of 0.001.",
+        "points": 4
+      },
+      {
+        "description": "Checks all three required inequalities: 567 >= 500, 342 >= 300, and 5 >= 5.",
+        "name": "Three-part threshold test",
+        "partial_credit": "Award 1 point for checking only the shelter-utility inequality or for missing one of the two minimum-count tests.",
+        "points": 2
+      },
+      {
+        "description": "Returns only the requested compact JSON and does not add exact hail size, wind gust, flood depth, outage duration, or agricultural area values.",
+        "name": "Compact output discipline",
+        "partial_credit": "Award 0.5 points for a correct ledger with extra prose; award no credit for adding exact values outside the requested ledger.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "supporting_values": {
+    "component_house_counts": {
+      "bloemfontein": 16,
+      "bohlokong": 250,
+      "bohlokong_shacks": 50,
+      "dewetsdorp": 24,
+      "madikgetla": 2
+    },
+    "component_public_cbd_assets": {
+      "church": 1,
+      "mangaung_cbd_roof_asset": 1,
+      "school": 1,
+      "stadiums": 2
+    },
+    "pathway_flags": {
+      "crop_damage": true,
+      "residential_flooding": true,
+      "street_or_road_flooding": true,
+      "vegetation_or_tree_damage": true
+    },
+    "power_bonus": 20
+  },
+  "target_family": "free_state_storm_impact_threshold_ledger",
+  "task_id": "CSX-148_Q2",
+  "task_type": "numeric"
+}

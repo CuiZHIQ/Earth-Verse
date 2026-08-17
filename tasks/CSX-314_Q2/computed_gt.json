@@ -1,0 +1,121 @@
+{
+  "computed_values": {
+    "bbox_lon_lat": {
+      "max_lat": 30.7837,
+      "max_lon": 78.4739,
+      "min_lat": 29.7837,
+      "min_lon": 77.4739
+    },
+    "dry_pass": true,
+    "point_lon_lat": [
+      78.668,
+      22.351
+    ],
+    "precip_values_mm": [
+      0.0,
+      0.0,
+      0.0013,
+      0.0,
+      0.0
+    ],
+    "scale_pass": true,
+    "terrain_pass": true
+  },
+  "decision_rule": {
+    "formulas": [
+      "max_precip_mm = max(event-day precipitation summaries)",
+      "dry_source_count = count(precipitation <= 0.01 mm)",
+      "prepost_obs = radar pre + radar post + optical pre + optical post",
+      "radar_abs_db = max(abs(radar min), abs(radar max))",
+      "optical_abs = max(abs(optical min), abs(optical max))",
+      "annual_span_yr = post_year - pre_year",
+      "point_in_bbox = point coordinate within compact polygon bbox"
+    ],
+    "thresholds": {
+      "dry_mm": 0.01,
+      "min_annual_span_yr": 1,
+      "min_optical_abs": 0.5,
+      "min_prepost_obs": 200,
+      "min_radar_abs_db": 10,
+      "rainfall_mm": 10
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "date": "2021-02-07",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "location": "Uttarakhand, India",
+    "name": "2021 Chamoli rock-ice avalanche and flood"
+  },
+  "event_id": "CSX-314",
+  "primary_gt": {
+    "annual_span_yr": 1,
+    "answer": "mass_movement_source_supported",
+    "dry_source_count": 5,
+    "max_precip_mm": 0.0013,
+    "optical_abs": 0.9206,
+    "point_in_bbox": false,
+    "prepost_obs": 213,
+    "radar_abs_db": 15.7049
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2021_Chamoli_rock-ice_avalanche_and_flood.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the required eight-field JSON object with correct field names and value types.",
+        "name": "Output schema",
+        "points": 3
+      },
+      {
+        "description": "Computes the event-day maximum precipitation and dry-source count using all five summaries.",
+        "name": "Precipitation ledger",
+        "points": 4
+      },
+      {
+        "description": "Computes the paired observation total and both absolute terrain-change extremes.",
+        "name": "Terrain-change ledger",
+        "points": 4
+      },
+      {
+        "description": "Computes the annual embedding span and the point-inside-bounding-box boolean.",
+        "name": "Time and coordinate tests",
+        "points": 3
+      },
+      {
+        "description": "Applies the stated thresholds and returns the required source-class label.",
+        "name": "Threshold conclusion",
+        "points": 4
+      },
+      {
+        "description": "Shows enough formulas or intermediate values to reproduce the numeric result.",
+        "name": "Reproducible arithmetic",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "formula_derivation_consistency_proof",
+  "task_id": "CSX-314_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "max_precip_mm": 0.0001,
+    "optical_abs": 0.0001,
+    "radar_abs_db": 0.001
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-206_Q1",
+  "event_id": "CSX-206",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "smoke_transport_threshold_ledger",
+  "primary_gt": {
+    "metrics": {
+      "source_region_count": 4,
+      "scene_haze_ratio": 1.066,
+      "mean_wind_m_s": 0.693,
+      "low_wind_day_fraction": 1.0,
+      "precip_total_mm": 208.49,
+      "dry_day_fraction": 0.0
+    },
+    "pass_fail": {
+      "source_count": "pass",
+      "scene_haze_change": "pass",
+      "low_ventilation": "pass",
+      "local_dryness": "fail"
+    },
+    "final_consistency": "regional_biomass_burning_smoke_with_low_ventilation_context",
+    "rejected_alternative": "local dry-weather or heat-led proof fails the dryness threshold"
+  },
+  "event": {
+    "package_id": "CSX-206",
+    "event_name": "August-September 2000 southern Africa biomass-burning aerosol and smoke episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "report_period_days": 47,
+    "available_daily_window": "2000-08-14 to 2000-09-28",
+    "available_daily_days": 46
+  },
+  "formulas": {
+    "luma": "0.2126*R + 0.7152*G + 0.0722*B",
+    "saturation": "(max(R,G,B) - min(R,G,B)) / max(R,G,B)",
+    "haze_fraction": "count(nonblack pixels with 70<=luma<=220 and saturation<=0.20) / count(nonblack pixels)",
+    "scene_haze_ratio": "event_haze_fraction / pre_haze_fraction",
+    "heat_load_c_day": "sum(max(Tmax_C - 30, 0))"
+  },
+  "decision_rule": {
+    "source_count_threshold": "pass if source_region_count >= 3",
+    "scene_haze_threshold": "pass if scene_haze_ratio >= 1.05",
+    "low_ventilation_threshold": "pass if mean_wind_m_s <= 1.0 and low_wind_day_fraction >= 0.80",
+    "local_dryness_threshold": "pass if precip_total_mm <= 50 and dry_day_fraction >= 0.50",
+    "final_label_rule": "source_count, scene_haze_change, and low_ventilation must pass; local_dryness is tested as a rejected local-weather alternative"
+  },
+  "key_values": {
+    "source_region_count": 4,
+    "scene_haze_ratio": 1.066,
+    "mean_wind_m_s": 0.693,
+    "low_wind_day_fraction": 1.0,
+    "precip_total_mm": 208.49,
+    "dry_day_fraction": 0.0,
+    "pre_scene_haze_fraction": 0.5895,
+    "event_scene_haze_fraction": 0.6283,
+    "pre_scene_nonblack_fraction": 0.912,
+    "event_scene_nonblack_fraction": 0.8792,
+    "brightness_delta_luma": 4.723,
+    "source_count_pass": true,
+    "scene_haze_change_pass": true,
+    "low_ventilation_pass": true,
+    "local_dryness_pass": false,
+    "heat_day_count_tmax_ge_30c": 5,
+    "heat_load_c_day_gt_30c": 2.27,
+    "anchor_aerosol_map_text_present": true,
+    "support_report_dry_season_text_present": true,
+    "weather_context_scope": "Daily wind and precipitation are used as package-provided event-window context; coordinate/AOI metadata are not part of the scored evidence.",
+    "required_metrics": [
+      "source_region_count",
+      "scene_haze_ratio",
+      "mean_wind_m_s",
+      "low_wind_day_fraction",
+      "precip_total_mm",
+      "dry_day_fraction"
+    ]
+  },
+  "tolerances": {
+    "scene_haze_ratio": 0.01,
+    "mean_wind_m_s": 0.01,
+    "low_wind_day_fraction": 0.001,
+    "precip_total_mm": 0.1,
+    "dry_day_fraction": 0.001,
+    "heat_load_c_day_gt_30c": 0.01
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "requested_json_structure",
+        "points": 4,
+        "description": "Returns the metrics object, pass/fail object, final consistency label, and short rejected alternative.",
+        "partial_credit": "Award 2-3 points for parseable JSON with one missing object or minor field-name mismatch; award 1 point for mostly correct content outside strict JSON."
+      },
+      {
+        "name": "numeric_anchors_and_formulas",
+        "points": 5,
+        "description": "Computes source-region count, haze ratio, mean wind, low-wind fraction, precipitation total, and dry-day fraction with correct units and formulas.",
+        "partial_credit": "Award partial credit by metric family: up to 1 point for source count, 1.5 for image haze ratio, 1.5 for wind values, and 1 for precipitation values when formulas are mostly correct."
+      },
+      {
+        "name": "threshold_decisions",
+        "points": 4,
+        "description": "Correctly marks source count, scene haze change, and low ventilation as pass, and local dryness as fail.",
+        "partial_credit": "Award 1 point for each correct pass/fail state; do not award a point for a state whose threshold direction is reversed."
+      },
+      {
+        "name": "calculation_reasoning",
+        "points": 3,
+        "description": "Shows the image haze calculation and daily weather aggregation as explicit numeric checks.",
+        "partial_credit": "Award 1.5 points for the image calculation path and 1.5 points for the weather aggregation path if one path is incomplete."
+      },
+      {
+        "name": "rejected_alternative",
+        "points": 2,
+        "description": "Rejects a local dry-weather or heat-led proof using the failed dryness test and small heat load.",
+        "partial_credit": "Award 1 point for rejecting either local dryness or heat-led proof with a correct numeric reason."
+      },
+      {
+        "name": "concise_consistency_label",
+        "points": 1,
+        "description": "Uses a short final consistency label that follows from the pass/fail tests.",
+        "partial_credit": "Award 0.5 point for an equivalent but wordier label that preserves the three passing tests."
+      },
+      {
+        "name": "no_uncomputed_escalation",
+        "points": 1,
+        "description": "Avoids adding measured health-impact, road-closure, or burn-scar severity assertions not computed by the ledger.",
+        "partial_credit": "Award 0.5 point for one minor extra assertion that does not change the final label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August-September_2000_southern_Africa_biomass-burning_aerosol_and_smok.json",
+      "data/other/other_001_NASA_Earth_Observatory_Unprecedented_Fires_in_Southern_Africa.html",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ],
+    "notes": "All numeric anchors are derived from local CSX-206 package files. Scoring uses declared package-relative files, extracted statistics, formulas, and provenance rather than coordinate/AOI metadata."
+  }
+}

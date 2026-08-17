@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-006_Q1",
+  "event_id": "CSX-006",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "humid_dry_mechanism_audit",
+  "primary_gt": {
+    "answer": "point_evidence_dry_hot_not_humid_dominated",
+    "answer_type": "humid_dry_mechanism_audit",
+    "mechanism_ruling": "point_evidence_dry_hot_not_humid_dominated",
+    "selected_direct_product": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+    "key_values": {
+      "heat_load_gt39c_c_days": 14.1,
+      "warm_night_ratio": 1.0,
+      "hot_hour_count": 39,
+      "mean_relative_humidity_pct": 10.36,
+      "mean_dew_point_c": 3.58,
+      "mean_hot_hour_apparent_minus_air_c": -2.24
+    },
+    "rejected_alternatives": [
+      "anchor_or_report_label_only_humid_dominance",
+      "era5_land_aggregate_for_humid_heat",
+      "single_dry_bulb_spike_only"
+    ]
+  },
+  "answer_detail": {
+    "expected_answer": {
+      "answer_type": "humid_dry_mechanism_audit",
+      "mechanism_ruling": "point_evidence_dry_hot_not_humid_dominated",
+      "source_paths": {
+        "event_window": "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+        "direct_hourly_and_daily_product": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+        "report_context": "data/event_reports/event_reports_004_World_Weather_Attribution_-_Sahel_humid_heat_wave.html",
+        "insufficient_aggregate_product": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+      },
+      "event_window": {
+        "start_date": "2024-03-31",
+        "end_date": "2024-04-04",
+        "days": 5
+      },
+      "calculations": {
+        "daily_apparent_heat": {
+          "apparent_tmax_c": {
+            "2024-03-31": 39.7,
+            "2024-04-01": 42.0,
+            "2024-04-02": 43.2,
+            "2024-04-03": 41.8,
+            "2024-04-04": 42.4
+          },
+          "days_apparent_tmax_ge39c": 5,
+          "heat_load_gt39c_c_days": 14.1,
+          "hottest_3day_window": {
+            "start_date": "2024-04-02",
+            "end_date": "2024-04-04",
+            "mean_apparent_tmax_c": 42.5
+          }
+        },
+        "warm_nights": {
+          "tmin_c": {
+            "2024-03-31": 27.6,
+            "2024-04-01": 27.5,
+            "2024-04-02": 27.5,
+            "2024-04-03": 27.5,
+            "2024-04-04": 27.9
+          },
+          "warm_nights_tmin_ge27c": 5,
+          "warm_night_ratio": 1.0
+        },
+        "hot_hour_moisture_gate": {
+          "hot_hour_rule": "temperature_2m >= 39 C",
+          "hot_hour_count": 39,
+          "mean_relative_humidity_pct": 10.36,
+          "mean_dew_point_c": 3.58,
+          "hot_hours_rh_ge30pct_count": 0
+        },
+        "apparent_amplification_gate": {
+          "mean_hot_hour_apparent_minus_air_c": -2.24,
+          "hot_hours_apparent_gt_air_count": 7,
+          "daily_mean_apparent_minus_air_c": -1.2,
+          "days_apparent_tmax_gt_air_tmax": 1
+        }
+      },
+      "rejected_or_insufficient_alternatives": {
+        "anchor_or_report_label_only_humid_dominance": "insufficient_for_point_mechanism_without_hourly_moisture_support",
+        "era5_land_aggregate_for_humid_heat": "insufficient_missing_relative_humidity_dew_point_and_apparent_temperature_fields",
+        "single_dry_bulb_spike_only": "rejected_because_apparent_heat_load_is_14.1_c_days_and_all_5_nights_have_tmin_ge27c"
+      },
+      "reference_solving_trace": [
+        "Read the locked event anchor to get the 2024-03-31 to 2024-04-04 window.",
+        "Use Open-Meteo because it contains both daily apparent Tmax/Tmin and hourly temperature, RH, dew point, and apparent temperature.",
+        "Compute the sustained daily apparent-heat and warm-night checks from the daily arrays.",
+        "Filter hourly rows to temperature_2m >= 39 C and compute moisture and apparent-minus-air indicators.",
+        "Reject anchor/report-label-only humid dominance and ERA5 aggregate substitution because they cannot reproduce the point-scale moisture gate."
+      ]
+    }
+  },
+  "event": {
+    "event_name": "March-April 2024 West Africa and Sahel humid heat wave",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_date_or_window": "2024-03-31 to 2024-04-04",
+    "region_focus": "West Africa and Sahel, especially Mali and Burkina Faso"
+  },
+  "decision_rule": {
+    "required_answer_form": "Compact JSON with exactly the top-level keys requested in question_en.md.",
+    "mechanism_classification_rule": "Classify as point_evidence_dry_hot_not_humid_dominated when hot-hour mean RH is below 30%, no hot hours have RH >= 30%, and apparent temperature is not amplified above air temperature on average.",
+    "hot_hour_rule": "temperature_2m >= 39 C",
+    "numeric_tolerances": {
+      "heat_load_gt39c_c_days": 0.2,
+      "hottest_3day_mean_apparent_tmax_c": 0.2,
+      "warm_night_ratio": 0.01,
+      "mean_relative_humidity_pct": 0.05,
+      "mean_dew_point_c": 0.05,
+      "mean_hot_hour_apparent_minus_air_c": 0.05,
+      "daily_mean_apparent_minus_air_c": 0.05
+    }
+  },
+  "source_audit": {
+    "selected_direct_product": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+    "selected_direct_product_reason": "Only inspected numeric product with daily apparent Tmax/Tmin plus hourly temperature, relative humidity, dew point, and apparent temperature.",
+    "context_report": "data/event_reports/event_reports_004_World_Weather_Attribution_-_Sahel_humid_heat_wave.html",
+    "context_report_role": "regional heatwave narrative and impact context, not sufficient alone",
+    "insufficient_product": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+    "insufficient_product_missing_fields": [
+      "relative_humidity_2m",
+      "dew_point_2m",
+      "apparent_temperature"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Schema and paths",
+        "points": 2,
+        "description": "Returns the required JSON schema with the exact seven top-level keys and package-relative paths.",
+        "partial_credit": "Award 1 point for mostly correct JSON with minor key naming or path-role omissions."
+      },
+      {
+        "name": "Source selection",
+        "points": 2,
+        "description": "Selects Open-Meteo as the direct numeric source and identifies the locked anchor as the event-window source.",
+        "partial_credit": "Award 1 point if the answer uses Open-Meteo values but does not clearly explain the source role boundary."
+      },
+      {
+        "name": "Sustained apparent heat",
+        "points": 3,
+        "description": "Computes 14.1 C-days, 5 days >= 39 C, and the 2024-04-02 to 2024-04-04 rolling mean of 42.5 C.",
+        "partial_credit": "Award 1-2 points for correct method with one minor arithmetic or rounding error."
+      },
+      {
+        "name": "Warm-night persistence",
+        "points": 2,
+        "description": "Computes warm-night persistence as 5/5 = 1.0.",
+        "partial_credit": "Award 1 point if all warm nights are recognized but the ratio or threshold is missing."
+      },
+      {
+        "name": "Hot-hour moisture gate",
+        "points": 4,
+        "description": "Filters hot hours correctly and reports 39 hot hours, 10.36% mean RH, 3.58 C mean dew point, and 0 hot hours with RH >= 30%.",
+        "partial_credit": "Award 2-3 points for correct filtering with minor mean-value differences; award 1 point for using hourly humidity but the wrong hot-hour rule."
+      },
+      {
+        "name": "Apparent-amplification gate",
+        "points": 3,
+        "description": "Reports -2.24 C mean hot-hour apparent-minus-air, 7 hot hours with apparent > air, -1.2 C daily mean apparent-minus-air, and 1 day with apparent Tmax > air Tmax.",
+        "partial_credit": "Award 1-2 points for computing either hourly or daily apparent-minus-air correctly but not both."
+      },
+      {
+        "name": "Mechanism ruling",
+        "points": 2,
+        "description": "Classifies the point evidence as dry-hot/not humid-dominated while preserving the sustained apparent heat and warm-night findings.",
+        "partial_credit": "Award 1 point if the answer gives the correct dry-hot limitation but loses either sustained heat or warm-night context."
+      },
+      {
+        "name": "Rejected alternatives",
+        "points": 2,
+        "description": "Rejects anchor/report-label-only humid dominance and ERA5 aggregate substitution with specific evidence reasons.",
+        "partial_credit": "Award 1 point if only one rejected alternative is explained correctly."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/event_reports/event_reports_004_World_Weather_Attribution_-_Sahel_humid_heat_wave.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  }
+}

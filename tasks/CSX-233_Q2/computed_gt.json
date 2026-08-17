@@ -1,0 +1,147 @@
+{
+  "decision_rule": {
+    "fallback_label": "mixed_or_insufficient_numeric_support",
+    "final_label_if_all_gates_pass": "severe_coseismic_surface_change_localized_outliers_liquefaction_exposure",
+    "thresholds": {
+      "embedding_mean_max": 0.05,
+      "embedding_outlier_ratio_min": 20.0,
+      "failure_exposure_ratio_min": 100.0,
+      "liquefaction_population_alert_color": "red",
+      "max_precip_mean_mm_max": 1.0,
+      "motion_slip_index_min": 5.0,
+      "radar_change_z_max": 0.0
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-233",
+  "gate_results": {
+    "dry_weather_gate": true,
+    "failure_exposure_gate": true,
+    "localized_outlier_gate": true,
+    "motion_slip_gate": true,
+    "radar_decline_gate": true
+  },
+  "key_values": {
+    "annual_embedding_change": {
+      "max": 0.922,
+      "mean": 0.026,
+      "std": 0.021
+    },
+    "event": {
+      "depth_km": 10.0,
+      "event_date": "2024-01-01",
+      "event_name": "2024 Noto Peninsula earthquake",
+      "hazard_family": "earthquake_tsunami_geophysical",
+      "magnitude_mww": 7.5,
+      "tsunami_flag": 1
+    },
+    "ground_failure_exposure": {
+      "landslide_alert": "orange",
+      "landslide_hazard_value": 89.0,
+      "landslide_population_alert_value": 3800,
+      "liquefaction_alert": "red",
+      "liquefaction_hazard_value": 780.0,
+      "liquefaction_population_alert_color": "red",
+      "liquefaction_population_alert_value": 710000
+    },
+    "ground_motion_and_slip": {
+      "finite_fault_maximum_slip_m": 6.0299,
+      "finite_fault_model_length_km": 175.0,
+      "finite_fault_model_width_km": 45.0,
+      "max_mmi": 8.793,
+      "max_pga_g": 1.669,
+      "max_pgv_cm_s": 120.336
+    },
+    "precipitation_means_mm": {
+      "chirps_mean_mm": 0.348827,
+      "era5_mean_mm": 0.000916,
+      "gpm_mean_mm": 0.012622
+    },
+    "radar_change": {
+      "max_db": 37.746,
+      "mean_db": -1.772,
+      "min_db": -31.539,
+      "post_count": 18,
+      "pre_count": 27,
+      "std_db": 2.906
+    }
+  },
+  "primary_gt": {
+    "embedding_outlier_ratio": 35.463,
+    "failure_exposure_ratio": 186.842,
+    "final_label": "severe_coseismic_surface_change_localized_outliers_liquefaction_exposure",
+    "motion_slip_index": 10.064,
+    "radar_change_z": -0.61,
+    "rain_gate": "pass_dry_not_rain"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2024_Noto_Peninsula_earthquake.json",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us6000m0xl.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_001_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns exactly the six requested fields and the severe coseismic surface-change label.",
+        "name": "Requested JSON and final label",
+        "partial_credit": "Award 2-3 points for the correct label with schema issues, or a correct schema with a wrong label.",
+        "points": 4
+      },
+      {
+        "description": "Computes max PGA times finite-fault maximum slip as about 10.064 and treats the gate as passing.",
+        "name": "Ground-motion/slip calculation",
+        "partial_credit": "Award 1-3 points for using only one component, using imprecise rounding, or omitting the gate state.",
+        "points": 4
+      },
+      {
+        "description": "Computes radar_mean_db divided by radar_std_db as about -0.610 and verifies positive before/after counts.",
+        "name": "Radar normalized change",
+        "partial_credit": "Award 1-2 points for finding the negative radar mean without the normalized value or count gate.",
+        "points": 3
+      },
+      {
+        "description": "Computes the annual embedding max-to-mean ratio as about 35.463 and applies both localized-outlier thresholds.",
+        "name": "Embedding outlier concentration",
+        "partial_credit": "Award 1-2 points for recognizing localized outliers without the ratio or threshold check.",
+        "points": 3
+      },
+      {
+        "description": "Uses the largest event-date precipitation mean, about 0.349 mm, to pass the dry-weather gate.",
+        "name": "Dry-weather screen",
+        "partial_credit": "Award 1 point for identifying low precipitation without using the maximum mean estimate.",
+        "points": 2
+      },
+      {
+        "description": "Computes the liquefaction-to-landslide population exposure ratio as about 186.842 and checks the red alert.",
+        "name": "Ground-failure exposure contrast",
+        "partial_credit": "Award 1 point for naming liquefaction as larger without the ratio or alert check.",
+        "points": 2
+      },
+      {
+        "description": "Interprets the passing gates as coseismic surface change and avoids unsupported realized-loss inferences.",
+        "name": "Bounded numeric interpretation",
+        "partial_credit": "Award 1 point if the interpretation is mostly correct but overstates one uncomputed impact.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-233_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "embedding_outlier_ratio": 0.05,
+    "failure_exposure_ratio": 0.05,
+    "motion_slip_index": 0.02,
+    "radar_change_z": 0.01
+  }
+}

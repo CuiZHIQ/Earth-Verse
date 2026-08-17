@@ -1,0 +1,117 @@
+{
+  "component_tests": {
+    "cooling_ge_5_c": true,
+    "pulse_share_ge_50_pct": true,
+    "regional_mean_ge_200_mm": true,
+    "regional_spread_le_15_pct": true,
+    "same_peak_day": true,
+    "wind_below_ceiling": true
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "analysis_window": "2022-06-15 to 2022-06-29 daily point series; regional accumulation through 2022-07-30",
+    "event_name": "2022 Pakistan extreme monsoon floods",
+    "hazard_family": "atmospheric_river_monsoon_extremes",
+    "package_id": "CSX-292",
+    "window_semantics": "Point-series pulse, cooling, and wind tests use the 2022-06-15 to 2022-06-29 daily records; regional precipitation uses the package-supplied accumulated regional summaries."
+  },
+  "event_id": "CSX-292",
+  "formulas": {
+    "cooling_c": "mean of each point series' available daily temperature field on 2022-06-15 and 2022-06-16 minus that same series' temperature on the peak-rain day",
+    "peak_day": "date of maximum daily precipitation in each point series",
+    "pulse_share_pct": "100 * sum(precipitation from 2022-06-20 through 2022-06-22) / sum(precipitation over 2022-06-15 through 2022-06-29)",
+    "regional_mean_mm": "mean of ERA5-Land, GPM IMERG, and CHIRPS regional accumulated precipitation means",
+    "regional_spread_pct": "100 * (maximum regional mean - minimum regional mean) / regional_mean_mm",
+    "wind_ceiling": "NASA POWER maximum wind < 10 m/s and Open-Meteo maximum wind < 40 km/h"
+  },
+  "primary_gt": {
+    "all_tests_pass": true,
+    "answer": "wet_cooling_monsoon_pulse",
+    "cooling_c": {
+      "nasa_power": 9.8,
+      "open_meteo": 14.2
+    },
+    "peak_day": "2022-06-21",
+    "peak_precip_mm": {
+      "nasa_power": 26.9,
+      "open_meteo": 21.9
+    },
+    "pulse_share_pct": {
+      "nasa_power": 55.0,
+      "open_meteo": 81.7
+    },
+    "regional": {
+      "mean_mm": 238.6,
+      "spread_pct": 10.9
+    },
+    "wind": {
+      "nasa_power_max_ms": 5.3,
+      "open_meteo_max_kmh": 27.3
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_extreme_monsoon_floods.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields and final computed label.",
+        "name": "answer_schema",
+        "points": 4
+      },
+      {
+        "description": "Computes peak date, peak precipitation, pulse shares, cooling values, regional precipitation, and wind maxima within 0.1 units.",
+        "name": "numeric_anchors",
+        "points": 5
+      },
+      {
+        "description": "Applies the pulse-share, cooling, regional-mean, regional-spread, and wind-ceiling formulas to the stated windows.",
+        "name": "formula_application",
+        "points": 4
+      },
+      {
+        "description": "Evaluates all threshold comparisons and identifies that every component test passes.",
+        "name": "threshold_ledger",
+        "points": 4
+      },
+      {
+        "description": "Derives wet_cooling_monsoon_pulse from the pass state and rejects wind-led or heat-led labels through numeric thresholds.",
+        "name": "computed_label",
+        "points": 2
+      },
+      {
+        "description": "Keeps the conclusion within the package-derived calculation.",
+        "name": "scope_control",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "pakistan_monsoon_wet_cooling_pulse_ledger",
+  "task_id": "CSX-292_Q2",
+  "task_type": "numeric",
+  "thresholds": {
+    "maximum_regional_spread_pct": 15.0,
+    "minimum_cooling_c_each_series": 5.0,
+    "minimum_pulse_share_pct_each_series": 50.0,
+    "minimum_regional_mean_mm": 200.0,
+    "same_peak_day": true,
+    "wind_ceiling_required": true
+  },
+  "tolerances": {
+    "percent": 0.1,
+    "precip_mm": 0.1,
+    "regional_mean_mm": 0.1,
+    "temperature_c": 0.1,
+    "wind": 0.1
+  }
+}

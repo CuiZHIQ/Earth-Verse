@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-129_Q1",
+  "event_id": "CSX-129",
+  "task_type": "short_answer",
+  "target_family": "ian_landfall_point_signal_remote_box_consistency_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "ledger",
+    "target_family": "ian_landfall_point_signal_remote_box_consistency_ledger",
+    "final_consistency_label": "severe_florida_point_signal_remote_box_rejected",
+    "row_results": "florida_point_landfall_signal:pass;daily_power_crosscheck:pass;mapped_box_distance_check:reject;bounded_precip_ratio_check:reject;image_exposure_transfer_check:reject",
+    "core_values": "point=185.4kmh,211.5mm,966.9hPa; power=157.7mm,14.05mps,pr=0.746,gr=3.665; box_inside=false,dist=32.825549deg; precip_max_ratios=0.143,0.111,0.328; img_exp=pop175.658766,osm431,s116/18,vv-0.744729,surgefalse",
+    "tol": "weather=0.1;wind_mps=0.01;distance=0.000001;ratio=0.005;count=0",
+    "blocked": "loss_count;observed_surge;remote_rainfall;weaken_point_signal"
+  },
+  "event": {
+    "event_id": "CSX-129",
+    "package_id": "CSX-129",
+    "event_name": "Hurricane Ian",
+    "hazard_family": "tropical_cyclone",
+    "event_date_or_window": "2022-09-23 to 2022-09-30"
+  },
+  "decision_rule": {
+    "summary": "The ledger passes when the Florida point signal clears severe thresholds, the daily product cross-checks rainfall without replacing gusts, the compact mapped context fails distance transfer, bounded precipitation fails as a substitute, and image/exposure/surge transfers are blocked.",
+    "required_rows": [
+      "florida_point_landfall_signal",
+      "daily_power_crosscheck",
+      "mapped_box_distance_check",
+      "bounded_precip_ratio_check",
+      "image_exposure_transfer_check"
+    ],
+    "required_results": [
+      "pass_severe_florida_point_landfall_signal",
+      "pass_daily_precip_crosscheck_reject_daily_wind_as_gust",
+      "reject_remote_box_transfer_distance_mismatch",
+      "reject_bounded_precip_as_florida_point_replacement",
+      "reject_image_exposure_loss_and_surge_transfer"
+    ]
+  },
+  "key_values": {
+    "event_location": "Florida and southeastern United States",
+    "event_window": "2022-09-23 to 2022-09-30",
+    "hazard_label": "Tropical cyclone",
+    "point_weather_location": [
+      -81.85431,
+      26.608084
+    ],
+    "point_max_gust_kmh": 185.4,
+    "point_total_precip_mm": 211.5,
+    "point_min_pressure_hpa": 966.9,
+    "mapped_box": {
+      "bbox": [
+        -110.225,
+        43.275,
+        -109.775,
+        43.725
+      ],
+      "centroid": [
+        -110.0,
+        43.5
+      ]
+    },
+    "point_inside_mapped_box": false,
+    "mapped_box_conflicts_with_event_location": true,
+    "point_to_mapped_box_distance_degrees": 32.825549,
+    "worldpop_population_sum": 175.658766,
+    "osm_element_count": 431,
+    "osm_county_examples": [
+      "Fremont, WY",
+      "Fremont, WY:Teton, WY",
+      "Fremont, WY;Fremont, WY:Teton, WY",
+      "Sublette, WY",
+      "Teton, WY"
+    ],
+    "bounded_precipitation_stats": {
+      "ECMWF/ERA5_LAND/HOURLY": {
+        "precipitation_sum_mm_max": 30.204164,
+        "precipitation_sum_mm_mean": 22.209683,
+        "precipitation_sum_mm_min": 11.296632,
+        "precipitation_sum_mm_stdDev": 5.059395
+      },
+      "NASA/GPM_L3/IMERG_V07": {
+        "gpm_event_precip_mm_max": 23.579999,
+        "gpm_event_precip_mm_mean": 14.884846,
+        "gpm_event_precip_mm_min": 5.395,
+        "gpm_event_precip_mm_stdDev": 4.103571
+      },
+      "UCSB-CHG/CHIRPS/DAILY": {
+        "chirps_event_precip_mm_max": 69.322785,
+        "chirps_event_precip_mm_mean": 44.000844,
+        "chirps_event_precip_mm_min": 17.107626,
+        "chirps_event_precip_mm_stdDev": 13.567298
+      }
+    },
+    "sentinel1_pre_count": 16,
+    "sentinel1_post_count": 18,
+    "sentinel1_post_minus_pre_count": 2,
+    "sentinel1_vv_post_minus_pre_db_mean": -0.744729,
+    "surge_named_layer_present": false,
+    "point_daily_power_precip_total_mm": 157.7,
+    "point_daily_power_max_wind_mps": 14.05,
+    "point_daily_power_max_wind_kmh": 50.58,
+    "power_to_point_precip_ratio": 0.746,
+    "point_minus_power_precip_mm": 53.8,
+    "gust_to_power_wind_ratio": 3.665
+  },
+  "expected_ledger": [
+    {
+      "row_id": "florida_point_landfall_signal",
+      "formula": "max_gust_kmh>=150 AND total_precip_mm>=150 AND min_pressure_hpa<=980",
+      "computed_values": {
+        "point_weather_location": [
+          -81.85431,
+          26.608084
+        ],
+        "point_max_gust_kmh": 185.4,
+        "point_total_precip_mm": 211.5,
+        "point_min_pressure_hpa": 966.9
+      },
+      "threshold_or_test": "pass if gust>=150 km/h, precipitation>=150 mm, and pressure<=980 hPa",
+      "result": "pass_severe_florida_point_landfall_signal",
+      "interpretation": "The Florida point has a severe wind-rain-pressure landfall signal."
+    },
+    {
+      "row_id": "daily_power_crosscheck",
+      "formula": "power_precip_ratio=POWER_total_mm/point_total_mm; POWER_wind_kmh=POWER_wind_mps*3.6; gust_ratio=point_gust_kmh/POWER_wind_kmh",
+      "computed_values": {
+        "point_daily_power_precip_total_mm": 157.7,
+        "power_to_point_precip_ratio": 0.746,
+        "point_minus_power_precip_mm": 53.8,
+        "point_daily_power_max_wind_mps": 14.05,
+        "point_daily_power_max_wind_kmh": 50.58,
+        "gust_to_power_wind_ratio": 3.665
+      },
+      "threshold_or_test": "rainfall cross-check passes if POWER/point precipitation is 0.60-0.90; do not replace gust with 10 m daily wind",
+      "result": "pass_daily_precip_crosscheck_reject_daily_wind_as_gust",
+      "interpretation": "Daily precipitation agrees with the point rainfall range, but daily wind is not the peak gust signal."
+    },
+    {
+      "row_id": "mapped_box_distance_check",
+      "formula": "distance_degrees=hypot(point_lon-box_centroid_lon, point_lat-box_centroid_lat); point_inside_box",
+      "computed_values": {
+        "mapped_box_bbox": [
+          -110.225,
+          43.275,
+          -109.775,
+          43.725
+        ],
+        "mapped_box_centroid": [
+          -110.0,
+          43.5
+        ],
+        "point_weather_location": [
+          -81.85431,
+          26.608084
+        ],
+        "point_inside_mapped_box": false,
+        "point_to_mapped_box_distance_degrees": 32.825549,
+        "mapped_box_conflicts_with_event_location": true
+      },
+      "threshold_or_test": "reject transfer if point is outside box, conflict flag is true, or distance>20 degrees",
+      "result": "reject_remote_box_transfer_distance_mismatch",
+      "interpretation": "The compact mapped box is far from the Florida point and cannot represent the Ian landfall point."
+    },
+    {
+      "row_id": "bounded_precip_ratio_check",
+      "formula": "bounded_product_max_or_mean_mm / point_total_precip_mm",
+      "computed_values": {
+        "point_total_precip_mm": 211.5,
+        "bounded_precipitation_stats": {
+          "ECMWF/ERA5_LAND/HOURLY": {
+            "precipitation_sum_mm_max": 30.204164,
+            "precipitation_sum_mm_mean": 22.209683,
+            "precipitation_sum_mm_min": 11.296632,
+            "precipitation_sum_mm_stdDev": 5.059395
+          },
+          "NASA/GPM_L3/IMERG_V07": {
+            "gpm_event_precip_mm_max": 23.579999,
+            "gpm_event_precip_mm_mean": 14.884846,
+            "gpm_event_precip_mm_min": 5.395,
+            "gpm_event_precip_mm_stdDev": 4.103571
+          },
+          "UCSB-CHG/CHIRPS/DAILY": {
+            "chirps_event_precip_mm_max": 69.322785,
+            "chirps_event_precip_mm_mean": 44.000844,
+            "chirps_event_precip_mm_min": 17.107626,
+            "chirps_event_precip_mm_stdDev": 13.567298
+          }
+        },
+        "bounded_to_point_ratios": {
+          "ERA5_Land": {
+            "max_to_point_ratio": 0.143,
+            "mean_to_point_ratio": 0.105
+          },
+          "GPM_IMERG": {
+            "max_to_point_ratio": 0.111,
+            "mean_to_point_ratio": 0.07
+          },
+          "CHIRPS": {
+            "max_to_point_ratio": 0.328,
+            "mean_to_point_ratio": 0.208
+          }
+        }
+      },
+      "threshold_or_test": "reject replacement if bounded maxima are all <0.35 of the Florida point total and the mapped context is remote",
+      "result": "reject_bounded_precip_as_florida_point_replacement",
+      "interpretation": "The bounded grid precipitation is lower and geographically remote from the Florida point signal."
+    },
+    {
+      "row_id": "image_exposure_transfer_check",
+      "formula": "context_counts_only AND Wyoming_counties_present AND surge_named_layer_present=false",
+      "computed_values": {
+        "sentinel1_pre_count": 16,
+        "sentinel1_post_count": 18,
+        "sentinel1_post_minus_pre_count": 2,
+        "sentinel1_vv_post_minus_pre_db_mean": -0.744729,
+        "worldpop_population_sum": 175.658766,
+        "osm_element_count": 431,
+        "osm_county_examples": [
+          "Fremont, WY",
+          "Fremont, WY:Teton, WY",
+          "Fremont, WY;Fremont, WY:Teton, WY",
+          "Sublette, WY",
+          "Teton, WY"
+        ],
+        "surge_named_layer_present": false
+      },
+      "threshold_or_test": "reject loss or surge transfer when image/exposure context is remote and no named surge layer is present",
+      "result": "reject_image_exposure_loss_and_surge_transfer",
+      "interpretation": "Imagery, population, and mapped features are context only; they do not count Ian-wide losses or surge impacts."
+    }
+  ],
+  "failed_transfers": [
+    {
+      "transfer_id": "ian_wide_loss_count",
+      "calculation_or_test": "WorldPop 175.658766 and OSM 431 come from the remote mapped context",
+      "decision": "do not convert context counts into Ian-wide impacts"
+    },
+    {
+      "transfer_id": "bounded_precip_replaces_point",
+      "calculation_or_test": "bounded maxima ratios are 0.143, 0.111, and 0.328 of the Florida point rainfall",
+      "decision": "do not replace the Florida point rainfall with the remote bounded grid context"
+    },
+    {
+      "transfer_id": "surge_inference",
+      "calculation_or_test": "surge_named_layer_present=false",
+      "decision": "do not infer observed surge or inundation from this ledger"
+    },
+    {
+      "transfer_id": "image_damage_count",
+      "calculation_or_test": "Sentinel-1 pre/post counts 16/18 and VV mean change -0.744729 dB are contextual statistics",
+      "decision": "do not count direct damage from the image summary"
+    }
+  ],
+  "tolerances": {
+    "location_abs": 1e-06,
+    "weather_abs": 0.1,
+    "wind_mps_abs": 0.01,
+    "distance_degrees_abs": 1e-06,
+    "ratio_abs": 0.005,
+    "population_abs": 1e-06,
+    "vv_db_abs": 1e-06,
+    "count_abs": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON ledger",
+        "points": 2,
+        "description": "Returns the target family, exactly the five required ledger rows, failed transfers, and final consistency label.",
+        "partial_credit": "Award 1 point for valid JSON with missing or renamed rows."
+      },
+      {
+        "name": "Florida point landfall signal",
+        "points": 4,
+        "description": "Computes the point location, 185.4 km/h gust, 211.5 mm precipitation, and 966.9 hPa pressure, then passes the severe-threshold test.",
+        "partial_credit": "Award 2-3 points for two correct metrics or a mostly correct threshold test with minor unit errors."
+      },
+      {
+        "name": "Daily POWER cross-check",
+        "points": 3,
+        "description": "Computes 157.7 mm, POWER/point precipitation ratio 0.746, 14.05 m/s = 50.58 km/h, and gust-to-POWER-wind ratio 3.665.",
+        "partial_credit": "Award 1-2 points for a partial precipitation-only or wind-only cross-check."
+      },
+      {
+        "name": "Mapped-box distance proof",
+        "points": 4,
+        "description": "Uses bbox [-110.225,43.275,-109.775,43.725], centroid [-110.0,43.5], point outside-box result, conflict flag, and 32.825549 degree distance.",
+        "partial_credit": "Award 2-3 points for the correct mismatch conclusion with an incomplete distance or containment calculation."
+      },
+      {
+        "name": "Bounded precipitation ratio check",
+        "points": 3,
+        "description": "Compares ERA5, GPM, and CHIRPS bounded mean/max precipitation values with 211.5 mm and rejects using them as the Florida point rainfall.",
+        "partial_credit": "Award 1-2 points for using only one or two bounded products or omitting ratios."
+      },
+      {
+        "name": "Image and exposure transfer check",
+        "points": 3,
+        "description": "Uses Sentinel-1 16/18 counts, -0.744729 dB mean VV change, WorldPop 175.658766, OSM 431, Wyoming county examples, and absent surge layer to reject loss-count and surge transfer.",
+        "partial_credit": "Award 1-2 points for the correct transfer decision with missing anchors."
+      },
+      {
+        "name": "Final proof discipline",
+        "points": 1,
+        "description": "Gives the final consistency label and avoids Ian-wide loss, direct damage, or surge claims not established by the calculations.",
+        "partial_credit": "No credit if the answer adds external planning text or escalates beyond the ledger."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All values are computed or extracted from local CSX-129 package data; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

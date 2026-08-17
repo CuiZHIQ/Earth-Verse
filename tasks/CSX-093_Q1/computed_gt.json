@@ -1,0 +1,131 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-093",
+  "key_values": {
+    "amenity_counts": {
+      "fire_station": 8,
+      "hospital": 5,
+      "police": 5,
+      "school": 60,
+      "shelter": 3
+    },
+    "complaint_counts": {
+      "ELECTRIC": 43,
+      "Sewer": 457
+    },
+    "computed_consequence": "The NYC signal passes all three gates, so the data support a concentrated rainfall and street/sewer disruption ledger rather than surge, wind, or remote-damage dominance.",
+    "gates": {
+      "rainfall_burst": true,
+      "street_sewer_signal": true,
+      "urban_exposure": true
+    },
+    "max_score": 3,
+    "metrics": {
+      "event_total_mm": 133.9,
+      "exposed_population_proxy": 57114.9,
+      "peak_hour_mm": 33.8,
+      "service_records": 500,
+      "sewer_share": 0.914,
+      "street_flooding_share": 0.892,
+      "wettest_6h_mm": 98.3,
+      "wettest_6h_share": 0.7341
+    },
+    "score": 3,
+    "top_descriptors": {
+      "Highway Flooding (SH)": 10,
+      "LIGHTING": 43,
+      "RAIN GARDEN FLOODING (SRGFLD)": 1,
+      "Street Flooding (SJ)": 446
+    }
+  },
+  "primary_gt": {
+    "answer": "rainfall_driven_urban_pluvial_service_signal",
+    "computed_consequence": "The NYC signal passes all three gates, so the data support a concentrated rainfall and street/sewer disruption ledger rather than surge, wind, or remote-damage dominance.",
+    "gates": {
+      "rainfall_burst": true,
+      "street_sewer_signal": true,
+      "urban_exposure": true
+    },
+    "metrics": {
+      "event_total_mm": 133.9,
+      "exposed_population_proxy": 57114.9,
+      "peak_hour_mm": 33.8,
+      "service_records": 500,
+      "sewer_share": 0.914,
+      "street_flooding_share": 0.892,
+      "wettest_6h_mm": 98.3,
+      "wettest_6h_share": 0.7341
+    },
+    "rejected_alternative": "surge_wind_or_remote_damage_dominance",
+    "score": {
+      "max": 3,
+      "value": 3
+    },
+    "target_family": "nyc_ida_pluvial_signal_score_ledger",
+    "tolerances": {
+      "population": 100.0,
+      "rain_mm": 1.0,
+      "share": 0.01
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/air_quality/air_quality_002_03_city_feedback_or_air_quality_NYC_311_Service_Requests_Socrata_flood_complaints.json.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_osm_overpass_exposure_slice.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested object with target_family, metrics, gates, score, max_score, answer, and computed_consequence.",
+        "name": "Compact JSON target",
+        "partial_credit": "Award 1-2 points if the structure is mostly complete but one required group is missing or field names are unclear.",
+        "points": 3
+      },
+      {
+        "description": "Reports 133.9 mm event total, 33.8 mm peak hour, 98.3 mm wettest 6-hour total, and 0.7341 wettest 6-hour share.",
+        "name": "Rainfall load and concentration",
+        "partial_credit": "Award 2-3 points for minor rounding errors or one missing rainfall value; 1 point for only the total or peak hour.",
+        "points": 4
+      },
+      {
+        "description": "Reports 500 records, 0.914 sewer share, and 0.892 street-flooding share.",
+        "name": "Service-record shares",
+        "partial_credit": "Award 2-3 points for correct count with one share wrong or rounded too coarsely; 1 point for recognizing the street/sewer signal without computing shares.",
+        "points": 4
+      },
+      {
+        "description": "Applies the three stated gates and returns all three as true with score 3 of 3.",
+        "name": "Gate logic and score",
+        "partial_credit": "Award 2-3 points for correct gate arithmetic with one threshold mistake; 1 point for using the right idea but not the stated thresholds.",
+        "points": 4
+      },
+      {
+        "description": "Uses rainfall_driven_urban_pluvial_service_signal or a precise equivalent.",
+        "name": "Final label",
+        "partial_credit": "Award 1 point for a broadly rainfall-driven urban flood label that omits the service-record signal.",
+        "points": 2
+      },
+      {
+        "description": "Explains that surge, wind, and remote-damage dominance are weaker because the ledger passes rainfall, street/sewer, and exposure gates.",
+        "name": "Alternative dominance rejection",
+        "partial_credit": "Award 1 point if only one or two competing pathways are addressed.",
+        "points": 2
+      },
+      {
+        "description": "Provides a concise ledger-tied consequence with no direct loss estimate from the population proxy.",
+        "name": "Concision and inference control",
+        "partial_credit": "Award 0.5 points if the response is mostly concise but adds minor extra interpretation beyond the computed values.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "nyc_ida_pluvial_signal_score_ledger",
+  "task_id": "CSX-093_Q1",
+  "task_type": "short_answer"
+}

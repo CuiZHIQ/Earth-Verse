@@ -1,0 +1,263 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-286",
+  "key_values": {
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.007,
+      "chirps_max_mm": 109.5,
+      "chirps_mean_mm": 80.8,
+      "critical_amenities": 6,
+      "drainage_features": 30,
+      "era5_precip_mean_mm": 30.3,
+      "gpm_max_mm": 148.7,
+      "gpm_mean_mm": 86.1,
+      "heavy_rain_days": 8,
+      "heavy_rain_run_days": 6,
+      "max_daily_point_precip_mm": 26.7,
+      "nasa_power_total_mm": 112.2,
+      "open_meteo_total_mm": 121.2,
+      "point_precip_total_mm": 116.7,
+      "population_exposed": 43914,
+      "regional_precip_mean_mm": 83.5,
+      "road_features": 427
+    },
+    "dominant_driver": "el_nino_positive_iod_moisture_enhanced_seasonal_rainfall",
+    "event_name": "2024 East Africa exceptional rainfall and floods",
+    "event_window": {
+      "end_date": "2024-05-05",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2024-04-23"
+    },
+    "osm_counts": {
+      "amenity_counts": {
+        "hospital": 1,
+        "school": 4,
+        "shelter": 1
+      },
+      "critical_amenities": 6,
+      "drainage_features": 30,
+      "highway_features": 427,
+      "road_features": 427,
+      "waterway_features": 30
+    },
+    "priority_score_components": {
+      "exposure_context": 15,
+      "hazard_magnitude": 40,
+      "impact_text": 20,
+      "rainfall_persistence": 25
+    },
+    "text_claim_flags": {
+      "casualties_or_injuries": true,
+      "climate_mode_driver": true,
+      "east_africa_floods": true,
+      "flood_warning": true,
+      "heat_context_present": true
+    }
+  },
+  "primary_gt": {
+    "answer": "exceptional_seasonal_rainfall_flooding_life_safety_priority",
+    "answer_type": "structured_short_answer_with_judged_reasoning",
+    "impact_chain": [
+      "el_nino_positive_iod_moisture_context",
+      "exceptional_seasonal_rainfall",
+      "flash_and_pluvial_flood_life_safety_priority"
+    ],
+    "judge_anchors": {
+      "acceptable_variants": [
+        "May describe the hazard as pluvial or flash flooding caused by persistent seasonal rainfall.",
+        "May round rainfall values to one decimal place or describe them as approximately 84 mm regional mean and 117 mm point total.",
+        "May call the priority tier 'very high flood life-safety response' if the exact tier label and index are also recoverable."
+      ],
+      "canonical_stance": "Classify the incident as exceptional seasonal rainfall and flooding in East Africa, enhanced by El Nino/positive Indian Ocean Dipole moisture context, with a very high life-safety flood response priority.",
+      "exact_core_fields": {
+        "answer": "exceptional_seasonal_rainfall_flooding_life_safety_priority",
+        "impact_chain": [
+          "el_nino_positive_iod_moisture_context",
+          "exceptional_seasonal_rainfall",
+          "flash_and_pluvial_flood_life_safety_priority"
+        ],
+        "priority_index": 100,
+        "priority_tier": "very_high_life_safety_flood_response"
+      },
+      "forbidden_claims": [
+        "Treating heat stress, wind damage, drought, or annual land-cover change as the primary East Africa event mechanism.",
+        "Reporting exact all-country mortality totals or formal hydrologic return periods not supported by the task record.",
+        "Using the low annual embedding-change value to claim that no flood damage occurred.",
+        "Treating the exposure slice as a complete census of every affected community."
+      ],
+      "required_claims": [
+        "Identifies exceptional seasonal rainfall and flooding as the dominant disaster mechanism.",
+        "Links the rainfall context to El Nino, a positive Indian Ocean Dipole, and warm north-west Indian Ocean conditions.",
+        "Uses both rainfall magnitude and rainfall persistence to justify flood severity.",
+        "Connects flood warnings or casualty/injury language to a life-safety response priority.",
+        "Uses bounded exposure context, including population and critical amenities, without treating it as exact realized loss."
+      ],
+      "required_metrics": [
+        {
+          "derivation": "Mean of GPM and CHIRPS event accumulated precipitation means.",
+          "name": "regional_precip_mean_mm",
+          "tolerance": 0.2,
+          "units": "mm",
+          "value": 83.5
+        },
+        {
+          "derivation": "Mean of Open-Meteo and NASA POWER event-window point totals.",
+          "name": "point_precip_total_mm",
+          "tolerance": 0.2,
+          "units": "mm",
+          "value": 116.7
+        },
+        {
+          "derivation": "Conservative minimum count of days with at least 5 mm/day across the two point samples.",
+          "name": "heavy_rain_days",
+          "tolerance": 0,
+          "units": "days",
+          "value": 8
+        },
+        {
+          "derivation": "Conservative minimum longest run of days with at least 5 mm/day across the two point samples.",
+          "name": "heavy_rain_run_days",
+          "tolerance": 0,
+          "units": "days",
+          "value": 6
+        },
+        {
+          "derivation": "WorldPop population sum for the event exposure context.",
+          "name": "population_exposed",
+          "tolerance": 0,
+          "units": "people",
+          "value": 43914
+        },
+        {
+          "derivation": "OSM hospital, clinic, school, and shelter count in the bounded exposure slice.",
+          "name": "critical_amenities",
+          "tolerance": 0,
+          "units": "features",
+          "value": 6
+        }
+      ]
+    },
+    "key_metrics": {
+      "critical_amenities": 6,
+      "heavy_rain_days": 8,
+      "point_precip_total_mm": 116.7,
+      "population_exposed": 43914,
+      "regional_precip_mean_mm": 83.5
+    },
+    "priority_index": 100,
+    "priority_index_tolerance": 0,
+    "priority_tier": "very_high_life_safety_flood_response"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_East_Africa_exceptional_rainfall_and_floods.json",
+      "data/event_reports/event_reports_004_WMO_Asia_and_Africa_reel_under_extreme_weather.html",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the exact dominant mechanism label, assigns `very_high_life_safety_flood_response`, and reports priority index 100.",
+        "name": "Exact structured classification",
+        "partial_credit": "Award up to 2 points for an equivalent rainfall-flood mechanism without the exact label, and up to 1 additional point for a high or very-high tier with an approximate index.",
+        "points": 4
+      },
+      {
+        "description": "Reports the regional precipitation mean of 83.5 mm, the point total of 116.7 mm, and recognizes that GPM/CHIRPS plus point samples agree on substantial rainfall.",
+        "name": "Rainfall magnitude anchors",
+        "partial_credit": "Award 2-3 points for approximately correct rainfall values with minor rounding or omitted source pairing; award 1 point for only qualitative heavy-rain language.",
+        "points": 4
+      },
+      {
+        "description": "Uses 8 heavy-rain days, a 6-day run, and the 40+25+20+15 scoring structure to explain why the priority index reaches 100.",
+        "name": "Persistence and priority scoring",
+        "partial_credit": "Award 1-2 points for recognizing persistent rainfall or top-tier priority without reconstructing the full scoring logic.",
+        "points": 3
+      },
+      {
+        "description": "Explains the chain from El Nino, positive Indian Ocean Dipole, and warm Indian Ocean conditions to enhanced seasonal rainfall and flash or pluvial flooding.",
+        "name": "Physical driver and flood process",
+        "partial_credit": "Award 1-2 points for naming the rainfall-flood process but missing one or more climate-mode drivers.",
+        "points": 3
+      },
+      {
+        "description": "Connects flood warnings or casualty/injury text with 43,914 exposed people, 6 critical amenities, and the resulting life-safety/access-disruption priority.",
+        "name": "Exposure and life-safety interpretation",
+        "partial_credit": "Award 1-2 points for mentioning exposure or warnings without tying them to the response priority, or for using population/asset figures with small transcription errors.",
+        "points": 3
+      },
+      {
+        "description": "Rejects heat, drought, wind, and annual land-cover change as primary mechanisms and avoids unsupported mortality, complete-exposure, or return-period overclaims.",
+        "name": "Competing mechanisms and uncertainty",
+        "partial_credit": "Award 1 point for rejecting some competing mechanisms but making a minor unsupported escalation.",
+        "points": 2
+      },
+      {
+        "description": "Provides the requested JSON-like structure with a coherent three-step impact chain.",
+        "name": "Concise structured response",
+        "partial_credit": "Award 0.5 points for a mostly complete structure with minor formatting omissions.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.007,
+      "chirps_max_mm": 109.5,
+      "chirps_mean_mm": 80.8,
+      "critical_amenities": 6,
+      "drainage_features": 30,
+      "era5_precip_mean_mm": 30.3,
+      "gpm_max_mm": 148.7,
+      "gpm_mean_mm": 86.1,
+      "heavy_rain_days": 8,
+      "heavy_rain_run_days": 6,
+      "max_daily_point_precip_mm": 26.7,
+      "nasa_power_total_mm": 112.2,
+      "open_meteo_total_mm": 121.2,
+      "point_precip_total_mm": 116.7,
+      "population_exposed": 43914,
+      "regional_precip_mean_mm": 83.5,
+      "road_features": 427
+    },
+    "dominant_driver": "el_nino_positive_iod_moisture_enhanced_seasonal_rainfall",
+    "event_window": {
+      "end_date": "2024-05-05",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2024-04-23"
+    },
+    "osm_counts": {
+      "amenity_counts": {
+        "hospital": 1,
+        "school": 4,
+        "shelter": 1
+      },
+      "critical_amenities": 6,
+      "drainage_features": 30,
+      "highway_features": 427,
+      "road_features": 427,
+      "waterway_features": 30
+    },
+    "text_claim_flags": {
+      "casualties_or_injuries": true,
+      "climate_mode_driver": true,
+      "east_africa_floods": true,
+      "flood_warning": true,
+      "heat_context_present": true
+    }
+  },
+  "task_id": "CSX-286_Q1",
+  "task_type": "short_answer"
+}

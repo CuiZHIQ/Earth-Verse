@@ -1,0 +1,158 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-289",
+  "key_values": {
+    "daily_precip_mm": {
+      "20210717": 2.32,
+      "20210718": 24.59,
+      "20210719": 66.68,
+      "20210720": 334.6,
+      "20210721": 142.29,
+      "20210722": 11.03,
+      "20210723": 5.3
+    },
+    "date_window": "2021-07-17 to 2021-07-23",
+    "event_name": "July 2021 Henan extreme rainfall",
+    "gate_margins": {
+      "critical_facilities_over_800": 38,
+      "nonpeak_mm_below_300": 47.8,
+      "peak_share_over_0p50": 0.07,
+      "population_million_over_10": 7.68,
+      "regional_event_mm_over_500": 23.3,
+      "regional_hourly_mm_over_400": 60.1,
+      "surface_mean_below_0p05": 0.012
+    },
+    "gates": {
+      "critical_facilities_ge_800": true,
+      "nonpeak_mm_lt_300": true,
+      "peak_share_gt_0p50": true,
+      "population_million_ge_10": true,
+      "regional_event_mm_ge_500": true,
+      "regional_hourly_mm_ge_400": true,
+      "surface_mean_lt_0p05": true
+    },
+    "thresholds": {
+      "critical_facilities_ge": 800,
+      "nonpeak_mm_lt": 300.0,
+      "peak_share_gt": 0.5,
+      "population_million_ge": 10.0,
+      "regional_event_mm_ge": 500.0,
+      "regional_hourly_mm_ge": 400.0,
+      "surface_mean_lt": 0.05
+    },
+    "urban_counts": {
+      "critical_facilities": 838,
+      "elements": 1000,
+      "fire_stations": 11,
+      "hospitals": 175,
+      "police": 149,
+      "roads": 130,
+      "schools": 343,
+      "shelters": 160
+    },
+    "urban_inventory_definition": {
+      "critical_facilities": "schools + hospitals + shelters + police + fire stations",
+      "roads": "features with a highway tag"
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "critical_facilities": 838,
+      "facility_density_per_million": 47.41,
+      "gate_hits": 7,
+      "gate_total": 7,
+      "ledger_score": 1.0,
+      "local_total_mm": 586.8,
+      "nonpeak_mm": 252.2,
+      "peak_day": "20210720",
+      "peak_mm": 334.6,
+      "peak_share": 0.57,
+      "peak_to_remainder_ratio": 1.327,
+      "population_million": 17.68,
+      "regional_event_max_mm": 523.3,
+      "regional_hourly_max_mm": 460.1,
+      "road_to_facility_ratio": 0.155,
+      "roads": 130,
+      "surface_change_max": 0.72,
+      "surface_change_max_to_mean": 18.86,
+      "surface_change_mean": 0.038
+    },
+    "calculation_definitions": {
+      "critical_facilities": "school, hospital, shelter, police, and fire-station amenity features in the package urban-context slice",
+      "facility_density_per_million": "critical_facilities / population_million",
+      "road_to_facility_ratio": "roads / critical_facilities"
+    },
+    "calculation_note": "The 334.6 mm peak day supplies 57.0% of the 586.8 mm local event total, while all seven rainfall, urban-inventory, and annual-change gates clear.",
+    "canonical_answer": "ledger_score_1.0_gate_hits_7_of_7",
+    "tolerance": {
+      "mm": 0.1,
+      "population_million": 0.01,
+      "ratio": 0.001,
+      "surface_ratio": 0.01
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Henan_extreme_rainfall.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes the daily-series total, peak date, and peak-day rainfall with correct units.",
+        "name": "Local rainfall extraction",
+        "partial_credit": "Partial credit for two of the three local rainfall anchors.",
+        "points": 4
+      },
+      {
+        "description": "Computes non-peak rainfall, peak-day share, and peak-to-remainder ratio accurately.",
+        "name": "Rainfall concentration ratios",
+        "partial_credit": "Partial credit for a correct formula with one rounding or arithmetic error.",
+        "points": 4
+      },
+      {
+        "description": "Uses the two regional precipitation maxima and applies their numeric gates correctly.",
+        "name": "Regional maxima gates",
+        "partial_credit": "Partial credit for one correct regional maximum and gate result.",
+        "points": 3
+      },
+      {
+        "description": "Computes population, road count, critical-facility count defined as school/hospital/shelter/police/fire-station amenities, facility density, and road-to-facility ratio.",
+        "name": "Urban inventory ratios",
+        "partial_credit": "Partial credit for correct counts but missing one derived ratio.",
+        "points": 3
+      },
+      {
+        "description": "Computes annual surface-change mean, maximum, and max-to-mean contrast.",
+        "name": "Annual surface-change contrast",
+        "partial_credit": "Partial credit for the two raw annual values without the contrast ratio.",
+        "points": 2
+      },
+      {
+        "description": "Reports all seven gate outcomes, gate count, and ledger score.",
+        "name": "Seven-gate ledger",
+        "partial_credit": "Partial credit for a correct score with incomplete gate detail.",
+        "points": 3
+      },
+      {
+        "description": "Returns compact JSON with units implied by field names and a one-sentence calculation note.",
+        "name": "Structured numeric output",
+        "partial_credit": "Partial credit for readable structure with minor naming drift.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "rainfall_exposure_threshold_ledger",
+  "task_id": "CSX-289_Q2",
+  "task_type": "numeric"
+}

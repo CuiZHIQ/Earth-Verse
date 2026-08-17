@@ -1,0 +1,214 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "compound rainfall-flood-landslide-health monitoring priority",
+      "rainfall-driven flood and slope-failure cascade with health surveillance",
+      "cyclone rainfall flood cascade priority with landslide and cholera-risk monitoring"
+    ],
+    "answer": "compound_rainfall_flood_landslide_health_monitoring_priority",
+    "answer_type": "deterministic_priority_label_with_rubric_judged_reasoning",
+    "canonical_stance": "Cyclone Freddy's response priority is a compound rainfall-driven flooding, landslide-susceptibility, and health-monitoring cascade rather than a wind-only, drought/heat, or wildfire/burn-scar response.",
+    "forbidden_claims": [
+      "exact death, cholera-case, landslide-count, flood-depth, or economic-loss totals",
+      "claiming the exposed-population value is the directly affected population",
+      "reducing the event to a wind-only cyclone response",
+      "treating negative burn-scar checks as evidence of wildfire damage"
+    ],
+    "key_metrics": {
+      "event_period": "2023-02-21_to_2023-03-31",
+      "exposed_population_context": 1090345.7,
+      "rainfall_signature": {
+        "ensemble_max_precip_mm": 200.145,
+        "ensemble_mean_precip_mm": 83.974
+      }
+    },
+    "priority_chain": [
+      "cyclone_moisture_and_heavy_rainfall",
+      "flooding_with_landslide_susceptibility",
+      "health_risk_monitoring"
+    ],
+    "rejected_priorities": {
+      "drought_or_heat": "contradicted by the wet-event signature",
+      "wildfire_or_burn_scar": "not the dominant surface-change signal",
+      "wind_core_only": "too narrow for the rainfall-flood cascade"
+    },
+    "required_claims": [
+      "Identify compound rainfall flooding as the response driver.",
+      "Include landslide susceptibility and health-risk monitoring as cascading priorities.",
+      "Use population as exposure context rather than a direct impact count.",
+      "Reject wind-only, drought/heat, and wildfire/burn-scar priorities."
+    ],
+    "required_metrics": [
+      {
+        "name": "event_period",
+        "target": "2023-02-21_to_2023-03-31",
+        "tolerance": "exact dates"
+      },
+      {
+        "name": "ensemble_mean_precip_mm",
+        "target": 83.974,
+        "tolerance": 2.0
+      },
+      {
+        "name": "ensemble_max_precip_mm",
+        "target": 200.145,
+        "tolerance": 3.0
+      },
+      {
+        "name": "exposed_population_context",
+        "target": 1090345.7,
+        "tolerance": 25000.0
+      }
+    ]
+  },
+  "audit_summary": {
+    "numeric_anchor_count": 4,
+    "visible_product_names_allowed": false,
+    "visible_workflow_leakage_allowed": false
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-255",
+  "key_values": {
+    "ensemble_max_precip_mm": 200.145,
+    "ensemble_mean_precip_mm": 83.974,
+    "event_period": "2023-02-21_to_2023-03-31",
+    "exposed_population_context": 1090345.7,
+    "priority_chain": [
+      "cyclone_moisture_and_heavy_rainfall",
+      "flooding_with_landslide_susceptibility",
+      "health_risk_monitoring"
+    ]
+  },
+  "numeric_tolerances": {
+    "ensemble_max_precip_mm": {
+      "target": 200.145,
+      "tolerance": 3.0
+    },
+    "ensemble_mean_precip_mm": {
+      "target": 83.974,
+      "tolerance": 2.0
+    },
+    "event_period": {
+      "target": "2023-02-21_to_2023-03-31",
+      "tolerance": "exact dates"
+    },
+    "exposed_population_context": {
+      "target": 1090345.7,
+      "tolerance": 25000.0
+    }
+  },
+  "primary_gt": {
+    "answer": "compound_rainfall_flood_landslide_health_monitoring_priority",
+    "key_metrics": {
+      "event_period": "2023-02-21_to_2023-03-31",
+      "exposed_population_context": "1090345.7 people",
+      "rainfall_signature": "ensemble_mean_precip_mm=83.974; ensemble_max_precip_mm=200.145"
+    },
+    "priority_chain": [
+      "cyclone_moisture_and_heavy_rainfall",
+      "flooding_with_landslide_susceptibility",
+      "health_risk_monitoring"
+    ],
+    "rejected_priorities": [
+      "wind_core_only: too narrow for the rainfall-flood cascade",
+      "drought_or_heat: contradicted by the wet-event signature",
+      "wildfire_or_burn_scar: not the dominant surface-change signal"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Cyclone_Freddy_floods_landslides_and_cholera_risk.json",
+      "data/event_reports/event_reports_001_Locked_anchor_WMO.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects compound_rainfall_flood_landslide_health_monitoring_priority or a semantically equivalent compact label.",
+        "name": "priority_label",
+        "points": 4
+      },
+      {
+        "description": "Identifies cyclone moisture and heavy rainfall as the driver and gives the event period, ensemble mean rainfall, and ensemble maximum rainfall within stated tolerances.",
+        "name": "rainfall_mechanism_and_metrics",
+        "points": 4
+      },
+      {
+        "description": "Connects flooding to landslide susceptibility and health-risk monitoring as the operational cascade.",
+        "name": "cascade_chain",
+        "points": 3
+      },
+      {
+        "description": "Uses the exposed-population metric as context for operational scale without treating it as a directly affected count.",
+        "name": "exposure_context",
+        "points": 3
+      },
+      {
+        "description": "Rejects wind-core-only, drought/heat, and wildfire/burn-scar priorities using event-mechanism reasoning.",
+        "name": "rejected_priorities",
+        "points": 3
+      },
+      {
+        "description": "Avoids unsupported exact claims about deaths, cholera cases, landslide counts, flood depths, infrastructure disruption, or economic losses.",
+        "name": "overclaim_control",
+        "points": 2
+      },
+      {
+        "description": "Returns a concise JSON object with the requested fields.",
+        "name": "json_structure",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "classification_flags": {
+      "burn_scar_priority": false,
+      "cascade_signal": true,
+      "drought_heat_priority": false,
+      "exposed_population_signal": true,
+      "flood_rainfall_signal": true,
+      "text_flood_signal": true
+    },
+    "computed_metrics": {
+      "cascade_terms": {
+        "flood": true,
+        "health_or_cholera": true,
+        "landslide": true
+      },
+      "dnbr_mean": -0.0744,
+      "embedding_change_mean": 0.0156,
+      "ensemble_max_precip_mm": 200.145,
+      "ensemble_mean_precip_mm": 83.974,
+      "event_period": "2023-02-21_to_2023-03-31",
+      "exposed_population_context": 1090345.7,
+      "point_precip_sum_a_mm": 94.5,
+      "point_precip_sum_b_mm": 85.61,
+      "report_terms": {
+        "flood_mentions": 8,
+        "rain_mentions": 6,
+        "red_alert_mentions": 1,
+        "saturated_soils_mentions": 1
+      }
+    },
+    "event_metadata": {
+      "event_name": "Cyclone Freddy floods, landslides and cholera risk",
+      "hazard_family": "compound_cascading_events",
+      "region": "Global oceans"
+    }
+  },
+  "task_id": "CSX-255_Q1",
+  "task_subtype": "response_priority_compound_cascade",
+  "task_type": "short_answer"
+}

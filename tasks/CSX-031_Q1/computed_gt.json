@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-031_Q1",
+  "event_id": "CSX-031",
+  "task_type": "short_answer",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "cold-persistence-dominated with co-timed snow and wind stress",
+    "cold_load": {
+      "window_days": 7,
+      "fdd_c_day": 11.8,
+      "below0_daily_min_days": 3,
+      "longest_below0_run_days": 3,
+      "below0_hours": 60
+    },
+    "peak_cold_wind": {
+      "date": "2016-01-24",
+      "tmin_c": -6.3,
+      "max_gust_kmh": 92.2,
+      "gust_time": "2016-01-24T00:00",
+      "gust_temp_c": -4.9
+    },
+    "snow_overlap": {
+      "total_cm": 9.87,
+      "max_day_cm": 4.62,
+      "max_day": "2016-01-24",
+      "snow_hours": 61,
+      "below0_snow_hours": 38,
+      "snow_share_on_below0_tmin_days": 0.865
+    },
+    "precip_means_mm": {
+      "era5": 1.32,
+      "gpm": 0.03,
+      "chirps": 3.75
+    },
+    "decision_rule": "Use the cold-persistence label because FDD exceeds 10 C-day, the subzero Tmin run lasts 3 days, 60 hours are subzero, and all mean precipitation checks stay below 4 mm."
+  },
+  "formulas": {
+    "fdd_c_day": "sum(max(0, 0 - daily_Tmin_C)) over the event window",
+    "snow_share_on_below0_tmin_days": "snowfall on days with daily_Tmin_C < 0 divided by event snowfall total",
+    "below0_snow_hours": "count of hourly records with temperature_2m < 0 C and snowfall > 0 cm"
+  },
+  "tolerances": {
+    "temperature_c": 0.1,
+    "fdd_c_day": 0.05,
+    "snowfall_cm": 0.05,
+    "wind_gust_kmh": 0.1,
+    "precip_mean_mm": 0.02,
+    "fraction": 0.001
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Dominance label and format",
+        "points": 4,
+        "description": "Returns compact short-answer JSON and labels the event cold-persistence dominated with co-timed snow and wind stress.",
+        "partial_credit": "Award up to 2 points for the correct cold-persistence label with incomplete JSON, or up to 2 points for a well-formed JSON object whose label omits the co-timed snow and wind stress. Give no credit for a precipitation-dominated or non-analytic answer."
+      },
+      {
+        "name": "Cold-load metrics",
+        "points": 5,
+        "description": "Reports 7 window days, 11.8 C-day FDD, 3 below-zero daily minima, a 3-day run, and 60 below-zero hours.",
+        "partial_credit": "Award 1 point each for the event-window length, FDD, below-zero daily-minimum count, longest run, and below-zero hourly count when values are within tolerance. Deduct the relevant point for wrong formulas, wrong thresholds, or missing units."
+      },
+      {
+        "name": "Peak cold and wind timing",
+        "points": 3,
+        "description": "Reports -6.3 C on 2016-01-24, 92.2 km/h at 2016-01-24T00:00, and -4.9 C at that hour.",
+        "partial_credit": "Award 1 point for the coldest daily minimum and date, 1 point for the maximum gust and timestamp, and 1 point for the temperature at the gust hour. Minor rounding errors within tolerance keep credit."
+      },
+      {
+        "name": "Snow overlap metrics",
+        "points": 3,
+        "description": "Reports 9.87 cm total snow, 4.62 cm maximum day on 2016-01-24, 61 snow hours, 38 below-zero snow hours, and 0.865 snow share.",
+        "partial_credit": "Award up to 1 point for total and maximum daily snowfall, up to 1 point for snow-hour and below-zero snow-hour counts, and up to 1 point for the below-zero Tmin-day snow share. Do not award share credit if the denominator is not event-total snowfall."
+      },
+      {
+        "name": "Precipitation mean check",
+        "points": 3,
+        "description": "Uses ERA5 1.32 mm, GPM 0.03 mm, and CHIRPS 3.75 mm as checks against a precipitation-dominated reading.",
+        "partial_credit": "Award 1 point for each correct gridded precipitation mean within tolerance. If one value is misread but the answer still treats the means as modest, only the affected value loses credit."
+      },
+      {
+        "name": "Numerical interpretation",
+        "points": 2,
+        "description": "Explains the threshold and timing logic without adding external loss claims or broad causal speculation.",
+        "partial_credit": "Award 1 point for linking the FDD, subzero run, and subzero hours to persistence, and 1 point for using snow, gust, and precipitation timing to reject a precipitation-dominated reading. Deduct for external impact claims or uncomputed management claims."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2016_East_Asia_cold_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

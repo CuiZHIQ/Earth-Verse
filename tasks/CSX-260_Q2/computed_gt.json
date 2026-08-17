@@ -1,0 +1,201 @@
+{
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "All fields are deterministic date counts, arithmetic summaries, alert filtering, and threshold tests from local package data.",
+  "event": {
+    "event_name": "July 2021 Western Europe extreme rainfall and flood disaster",
+    "hazard_family": "compound_cascading_events",
+    "package_id": "CSX-260",
+    "span_end": "2021-07-17",
+    "span_start": "2021-07-12"
+  },
+  "event_id": "CSX-260",
+  "key_values": {
+    "daily_point_summaries": {
+      "nasa_power": {
+        "peak_date": "2021-07-12",
+        "peak_mm": 16.55,
+        "peak_share": 0.663,
+        "rows": [
+          {
+            "date": "2021-07-12",
+            "precip_mm": 16.55
+          },
+          {
+            "date": "2021-07-13",
+            "precip_mm": 0.18
+          },
+          {
+            "date": "2021-07-14",
+            "precip_mm": 0.8
+          },
+          {
+            "date": "2021-07-15",
+            "precip_mm": 1.93
+          },
+          {
+            "date": "2021-07-16",
+            "precip_mm": 3.68
+          },
+          {
+            "date": "2021-07-17",
+            "precip_mm": 1.82
+          }
+        ],
+        "sum_mm": 24.96,
+        "wet_days_ge_1mm": 4
+      },
+      "open_meteo": {
+        "peak_date": "2021-07-16",
+        "peak_mm": 10.1,
+        "peak_share": 0.5,
+        "rows": [
+          {
+            "date": "2021-07-12",
+            "precip_mm": 5.4
+          },
+          {
+            "date": "2021-07-13",
+            "precip_mm": 0.3
+          },
+          {
+            "date": "2021-07-14",
+            "precip_mm": 2.1
+          },
+          {
+            "date": "2021-07-15",
+            "precip_mm": 0.0
+          },
+          {
+            "date": "2021-07-16",
+            "precip_mm": 10.1
+          },
+          {
+            "date": "2021-07-17",
+            "precip_mm": 2.3
+          }
+        ],
+        "sum_mm": 20.2,
+        "wet_days_ge_1mm": 4
+      }
+    },
+    "gdacs_alerts": [
+      {
+        "alertlevel": "Orange",
+        "country": "Belgium",
+        "fromdate": "2021-07-14T01:00:00",
+        "todate": "2021-07-16T01:00:00"
+      },
+      {
+        "alertlevel": "Orange",
+        "country": "Germany",
+        "fromdate": "2021-07-13T01:00:00",
+        "todate": "2021-07-15T01:00:00"
+      }
+    ],
+    "gridded_precipitation_means_mm": {
+      "era5_land": 45.919,
+      "gpm_imerg": 21.499
+    },
+    "label_rule": "rainfall_flood_window_consistent when all seven gates are true; otherwise partial_flood_window_record",
+    "remote_change_means": {
+      "embedding_1_minus_cosine_mean": 0.111,
+      "sentinel2_dnbr_mean": 0.158
+    },
+    "report_flags": {
+      "extreme_rainfall_text": true,
+      "flash_flood_text": true,
+      "life_safety_text": true,
+      "river_or_dam_text": true
+    },
+    "worldpop_population": 1025289
+  },
+  "primary_gt": {
+    "answer": "rainfall_flood_window_consistent",
+    "gates": {
+      "gdacs_alerts_ge_2": true,
+      "grid_mean_ge_30mm": true,
+      "point_peak_share_ge_0_55": true,
+      "point_total_ge_20mm": true,
+      "population_ge_1m": true,
+      "remote_context_lt_0_20": true,
+      "window_6d": true
+    },
+    "ledger_values": {
+      "gdacs_flood_alerts": 2,
+      "grid_mean_mm": 33.7,
+      "grid_spread_ratio": 2.136,
+      "pass_count": 7,
+      "point_peak_share_mean": 0.582,
+      "point_total_mean_mm": 22.6,
+      "remote_context_index": 0.134,
+      "window_days": 6,
+      "worldpop_millions": 1.025
+    },
+    "tolerances": {
+      "counts": 0,
+      "grid_mean_mm": 0.05,
+      "grid_spread_ratio": 0.002,
+      "point_peak_share_mean": 0.002,
+      "point_total_mean_mm": 0.05,
+      "remote_context_index": 0.001,
+      "window_days": 0,
+      "worldpop_millions": 0.001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_extreme_rainfall_and_flood_disaster.json",
+      "data/event_reports/event_reports_002_Package_locked_anchor.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_disaster_alert_API.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "requires_computation": true,
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with ledger_values, gates, and label, using the requested field names and units.",
+        "name": "Answer shape",
+        "points": 3
+      },
+      {
+        "description": "Counts the 6-day inclusive window and computes point_total_mean_mm = 22.6 and point_peak_share_mean = 0.582 within tolerance.",
+        "name": "Window and point rainfall",
+        "points": 4
+      },
+      {
+        "description": "Computes grid_mean_mm = 33.7 and grid_spread_ratio = 2.136 from the two available gridded event means.",
+        "name": "Gridded rainfall comparison",
+        "points": 3
+      },
+      {
+        "description": "Counts 2 overlapping Germany or Belgium flood alerts and reports worldpop_millions = 1.025.",
+        "name": "Catalog and exposure checks",
+        "points": 3
+      },
+      {
+        "description": "Computes remote_context_index = 0.134 from dNBR mean and embedding-change mean, and treats it as contextual rather than a direct flood-depth measure.",
+        "name": "Remote-change countercheck",
+        "points": 3
+      },
+      {
+        "description": "Applies all seven gates, reports pass_count = 7 and label rainfall_flood_window_consistent, and avoids adding unsupported depth, loss-total, or attribution values.",
+        "name": "Threshold result and bounded interpretation",
+        "points": 4
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "western_europe_flood_window_threshold_ledger",
+  "task_id": "CSX-260_Q2",
+  "task_type": "numeric"
+}

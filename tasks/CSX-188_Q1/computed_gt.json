@@ -1,0 +1,143 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-188",
+  "judge_anchors": {
+    "forbidden_claims": [
+      "Using off-event AOI weather, dNBR, annual image-change, or gridded precipitation values as local Greece evidence.",
+      "Claiming exact burned area from the formula beyond the report's EFFIS comparison statement."
+    ],
+    "required_claims": [
+      "The event window is 2023-07-01 through 2023-08-31, giving 62 inclusive days.",
+      "The August 22 image offset ratio is 0.855 and the August 23 forecast offset ratio is 0.871.",
+      "The three process indices are 98.1, 97.8, and 97.4, with combined response priority 97.8.",
+      "The report explicitly supports direct damage because fires near Athens burned homes and cars."
+    ]
+  },
+  "key_values": {
+    "event_name": "2023 Greece wildfires",
+    "forecast_date": "2023-08-23",
+    "hazard_family": "wildfire_burn_smoke",
+    "image_date": "2023-08-22",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A generic burn-scar or local-weather-index answer fails because the report directly supports smoke transport, Athens damage, fire clustering, and casualty signals.",
+      "evidence_weighting": "NASA report text and event-anchor timing are decisive; off-event AOI weather, dNBR, gridded precipitation, and exposure products are not used in the scoring path.",
+      "uncertainty_or_scale_caveat": "The formula summarizes reported process signals and should not be used as an exact burned-area, casualty, or air-quality measurement."
+    },
+    "report_signals": {
+      "athens_damage_and_smoke_signal": true,
+      "burned_area_record_signal": true,
+      "capital_city_smoke_signal": true,
+      "casualty_signal": true,
+      "cross_mediterranean_signal": true,
+      "dozens_of_fires_signal": true,
+      "extreme_fire_weather_forecast": true,
+      "hot_terms": {
+        "dry": true,
+        "hot": true,
+        "windy": true
+      },
+      "long_plume_signal": true
+    },
+    "window": {
+      "end_date": "2023-08-31",
+      "inclusive_days": 62,
+      "start_date": "2023-07-01"
+    }
+  },
+  "numeric_tolerances": {
+    "process_indices.combined_response_priority": 0.1,
+    "process_indices.fire_weather_signal_index": 0.1,
+    "process_indices.response_impact_index": 0.1,
+    "process_indices.smoke_transport_index": 0.1,
+    "stage_offsets.forecast_day_offset_ratio": 0.001,
+    "stage_offsets.image_day_offset_ratio": 0.001
+  },
+  "primary_gt": {
+    "answer_type": "greece_reported_wildfire_smoke_response_model",
+    "classification": {
+      "dominant_process": "long_range_smoke_transport_with_urban_damage_context",
+      "response_priority_class": "high_smoke_response_priority"
+    },
+    "direct_damage_reported": true,
+    "formula_check": "pass",
+    "process_indices": {
+      "combined_response_priority": 97.8,
+      "fire_weather_signal_index": 98.1,
+      "response_impact_index": 97.4,
+      "smoke_transport_index": 97.8
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A generic burn-scar or local-weather-index answer fails because the report directly supports smoke transport, Athens damage, fire clustering, and casualty signals.",
+      "evidence_weighting": "NASA report text and event-anchor timing are decisive; off-event AOI weather, dNBR, gridded precipitation, and exposure products are not used in the scoring path.",
+      "uncertainty_or_scale_caveat": "The formula summarizes reported process signals and should not be used as an exact burned-area, casualty, or air-quality measurement."
+    },
+    "stage_offsets": {
+      "forecast_day_offset_ratio": 0.871,
+      "image_day_offset_ratio": 0.855
+    },
+    "window_days": 62
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event AOI weather, dNBR, image-change, exposure, and gridded precipitation products are not used in this ground truth.",
+      "The model is computed from declared event anchor metadata and NASA Earth Observatory report text."
+    ],
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes the July 1-August 31 event window as 62 days, image offset ratio 0.855, and forecast offset ratio 0.871.",
+        "name": "Event timing and stage offsets",
+        "partial_credit": "Award 1-2 points for the correct window with one offset or inclusive-day error.",
+        "points": 3
+      },
+      {
+        "description": "Finds hot/dry/windy, extreme fire-weather forecast, and burned-area record signals, and computes 98.1.",
+        "name": "Fire-weather signal index",
+        "partial_credit": "Award 1-3 points for the right signals with one missing formula term.",
+        "points": 4
+      },
+      {
+        "description": "Finds the long plume, cross-Mediterranean smoke, capital-city smoke, and image-stage offset, and computes 97.8.",
+        "name": "Smoke-transport index",
+        "partial_credit": "Award 1-3 points for the right smoke signals with one arithmetic or offset error.",
+        "points": 4
+      },
+      {
+        "description": "Finds Athens homes/cars plus smoke, casualty signal, dozens of fires within 24 hours, and forecast offset, and computes 97.4.",
+        "name": "Response-impact index",
+        "partial_credit": "Award 1-2 points for identifying response relevance but missing one report anchor.",
+        "points": 3
+      },
+      {
+        "description": "Reports direct_damage_reported true, combined_response_priority 97.8, and high_smoke_response_priority.",
+        "name": "Classification and damage flag",
+        "partial_credit": "Award 1-2 points for a correct high-priority conclusion with one missing boolean or score.",
+        "points": 3
+      },
+      {
+        "description": "Bases the assessment on report-supported signals and does not use off-event AOI weather, dNBR, image-change, or gridded precipitation values.",
+        "name": "Source discipline",
+        "partial_credit": "Award 1 point if the answer mostly uses report signals but includes one unsupported physical-product claim.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON plus a short formula-check sentence. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Valid compact output",
+        "partial_credit": "Award no credit if the response is not parseable JSON.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "reported_wildfire_smoke_response_process_model",
+  "task_id": "CSX-188_Q1",
+  "task_type": "structured_json_reasoning"
+}

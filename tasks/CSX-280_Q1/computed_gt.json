@@ -1,0 +1,197 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-280",
+  "forbidden_overclaims": [
+    "Do not claim exact deaths, displacement, monetary losses, or all-region crop losses from this task package.",
+    "Do not recast the primary event as a wind, flood, burn-scar, or short-window rainfall disaster.",
+    "Do not claim that every Ethiopian region had identical rainfall failure or food-security outcomes."
+  ],
+  "numeric_anchor_count": 3,
+  "numeric_tolerances": {
+    "coupled_signal_minimum": {
+      "expected": -3.6,
+      "tolerance": 0.2
+    },
+    "enso_peak_anomaly_c": {
+      "expected": 2.75,
+      "tolerance": 0.1
+    },
+    "reported_food_insecure_people": {
+      "expected": 10200000,
+      "tolerance": 100000
+    }
+  },
+  "package_relative_path": "event_packages/standard_event_packages/packages/CSX-280",
+  "primary_gt": {
+    "acceptable_variants": [
+      "strong_el_nino_ethiopia_drought_food_security_priority",
+      "high_priority_enso_drought_food_security_response"
+    ],
+    "answer": "strong_el_nino_drought_food_security_high_priority",
+    "answer_type": "hybrid_response_priority_json",
+    "canonical_stance": "High-priority Ethiopia drought and food-security response driven by a very strong 2015-2016 warm ENSO episode with atmospheric coupling.",
+    "forbidden_claims": [
+      "The primary event was a wind or flood emergency.",
+      "The task supports exact deaths, displacement, monetary losses, or uniform all-region crop losses."
+    ],
+    "key_numeric_anchors": {
+      "coupled_signal_minimum": -3.6,
+      "enso_peak_anomaly_c": 2.75,
+      "reported_food_insecure_people": 10200000
+    },
+    "priority_chain": [
+      "very_strong_warm_enso",
+      "failed_rainy_seasons_and_drought",
+      "ethiopia_food_security_and_livelihood_response"
+    ],
+    "priority_level": "high",
+    "rationale": "The event-scale planning stance should prioritize drought and food-security response because very strong warm ENSO indices align with atmospheric coupling and local report claims of failed rainy seasons, crop and livestock losses, and multi-million-person food insecurity in Ethiopia.",
+    "required_claims": [
+      "Treat the event as a very strong warm ENSO teleconnection rather than a weak climate anomaly.",
+      "Use the strongly negative coupled signal as evidence of atmospheric expression.",
+      "Connect Ethiopia failed rainy seasons and drought to crop, livestock, food-security, and livelihood response needs."
+    ],
+    "required_metrics": [
+      {
+        "expected": 2.75,
+        "name": "enso_peak_anomaly_c",
+        "tolerance": 0.1
+      },
+      {
+        "expected": -3.6,
+        "name": "coupled_signal_minimum",
+        "tolerance": 0.2
+      },
+      {
+        "expected": 10200000,
+        "name": "reported_food_insecure_people",
+        "tolerance": 100000
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015-2016_El_Nino_and_Ethiopia_drought-food-security_crisis.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NOAA_Climate.gov.html",
+      "data/event_catalogs/event_catalogs_001_FAO_Ethiopia_El_Nino_drought_response.html",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data"
+    ]
+  },
+  "quality_audit": {
+    "absolute_path_hits": 0,
+    "boundary_main_hits": 0,
+    "existence_hint_hits": 0,
+    "issue_score": 0,
+    "lists_specific_files": false,
+    "numeric_anchor_count": 4,
+    "product_hits": 0,
+    "stem_caution_cue_hits": 0,
+    "visible_numeric_anchor_count": 4,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 0
+  },
+  "required_findings": [
+    {
+      "finding": "Treat the climate driver as a very strong warm ENSO episode rather than a weak or local anomaly.",
+      "id": "enso_driver",
+      "support": [
+        "peak_oni_anomaly_c",
+        "strong_oni_seasons",
+        "strong_el_nino_text_claim"
+      ]
+    },
+    {
+      "finding": "Use the strongly negative coupling index as corroboration that the oceanic warm anomaly was atmospherically expressed.",
+      "id": "atmospheric_coupling",
+      "support": [
+        "minimum_soi",
+        "strong_negative_soi_months"
+      ]
+    },
+    {
+      "finding": "Connect the driver to Ethiopia failed rainy seasons, drought, crop failure, livestock losses, and food-security response needs.",
+      "id": "impact_pathway",
+      "support": [
+        "drought_claim",
+        "failed_rainy_seasons_claim",
+        "food_insecure_people"
+      ]
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Full credit for the canonical high-priority strong-El-Nino drought-food-security label or a semantically equivalent compact label.",
+        "name": "Final answer label",
+        "points": 4
+      },
+      {
+        "description": "Credit peak ENSO anomaly near 2.75 C within 0.1 C, coupled-signal minimum near -3.6 within 0.2, and reported food-insecure population near 10.2 million within 100,000 people.",
+        "name": "Numeric anchors",
+        "points": 4
+      },
+      {
+        "description": "Identifies a very strong warm ENSO event, notes persistence across seasons, and uses the strongly negative coupling signal to support atmospheric expression.",
+        "name": "Climate mechanism",
+        "points": 4
+      },
+      {
+        "description": "Links failed rainy seasons and drought to crop failure, livestock stress, food insecurity, and livelihood response needs in Ethiopia.",
+        "name": "Drought and food-security impact chain",
+        "points": 3
+      },
+      {
+        "description": "Rejects localized short-rainfall-only, wind/flood emergency, and weak climate anomaly framings with disaster-process reasoning.",
+        "name": "Distractor rejection",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported national exposure totals, exact losses, death or displacement claims, and uniform all-region impact claims.",
+        "name": "Scope control",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with the requested answer, numeric anchors, priority chain, and concise rationale.",
+        "name": "Structured response",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "claim_flags": {
+      "crop_failure_claim": true,
+      "drought_claim": true,
+      "ethiopia_claim": true,
+      "failed_rainy_seasons_claim": true,
+      "food_security_claim": true,
+      "livestock_loss_claim": true,
+      "strong_el_nino_text_claim": true
+    },
+    "computed_metrics": {
+      "event_window_end": "2016-05-31",
+      "event_window_start": "2015-06-01",
+      "food_aid_people": 8000000,
+      "food_insecure_people": 10200000,
+      "minimum_soi": -3.6,
+      "minimum_soi_month": "Jan 2016",
+      "negative_soi_months": 17,
+      "peak_oni_anomaly_c": 2.75,
+      "peak_oni_season": "NDJ 2015",
+      "peak_psl_oni_month": "Dec 2015",
+      "peak_psl_oni_value": 2.75,
+      "positive_oni_seasons": 16,
+      "strong_negative_soi_months": 6,
+      "strong_oni_seasons": 9,
+      "very_strong_oni_seasons": 6
+    }
+  },
+  "task_id": "CSX-280_Q1",
+  "task_subtype": "response_priority",
+  "task_type": "short_answer",
+  "task_version": "v3.1"
+}

@@ -1,0 +1,160 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-192",
+  "judge_anchors": [
+    "Uses the 2017-06-07 to 2017-06-14 event window, giving 8 inclusive days.",
+    "Extracts 10000 evacuees and a lower bound of 500 destroyed houses from the report.",
+    "Counts three smoke signals: week-later smoke, smoke over Knysna, and offshore smoke front.",
+    "Computes baseline impact_load_index 87.50, process_coupling_index 93.84, and compound_response_pressure 90.35.",
+    "Computes scenario compound_response_pressure 92.57 and delta 2.22."
+  ],
+  "key_values": {
+    "baseline_terms": {
+      "compound_response_pressure": 90.35,
+      "evacuation_norm": 1.0,
+      "event_duration_factor": 0.571,
+      "house_loss_norm": 0.5,
+      "impact_load_index": 87.5,
+      "process_coupling_index": 93.84,
+      "smoke_norm": 1.0,
+      "smoke_persistence_ratio": 0.875
+    },
+    "fuel_terms": {
+      "commercial_timber_plantations": true,
+      "dense_low_coastal_forest": true,
+      "natural_forests": true
+    },
+    "scenario_terms": {
+      "compound_response_pressure": 92.57,
+      "evacuation_norm": 1.0,
+      "event_duration_factor": 0.571,
+      "house_loss_norm": 0.6,
+      "impact_load_index": 90.0,
+      "process_coupling_index": 95.71,
+      "smoke_norm": 1.0,
+      "smoke_persistence_ratio": 1.0
+    },
+    "smoke_signals": {
+      "offshore_smoke_front": true,
+      "smoke_over_knysna": true,
+      "week_later_smoke": true
+    }
+  },
+  "numeric_tolerances": {
+    "process_indices.compound_response_pressure": 0.05,
+    "process_indices.impact_load_index": 0.05,
+    "process_indices.process_coupling_index": 0.05,
+    "scenario_analysis.compound_pressure_delta": 0.05,
+    "scenario_analysis.scenario_compound_response_pressure": 0.05
+  },
+  "primary_gt": {
+    "answer_type": "western_cape_reported_response_pressure_model",
+    "event_context": {
+      "event_window": [
+        "2017-06-07",
+        "2017-06-14"
+      ],
+      "event_window_days": 8,
+      "localities": "Knysna, Plettenberg Bay, and the Outeniqua Mountains",
+      "mountainous_coastal_setting": true
+    },
+    "formula_check": "pass",
+    "process_indices": {
+      "compound_response_pressure": 90.35,
+      "impact_load_index": 87.5,
+      "process_coupling_index": 93.84
+    },
+    "reported_impacts": {
+      "charter_request_documented": true,
+      "destroyed_house_lower_bound": 500,
+      "drought_strong_wind_signal": true,
+      "evacuated_people": 10000,
+      "fuel_mosaic_fraction": 1.0,
+      "garden_route_closed": true,
+      "patchy_pattern_signal": true,
+      "smoke_component_count": 3
+    },
+    "response_priorities": [
+      {
+        "basis": "10000 evacuees, more than 500 houses destroyed, and baseline impact_load_index 87.50",
+        "priority": "evacuation_shelter_and_house_loss_support",
+        "rank": 1
+      },
+      {
+        "basis": "Garden Route closure plus three smoke signals including week-later smoke, Knysna smoke pall, and offshore smoke front",
+        "priority": "coastal_access_and_smoke_management",
+        "rank": 2
+      },
+      {
+        "basis": "three fuel types, patchy burn wording, and drought/strong-wind spread signal drive process_coupling_index 93.84",
+        "priority": "fuel_mosaic_and_patchy_burn_mapping",
+        "rank": 3
+      }
+    ],
+    "scenario_analysis": {
+      "compound_pressure_delta": 2.22,
+      "scenario_compound_response_pressure": 92.57,
+      "scenario_destroyed_house_lower_bound": 600,
+      "scenario_evacuated_people": 12000,
+      "scenario_impact_load_index": 90.0,
+      "scenario_process_coupling_index": 95.71,
+      "scenario_smoke_persistence_days": 10
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event weather, precipitation, dNBR, WorldPop, and OSM products are not used in this ground truth.",
+      "The process and scenario indices are computed from the event anchor and NASA Earth Observatory report text."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2017_Western_Cape_Knysna_and_Plettenberg_Bay_wildfires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Extracts the 8-day event window, localities, mountainous/coastal setting, 10000 evacuees, 500-house lower bound, Garden Route closure, and Charter request.",
+        "name": "Event context and report extraction",
+        "partial_credit": "Award 1-3 points for mostly correct context with one or two missed anchors.",
+        "points": 4
+      },
+      {
+        "description": "Counts all three smoke signals, all three fuel mosaic terms, drought/strong-wind signal, and patchy-pattern signal.",
+        "name": "Smoke and fuel-process signals",
+        "partial_credit": "Award 1 point per correctly recovered signal family.",
+        "points": 4
+      },
+      {
+        "description": "Applies the stated formulas and obtains impact_load_index 87.50, process_coupling_index 93.84, and compound_response_pressure 90.35.",
+        "name": "Baseline process formulas",
+        "partial_credit": "Award 1-4 points for correct formulas with one or more arithmetic or normalization errors.",
+        "points": 5
+      },
+      {
+        "description": "Applies the 20% evacuation and house-loss increases plus 10-day smoke persistence, yielding scenario compound pressure 92.57 and delta 2.22.",
+        "name": "Scenario recomputation",
+        "partial_credit": "Award 1-2 points for scenario direction without full recomputation.",
+        "points": 3
+      },
+      {
+        "description": "Ranks evacuation/house-loss support, coastal access/smoke management, and fuel mosaic/patchy burn mapping with bases tied to computed drivers.",
+        "name": "Response priorities",
+        "partial_credit": "Award 1 point for priorities that are plausible but weakly tied to the indices.",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with the requested top-level keys and does not use off-event weather, precipitation, dNBR, WorldPop, or OSM products as scored evidence.",
+        "name": "Source discipline and JSON format",
+        "partial_credit": "Award 1 point for valid JSON with one unsupported physical-product claim.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "reported_wildfire_response_pressure_model",
+  "task_id": "CSX-192_Q2",
+  "task_type": "structured_json_reasoning"
+}

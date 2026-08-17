@@ -1,0 +1,213 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-060",
+  "key_values": {
+    "computed_values": {
+      "daman_3day_rainfall_mm": 517.0,
+      "exposed_people": 115000,
+      "flood_affected_land_km2": 300,
+      "kathmandu_exposed_people": 46000,
+      "kathmandu_potentially_affected_structures": 5000,
+      "largest_gauge_exceedance_m": 3.52,
+      "largest_gauge_exceedance_station": "Narayani River at Devghat",
+      "primary_grid_max_mm": 73.33,
+      "record_24h_station_count": 25,
+      "river_gauges_above_historic_count": 5,
+      "station_to_grid_ratio": 7.05,
+      "stations_over_200mm": 105
+    },
+    "decision_rule": "compound if score >= 5 and landslide_signal is true",
+    "event_name": "September 2024 Nepal floods and landslides",
+    "flood_entries": [
+      {
+        "analyzed_area_km2": 450,
+        "dataset_date": "[2024-10-03T00:00:00 TO 2024-10-03T23:59:59]",
+        "exposed_people": 46000,
+        "flood_affected_land_km2": 8,
+        "inundated_cropland_km2": 4,
+        "potentially_affected_structures": 5000,
+        "title": "Flood Impact assessment of the Capital city of Kathmandu, Bagmati Province, Nepal as of 30 September 2024"
+      },
+      {
+        "analyzed_area_km2": 7000,
+        "dataset_date": "[2024-09-28T00:00:00 TO 2024-09-28T23:59:59]",
+        "exposed_people": 19000,
+        "flood_affected_land_km2": 50,
+        "title": "Satellite detected water extent Koshi and Madhesh Provinces, Nepal as of 27 September 2024"
+      },
+      {
+        "analyzed_area_km2": 6000,
+        "dataset_date": "[2024-10-02T00:00:00 TO 2024-10-02T23:59:59]",
+        "exposed_people": 18000,
+        "flood_affected_land_km2": 55,
+        "title": "Satellite detected water extent Koshi and Madhesh Provinces, Nepal as of 01 October 2024"
+      },
+      {
+        "analyzed_area_km2": 20000,
+        "dataset_date": "[2024-09-30T00:00:00 TO 2024-09-30T23:59:59]",
+        "exposed_people": 58000,
+        "flood_affected_land_km2": 110,
+        "title": "Satellite detected water extent in Gandaki, Lumbini, Bagmati and Madhesh Provinces as of 29 September 2024"
+      },
+      {
+        "analyzed_area_km2": 18000,
+        "dataset_date": "[2024-10-08T00:00:00 TO 2024-10-08T23:59:59]",
+        "exposed_people": 115000,
+        "flood_affected_land_km2": 300,
+        "title": "Satellite detected water extent in Bagmati, Gandaki, Lumbini and Madhesh Provinces, Nepal as of 01 & 06 October 2024"
+      }
+    ],
+    "river_gauge_rows": [
+      {
+        "above_historic": false,
+        "exceedance_m": -0.13,
+        "historic_gauge_height_m": 10.4,
+        "observed_gauge_height_m": 10.27,
+        "station": "Kali Gandaki at Kota Gaon"
+      },
+      {
+        "above_historic": true,
+        "exceedance_m": 1.87,
+        "historic_gauge_height_m": 13.1,
+        "observed_gauge_height_m": 14.97,
+        "station": "Trishuli River at Kali Khola"
+      },
+      {
+        "above_historic": true,
+        "exceedance_m": 3.52,
+        "historic_gauge_height_m": 10.1,
+        "observed_gauge_height_m": 13.62,
+        "station": "Narayani River at Devghat"
+      },
+      {
+        "above_historic": true,
+        "exceedance_m": 0.16,
+        "historic_gauge_height_m": 6.0,
+        "observed_gauge_height_m": 6.16,
+        "station": "Bagmati at Khokana"
+      },
+      {
+        "above_historic": false,
+        "exceedance_m": -9.14,
+        "historic_gauge_height_m": 20.0,
+        "observed_gauge_height_m": 10.86,
+        "station": "Bagmati at Karmaiya"
+      },
+      {
+        "above_historic": true,
+        "exceedance_m": 0.2,
+        "historic_gauge_height_m": 14.3,
+        "observed_gauge_height_m": 14.5,
+        "station": "Sunkoshi River at Hampachuwar"
+      },
+      {
+        "above_historic": true,
+        "exceedance_m": 0.33,
+        "historic_gauge_height_m": 11.5,
+        "observed_gauge_height_m": 11.83,
+        "station": "Saptakoshi at Chatara"
+      }
+    ],
+    "tests": {
+      "flood_exposure_scale": true,
+      "historic_river_stage": true,
+      "kathmandu_local_exposure": true,
+      "landslide_signal": true,
+      "rainfall_concentration": true,
+      "record_rainfall_breadth": true
+    },
+    "time_window": {
+      "end_date": "2024-09-29",
+      "start_date": "2024-09-27"
+    },
+    "tolerances": {
+      "exposed_people": 1000,
+      "flood_affected_land_km2": 5,
+      "gauge_exceedance_m": 0.05,
+      "rainfall_mm": 0.1,
+      "ratio": 0.1,
+      "structure_count": 100
+    }
+  },
+  "primary_gt": {
+    "answer": "compound_mountain_flood_landslide;score_6_of_6",
+    "compound_score": 6,
+    "computed_values": {
+      "daman_3day_rainfall_mm": 517.0,
+      "exposed_people": 115000,
+      "kathmandu_exposed_people": 46000,
+      "kathmandu_potentially_affected_structures": 5000,
+      "largest_gauge_exceedance_m": 3.52,
+      "primary_grid_max_mm": 73.33,
+      "record_24h_station_count": 25,
+      "river_gauges_above_historic_count": 5,
+      "station_to_grid_ratio": 7.05,
+      "stations_over_200mm": 105
+    },
+    "decision_rule": "compound if score >= 5 and landslide_signal is true",
+    "label": "compound_mountain_flood_landslide",
+    "river_only_check": "River-only flooding fails because all six compound tests pass, including the station-scale rainfall concentration and the reported landslide signal.",
+    "tests": {
+      "flood_exposure_scale": true,
+      "historic_river_stage": true,
+      "kathmandu_local_exposure": true,
+      "landslide_signal": true,
+      "rainfall_concentration": true,
+      "record_rainfall_breadth": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/event_reports/event_reports_002_HDX_CKAN_package_search.bin",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2024_Nepal_floods_and_landslides.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the canonical answer string, the compound label, and score 6 of 6.",
+        "name": "Final label and score",
+        "partial_credit": "Give 2-3 points for the correct label with an incorrect score or missing canonical answer string; give 1 point for a plausible compound label without the diagnostic result.",
+        "points": 4
+      },
+      {
+        "description": "Computes Daman 517.0 mm, primary grid maximum 73.33 mm, ratio 7.05, 25 record-setting stations, and 105 stations over 200 mm.",
+        "name": "Rainfall concentration and breadth",
+        "partial_credit": "Give 2-3 points if most rainfall values are correct but one formula, threshold comparison, or station-bin sum is missing; give 1 point for only identifying heavy rainfall qualitatively.",
+        "points": 4
+      },
+      {
+        "description": "Computes five gauges above historic height and identifies Narayani River at Devghat as the largest exceedance at 3.52 m.",
+        "name": "River-stage calculation",
+        "partial_credit": "Give 1-2 points for the correct count or largest station alone, or for values with minor rounding errors.",
+        "points": 3
+      },
+      {
+        "description": "Passes the landslide signal, flood exposure scale, and Kathmandu local exposure tests using 300 km2, 115000 people, 46000 Kathmandu people, and 5000 structures.",
+        "name": "Landslide and exposure tests",
+        "partial_credit": "Give 2-3 points when either the landslide signal or one exposure scale is missing; give 1 point for exposure values that are present but not tied to thresholds.",
+        "points": 4
+      },
+      {
+        "description": "Applies score >= 5 with landslide_signal true and explains why river-only flooding is insufficient for the full diagnostic.",
+        "name": "Decision rule and river-only check",
+        "partial_credit": "Give 1-2 points for the right final label with an incomplete decision rule or a weak river-only check.",
+        "points": 3
+      },
+      {
+        "description": "Returns compact JSON and does not add extra casualty, road-loss, facility-damage, or slope-area values not computed by the diagnostic.",
+        "name": "Compact output and bounded inference",
+        "partial_credit": "Give 1 point for a mostly compact answer with minor extra prose or nonessential fields.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "compound_mountain_flood_landslide_diagnostic",
+  "task_id": "CSX-060_Q1",
+  "task_type": "short_answer"
+}

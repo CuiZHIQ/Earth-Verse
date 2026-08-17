@@ -1,0 +1,126 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-104",
+  "key_values": {
+    "bridge_count": 30,
+    "building_count": 656,
+    "chirps_event_precip_mm_max": 569.32,
+    "daily_precip_mm": {
+      "2013-06-15": 37.8,
+      "2013-06-16": 132.7,
+      "2013-06-17": 128.4,
+      "2013-06-18": 1.5
+    },
+    "gpm_event_precip_mm_max": 564.49,
+    "highway_count": 147,
+    "hospital_count": 13,
+    "hotel_count": 12,
+    "mapped_context_scope": "package mapped-context transport and service-feature counts, not a historical 2013 infrastructure inventory",
+    "population_sum": 584365,
+    "radar_post_count": 0,
+    "radar_pre_count": 0,
+    "radar_scene_status": "no_sufficient_scenes",
+    "shelter_count": 19,
+    "test_results": {
+      "bridge_density": true,
+      "grid_agreement": true,
+      "peak_concentration": true,
+      "point_total": true,
+      "service_nodes": true
+    },
+    "thresholds": {
+      "bridge_per_100_highway_min": 15.0,
+      "grid_pair_ratio_min": 0.98,
+      "peak_2day_share_min": 0.85,
+      "point_total_mm_min": 300.0,
+      "service_node_count_min": 40
+    },
+    "waterway_count": 160
+  },
+  "numeric_tolerances": {
+    "bridge_per_100_highway": 0.5,
+    "grid_max_mm": 1.0,
+    "grid_pair_ratio": 0.01,
+    "peak_2day_share": 0.01,
+    "point_total_mm": 1.0,
+    "service_node_count": 0
+  },
+  "primary_gt": {
+    "answer": "passes_concentrated_mountain_exposure_test",
+    "expected_json": {
+      "bridge_per_100_highway": 20.4,
+      "event_window": "2013-06-15 to 2013-06-18",
+      "final_state": "passes_concentrated_mountain_exposure_test",
+      "grid_max_mm": 569.32,
+      "grid_pair_ratio": 0.992,
+      "peak_2day_share": 0.869,
+      "point_total_mm": 300.4,
+      "service_node_count": 44
+    },
+    "interpretation": "Short-duration concentration and transport-network exposure both clear the numeric test.",
+    "score": "5/5"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2013_Kedarnath_and_Uttarakhand_flash_floods.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON with the event window, six computed values, and final_state equal to passes_concentrated_mountain_exposure_test.",
+        "name": "Final numeric ledger and state",
+        "partial_credit": "Award 2-3 points if the final state is correct but one or two fields are missing; award 1 point for a correct general pass statement without the ledger.",
+        "points": 4
+      },
+      {
+        "description": "Computes point_total_mm as 300.4 and peak_2day_share as 0.869 using June 16 plus June 17 rainfall divided by the four-day point total.",
+        "name": "Rainfall totals and peak concentration",
+        "partial_credit": "Award 2-3 points for correct rainfall totals with a rounding or denominator error; award 1 point for using only a qualitative heavy-rain statement.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 564.49 mm and 569.32 mm gridded maxima to report grid_max_mm of 569.32 and grid_pair_ratio of 0.992.",
+        "name": "Gridded peak agreement",
+        "partial_credit": "Award 1-2 points for citing one gridded maximum or reversing the ratio while keeping the values recognizable.",
+        "points": 3
+      },
+      {
+        "description": "Computes 30 bridges across 147 highway elements as 20.4 bridges per 100 highway elements and counts 44 service nodes from hospitals, shelters, and hotels.",
+        "name": "Exposure density arithmetic",
+        "partial_credit": "Award 1-2 points for naming the correct component counts but not deriving one of the requested metrics.",
+        "points": 3
+      },
+      {
+        "description": "Applies all five thresholds correctly: point total at least 300 mm, two-day share at least 0.85, grid ratio at least 0.98, bridge density at least 15, and service nodes at least 40.",
+        "name": "Threshold test logic",
+        "partial_credit": "Award 1-2 points if most thresholds are applied but one threshold or comparison direction is wrong.",
+        "points": 3
+      },
+      {
+        "description": "Uses final_state to express the computed outcome without adding schema-external interpretation fields.",
+        "name": "Final-state field discipline",
+        "partial_credit": "Award 1 point if the final state is correct but the response adds a small amount of extra prose outside the requested JSON.",
+        "points": 2
+      },
+      {
+        "description": "Does not add uncomputed flood depth, mapped area, debris volume, road-loss length, casualty totals, facility outage, or radar-derived flood extent.",
+        "name": "Avoids non-computed expansion",
+        "partial_credit": "Award 0.5 points for a minor extra inference that does not change the numeric answer.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-104_Q1",
+  "task_type": "numeric"
+}

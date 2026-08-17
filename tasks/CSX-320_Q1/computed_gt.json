@@ -1,0 +1,213 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-320",
+  "forbidden_overclaims": [
+    "Do not claim confirmed fatalities, injuries, exact damaged-home counts, or quantified economic loss.",
+    "Do not replace the report-supported glacial-lake outburst mechanism with an ordinary rainfall-flood explanation.",
+    "Do not reframe the event as wildfire, heat stress, earthquake, or a broad regional exposure emergency.",
+    "Do not treat exposure counts or pre/post imagery availability as direct proof of every observed impact.",
+    "Do not present the task as source validation, package QA, or a file-inventory audit."
+  ],
+  "hidden_solution_path": [
+    "Read the locked event anchor and report text to identify Suicide Basin, ice-dam failure language, the Mendenhall River route, record crest, high streamflow, and downstream impacts.",
+    "Parse event-window and report metrics with deterministic Python; compute the crest exceedance above the previous record as the fourth numeric anchor.",
+    "Use local exposure counts and pre/post scene availability as response-planning context while keeping the mechanism diagnosis centered on the outburst-flood chain.",
+    "Select the response-priority stance only after rejecting rainfall, wildfire/heat, and broad-regional exposure alternatives through mechanism, timing, and scale."
+  ],
+  "numeric_anchors": [
+    {
+      "name": "water_release_billion_gallons",
+      "role": "calibrates the source-volume pulse from the ice-dammed basin",
+      "tolerance": 0.2,
+      "value": 14.6
+    },
+    {
+      "name": "river_crest_ft",
+      "role": "shows a record downstream river-corridor flood stage",
+      "tolerance": 0.05,
+      "value": 15.99
+    },
+    {
+      "name": "streamflow_cfs_lower_bound",
+      "role": "anchors the operational severity of the routed flood wave",
+      "tolerance": 1000,
+      "value": 33000
+    },
+    {
+      "name": "crest_above_previous_record_ft",
+      "role": "shows how far the routed flood wave exceeded the previous record crest",
+      "tolerance": 0.05,
+      "value": 1.02
+    }
+  ],
+  "numeric_tolerances": {
+    "crest_above_previous_record_ft": 0.05,
+    "river_crest_ft": 0.05,
+    "streamflow_cfs_lower_bound": 1000,
+    "water_release_billion_gallons": 0.2
+  },
+  "primary_gt": {
+    "answer": "ice_dammed_glacial_lake_outburst_flood_river_corridor",
+    "answer_type": "structured_json_with_deterministic_core_and_judged_rationale",
+    "canonical_stance": "Lead as a Suicide Basin ice-dam outburst flood routed through the Mendenhall River, with downstream community flood response as the priority.",
+    "forbidden_claims": [
+      "Rainfall as the primary trigger.",
+      "Wildfire, heat, earthquake, or broad regional exposure as lead frame.",
+      "Unsupported casualties, exact damage counts, or quantified economic loss.",
+      "Exposure or imagery treated as direct proof of every impact."
+    ],
+    "impact_chain": [
+      "suicide_basin_ice_dammed_lake",
+      "sudden_basin_release_into_mendenhall_river",
+      "record_crest_with_downstream_homes_roads_and_resident_impacts"
+    ],
+    "key_numeric_anchors": {
+      "crest_above_previous_record_ft": 1.02,
+      "river_crest_ft": 15.99,
+      "streamflow_cfs_lower_bound": 33000,
+      "water_release_billion_gallons": 14.6
+    },
+    "priority": "record_crest_downstream_community_flood_response",
+    "rationale": "The report-supported Suicide Basin ice-dam release sent a 14.6-billion-gallon pulse into the Mendenhall River, producing a 15.99 ft record crest more than 1 ft above the previous record and streamflow above 33,000 cfs, so the operational frame is downstream flood response.",
+    "required_claims": [
+      "Ice-dammed Suicide Basin source.",
+      "Sudden release into the Mendenhall River corridor.",
+      "Record crest/high streamflow drive downstream flood response.",
+      "The source, routing, crest, and flow evidence support a glacial-lake outburst frame over ordinary rainfall flooding."
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_path": "event_packages/standard_event_packages/packages/CSX-320",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Mendenhall_Glacier_outburst_flood.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "required_findings": [
+    "Classify the mechanism as an ice-dammed glacial-lake outburst flood rather than an ordinary rainfall flood.",
+    "Tie the operational priority to downstream river-corridor flooding affecting community assets and residents.",
+    "Use the four numeric anchors to calibrate volume, river stage, flow severity, and record exceedance.",
+    "Represent imagery and exposure layers as context for assessment, not as the primary mechanism proof."
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Names the ice-dammed glacial-lake outburst flood mechanism and routes it through the Mendenhall River corridor.",
+        "full_credit": "Answer is equivalent to ice_dammed_glacial_lake_outburst_flood_river_corridor.",
+        "little_or_no_credit": "Rainfall flood, wildfire/heat, earthquake, or broad regional exposure framing as the lead answer.",
+        "name": "Final mechanism classification",
+        "partial_credit": "Generic glacial outburst flood without clear Suicide Basin or Mendenhall River routing.",
+        "points": 4
+      },
+      {
+        "description": "Centers the briefing on downstream community flood response from record river stage.",
+        "full_credit": "Prioritizes inundated roads, homes, residents, access, and flood response in the downstream corridor.",
+        "little_or_no_credit": "Prioritizes unrelated hazards or only regional population exposure.",
+        "name": "Operational response priority",
+        "partial_credit": "Mentions flooding severity but does not connect it to response priorities.",
+        "points": 3
+      },
+      {
+        "description": "Reports the four numeric anchors within tolerance.",
+        "name": "Quantitative anchors",
+        "points": 4,
+        "subcriteria": [
+          "1 point: water_release_billion_gallons = 14.6 +/- 0.2.",
+          "1 point: river_crest_ft = 15.99 +/- 0.05.",
+          "1 point: streamflow_cfs_lower_bound = 33000 +/- 1000.",
+          "1 point: crest_above_previous_record_ft = 1.02 +/- 0.05."
+        ]
+      },
+      {
+        "description": "Explains the sequence from Suicide Basin storage to sudden release, river routing, record crest, and downstream impacts.",
+        "full_credit": "Connects source zone, release/routing, hydrologic severity, and community concern without gaps.",
+        "little_or_no_credit": "Lists facts without a source-to-impact chain.",
+        "name": "Physical mechanism and impact chain",
+        "partial_credit": "Gives the right source and flood type but weakly explains routing or impacts.",
+        "points": 4
+      },
+      {
+        "description": "Uses the source, routing, crest, flow, and hazard context to reject ordinary rainfall, wildfire/heat, and broad regional exposure as leading explanations.",
+        "full_credit": "Explicitly uses the glacial-basin release and river-corridor flood evidence to reject distractors.",
+        "little_or_no_credit": "Leaves the competing mechanism ambiguous.",
+        "name": "Rejection of competing framings",
+        "partial_credit": "Rejects one or two distractors without clear evidence.",
+        "points": 2
+      },
+      {
+        "description": "Uses exposure and imagery context appropriately while avoiding unsupported casualty, damage, or proof claims.",
+        "full_credit": "Frames exposure/imagery as response context and avoids unsupported loss totals.",
+        "little_or_no_credit": "Claims exact losses, casualties, or image-proven impacts not supported by the hidden evidence.",
+        "name": "Context and overclaim control",
+        "partial_credit": "Minor overstatement that does not change the event interpretation.",
+        "points": 2
+      },
+      {
+        "description": "Follows the requested JSON structure with a compact rationale.",
+        "full_credit": "All requested fields are present and readable.",
+        "little_or_no_credit": "Unstructured prose that omits requested fields.",
+        "name": "Structured concise output",
+        "partial_credit": "Mostly structured but missing one minor field.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "strict_audit": {
+    "absolute_path_hits": 0,
+    "boundary_main_hits": 0,
+    "existence_hint_hits": 0,
+    "issue_score": 0,
+    "lists_specific_files": false,
+    "numeric_anchor_count": 4,
+    "product_hits": 0,
+    "stem_caution_cue_hits": 0,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 0
+  },
+  "supporting_context": {
+    "competing_signal_flags": {
+      "broad_regional_exposure_signal": false,
+      "wildfire_or_heat_signal": false
+    },
+    "crest_above_previous_record_ft": 1.02,
+    "event_window": {
+      "end_date": "2024-08-06",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2024-08-06"
+    },
+    "event_window_days": 1,
+    "exposure_context": {
+      "bounded_aoi_amenities": 35,
+      "bounded_aoi_buildings": 235,
+      "bounded_aoi_highways": 730,
+      "bounded_aoi_waterways": 20,
+      "critical_amenities": 21,
+      "population_estimate": 27169.1
+    },
+    "previous_record_crest_ft": 14.97,
+    "remote_sensing_context": {
+      "post_scene_count": 6,
+      "pre_post_scene_status": "pre_post_scenes_available",
+      "pre_scene_count": 10
+    },
+    "text_claim_flags": {
+      "ice_dam_gives_way": true,
+      "lake_can_drain": true,
+      "mendenhall_river": true,
+      "residents_or_communities": true,
+      "streets_homes_or_roads": true,
+      "suicide_basin": true
+    }
+  },
+  "task_id": "CSX-320_Q1",
+  "task_subtype": "compound_impact_chain_response_priority",
+  "task_type": "short_answer"
+}

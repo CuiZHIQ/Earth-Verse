@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-132_Q2",
+  "event_id": "CSX-132",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "formula_derivation_consistency_proof",
+  "primary_gt": {
+    "answer": "hail_size_report_ledger_passes",
+    "hail_size_proxies": {
+      "max_hail_cm": 19.0,
+      "diameter_ratio_vs_10cm": 1.9,
+      "diameter_ratio_vs_previous_record": 1.188,
+      "world_record_fraction": 0.936,
+      "volume_proxy_vs_10cm": 6.86,
+      "energy_proxy_vs_10cm": 13.03,
+      "energy_proxy_vs_previous_record": 1.99
+    },
+    "report_spread": {
+      "total_giant_hail_reports": 24,
+      "italy_giant_hail_reports": 22,
+      "italy_report_share": 0.917,
+      "passes_spread_test": true
+    },
+    "context_overrides": {
+      "rain_load_primary": false,
+      "wind_pressure_primary": false,
+      "point_event_precip_mm": 66.3,
+      "wettest_24h_mm": 45.4,
+      "gpm_spatial_concentration_ratio": 2.7,
+      "peak_gust_kmh": 43.2,
+      "pressure_fall_hpa": 14.5
+    },
+    "rejected_ledgers": [
+      "rainfall_load_primary",
+      "wind_pressure_primary",
+      "isolated_extreme_stone",
+      "threshold_capped_giant_hail"
+    ],
+    "proof_sentence": "The 19.0 cm hailstone, 24 giant-hail reports, 0.917 Italy report share, 13.03 energy proxy versus 10 cm, and 1.99 energy proxy versus the previous record pass the hail-size/report-count ledger, while rainfall and wind-pressure context stay below their override thresholds."
+  },
+  "decision_rule": {
+    "thresholds": {
+      "giant_hail_cm": 10.0,
+      "min_total_giant_reports": 10,
+      "min_italy_report_share": 0.75,
+      "min_energy_proxy_vs_10cm": 8.0,
+      "min_energy_proxy_vs_previous_record": 1.5,
+      "rain_override_point_event_precip_mm": 100.0,
+      "rain_override_wettest_24h_mm": 75.0,
+      "rain_override_gpm_spatial_concentration_ratio": 4.0,
+      "wind_override_peak_gust_kmh": 80.0,
+      "pressure_override_fall_hpa": 25.0
+    },
+    "tolerances": {
+      "cm": 0.1,
+      "ratio": 0.02,
+      "mm": 0.2,
+      "kmh": 0.2,
+      "hpa": 0.2
+    },
+    "required_formulae": {
+      "diameter_ratio_vs_10cm": "max_hail_cm / 10",
+      "diameter_ratio_vs_previous_record": "max_hail_cm / previous_record_cm",
+      "world_record_fraction": "max_hail_cm / cited_world_record_cm",
+      "volume_proxy_vs_10cm": "(max_hail_cm / 10)^3",
+      "energy_proxy_vs_10cm": "(max_hail_cm / 10)^4",
+      "energy_proxy_vs_previous_record": "(max_hail_cm / previous_record_cm)^4",
+      "italy_report_share": "italy_giant_hail_reports / total_giant_hail_reports",
+      "gpm_spatial_concentration_ratio": "event_gpm_precip_max_mm / event_gpm_precip_mean_mm"
+    },
+    "passes_hail_size_report_ledger": true
+  },
+  "key_values": {
+    "max_hail_cm": 19.0,
+    "previous_record_cm": 16.0,
+    "world_record_cm": 20.3,
+    "giant_threshold_cm": 10.0,
+    "diameter_ratio_vs_10cm": 1.9,
+    "diameter_ratio_vs_previous_record": 1.188,
+    "world_record_fraction": 0.936,
+    "volume_proxy_vs_10cm": 6.86,
+    "energy_proxy_vs_10cm": 13.03,
+    "energy_proxy_vs_previous_record": 1.99,
+    "giant_hail_reports_total": 24,
+    "italy_giant_hail_reports": 22,
+    "croatia_giant_hail_reports": 2,
+    "italy_report_share": 0.917,
+    "reported_injuries": 109,
+    "large_hail_increase_percent": 200,
+    "point_event_precip_mm": 66.3,
+    "wettest_hour_mm": 12.5,
+    "wettest_hour_time": "2023-07-24T14:00",
+    "wettest_3h_mm": 25.8,
+    "wettest_3h_start": "2023-07-24T14:00",
+    "wettest_24h_mm": 45.4,
+    "wettest_24h_start": "2023-07-24T04:00",
+    "peak_gust_kmh": 43.2,
+    "peak_gust_time": "2023-07-19T00:00",
+    "min_pressure_hpa": 1000.0,
+    "min_pressure_time": "2023-07-25T16:00",
+    "pressure_fall_hpa": 14.5,
+    "gpm_event_precip_max_mm": 53.91,
+    "gpm_event_precip_mean_mm": 19.99,
+    "gpm_spatial_concentration_ratio": 2.7
+  },
+  "calculation_checks": {
+    "hail_size_report_ledger": {
+      "max_hail_ge_10cm": true,
+      "spread_test": true,
+      "energy_proxy_vs_10cm_ge_8": true,
+      "energy_proxy_vs_previous_record_ge_1_5": true,
+      "passes": true
+    },
+    "context_overrides": {
+      "rain_load_primary": false,
+      "wind_pressure_primary": false
+    },
+    "failed_ledgers": {
+      "rainfall_load_primary": true,
+      "wind_pressure_primary": true,
+      "isolated_extreme_stone": true,
+      "threshold_capped_giant_hail": true
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON structure",
+        "points": 4,
+        "description": "Includes all requested fields with coherent numeric, boolean, list, and sentence values.",
+        "partial_credit": "Award 2-3 points for a mostly complete structure with one missing or misplaced field; award 1 point for a recognizable but incomplete ledger."
+      },
+      {
+        "name": "Numeric formula results",
+        "points": 5,
+        "description": "Correctly computes the hail-size ratios, nonlinear proxies, report share, rainfall windows, GPM concentration ratio, gust, and pressure fall within tolerance.",
+        "partial_credit": "Award 3-4 points for correct core hail and report values with minor rounding errors; award 1-2 points for only the raw hail/report values."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 4,
+        "description": "Correctly applies the hail ledger, rainfall override, wind-pressure override, report-spread, and threshold-capped tests.",
+        "partial_credit": "Award 2-3 points for the correct hail-ledger pass with one context threshold error; award 1 point for only naming the passing ledger."
+      },
+      {
+        "name": "Ledger-by-ledger consistency",
+        "points": 3,
+        "description": "Explains why rainfall-load, wind-pressure, isolated-stone, and threshold-capped ledgers fail under the computed tests.",
+        "partial_credit": "Award 2 points for rejecting most alternatives with adequate arithmetic; award 1 point for listing alternatives without clear threshold logic."
+      },
+      {
+        "name": "Context metric weighting",
+        "points": 2,
+        "description": "Uses point rainfall, GPM concentration, wind gust, and pressure fall as bounded numerical context checks.",
+        "partial_credit": "Award 1 point for including some context values but over-weighting one below-threshold metric."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 1,
+        "description": "Gives a compact giant-hail severe-convection conclusion consistent with the proof.",
+        "partial_credit": "Award 0.5 points for a correct but vague interpretation."
+      },
+      {
+        "name": "Bounded ledger conclusion",
+        "points": 1,
+        "description": "Avoids loss estimates, image-derived hail swaths, or broad claims not implied by the ledger.",
+        "partial_credit": "Award 0.5 points for minor extra phrasing that does not change the conclusion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ],
+    "notes": "All values are extracted or computed from local CSX-132 package files without network access."
+  }
+}

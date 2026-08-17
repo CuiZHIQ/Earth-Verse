@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "task_version": "v5_nonmcq_numeric",
+  "task_id": "CSX-175_Q1",
+  "event_id": "CSX-175",
+  "task_type": "numeric",
+  "task_subtype": "smoke_aod_burden_ledger",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "requires_computation_or_structured_extraction": true,
+  "primary_gt": {
+    "answer": "severe_regional_smoke_burden",
+    "expected_json": {
+      "aod_excess_load": 3.2,
+      "station_exceedance_count": 2,
+      "station_exceedance_fraction": 1.0,
+      "grand_forks_clear_sky_multiplier": 46.0,
+      "grand_forks_vs_goddard_mean_ratio": 2.3,
+      "grand_forks_peak_to_mean_ratio": 1.3,
+      "burned_area_baseline_ha": 47800,
+      "diagnosis": "severe_regional_smoke_burden"
+    },
+    "rounding": "AOD load and ratios to 2 decimals; burned-area baseline to nearest hectare.",
+    "tolerances": {
+      "aod_or_ratio_abs": 0.02,
+      "burned_area_ha_abs": 1
+    },
+    "required_claims": [
+      "The AOD ledger supports a severe regional smoke-burden diagnosis.",
+      "The local dNBR and annual embedding-change summaries are not PM2.5 exposure-hour measurements."
+    ]
+  },
+  "key_values": {
+    "source_values": {
+      "clear_sky_aod_threshold": 0.05,
+      "goddard_mean_aod": 1.0,
+      "grand_forks_mean_aod": 2.3,
+      "grand_forks_peak_aod_nominal": 3.0,
+      "burned_hectares_reported": 478000,
+      "seasonal_anomaly_factor": 10,
+      "alberta_wildland_fires": 87,
+      "sentinel2_dnbr_mean": 0.35477110498290715,
+      "alphaearth_change_mean": 0.0451065067711521
+    },
+    "derived_values": {
+      "aod_excess_load_unrounded": 3.2,
+      "station_exceedance_count": 2,
+      "station_exceedance_fraction": 1.0,
+      "grand_forks_clear_sky_multiplier_unrounded": 45.99999999999999,
+      "grand_forks_vs_goddard_mean_ratio": 2.3,
+      "grand_forks_peak_to_mean_ratio_unrounded": 1.3043478260869565,
+      "burned_area_baseline_ha": 47800.0,
+      "burned_area_excess_ha": 430200.0
+    },
+    "formulas": {
+      "aod_excess_load": "sum(max(mean_AOD - clear_sky_AOD, 0)) across the two reported station-days",
+      "station_exceedance_fraction": "station_exceedance_count / 2",
+      "grand_forks_clear_sky_multiplier": "Grand Forks mean AOD / clear-sky AOD",
+      "grand_forks_vs_goddard_mean_ratio": "Grand Forks mean AOD / Goddard mean AOD",
+      "grand_forks_peak_to_mean_ratio": "Grand Forks nominal peak AOD / Grand Forks mean AOD",
+      "burned_area_baseline_ha": "reported burned hectares / seasonal anomaly factor"
+    },
+    "consistency_rule": "Large AOD exceedances and ratios support the severe regional smoke-burden label; local dNBR and AlphaEarth summaries are satellite context, not PM2.5 exposure-duration data.",
+    "judge_anchors": {
+      "required_sentence": "A valid final sentence must affirm consistency with severe regional smoke burden and reject conversion of local satellite-change metrics into PM2.5 exposure hours."
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested schema",
+        "points": 4,
+        "description": "Returns the exact requested JSON fields with rounded numeric values and one concise consistency sentence.",
+        "partial_credit": "Award 2-3 points if the JSON is mostly complete but has one missing or misrounded field; award 1 point for a recognizable ledger with several format errors."
+      },
+      {
+        "name": "AOD input extraction",
+        "points": 5,
+        "description": "Uses clear-sky AOD 0.05, Goddard mean AOD about 1.0, Grand Forks mean AOD 2.3, and Grand Forks nominal peak AOD 3.0.",
+        "partial_credit": "Award up to 3 points for recovering two or three of the four AOD inputs; subtract credit for using the Grand Forks peak as a station-day mean."
+      },
+      {
+        "name": "Smoke-load and exceedance calculations",
+        "points": 4,
+        "description": "Computes AOD excess load 3.20, station exceedance count 2, and exceedance fraction 1.00.",
+        "partial_credit": "Award 2-3 points if the exceedance count and fraction are correct but the excess load has a small arithmetic or rounding error."
+      },
+      {
+        "name": "Concentration ratios",
+        "points": 3,
+        "description": "Computes Grand Forks clear-sky multiplier 46.00, Grand Forks/Goddard mean ratio 2.30, and peak/mean ratio 1.30.",
+        "partial_credit": "Award 1 point for each correctly computed ratio with the intended numerator and denominator."
+      },
+      {
+        "name": "Burned-area anomaly calculation",
+        "points": 2,
+        "description": "Computes 47,800 ha as the 478,000 ha burned-area total divided by the 10x anomaly factor.",
+        "partial_credit": "Award 1 point if the answer uses the correct inputs but gives an unrounded value, wrong unit label, or minor arithmetic slip."
+      },
+      {
+        "name": "Consistency and restraint",
+        "points": 2,
+        "description": "Interprets the AOD ledger as severe regional smoke burden while avoiding PM2.5-hour, clinical-outcome, or extra-data impact overclaims.",
+        "partial_credit": "Award 1 point if the answer gives the severe smoke-burden diagnosis but omits the satellite-to-PM2.5 limitation, or states the limitation without tying it to the AOD ledger."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Canadian_wildfires_and_smoke.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "event_window": {
+      "start_date": "2023-05-01",
+      "end_date": "2023-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "event_location": "Canada and downwind United States"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-226_Q1",
+  "event_id": "CSX-226",
+  "task_type": "numeric",
+  "target_family": "landslide_surface_rain_threshold_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "exposed_strong_surface_limited_rain_ledger",
+    "exposure_margin_people": 1074.963,
+    "radar_margin_db": 14.495,
+    "optical_margin": 0.024,
+    "same_day_precip_max_mm": 12.245,
+    "precip_margin_mm": 12.755,
+    "ledger_score": 4,
+    "gates": {
+      "exposure": true,
+      "radar": true,
+      "optical": true,
+      "precip_below_25mm": true
+    }
+  },
+  "key_values": {
+    "event_name": "May 2024 Papua New Guinea Enga landslide",
+    "hazard_family": "landslide_mass_movement",
+    "event_date": "2024-05-24",
+    "region": "Enga Province, Papua New Guinea",
+    "exposed_population": 6074.962951155367,
+    "radar_min_db": -34.49492236991492,
+    "optical_max_dnbr": 0.4744227796238083,
+    "same_day_precip_max_mm": 12.244905471801758,
+    "max_precip_name": "chirps_max",
+    "precip_candidates_mm": {
+      "chirps_max": 12.244905471801758,
+      "gpm_max": 1.2949999570846558,
+      "era5_max": 0.1484930514266125,
+      "open_meteo_sum": 0.5,
+      "nasa_power_sum": 1.24
+    },
+    "thresholds": {
+      "exposed_population": 5000.0,
+      "radar_abs_min_db": 20.0,
+      "optical_max_dnbr": 0.45,
+      "same_day_precip_max_mm": 25.0
+    }
+  },
+  "decision_rule": {
+    "score_4": "exposed_strong_surface_limited_rain_ledger",
+    "score_2_or_3": "mixed_surface_exposure_ledger",
+    "score_0_or_1": "weak_surface_exposure_ledger"
+  },
+  "tolerances": {
+    "exposure_margin_people": 1.0,
+    "radar_margin_db": 0.01,
+    "optical_margin": 0.001,
+    "same_day_precip_max_mm": 0.001,
+    "precip_margin_mm": 0.001
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 3,
+        "description": "Returns compact JSON with all requested numeric fields, ledger score, classification, and one-sentence interpretation.",
+        "partial_credit": "Award 1-2 points for parseable JSON that omits one field or has minor nesting problems."
+      },
+      {
+        "name": "Input extraction",
+        "points": 4,
+        "description": "Uses 6074.963 people, -34.495 dB minimum VV change, 0.474423 maximum dNBR, and the five same-day precipitation candidates.",
+        "partial_credit": "Award 1 point for each correct data family up to 4 points."
+      },
+      {
+        "name": "Surface margins",
+        "points": 4,
+        "description": "Computes radar_margin_db = 14.495 and optical_margin = 0.024 within tolerance.",
+        "partial_credit": "Award 2 points for each correct surface margin; award 1 point for a correct formula with an arithmetic error."
+      },
+      {
+        "name": "Exposure and rain margins",
+        "points": 4,
+        "description": "Computes exposure_margin_people = 1074.963, same_day_precip_max_mm = 12.245, and precip_margin_mm = 12.755.",
+        "partial_credit": "Award up to 1.5 points for exposure, 1 point for precipitation maximum, and 1.5 points for precipitation margin."
+      },
+      {
+        "name": "Gate ledger",
+        "points": 3,
+        "description": "Marks all four gates true and totals ledger_score = 4.",
+        "partial_credit": "Award 1 point for each correct pair of gate state and score contribution, up to 3 points."
+      },
+      {
+        "name": "Final classification",
+        "points": 1,
+        "description": "Maps score 4 to exposed_strong_surface_limited_rain_ledger.",
+        "partial_credit": "Award 0.5 point for a near-equivalent label tied to score 4."
+      },
+      {
+        "name": "Interpretation discipline",
+        "points": 1,
+        "description": "Keeps the interpretation tied to computed thresholds and avoids exact loss or cause statements not derived from the ledger.",
+        "partial_credit": "Award 0.5 point for a mostly ledger-tied sentence with one extra uncomputed detail."
+      }
+    ]
+  },
+  "event": {
+    "event_id": "CSX-226",
+    "event_name": "May 2024 Papua New Guinea Enga landslide",
+    "hazard_family": "landslide_mass_movement",
+    "event_date": "2024-05-24",
+    "region": "Enga Province, Papua New Guinea"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_May_2024_Papua_New_Guinea_Enga_landslide.json",
+      "data/exposure_impact/exposure_impact_004_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_007_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_010_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_005_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_009_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_007_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json"
+    ]
+  }
+}

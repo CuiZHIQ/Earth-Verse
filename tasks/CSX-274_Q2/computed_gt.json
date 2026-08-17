@@ -1,0 +1,237 @@
+{
+  "answer_notes": {
+    "boundary_logic": "JAS_1997 and OND_1997 meet the SOI threshold exactly before rounding.",
+    "formula": "window passes when ONI anomaly >= 1.5 C and same-window mean SOI <= -2.0",
+    "interpretation": "The ledger marks the mature coupled El Nino interval, not exact local flood or storm losses.",
+    "near_miss_logic": "JJA_1997 misses only the SOI threshold by about 0.033; FMA_1998 misses only the ONI threshold by 0.06 C."
+  },
+  "evaluation_mode": "deterministic_numeric_json",
+  "event_id": "CSX-274",
+  "key_values": {
+    "diagnostic_records": [
+      {
+        "end_month": "1997-07",
+        "mean_soi": -1.9,
+        "oni_anomaly_c": 1.22,
+        "oni_margin_c": -0.28,
+        "passes_both_thresholds": false,
+        "passes_ocean_threshold": false,
+        "passes_soi_threshold": false,
+        "soi_margin": -0.1,
+        "start_month": "1997-05",
+        "window": "MJJ_1997"
+      },
+      {
+        "end_month": "1997-08",
+        "mean_soi": -1.9667,
+        "oni_anomaly_c": 1.6,
+        "oni_margin_c": 0.1,
+        "passes_both_thresholds": false,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": false,
+        "soi_margin": -0.0333,
+        "start_month": "1997-06",
+        "window": "JJA_1997"
+      },
+      {
+        "end_month": "1997-09",
+        "mean_soi": -2.0,
+        "oni_anomaly_c": 1.9,
+        "oni_margin_c": 0.4,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.0,
+        "start_month": "1997-07",
+        "window": "JAS_1997"
+      },
+      {
+        "end_month": "1997-10",
+        "mean_soi": -2.4,
+        "oni_anomaly_c": 2.14,
+        "oni_margin_c": 0.64,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.4,
+        "start_month": "1997-08",
+        "window": "ASO_1997"
+      },
+      {
+        "end_month": "1997-11",
+        "mean_soi": -2.2667,
+        "oni_anomaly_c": 2.33,
+        "oni_margin_c": 0.83,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.2667,
+        "start_month": "1997-09",
+        "window": "SON_1997"
+      },
+      {
+        "end_month": "1997-12",
+        "mean_soi": -2.0,
+        "oni_anomaly_c": 2.4,
+        "oni_margin_c": 0.9,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.0,
+        "start_month": "1997-10",
+        "window": "OND_1997"
+      },
+      {
+        "end_month": "1998-01",
+        "mean_soi": -2.6667,
+        "oni_anomaly_c": 2.39,
+        "oni_margin_c": 0.89,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.6667,
+        "start_month": "1997-11",
+        "window": "NDJ_1997"
+      },
+      {
+        "end_month": "1998-02",
+        "mean_soi": -3.1333,
+        "oni_anomaly_c": 2.24,
+        "oni_margin_c": 0.74,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 1.1333,
+        "start_month": "1997-12",
+        "window": "DJF_1998"
+      },
+      {
+        "end_month": "1998-03",
+        "mean_soi": -3.9333,
+        "oni_anomaly_c": 1.93,
+        "oni_margin_c": 0.43,
+        "passes_both_thresholds": true,
+        "passes_ocean_threshold": true,
+        "passes_soi_threshold": true,
+        "soi_margin": 1.9333,
+        "start_month": "1998-01",
+        "window": "JFM_1998"
+      },
+      {
+        "end_month": "1998-04",
+        "mean_soi": -3.2667,
+        "oni_anomaly_c": 1.44,
+        "oni_margin_c": -0.06,
+        "passes_both_thresholds": false,
+        "passes_ocean_threshold": false,
+        "passes_soi_threshold": true,
+        "soi_margin": 1.2667,
+        "start_month": "1998-02",
+        "window": "FMA_1998"
+      },
+      {
+        "end_month": "1998-05",
+        "mean_soi": -2.0,
+        "oni_anomaly_c": 0.99,
+        "oni_margin_c": -0.51,
+        "passes_both_thresholds": false,
+        "passes_ocean_threshold": false,
+        "passes_soi_threshold": true,
+        "soi_margin": 0.0,
+        "start_month": "1998-03",
+        "window": "MAM_1998"
+      }
+    ],
+    "event_name": "1997-1998 El Nino and winter flood/storm impacts in the United States",
+    "hazard_family": "climate_teleconnection_enso_iod_mjo",
+    "mean_soi_threshold": -2.0,
+    "near_miss_tolerance": 0.1,
+    "ocean_threshold_c": 1.5,
+    "qualifying_windows": [
+      "JAS_1997",
+      "ASO_1997",
+      "SON_1997",
+      "OND_1997",
+      "NDJ_1997",
+      "DJF_1998",
+      "JFM_1998"
+    ],
+    "window_set": "MJJ_1997 through MAM_1998"
+  },
+  "primary_gt": {
+    "answer": "JAS_1997_to_JFM_1998_7_windows_9_months",
+    "calendar_span": "1997-07_to_1998-03",
+    "calendar_span_months": 9,
+    "diagnosis": "The double-threshold ledger reconstructs a mature coupled El Nino interval from July 1997 through March 1998.",
+    "first_window": "JAS_1997",
+    "last_window": "JFM_1998",
+    "near_miss_windows": [
+      "JJA_1997",
+      "FMA_1998"
+    ],
+    "qualifying_window_count": 7,
+    "tight_boundary_windows": [
+      "JAS_1997",
+      "OND_1997"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data"
+    ]
+  },
+  "requires_computation": true,
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports the continuous qualifying interval as JAS_1997 through JFM_1998, with 7 qualifying windows and a 9-month calendar span.",
+        "name": "Final threshold reconstruction",
+        "partial_credit": "Award 2-3 points for the right interval with one count or span error; award 1 point for identifying only a winter-centered coupled interval.",
+        "points": 4
+      },
+      {
+        "description": "Uses the CPC ONI anomaly for each three-month season from MJJ_1997 through MAM_1998 and applies the >= 1.5 C condition correctly.",
+        "name": "ONI extraction",
+        "partial_credit": "Award 1-2 points for using the right file and values but making a minor threshold or season-label error.",
+        "points": 3
+      },
+      {
+        "description": "Averages the three monthly SOI values for each matching calendar window and applies the <= -2.0 condition before rounding.",
+        "name": "SOI averaging",
+        "partial_credit": "Award 1-3 points for correct SOI extraction with a small averaging, sign, or boundary-condition error.",
+        "points": 4
+      },
+      {
+        "description": "Identifies JAS_1997 and OND_1997 as exact SOI-boundary passes, plus JJA_1997 and FMA_1998 as the nearest single-condition misses.",
+        "name": "Boundary and near-miss diagnostics",
+        "partial_credit": "Award 1-2 points for naming only the boundary passes or only the near misses.",
+        "points": 3
+      },
+      {
+        "description": "Converts the first and last qualifying seasons to the inclusive July 1997 through March 1998 calendar span.",
+        "name": "Calendar continuity",
+        "partial_credit": "Award 1 point for giving the right endpoints but not the inclusive month count.",
+        "points": 2
+      },
+      {
+        "description": "Explains that the ledger diagnoses a mature coupled El Nino interval relevant to winter storm and flood context without turning it into exact local impact totals.",
+        "name": "Physical interpretation and limits",
+        "partial_credit": "Award 1 point for a correct ENSO interpretation that lacks the caution about exact local impacts.",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON-style fields with the requested count, endpoints, span, boundary windows, near misses, and diagnosis.",
+        "name": "Structured concise response",
+        "partial_credit": "Award 1 point for recoverable content with minor formatting or concision problems.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_threshold_window_reconstruction",
+  "task_id": "CSX-274_Q2",
+  "task_type": "numeric"
+}

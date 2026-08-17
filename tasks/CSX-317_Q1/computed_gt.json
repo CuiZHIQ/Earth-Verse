@@ -1,0 +1,184 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-317_Q1",
+  "event_id": "CSX-317",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "exact_structured_core_with_judged_explanation",
+    "answer": "glacier_collapse_lake_outburst_downvalley_flood",
+    "priority_class": "critical",
+    "priority_index": 16.28,
+    "priority_index_tolerance": 0.01,
+    "key_metrics": {
+      "threatened_city_population": 60000,
+      "flood_arrival_minutes": 15,
+      "historical_fatalities": 7000,
+      "event_precipitation_mm": 18.2
+    },
+    "impact_chain": [
+      "glacier_collapse_or_icefall",
+      "lake_outburst_flood",
+      "rapid_downvalley_city_impact"
+    ],
+    "canonical_stance": "Lake Palcacocha poses a glacier-collapse or icefall-driven glacial-lake outburst flood threat to Huaraz, giving a critical rapid-impact priority."
+  },
+  "key_values": {
+    "event_name": "Lake Palcacocha GLOF / Huaraz flood",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date": "1941-12-13",
+    "region": "South America",
+    "scale": "neighborhood_asset",
+    "priority_formula": "log10(population) + fatalities/1000 + max(0, 60 - arrival_minutes)/10",
+    "priority_components": {
+      "log10_population": 4.7782,
+      "fatality_component": 7.0,
+      "rapid_arrival_component": 4.5
+    },
+    "weather_context": {
+      "temperature_max_c": 29.8,
+      "precipitation_sum_mm": 18.2,
+      "wind_speed_max_kmh": 9.5
+    },
+    "amenity_counts_from_local_overpass_sample": {
+      "school": 8
+    },
+    "eonet_event_count": 0,
+    "wikipedia_search_hits": 2,
+    "aoi_bbox": {
+      "min_lon": -77.7628,
+      "min_lat": -9.6951,
+      "max_lon": -77.3128,
+      "max_lat": -9.2451
+    },
+    "file_category_counts": {
+      "event_catalogs": 4,
+      "event_reports": 5,
+      "exposure_impact": 1,
+      "geospatial_context": 3,
+      "other": 4,
+      "physical_hazard": 1,
+      "remote_sensing": 1
+    },
+    "mechanism_flags": {
+      "glacier_chunk_threatens_lake": true,
+      "fissure_in_glacier": true,
+      "rapid_downvalley_arrival": true,
+      "historical_overflow_fatalities": true,
+      "rainfall_present_but_not_primary": true
+    },
+    "judge_anchors": {
+      "required_claims": [
+        "Identifies glacier collapse, icefall, or a glacier chunk entering Lake Palcacocha as the trigger.",
+        "Describes the resulting lake outburst or overflow flood moving rapidly down-valley toward Huaraz.",
+        "Uses the 15-minute travel time as a low-warning-time emergency-planning anchor.",
+        "Treats precipitation as contextual rather than the dominant flood mechanism."
+      ],
+      "required_metrics": [
+        {
+          "name": "threatened_city_population",
+          "value": 60000,
+          "unit": "people"
+        },
+        {
+          "name": "flood_arrival_minutes",
+          "value": 15,
+          "unit": "minutes"
+        },
+        {
+          "name": "historical_fatalities",
+          "value": 7000,
+          "unit": "people"
+        },
+        {
+          "name": "event_precipitation_mm",
+          "value": 18.2,
+          "unit": "mm"
+        },
+        {
+          "name": "priority_index",
+          "value": 16.28,
+          "tolerance": 0.01
+        }
+      ],
+      "forbidden_claims": [
+        "Treats the event as primarily a rainfall-only river flood.",
+        "Attributes the impact mechanism to coastal surge or slow seasonal snowmelt.",
+        "Uses the historical fatality count as a precise modern casualty forecast.",
+        "Claims specific inundation depth, discharge, or modeled flood extent not established by the record.",
+        "Uses outside-source values to replace the supported population, travel-time, fatality, or precipitation values."
+      ],
+      "acceptable_variants": [
+        "The trigger may be phrased as glacier collapse, icefall, glacier chunk failure, or ice entering the lake.",
+        "The flood process may be phrased as GLOF, lake outburst, lake overflow, or displacement wave leading to down-valley flooding.",
+        "Priority index values from 16.27 to 16.29 are acceptable if the class remains critical."
+      ]
+    }
+  },
+  "text_claims": {
+    "mechanism_claim": ", 2003 NASA Earth Observatory Apr 04, 2003 Article View more Images of the Day: Apr 3, 2003 Apr 5, 2003 Instruments: Terra \u2014 ASTER Topics: Glaciers & Ice Sheets November 5, 2001 A chunk of glacier was threatening to fall into an Andean lake andcause major flooding in a Peruvian city of 60,000. A fissure hasappeared in the glacier that feeds the Lake Palcacocha near the city",
+    "arrival_claim": "ity of 60,000. A fissure hasappeared in the glacier that feeds the Lake Palcacocha near the city of Huaraz, 270 km north of Lima. If the piece breaks off, ensuing floodswould take 15 minutes to reach the city. In 1941, the lake overflowedand caused massive destruction, killing 7,000 people. The city can beseen in the left-center part of the image. Lake Palcacocha is i",
+    "historical_impact_claim": "e city of Huaraz, 270 km north of Lima. If the piece breaks off, ensuing floodswould take 15 minutes to reach the city. In 1941, the lake overflowedand caused massive destruction, killing 7,000 people. The city can beseen in the left-center part of the image. Lake Palcacocha is in theupper right corner of the image at the head of a valley, below the snowand glacier cap. The Adv"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Lake_Palcacocha_GLOF_Huaraz_flood.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_archive_point_sample.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_critical-amenity_sample.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_events_API.xml",
+      "data/other/other_003_01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "exact structured core",
+        "points": 4,
+        "description": "Gives the exact mechanism label glacier_collapse_lake_outburst_downvalley_flood, critical priority class, and 16.28 priority index.",
+        "partial_credit": "Award partial credit for the correct GLOF mechanism with an incorrect or missing class/index."
+      },
+      {
+        "name": "required metric extraction",
+        "points": 4,
+        "description": "Extracts 60000 threatened people, 15 minutes to Huaraz, 7000 historical fatalities, and 18.2 mm same-day precipitation context.",
+        "partial_credit": "Award partial credit for three correct metrics or minor rounding/format issues."
+      },
+      {
+        "name": "priority formula and threshold",
+        "points": 3,
+        "description": "Computes log10(population) + fatalities/1000 + max(0, 60 - arrival_minutes)/10 and applies the critical threshold correctly.",
+        "partial_credit": "Award partial credit for using the right variables with one arithmetic or threshold error."
+      },
+      {
+        "name": "GLOF physical process",
+        "points": 3,
+        "description": "Explains glacier collapse or icefall into Lake Palcacocha followed by lake outburst or overflow and rapid down-valley flooding toward Huaraz.",
+        "partial_credit": "Award partial credit for naming GLOF without the trigger or downstream propagation."
+      },
+      {
+        "name": "weather-context handling",
+        "points": 2,
+        "description": "Treats the 18.2 mm precipitation value as contextual rather than the primary cause.",
+        "partial_credit": "Award partial credit for mentioning precipitation without clearly rejecting rainfall-only causation."
+      },
+      {
+        "name": "operational rapid-impact interpretation",
+        "points": 2,
+        "description": "Connects the 15-minute travel time and large threatened population to critical rapid-impact emergency planning.",
+        "partial_credit": "Award partial credit for generic emergency concern without tying it to travel time and population."
+      },
+      {
+        "name": "rejection of alternatives and overclaims",
+        "points": 2,
+        "description": "Rejects rainfall-only flooding, coastal surge, slow seasonal snowmelt, precise modern casualty estimates, and unprovided depth/discharge claims.",
+        "partial_credit": "Award partial credit for avoiding overclaims without explicitly explaining why distractors fail."
+      }
+    ]
+  }
+}

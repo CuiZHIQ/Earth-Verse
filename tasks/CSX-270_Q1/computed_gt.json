@@ -1,0 +1,155 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-270",
+  "key_values": {
+    "annual_embedding_change_mean": 0.008356,
+    "building_count": 537,
+    "class": "high",
+    "class_thresholds": {
+      "high_min": 80,
+      "mixed_min": 60
+    },
+    "component_scores": {
+      "climate_gate": 1,
+      "image_score": 0.5822,
+      "rainfall_agreement": 0.9491,
+      "rainfall_load": 0.967,
+      "receptor_score": 0.8691
+    },
+    "consistency_proof": "High ECS follows from rainfall load 0.967, agreement 0.9491, climate gate 1, receptor score 0.8691, and image score 0.5822.",
+    "ecs": 90.94,
+    "oni_sep_dec_mean": 0.465,
+    "oni_sep_dec_values": [
+      0.23,
+      0.39,
+      0.58,
+      0.66
+    ],
+    "population_sum": 42161.965,
+    "rainfall_agreement": 0.9491,
+    "rainfall_layer_means_mm": {
+      "chirps_mm": 280.668,
+      "era5_land_mm": 294.239,
+      "gpm_imerg_mm": 295.427
+    },
+    "rainfall_mean_mm": 290.112,
+    "rainfall_range_mm": 14.759,
+    "soi_sep_dec_mean": -1.2,
+    "soi_sep_dec_values": [
+      -1.9,
+      -0.6,
+      -1.4,
+      -0.9
+    ],
+    "weights": {
+      "climate_gate": 0.15,
+      "image_score": 0.1,
+      "rainfall_agreement": 0.25,
+      "rainfall_load": 0.3,
+      "receptor_score": 0.2
+    },
+    "window_scope": {
+      "climate_gate": "September-December 2019 ONI/SOI background gate; no IOD term is scored in this task",
+      "rainfall_products": "2019-09-01 to 2019-10-16 early wet-season rainfall-product window"
+    }
+  },
+  "primary_gt": {
+    "anchors": {
+      "ONI_mean": 0.465,
+      "R_bar_mm": 290.112,
+      "R_range_mm": 14.759,
+      "SOI_mean": -1.2,
+      "buildings": 537,
+      "image_mean": 0.008356,
+      "population": 42161.965
+    },
+    "answer": 90.94,
+    "class": "high",
+    "climate_gate": {
+      "gate": 1,
+      "oni_mean": 0.465,
+      "soi_mean": -1.2
+    },
+    "components": {
+      "climate_gate": 1,
+      "image_score": 0.5822,
+      "rainfall_agreement": 0.9491,
+      "rainfall_load": 0.967,
+      "receptor_score": 0.8691
+    },
+    "consistency_proof": "High ECS follows from rainfall load 0.967, agreement 0.9491, climate gate 1, receptor score 0.8691, and image score 0.5822.",
+    "event_consistency_score": 90.94,
+    "formula": "100*(0.30*r+0.25*c+0.15*g+0.20*x+0.10*y)",
+    "image_score": 0.5822,
+    "rainfall": {
+      "agreement": 0.9491,
+      "mean_mm": 290.112,
+      "range_mm": 14.759
+    },
+    "receptor_score": 0.8691,
+    "tolerance": 0.05,
+    "units": "points_on_0_100_ecs",
+    "window_scope": {
+      "climate_gate": "September-December 2019 ONI/SOI background gate; no IOD term is scored in this task",
+      "rainfall_products": "2019-09-01 to 2019-10-16 early wet-season rainfall-product window"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_010_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_011_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_012_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_SOI_data.data",
+      "data/exposure_impact/exposure_impact_005_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports ECS as 90.94 within 0.05 on the 0-100 scale and labels the class high.",
+        "name": "Final ECS and class",
+        "partial_credit": "Award 1-3 points for a nearby score or a correct class with arithmetic slips.",
+        "points": 4
+      },
+      {
+        "description": "Uses the three September-October rainfall means, computes 290.112 mm mean, 14.759 mm range, and 0.9491 agreement.",
+        "name": "Rainfall agreement ledger",
+        "partial_credit": "Award 1-3 points for correct rainfall extraction with incomplete aggregation.",
+        "points": 4
+      },
+      {
+        "description": "Computes September-December ONI mean 0.465 and SOI mean -1.200, assigns gate value 1, and does not introduce an unscored IOD term.",
+        "name": "Climate gate arithmetic",
+        "partial_credit": "Award 1-2 points for correct index means with an incorrect or missing gate.",
+        "points": 3
+      },
+      {
+        "description": "Computes receptor score 0.8691 from population 42161.965 and 537 buildings, plus image score 0.5822 from annual mean 0.008356.",
+        "name": "Receptor and image scores",
+        "partial_credit": "Award 1-3 points for deriving one component correctly or using the right inputs with rounding errors.",
+        "points": 4
+      },
+      {
+        "description": "Applies the five stated weights to the component scores and multiplies by 100.",
+        "name": "Weighted formula execution",
+        "partial_credit": "Award 1-2 points for a clear formula setup with one misplaced weight or cap.",
+        "points": 3
+      },
+      {
+        "description": "Explains the high class using the numeric threshold ledger and component scores.",
+        "name": "Compact consistency proof",
+        "partial_credit": "Award 1 point for a terse proof that cites only part of the ledger.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "east_africa_flood_consistency_score_ledger",
+  "task_id": "CSX-270_Q1",
+  "task_type": "numeric"
+}

@@ -1,0 +1,158 @@
+{
+  "answer_type": "expert_error_attribution",
+  "eval_mode": "hybrid",
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-006",
+  "intermediate_values": {
+    "correct_source_daily_count": 5,
+    "correct_source_hourly_count": 120,
+    "raw_temperature_peak_difference_degC": 9.257858276367166,
+    "raw_wrong_temperature_value_degC": 35.342141723632835,
+    "required_fields": [
+      "hourly.apparent_temperature",
+      "daily.temperature_2m_min"
+    ],
+    "wrong_source_present_heat_field": "stats.temperature_2m_max_c_max"
+  },
+  "numeric_tolerances": {
+    "hours_apparent_temperature_ge_40c": {
+      "expected": 16,
+      "tolerance": 0,
+      "unit": "hours"
+    },
+    "max_air_temperature_degC": {
+      "expected": 44.6,
+      "tolerance": 0.2,
+      "unit": "degC"
+    },
+    "max_apparent_temperature_degC": {
+      "expected": 43.2,
+      "tolerance": 0.2,
+      "unit": "degC"
+    },
+    "temperature_peak_difference_degC": {
+      "expected": 9.3,
+      "tolerance": 0.2,
+      "unit": "degC"
+    },
+    "warm_nights_tmin_ge_27c": {
+      "expected": 5,
+      "tolerance": 0,
+      "unit": "nights"
+    },
+    "wrong_available_temperature_value_degC": {
+      "expected": 35.3,
+      "tolerance": 0.2,
+      "unit": "degC"
+    }
+  },
+  "primary_gt": {
+    "answer_type": "expert_error_attribution",
+    "audit_ruling": "source_swap_fails",
+    "correct_source": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+    "corrected_answer": {
+      "label": "sustained_apparent_heat_with_warm_night_exposure",
+      "metrics": {
+        "hours_apparent_temperature_ge_40c": 16,
+        "max_air_temperature_degC": 44.6,
+        "max_apparent_temperature_degC": 43.2,
+        "warm_nights_tmin_ge_27c": 5
+      }
+    },
+    "error_class": "missing_variable",
+    "event_window": {
+      "end_date": "2024-04-04",
+      "start_date": "2024-03-31"
+    },
+    "event_window_source": "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+    "first_missing_variable": "hourly.apparent_temperature",
+    "missing_required_fields": [
+      "hourly.apparent_temperature",
+      "daily.temperature_2m_min"
+    ],
+    "reference_solving_trace": [
+      "Read metadata/files.csv to confirm candidate evidence files are package members.",
+      "Read the locked event anchor and take the official window as 2024-03-31 through 2024-04-04.",
+      "Inspect the local hourly heat-stress file and find hourly.apparent_temperature plus daily.temperature_2m_min.",
+      "Compute max apparent temperature, count hourly apparent temperature values >= 40.0 degC, count daily minimum temperatures >= 27.0 degC, and compute max air temperature.",
+      "Inspect the gridded aggregate file and identify stats.temperature_2m_max_c_max as the only available heat maximum while hourly apparent temperature and daily minimum temperature are absent.",
+      "Compare 44.6 degC from the local point source with 35.3 degC from the substitute aggregate source, yielding a 9.3 degC peak-temperature difference.",
+      "Reject precipitation, annual remote-sensing change, and burn-index files because they cannot reproduce the heat-stress calculation."
+    ],
+    "rejected_or_insufficient_alternatives": {
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json": "precipitation-only event accumulation; no heat-stress variables",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json": "precipitation-only event accumulation; no heat-stress variables",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json": "burn-index pre/post statistic; no apparent-temperature or minimum-temperature fields",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json": "annual remote-sensing change statistic; no event-window hourly or nightly heat fields"
+    },
+    "wrong_source": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+    "wrong_source_numeric_impact": {
+      "can_compute_apparent_heat_duration": false,
+      "can_compute_warm_nights": false,
+      "correct_point_air_temperature_max_degC": 44.6,
+      "temperature_peak_difference_degC": 9.3,
+      "wrong_available_temperature_field": "stats.temperature_2m_max_c_max",
+      "wrong_available_temperature_value_degC": 35.3
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "metadata/sources.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns source_swap_fails and classifies the failure as missing_variable.",
+        "name": "Source-swap ruling and error class",
+        "partial_credit": "Partial credit for identifying a wrong source without naming the missing-variable failure.",
+        "points": 4
+      },
+      {
+        "description": "Gives the local heat-stress source, the gridded aggregate wrong source, the locked event-window source, and the 2024-03-31 to 2024-04-04 event window.",
+        "name": "Source paths and event window",
+        "partial_credit": "Partial credit for two of the three required paths or a correct but incomplete event window.",
+        "points": 4
+      },
+      {
+        "description": "Identifies hourly.apparent_temperature as the first missing variable and daily.temperature_2m_min as another required missing field in the substitute source.",
+        "name": "Missing-field audit",
+        "partial_credit": "Partial credit for one correct missing required field.",
+        "points": 4
+      },
+      {
+        "description": "Reports 43.2 degC max apparent temperature, 16 apparent-temperature hours >= 40.0 degC, 5 warm nights, 44.6 degC local air-temperature max, 35.3 degC wrong-source max, and 9.3 degC difference.",
+        "name": "Calculations and numeric impact",
+        "partial_credit": "Award proportional credit for correct metrics with degree-C values within 0.2 degC.",
+        "points": 4
+      },
+      {
+        "description": "Rejects precipitation, annual remote-sensing change, and burn-index alternatives with content-based reasons.",
+        "name": "Rejected alternatives",
+        "partial_credit": "Partial credit for at least two correct package-grounded rejections.",
+        "points": 2
+      },
+      {
+        "description": "Includes a concise package-relative solving trace and returns compact JSON without web evidence, hidden answers, absolute paths, invented values, or a generic heat-wave essay.",
+        "name": "Reference trace and output discipline",
+        "partial_credit": "Partial credit for a usable trace with minor formatting issues.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "expert_error_attribution",
+  "task_id": "CSX-006_Q2",
+  "task_type": "short_answer"
+}

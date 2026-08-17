@@ -1,0 +1,193 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-054",
+  "judge_anchors": {
+    "baseline_interpretation": "The event is a very high compound flood-response stress case because concentrated rainfall, arid-channel routing, dam/waterway observations, exposed population, affected health facilities, state displacement, and aid-access pressure all reinforce the response burden.",
+    "must_include_evidence_families": [
+      "event report narrative",
+      "three accumulated precipitation products",
+      "remote-sensing pre/post or annual change",
+      "population exposure",
+      "humanitarian impact or service disruption record"
+    ],
+    "scenario_interpretation": "A 20 percent wetter and 15 percent higher-exposure perturbation pushes the index into the extreme class because the rainfall and exposure components rise while routing and service-disruption evidence remains active."
+  },
+  "key_values": {
+    "apparently_unaffected_health_facilities": 5,
+    "arid_channel_norm": 1,
+    "compound_flood_response_index": 87.29,
+    "daily_load_mm_day": 10.78,
+    "daily_load_norm": 0.719,
+    "dam_waterway_norm": 1,
+    "displaced_norm": 0.831,
+    "displaced_people": 124600,
+    "embedding_change_max": 0.934,
+    "event_days": 24,
+    "event_end_date": "2024-09-05",
+    "event_start_date": "2024-08-13",
+    "facility_share": 0.583,
+    "flooded_states": 13,
+    "humanitarian_access_score": 80.99,
+    "likely_affected_health_facilities": 7,
+    "peak_mm": 258.84,
+    "peak_norm": 0.863,
+    "population": 269933,
+    "population_norm": 0.9,
+    "product_consensus_norm": 1.0,
+    "products_ge_170": 3,
+    "radar_range_db": 39.8,
+    "radar_range_norm": 0.995,
+    "rainfall_load_score": 86.8,
+    "rainfall_product_maxima_mm": {
+      "CHIRPS": 171.05,
+      "ERA5_Land": 171.63,
+      "GPM_IMERG": 258.84
+    },
+    "road_aid_disruption_norm": 1,
+    "routing_surface_score": 94.26,
+    "scenario_compound_flood_response_index": 93.74,
+    "scenario_delta_from_baseline": 6.45,
+    "state_displacement_norm": 0.776,
+    "state_fraction": 0.722,
+    "surface_change_norm": 0.977,
+    "total_states": 18
+  },
+  "primary_gt": {
+    "answer": {
+      "mechanism_chain": [
+        "A 24-day event window concentrates enough rainfall for a high daily-load signal.",
+        "Three independent precipitation products exceed 170 mm at their maxima, with GPM IMERG reaching the event peak.",
+        "Narrative and dam/waterway evidence connect heavy rain to arid-channel runoff, reduced reservoir level, and overflow or flooded channels.",
+        "Remote-sensing change metrics show strong local pre/post surface contrast even though mean change is modest.",
+        "Population exposure, a majority affected health-facility share, broad state displacement, and road/aid disruption raise response stress."
+      ],
+      "process_model": {
+        "classification": "very high compound flood-response stress",
+        "compound_flood_response_index": 87.29,
+        "event_window": {
+          "end_date": "2024-09-05",
+          "inclusive_days": 24,
+          "start_date": "2024-08-13"
+        },
+        "humanitarian_access_stress": {
+          "displaced_people": 124600,
+          "facility_share": 0.583,
+          "humanitarian_access_score": 80.99,
+          "population": 269933,
+          "road_aid_disruption_norm": 1,
+          "state_displacement_norm": 0.776,
+          "state_fraction": 0.722
+        },
+        "rainfall_load": {
+          "daily_load_mm_day": 10.78,
+          "peak_mm": 258.84,
+          "product_maxima_mm": {
+            "CHIRPS": 171.05,
+            "ERA5_Land": 171.63,
+            "GPM_IMERG": 258.84
+          },
+          "products_ge_170": 3,
+          "rainfall_load_score": 86.8
+        },
+        "routing_and_surface_response": {
+          "arid_channel_norm": 1,
+          "dam_waterway_norm": 1,
+          "radar_range_db": 39.8,
+          "routing_surface_score": 94.26,
+          "surface_change_norm": 0.977
+        }
+      },
+      "scenario_analysis": {
+        "classification": "extreme compound flood-response stress",
+        "compound_flood_response_index": 93.74,
+        "delta_from_baseline": 6.45,
+        "scenario": "20_percent_more_event_rainfall_and_15_percent_more_people_exposed"
+      },
+      "source_paths": [
+        "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+        "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+        "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+        "data/event_reports/event_reports_002_HDX_CKAN_package_search.bin",
+        "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html"
+      ]
+    },
+    "baseline_classification": "very high compound flood-response stress",
+    "baseline_index": 87.29,
+    "scenario_classification": "extreme compound flood-response stress",
+    "scenario_delta": 6.45,
+    "scenario_index": 93.74
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/event_reports/event_reports_002_HDX_CKAN_package_search.bin",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Finds the needed report, hazard, remote-sensing, exposure, and impact files without being given exact filenames, and cites package-relative paths in the final JSON.",
+        "name": "Self-directed source discovery and citation",
+        "partial_credit": "Uses mostly correct files but misses one evidence family or gives incomplete package-relative citations.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 2024-08-13 to 2024-09-05 inclusive window, D = 24, product maxima 258.84, 171.63, and 171.05 mm, N170 = 3, daily load 10.78 mm/day, and rainfall_load_score 86.80.",
+        "name": "Event window and rainfall-load calculations",
+        "partial_credit": "Correctly extracts the window or rainfall maxima but makes a minor rounding or normalization error.",
+        "points": 4
+      },
+      {
+        "description": "Correctly sets dam_waterway_norm and arid_channel_norm to 1, computes radar_range_db 39.80, surface_change_norm 0.977, and routing_surface_score 94.26.",
+        "name": "Routing and surface-response reasoning",
+        "partial_credit": "Correctly identifies the routing mechanism but omits one remote-sensing component or minor formula detail.",
+        "points": 4
+      },
+      {
+        "description": "Uses population about 269,933, facility_share 0.583 from 7 likely affected and 5 apparently unaffected facilities, state_fraction 0.722, displaced_people 124,600, state_displacement_norm 0.776, road_aid_disruption_norm 1, and humanitarian_access_score 80.99.",
+        "name": "Humanitarian access stress calculations",
+        "partial_credit": "Gets the exposure or displacement terms right but misses facility parsing or road/aid disruption.",
+        "points": 4
+      },
+      {
+        "description": "Computes baseline compound_flood_response_index 87.29 with very high classification, and scenario index 93.74, delta 6.45, with extreme classification.",
+        "name": "Compound index and scenario",
+        "partial_credit": "Correct conclusion with small numeric errors or scenario recomputation missing one perturbation.",
+        "points": 3
+      },
+      {
+        "description": "Provides valid JSON with the requested top-level fields and a concise mechanism chain tying rainfall, routing, surface response, exposure, and response pressure together.",
+        "name": "Mechanism chain and structured output",
+        "partial_credit": "Valid structure but mechanism chain is generic or not tied to computed evidence.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "compound_flood_response_process_model",
+  "task_id": "CSX-054_Q1",
+  "task_type": "short_answer",
+  "tolerances": {
+    "daily_load_mm_day": 0.1,
+    "displaced_people": 500,
+    "facility_share": 0.01,
+    "normalized_component": 0.01,
+    "population": 1.0,
+    "rainfall_mm": 0.5,
+    "score": 0.15,
+    "state_fraction": 0.01
+  }
+}

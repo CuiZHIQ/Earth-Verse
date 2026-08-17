@@ -1,0 +1,299 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "A respondent may call the mechanism transboundary fire-smoke haze transport if dry-weather preconditioning and wind transport are explicit.",
+      "A response may use moderate-to-dense haze language instead of smoke-haze if the dry-fire and transport chain is preserved.",
+      "The imagery discussion may mention satellite or regional visual context, provided it does not treat the imagery as a direct health-loss or damage measurement."
+    ],
+    "answer": {
+      "mechanism_label": "dry_weather_fire_smoke_haze_transport",
+      "response_priority": "high"
+    },
+    "answer_type": "structured_hybrid_response",
+    "canonical_answer": "dry_weather_fire_smoke_haze_transport",
+    "canonical_stance": "The 2019 Indonesian episode should be diagnosed as high-priority dry-weather fire-smoke haze transport, not flooding, volcanic ashfall, or a heat-only event.",
+    "forbidden_claims": [
+      "Exact deaths, hospitalizations, PM2.5 concentrations, economic losses, or school closures.",
+      "A claim that every location in the affected region had the same rainfall or wind conditions.",
+      "Attribution to one ignition cause, land-management practice, or actor.",
+      "Treating annual embedding change as direct evidence of smoke exposure, structural damage, or health impact.",
+      "Reframing the event as rainfall flooding, volcanic ashfall, or heat-only without reconciling the smoke-haze chain."
+    ],
+    "required_claims": [
+      "Dry-weather fire-smoke haze transport is the dominant mechanism.",
+      "The rainfall anchors indicate persistent local dryness rather than a rainfall-flood mechanism.",
+      "Smoke haze was transported beyond source regions toward Malaysia and Singapore.",
+      "High response priority is justified by persistence, cross-border transport, exposure scale, and critical-place context.",
+      "Imagery is useful as smoke-haze context but not direct evidence of PM2.5 concentrations, deaths, hospitalizations, or structural damage."
+    ],
+    "required_metrics": [
+      {
+        "expected_use": "supports persistent dry-weather preconditioning",
+        "name": "dry_run_days",
+        "tolerance": 0,
+        "value": 7
+      },
+      {
+        "expected_use": "supports very low sampled-period rainfall",
+        "name": "point_precip_total_mm",
+        "tolerance": 0.1,
+        "value": 0.8
+      },
+      {
+        "expected_use": "supports response-priority scale",
+        "name": "exposed_population_rounded",
+        "tolerance": 1000,
+        "value": 867837
+      },
+      {
+        "expected_use": "contextual imagery-change anchor, not a direct impact metric",
+        "name": "alphaearth_change_mean",
+        "tolerance": 0.001,
+        "value": 0.0262
+      }
+    ],
+    "response_priority": "high",
+    "structured_answer": {
+      "imagery_interpretation": "Regional imagery and report captions are consistent with visible smoke-haze transport, but the annual change summary is contextual and should not be treated as direct PM2.5, mortality, or structural-damage evidence.",
+      "impact_chain": "Prolonged dry weather increased hotspot activity over Sumatra and Kalimantan; persistent fires produced moderate to dense smoke haze; prevailing winds carried haze toward Malaysia and Singapore, creating a cross-border public-health and service-continuity priority.",
+      "key_findings": [
+        "7-day zero-rainfall run in the local daily sequence",
+        "0.8 mm sampled-period point rainfall",
+        "smoke affected Malaysia and Singapore beyond Sumatra and Kalimantan",
+        "about 867,837 people in the exposure context"
+      ],
+      "mechanism_label": "dry_weather_fire_smoke_haze_transport",
+      "priority_rationale": "High priority is warranted because the dry spell, very low point rainfall, cross-border transport, large exposure context, and critical-place context align with a smoke-haze response problem rather than a flood, ashfall, or heat-only event.",
+      "response_priority": "high"
+    }
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-297",
+  "forbidden_overclaims": [
+    "Exact deaths, hospitalizations, PM2.5 concentrations, economic losses, or school closures.",
+    "A claim that every location in the affected region had the same rainfall or wind conditions.",
+    "Attribution to one ignition cause, land-management practice, or actor.",
+    "Treating annual embedding change as direct evidence of smoke exposure, structural damage, or health impact.",
+    "Reframing the event as rainfall flooding, volcanic ashfall, or heat-only without reconciling the smoke-haze chain."
+  ],
+  "numeric_tolerances": {
+    "alphaearth_change_mean": {
+      "role": "contextual_not_priority_decisive",
+      "tolerance": 0.001,
+      "value": 0.0262
+    },
+    "dry_run_days": {
+      "tolerance": 0,
+      "value": 7
+    },
+    "exposed_population_rounded": {
+      "tolerance": 1000,
+      "value": 867837
+    },
+    "point_precip_total_mm": {
+      "tolerance": 0.1,
+      "value": 0.8
+    }
+  },
+  "primary_gt": {
+    "imagery_interpretation": "Regional imagery and report captions are consistent with visible smoke-haze transport, but the annual change summary is contextual and should not be treated as direct PM2.5, mortality, or structural-damage evidence.",
+    "impact_chain": "Prolonged dry weather increased hotspot activity over Sumatra and Kalimantan; persistent fires produced moderate to dense smoke haze; prevailing winds carried haze toward Malaysia and Singapore, creating a cross-border public-health and service-continuity priority.",
+    "key_findings": [
+      "7-day zero-rainfall run in the local daily sequence",
+      "0.8 mm sampled-period point rainfall",
+      "smoke affected Malaysia and Singapore beyond Sumatra and Kalimantan",
+      "about 867,837 people in the exposure context"
+    ],
+    "mechanism_label": "dry_weather_fire_smoke_haze_transport",
+    "priority_rationale": "High priority is warranted because the dry spell, very low point rainfall, cross-border transport, large exposure context, and critical-place context align with a smoke-haze response problem rather than a flood, ashfall, or heat-only event.",
+    "response_priority": "high"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019_Indonesian_haze_and_smoke.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Connect dry conditions to increased hotspots rather than treating haze as a stand-alone atmospheric label.",
+    "Explain the transport step from Sumatra/Kalimantan toward Malaysia and Singapore.",
+    "Use exposure and critical-place context to justify response priority.",
+    "Treat imagery as smoke-haze context, not as direct health-loss or damage measurement."
+  ],
+  "required_findings": [
+    {
+      "finding": "dry-weather fire-smoke haze transport is the dominant mechanism",
+      "id": "mechanism"
+    },
+    {
+      "finding": "local sampled weather indicates persistent low-rainfall conditions",
+      "id": "dryness"
+    },
+    {
+      "finding": "smoke-haze transport affected Malaysia and Singapore",
+      "id": "transport"
+    },
+    {
+      "finding": "response priority should be high because hazard persistence, transport, exposure, and critical-place context align",
+      "id": "priority"
+    },
+    {
+      "finding": "imagery is useful for smoke-haze context but not direct evidence of PM2.5, deaths, or infrastructure damage",
+      "id": "imagery"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies dry-weather fire-smoke haze transport as the dominant mechanism, using the canonical label or an equivalent phrase that includes both dry-weather fire or hotspot preconditioning and smoke-haze transport.",
+        "name": "Mechanism diagnosis",
+        "partial_credit": "Award partial credit for recognizing smoke haze but omitting either the dry-weather setup or the transport step; no credit for flooding, ashfall, or heat-only framing.",
+        "points": 4
+      },
+      {
+        "description": "Assigns high response priority and ties it to hazard persistence, cross-border transport, exposure scale, and critical-place context as an emergency response problem.",
+        "name": "Response priority",
+        "partial_credit": "Award partial credit for returning moderate with otherwise sound reasoning, or for returning high with a thin rationale.",
+        "points": 3
+      },
+      {
+        "description": "Uses the decisive quantitative anchors: the 7-day zero-rainfall run, 0.8 mm sampled-period rainfall, roughly 867,837 people, and the optional 0.0262 embedding-change context without overloading the answer with irrelevant numbers.",
+        "name": "Quantitative anchors",
+        "partial_credit": "Award partial credit for including at least two correct anchors but missing exposure scale or dryness persistence.",
+        "points": 4
+      },
+      {
+        "description": "Builds a physically coherent chain from dry weather to hotspots, smoke haze, wind transport, and downwind exposure in Malaysia and Singapore, including public-health or service-continuity implications.",
+        "name": "Impact-chain reasoning",
+        "partial_credit": "Award partial credit for a generic haze impact chain that lacks source-region or transboundary detail.",
+        "points": 4
+      },
+      {
+        "description": "Explains that imagery supports smoke-haze context but does not directly measure health outcomes, PM2.5, or structural damage.",
+        "name": "Imagery interpretation",
+        "partial_credit": "Award partial credit for mentioning imagery but leaving its evidentiary role ambiguous.",
+        "points": 2
+      },
+      {
+        "description": "Rejects rainfall flooding, volcanic ashfall, and heat-only explanations while avoiding unsupported loss, pollution, ignition, or uniform-condition claims.",
+        "name": "Distractor and overclaim control",
+        "partial_credit": "Award partial credit for avoiding most overclaims but not clearly rejecting all distractors.",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON with exactly the requested keys and 3-5 concise key findings.",
+        "name": "Output format",
+        "partial_credit": "Award partial credit for a minor formatting issue that does not obscure the answer.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "compound_impact_chain_response_priority_with_image_context",
+  "supporting_metrics": {
+    "competing_mechanisms_present_in_report_text": {
+      "heat_only": false,
+      "rainfall_flooding": false,
+      "volcanic_ashfall": false
+    },
+    "critical_amenities_count": 2,
+    "event_window": {
+      "end_date": "2019-09-23",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2019-09-01"
+    },
+    "expected_response_json": {
+      "imagery_interpretation": "Regional imagery and report captions are consistent with visible smoke-haze transport, but the annual change summary is contextual and should not be treated as direct PM2.5, mortality, or structural-damage evidence.",
+      "impact_chain": "Prolonged dry weather increased hotspot activity over Sumatra and Kalimantan; persistent fires produced moderate to dense smoke haze; prevailing winds carried haze toward Malaysia and Singapore, creating a cross-border public-health and service-continuity priority.",
+      "key_findings": [
+        "7-day zero-rainfall run in the local daily sequence",
+        "0.8 mm sampled-period point rainfall",
+        "smoke affected Malaysia and Singapore beyond Sumatra and Kalimantan",
+        "about 867,837 people in the exposure context"
+      ],
+      "mechanism_label": "dry_weather_fire_smoke_haze_transport",
+      "priority_rationale": "High priority is warranted because the dry spell, very low point rainfall, cross-border transport, large exposure context, and critical-place context align with a smoke-haze response problem rather than a flood, ashfall, or heat-only event.",
+      "response_priority": "high"
+    },
+    "external_affected_areas": [
+      "Malaysia",
+      "Singapore"
+    ],
+    "intermediate_values": {
+      "open_meteo_precip_sum_mm_by_day": {
+        "2019-09-01": 0.0,
+        "2019-09-02": 0.0,
+        "2019-09-03": 0.7,
+        "2019-09-04": 0.0,
+        "2019-09-05": 0.0,
+        "2019-09-06": 0.0,
+        "2019-09-07": 0.0,
+        "2019-09-08": 0.1,
+        "2019-09-09": 0.0,
+        "2019-09-10": 0.0,
+        "2019-09-11": 0.0,
+        "2019-09-12": 0.0,
+        "2019-09-13": 0.0,
+        "2019-09-14": 0.0,
+        "2019-09-15": 0.0
+      },
+      "open_meteo_wind_speed_10m_max_kmh_by_day": {
+        "2019-09-01": 32.8,
+        "2019-09-02": 34.6,
+        "2019-09-03": 18.8,
+        "2019-09-04": 23.1,
+        "2019-09-05": 28.6,
+        "2019-09-06": 30.3,
+        "2019-09-07": 29.3,
+        "2019-09-08": 31.8,
+        "2019-09-09": 28.3,
+        "2019-09-10": 27.2,
+        "2019-09-11": 34.9,
+        "2019-09-12": 32.9,
+        "2019-09-13": 32.4,
+        "2019-09-14": 31.7,
+        "2019-09-15": 17.3
+      },
+      "peak_wind_kmh": 34.9,
+      "power_precip_mm_by_day": {
+        "20190901": 0.42,
+        "20190902": 0.07,
+        "20190903": 0.11,
+        "20190904": 0.1,
+        "20190905": 0.13,
+        "20190906": 0.69,
+        "20190907": 0.82,
+        "20190908": 0.34,
+        "20190909": 0.0,
+        "20190910": 0.0,
+        "20190911": 0.0,
+        "20190912": 0.0,
+        "20190913": 0.0,
+        "20190914": 0.0,
+        "20190915": 0.0
+      }
+    },
+    "priority_conditions": {
+      "cross_border_transport": true,
+      "fire_smoke_transport_chain": true,
+      "imagery_context_consistent": true,
+      "persistent_local_dryness": true,
+      "substantial_exposure_context": true
+    },
+    "text_term_counts": {
+      "hotspot": 19,
+      "prevailing winds": 4,
+      "prolonged dry weather": 2,
+      "smoke haze": 86
+    }
+  },
+  "task_id": "CSX-297_Q1",
+  "task_type": "short_answer"
+}

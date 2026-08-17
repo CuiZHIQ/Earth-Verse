@@ -1,0 +1,192 @@
+{
+  "evaluation_mode": "deterministic_with_structured_reasoning",
+  "event_id": "CSX-328",
+  "judge_anchors": {
+    "core_reasoning": "The answer should tie persistent marine thermal stress to observed bleaching extent, severe northern concentration, DHW thresholds, and recovery pressure.",
+    "must_not_treat_as": [
+      "flood-dominated disaster",
+      "wind-damage event",
+      "burn-scar event",
+      "land heat exposure event"
+    ]
+  },
+  "key_intermediate_values": {
+    "aoi_area_km2_unrounded": 11864.18111812571,
+    "baseline_index_unrounded": 80.50555555555556,
+    "bleached_extent_norm_unrounded": 0.9244444444444444,
+    "duration_norm_unrounded": 1.0,
+    "scenario_index_unrounded": 86.75555555555556,
+    "severe_fraction_norm_unrounded": 0.3511111111111111,
+    "sst_anomaly_midpoint_c": 1.5,
+    "thermal_norm_unrounded": 0.75
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "annual_tourism_value_billion_aud": 5,
+      "dhw_thresholds": {
+        "gap": 4,
+        "significant_bleaching_and_death_possible": 8,
+        "widespread_bleaching_likely": 4
+      },
+      "escaped_bleaching_reefs": 68,
+      "event_window_days": 121,
+      "flyover_bleached_percent": 92.44,
+      "flyover_bleached_reefs": 832,
+      "jobs_per_billion_aud": 14000.0,
+      "north_mortality_close_to_percent": 50,
+      "north_sst_threshold_c": 30.0,
+      "reef_length_km": 2300,
+      "reported_bleached_percent": 93,
+      "sector_severe_bleaching_percent": {
+        "central": 33,
+        "north": 81,
+        "south": 1
+      },
+      "severe_observed_percent": 35.11,
+      "severely_bleached_reefs": 316,
+      "spatial_concentration_norm": 0.8,
+      "sst_anomaly_c_range": [
+        1.0,
+        2.0
+      ],
+      "sst_anomaly_midpoint_c": 1.5,
+      "surveyed_reefs": 900,
+      "tourism_jobs": 70000
+    },
+    "environmental_context": {
+      "aoi_area_km2": 11864.18,
+      "chirps_event_precip_mean_mm": 449.47,
+      "crw_daily_5km_products_present": true,
+      "crw_product_markers": [
+        "SST",
+        "SST Anomaly",
+        "HotSpot",
+        "Degree Heating Week",
+        "Bleaching Alert Area"
+      ],
+      "era5_land_event_tmax_mean_c": 33.75,
+      "gpm_event_precip_mean_mm": 633.35,
+      "gpm_to_chirps_precip_mean_ratio": 1.41,
+      "nasa_power_mean_t2m_c_first_15_days": 30.17,
+      "nasa_power_mean_wind_ms_first_15_days": 5.53,
+      "nasa_power_total_precip_mm_first_15_days": 1.49,
+      "oisst_2016_sst_anom_available": true,
+      "oisst_2016_sst_mean_available": true,
+      "open_meteo_dry_days_first_15_days": 15,
+      "open_meteo_mean_tmax_c_first_15_days": 37.01,
+      "open_meteo_mean_wind_max_ms_first_15_days": 7.01,
+      "population_density_per_km2": 2.61,
+      "sentinel2_dnbr_mean": 0.011,
+      "worldpop_population_sum": 31011.46
+    },
+    "final_interpretation": "extreme_northern_reef_heat_stress_priority",
+    "mechanism_chain": [
+      "Persistent above-average sea-surface temperature produces accumulated coral heat stress.",
+      "Bleaching extent is near-systemic in the surveyed reefs, while severe bleaching is concentrated in the north and central sectors.",
+      "The northern sector crosses from bleaching concern toward mortality concern because the report describes close to 50 percent coral death there.",
+      "Low mean dNBR and land-weather or precipitation layers are contextual checks, not the main causal pathway for this marine ecosystem event."
+    ],
+    "process_model": {
+      "dominant_hazard_pathway": "marine_heat_stress_driven_coral_bleaching",
+      "event": "2016 Great Barrier Reef marine heatwave and bleaching",
+      "window": "2016-02-01/2016-05-31"
+    },
+    "scenario_analysis": {
+      "baseline_bleaching_process_index": 80.51,
+      "formula": "100*(0.30*duration_norm + 0.25*thermal_norm + 0.20*bleached_extent_norm + 0.15*severe_fraction_norm + 0.10*spatial_concentration_norm)",
+      "normalizers": {
+        "bleached_extent_norm": 0.924,
+        "duration_norm": 1.0,
+        "severe_fraction_norm": 0.351,
+        "spatial_concentration_norm": 0.8,
+        "thermal_norm": 0.75
+      },
+      "scenario_delta": 6.25,
+      "scenario_plus_0_5c_process_index": 86.76,
+      "scenario_plus_0_5c_thermal_norm": 1.0
+    },
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2016_Great_Barrier_Reef_marine_heatwave_and_bleaching.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/event_catalogs/event_catalogs_002_NOAA_OISST_PSL_ERDDAP_sea-surface_temperature_THREDDS_catalog_XML.xml",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2016_Great_Barrier_Reef_marine_heatwave_and_bleaching.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/event_catalogs/event_catalogs_002_NOAA_OISST_PSL_ERDDAP_sea-surface_temperature_THREDDS_catalog_XML.xml",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the relevant event report, metadata, hazard, satellite/product, exposure, and geospatial context files without being given exact paths, and cites package-relative paths used for every value.",
+        "name": "Self-directed package discovery and citations",
+        "points": 3
+      },
+      {
+        "description": "Correctly extracts the 2016-02-01/2016-05-31 event window, computes 121 inclusive days, and recovers surveyed, bleached, escaped, severe, sector, and northern mortality values from the report.",
+        "name": "Event window and reef-impact extraction",
+        "points": 4
+      },
+      {
+        "description": "Correctly converts 86 F to 30.0 C, uses the 1-2 C SST-anomaly range and midpoint, applies DHW thresholds of 4 and 8, and computes the threshold gap and normalizers.",
+        "name": "Thermal-stress process calculations",
+        "points": 4
+      },
+      {
+        "description": "Uses atmospheric heat, dry-day, wind, precipitation, dNBR, population, AOI area, and SST-product catalog context as supporting evidence rather than replacing the marine heat-stress mechanism.",
+        "name": "Multi-source environmental and exposure synthesis",
+        "points": 3
+      },
+      {
+        "description": "Applies the specified weighted bleaching-process index, clipping, rounding, and +0.5 C scenario calculation to produce the baseline score, scenario score, and delta.",
+        "name": "Process index and scenario",
+        "points": 4
+      },
+      {
+        "description": "Explains the mechanism chain as persistent warm-water stress, severe northern concentration, recovery pressure, and ecological/livelihood consequence, with no unsupported flood, wind, burn-scar, or mortality extrapolation.",
+        "name": "Disaster-science interpretation",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "marine_heat_stress_bleaching_process_model",
+  "task_id": "CSX-328_Q2",
+  "task_type": "multi_source_numeric_reasoning",
+  "tolerances": {
+    "area_km2_abs": 0.05,
+    "boolean": "exact",
+    "counts_abs": 0,
+    "days_abs": 0,
+    "index_abs": 0.02,
+    "label": "exact",
+    "percent_abs": 0.02,
+    "ratio_abs": 0.02,
+    "temperature_c_abs": 0.02
+  }
+}

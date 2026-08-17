@@ -1,0 +1,181 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-269",
+  "key_values": {
+    "computed_metrics": {
+      "aerosol_particle_multiplier": 6.0,
+      "chirps_event_precip_mm_mean": 145.6,
+      "co_surface_ratio_to_usual": 13.0,
+      "era5_precipitation_sum_mm_mean": 223.6,
+      "gpm_event_precip_mm_mean": 59.4,
+      "oni_ge_1_5_seasons": 9,
+      "oni_ge_2_0_seasons": 6,
+      "peak_co_ppb": 1300,
+      "peak_oni": 2.75,
+      "peak_oni_season": "NDJ 2015",
+      "psi_hazard_ratio": 5.7,
+      "psi_hazard_threshold": 350,
+      "psi_value_lower_bound": 2000,
+      "usual_co_ppb": 100,
+      "worldpop_population_sum": 510700
+    },
+    "context_scope": {
+      "population": "Masked WorldPop statistic supplies exposure context, not measured harm or universal peak exposure.",
+      "precipitation_products": "2015-03-01 to 2015-04-15 early-window context; useful for background moisture checks but not a complete 2015-2016 drought index.",
+      "remote_sensing": "MODIS/VIIRS preview supports fire, smoke, air-quality, and drought-stress monitoring context; it is not a standalone burn-scar attribution."
+    },
+    "event_name": "2015-2016 El Nino and Indonesian drought/fire haze",
+    "event_window": {
+      "end_date": "2016-06-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2015-03-01"
+    },
+    "expected_json_keys": [
+      "priority",
+      "mechanism",
+      "key_indices",
+      "context_scope",
+      "rejected_alternatives",
+      "action_logic"
+    ],
+    "hazard_family": "climate_teleconnection_enso_iod_mjo",
+    "metric_tolerances": {
+      "co_surface_ratio_to_usual": 0.1,
+      "peak_oni": 0.02,
+      "psi_hazard_ratio": 0.1
+    },
+    "region": "Southeast Asia",
+    "rejected_alternatives": {
+      "cyclone_or_coastal_surge": "No cyclone, wind-surge, or coastal-inundation mechanism explains the ONI, peat, haze, CO, and PSI chain.",
+      "heat_only_response": "Heat may accompany drought, but the supported impact pathway is smoke-haze air quality and transport disruption.",
+      "heavy_rain_flooding": "The decisive record is seasonal El Nino dryness, peat fire, smoke chemistry, and PSI/CO exceedance rather than damaging rainfall.",
+      "image_only_burn_scar": "Remote sensing is useful monitoring context, but the priority depends on forecastable dry-weather risk plus peat/fire and air-quality evidence."
+    },
+    "text_claim_flags": {
+      "carbon_monoxide_health_claim": true,
+      "dry_weather_forecast_claim": true,
+      "peat_el_nino_development_claim": true,
+      "preparedness_window_claim": true,
+      "remote_sensing_context_claim": true,
+      "transport_disruption_claim": true
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "peat_fire_haze_preparedness",
+      "el_nino_fire_haze_early_action",
+      "seasonal_forecast_driven_smoke_health_preparedness"
+    ],
+    "action_logic": "Use seasonal El Nino and dry-weather warning to trigger peat fire prevention, smoke monitoring, air-quality health protection, and transport disruption preparedness before the haze crisis escalates.",
+    "answer": "forecast_triggered_peat_fire_haze_preparedness",
+    "answer_type": "hybrid_json_briefing",
+    "canonical_stance": "The 2015-2016 Indonesian crisis is best framed as forecast-triggered peat-fire and haze preparedness driven by strong El Nino dry-weather risk, peat and land-use fire conditions, and severe smoke-related air-quality impacts.",
+    "context_scope": {
+      "population": "Masked WorldPop statistic supplies exposure context, not measured harm or universal peak exposure.",
+      "precipitation_products": "2015-03-01 to 2015-04-15 early-window context; useful for background moisture checks but not a complete 2015-2016 drought index.",
+      "remote_sensing": "MODIS/VIIRS preview supports fire, smoke, air-quality, and drought-stress monitoring context; it is not a standalone burn-scar attribution."
+    },
+    "forbidden_claims": [
+      "exact deaths, illnesses, burned area, or economic losses not supported by the record",
+      "El Nino as the sole cause without peat and land-use fire conditions",
+      "remote sensing alone as sufficient for the disaster mechanism",
+      "flood, cyclone or coastal surge as the primary operational frame"
+    ],
+    "key_indices": {
+      "co_surface_ratio_to_usual": 13.0,
+      "oni_ge_1_5_seasons": 9,
+      "peak_oni": 2.75,
+      "psi_hazard_ratio": 5.7
+    },
+    "mechanism": [
+      "strong_el_nino_dry_weather",
+      "drained_peat_and_fire_use",
+      "regional_smoke_haze_air_quality"
+    ],
+    "priority": "forecast_triggered_peat_fire_haze_preparedness",
+    "rejected_alternatives": {
+      "cyclone_or_coastal_surge": "No cyclone, wind-surge, or coastal-inundation mechanism explains the ONI, peat, haze, CO, and PSI chain.",
+      "heat_only_response": "Heat may accompany drought, but the supported impact pathway is smoke-haze air quality and transport disruption.",
+      "heavy_rain_flooding": "The decisive record is seasonal El Nino dryness, peat fire, smoke chemistry, and PSI/CO exceedance rather than damaging rainfall.",
+      "image_only_burn_scar": "Remote sensing is useful monitoring context, but the priority depends on forecastable dry-weather risk plus peat/fire and air-quality evidence."
+    },
+    "required_claims": [
+      "strong sustained El Nino provides a forecastable dry-weather driver",
+      "peat and land-use fire conditions convert the climate anomaly into smoke and haze",
+      "air-quality indicators show severe smoke exposure and transport disruption",
+      "preparedness should begin before haze conditions escalate",
+      "flood, cyclone or surge, heat-only, and image-only interpretations are not primary"
+    ],
+    "required_metrics": {
+      "co_surface_ratio_to_usual": 13.0,
+      "oni_ge_1_5_seasons": 9,
+      "peak_oni": 2.75,
+      "psi_hazard_ratio": 5.7
+    },
+    "severity_bin": "very_high"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015-2016_El_Nino_and_Indonesian_drought_fire_haze.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_009_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_010_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_011_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_001_MODIS_VIIRS_vegetation_and_drought_stress_preview.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects forecast-triggered peat-fire haze preparedness or a semantically equivalent priority and gives a three-part mechanism linking El Nino dry-weather forcing, peat or land-use fire conditions, and regional smoke-haze air-quality impacts.",
+        "name": "Final priority and mechanism label",
+        "partial_credit": "Award partial credit for naming fire-haze preparedness without the forecast trigger, or for omitting one mechanism link while preserving the correct hazard.",
+        "points": 4
+      },
+      {
+        "description": "Reports peak ONI 2.75, nine 2015-2016 seasons at or above 1.5 C, carbon monoxide ratio 13.0, and PSI hazard ratio about 5.7 with correct interpretation.",
+        "name": "Quantitative anchors",
+        "partial_credit": "Award partial credit for two or three correct metrics, harmless rounding differences, or correct values with weak units.",
+        "points": 4
+      },
+      {
+        "description": "Explains the teleconnection-to-dry-weather forecast, the one-month preparedness window, and how peat and fire use convert drought stress into persistent smoke.",
+        "name": "Physical mechanism reasoning",
+        "partial_credit": "Award partial credit for connecting El Nino to fires but not distinguishing driver, fuel condition, and impact pathway.",
+        "points": 4
+      },
+      {
+        "description": "Integrates climate index, report claims, air-quality thresholds, aerosol and carbon monoxide indicators, bounded precipitation context, exposure context, and satellite-monitoring context without over-weighting one source.",
+        "name": "Cross-scale evidence fusion",
+        "partial_credit": "Award partial credit for using only climate plus one impact metric or treating imagery as merely illustrative.",
+        "points": 3
+      },
+      {
+        "description": "Recommends early peat-fire prevention, smoke monitoring, public-health protection, and transport disruption preparedness before escalation.",
+        "name": "Operational action logic",
+        "partial_credit": "Award partial credit for generic emergency response recommendations that do not target haze or preparedness timing.",
+        "points": 2
+      },
+      {
+        "description": "Explains why flood, cyclone or surge, heat-only, and image-only interpretations are not primary, and avoids unsupported mortality, loss, burned-area, or legal blame claims.",
+        "name": "Rejection of competing explanations and overclaims",
+        "partial_credit": "Award partial credit for rejecting some alternatives while missing others, or for one minor unsupported escalation.",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON in the requested structure, including context_scope, rejected_alternatives, and a concise action sentence.",
+        "name": "Output discipline",
+        "partial_credit": "Award partial credit for readable structured output with minor schema deviations.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-269_Q1",
+  "task_type": "short_answer"
+}

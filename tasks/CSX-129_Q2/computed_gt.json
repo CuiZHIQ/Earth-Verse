@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-129_Q2",
+  "event_id": "CSX-129",
+  "task_type": "numeric",
+  "target_family": "ian_wind_rain_pressure_load_index",
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "The answer is produced by fixed aggregations, thresholds, and formulas from local package data.",
+  "primary_gt": {
+    "answer": "compound_wind_rain_pressure_load_pass",
+    "metrics": {
+      "peak_gust_kmh": 185.4,
+      "gust_hours_ge119": 10,
+      "event_precip_mm": 211.5,
+      "wettest_24h_mm": 149.9,
+      "min_pressure_hpa": 966.9,
+      "pressure_deficit_hpa": 46.35,
+      "elevation_m": 5.0
+    },
+    "gates": {
+      "wind": true,
+      "rain": true,
+      "pressure": true,
+      "low_coastal": true
+    },
+    "gate_count": 4,
+    "compound_index": 5.804,
+    "threshold_result": "pass_compound_load",
+    "rejected_alternative": "single_driver_only"
+  },
+  "tolerances": {
+    "one_decimal_abs": 0.05,
+    "pressure_deficit_abs": 0.005,
+    "compound_index_abs": 0.0005,
+    "integer_fields": 0
+  },
+  "key_values": {
+    "event_name": "Hurricane Ian",
+    "hazard_family": "tropical_cyclone",
+    "event_window": {
+      "start_date": "2022-09-23",
+      "end_date": "2022-09-30"
+    },
+    "thresholds": {
+      "peak_gust_kmh_min": 150.0,
+      "gust_hours_ge119_min": 6,
+      "wettest_24h_mm_min": 100.0,
+      "event_precip_mm_min": 150.0,
+      "min_pressure_hpa_max": 970.0,
+      "pressure_deficit_hpa_min": 40.0,
+      "elevation_m_max": 10.0,
+      "compound_index_min": 5.0
+    },
+    "formula": "peak_gust_kmh/150 + wettest_24h_mm/100 + event_precip_mm/150 + pressure_deficit_hpa/40 + (10 - elevation_m)/10"
+  },
+  "decision_rule": {
+    "summary": "Pass when all four gates are true and the compound index is at least 5.0.",
+    "computed_result": "pass_compound_load"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns the requested JSON fields, nested metrics and gates, exact labels, and no extra prose inside the final object.",
+        "partial_credit": "Award 1-3 points for minor field naming, nesting, or label errors when the computed content is mostly present."
+      },
+      {
+        "name": "Core metrics",
+        "points": 5,
+        "description": "Computes the peak gust, gust-hour count, event precipitation, wettest 24 hours, minimum pressure, pressure deficit, and elevation with the specified rounding.",
+        "partial_credit": "Award 1-4 points for correct values with isolated rounding or aggregation mistakes."
+      },
+      {
+        "name": "Gate logic",
+        "points": 4,
+        "description": "Evaluates the wind, rain, pressure, and low-coastal gates correctly and returns gate_count 4.",
+        "partial_credit": "Award 1-3 points for applying some gates correctly while missing one threshold or boolean condition."
+      },
+      {
+        "name": "Compound index",
+        "points": 3,
+        "description": "Applies the compound-index formula correctly, returns 5.804, and evaluates the 5.0 pass threshold.",
+        "partial_credit": "Award 1-2 points for a correct formula with arithmetic or rounding mistakes."
+      },
+      {
+        "name": "Rejected consequence",
+        "points": 2,
+        "description": "Rejects a single-driver-only result as a consequence of all four gates passing.",
+        "partial_credit": "Award 1 point for rejecting only wind-only or only rain-only framing."
+      },
+      {
+        "name": "Concise label",
+        "points": 1,
+        "description": "Uses a short final label that matches the pass result.",
+        "partial_credit": "No partial credit."
+      },
+      {
+        "name": "Rounding discipline",
+        "points": 1,
+        "description": "Keeps numeric precision, boolean values, and field names consistent with the requested schema.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ],
+    "notes": "Computed only from local CSX-129 package files; no network access."
+  }
+}
