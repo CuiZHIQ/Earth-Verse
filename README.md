@@ -41,8 +41,8 @@ The public release includes the task prompts, evaluation harness, scoring prompt
 
 ## 📰 News
 
-- **2026-08:** EarthVerse code and evaluation framework released.
-- **2026-08:** Full event data released on [Hugging Face](https://huggingface.co/datasets/miracle10/EarthVerse) and [Google Drive](https://drive.google.com/drive/folders/1Fi4XkTTwwx9B45Egfh7DNt5rYKZHnt26).
+- 💻 **2026-08:** EarthVerse code and evaluation framework released.
+- 📦 **2026-08:** Full event data released on [Hugging Face](https://huggingface.co/datasets/miracle10/EarthVerse) and [Google Drive](https://drive.google.com/drive/folders/1Fi4XkTTwwx9B45Egfh7DNt5rYKZHnt26).
 
 ## 🚀 Get started
 
