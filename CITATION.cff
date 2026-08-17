@@ -1,10 +1,44 @@
 cff-version: 1.2.0
 message: "If you use EarthVerse, please cite the associated paper and this repository."
-title: "EarthVerse: Evidence-Grounded Earth-System Research Agents"
+title: "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards"
 type: dataset
 authors:
   - family-names: Cui
     given-names: Zhiqing
+  - family-names: Yin
+    given-names: Xinxiang
+  - family-names: Tang
+    given-names: Yihong
+  - family-names: Zhang
+    given-names: Xinglang
+  - family-names: Hu
+    given-names: Yuanzhe
+  - family-names: Zhong
+    given-names: Siru
+  - family-names: Tang
+    given-names: Weidong
+  - family-names: Yu
+    given-names: Tao
+  - family-names: Zhou
+    given-names: Tianyue
+  - family-names: Ao
+    given-names: Qu
+  - family-names: Wang
+    given-names: Hanqing
+  - family-names: Liang
+    given-names: Yuxuan
+  - family-names: Li
+    given-names: Weijia
+  - family-names: Jin
+    given-names: Ming
+  - family-names: Pan
+    given-names: Shirui
+  - family-names: Kang
+    given-names: Yuhao
+  - family-names: Zhuang
+    given-names: Dingyi
+  - family-names: Zhao
+    given-names: Jinhua
 repository-code: "https://github.com/CuiZHIQ/Earth-Verse"
 url: "https://cuizhiq.github.io/EarthVerse/"
 date-released: 2026-08-18

@@ -49,6 +49,7 @@
     "process_diagnostics_in_mean_score": false
   },
   "downloads": {
-    "google_drive": "https://drive.google.com/drive/folders/1Fi4XkTTwwx9B45Egfh7DNt5rYKZHnt26"
+    "google_drive": "https://drive.google.com/drive/folders/1Fi4XkTTwwx9B45Egfh7DNt5rYKZHnt26",
+    "hugging_face": "https://huggingface.co/datasets/miracle10/EarthVerse"
   }
 }
