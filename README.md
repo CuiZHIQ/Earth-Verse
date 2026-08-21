@@ -5,13 +5,12 @@
 <h1 align="center">Benchmarking scientific agents across dynamic Earth systems and natural hazards</h1>
 
 <p align="center">
-  <strong>Zhiqing Cui</strong><sup>1,2</sup>, Xinxiang Yin<sup>3</sup>, Yihong Tang<sup>4</sup>, Xinglang Zhang<sup>5</sup>, Yuanzhe Hu<sup>6</sup>, Siru Zhong<sup>5</sup>, Weidong Tang<sup>7</sup>,<br>
-  Yuxuan Liang<sup>5</sup>, Weijia Li<sup>8</sup>, Ming Jin<sup>9</sup>, Shirui Pan<sup>9</sup>, Yuhao Kang<sup>10</sup>, Dingyi Zhuang<sup>1,&dagger;</sup>, Jinhua Zhao<sup>1</sup>
+  <strong>Zhiqing Cui</strong><sup>1</sup>, Xinxiang Yin<sup>2</sup>, Yihong Tang<sup>3</sup>, Xinglang Zhang<sup>4</sup>, Yuanzhe Hu<sup>5</sup>, Siru Zhong<sup>4</sup>, Weidong Tang<sup>6</sup>,<br>
+  Yuxuan Liang<sup>4</sup>, Weijia Li<sup>7</sup>, Ming Jin<sup>8</sup>, Shirui Pan<sup>8</sup>, Yuhao Kang<sup>9</sup>, Dingyi Zhuang<sup>10,&dagger;</sup>, Jinhua Zhao<sup>10</sup>
 </p>
 
 <p align="center"><sub>
-  <sup>1</sup>Massachusetts Institute of Technology &nbsp; <sup>2</sup>University of Reading &nbsp; <sup>3</sup>The University of Hong Kong &nbsp; <sup>4</sup>McGill University &nbsp; <sup>5</sup>The Hong Kong University of Science and Technology (Guangzhou) &nbsp; <sup>6</sup>Georgia Institute of Technology<br>
-  <sup>7</sup>National University of Singapore &nbsp; <sup>8</sup>Tsinghua University &nbsp; <sup>9</sup>Griffith University &nbsp; <sup>10</sup>The University of Texas at Austin &nbsp; <sup>&dagger;</sup>Corresponding author
+  <sup>1</sup>NUIST &nbsp; <sup>2</sup>HKU &nbsp; <sup>3</sup>McGill &nbsp; <sup>4</sup>HKUST(GZ) &nbsp; <sup>5</sup>Georgia Tech &nbsp; <sup>6</sup>NUS &nbsp; <sup>7</sup>Tsinghua &nbsp; <sup>8</sup>Griffith &nbsp; <sup>9</sup>UT Austin &nbsp; <sup>10</sup>MIT &nbsp; <sup>&dagger;</sup>Corresponding author
 </sub></p>
 
 <p align="center">
