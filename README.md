@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://cuizhiq.github.io/EarthVerse/">Project page</a> ·
-  <a href="assets/paper/EarthVerse.pdf">Paper</a> ·
+  <a href="https://arxiv.org/abs/2608.23525">Paper</a> ·
   <a href="https://drive.google.com/drive/folders/1Fi4XkTTwwx9B45Egfh7DNt5rYKZHnt26">Data</a> ·
   <a href="https://huggingface.co/datasets/miracle10/EarthVerse">Hugging Face</a>
 </p>
