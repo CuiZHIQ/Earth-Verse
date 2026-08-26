@@ -197,3 +197,16 @@ During evaluation, a model may read only `question_en.md` and the matching event
 ## License
 
 See [LICENSE.md](LICENSE.md) for the terms covering the code, task annotations, and redistributed evidence.
+
+## 📖 Citation
+
+If you use EarthVerse in your research, please cite:
+
+```bibtex
+@article{cui2026earthverse,
+  title   = {EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards},
+  author  = {Cui, Zhiqing and Yin, Xinxiang and Tang, Yihong and Zhang, Xinglang and Hu, Yuanzhe and Zhong, Siru and Tang, Weidong and Liang, Yuxuan and Li, Weijia and Jin, Ming and Pan, Shirui and Kang, Yuhao and Zhuang, Dingyi and Zhao, Jinhua},
+  journal = {arXiv preprint arXiv:2608.23525},
+  year    = {2026}
+}
+```
