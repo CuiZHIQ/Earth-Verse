@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-124_Q1",
+  "event_id": "CSX-124",
+  "task_type": "numeric",
+  "target_family": "cyclone_gabrielle_numeric_consistency_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "score_1.00_7_of_7",
+    "event_window": "2023-02-06 to 2023-02-16",
+    "rainfall": {
+      "total_mm": 153.0,
+      "wettest_day": "2023-02-13",
+      "wettest_mm": 114.1,
+      "wet_share": 0.746,
+      "peak_remainder": 2.933
+    },
+    "gridded": {
+      "max_mm": 117.205,
+      "mean_peak_mean": 1.306
+    },
+    "wind_coast": {
+      "gust_kmh": 106.6,
+      "wind_energy_k": 11.364,
+      "coastal_index": 15.9
+    },
+    "image_exposure": {
+      "sar_span_db": 31.096,
+      "sar_mean_db": 1.878,
+      "emb_max_mean": 59.699,
+      "population_k": 304.521,
+      "road_share": 0.935
+    },
+    "score": {
+      "hits": 7,
+      "total": 7,
+      "value": 1.0,
+      "class": "high_compound_signal"
+    },
+    "tolerance": {
+      "mm": 0.2,
+      "ratio": 0.005,
+      "index": 0.05
+    }
+  },
+  "key_values": {
+    "event_name": "Cyclone Gabrielle",
+    "event_window": {
+      "start": "2023-02-06",
+      "end": "2023-02-16",
+      "text": "2023-02-06 to 2023-02-16",
+      "days": 11
+    },
+    "image_exposure_scope": "package-derived contextual statistics rather than timestamp-tight event attribution evidence",
+    "rainfall": {
+      "total_mm": 153.0,
+      "wettest_day": "2023-02-13",
+      "wettest_day_mm": 114.1,
+      "wettest_day_share": 0.746,
+      "peak_to_remainder": 2.933,
+      "max_hourly_precipitation_mm": {
+        "time_utc": "2023-02-13T13:00",
+        "value": 9.8
+      },
+      "local_gust_kmh": 106.6,
+      "wind_energy_k": 11.364,
+      "min_pressure_msl_hpa": {
+        "time_utc": "2023-02-13T17:00",
+        "value": 981.7
+      }
+    },
+    "gridded_rainfall": {
+      "rows": {
+        "era5_land": {
+          "max_mm": 95.442,
+          "mean_mm": 70.806,
+          "peak_to_mean": 1.348
+        },
+        "gpm": {
+          "max_mm": 117.205,
+          "mean_mm": 94.564,
+          "peak_to_mean": 1.239
+        },
+        "chirps": {
+          "max_mm": 103.507,
+          "mean_mm": 77.811,
+          "peak_to_mean": 1.33
+        }
+      },
+      "max_mm": 117.205,
+      "mean_peak_to_mean_ratio": 1.306
+    },
+    "coastal": {
+      "largest_wave_m": 10.9,
+      "storm_surge_over_m": 0.5,
+      "coastal_index": 15.9
+    },
+    "image": {
+      "sar_pre_count": 14,
+      "sar_post_count": 14,
+      "sar_mean_db": 1.878,
+      "sar_span_db": 31.096,
+      "embedding_mean": 0.007144,
+      "embedding_max": 0.426521,
+      "embedding_max_to_mean": 59.699
+    },
+    "exposure": {
+      "population": 304521.049,
+      "population_k": 304.521,
+      "osm_elements": 1000,
+      "road_tagged": 935,
+      "road_share": 0.935,
+      "amenities": {
+        "shelter": 35,
+        "school": 24,
+        "hospital": 2,
+        "fire_station": 2,
+        "police": 1
+      }
+    },
+    "thresholds": {
+      "total_mm_ge": 150.0,
+      "wettest_share_ge": 0.7,
+      "grid_ratio_ge": 1.25,
+      "wind_energy_k_ge": 10.0,
+      "coastal_index_ge": 15.0,
+      "sar_span_db_ge": 30.0,
+      "population_k_ge": 300.0,
+      "road_share_ge": 0.9
+    },
+    "gates": {
+      "total_rain": true,
+      "wettest_share": true,
+      "grid_concentration": true,
+      "wind_proxy": true,
+      "coastal_proxy": true,
+      "sar_contrast": true,
+      "exposure_context": true
+    },
+    "score_formula": "gate_hits / gate_total",
+    "classification_rule": "high_compound_signal if score >= 0.85 else partial_compound_signal"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Rainfall concentration ledger",
+        "points": 5,
+        "description": "Computes total rainfall, wettest day, wettest-day share, and peak-to-remainder ratio with units implied by field names.",
+        "partial_credit": "Award 2-4 points for correct rainfall extraction with one derived ratio missing or rounded poorly."
+      },
+      {
+        "name": "Gridded precipitation ratios",
+        "points": 3,
+        "description": "Computes each gridded max-to-mean precipitation ratio and reports the mean ratio and largest gridded maximum.",
+        "partial_credit": "Award 1-2 points for using fewer summaries or making one arithmetic error."
+      },
+      {
+        "name": "Wind and coastal proxies",
+        "points": 3,
+        "description": "Computes wind_energy_k as gust_kmh squared divided by 1000 and coastal_index as largest_wave_m plus 10 times surge_m.",
+        "partial_credit": "Award 1-2 points for extracting raw wind, wave, and surge values but missing one formula."
+      },
+      {
+        "name": "Image and exposure contrasts",
+        "points": 3,
+        "description": "Computes SAR span, SAR mean, embedding max-to-mean contrast, population in thousands, and road-tagged share.",
+        "partial_credit": "Award 1-2 points for correct raw values but incomplete derived contrasts."
+      },
+      {
+        "name": "Seven-gate score",
+        "points": 4,
+        "description": "Applies all seven thresholds, obtains 7 hits out of 7, and reports score_1.00_7_of_7 with high_compound_signal.",
+        "partial_credit": "Award 1-3 points for a correct score with missing gate details or one wrong threshold result."
+      },
+      {
+        "name": "Compact numeric JSON",
+        "points": 2,
+        "description": "Returns the requested compact JSON fields with numeric rounding close to the ground truth.",
+        "partial_credit": "Award 1 point for correct values in a less compact structure."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Cyclone_Gabrielle.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_\u0041OI_slice.json",
+      "data/remote_sensing/remote_sensing_005_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

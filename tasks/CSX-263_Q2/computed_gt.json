@@ -1,0 +1,150 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-263_Q2",
+  "event_id": "CSX-263",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "exact_ratio_plus_priority_with_rubric_explanation",
+    "answer": "13.0x; prioritize smoke and gas health-exposure triage",
+    "co_ratio": 13.0,
+    "priority": "smoke and gas health-exposure triage",
+    "canonical_stance": "The 2015 Borneo CO spike was a peat-fire haze exposure signal, so health triage leads.",
+    "required_claims": [
+      "ratio is 1300 ppb / 100 ppb = 13.0x",
+      "El Nino dryness and peat fires drove smoke/haze and CO",
+      "high CO implies inhalation/public-health triage for exposed population",
+      "burn-scar-only mapping is secondary because dNBR support is insufficient"
+    ],
+    "required_metrics": [
+      "typical_surface_co=100 ppb",
+      "high_2015_surface_co_borneo=1300 ppb",
+      "co_amplification_ratio=13.0x",
+      "worldpop_population_rounded=510700 people"
+    ],
+    "supporting_context_metrics": [
+      "available_event_weather_window=2015-09-01 to 2015-10-16",
+      "low_rain_day_count_le_1mm_in_available_event_window=17 days",
+      "longest_low_rain_run_le_1mm_in_available_event_window=4 days"
+    ],
+    "forbidden_claims": [
+      "PM2.5, illness, deaths, burned area, or universal peak exposure inferred from the CO ratio",
+      "flood or cyclone operations as the leading priority",
+      "dNBR evidence sufficient for leading burn-severity mapping"
+    ]
+  },
+  "key_values": {
+    "event_name": "2015 Indonesian drought, peat fires and transboundary haze",
+    "hazard_family": "compound_cascading_events",
+    "hazard_label": "Compound and cascading event",
+    "region": "Southeast Asia",
+    "event_window": {
+      "start_date": "2015-09-01",
+      "end_date": "2015-10-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "anchor_notes": "Compound chain of El Nino dryness, peat fires and regional smoke/haze.",
+    "typical_co_ppb": 100.0,
+    "high_surface_co_ppb": 1300.0,
+    "co_amplification_ratio": 13.0,
+    "co_ratio_tolerance": 0.05,
+    "worldpop_population_rounded": 510700,
+    "point_weather_context": {
+      "available_event_window": "2015-09-01 to 2015-10-16",
+      "days": 46,
+      "role": "supporting dry-context diagnostic, not a hard scoring requirement for the CO ratio"
+    },
+    "low_rain_day_count_le_1mm": 17,
+    "longest_low_rain_run_le_1mm": {
+      "start": "2015-10-03",
+      "end": "2015-10-06",
+      "days": 4
+    },
+    "sentinel2_status": "no_sufficient_scenes",
+    "sentinel2_counts": {
+      "pre_count": 0,
+      "post_count": 1
+    },
+    "response_priority": "smoke and gas health-exposure triage",
+    "weaker_priorities": [
+      "direct burn-severity mapping as the leading response",
+      "flood rescue",
+      "cyclone wind or storm-surge operations"
+    ],
+    "acceptable_answer_variants": [
+      "13 times, thirteen-fold, or 13.0x for the ratio",
+      "air-quality health triage, smoke-exposure triage, inhalation-exposure triage, or public-health smoke response for the priority"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ratio and priority",
+        "points": 4,
+        "description": "Gives 13.0x or an equivalent thirteen-fold ratio and identifies smoke and gas health-exposure triage as the leading priority.",
+        "partial_credit": "Up to 2 points for the correct ratio without the priority, or up to 2 points for the correct priority with an incorrect or missing ratio."
+      },
+      {
+        "name": "Carbon monoxide extraction and calculation",
+        "points": 3,
+        "description": "Correctly uses 1,300 ppb divided by 100 ppb, includes ppb units or clear concentration wording, and rounds to one decimal place.",
+        "partial_credit": "1-2 points for recognizing both values but making a minor arithmetic, rounding, or unit omission."
+      },
+      {
+        "name": "Peat-fire haze mechanism",
+        "points": 3,
+        "description": "Explains that El Nino dryness and peat combustion produced smoke/haze and abundant carbon monoxide, making inhalation exposure the relevant mechanism.",
+        "partial_credit": "1-2 points for naming fires or haze without connecting dryness, peat, and carbon monoxide."
+      },
+      {
+        "name": "Cross-scale evidence linkage",
+        "points": 3,
+        "description": "Links the CO index to the wider event context, including available event-window dry context, regional haze or satellite smoke context, and population exposure without making auxiliary low-rain counts a hard requirement.",
+        "partial_credit": "1-2 points for using only one or two supporting context elements, or for describing dry context qualitatively without exact low-rain counts."
+      },
+      {
+        "name": "Operational implication",
+        "points": 3,
+        "description": "Translates the index into realistic public-health triage actions or priorities rather than treating it as a purely descriptive atmospheric number.",
+        "partial_credit": "1-2 points for a generic health warning without an operational triage explanation."
+      },
+      {
+        "name": "Rejection of weaker interpretations",
+        "points": 2,
+        "description": "Explains why burn-scar-only mapping should not lead and why flood or cyclone response is not the best fit.",
+        "partial_credit": "1 point for rejecting only one weaker interpretation or doing so without a clear scientific reason."
+      },
+      {
+        "name": "Bounded concise answer",
+        "points": 2,
+        "description": "Provides the requested short format and avoids unsupported claims about casualties, PM2.5, exact burned area, or universal exposure to the peak CO value.",
+        "partial_credit": "1 point for mostly clear formatting with minor overstatement or missing caution."
+      }
+    ]
+  },
+  "reasoning_flags": {
+    "supports": [
+      "carbon monoxide was reported at about thirteen times the usual concentration",
+      "the event anchor identifies a drought, peat-fire, smoke and haze chain",
+      "available event-window dry-weather context supports the peat-fire mechanism",
+      "population exposure context makes smoke and gas triage operationally relevant"
+    ],
+    "cautions": [
+      "the ratio is not a PM2.5 concentration or illness count",
+      "the Sentinel-2 dNBR product lacks sufficient scenes for direct burn-severity mapping",
+      "the event context does not make flood rescue or cyclone operations the leading priority"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Indonesian_drought_peat_fires_and_transboundary_haze.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  }
+}

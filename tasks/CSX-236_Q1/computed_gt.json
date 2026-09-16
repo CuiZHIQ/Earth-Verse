@@ -1,0 +1,122 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-236",
+  "primary_gt": {
+    "answer": "highest_priority_structural_collapse_aftershock_safety",
+    "impact_chain": [
+      "strong_ground_shaking",
+      "structural_damage_exposure",
+      "aftershock_safety_and_lifesaving"
+    ],
+    "key_metrics": {
+      "exposed_population": 229886,
+      "mapped_building_features": 510,
+      "maximum_mmi": 8.459,
+      "tsunami_flag": 0
+    },
+    "priority_index": 92.6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2023_Morocco_Al_Haouz_earthquake.json",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us7000kufc.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/other/other_001_NOAA_NCEI_WDS_Global_Historical_Tsunami_Database.txt"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies structural collapse, lifesaving, and aftershock safety as the dominant near-term priority.",
+        "name": "Priority label",
+        "partial_credit": "Award 1-2 points for a high earthquake-response label that misses either aftershock safety or structural-collapse emphasis.",
+        "points": 3
+      },
+      {
+        "description": "Reports the 0-100 priority index as 92.6 using the component calculation.",
+        "name": "Priority index",
+        "partial_credit": "Award 2-3 points for a value within 1 point or for using most components with a minor arithmetic error.",
+        "points": 4
+      },
+      {
+        "description": "Uses MMI 8.459, magnitude 6.8, shallow depth, and red alert as the physical severity drivers.",
+        "name": "Earthquake severity interpretation",
+        "partial_credit": "Award 1-2 points for recognizing strong shaking but omitting one or more key severity metrics.",
+        "points": 3
+      },
+      {
+        "description": "Uses about 229,886 exposed people and 510 mapped building features as exposure indicators without treating them as confirmed damage.",
+        "name": "Exposure interpretation",
+        "partial_credit": "Award 1-2 points for including population or buildings but overclaiming or omitting the other exposure dimension.",
+        "points": 3
+      },
+      {
+        "description": "Explains why aftershocks and weakened or poorly constructed structures increase life-safety priority.",
+        "name": "Aftershock mechanism",
+        "partial_credit": "Award 1-2 points for mentioning aftershocks without linking them to damaged-building risk.",
+        "points": 3
+      },
+      {
+        "description": "Correctly de-emphasizes tsunami evacuation and treats radar change as contextual rather than a collapse map.",
+        "name": "Secondary-signal handling",
+        "partial_credit": "Award 1 point if only one of tsunami or radar context is handled correctly.",
+        "points": 2
+      },
+      {
+        "description": "Provides a coherent driver-pathway-response chain from strong shaking to structural exposure to aftershock-aware lifesaving.",
+        "name": "Structured impact chain",
+        "partial_credit": "Award 1 point for a partially correct chain with one missing or generic link.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "earthquake_metrics": {
+      "alert": "red",
+      "cdi": 6.9,
+      "depth_km": 19.0,
+      "felt_reports": 1988,
+      "magnitude": 6.8,
+      "maximum_mmi": 8.459,
+      "significance": 2690
+    },
+    "event_name": "2023 Morocco Al Haouz earthquake",
+    "event_window": {
+      "end_date": "2023-09-08",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2023-09-08"
+    },
+    "exposure_metrics": {
+      "amenity_features": 21,
+      "building_features": 510,
+      "exposed_population": 229885.5132449541,
+      "highway_features": 380,
+      "waterway_features": 89
+    },
+    "priority_components": {
+      "aftershock_component": 10.0,
+      "alert_component": 15.0,
+      "building_component": 15.0,
+      "intensity_component": 29.607,
+      "population_component": 22.989
+    },
+    "remote_sensing_context": {
+      "sentinel1_vv_change_mean_db": -0.09047776959944169,
+      "sentinel1_vv_change_stddev_db": 0.5337862505000729
+    },
+    "text_claim_flags": {
+      "aftershock_safety": true,
+      "loss_or_injury_context": true,
+      "red_alert": true,
+      "tsunami_database_negative_or_usgs_zero": true
+    }
+  },
+  "task_id": "CSX-236_Q1",
+  "task_type": "short_answer"
+}

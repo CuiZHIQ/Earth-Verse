@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-058_Q2",
+  "event_id": "CSX-058",
+  "task_type": "short_answer",
+  "target_family": "formula_derivation_consistency_proof",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "duration_days": 3,
+    "annual_midpoint_mm": 170.0,
+    "eastern_annual_ratio": 1.47,
+    "airport_annual_ratio": 0.7,
+    "airport_typical_annual_mm": 79.3,
+    "max_gridded_precip_mm": 18.637,
+    "report_to_grid_ratios": {
+      "airport": 6.39,
+      "eastern": 13.41
+    },
+    "final_label": "annual_scale_short_duration_rainfall_overload"
+  },
+  "tolerances": {
+    "duration_days": 0,
+    "annual_midpoint_mm": 0.1,
+    "rainfall_ratio": 0.02,
+    "airport_typical_annual_mm": 0.2,
+    "max_gridded_precip_mm": 0.001,
+    "report_to_grid_ratio": 0.03
+  },
+  "decision_rule": {
+    "label_when_all_pass": "annual_scale_short_duration_rainfall_overload",
+    "pass_flags": {
+      "duration_gate": true,
+      "eastern_annual_gate": true,
+      "airport_annual_gate": true,
+      "airport_grid_contrast_gate": true,
+      "eastern_grid_contrast_gate": true
+    },
+    "thresholds": {
+      "duration_days": 3,
+      "eastern_annual_ratio_min": 1.0,
+      "airport_annual_ratio_min": 0.5,
+      "airport_to_grid_ratio_min": 5.0,
+      "eastern_to_grid_ratio_min": 10.0
+    }
+  },
+  "key_values": {
+    "event_name": "April 2024 UAE and Dubai record rainfall flood",
+    "event_window": "2024-04-15 to 2024-04-17",
+    "report_rainfall_mm": {
+      "eastern_uae_less_than_24h": 250.0,
+      "dubai_airport_daily": 119.0
+    },
+    "annual_rainfall_range_mm": [
+      140.0,
+      200.0
+    ],
+    "gridded_precip_maxima_mm": {
+      "era5_land_event_max_mm": 12.758,
+      "gpm_event_max_mm": 15.985,
+      "chirps_event_max_mm": 18.637
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final_json_and_label",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields and the annual_scale_short_duration_rainfall_overload label.",
+        "partial_credit": "Give 1-2 points for a near-complete JSON object with a semantically equivalent label but missing or renamed fields."
+      },
+      {
+        "name": "duration_and_annual_midpoint",
+        "points": 3,
+        "description": "Computes the inclusive 3-day event window and the 170.0 mm annual rainfall midpoint.",
+        "partial_credit": "Give 1-2 points for only one correct value or a minor inclusive-date error."
+      },
+      {
+        "name": "annual_normalized_ratios",
+        "points": 4,
+        "description": "Computes eastern_annual_ratio = 1.47 and airport_annual_ratio = 0.70 with formulas.",
+        "partial_credit": "Give 1-3 points for one correct ratio, swapped numerator context, or small rounding mistakes."
+      },
+      {
+        "name": "airport_typical_annual",
+        "points": 3,
+        "description": "Computes the implied Dubai airport typical annual rainfall as 119.0 / 1.5 = 79.3 mm.",
+        "partial_credit": "Give 1-2 points for identifying the multiplier but misrounding or omitting units."
+      },
+      {
+        "name": "gridded_max_and_contrast",
+        "points": 3,
+        "description": "Identifies 18.637 mm as the largest gridded event maximum and computes airport/eastern report-to-grid ratios of 6.39 and 13.41.",
+        "partial_credit": "Give 1-2 points for using the right maximum with one ratio error or choosing a lower gridded product by mistake."
+      },
+      {
+        "name": "threshold_logic",
+        "points": 3,
+        "description": "Shows that all five duration, annual-ratio, and report-to-grid pass conditions are satisfied.",
+        "partial_credit": "Give 1-2 points for the correct final pass state with incomplete or partially wrong inequality checks."
+      },
+      {
+        "name": "concise_computed_interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation as a short rainfall-load conclusion and avoids extra impact totals not derived from the requested calculations.",
+        "partial_credit": "No credit if the answer expands into broad incident narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_April_2024_UAE_and_Dubai_record_rainfall_flood.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "answer_notes": {
+    "classification_logic": "Persistent snowpack requires a long positive-snowfall run, retained depth, and cold-wind reinforcement; image brightness alone is insufficient.",
+    "ratio_formula": "total point snowfall depth in mm divided by the largest gridded mean event precipitation in mm",
+    "retained_depth_formula": "maximum hourly snow depth in meters divided by total point snowfall depth in meters",
+    "unused_inputs": "Population and road layers are outside this numerical snowpack reconciliation."
+  },
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-040",
+  "key_values": {
+    "cold_wind": {
+      "below_freezing_hours": 30,
+      "max_gust_kmh": 80.3,
+      "min_wind_chill_c": -9.1
+    },
+    "event_name": "January 2021 rare summer snowstorm in the Andes",
+    "event_window": {
+      "end_date": "2021-02-04",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2021-01-27"
+    },
+    "gridded_precipitation_mean_mm": {
+      "chirps": 7.3611,
+      "era5_land": 0.8007,
+      "gpm": 4.894
+    },
+    "hazard_family": "cold_wave_winter_storm",
+    "image": {
+      "alphaearth_1_minus_cosine_max": 0.5618,
+      "alphaearth_1_minus_cosine_mean": 0.0207,
+      "bright_white_fraction": 0.863,
+      "very_bright_white_fraction": 0.509
+    },
+    "largest_grid_mean_precip_mm": 7.3611,
+    "point_grid_contrast_ratio": 97.9,
+    "snow": {
+      "max_snow_depth_m": 0.32,
+      "retained_depth_fraction": 0.44,
+      "snowfall_run_end": "2021-01-31T21:00",
+      "snowfall_run_hours": 49,
+      "snowfall_run_start": "2021-01-29T21:00",
+      "total_snowfall_cm": 72.1,
+      "total_snowfall_mm": 721.0
+    },
+    "weather_point": {
+      "elevation_m": 2710.0,
+      "latitude": -32.934975,
+      "longitude": -70.147064
+    }
+  },
+  "primary_gt": {
+    "answer": "persistent_high_elevation_snowpack",
+    "basis": "A 721.0 mm point snowfall depth is 97.9x the largest coarse-grid mean precipitation, and the 49 h run plus 0.32 m retained depth and cold-wind values favor a persistent high-elevation snowpack over a bright-scene-only reading.",
+    "classification": "persistent_high_elevation_snowpack",
+    "cold_wind_check": "30 h below 0 C; max gust 80.3 km/h; min wind chill -9.1 C",
+    "image_check": "bright-white fraction 0.863 with low annual embedding-change mean 0.0207",
+    "point_grid_contrast_ratio": 97.9,
+    "retained_depth_fraction": 0.44,
+    "snowfall_run_hours": 49
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2021_rare_summer_snowstorm_in_the_Andes.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_001_NASA_Worldview_GIBS_snapshot.bin",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "requires_computation": true,
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested fields and classifies the event as a persistent high-elevation snowpack signal.",
+        "name": "Final JSON answer",
+        "partial_credit": "Award 1-2 points for the right diagnosis with incomplete fields.",
+        "points": 3
+      },
+      {
+        "description": "Converts 72.10 cm to 721.0 mm, uses the largest gridded mean precipitation 7.3611 mm, and reports 97.9.",
+        "name": "Point-grid contrast calculation",
+        "partial_credit": "Award 1-3 points for a minor unit, product, or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Reports the 49 h continuous snowfall run and computes retained depth fraction 0.44 from 0.32 / 0.721.",
+        "name": "Snow persistence and retained depth",
+        "partial_credit": "Award 1-3 points for getting only the run or only the fraction right.",
+        "points": 4
+      },
+      {
+        "description": "Includes 30 h below 0 C, 80.3 km/h maximum gust, and -9.1 C minimum wind chill.",
+        "name": "Cold-wind confirmation",
+        "partial_credit": "Award 1-2 points for two of the three metrics.",
+        "points": 3
+      },
+      {
+        "description": "Uses bright-white fraction 0.863 together with low annual embedding-change mean 0.0207, and keeps the image evidence secondary to the snow time series.",
+        "name": "Image and embedding check",
+        "partial_credit": "Award 1-2 points for using only one image metric or over-weighting image brightness.",
+        "points": 3
+      },
+      {
+        "description": "Explains why coarse-grid precipitation and bright-scene evidence are contrast checks rather than the main snowpack measurement.",
+        "name": "Data-reconciliation reasoning",
+        "partial_credit": "Award 1 point for a correct but thin explanation.",
+        "points": 2
+      },
+      {
+        "description": "Gives a compact answer and avoids converting the metrics into established loss, closure, or away-from-point snow-depth totals.",
+        "name": "Concision and limits",
+        "partial_credit": "Award 0.5 points for a mostly compact answer with one minor overreach.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "multisource_snowpack_reconciliation",
+  "task_id": "CSX-040_Q2",
+  "task_type": "short_answer"
+}

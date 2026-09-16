@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-001_Q2",
+  "event_id": "CSX-001",
+  "task_type": "forensic_calculation_audit",
+  "target_family": "forensic_calculation_audit",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer_type": "forensic_calculation_audit",
+    "audit_target": "Audit whether ERA5-Land aggregate temperature_2m_max_c_max can replace the direct daily Open-Meteo series for the sustained heat-load calculation.",
+    "source_paths": {
+      "event_window_anchor": "data/event_reports/event_reports_003_Locked_event_anchor_June_2021_Pacific_Northwest_heat_wave.json",
+      "direct_daily_weather": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "population_input": "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "wrong_aggregate_source": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+    },
+    "event_window": [
+      "2021-06-25",
+      "2021-07-01"
+    ],
+    "validated_calculation": {
+      "daily_tmax_c": [
+        27.3,
+        30.1,
+        32.2,
+        34.0,
+        35.5,
+        26.7,
+        22.3
+      ],
+      "heat_load_terms_c_days": [
+        0.0,
+        0.1,
+        2.2,
+        4.0,
+        5.5,
+        0.0,
+        0.0
+      ],
+      "heat_load_c_days": 11.8,
+      "peak3_tmax_c": 33.9,
+      "peak3_window": [
+        "2021-06-27",
+        "2021-06-29"
+      ],
+      "peak3_input_tmax_c": [
+        32.2,
+        34.0,
+        35.5
+      ],
+      "warm_nights": {
+        "count": 3,
+        "denominator": 7,
+        "ratio": 0.43
+      },
+      "population_sum": 49269.915,
+      "population_scaled_heat_load_person_c_days": 581385
+    },
+    "divergence_audit": {
+      "first_divergence_point": "rolling_peak3_tmax_requires_daily_sequence",
+      "wrong_operation": "substitute aggregate stats.temperature_2m_max_c_max for the 3-day rolling mean of daily Tmax",
+      "wrong_aggregate_value_c": 31.3,
+      "correct_peak3_tmax_c": 33.9,
+      "difference_correct_minus_wrong_c": 2.6,
+      "affected_condition": "peak3_tmax_c >= 33",
+      "wrong_condition_result": false,
+      "correct_condition_result": true,
+      "aggregate_source_defect": "The ERA5 file exposes aggregate stats only; it has no daily.time or daily temperature_2m_max sequence from which to compute rolling means, daily heat-load terms, or warm-night counts."
+    },
+    "rejected_or_insufficient_alternatives": {
+      "data/event_reports/event_reports_004_NOAA_Climate.gov_Event_Tracker_-_Pacific_Northwest_heat.html": {
+        "ruling": "insufficient_as_direct_calculation_source",
+        "reason": "The NOAA article is the event/report context and locked anchor, but it is not the machine-readable daily weather series used for the requested calculations."
+      }
+    },
+    "final_ruling": {
+      "shortcut_accepted": false,
+      "corrected_answer_family": "sustained_dry_multiday_heat_load",
+      "basis": "The direct event-window daily series gives peak3_tmax_c 33.9 and population-scaled heat load 581385 person-C-days; the aggregate substitution would incorrectly fail the peak3 threshold."
+    }
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2021-06-25",
+      "end_date": "2021-07-01",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "daily_tmax_c": [
+      27.3,
+      30.1,
+      32.2,
+      34.0,
+      35.5,
+      26.7,
+      22.3
+    ],
+    "daily_tmin_c": [
+      11.4,
+      14.4,
+      16.4,
+      19.5,
+      17.8,
+      13.8,
+      11.5
+    ],
+    "heat_load_terms_c_days": [
+      0.0,
+      0.1,
+      2.2,
+      4.0,
+      5.5,
+      0.0,
+      0.0
+    ],
+    "heat_load_c_days": 11.8,
+    "peak3_tmax": {
+      "window": [
+        "2021-06-27",
+        "2021-06-29"
+      ],
+      "value_c": 33.9,
+      "input_values_c": [
+        32.2,
+        34.0,
+        35.5
+      ]
+    },
+    "warm_night_count": 3,
+    "event_window_nights": 7,
+    "warm_night_ratio": 0.43,
+    "population_sum": 49269.915,
+    "population_scaled_heat_load_person_c_days": 581385,
+    "wrong_aggregate_value_c": 31.3,
+    "difference_correct_minus_wrong_c": 2.6
+  },
+  "decision_rules": {
+    "source_priority": "Use the locked event anchor for the window and the direct Open-Meteo daily series for rolling/daily calculations; aggregate-only and narrative files may support context but cannot replace the series.",
+    "affected_condition": "peak3_tmax_c >= 33",
+    "shortcut_acceptance": "Reject the shortcut if the aggregate file lacks the daily sequence needed for the requested rolling calculation or changes the threshold result."
+  },
+  "numeric_tolerances": {
+    "heat_load_c_days": {
+      "expected": 11.8,
+      "min": 11.6,
+      "max": 12.0
+    },
+    "peak3_tmax_c": {
+      "expected": 33.9,
+      "min": 33.7,
+      "max": 34.1,
+      "window": [
+        "2021-06-27",
+        "2021-06-29"
+      ]
+    },
+    "warm_night_ratio": {
+      "expected": 0.43,
+      "min": 0.42,
+      "max": 0.44
+    },
+    "population_scaled_heat_load_person_c_days": {
+      "expected": 581385,
+      "min": 570000,
+      "max": 595000
+    },
+    "wrong_aggregate_value_c": {
+      "expected": 31.3,
+      "min": 31.2,
+      "max": 31.4
+    },
+    "difference_correct_minus_wrong_c": {
+      "expected": 2.6,
+      "min": 2.4,
+      "max": 2.8
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "schema_and_answer_type",
+        "points": 3,
+        "description": "Returns JSON with exactly the requested top-level fields and answer_type forensic_calculation_audit."
+      },
+      {
+        "name": "package_local_source_paths",
+        "points": 3,
+        "description": "Uses package-relative paths for the locked anchor, Open-Meteo weather series, WorldPop population file, and ERA5 aggregate file; uses no web or hidden answers."
+      },
+      {
+        "name": "event_window_and_direct_calculation",
+        "points": 4,
+        "description": "Uses 2021-06-25 through 2021-07-01 and correctly reports daily Tmax, heat-load terms, heat_load_c_days, peak3_tmax_c/window/input values, and warm-night ratio."
+      },
+      {
+        "name": "population_scaled_heat_load",
+        "points": 2,
+        "description": "Reads the WorldPop population and multiplies it by unrounded heat load to obtain the rounded person-C-days value."
+      },
+      {
+        "name": "first_divergence_audit",
+        "points": 4,
+        "description": "Identifies the first divergence as replacing a rolling daily calculation with aggregate temperature_2m_max_c_max, reports 31.3 versus 33.9, delta 2.6 C, and the threshold-result flip."
+      },
+      {
+        "name": "insufficient_alternative",
+        "points": 2,
+        "description": "Rejects at least one additional package-local source, such as the NOAA narrative article, as insufficient for direct calculation with a content-based reason."
+      },
+      {
+        "name": "final_ruling",
+        "points": 2,
+        "description": "Rejects the shortcut and states the corrected answer family without substituting generic disaster explanation or policy prose."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2021_Pacific_Northwest_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/event_reports/event_reports_004_NOAA_Climate.gov_Event_Tracker_-_Pacific_Northwest_heat.html"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "deterministic_evaluation": {
+    "expected": 17.0,
+    "field": "answer.elapsed_days_to_largest_later_alert_rounded",
+    "rounding": "one_decimal_day",
+    "tolerance": 0.05
+  },
+  "evaluation_mode": "deterministic_numeric",
+  "key_values": {
+    "elapsed_days_exact": 17.03742,
+    "elapsed_days_to_largest_later_alert_rounded": 17.0,
+    "elapsed_seconds": 1472033.05,
+    "event_name": "2015 Gorkha earthquake",
+    "largest_later_alert_magnitude": 7.3,
+    "largest_later_alert_time_utc": "2015-05-12T07:05:19Z",
+    "later_nepal_alert_count": 6,
+    "mainshock_id": "us20002926",
+    "mainshock_magnitude": 7.8,
+    "mainshock_time_utc": "2015-04-25T06:11:25.950000Z"
+  },
+  "primary_gt": {
+    "answer": 17.0,
+    "answer_field": "elapsed_days_to_largest_later_alert_rounded",
+    "formula": "round((largest_later_alert_time_utc - mainshock_time_utc).total_seconds()/86400, 1)",
+    "interpretation": "Largest later Nepal EQ alert occurred about 17.0 days after the Gorkha mainshock.",
+    "target_family": "earthquake_aftershock_alert_timing",
+    "tolerance": 0.05,
+    "units": "days"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_009_05_event_specific_usgs_comcat_USGS_ComCat_earthquake_search_for_package_dates.json.json",
+      "data/event_catalogs/event_catalogs_008_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Uses the Gorkha mainshock record with id us20002926 and timestamp 2015-04-25T06:11:25.950000Z.",
+        "name": "mainshock_timestamp",
+        "points": 4
+      },
+      {
+        "description": "Filters Nepal EQ disaster-alert records to those more than one minute after the mainshock, yielding six later alerts.",
+        "name": "later_alert_filter",
+        "points": 4
+      },
+      {
+        "description": "Uses the later Nepal alert with the largest severity value, M7.3 at 2015-05-12T07:05:19Z.",
+        "name": "largest_alert_rule",
+        "points": 4
+      },
+      {
+        "description": "Computes (later alert timestamp minus mainshock timestamp) divided by 86,400 seconds, giving 17.037420 days before rounding.",
+        "name": "elapsed_day_formula",
+        "points": 4
+      },
+      {
+        "description": "Returns elapsed_days_to_largest_later_alert_rounded as 17.0 days in the requested JSON field with a short timing interpretation.",
+        "name": "requested_json_and_rounding",
+        "points": 4
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "earthquake_aftershock_alert_timing",
+  "task_id": "CSX-242_Q2",
+  "task_type": "numeric"
+}

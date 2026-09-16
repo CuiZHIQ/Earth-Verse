@@ -1,0 +1,99 @@
+{
+  "decision_rule": {
+    "dnbr_locality_pass": "abs(dnbr_mean) / dnbr_max <= 0.10",
+    "dnbr_mean_pass": "0.10 - abs(dnbr_mean) >= 0",
+    "ledger_score": "sum of the three surface tests plus warm_wet_score; maximum is 5",
+    "radar_pass": "abs(s1_vv_post_minus_pre_db_mean) - 2.0 >= 0",
+    "warm_wet_score": "int(three_source_precip_mean_mm >= 100) + int(tmax_mean_c >= 30)"
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2016-07-17 to 2016-09-21",
+    "event_name": "Aru / Tibet glacier avalanche",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "package_id": "CSX-319"
+  },
+  "event_id": "CSX-319",
+  "key_values": {
+    "chirps_precip_mean_mm": 237.1,
+    "dnbr_max": 0.8234,
+    "dnbr_mean": 0.0426,
+    "era5_precip_mean_mm": 120.5,
+    "gpm_precip_mean_mm": 141.7,
+    "s1_vv_post_minus_pre_db_mean": 3.887,
+    "tmax_mean_c": 34.7
+  },
+  "primary_gt": {
+    "answer": "radar_led_surface_change_with_warm_wet_loading",
+    "dnbr_margin": 0.057,
+    "dnbr_mean_to_max": 0.052,
+    "interpretation": "5/5 ledger supports strong VV change with weak area-mean dNBR and warm-wet loading.",
+    "ledger_score": 5,
+    "precip_3source_mean_mm": 166.4,
+    "radar_margin_db": 1.89,
+    "warm_wet_score": 2
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Aru_Tibet_glacier_avalanche.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON fields with numeric values and the final classification string.",
+        "name": "JSON schema",
+        "partial_credit": "2 points for all numeric fields but missing the classification; 1 point for a parseable but incomplete JSON object.",
+        "points": 3
+      },
+      {
+        "description": "Uses the package values for VV mean change, dNBR mean and max, three precipitation means, and mean daily maximum temperature.",
+        "name": "Source metric extraction",
+        "partial_credit": "Award 0.5 point for each correct extracted input value, up to 4 points.",
+        "points": 4
+      },
+      {
+        "description": "Computes radar_margin_db = 1.89, dnbr_margin = 0.057, and dnbr_mean_to_max = 0.052 within tolerance.",
+        "name": "Surface threshold calculations",
+        "partial_credit": "Award up to 1.5 points for each correct surface value and 0.5 point for correct formulas.",
+        "points": 5
+      },
+      {
+        "description": "Computes the three-source precipitation mean as 166.4 mm and assigns warm_wet_score = 2.",
+        "name": "Warm-wet score",
+        "partial_credit": "2 points for the precipitation mean only; 1 point for the temperature threshold only.",
+        "points": 3
+      },
+      {
+        "description": "Combines the three surface passes and two warm-wet passes into ledger_score = 5 and the expected classification.",
+        "name": "Ledger result",
+        "partial_credit": "2 points for the correct ledger score without the exact classification; 1 point for the right pass count logic with an arithmetic error.",
+        "points": 3
+      },
+      {
+        "description": "Gives a concise interpretation tied to the computed ledger without adding casualty, damage, or direct runout assertions.",
+        "name": "Bounded interpretation",
+        "partial_credit": "1 point for a concise interpretation with one uncomputed extra assertion.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "surface_change_threshold_ledger",
+  "task_id": "CSX-319_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "dnbr_margin": 0.002,
+    "dnbr_mean_to_max": 0.002,
+    "precip_3source_mean_mm": 0.1,
+    "radar_margin_db": 0.02
+  }
+}

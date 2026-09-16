@@ -1,0 +1,57 @@
+{
+  "schema_version": "1",
+  "name": "EarthVerse",
+  "counts": {
+    "tasks": 405,
+    "event_packages": 199,
+    "hazard_families": 19
+  },
+  "task_files": {
+    "prompt": "question_en.md",
+    "reference_solution": "solution_en.md",
+    "structured_ground_truth": "computed_gt.json"
+  },
+  "paths": {
+    "tasks": "tasks",
+    "task_ids": "task_sets/orig405.txt",
+    "dimension_labels": "task_sets/dimension_labels.csv",
+    "event_packages": "event_packages/standard_event_packages/packages",
+    "evaluation_config": "configs/evaluation.json",
+    "agent_runner": "scripts/run_agent.py",
+    "direct_runner": "scripts/run_direct.py",
+    "tool_library": "tools/earthverse_tools",
+    "meteorological_environments": "tools/meteorological_environments",
+    "mcp_server": "integrations/earthverse_mcp_server.py",
+    "submission_validator": "scripts/validate_submission.py",
+    "judge": "scripts/judge.py",
+    "report": "scripts/report.py"
+  },
+  "prompt_locations": {
+    "task": "tasks/<task_id>/question_en.md",
+    "agent": "scripts/run_agent.py::build_initial_messages",
+    "direct": "scripts/run_direct.py::build_messages",
+    "meteorological_environment": "tools/meteorological_environments/agent_entry.py::_tool_instructions",
+    "judge": "scripts/judge.py::build_messages"
+  },
+  "scoring": {
+    "name": "EarthVerse scoring",
+    "task_metrics": [
+      "answer_correctness_score",
+      "llm_rubric_score"
+    ],
+    "aggregate": "mean_score",
+    "aggregate_rule": "unweighted_mean",
+    "strict_accuracy_threshold": 95.0,
+    "process_diagnostics_in_mean_score": false
+  },
+  "distribution": {
+    "included": [
+      "evaluation code",
+      "405 tasks",
+      "reference solutions",
+      "ground truth",
+      "scientific tools"
+    ],
+    "event_data_included": false
+  }
+}

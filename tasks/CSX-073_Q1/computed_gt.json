@@ -1,0 +1,109 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-073",
+  "key_values": {
+    "borough_counts": {
+      "BRONX": 57,
+      "BROOKLYN": 133,
+      "MANHATTAN": 25,
+      "QUEENS": 157,
+      "STATEN ISLAND": 128
+    },
+    "complaint_total": 500,
+    "complaint_zip_count": 116,
+    "daily_open_meteo_mm": {
+      "2021-09-01": 24.4,
+      "2021-09-02": 109.5
+    },
+    "decision_rule": "Label drainage_overload_pluvial when peak_hour_share >= 0.20, hours_ge_10mm >= 3, max_run_hours_ge_5mm >= 4, and sewer_share >= 0.85.",
+    "electric_complaints": 43,
+    "event_name": "September 2021 Hurricane Ida rainfall flooding in New York City",
+    "nasa_power_total_mm": 80.58,
+    "nonzero_rain_hours": 23,
+    "open_meteo_point": {
+      "latitude": 40.738136,
+      "longitude": -74.04254
+    },
+    "peak_hour_time": "2021-09-02T01:00",
+    "sept2_share_of_open_meteo_total": 0.818,
+    "sewer_complaints": 457,
+    "tolerances": {
+      "central_park_peak_in": 0.01,
+      "mm": 0.2,
+      "share": 0.01
+    }
+  },
+  "primary_gt": {
+    "central_park_peak_in": 3.47,
+    "hours_ge_10mm": 3,
+    "label": "drainage_overload_pluvial",
+    "max_run_hours_ge_5mm": 6,
+    "peak_hour_mm": 33.8,
+    "peak_hour_share": 0.252,
+    "peak_hour_time": "2021-09-02T01:00",
+    "sewer_share": 0.914,
+    "total_mm": 133.9
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are computed from local rainfall, report, and NYC service-feedback records.",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/other/other_001_NOAA_WPC_tropical_cyclone_rainfall_-_Ida_2021.html",
+      "data/air_quality/air_quality_002_03_city_feedback_or_air_quality_NYC_311_Service_Requests_Socrata_flood_complaints.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON with the label drainage_overload_pluvial and the nine required fields.",
+        "name": "Final numeric label and schema",
+        "partial_credit": "Award up to 2 points if the label is equivalent but fields are missing or renamed.",
+        "points": 3
+      },
+      {
+        "description": "Computes 133.9 mm total rainfall, 33.8 mm peak hourly rainfall, and the 2021-09-02T01:00 peak timing or equivalent peak-window reference.",
+        "name": "Rainfall totals and peak",
+        "partial_credit": "Award 1 point for a correct total, 1 point for a correct peak value, 1 point for the peak timing, and 1 point for using millimetres consistently.",
+        "points": 4
+      },
+      {
+        "description": "Computes peak_hour_share = 0.252, hours_ge_10mm = 3, and max_run_hours_ge_5mm = 6, then applies the stated thresholds.",
+        "name": "Concentration metrics",
+        "partial_credit": "Award up to 3 points if two of the three metrics are correct and the threshold logic is mostly correct.",
+        "points": 4
+      },
+      {
+        "description": "Uses the Central Park wettest-hour value of 3.47 inches as an independent short-duration intensity anchor.",
+        "name": "Corroborating report value",
+        "partial_credit": "Award 1 point for mentioning an extreme Central Park hourly value without the correct number or unit.",
+        "points": 2
+      },
+      {
+        "description": "Uses 500 flood-related complaints, 457 sewer complaints, 43 electric complaints, 116 ZIP codes, and sewer_share = 0.914 to support drainage-load interpretation.",
+        "name": "City-service feedback arithmetic",
+        "partial_credit": "Award up to 3 points for correct complaint counts but missing the share or spread.",
+        "points": 4
+      },
+      {
+        "description": "Explains that the event is better represented by concentrated rainfall stressing urban drainage than by a daily-total-only or slow river-rise account.",
+        "name": "Computed interpretation",
+        "partial_credit": "Award 1 point for a plausible pluvial interpretation that does not contrast it with weaker daily-total-only reasoning.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the response focused on the requested ledger and one short interpretation sentence without adding unverified loss estimates.",
+        "name": "Concise answer discipline",
+        "partial_credit": "Award 0.5 point if the answer is correct but padded with extra narrative.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-073_Q1",
+  "task_type": "short_answer"
+}

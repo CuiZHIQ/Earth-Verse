@@ -1,0 +1,92 @@
+{
+  "evaluation_mode": "deterministic_threshold_ledger",
+  "event_id": "CSX-226",
+  "key_values": {
+    "date_source": "data/event_reports/event_reports_002_Locked_event_anchor_May_2024_Papua_New_Guinea_Enga_landslide.json",
+    "grid_paths": [
+      "data/physical_hazard/physical_hazard_005_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_007_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_009_salvaged_existing_stage8_file.json"
+    ],
+    "grid_precip_mean_inputs_mm": [
+      0.8554,
+      0.0307,
+      0.0629
+    ],
+    "grid_wet_count": 0,
+    "point_gap_tolerance_mm": 1.0,
+    "sample_paths": [
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json"
+    ],
+    "wet_threshold_mm": 1.0
+  },
+  "primary_gt": {
+    "answer": "point_split_grid_dry_gap_0.74mm",
+    "diagnosis": "point_split_grid_dry_consensus",
+    "event_date": "2024-05-24",
+    "grid_mean_precip_mm": 0.32,
+    "point_abs_gap_mm": 0.74,
+    "sample_a_precip_mm": 0.5,
+    "sample_b_precip_mm": 1.24,
+    "wet_count_5": 1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Locked_event_anchor_May_2024_Papua_New_Guinea_Enga_landslide.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_007_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_009_salvaged_existing_stage8_file.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON fields with the exact answer token and diagnosis label.",
+        "name": "Output ledger",
+        "partial_credit": "Award 2 points for a valid JSON object with one missing ledger field; award 1 point for a readable but incomplete structured answer.",
+        "points": 3
+      },
+      {
+        "description": "Uses the package anchor date and the two lexicographic point-sample JSON records.",
+        "name": "Locked date and point records",
+        "partial_credit": "Award 2 points for the correct date with one point source omitted; award 1 point for finding point records but using the wrong date.",
+        "points": 4
+      },
+      {
+        "description": "Extracts 0.50 mm and 1.24 mm from the matching date fields without changing units.",
+        "name": "Point precipitation extraction",
+        "partial_credit": "Award 2 points for one correct point value; award 1 point for correct fields with a transcription error.",
+        "points": 4
+      },
+      {
+        "description": "Finds the three grid-summary precipitation means and computes grid_mean_precip_mm = 0.32.",
+        "name": "Grid summary mean",
+        "partial_credit": "Award 2 points for two correct grid inputs with the right formula; award 1 point for recognizing the grid-summary keys.",
+        "points": 3
+      },
+      {
+        "description": "Computes point_abs_gap_mm = 0.74 and wet_count_5 = 1.",
+        "name": "Gap and wet count",
+        "partial_credit": "Award 1.5 points for either value alone.",
+        "points": 3
+      },
+      {
+        "description": "Applies the threshold and tolerance rule to produce point_split_grid_dry_consensus.",
+        "name": "Threshold diagnosis",
+        "partial_credit": "Award 2 points for the correct split and grid-dry states with a wrong token; award 1 point for a correct threshold comparison but incomplete final label.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "precipitation_threshold_score_ledger",
+  "task_id": "CSX-226_Q2",
+  "task_type": "numeric"
+}

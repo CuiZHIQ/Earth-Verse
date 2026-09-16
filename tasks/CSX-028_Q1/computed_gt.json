@@ -1,0 +1,223 @@
+{
+  "answer_guidance": {
+    "answer": "heat_load_process_supported",
+    "structured_answer": {
+      "answer": "heat_load_process_supported",
+      "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+      "computed_evidence": {
+        "evidence_synthesis": {
+          "analysis_days": 46,
+          "event_days": 61,
+          "h40_c_day": 214.0,
+          "image_damage_metric": "absent",
+          "mean_tmax_c": 44.653,
+          "peak_margin_c": 1.25,
+          "peak_tmax_c": 46.247,
+          "population_millions": 10.85,
+          "rainfall_gap_mm": 13.0,
+          "service_pressure_people_per_point": 452044
+        },
+        "rejected": [
+          "rainfall_led_diagnosis",
+          "image_damage_led_diagnosis"
+        ],
+        "tests": {
+          "direct_image_damage_metric_absent": true,
+          "h40_ge_150": true,
+          "peak_margin_gt_0": true,
+          "rainfall_gap_le_15": true,
+          "service_pressure_ge_100000": true
+        }
+      },
+      "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+      "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units.",
+      "mechanism_chain": [
+        "event-window thermal forcing",
+        "accumulated heat-load calculation",
+        "persistence or recovery constraint",
+        "non-heat alternative rejection"
+      ],
+      "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+      "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "India-Pakistan 2015 Heat-Stress Load Attribution",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-028",
+  "event_name": "2015 India-Pakistan heat wave",
+  "formulas": {
+    "h40_c_day": "analysis_days * max(mean_daily_tmax_c - 40, 0)",
+    "peak_margin_c": "peak_daily_tmax_c - 45",
+    "rainfall_gap_mm": "abs(chirps_mean_mm - gpm_mean_mm)",
+    "service_pressure_people_per_point": "population / sensitive_service_points"
+  },
+  "hazard_family": "heat_wave_urban_heat",
+  "key_values": {
+    "amenity_counts": {
+      "hospital": 22,
+      "police": 1,
+      "school": 1
+    },
+    "analysis_days": 46,
+    "analysis_end": "2015-06-15",
+    "analysis_start": "2015-05-01",
+    "chirps_mean_mm": 110.37099070034142,
+    "event_days": 61,
+    "event_end": "2015-06-30",
+    "event_start": "2015-05-01",
+    "gpm_mean_mm": 97.41285874583234,
+    "h40_c_day_exact": 214.0352203598443,
+    "image_damage_metric_status": "no_sufficient_scenes",
+    "manifest_file_count": 34,
+    "mean_tmax_c_exact": 44.65293957304009,
+    "peak_margin_c_exact": 1.2466979980468977,
+    "peak_tmax_c_exact": 46.2466979980469,
+    "population_exact": 10849061.098342912,
+    "population_millions": 10.85,
+    "rainfall_gap_mm_exact": 12.958131954509085,
+    "sensitive_service_points": 24,
+    "service_pressure_people_per_point_exact": 452044.2124309547
+  },
+  "numeric_tolerances": {
+    "analysis_days": {
+      "expected": 46,
+      "tolerance": 0
+    },
+    "event_days": {
+      "expected": 61,
+      "tolerance": 0
+    },
+    "h40_c_day": {
+      "expected": 214.0,
+      "tolerance": 0.5
+    },
+    "mean_tmax_c": {
+      "expected": 44.653,
+      "tolerance": 0.02
+    },
+    "peak_margin_c": {
+      "expected": 1.25,
+      "tolerance": 0.05
+    },
+    "peak_tmax_c": {
+      "expected": 46.247,
+      "tolerance": 0.02
+    },
+    "population_millions": {
+      "expected": 10.85,
+      "tolerance": 0.05
+    },
+    "rainfall_gap_mm": {
+      "expected": 13.0,
+      "tolerance": 0.2
+    },
+    "service_pressure_people_per_point": {
+      "expected": 452044,
+      "tolerance": 1000
+    }
+  },
+  "primary_gt": {
+    "answer": "heat_load_process_supported",
+    "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+    "computed_evidence": {
+      "evidence_synthesis": {
+        "analysis_days": 46,
+        "event_days": 61,
+        "h40_c_day": 214.0,
+        "image_damage_metric": "absent",
+        "mean_tmax_c": 44.653,
+        "peak_margin_c": 1.25,
+        "peak_tmax_c": 46.247,
+        "population_millions": 10.85,
+        "rainfall_gap_mm": 13.0,
+        "service_pressure_people_per_point": 452044
+      },
+      "rejected": [
+        "rainfall_led_diagnosis",
+        "image_damage_led_diagnosis"
+      ],
+      "tests": {
+        "direct_image_damage_metric_absent": true,
+        "h40_ge_150": true,
+        "peak_margin_gt_0": true,
+        "rainfall_gap_le_15": true,
+        "service_pressure_ge_100000": true
+      }
+    },
+    "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+    "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units.",
+    "mechanism_chain": [
+      "event-window thermal forcing",
+      "accumulated heat-load calculation",
+      "persistence or recovery constraint",
+      "non-heat alternative rejection"
+    ],
+    "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+    "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_006_Locked_event_anchor_2015_India-Pakistan_heat_wave.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_Overpass_small_roads_and_critical_amenities.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "metadata/files.csv"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 3
+      },
+      {
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding.",
+        "name": "computed_evidence",
+        "points": 4
+      },
+      {
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values.",
+        "name": "formula_derivation",
+        "points": 3
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 3
+      },
+      {
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "heat_stress_load_attribution_diagnosis",
+  "task_id": "CSX-028_Q1",
+  "task_type": "structured_reasoning"
+}

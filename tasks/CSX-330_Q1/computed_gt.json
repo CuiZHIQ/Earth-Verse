@@ -1,0 +1,126 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-330",
+  "event_name": "2023 Florida Keys marine heatwave and coral bleaching",
+  "event_window": {
+    "end_date": "2023-08-31",
+    "source": "package_event_lock_targeted_refined_v4_repaired",
+    "start_date": "2023-07-01"
+  },
+  "key_values": {
+    "bleaching_threshold_c": 30.63,
+    "forecast_extreme_heat_probability_range_percent": [
+      70,
+      100
+    ],
+    "judge_anchors": [
+      "The answer should select marine_heat_stress_coral_rescue_priority.",
+      "The peak SST is 33.60 C, 2.97 C above the 30.63 C bleaching threshold.",
+      "The priority SST exceedance cutoff is 2.0 C above the bleaching threshold.",
+      "The answer should use 4 C-weeks as the significant bleaching threshold and 8 C-weeks as the severe bleaching/significant mortality threshold.",
+      "The impact chain should move from persistent ocean heat above the bleaching threshold to DHW bleaching/mortality risk to coral rescue and reef protection triage."
+    ],
+    "maximum_monthly_mean_sst_c": 29.63,
+    "minimum_target_rescue_fragments": 900,
+    "peak_sst_c": 33.6,
+    "priority_sst_exceedance_cutoff_c": 2.0,
+    "severe_bleaching_dhw_threshold_c_weeks": 8.0,
+    "significant_bleaching_dhw_threshold_c_weeks": 4.0,
+    "sst_above_bleaching_threshold_c": 2.97,
+    "sst_above_maximum_monthly_mean_c": 3.97,
+    "target_unique_elkhorn_corals": 150,
+    "target_unique_staghorn_corals": 300
+  },
+  "primary_gt": {
+    "answer": "marine_heat_stress_coral_rescue_priority",
+    "impact_chain": [
+      "persistent_ocean_heat_above_bleaching_threshold",
+      "degree_heating_week_bleaching_and_mortality_index",
+      "coral_rescue_and_reef_protection_triage"
+    ],
+    "key_metrics": {
+      "bleaching_threshold_c": 30.63,
+      "minimum_target_rescue_fragments": 900,
+      "peak_sst_c": 33.6,
+      "primary_nonpriority_checks": [
+        "rainfall_or_terrestrial_disruption_not_reported_priority",
+        "population_displacement_not_supported_by_report",
+        "vegetation_or_burn_surface_change_not_the_severity_index"
+      ],
+      "priority_sst_exceedance_cutoff_c": 2.0,
+      "severe_bleaching_dhw_threshold_c_weeks": 8.0,
+      "significant_bleaching_dhw_threshold_c_weeks": 4.0,
+      "sst_above_bleaching_threshold_c": 2.97
+    }
+  },
+  "primary_nonpriority_checks": [
+    "rainfall_or_terrestrial_disruption_not_reported_priority",
+    "population_displacement_not_supported_by_report",
+    "vegetation_or_burn_surface_change_not_the_severity_index"
+  ],
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Florida_Keys_marine_heatwave_and_coral_bleaching.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects marine_heat_stress_coral_rescue_priority or an equivalent compact label.",
+        "name": "Priority label",
+        "partial_credit": "2 points for a marine heat-stress label that omits coral rescue or triage.",
+        "points": 4
+      },
+      {
+        "description": "Reports peak SST, bleaching threshold, 2.97 C exceedance, and the explicit 2.0 C priority exceedance cutoff.",
+        "name": "SST threshold computation",
+        "partial_credit": "Award partial credit for each correct SST value, threshold, cutoff, arithmetic step, and unit.",
+        "points": 5
+      },
+      {
+        "description": "Uses 4 C-weeks for significant bleaching and 8 C-weeks for severe bleaching and significant mortality.",
+        "name": "DHW severity interpretation",
+        "partial_credit": "1.5 points for the 8 C-week severe threshold alone.",
+        "points": 3
+      },
+      {
+        "description": "Links persistent ocean heat to bleaching and mortality risk, then to coral rescue and reef-protection triage.",
+        "name": "Impact chain",
+        "partial_credit": "1 point for each correct chain stage.",
+        "points": 3
+      },
+      {
+        "description": "Uses nursery-colony relocation and staghorn/elkhorn fragment rescue actions as priority evidence.",
+        "name": "Coral rescue context",
+        "partial_credit": "1 point for naming either rescue action.",
+        "points": 2
+      },
+      {
+        "description": "Keeps rainfall/terrestrial disruption, population displacement, and vegetation or burn-style surface change out of the primary mechanism.",
+        "name": "Nonpriority checks",
+        "partial_credit": "Partial credit for handling at least two checks correctly.",
+        "points": 1
+      },
+      {
+        "description": "Avoids unsupported exact mortality, evacuation, per-reef DHW, or outside-source claims.",
+        "name": "Overclaim control",
+        "partial_credit": "1 point if only one minor unsupported detail appears.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-330_Q1",
+  "task_type": "short_answer",
+  "text_flags": {
+    "bleaching_and_death_widespread": true,
+    "coral_rescue_underway": true,
+    "extreme_heat_may_persist": true,
+    "mass_mortality_feared": true,
+    "threshold_crossed_and_remained": true
+  }
+}

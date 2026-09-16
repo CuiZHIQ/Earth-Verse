@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-224_Q2",
+  "event_id": "CSX-224",
+  "task_type": "deep_disaster_science_reasoning",
+  "evaluation_mode": "deterministic_plus_structured_reasoning",
+  "target_family": "compound_landslide_process_model",
+  "primary_gt": {
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_August_2017_Freetown_mudslide.json",
+      "data/other/other_001_NASA_Earth_Observatory_Freetown_landslide.html",
+      "data/geospatial_context/geospatial_context_001_OpenStreetMap_Nominatim_geocoding.json",
+      "data/geospatial_context/geospatial_context_002_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_005_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_006_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_007_pre.jpg",
+      "data/remote_sensing/remote_sensing_008_event.jpg",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_006_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_008_salvaged_existing_stage8_file.json",
+      "data/exposure_impact/exposure_impact_005_salvaged_existing_stage8_file.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_A\u004fI_slice.json"
+    ],
+    "process_model": {
+      "event_window": "2017-08-14",
+      "mechanism_chain": [
+        "sustained antecedent rainfall and very high event-day point rainfall",
+        "hillside failure on mountainous terrain above flood-filled stream valleys",
+        "mud, boulders, and tree debris travelled at least 3 km toward the coast",
+        "deforestation and rapid city expansion increased exposure in landslide-prone terrain",
+        "cloud-limited optical imagery made radar change evidence operationally important"
+      ],
+      "hazard_classification": "landslide_mass_movement"
+    },
+    "computed_metrics": {
+      "rainfall_loading": {
+        "event_day_point_mm": 233.39,
+        "point_rainfall_min_mm": 16.8,
+        "point_rainfall_max_mm": 233.39,
+        "point_rainfall_disagreement_ratio": 13.89,
+        "regional_mean_mm": 112.67,
+        "multi_sensor_mean_mm": 69.5,
+        "point_to_multi_sensor_ratio": 3.36,
+        "reported_period_total_mm": 1040.0,
+        "reported_period_norm_ratio": 3.0,
+        "event_day_share_of_period_pct": 22.44,
+        "rainfall_trigger_index": 77.62
+      },
+      "hillslope_runout": {
+        "runout_km_min": 3.0,
+        "forest_loss_km2": 54.0,
+        "forest_loss_pct": 47.79,
+        "city_growth_ratio": 2.0,
+        "runout_to_aoi_short_side_pct": 8.52,
+        "hillslope_runout_index": 82.93
+      },
+      "observability": {
+        "radar_scene_balance": 0.8,
+        "radar_mean_change_db": 0.94,
+        "radar_change_to_std_ratio": 0.78,
+        "optical_scene_count_total": 0,
+        "event_cloud_fraction": 0.83,
+        "observability_constraint_index": 79.31
+      },
+      "response_load": {
+        "population_million": 1.1,
+        "reported_deaths": 1141,
+        "reported_displaced": 3000,
+        "critical_facility_nodes": 37,
+        "school_nodes": 82,
+        "major_road_features": 131,
+        "waterway_features": 39,
+        "response_load_index": 73.44
+      },
+      "compound_process_index": 78.63,
+      "risk_state": "severe_compound_landslide_response_load"
+    },
+    "scenario_analysis": {
+      "scenario_name": "future_wet_season_exposure_stress",
+      "assumption_changes": [
+        "event-day point rainfall +20 percent",
+        "regional mean rainfall +20 percent",
+        "period rainfall anomaly increases to 3.6 times normal",
+        "dense forest remaining decreases to 45 km2",
+        "population and mapped exposure features used in response load +20 percent",
+        "reported impact magnitudes +15 percent"
+      ],
+      "scenario_rainfall_trigger_index": 91.35,
+      "scenario_hillslope_runout_index": 89.4,
+      "scenario_response_load_index": 86.7,
+      "scenario_compound_process_index": 88.03,
+      "compound_delta": 9.4
+    },
+    "response_priorities": [
+      "Stabilize evacuation and search operations along flood-filled stream valleys and the mapped runout path.",
+      "Protect schools, hospitals, police posts, shelters, and major road links inside the populated A\u004fI.",
+      "Prioritize radar-based change assessment because cloud and zero usable optical scenes constrain optical mapping."
+    ],
+    "final_interpretation": "The package supports a severe compound landslide response-load state: exceptional rainfall loaded a deforested, urbanizing hillslope system, produced long valley runout into exposed communities, and remains highly sensitive to wetter and more exposed future wet-season conditions."
+  },
+  "decision_rule": {
+    "index_formulas": {
+      "rainfall_trigger_index": "Weighted normalized point rainfall, regional rainfall, period anomaly, and event-day period share.",
+      "hillslope_runout_index": "Weighted normalized topographic failure evidence, runout, forest loss, city growth, and valley flood coupling.",
+      "observability_constraint_index": "Weighted radar balance, radar signal magnitude, cloud fraction, and optical gap.",
+      "response_load_index": "Weighted population, critical facilities, schools, major roads, waterways, and reported impact severity.",
+      "compound_process_index": "0.35 rain + 0.30 hillslope + 0.15 observability + 0.20 response load."
+    },
+    "risk_state": {
+      ">=75": "severe_compound_landslide_response_load",
+      "60-<75": "elevated_compound_landslide_response_load",
+      "<60": "moderate_compound_landslide_response_load"
+    }
+  },
+  "key_values": {
+    "event_name": "August 2017 Freetown mudslide",
+    "event_date": "2017-08-14",
+    "open_meteo_point_precip_mm": 16.8,
+    "rainfall": {
+      "nasa_power_point_mm": 233.39,
+      "event_day_point_selection": "maximum available point rainfall sample used as upper-bound trigger stress value",
+      "point_rainfall_disagreement_ratio": 13.8923,
+      "era5_mean_mm": 112.6685,
+      "chirps_mean_mm": 46.9362,
+      "gpm_mean_mm": 48.8818,
+      "reported_jul1_aug14_total_mm": 1040.0,
+      "reported_period_norm_ratio": 3.0
+    },
+    "hillslope_exposure": {
+      "topographic_failure_norm": 1.0,
+      "valley_flood_coupling_norm": 1.0,
+      "regent_population": 28000.0,
+      "forest_1986_km2": 113.0,
+      "forest_2015_km2": 59.0,
+      "city_pop_1986": 500000.0,
+      "city_pop_current": 1000000.0,
+      "bbox_dimensions_km": {
+        "lat_span_deg": 0.32,
+        "lon_span_deg": 0.32,
+        "north_south_km": 35.62,
+        "east_west_km": 35.23,
+        "area_km2": 1255.09,
+        "diagonal_km": 50.1
+      },
+      "aoi_geometry_type": "Polygon"
+    },
+    "remote_sensing": {
+      "radar_pre_count": 5,
+      "radar_post_count": 4,
+      "radar_std_db": 1.1967,
+      "pre_cloud_fraction": 0.993,
+      "optical_pre_count": 0,
+      "optical_post_count": 0
+    },
+    "response_context": {
+      "population_total": 1099868.8344,
+      "hospital_nodes": 9,
+      "police_nodes": 24,
+      "fire_station_nodes": 1,
+      "shelter_nodes": 3,
+      "school_nodes": 82,
+      "major_road_features": 131,
+      "waterway_features": 39,
+      "reported_home_damage_usd_million": 14.0,
+      "impact_severity_norm": 0.8003
+    },
+    "scenario_intermediates": {
+      "scenario_point_mm": 280.068,
+      "scenario_regional_mean_mm": 135.2022,
+      "scenario_period_total_mm": 1248.0,
+      "scenario_event_share_pct": 22.4413,
+      "scenario_forest_remaining_km2": 45.0,
+      "scenario_forest_loss_pct": 60.177,
+      "scenario_city_growth_ratio": 2.4,
+      "scenario_impact_norm": 0.8892
+    }
+  },
+  "tolerances": {
+    "rainfall_mm": 0.1,
+    "ratio": 0.02,
+    "percent": 0.2,
+    "db": 0.02,
+    "index": 0.15,
+    "population_million": 0.01,
+    "counts": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and source citation",
+        "points": 3,
+        "description": "Identifies the relevant report, hazard, exposure, geospatial, and remote-sensing package files without being given filenames and cites package-relative paths.",
+        "partial_credit": "Award 1-2 points if citations are incomplete but at least three evidence families are represented."
+      },
+      {
+        "name": "Rainfall loading and event-window extraction",
+        "points": 3,
+        "description": "Extracts the 2017-08-14 window, reports the point-rainfall source range and upper-bound selection rule, computes regional and multi-sensor rainfall, period anomaly, event-day share, and rainfall_trigger_index.",
+        "partial_credit": "Award 1-2 points for correct rainfall values with one formula or rounding error."
+      },
+      {
+        "name": "Hillslope, runout, deforestation, and A\u004fI geometry",
+        "points": 4,
+        "description": "Uses report language for failure mechanics, computes runout, forest loss, city growth, A\u004fI short-side normalization, and hillslope_runout_index.",
+        "partial_credit": "Award 2-3 points for mostly correct values with one missing process component; award 1 point for only forest loss or runout."
+      },
+      {
+        "name": "Remote-sensing observability reasoning",
+        "points": 3,
+        "description": "Combines radar scene balance, radar mean change, change-to-std ratio, optical scene gap, cloud fraction, and observability_constraint_index.",
+        "partial_credit": "Award 1-2 points if radar values are correct but optical/cloud interpretation is weak."
+      },
+      {
+        "name": "Emergency response-load metrics",
+        "points": 3,
+        "description": "Counts critical facilities, schools, major roads, waterways, population, deaths, displaced people, damage, and computes response_load_index.",
+        "partial_credit": "Award 1-2 points for correct exposure counts with incomplete impact normalization."
+      },
+      {
+        "name": "Compound and scenario calculations",
+        "points": 3,
+        "description": "Computes compound_process_index, risk_state, all future stress scenario indices, and compound_delta with correct clipping and weights.",
+        "partial_credit": "Award 1-2 points if the baseline compound index is correct but scenario arithmetic has a small error."
+      },
+      {
+        "name": "Disaster-process interpretation and priorities",
+        "points": 1,
+        "description": "Provides three ordered response priorities and a concise interpretation tied to rainfall, runout, observability, and exposed assets.",
+        "partial_credit": "Award 0.5 points if priorities are plausible but not anchored in computed metrics."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "required_evidence_families": [
+      "event reports",
+      "physical hazard rainfall",
+      "geospatial context",
+      "remote sensing",
+      "exposure and impact"
+    ],
+    "baseline_indices": {
+      "rainfall_trigger_index": 77.62,
+      "hillslope_runout_index": 82.93,
+      "observability_constraint_index": 79.31,
+      "response_load_index": 73.44,
+      "compound_process_index": 78.63
+    },
+    "scenario_indices": {
+      "scenario_rainfall_trigger_index": 91.35,
+      "scenario_hillslope_runout_index": 89.4,
+      "scenario_response_load_index": 86.7,
+      "scenario_compound_process_index": 88.03,
+      "compound_delta": 9.4
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_August_2017_Freetown_mudslide.json",
+      "data/other/other_001_NASA_Earth_Observatory_Freetown_landslide.html",
+      "data/geospatial_context/geospatial_context_001_OpenStreetMap_Nominatim_geocoding.json",
+      "data/geospatial_context/geospatial_context_002_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_005_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_006_salvaged_existing_stage8_file.json",
+      "data/remote_sensing/remote_sensing_007_pre.jpg",
+      "data/remote_sensing/remote_sensing_008_event.jpg",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_006_salvaged_existing_stage8_file.json",
+      "data/physical_hazard/physical_hazard_008_salvaged_existing_stage8_file.json",
+      "data/exposure_impact/exposure_impact_005_salvaged_existing_stage8_file.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_A\u004fI_slice.json"
+    ]
+  }
+}

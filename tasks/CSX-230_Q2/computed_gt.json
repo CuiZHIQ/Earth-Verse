@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-230_Q2",
+  "event_id": "CSX-230",
+  "task_type": "structured_reasoning",
+  "target_family": "langtang_mixed_avalanche_obstruction_process_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "consistent_local_mixed_avalanche_obstruction",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "diagnose whether local mass movement or obstruction evidence dominates over simple rainfall or image-change explanations",
+    "computed_evidence": {
+      "max_event_day_precip_mm": 17.15,
+      "precipitation_ratio": 0.343,
+      "radar_scene_balance": 0.76,
+      "diagnostic_diagnostic_test_margins": {
+        "precip_below_ratio": 0.657,
+        "radar_db_over": 12.09,
+        "exposure_below_ratio": 4.331e-05
+      },
+      "exposure_scale_ratio": 5.669e-05,
+      "component_evidence_scores": {
+        "mixed_material_record": 1,
+        "low_precip_ratio": 1,
+        "paired_radar_change": 1,
+        "optical_zero_pair": 1,
+        "river_cover_no_lake": 1,
+        "local_scale_ratio": 1
+      },
+      "process_alignment_evidence_score": 6,
+      "final_label": "consistent_local_mixed_avalanche_obstruction",
+      "diagnostic_diagnostic_test_note": "All three numeric margins have the pass sign, so the local mixed-material obstruction label is retained over the rainfall or regional-scale alternatives."
+    },
+    "mechanism_chain": [
+      "mass-movement event anchor",
+      "local obstruction or slope-response signal",
+      "weather countercheck",
+      "simple-trigger rejection"
+    ],
+    "decisive_evidence": "Mass-movement and obstruction evidence should dominate; precipitation and remote-sensing fields are modifiers or checks.",
+    "rejected_simplifications": "Reject rainfall-only, exposure-only, or image-only explanations if the local slope or obstruction pathway is required.",
+    "bounded_interpretation": "Do not infer exact failure volume, runout path, geotechnical plane, or all downstream impacts."
+  },
+  "event": {
+    "event_name": "Langtang avalanche/landslide",
+    "hazard_family": "landslide_mass_movement",
+    "event_date_or_window": "2015-04-25",
+    "location": "Langtang Valley"
+  },
+  "formulas": {
+    "precipitation_ratio": "max_event_day_precip_mm / 50.0",
+    "radar_scene_balance": "min(pre_count, post_count) / max(pre_count, post_count)",
+    "radar_change_margin_db": "abs(max_vv_change_db) - 10.0",
+    "exposure_scale_ratio": "local_receptor_count / regional_population_sum",
+    "threshold_margins": "1.0 - precipitation_ratio; radar_change_margin_db; 0.0001 - exposure_scale_ratio",
+    "consistency_score": "sum(component_scores.values())",
+    "pass_rule": "consistency_score >= 5, low_precip_ratio == 1, and river_cover_no_lake == 1"
+  },
+  "key_values": {
+    "precipitation_mm": {
+      "openmeteo_point": 4.1,
+      "power_point": 1.28,
+      "era5_land_max": 17.15,
+      "gpm_imerg_max": 12.96,
+      "chirps_max": 3.19
+    },
+    "radar": {
+      "pre_count": 19,
+      "post_count": 25,
+      "vv_change_max_db": 22.09,
+      "vv_change_mean_db": 0.3856
+    },
+    "optical": {
+      "pre_count": 0,
+      "post_count": 0,
+      "status": "no_sufficient_scenes"
+    },
+    "exposure": {
+      "local_receptor_count": 90,
+      "regional_population_sum": 1587465.24
+    },
+    "text_flags": {
+      "earthquake_ice_rock_release": true,
+      "snow_ice_debris_to_river": true,
+      "village_burial": true,
+      "river_deposit_coverage": true,
+      "no_lake_yet": true
+    },
+    "thresholds": {
+      "precip_mm": 50.0,
+      "radar_change_db": 10.0,
+      "exposure_scale_ratio": 0.0001,
+      "pass_score": 5
+    },
+    "tolerances": {
+      "precip_mm": 0.02,
+      "ratios": 0.0001,
+      "radar_db": 0.02,
+      "score": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "question_leakage_audit": {
+    "lists_specific_files": false,
+    "reveals_hidden_workflow": false,
+    "reveals_all_key_metrics": false,
+    "uses_benchmark_meta_wording": false,
+    "absolute_path_hits": 0
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_Langtang_avalanche_landslide.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_OpenStreetMap_Overpass_small_\u0041OI_sample.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Langtang Mixed Avalanche-Obstruction Process Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "consistent_local_mixed_avalanche_obstruction",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "diagnose whether local mass movement or obstruction evidence dominates over simple rainfall or image-change explanations",
+      "computed_evidence": {
+        "max_event_day_precip_mm": 17.15,
+        "precipitation_ratio": 0.343,
+        "radar_scene_balance": 0.76,
+        "diagnostic_diagnostic_test_margins": {
+          "precip_below_ratio": 0.657,
+          "radar_db_over": 12.09,
+          "exposure_below_ratio": 4.331e-05
+        },
+        "exposure_scale_ratio": 5.669e-05,
+        "component_evidence_scores": {
+          "mixed_material_record": 1,
+          "low_precip_ratio": 1,
+          "paired_radar_change": 1,
+          "optical_zero_pair": 1,
+          "river_cover_no_lake": 1,
+          "local_scale_ratio": 1
+        },
+        "process_alignment_evidence_score": 6,
+        "final_label": "consistent_local_mixed_avalanche_obstruction",
+        "diagnostic_diagnostic_test_note": "All three numeric margins have the pass sign, so the local mixed-material obstruction label is retained over the rainfall or regional-scale alternatives."
+      },
+      "mechanism_chain": [
+        "mass-movement event anchor",
+        "local obstruction or slope-response signal",
+        "weather countercheck",
+        "simple-trigger rejection"
+      ],
+      "decisive_evidence": "Mass-movement and obstruction evidence should dominate; precipitation and remote-sensing fields are modifiers or checks.",
+      "rejected_simplifications": "Reject rainfall-only, exposure-only, or image-only explanations if the local slope or obstruction pathway is required.",
+      "bounded_interpretation": "Do not infer exact failure volume, runout path, geotechnical plane, or all downstream impacts."
+    },
+    "answer": "consistent_local_mixed_avalanche_obstruction"
+  }
+}

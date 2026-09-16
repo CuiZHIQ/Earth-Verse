@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-220_Q2",
+  "event_id": "CSX-220",
+  "task_type": "short_answer",
+  "target_family": "threshold_window_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "ledger_rows": [
+      {
+        "test": "wet_context_consistency",
+        "formula": "min(local_event_mm, era5_mean_mm, gpm_mean_mm) > 0 and min/max >= 0.50",
+        "value": {
+          "local_event_mm": 8.9,
+          "era5_mean_mm": 7.56,
+          "gpm_mean_mm": 6.65,
+          "cross_source_ratio": 0.747
+        },
+        "threshold": "all sources > 0 mm and cross-source ratio >= 0.50",
+        "result": "PASS"
+      },
+      {
+        "test": "event_day_rainfall_dominance",
+        "formula": "event_day_local_mm / local_15d_mm >= 0.50 and event_day is the 15-day maximum",
+        "value": {
+          "local_15d_mm": 100.2,
+          "local_5d_mm": 72.2,
+          "event_day_share_15d": 0.089,
+          "max_precip_mm": 31.6,
+          "max_precip_date": "2020-12-27"
+        },
+        "threshold": "event-day share >= 0.50 and max date is 2020-12-30",
+        "result": "FAIL"
+      },
+      {
+        "test": "near_freezing_state",
+        "formula": "-1 <= era5_tmax_mean_c <= 3 and local_tmin_c <= 0 <= local_tmax_c",
+        "value": {
+          "era5_tmax_mean_c": 0.91,
+          "local_tmin_c": -0.2,
+          "local_tmax_c": 1.6
+        },
+        "threshold": "near-freezing range with local daily crossing 0 C",
+        "result": "PASS"
+      },
+      {
+        "test": "reported_extent_geometry",
+        "formula": "flow_ha = (300 m * 700 m) / 10000; total_ha = flow_ha + 9 ha",
+        "value": {
+          "flow_area_ha": 21.0,
+          "additional_debris_ha": 9.0,
+          "total_affected_ha": 30.0,
+          "debris_to_flow_ratio": 0.429
+        },
+        "threshold": "flow area >= 20 ha and total affected area >= 30 ha",
+        "result": "PASS"
+      },
+      {
+        "test": "short_window_surface_dominance",
+        "formula": "abs(S1 VV mean) / abs(S2 dNBR mean) >= 1.5 and abs(S1 VV mean) / annual change >= 5",
+        "value": {
+          "s1_abs_db": 0.6378,
+          "s2_abs_dnbr": 0.3457,
+          "annual_change": 0.0912,
+          "s1_to_s2_ratio": 1.845,
+          "s1_to_annual_ratio": 6.996
+        },
+        "threshold": "S1/S2 >= 1.5 and S1/annual >= 5",
+        "result": "PASS"
+      },
+      {
+        "test": "local_exposure_context",
+        "formula": "compact elements >= 10 and amenity >= 1 and highway >= 1",
+        "value": {
+          "compact_exposure_elements": 100,
+          "compact_amenity_features": 50,
+          "compact_highway_features": 50,
+          "broad_population_sum": 1059042.03,
+          "population_per_compact_feature": 10590.42
+        },
+        "threshold": "compact receptor layer has both amenity and highway features",
+        "result": "PASS"
+      }
+    ],
+    "computed_label": "sensitive_ground_wet_context_short_window_disturbance",
+    "rejected_alternative": "Event-day rainfall dominance fails because the event day contributes only 0.089 of the local 15-day precipitation and the local maximum was 31.6 mm on 2020-12-27."
+  },
+  "judge_anchors": {
+    "answer": "sensitive_ground_wet_context_short_window_disturbance",
+    "pass_rows": [
+      "wet_context_consistency",
+      "near_freezing_state",
+      "reported_extent_geometry",
+      "short_window_surface_dominance",
+      "local_exposure_context"
+    ],
+    "fail_rows": [
+      "event_day_rainfall_dominance"
+    ],
+    "pass_count": 5,
+    "rainfall_dominance_rejected": true,
+    "rounding_policy": "local precipitation totals and areas use 1 decimal; gridded precipitation/temperature means use 2 decimals; surface magnitudes use 4 decimals; ratios use 3 decimals."
+  },
+  "event": {
+    "event_name": "Gjerdrum quick-clay landslide",
+    "hazard_family": "landslide_mass_movement",
+    "event_date_or_window": "2020-12-30"
+  },
+  "decision_rule": {
+    "summary": "Assign the computed label only when wet context, near-freezing state, reported extent, short-window surface dominance, and compact exposure pass while event-day rainfall dominance fails.",
+    "label_if_rule_passes": "sensitive_ground_wet_context_short_window_disturbance",
+    "label_if_rule_fails": "ledger_inconsistent_or_rainfall_dominant"
+  },
+  "ledger_rows": [
+    {
+      "test": "wet_context_consistency",
+      "formula": "min(local_event_mm, era5_mean_mm, gpm_mean_mm) > 0 and min/max >= 0.50",
+      "value": {
+        "local_event_mm": 8.9,
+        "era5_mean_mm": 7.56,
+        "gpm_mean_mm": 6.65,
+        "cross_source_ratio": 0.747
+      },
+      "threshold": "all sources > 0 mm and cross-source ratio >= 0.50",
+      "result": "PASS"
+    },
+    {
+      "test": "event_day_rainfall_dominance",
+      "formula": "event_day_local_mm / local_15d_mm >= 0.50 and event_day is the 15-day maximum",
+      "value": {
+        "local_15d_mm": 100.2,
+        "local_5d_mm": 72.2,
+        "event_day_share_15d": 0.089,
+        "max_precip_mm": 31.6,
+        "max_precip_date": "2020-12-27"
+      },
+      "threshold": "event-day share >= 0.50 and max date is 2020-12-30",
+      "result": "FAIL"
+    },
+    {
+      "test": "near_freezing_state",
+      "formula": "-1 <= era5_tmax_mean_c <= 3 and local_tmin_c <= 0 <= local_tmax_c",
+      "value": {
+        "era5_tmax_mean_c": 0.91,
+        "local_tmin_c": -0.2,
+        "local_tmax_c": 1.6
+      },
+      "threshold": "near-freezing range with local daily crossing 0 C",
+      "result": "PASS"
+    },
+    {
+      "test": "reported_extent_geometry",
+      "formula": "flow_ha = (300 m * 700 m) / 10000; total_ha = flow_ha + 9 ha",
+      "value": {
+        "flow_area_ha": 21.0,
+        "additional_debris_ha": 9.0,
+        "total_affected_ha": 30.0,
+        "debris_to_flow_ratio": 0.429
+      },
+      "threshold": "flow area >= 20 ha and total affected area >= 30 ha",
+      "result": "PASS"
+    },
+    {
+      "test": "short_window_surface_dominance",
+      "formula": "abs(S1 VV mean) / abs(S2 dNBR mean) >= 1.5 and abs(S1 VV mean) / annual change >= 5",
+      "value": {
+        "s1_abs_db": 0.6378,
+        "s2_abs_dnbr": 0.3457,
+        "annual_change": 0.0912,
+        "s1_to_s2_ratio": 1.845,
+        "s1_to_annual_ratio": 6.996
+      },
+      "threshold": "S1/S2 >= 1.5 and S1/annual >= 5",
+      "result": "PASS"
+    },
+    {
+      "test": "local_exposure_context",
+      "formula": "compact elements >= 10 and amenity >= 1 and highway >= 1",
+      "value": {
+        "compact_exposure_elements": 100,
+        "compact_amenity_features": 50,
+        "compact_highway_features": 50,
+        "broad_population_sum": 1059042.03,
+        "population_per_compact_feature": 10590.42
+      },
+      "threshold": "compact receptor layer has both amenity and highway features",
+      "result": "PASS"
+    }
+  ],
+  "key_values": {
+    "rainfall": {
+      "local_event_day_mm": 8.9,
+      "local_5d_mm": 72.2,
+      "local_15d_mm": 100.2,
+      "event_day_share_15d": 0.089,
+      "era5_event_day_mean_mm": 7.56,
+      "gpm_event_day_mean_mm": 6.65,
+      "cross_source_wetness_ratio": 0.747,
+      "rounding_policy": "local precipitation totals are rounded to 1 decimal; gridded precipitation means are rounded to 2 decimals."
+    },
+    "temperature": {
+      "era5_tmax_mean_c": 0.91,
+      "local_event_tmin_c": -0.2,
+      "local_event_tmax_c": 1.6
+    },
+    "extent": {
+      "flow_area_ha": 21.0,
+      "additional_debris_ha": 9.0,
+      "total_affected_ha": 30.0,
+      "debris_to_flow_ratio": 0.429
+    },
+    "surface_change": {
+      "s1_abs_db": 0.6378,
+      "s2_abs_dnbr": 0.3457,
+      "annual_change": 0.0912,
+      "s1_to_s2_ratio": 1.845,
+      "s1_to_annual_ratio": 6.996
+    },
+    "exposure": {
+      "compact_exposure_elements": 100,
+      "compact_amenity_features": 50,
+      "compact_highway_features": 50,
+      "broad_population_sum": 1059042.03,
+      "population_per_compact_feature": 10590.42
+    }
+  },
+  "tolerances": {
+    "precip_mm": 0.15,
+    "temperature_c": 0.05,
+    "area_ha": 0.05,
+    "surface_magnitude": 0.0005,
+    "ratio": 0.005,
+    "exposure_count": 0
+  },
+  "rejected_alternative": {
+    "label": "event_day_rainfall_dominance",
+    "reason": "The event day contributes only 0.089 of the local 15-day precipitation and the local maximum was 31.6 mm on 2020-12-27, not on 2020-12-30."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested ledger structure",
+        "points": 3,
+        "description": "Returns a compact ledger with the six named tests, formulas or formula references, numeric values, pass/fail states, and a final computed label.",
+        "partial_credit": "Award 1-2 points if the response has most required fields but omits one test, formula, or pass/fail state."
+      },
+      {
+        "name": "Rainfall and temperature calculations",
+        "points": 4,
+        "description": "Correctly computes 15-day precipitation as 100.2 mm, 5-day precipitation as 72.2 mm, event-day share as 0.089, cross-source wetness ratio as 0.747, and near-freezing values from 0.91 C ERA5 Tmax mean and -0.2 to 1.6 C local daily range.",
+        "partial_credit": "Award 1-3 points for mostly correct precipitation or temperature values with minor rounding or one missing source."
+      },
+      {
+        "name": "Extent, surface-change, and exposure calculations",
+        "points": 5,
+        "description": "Correctly computes the 21.0 ha flow area, 30.0 ha total affected area, S1/S2 magnitude ratio 1.845, S1/annual ratio 6.996, and compact exposure counts of 100 total, 50 amenity, and 50 highway features.",
+        "partial_credit": "Award 1-4 points for correct values in two of the three groups or for small rounding differences."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 4,
+        "description": "Applies the stated thresholds so wet context, near-freezing state, reported extent, short-window surface dominance, and local exposure pass while event-day rainfall dominance fails.",
+        "partial_credit": "Award 1-3 points if the final states are mostly right but one threshold is inverted or omitted."
+      },
+      {
+        "name": "Rejected alternative",
+        "points": 2,
+        "description": "Rejects event-day rainfall dominance using the computed event-day share and the fact that the event day was not the local 15-day precipitation maximum.",
+        "partial_credit": "Award 1 point for rejecting rainfall dominance with only one of the two required numeric reasons."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 1,
+        "description": "States the computed label only as the consequence of the numeric ledger, not as a broad narrative.",
+        "partial_credit": "Award 0.5 points if the label is correct but surrounded by unnecessary explanatory prose."
+      },
+      {
+        "name": "Overclaim control",
+        "points": 1,
+        "description": "Keeps broad population context separate from observed local losses and does not state that rainfall is proven as the dominant trigger.",
+        "partial_credit": "Award 0.5 points if only one of the two scope limits is handled correctly."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Wikipedia_2020_Gjerdrum_landslide.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_001_OpenStreetMap_Overpass_bounded_features_generated_tiny_A\u004fI_JSON.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "Single target_family is threshold_window_ledger. Rounding is explicit: local precipitation totals use one decimal, gridded precipitation means use two decimals."
+  }
+}

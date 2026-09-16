@@ -1,0 +1,194 @@
+{
+  "answer_guidance": {
+    "class_label": "high_consistency_long_span_monsoon_flood_concentration",
+    "label_rule": {
+      "high_consistency_long_span_monsoon_flood_concentration": "score == 6",
+      "partial_consistency_monsoon_flood_ledger": "score < 6"
+    },
+    "ledger_values": {
+      "event_span_days": 110,
+      "mean_precip_peak_ratio": 1.549,
+      "people_per_counted_facility": 14336.7,
+      "precip_ratio_spread": 0.445,
+      "rain_anomaly_midpoint_x": 5.5,
+      "surface_change_concentration_ratio": 15.734
+    },
+    "score": 6,
+    "structured_answer": {
+      "answer": {
+        "event_span_days": 110,
+        "mean_precip_peak_ratio": 1.549,
+        "people_per_counted_facility": 14336.7,
+        "precip_ratio_spread": 0.445,
+        "rain_anomaly_midpoint_x": 5.5,
+        "surface_change_concentration_ratio": 15.734
+      },
+      "class_label": "high_consistency_long_span_monsoon_flood_concentration",
+      "evidence_windows": {
+        "event_window": {
+          "end": "2022-10-01",
+          "start": "2022-06-14"
+        },
+        "precipitation_evidence_window": {
+          "end": "2022-07-29",
+          "start": "2022-06-14"
+        }
+      },
+      "score": 6
+    },
+    "tolerances": {
+      "event_span_days": 0,
+      "mean_precip_peak_ratio": 0.002,
+      "people_per_counted_facility": 0.2,
+      "precip_ratio_spread": 0.002,
+      "rain_anomaly_midpoint_x": 0,
+      "score": 0,
+      "surface_change_concentration_ratio": 0.002
+    },
+    "units": {
+      "event_span_days": "days",
+      "people_per_counted_facility": "people/facility",
+      "ratios": "unitless"
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-284",
+  "key_values": {
+    "event": {
+      "event_name": "2022 Pakistan extreme monsoon rainfall",
+      "package_id": "CSX-284",
+      "scale": "regional_basin",
+      "span_end": "2022-10-01",
+      "span_start": "2022-06-14"
+    },
+    "exposure_counts": {
+      "facilities": {
+        "fire_stations": 5,
+        "hospitals": 350,
+        "police": 79,
+        "schools": 561,
+        "shelters": 5,
+        "total": 1000
+      },
+      "population_sum": 14336658.681
+    },
+    "manifest_category_counts": {
+      "event_catalogs": 2,
+      "event_reports": 4,
+      "exposure_impact": 4,
+      "geospatial_context": 3,
+      "other": 3,
+      "physical_hazard": 10,
+      "remote_sensing": 6
+    },
+    "precip_mm": {
+      "chirps_max": 371.604,
+      "chirps_mean": 296.607,
+      "era5_land_max": 546.355,
+      "era5_land_mean": 322.178,
+      "gpm_imerg_max": 855.217,
+      "gpm_imerg_mean": 503.804
+    },
+    "precip_peak_ratios": {
+      "chirps": 1.253,
+      "era5_land": 1.696,
+      "gpm_imerg": 1.698
+    },
+    "precipitation_evidence_window": {
+      "end": "2022-07-29",
+      "start": "2022-06-14"
+    },
+    "rainfall_text_metric": {
+      "midpoint_x": 5.5,
+      "phrase_found": "five to six times"
+    },
+    "remote_change": {
+      "annual_max": 0.651,
+      "annual_mean": 0.041374
+    },
+    "threshold_flags": {
+      "long_span_ge_90_days": true,
+      "mean_precip_peak_ratio_ge_1_50": true,
+      "people_per_counted_facility_ge_10000": true,
+      "precip_ratio_spread_le_0_60": true,
+      "rain_anomaly_midpoint_x_ge_5": true,
+      "surface_change_concentration_ratio_ge_10": true
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "event_span_days": 110,
+      "mean_precip_peak_ratio": 1.549,
+      "people_per_counted_facility": 14336.7,
+      "precip_ratio_spread": 0.445,
+      "rain_anomaly_midpoint_x": 5.5,
+      "surface_change_concentration_ratio": 15.734
+    },
+    "class_label": "high_consistency_long_span_monsoon_flood_concentration",
+    "evidence_windows": {
+      "event_window": {
+        "end": "2022-10-01",
+        "start": "2022-06-14"
+      },
+      "precipitation_evidence_window": {
+        "end": "2022-07-29",
+        "start": "2022-06-14"
+      }
+    },
+    "score": 6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_extreme_monsoon_rainfall.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes the inclusive 110-day span from the locked start and end dates.",
+        "name": "event_span_arithmetic",
+        "points": 4
+      },
+      {
+        "description": "Computes the three precipitation evidence-window max/mean ratios, their mean of 1.549, and their spread of 0.445.",
+        "name": "precipitation_ratio_ledger",
+        "points": 4
+      },
+      {
+        "description": "Computes the annual surface-change concentration ratio of 15.734 from max divided by mean.",
+        "name": "surface_change_ratio",
+        "points": 3
+      },
+      {
+        "description": "Counts 1000 relevant amenities and computes 14336.7 people per counted facility.",
+        "name": "facility_density_denominator",
+        "points": 3
+      },
+      {
+        "description": "Extracts the five-to-six-times phrase and converts it to a midpoint of 5.5.",
+        "name": "rainfall_anomaly_midpoint",
+        "points": 2
+      },
+      {
+        "description": "Applies the six threshold tests, returns score 6, uses the explicit class-label rule, and supplies the requested compact JSON fields.",
+        "name": "threshold_score_and_json",
+        "points": 4
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "pakistan_monsoon_flood_threshold_score_ledger",
+  "task_id": "CSX-284_Q2",
+  "task_type": "numeric"
+}

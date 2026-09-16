@@ -1,0 +1,284 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-022_Q1",
+  "event_id": "CSX-022",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "target_family": "heat_load_recovery_failure_process_analysis",
+  "primary_gt": {
+    "answer": "heat_load_recovery_failure_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+    "computed_evidence": {
+      "proof_result": "persistent_heat_load_rule_pass",
+      "diagnosis_label": "persistent_early_season_heat_health_load",
+      "indices": {
+        "event_window_days": 76,
+        "days_tmax_ge40": 26,
+        "longest_tmax_ge40_run_days": 9,
+        "heat_load_gt40_c_day": 43.4,
+        "hottest_3day_tmax_mean_c": 44.57,
+        "hottest_3day_window": "2022-05-11 to 2022-05-13",
+        "warm_night_recovery_ratio_ge28": 0.118,
+        "peak_apparent_temperature_c": 42.8
+      },
+      "process_alignment_proof": "The persistent heat-load rule passes: 43.4 C-day is above the 40 C-day diagnostic gate, 26 event-window days reached at least 40 C, and the longest hot run lasted 9 days. The hottest 3-day Tmax mean was 44.57 C from 2022-05-11 to 2022-05-13, showing an acute phase embedded in a longer hot period. The 0.118 warm-night ratio and 42.8 C peak apparent temperature add recovery and body-stress context without replacing the dry-bulb persistence test.",
+      "rejected_alternative": "single_peak_heat_only",
+      "computed_interpretation": "The strongest computed diagnosis is sustained early-season heat-load accumulation with a mid-May peak, not a single-day diagnostic gate crossing."
+    },
+    "mechanism_chain": [
+      "event-window thermal forcing",
+      "accumulated heat-load calculation",
+      "persistence or recovery constraint",
+      "non-heat alternative rejection"
+    ],
+    "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+    "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+    "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+    "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units."
+  },
+  "event": {
+    "event_id": "CSX-022",
+    "package_id": "CSX-022",
+    "event_name": "2022 India-Pakistan early heatwave",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_date_or_window": "2022-03-01 to 2022-05-15",
+    "location": "North India and Pakistan heatwave corridor"
+  },
+  "decision_rule": {
+    "summary": "A high-quality answer computes the heat-load rule values and proves that the persistent early-season heat-load diagnosis passes all required inequalities.",
+    "requires_computation": true,
+    "pass_thresholds": {
+      "heat_load_gt40_c_day_min": 40.0,
+      "days_tmax_ge40_min": 20,
+      "longest_tmax_ge40_run_days_min": 7
+    },
+    "required_reasoning_axes": [
+      "heat_persistence",
+      "peak_heat_vs_multi_day_load",
+      "nighttime_recovery",
+      "apparent_heat_context",
+      "mechanism_rejection"
+    ]
+  },
+  "key_values": {
+    "open_meteo_point_lat_lon": [
+      25.975393,
+      75.04918
+    ],
+    "event_window_days": 76,
+    "anchor_window": "2022-03-01 to 2022-05-15",
+    "first_day_ge_40c": "2022-04-08",
+    "days_ge_40c": 26,
+    "days_ge_42c": 9,
+    "days_ge_45c": 1,
+    "hot_runs_ge_40c": [
+      {
+        "start": "2022-04-08",
+        "end": "2022-04-11",
+        "days": 4
+      },
+      {
+        "start": "2022-04-17",
+        "end": "2022-04-20",
+        "days": 4
+      },
+      {
+        "start": "2022-04-25",
+        "end": "2022-05-03",
+        "days": 9
+      },
+      {
+        "start": "2022-05-07",
+        "end": "2022-05-15",
+        "days": 9
+      }
+    ],
+    "longest_hot_run_ge_40c_days": 9,
+    "heat_load_gt40_c_day": 43.39999999999999,
+    "max_temp_c": 45.3,
+    "max_temp_date": "2022-05-13",
+    "hottest_3day_tmax": {
+      "start": "2022-05-11",
+      "end": "2022-05-13",
+      "mean_c": 44.56666666666666,
+      "daily_values_c": [
+        44.3,
+        44.1,
+        45.3
+      ]
+    },
+    "max_apparent_c": 42.8,
+    "max_apparent_date": "2022-05-13",
+    "hottest_3day_apparent": {
+      "start": "2022-05-11",
+      "end": "2022-05-13",
+      "mean_c": 42.300000000000004,
+      "daily_values_c": [
+        41.9,
+        42.2,
+        42.8
+      ]
+    },
+    "nights_min_ge_25c": 25,
+    "nights_min_ge_25c_ratio": 0.32894736842105265,
+    "nights_min_ge_28c": 9,
+    "nights_min_ge_28c_ratio": 0.11842105263157894,
+    "max_min_temp_c": 31.1,
+    "max_min_temp_date": "2022-05-15",
+    "era5_temperature_2m_max_c_mean": 36.822314816265596,
+    "era5_temperature_2m_max_c_max": 38.735391235351585,
+    "gpm_event_precip_mm_mean": 125.3218449449417,
+    "chirps_event_precip_mm_mean": 131.6401603015993,
+    "report_contains_30_times_more_likely": true,
+    "report_mentions_below_average_rainfall": true,
+    "report_mentions_water_agriculture_health": true,
+    "report_mentions_90_deaths": true,
+    "report_mentions_10_35_percent_crop_yield_reduction": true
+  },
+  "competing_mechanism_checks": {
+    "incomplete_mechanisms": [
+      {
+        "label": "single_peak_heat_only",
+        "why_rejected": "The 45.3 C peak is important, but 26 days at or above 40 C and repeated 9-day hot runs show cumulative load."
+      },
+      {
+        "label": "apparent_temperature_only_gate",
+        "why_rejected": "The 42.8 C apparent-temperature peak is body-relevant context, not a substitute for dry-bulb persistence and warm-night recovery."
+      },
+      {
+        "label": "precipitation_or_remote_sensing_footprint_as_primary_mechanism",
+        "why_rejected": "Rainfall and surface-change context do not measure the main heat-health stress process."
+      },
+      {
+        "label": "attribution_or_exposure_context_as_primary_diagnosis",
+        "why_rejected": "Attribution and exposure affect risk framing, but they do not replace persistence, recovery, and heat-load metrics."
+      }
+    ]
+  },
+  "numeric_tolerances": {
+    "heat_load_gt40_c_day": {
+      "target": 43.4,
+      "absolute_tolerance": 0.2
+    },
+    "hottest_3day_tmax_mean_c": {
+      "target": 44.567,
+      "absolute_tolerance": 0.1
+    },
+    "warm_night_recovery_ratio_ge28": {
+      "target": 0.118,
+      "absolute_tolerance": 0.01
+    },
+    "peak_apparent_temperature_c": {
+      "target": 42.8,
+      "absolute_tolerance": 0.1
+    },
+    "days_ge_40c": {
+      "target": 26,
+      "absolute_tolerance": 0
+    },
+    "longest_hot_run_ge40_days": {
+      "target": 9,
+      "absolute_tolerance": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "question_leakage_audit": {
+    "lists_specific_files": false,
+    "names_concrete_data_products": false,
+    "reveals_hidden_workflow": false,
+    "uses_aoi_package_evidence_boundary_or_quality_wording": false
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_India-Pakistan_early_heatwave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "India-Pakistan 2022 Heat-Load Recovery Failure Analysis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "heat_load_recovery_failure_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+      "computed_evidence": {
+        "proof_result": "persistent_heat_load_rule_pass",
+        "diagnosis_label": "persistent_early_season_heat_health_load",
+        "indices": {
+          "event_window_days": 76,
+          "days_tmax_ge40": 26,
+          "longest_tmax_ge40_run_days": 9,
+          "heat_load_gt40_c_day": 43.4,
+          "hottest_3day_tmax_mean_c": 44.57,
+          "hottest_3day_window": "2022-05-11 to 2022-05-13",
+          "warm_night_recovery_ratio_ge28": 0.118,
+          "peak_apparent_temperature_c": 42.8
+        },
+        "process_alignment_proof": "The persistent heat-load rule passes: 43.4 C-day is above the 40 C-day diagnostic gate, 26 event-window days reached at least 40 C, and the longest hot run lasted 9 days. The hottest 3-day Tmax mean was 44.57 C from 2022-05-11 to 2022-05-13, showing an acute phase embedded in a longer hot period. The 0.118 warm-night ratio and 42.8 C peak apparent temperature add recovery and body-stress context without replacing the dry-bulb persistence test.",
+        "rejected_alternative": "single_peak_heat_only",
+        "computed_interpretation": "The strongest computed diagnosis is sustained early-season heat-load accumulation with a mid-May peak, not a single-day diagnostic gate crossing."
+      },
+      "mechanism_chain": [
+        "event-window thermal forcing",
+        "accumulated heat-load calculation",
+        "persistence or recovery constraint",
+        "non-heat alternative rejection"
+      ],
+      "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+      "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+      "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+      "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units."
+    },
+    "answer": "heat_load_recovery_failure_supported"
+  }
+}

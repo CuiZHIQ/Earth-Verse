@@ -1,0 +1,35 @@
+{
+  "schema_version": "task_dimension_schema_v2",
+  "max_dimensions_per_task": 3,
+  "strict_correct_threshold": 95.0,
+  "dimensions": {
+    "quantitative_calculation": {
+      "name_zh": "定量计算推理",
+      "description": "Formulas, units, intermediate values, derived indicators, numeric comparisons, thresholds, ratios, and reproducible Python/statistical calculation."
+    },
+    "physical_mechanism": {
+      "name_zh": "物理机制理解",
+      "description": "Dominant hazard mechanism, mechanism arbitration, physically plausible drivers, and rejection of unsupported physical explanations."
+    },
+    "spatiotemporal_process": {
+      "name_zh": "时空过程重建",
+      "description": "Event timing, duration, stage boundaries, peak windows, spatial extent, propagation, and local-versus-regional process structure."
+    },
+    "multi_source_evidence": {
+      "name_zh": "多源证据融合",
+      "description": "Selection and integration of package evidence across reports, weather files, tables, catalogs, traces, rasters, vectors, or other local sources. This dimension also covers evidence sufficiency, source conflict, robustness, sensitivity, counterfactual exclusion, and bounded inference."
+    },
+    "causal_chain": {
+      "name_zh": "因果链解释",
+      "description": "Trigger-to-process-to-surface-response-to-receptor/system-pressure-to-outcome reasoning, including chain reconstruction and control points."
+    },
+    "ranking_decision": {
+      "name_zh": "排序与决策推理",
+      "description": "Ranking, priority ordering, mechanism dominance ordering, scenario sensitivity ordering, control-point ordering, and decision-oriented structured comparison."
+    },
+    "remote_sensing_geospatial": {
+      "name_zh": "遥感与地理空间证据",
+      "description": "Use of images, pixels, pre/event remote-sensing pairs, AOI/vector/raster summaries, geospatial exposure/surface-change statistics, and spatial product interpretation."
+    }
+  }
+}

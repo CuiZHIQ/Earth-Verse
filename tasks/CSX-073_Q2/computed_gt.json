@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-073_Q2",
+  "event_id": "CSX-073",
+  "task_type": "short_answer",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "component_scores": {
+      "hour_anchor": 1,
+      "rain_concentration": 1,
+      "feedback_overlap": 1,
+      "sewer_dominance": 1,
+      "local_concentration": 1
+    },
+    "computed_values": {
+      "official_record_hour_mm": 88.138,
+      "official_to_point_ratio": 2.608,
+      "peak_3h_share": 0.596,
+      "peak_6h_share": 0.734,
+      "hours_ge_25mm": 2,
+      "feedback_window_share": 0.608,
+      "peak_created_hour_share": 0.244,
+      "peak_window_sewer_share": 0.941,
+      "total_sewer_share": 0.914,
+      "top_borough_share": 0.314,
+      "max_1km_cluster": 23,
+      "official_to_gpm_ratio": 7.892
+    },
+    "total_score": 5,
+    "rejected_substitutes": [
+      "delayed_routing",
+      "wind_led",
+      "uniform_citywide",
+      "point_peak_only",
+      "coarse_grid_downgrade"
+    ],
+    "final_label": "short_window_urban_pluvial_feedback_consistent"
+  },
+  "numeric_tolerances": {
+    "mm": 0.1,
+    "shares": 0.01,
+    "ratios": 0.01,
+    "counts": 0
+  },
+  "key_values": {
+    "official_record_hour_mm": 88.138,
+    "point_peak_hour_mm": 33.8,
+    "official_to_point_ratio": 2.608,
+    "point_to_official_ratio": 0.383,
+    "event_total_mm": 133.9,
+    "peak_3h_mm": 79.8,
+    "peak_3h_window": "2021-09-02T01:00 to 2021-09-02T03:00",
+    "peak_3h_share": 0.596,
+    "peak_6h_mm": 98.3,
+    "peak_6h_window": "2021-09-01T23:00 to 2021-09-02T04:00",
+    "peak_6h_share": 0.734,
+    "hours_ge_25mm": 2,
+    "point_peak_hour_time": "2021-09-02T01:00",
+    "max_wind_kmh": 45.2,
+    "feedback_window": "2021-09-01T21:00 to 2021-09-02T03:00",
+    "point_peak_inside_feedback_window": true,
+    "total_feedback_records": 500,
+    "feedback_window_records": 304,
+    "feedback_window_share": 0.608,
+    "peak_created_hour": "2021-09-01T22:00",
+    "peak_created_hour_count": 122,
+    "peak_created_hour_share": 0.244,
+    "peak_window_sewer_records": 286,
+    "peak_window_sewer_share": 0.941,
+    "total_sewer_records": 457,
+    "total_sewer_share": 0.914,
+    "wet_fixture_electric_share": 0.086,
+    "top_borough": "QUEENS",
+    "top_borough_records": 157,
+    "top_borough_share": 0.314,
+    "max_1km_cluster": 23,
+    "mapped_elements_total": 431,
+    "road_feature_count": 169,
+    "road_share": 0.392,
+    "bridge_count": 12,
+    "bridge_per_road": 0.071,
+    "gpm_max_mm": 11.168,
+    "official_to_gpm_ratio": 7.892
+  },
+  "decision_rule": {
+    "score_components": {
+      "hour_anchor": "official_to_point_ratio >= 2.0",
+      "rain_concentration": "peak_3h_share >= 0.50 and peak_6h_share >= 0.70 and hours_ge_25mm >= 2",
+      "feedback_overlap": "point peak hour inside feedback window and feedback_window_share >= 0.50",
+      "sewer_dominance": "peak_window_sewer_share >= 0.85 and total_sewer_share >= 0.85",
+      "local_concentration": "top_borough_share >= 0.30 and max_1km_cluster >= 20"
+    },
+    "final_label_when_score": {
+      "5": "short_window_urban_pluvial_feedback_consistent"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final score and label",
+        "points": 4,
+        "description": "Returns total_score 5 and the final label short_window_urban_pluvial_feedback_consistent.",
+        "partial_credit": "Award 2-3 points for the right label with one scoring error, or 1 point for a short-window pluvial conclusion without a valid score."
+      },
+      {
+        "name": "Rainfall anchor and concentration",
+        "points": 4,
+        "description": "Computes 88.138 mm, official_to_point_ratio 2.608, point_to_official_ratio 0.383, peak_3h_share 0.596, peak_6h_share 0.734, and 2 hours at or above 25 mm.",
+        "partial_credit": "Award 2-3 points for mostly correct rainfall values with minor rounding errors, or 1 point for values without formulas."
+      },
+      {
+        "name": "Feedback timing overlap",
+        "points": 3,
+        "description": "Places the 2021-09-02T01:00 rainfall peak inside the 2021-09-01T21:00 to 2021-09-02T03:00 window and computes 304/500=0.608 and 122/500=0.244.",
+        "partial_credit": "Award 1-2 points for correct counts or correct window logic but not both."
+      },
+      {
+        "name": "Sewer dominance",
+        "points": 3,
+        "description": "Computes 286/304=0.941, 457/500=0.914, and 43/500=0.086 while keeping wind and electric records secondary.",
+        "partial_credit": "Award 1-2 points for identifying sewer dominance with incomplete ratios."
+      },
+      {
+        "name": "Local concentration and urban context",
+        "points": 3,
+        "description": "Computes 157/500=0.314, max_1km_cluster 23, 169/431=0.392, and 12/169=0.071.",
+        "partial_credit": "Award 1-2 points for two or three correct local-context values."
+      },
+      {
+        "name": "Coarse-grid contrast and substitute rejection",
+        "points": 2,
+        "description": "Computes 88.138/11.168=7.892 and rejects delayed routing, wind-led dominance, uniform citywide severity, point-peak-only reasoning, and coarse-grid downgrading.",
+        "partial_credit": "Award 1 point for either the ratio or the substitute rejections."
+      },
+      {
+        "name": "Compact output discipline",
+        "points": 1,
+        "description": "Returns compact JSON matching the requested fields and avoids broad impact assertions beyond the score ledger.",
+        "partial_credit": "Award 0.5 point for a readable but structurally incomplete answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/other/other_001_NOAA_WPC_tropical_cyclone_rainfall_-_Ida_2021.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/air_quality/air_quality_002_03_city_feedback_or_air_quality_NYC_311_Service_Requests_Socrata_flood_complaints.json.json",
+      "data/exposure_impact/exposure_impact_007_salvaged_existing_stage8_file.json"
+    ],
+    "notes": "Values are computed from local CSX-073 event data."
+  }
+}

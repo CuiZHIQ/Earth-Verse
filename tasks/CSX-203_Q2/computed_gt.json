@@ -1,0 +1,230 @@
+{
+  "decision_rule": {
+    "formulae": {
+      "burn_evidence_count": "wildfire_event_count + dnbr_pre_count + dnbr_post_count",
+      "diffuse_veil_index": "(event_mean_brightness - pre_mean_brightness) - abs(event_mean_chroma - pre_mean_chroma)",
+      "dry_fraction": "dry_day_count / event_day_count",
+      "mean_vector_wind_mps": "sqrt(u10_mean^2 + v10_mean^2)",
+      "regional_precip_mean_mm": "(gpm_event_precip_mm_mean + chirps_event_precip_mm_mean) / 2"
+    },
+    "label_rule": "persistent_winter_aerosol_haze only when all six tests pass",
+    "thresholds": {
+      "burn_evidence_count_required": 0,
+      "diffuse_veil_index_min": 20.0,
+      "dry_fraction_min": 0.8,
+      "haze_term_count_min": 2,
+      "mean_vector_wind_mps_max": 1.0,
+      "regional_precip_mean_mm_max": 2.0
+    }
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-203",
+  "key_values": {
+    "burn_source_counts": {
+      "burn_evidence_count": 0,
+      "dnbr_post_count": 0,
+      "dnbr_pre_count": 0,
+      "dnbr_status": "no_sufficient_scenes",
+      "interpretation": "Zero available burn evidence means package burn-source control is not supported; it is not an absolute proof that no fires existed.",
+      "wildfire_event_count": 0
+    },
+    "daily_weather": {
+      "dry_day_count": 11,
+      "dry_fraction": 1.0,
+      "event_day_count": 11,
+      "max_temperature_c": 5.4,
+      "mean_daily_max_wind_kmh": 18.955,
+      "total_precipitation_mm": 0.0
+    },
+    "event": {
+      "event_name": "January 2013 northern and eastern China severe haze episode",
+      "hazard_family": "air_pollution_smoke_heat",
+      "temporal_window": {
+        "end_date": "2013-01-16",
+        "start_date": "2013-01-06"
+      }
+    },
+    "image_signal": {
+      "brightness_delta": 37.404,
+      "chroma_delta": 0.343,
+      "diffuse_veil_index": 37.061,
+      "event_image": {
+        "mean_brightness": 190.601,
+        "mean_channel_stddev": 43.309,
+        "mean_chroma": 6.735,
+        "mean_rgb": [
+          192.954,
+          190.069,
+          188.778
+        ],
+        "size": [
+          1024,
+          768
+        ]
+      },
+      "pre_image": {
+        "mean_brightness": 153.197,
+        "mean_channel_stddev": 52.899,
+        "mean_chroma": 6.392,
+        "mean_rgb": [
+          154.863,
+          151.778,
+          152.95
+        ],
+        "size": [
+          1024,
+          768
+        ]
+      },
+      "selected_event_image_path": "data/remote_sensing/remote_sensing_004_event_2013-01-11_modis_truecolor.jpg.jpg",
+      "selected_pre_image_path": "data/remote_sensing/remote_sensing_005_pre_2012-12-07_modis_truecolor.jpg.jpg"
+    },
+    "regional_precipitation": {
+      "chirps_event_precip_mm_mean": 0.397,
+      "gpm_event_precip_mm_mean": 1.03,
+      "two_product_mean_mm": 0.713
+    },
+    "regional_wind_components": {
+      "mean_vector_wind_mps": 0.44,
+      "u10_mean_mps": 0.332,
+      "v10_mean_mps": -0.289
+    },
+    "report_terms": {
+      "haze_term_count": 3,
+      "hits": {
+        "air_quality": true,
+        "haze": true,
+        "smog": true
+      },
+      "tracked_terms": [
+        "haze",
+        "smog",
+        "air quality"
+      ]
+    },
+    "test_results": {
+      "diffuse_brightening": true,
+      "dry_window": true,
+      "haze_text": true,
+      "low_precipitation": true,
+      "no_package_burn_evidence": true,
+      "weak_wind": true
+    }
+  },
+  "numeric_tolerances": {
+    "metrics.burn_evidence_count": {
+      "absolute_tolerance": 0,
+      "target": 0
+    },
+    "metrics.diffuse_veil_index": {
+      "absolute_tolerance": 0.2,
+      "target": 37.061
+    },
+    "metrics.dry_fraction": {
+      "absolute_tolerance": 0.01,
+      "target": 1.0
+    },
+    "metrics.haze_term_count": {
+      "absolute_tolerance": 0,
+      "target": 3
+    },
+    "metrics.mean_vector_wind_mps": {
+      "absolute_tolerance": 0.02,
+      "target": 0.44
+    },
+    "metrics.regional_precip_mean_mm": {
+      "absolute_tolerance": 0.02,
+      "target": 0.713
+    }
+  },
+  "primary_gt": {
+    "consistency_score": "6/6",
+    "final_label": "persistent_winter_aerosol_haze",
+    "metrics": {
+      "burn_evidence_count": 0,
+      "diffuse_veil_index": 37.061,
+      "dry_fraction": 1.0,
+      "haze_term_count": 3,
+      "mean_vector_wind_mps": 0.44,
+      "regional_precip_mean_mm": 0.713
+    },
+    "rejected_alternative": "wet_removal_or_package_burn_control_not_supported",
+    "tests": {
+      "diffuse_brightening": "pass",
+      "dry_window": "pass",
+      "haze_text": "pass",
+      "low_precipitation": "pass",
+      "no_package_burn_evidence": "pass",
+      "weak_wind": "pass"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All values are derived from local files in the CSX-203 standard event package; the burn-source test is bounded to available catalog and dNBR scene counts, and selected true-color image files are recorded in key_values.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2013_northern_and_eastern_China_severe_haze_episode.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/remote_sensing/remote_sensing_005_pre_2012-12-07_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_004_event_2013-01-11_modis_truecolor.jpg.jpg",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_wildfire_events.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON with metrics, tests, consistency_score, final_label, and rejected_alternative populated.",
+        "name": "requested_json_schema",
+        "partial_credit": "Award 2-3 points for a mostly complete JSON object with one missing or renamed field.",
+        "points": 4
+      },
+      {
+        "description": "Computes the haze-term count, dry fraction, vector wind speed, mean regional precipitation, diffuse veil index, and burn evidence count with correct units and rounding.",
+        "name": "numeric_formulas_and_values",
+        "partial_credit": "Award proportional credit for correct metric values and formulas.",
+        "points": 5
+      },
+      {
+        "description": "Applies all six stated thresholds correctly and reports the resulting 6/6 consistency score.",
+        "name": "threshold_logic",
+        "partial_credit": "Award 1 point for each cluster of correctly evaluated tests.",
+        "points": 4
+      },
+      {
+        "description": "Uses the dry-window, weak-wind, and low-precipitation tests together as the pollutant-persistence consistency proof.",
+        "name": "meteorology_consistency",
+        "partial_credit": "Award 1-2 points for using only one or two of those calculations correctly.",
+        "points": 3
+      },
+      {
+        "description": "Rejects wet-removal control and package-supported active-burn-source control because the precipitation and available burn-count tests fail to support them.",
+        "name": "computed_alternative_rejection",
+        "partial_credit": "Award 1 point for one correctly rejected alternative.",
+        "points": 2
+      },
+      {
+        "description": "Gives only the derived compact label persistent_winter_aerosol_haze after the calculations.",
+        "name": "final_label",
+        "partial_credit": "Award 0.5 points for a correct but overly verbose label.",
+        "points": 1
+      },
+      {
+        "description": "Avoids extra-data PM concentration, AOD, casualty, loss, or response-advice assertions not computed from the package values.",
+        "name": "extra_data_assertion_control",
+        "partial_credit": "Award 0.5 points for one minor extra inference that does not change the proof.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_consistency_proof",
+  "task_id": "CSX-203_Q2",
+  "task_subtype": "haze_meteorology_consistency_proof",
+  "task_type": "numeric"
+}

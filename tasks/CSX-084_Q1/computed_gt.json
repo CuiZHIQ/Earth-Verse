@@ -1,0 +1,118 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-084",
+  "key_values": {
+    "average_24h_rate_mm_per_hour": 39.25,
+    "avoid": [
+      "using 519.725 mm as the local event maximum",
+      "adding quantified flood depth or asset-damage assertions"
+    ],
+    "contextual_max_percent_of_local_anchor": 55.173,
+    "contextual_maxima_mm": {
+      "chirps_event_max_mm": 276.972,
+      "era5_land_event_max_mm": 169.743,
+      "gpm_imerg_event_max_mm": 519.725,
+      "nasa_power_2005_07_26_mm": 210.55,
+      "open_meteo_2005_07_26_mm": 71.8
+    },
+    "decision_rule": "Use the local 942.0 mm anchor as the event maximum; classify contextual precipitation as underestimating the local maximum when the highest contextual value is far below the local anchor.",
+    "event_name": "26 July 2005 Mumbai flood",
+    "hazard_family": "river_coastal_flood",
+    "highest_contextual_precipitation_mm": 519.725,
+    "highest_contextual_precipitation_name": "gpm_imerg_event_max_mm",
+    "peak_rate_mm_per_hour": 50.0,
+    "peak_to_average_rate_ratio": 1.274,
+    "population_exposure_millions": 11.352,
+    "population_exposure_people": 11351616.312,
+    "previous_record_mm": 838.0,
+    "record_excess_mm": 104.0,
+    "record_excess_percent": 12.411,
+    "reported_24h_mm": 942.0,
+    "tolerances": {
+      "average_24h_rate_mm_per_hour": 0.1,
+      "contextual_max_percent_of_local_anchor": 0.2,
+      "excess_over_previous_record_percent": 0.1,
+      "peak_rate_mm_per_hour": 2.0,
+      "peak_to_average_rate_ratio": 0.02,
+      "population_exposure_millions": 0.05,
+      "reported_24h_mm": 2.0
+    }
+  },
+  "primary_gt": {
+    "answer": "localized_record_rainfall_grid_underestimate",
+    "average_24h_rate_mm_per_hour": 39.25,
+    "contextual_max_percent_of_local_anchor": 55.173,
+    "excess_over_previous_record_percent": 12.411,
+    "interpretation": "The Mumbai event is best summarized as a localized record 24-hour rainfall extreme whose broader contextual precipitation products capture only about half of the local anchor while the exposed urban population exceeded 11 million people.",
+    "peak_rate_mm_per_hour": 50.0,
+    "peak_to_average_rate_ratio": 1.274,
+    "population_exposure_millions": 11.352,
+    "reported_24h_mm": 942.0
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from CSX-084 local event sources and converted into a compact numeric diagnosis.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_26_July_2005_Mumbai_flood.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the label localized_record_rainfall_grid_underestimate or an equivalent compact label that states local record rainfall plus contextual underestimation.",
+        "name": "final_compact_answer",
+        "partial_credit": "Award 1-2 points for a label that captures only local record rainfall or only contextual underestimation.",
+        "points": 3
+      },
+      {
+        "description": "Reports 942.0 mm, 39.25 mm/hour, 50.0 mm/hour, and the 1.274 peak-to-average ratio within tolerance.",
+        "name": "local_rainfall_rate_calculations",
+        "partial_credit": "Award 1 point per correct value or formula component.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 838.0 mm previous record and computes 104.0 mm or 12.411 percent excess correctly.",
+        "name": "record_excess_calculation",
+        "partial_credit": "Award 1-2 points for the right comparison with an arithmetic or rounding error.",
+        "points": 3
+      },
+      {
+        "description": "Reports 519.725 mm and computes 55.173 percent of the 942.0 mm local anchor, with the correct conclusion that it is lower than the local anchor.",
+        "name": "contextual_maximum_comparison",
+        "partial_credit": "Award 2 points for the correct value without the percent, or 1 point for only stating that contextual products are lower.",
+        "points": 4
+      },
+      {
+        "description": "Converts 11,351,616.312 people to 11.352 million people and uses it only as exposure context.",
+        "name": "exposure_conversion",
+        "partial_credit": "Award 1 point for the correct population value without the million-person conversion.",
+        "points": 2
+      },
+      {
+        "description": "Explains that the 942.0 mm local anchor, record exceedance, and contextual 55.173 percent ratio jointly justify the diagnosis.",
+        "name": "decision_logic",
+        "partial_credit": "Award 1-2 points for reasoning that relies on only one of those comparisons.",
+        "points": 3
+      },
+      {
+        "description": "Returns only the requested JSON and avoids adding quantified flood depth, asset damage, or external loss assertions.",
+        "name": "concise_output_discipline",
+        "partial_credit": "No partial credit; award this point only when the answer stays within the requested scope.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-084_Q1",
+  "task_type": "short_answer"
+}

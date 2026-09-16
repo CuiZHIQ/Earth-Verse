@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-083_Q2",
+  "event_id": "CSX-083",
+  "task_type": "short_answer",
+  "target_family": "doksuri_haihe_rainfall_runoff_routing_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "doksuri_haihe_rainfall_runoff_routing_score_ledger",
+    "score_ledger": [
+      {
+        "row_id": "rainfall_persistence_load",
+        "formula": "event_total=sum(hourly_precip_mm); wettest_72h_fraction=max_72h_sum/event_total; wet_hours_share=wet_hours/window_hours; longest_wet_run=max_consecutive(precip_mm>0)",
+        "computed_values": {
+          "event_total_mm": 196.9,
+          "window_hours": 120,
+          "wettest_72h_mm": 187.2,
+          "wettest_72h_fraction": 0.951,
+          "wet_hours": 84,
+          "wet_hours_share": 0.7,
+          "longest_wet_run_hours": 78
+        },
+        "threshold_or_test": "pass if event_total>=150 mm, wettest_72h_fraction>=0.90, wet_hours_share>=0.60, and longest_wet_run>=48 h",
+        "result": "pass_persistent_rainfall_load"
+      },
+      {
+        "row_id": "peak_hour_concentration_test",
+        "formula": "peak_hour_fraction=max_hourly_precip_mm/event_total; peak_to_72h=max_hourly_precip_mm/wettest_72h_mm",
+        "computed_values": {
+          "max_hourly_mm": 17.5,
+          "max_hour_time_utc": "2023-07-31T18:00",
+          "peak_hour_fraction": 0.089,
+          "peak_to_72h_ratio": 0.093
+        },
+        "threshold_or_test": "single-hour control is rejected when both ratios are below 0.10",
+        "result": "reject_peak_hour_control"
+      },
+      {
+        "row_id": "report_total_transfer_test",
+        "formula": "report_total_mm/comparison_total_or_grid_max_mm",
+        "computed_values": {
+          "report_total_mm": 744.8,
+          "report_to_hourly_point_total_ratio": 3.78,
+          "report_to_daily_point_total_ratio": 3.38,
+          "report_to_daily_grid_max_ratio": 9.26,
+          "report_to_satellite_grid_max_ratio": 12.79
+        },
+        "threshold_or_test": "uniform transfer is rejected when point ratios exceed 3 and grid-max ratios exceed 5",
+        "result": "reject_uniform_report_total_transfer"
+      },
+      {
+        "row_id": "runoff_equivalent_load",
+        "formula": "mean_intensity=744.8/83; mm_per_day=mean_intensity*24; runoff_m3_per_km2=rainfall_mm*C*1000",
+        "computed_values": {
+          "duration_hours": 83.0,
+          "mean_intensity_mm_per_h": 8.97,
+          "mean_intensity_mm_per_day": 215.4,
+          "runoff_m3_per_km2_at_C_0_50": 372400,
+          "runoff_m3_per_km2_at_C_0_70": 521360
+        },
+        "threshold_or_test": "pass if duration>=72 h, mean_intensity>=8 mm/h, and C=0.50 runoff exceeds 300000 m3/km2",
+        "result": "pass_severe_runoff_load"
+      },
+      {
+        "row_id": "wind_and_image_dominance_test",
+        "formula": "max_wind_kmh<50 and abs(radar_vv_mean_change_db)<0.1 and embedding_change_mean<0.05",
+        "computed_values": {
+          "max_wind_kmh": 38.5,
+          "radar_vv_mean_change_db": -0.0142,
+          "embedding_change_mean": 0.0175
+        },
+        "threshold_or_test": "wind and image dominance are rejected when all three low-signal tests pass",
+        "result": "reject_wind_or_image_dominance"
+      }
+    ],
+    "final_label": "persistent_remnant_rainfall_runoff_haihe_routing"
+  },
+  "key_values": {
+    "event_total_mm": 196.9,
+    "window_hours": 120,
+    "wettest_72h_mm": 187.2,
+    "wettest_72h_fraction": 0.951,
+    "wet_hours": 84,
+    "wet_hours_share": 0.7,
+    "longest_wet_run_hours": 78,
+    "max_hourly_mm": 17.5,
+    "max_hour_time_utc": "2023-07-31T18:00",
+    "peak_hour_fraction": 0.089,
+    "peak_to_72h_ratio": 0.093,
+    "report_total_mm": 744.8,
+    "report_duration_hours": 83.0,
+    "report_mean_intensity_mm_per_h": 8.97,
+    "report_mean_intensity_mm_per_day": 215.4,
+    "report_to_hourly_point_total_ratio": 3.78,
+    "report_to_daily_point_total_ratio": 3.38,
+    "report_to_daily_grid_max_ratio": 9.26,
+    "report_to_satellite_grid_max_ratio": 12.79,
+    "runoff_m3_per_km2_at_C_0_50": 372400,
+    "runoff_m3_per_km2_at_C_0_70": 521360,
+    "max_wind_kmh": 38.5,
+    "radar_vv_mean_change_db": -0.0142,
+    "embedding_change_mean": 0.0175,
+    "source_controls": {
+      "daily_point_total_mm": 220.61,
+      "daily_grid_max_mm": 80.4,
+      "satellite_grid_max_mm": 58.24
+    }
+  },
+  "decision_rule": {
+    "final_label_rule": "Use the final label when rainfall persistence and runoff load pass while peak-hour, uniform-transfer, wind, and image dominance tests are rejected."
+  },
+  "tolerances": {
+    "rainfall_mm_abs": 0.1,
+    "intensity_mm_per_h_abs": 0.02,
+    "ratio_abs": 0.02,
+    "fraction_abs": 0.005,
+    "runoff_m3_per_km2_abs": 500,
+    "wind_kmh_abs": 0.1,
+    "radar_db_abs": 0.0005,
+    "embedding_abs": 0.0005
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Compact JSON ledger",
+        "points": 3,
+        "description": "Returns target_family, five required ledger rows with formulas, computed values, tests, results, and the final label.",
+        "partial_credit": "1-2 points for valid JSON with missing rows or incomplete row fields."
+      },
+      {
+        "name": "Rainfall persistence calculation",
+        "points": 4,
+        "description": "Computes 196.9 mm, 187.2 mm, 0.951, 84 wet hours, 0.700 wet-hour share, and 78-hour longest wet run, then marks the row as passing.",
+        "partial_credit": "2-3 points for mostly correct values with one threshold or unit error."
+      },
+      {
+        "name": "Peak-hour concentration rejection",
+        "points": 3,
+        "description": "Computes 17.5 mm, 0.089, and 0.093 and rejects single-hour control.",
+        "partial_credit": "1-2 points for the right rejection with incomplete ratio work."
+      },
+      {
+        "name": "Report-total transfer ratios",
+        "points": 3,
+        "description": "Computes 3.78, 3.38, 9.26, and 12.79 and rejects uniform report-total transfer.",
+        "partial_credit": "1-2 points for using only point comparisons or only grid comparisons."
+      },
+      {
+        "name": "Runoff-equivalent load",
+        "points": 3,
+        "description": "Derives 8.97 mm/h, 215.4 mm/day, 372400 m3/km2, and 521360 m3/km2 and applies the severe-runoff threshold.",
+        "partial_credit": "1-2 points for correct intensity or volume computation but not both."
+      },
+      {
+        "name": "Wind and image dominance test",
+        "points": 2,
+        "description": "Rejects wind or image dominance using 38.5 km/h, -0.0142 dB, and 0.0175.",
+        "partial_credit": "1 point for using only wind or only image values."
+      },
+      {
+        "name": "Final routing label",
+        "points": 2,
+        "description": "Uses the final label persistent_remnant_rainfall_runoff_haihe_routing and keeps the interpretation tied to the computed ledger.",
+        "partial_credit": "1 point for a correct label with loose interpretation, or a correct interpretation with a noncanonical label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "data_basis": "Report anchors are parsed from local WMO HTML; precipitation, wind, grid, and remote-sensing metrics are recomputed from local package files.",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Typhoon_Doksuri_Beijing-Tianjin-Hebei_and_Haihe_flood.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_WMO_-_Typhoons_trigger_record-breaking_rainfall_in_China.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "The duplicate WMO HTML mirror is listed so provenance covers both local report copies that contain the 744.8 mm / 83 h anchor."
+  }
+}

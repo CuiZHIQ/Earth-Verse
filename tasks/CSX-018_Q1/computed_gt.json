@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-018_Q1",
+  "event_id": "CSX-018",
+  "target_family": "west_africa_day_night_heat_persistence_diagnosis",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "event_days": 5,
+    "hot_day_count_tmax_ge_40c": 5,
+    "hdd40_c_days": 15.1,
+    "hottest_3day_mean_tmax_c": 43.6,
+    "warm_night_count_tmin_ge_27c": 5,
+    "apparent_peak_lead_days": 1,
+    "classification": "persistent_day_night_heat_load"
+  },
+  "key_values": {
+    "event_name": "March-April 2024 West Africa and Sahel humid heat wave",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_window": {
+      "start_date": "2024-03-31",
+      "end_date": "2024-04-04",
+      "dates": [
+        "2024-03-31",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04"
+      ]
+    },
+    "daily_tmax_c": [
+      42.8,
+      42.8,
+      43.5,
+      44.6,
+      41.4
+    ],
+    "daily_tmin_c": [
+      27.6,
+      27.5,
+      27.5,
+      27.5,
+      27.9
+    ],
+    "daily_apparent_tmax_c": [
+      39.7,
+      42.0,
+      43.2,
+      41.8,
+      42.4
+    ],
+    "hottest_3day_window": {
+      "start_date": "2024-04-01",
+      "end_date": "2024-04-03",
+      "mean_tmax_c": 43.6
+    },
+    "dry_bulb_tmax_peak": {
+      "date": "2024-04-03",
+      "tmax_c": 44.6
+    },
+    "apparent_tmax_peak": {
+      "date": "2024-04-02",
+      "apparent_tmax_c": 43.2
+    }
+  },
+  "decision_rule": {
+    "formula_hdd40": "sum(max(Tmax - 40, 0))",
+    "formula_hottest_3day_mean": "max rolling 3-day mean of daily Tmax",
+    "classification_rule": "persistent label requires all days Tmax>=40C, all nights Tmin>=27C, and hdd40>10C-days"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required JSON diagnosis",
+        "points": 3,
+        "description": "Returns exactly the requested compact JSON fields: event_days, hot_day_count_tmax_ge_40c, hdd40_c_days, hottest_3day_mean_tmax_c, warm_night_count_tmin_ge_27c, apparent_peak_lead_days, and classification.",
+        "partial_credit": "Award 1-2 points if the answer has the right intent but omits one or two fields, uses unclear field names, or adds distracting narrative fields."
+      },
+      {
+        "name": "Day-night persistence counts",
+        "points": 4,
+        "description": "Computes the 5-day window, all five daily Tmax values at or above 40 C, and all five nightly Tmin values at or above 27 C.",
+        "partial_credit": "Award 2-3 points for correct hot-day or warm-night counts with one missing count or minor threshold wording error; award 1 point for naming the event window only."
+      },
+      {
+        "name": "Heat-load arithmetic",
+        "points": 4,
+        "description": "Applies sum(max(Tmax - 40, 0)) across the event window and reports 15.1 C-days within 0.1 C-days.",
+        "partial_credit": "Award 2-3 points for the correct formula with a small arithmetic or rounding error; award 1 point for using only peak temperature."
+      },
+      {
+        "name": "Peak three-day window",
+        "points": 3,
+        "description": "Computes rolling three-day Tmax means and reports the hottest mean as 43.6 C within 0.1 C.",
+        "partial_credit": "Award 1-2 points for a correct rolling-window method with a small numeric error or for reporting the right peak days without the mean."
+      },
+      {
+        "name": "Apparent-temperature timing",
+        "points": 2,
+        "description": "Identifies the daily apparent-temperature peak on 2024-04-02 and the dry-bulb Tmax peak on 2024-04-03, giving a 1-day lead.",
+        "partial_credit": "Award 1 point for naming one of the two peak dates or noting that apparent-temperature timing differs from dry-bulb timing."
+      },
+      {
+        "name": "Classification rule",
+        "points": 3,
+        "description": "Applies the stated rule and returns persistent_day_night_heat_load because all three threshold checks pass.",
+        "partial_credit": "Award 1-2 points for a broadly correct persistent heat-load label without showing all required threshold checks."
+      },
+      {
+        "name": "Computed scope",
+        "points": 1,
+        "description": "Keeps the answer limited to computed heat-load evidence.",
+        "partial_credit": "Award 0 points if the answer shifts into a broad event essay or adds unneeded planning guidance."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March-April_2024_West_Africa_and_Sahel_humid_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    ]
+  }
+}

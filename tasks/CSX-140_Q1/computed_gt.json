@@ -1,0 +1,108 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-140",
+  "key_values": {
+    "decision_rule": {
+      "annual_equiv_ratio_min": 10,
+      "peak_accumulation_mm_min": 30,
+      "product_peak_support_count_min": 2
+    },
+    "event_window": {
+      "end_date": "2015-03-26",
+      "start_date": "2015-03-24"
+    },
+    "inputs": {
+      "antofagasta_annual_mm": 1.7,
+      "antofagasta_rain_mm": 24.0,
+      "homes_severely_damaged": 6000,
+      "homes_swept_away_at_least": 2000,
+      "peak_values_mm": {
+        "chirps": 9.14,
+        "era5_land": 41.2,
+        "gpm_imerg": 34.835
+      },
+      "product_peak_support_count": 2
+    }
+  },
+  "numeric_tolerances": {
+    "mm_abs": 0.2,
+    "ratio_abs": 0.1
+  },
+  "primary_gt": {
+    "annual_equiv_ratio": 14.12,
+    "check_sentence": "All three arid-pulse checks pass: 24 mm is 14.12 times the 1.7 mm typical annual rainfall, the strongest gridded peak is 41.2 mm, and two gridded products have event-window peaks at or above 30 mm.",
+    "classification": "arid_pulse_confirmed",
+    "impact_anchor": {
+      "homes_affected_at_least": 8000,
+      "killed_at_least": 26,
+      "missing": 120
+    },
+    "peak_accumulation_mm": 41.2,
+    "product_peak_support_count": 2,
+    "reported_one_day_mm": 24.0,
+    "threshold_passes": {
+      "annual_ratio": true,
+      "peak_accumulation": true,
+      "product_support": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "The off-event daily point-weather fill is intentionally not used for the official answer.",
+      "Rainfall-pulse support is scored from the incident report and declared package-relative gridded precipitation summaries."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_March_2015_Atacama_Desert_storm_and_flash_floods.json",
+      "data/other/other_001_NASA_Earth_Observatory_Flooding_in_the_Chilean_Desert.html",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns arid_pulse_confirmed as the final deterministic class.",
+        "name": "Final classification",
+        "partial_credit": "Award 2 points for a passing class with a vague label; award 0-1 point if the label conflicts with the threshold ledger.",
+        "points": 4
+      },
+      {
+        "description": "Computes 24 divided by 1.7 and reports about 14.12 with the correct pass state.",
+        "name": "Annual-equivalent ratio",
+        "partial_credit": "Award 2-3 points for minor rounding error; award 1 point for identifying the inputs without the quotient.",
+        "points": 4
+      },
+      {
+        "description": "Reports 41.2 mm for the strongest gridded peak summary and counts 2 gridded products with event-window peaks at or above 30 mm.",
+        "name": "Rainfall accumulation values",
+        "partial_credit": "Award 2-3 points for one correct value; award 1 point for listing peak products without applying the support-count rule.",
+        "points": 4
+      },
+      {
+        "description": "Marks annual_ratio, peak_accumulation, and product_support as true and links the class to all three inequalities.",
+        "name": "Threshold ledger",
+        "partial_credit": "Award 1-2 points for correct booleans without the inequality logic, or for one mistaken boolean with sound calculations.",
+        "points": 3
+      },
+      {
+        "description": "Reports at least 26 killed, 120 missing, and homes_affected_at_least equal to 8000.",
+        "name": "Impact anchor arithmetic",
+        "partial_credit": "Award 1-2 points for correct casualty counts or correct housing sum, but not both.",
+        "points": 3
+      },
+      {
+        "description": "Uses the requested compact JSON fields and a one-sentence computed check.",
+        "name": "Compact output",
+        "partial_credit": "Award 1 point for correct values in a less compact format or with a diffuse explanation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-140_Q1",
+  "task_type": "numeric"
+}

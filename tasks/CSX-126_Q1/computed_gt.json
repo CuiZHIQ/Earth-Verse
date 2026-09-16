@@ -1,0 +1,263 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2007-06-01 to 2007-06-07",
+    "event_name": "Cyclone Gonu Oman and Arabian Sea",
+    "hazard_family": "tropical_cyclone",
+    "package_id": "CSX-126"
+  },
+  "event_id": "CSX-126",
+  "key_values": {
+    "map_layer_checks": {
+      "direct_window_replacement": false,
+      "osm": {
+        "element_count": 1000,
+        "top_amenities": {
+          "fire_station": 1,
+          "hospital": 70,
+          "police": 71,
+          "school": 853,
+          "shelter": 5
+        }
+      },
+      "sentinel1_post_count": 0,
+      "sentinel1_pre_count": 0,
+      "worldpop_population_sum": 528023.174
+    },
+    "nasa_power_point": {
+      "nasa_peak_precip_date": "20070606",
+      "nasa_peak_precip_mm": 50.68,
+      "nasa_peak_wind_date": "20070606",
+      "nasa_peak_wind_mps": 13.07,
+      "nasa_precip_total_mm": 69.54,
+      "open_meteo_to_nasa_total_ratio": 2.448,
+      "same_day_support": true
+    },
+    "open_meteo_point": {
+      "co_timing_span_hours_inclusive": 5,
+      "gust_to_wind_ratio": 2.058,
+      "hour_count": 168,
+      "max_hourly_precipitation": {
+        "time": "2007-06-06T09:00",
+        "value": 15.7
+      },
+      "max_wind_gust_10m": {
+        "time": "2007-06-06T08:00",
+        "value": 109.1
+      },
+      "max_wind_speed_10m": {
+        "time": "2007-06-06T12:00",
+        "value": 53.0
+      },
+      "min_pressure_msl": {
+        "time": "2007-06-06T12:00",
+        "value": 991.8
+      },
+      "peak_daily_precipitation": {
+        "date": "2007-06-06",
+        "value": 148.6
+      },
+      "peak_day_fraction_of_event_total": 0.873,
+      "peak_hour_fraction_of_event_total": 0.092,
+      "precipitation_total_mm": 170.2
+    },
+    "regional_precipitation_summaries": {
+      "chirps_mm": 171.783,
+      "era5_mm": 174.244,
+      "gpm_mm": 258.798
+    }
+  },
+  "numeric_tolerances": {
+    "boolean_values": "exact",
+    "fractions_and_ratios": 0.01,
+    "precipitation_mm": 0.1,
+    "pressure_hpa": 0.1,
+    "time_values": "exact hour or same date as stated",
+    "wind_kmh": 0.1
+  },
+  "primary_gt": {
+    "answer": "compound_oman_landfall_rain_gust_pressure_window",
+    "final_consistency": "Use the co-timed landfall-day rain, gust, wind, and pressure window for the Oman phase; regional precipitation and map/image layers are secondary context.",
+    "rows": [
+      {
+        "calculation": "148.6/170.2 and 15.7/170.2",
+        "decision": "pass: landfall-day concentration is strong, but one-hour replacement fails",
+        "row_id": "landfall_peak_day_concentration",
+        "value": "170.2 mm total; 0.873 peak-day fraction; 0.092 peak-hour fraction"
+      },
+      {
+        "calculation": "inclusive span from 2007-06-06T08:00 to 2007-06-06T12:00; 109.1/53.0",
+        "decision": "pass: gust, wind, and pressure extrema form a tight same-day timing window",
+        "row_id": "wind_pressure_timing_window",
+        "value": "5 h span; 109.1 km/h gust; 53.0 km/h wind; 991.8 hPa pressure; ratio 2.058"
+      },
+      {
+        "calculation": "NASA peak precipitation date equals NASA peak wind date equals Open-Meteo peak rain date; 170.2/69.54",
+        "decision": "pass: independent daily series supports the same timing with lower magnitude",
+        "row_id": "independent_daily_same_day_support",
+        "value": "same_day_support=true; NASA total 69.54 mm; NASA peak rain 50.68 mm; NASA peak wind 13.07 m/s; ratio 2.448"
+      },
+      {
+        "calculation": "Open-Meteo event total divided by ERA5, GPM, and CHIRPS regional maxima",
+        "decision": "context: regional maxima inform magnitude but do not replace point-window timing",
+        "row_id": "regional_precip_max_context",
+        "value": "point-to-regional ratios: ERA5 0.977, GPM 0.658, CHIRPS 0.991"
+      },
+      {
+        "calculation": "WorldPop/OSM derived context plus Sentinel pre/post availability",
+        "decision": "context: map, exposure, and image layers do not replace the Oman point-window proof",
+        "row_id": "map_layer_nonreplacement_check",
+        "value": "WorldPop 528023.174; OSM elements 1000; Sentinel pre/post 0/0; direct replacement=false"
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from local CSX-126 package files; no network access is used. WorldPop, OSM, and Sentinel products are used as package-declared derived context; coordinates, place names, bounding boxes, and georeferencing metadata inside masked products are not used for event-location validity scoring.",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_004_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "required_rows": [
+    {
+      "decision": "passes_landfall_day_concentration_not_single_hour_replacement",
+      "expected_values": {
+        "event_total_mm": 170.2,
+        "peak_day": "2007-06-06",
+        "peak_day_fraction": 0.873,
+        "peak_day_mm": 148.6,
+        "peak_hour_fraction": 0.092,
+        "peak_hour_mm": 15.7,
+        "peak_hour_time": "2007-06-06T09:00"
+      },
+      "formula": "peak_daily_precipitation_mm / event_total_mm; peak_hourly_precipitation_mm / event_total_mm",
+      "row_id": "landfall_peak_day_concentration"
+    },
+    {
+      "decision": "passes_tight_landfall_day_wind_pressure_window",
+      "expected_values": {
+        "co_timing_span_hours_inclusive": 5,
+        "gust_to_wind_ratio": 2.058,
+        "max_gust_kmh": 109.1,
+        "max_gust_time": "2007-06-06T08:00",
+        "max_wind_kmh": 53.0,
+        "max_wind_time": "2007-06-06T12:00",
+        "min_pressure_hpa": 991.8,
+        "min_pressure_time": "2007-06-06T12:00"
+      },
+      "formula": "inclusive hour span from max gust to max wind and minimum pressure; max_gust_kmh / max_wind_kmh",
+      "row_id": "wind_pressure_timing_window"
+    },
+    {
+      "decision": "supports_landfall_day_timing_with_lower_daily_magnitude",
+      "expected_values": {
+        "nasa_peak_precip_date": "20070606",
+        "nasa_peak_precip_mm": 50.68,
+        "nasa_peak_wind_date": "20070606",
+        "nasa_peak_wind_mps": 13.07,
+        "nasa_precip_total_mm": 69.54,
+        "open_meteo_to_nasa_total_ratio": 2.448,
+        "same_day_support": true
+      },
+      "formula": "NASA peak precip date equals NASA peak wind date equals Open-Meteo peak rain date; Open-Meteo total / NASA total",
+      "row_id": "independent_daily_same_day_support"
+    },
+    {
+      "decision": "regional_maxima_are_context_not_replacement_for_point_timing_proof",
+      "expected_values": {
+        "point_to_regional_ratios": {
+          "open_meteo_to_chirps": 0.991,
+          "open_meteo_to_era5": 0.977,
+          "open_meteo_to_gpm": 0.658
+        },
+        "regional_maxima_mm": {
+          "chirps_mm": 171.783,
+          "era5_mm": 174.244,
+          "gpm_mm": 258.798
+        }
+      },
+      "formula": "Open-Meteo event total divided by each regional precipitation maximum",
+      "row_id": "regional_precip_max_context"
+    },
+    {
+      "decision": "map_and_image_layers_are_context_not_replacement",
+      "expected_values": {
+        "direct_window_replacement": false,
+        "osm": {
+          "element_count": 1000,
+          "top_amenities": {
+            "fire_station": 1,
+            "hospital": 70,
+            "police": 71,
+            "school": 853,
+            "shelter": 5
+          }
+        },
+        "sentinel1_post_count": 0,
+        "sentinel1_pre_count": 0,
+        "worldpop_population_sum": 528023.174
+      },
+      "formula": "derived exposure/map summaries and Sentinel pre/post scene counts are context-only replacement checks",
+      "row_id": "map_layer_nonreplacement_check"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns a compact JSON ledger with the final label and all five required row labels.",
+        "name": "answer_schema_and_rows",
+        "partial_credit": "Award 2-3 points if the output is readable but misses one row or has minor field-name drift; award 1 point if it is prose-only but contains most row results.",
+        "points": 4
+      },
+      {
+        "description": "Computes 170.2 mm total, 148.6 mm peak day on 2007-06-06, 0.873 peak-day fraction, 15.7 mm peak hour, and 0.092 peak-hour fraction.",
+        "name": "rainfall_concentration",
+        "partial_credit": "Award 2-3 points for the correct total and peak-day fraction but missing peak-hour fraction or date; award 1 point for only identifying the rain peak day.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 5 h inclusive co-timing span, 109.1 km/h gust at 08:00, 53.0 km/h wind at 12:00, 991.8 hPa pressure at 12:00, and gust/wind ratio near 2.058.",
+        "name": "wind_pressure_window",
+        "partial_credit": "Award 2-3 points for the correct extrema but wrong span convention or missing ratio; award 1 point for same-day timing only.",
+        "points": 4
+      },
+      {
+        "description": "Uses NASA POWER 69.54 mm total, 50.68 mm daily precipitation peak and 13.07 m/s wind peak on 20070606, plus the 2.448 Open-Meteo/NASA total ratio.",
+        "name": "nasa_daily_support",
+        "partial_credit": "Award 1-2 points for the same-day conclusion with incomplete daily totals or ratio.",
+        "points": 3
+      },
+      {
+        "description": "Computes ERA5, GPM, and CHIRPS regional maxima and point-to-regional ratios near 0.977, 0.658, and 0.991.",
+        "name": "regional_ratio_context",
+        "partial_credit": "Award 1 point for computing two ratios or for the correct qualitative comparison without all values.",
+        "points": 2
+      },
+      {
+        "description": "Applies the map/image nonreplacement check: WorldPop/OSM are derived context, Sentinel pre/post counts are 0/0, and population or amenity summaries are not used as a local loss denominator.",
+        "name": "map_layer_nonreplacement",
+        "partial_credit": "Award 1 point for stating the nonreplacement result without the exposure or Sentinel details.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the final consistency sentence concise and avoids Category 5 Oman landfall, surge-height, local loss-denominator, or mapped-inundation overclaims.",
+        "name": "concise_output_no_overclaim",
+        "partial_credit": "Award no more than 0.5 points if the answer is correct but adds one unverified impact claim.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "gonu_oman_landfall_rain_gust_pressure_window_consistency_proof",
+  "task_id": "CSX-126_Q1",
+  "task_type": "short_answer"
+}

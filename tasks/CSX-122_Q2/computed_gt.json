@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-122_Q2",
+  "event_id": "CSX-122",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "freddy_temporal_rainfall_concentration_ledger",
+  "primary_gt": {
+    "answer": {
+      "duration_alignment": {
+        "wmo_days": 36.0,
+        "gdacs_days": 33.75,
+        "ratio": 1.067,
+        "gap_days": 2.25,
+        "lag_h": 34.0
+      },
+      "rainfall_concentration": {
+        "event_mm": 393.6,
+        "wet_days": 36,
+        "wetday_mean_mm": 10.9,
+        "late_mm": 136.6,
+        "late_share": 0.347,
+        "late_day_mean_mm": 34.1,
+        "late_amp": 3.12
+      },
+      "peak_window_check": {
+        "max72h_mm": 112.4,
+        "max72h_share": 0.286,
+        "max168h_mm": 146.7,
+        "max168h_share": 0.373
+      },
+      "gridded_contrast": {
+        "gpm_max_mean": 3.38,
+        "chirps_max_mean": 2.72,
+        "chirps_gpm_mean": 1.05
+      }
+    },
+    "classification": "late concentrated pulse on a long wet baseline",
+    "not_pattern": "not uniform accumulation or a one-day-only spike"
+  },
+  "key_values": {
+    "wmo_days": 36.0,
+    "gdacs_days": 33.75,
+    "duration_ratio": 1.067,
+    "duration_gap_days": 2.25,
+    "lag_h": 34.0,
+    "event_mm": 393.6,
+    "late_share": 0.347,
+    "late_amp": 3.12,
+    "max72h_share": 0.286,
+    "max168h_share": 0.373,
+    "gpm_max_mean": 3.38,
+    "chirps_max_mean": 2.72
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final temporal classification",
+        "points": 3,
+        "description": "States a late concentrated pulse on a long wet baseline.",
+        "partial_credit": "1-2 points for naming only the long duration or only the late concentration."
+      },
+      {
+        "name": "Duration alignment arithmetic",
+        "points": 3,
+        "description": "Reports 36.0, 33.75, 1.067, 2.25, and 34.0 hours with correct formulas.",
+        "partial_credit": "1-2 points for correct values with one missing formula result or one timing error."
+      },
+      {
+        "name": "Rainfall concentration arithmetic",
+        "points": 5,
+        "description": "Reports 393.6 mm, 36 wet days, 10.9 mm, 136.6 mm, 0.347, 34.1 mm, and 3.12 using the 2023-03-12 to 2023-03-15 late window.",
+        "partial_credit": "2-4 points for correct totals but incomplete share, mean, or amplification arithmetic."
+      },
+      {
+        "name": "Peak-window calculation",
+        "points": 3,
+        "description": "Reports 112.4 mm, 0.286, 146.7 mm, and 0.373 and treats the pulse as multi-day.",
+        "partial_credit": "1-2 points for correct precipitation totals but missing shares or the multi-day inference."
+      },
+      {
+        "name": "Gridded contrast calculation",
+        "points": 3,
+        "description": "Reports GPM maximum/mean 3.38, CHIRPS maximum/mean 2.72, and CHIRPS/GPM mean 1.05.",
+        "partial_credit": "1-2 points for using only one gridded ratio or reversing one mean-ratio calculation."
+      },
+      {
+        "name": "Rejected simple pattern",
+        "points": 2,
+        "description": "Rejects both the uniform-accumulation and one-day-only labels without adding extra claims.",
+        "partial_credit": "1 point for rejecting only one of the two simple labels."
+      },
+      {
+        "name": "Concise JSON format",
+        "points": 1,
+        "description": "Uses the four required row names plus classification and not_pattern.",
+        "partial_credit": "No partial credit for prose-only answers."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

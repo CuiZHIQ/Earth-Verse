@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-113_Q2",
+  "event_id": "CSX-113",
+  "task_type": "numeric",
+  "target_family": "freddy_mar12_14_rain_runoff_lag_proof",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": {
+      "local_precip_mm": 111.7,
+      "wettest_72h_mm": 111.7,
+      "wettest_24_to_72_ratio": 0.504,
+      "wet_run_hours": 62,
+      "flood_lag_days": 1.42,
+      "max_gust_kmh": 65.9,
+      "gust_to_peak_wind_ratio": 0.264,
+      "consequence_label": "linked_multi_day_runoff_pulse"
+    },
+    "proof": "The March 12-14 total equals the rolling 72-hour maximum, the 24h/72h ratio is 0.504, the wet run lasts 62 hours, the flood lag is 1.42 days, and the gust ratio is 0.264, so all thresholds pass."
+  },
+  "key_values": {
+    "wettest_24h_mm": 56.3,
+    "gdacs_peak_wind_kmh": 250.0,
+    "timestamp_basis": "package hourly timestamps for the rain/gust window; GDACS catalog UTC timestamps for flood lag",
+    "thresholds": {
+      "local_precip_mm_min": 100.0,
+      "local_equals_72h_tolerance_mm": 0.05,
+      "wettest_24_to_72_ratio_max": 0.6,
+      "wet_run_hours_min": 48,
+      "flood_lag_days_max": 2.0,
+      "gust_to_peak_wind_ratio_max": 0.35
+    }
+  },
+  "thresholds": {
+    "local_precip_mm_min": 100.0,
+    "local_equals_72h_tolerance_mm": 0.05,
+    "wettest_24_to_72_ratio_max": 0.6,
+    "wet_run_hours_min": 48,
+    "flood_lag_days_max": 2.0,
+    "gust_to_peak_wind_ratio_max": 0.35
+  },
+  "derived": {
+    "target_family": "freddy_mar12_14_rain_runoff_lag_proof",
+    "wettest_24h_mm": 56.3,
+    "gdacs_peak_wind_kmh": 250.0,
+    "consequence_label": "linked_multi_day_runoff_pulse",
+    "proof": "The March 12-14 total equals the rolling 72-hour maximum, the 24h/72h ratio is 0.504, the wet run lasts 62 hours, the flood lag is 1.42 days, and the gust ratio is 0.264, so all thresholds pass."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Local 72-hour rainfall",
+        "points": 4,
+        "description": "Computes 111.7 mm for both the March 12-14 local total and the maximum rolling 72-hour total.",
+        "partial_credit": "Award 2 points for one correct total, or 3 points for both totals with only minor rounding or window-edge error."
+      },
+      {
+        "name": "Rolling ratio",
+        "points": 4,
+        "description": "Computes the maximum 24-hour to 72-hour precipitation ratio as 0.504.",
+        "partial_credit": "Award 2 points for the correct formula with a wrong rolling numerator, or 3 points for a correct ratio rounded less precisely."
+      },
+      {
+        "name": "Wet-run duration",
+        "points": 3,
+        "description": "Computes the longest continuous wet run as 62 hours using hourly precipitation greater than 0.",
+        "partial_credit": "Award 1-2 points for a continuous wet-run calculation with a minor threshold or endpoint mistake."
+      },
+      {
+        "name": "Catalog lag",
+        "points": 3,
+        "description": "Computes the Malawi flood start lag after Freddy TC end as 1.42 days.",
+        "partial_credit": "Award 1-2 points for using the right timestamps but rounding or time-unit conversion incorrectly."
+      },
+      {
+        "name": "Gust ratio",
+        "points": 3,
+        "description": "Computes maximum local gust as 65.9 km/h and the local-gust to GDACS-peak-wind ratio as 0.264.",
+        "partial_credit": "Award 1-2 points for one correct gust value or for a correct division with imprecise rounding."
+      },
+      {
+        "name": "JSON and label",
+        "points": 3,
+        "description": "Returns the requested JSON and the short computed consequence label linked_multi_day_runoff_pulse.",
+        "partial_credit": "Award 1-2 points for the right label with missing proof details or for a correct proof but incomplete JSON."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  }
+}

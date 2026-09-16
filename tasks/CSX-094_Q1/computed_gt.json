@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-094_Q1",
+  "event_id": "CSX-094",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "mean_peak_precip_mm": 51.587,
+    "mean_areal_precip_mm": 36.446,
+    "peak_to_areal_ratio": 1.415,
+    "population_million": 1.025,
+    "rainfall_population_index": 52.892,
+    "mean_vv_change_db": -0.179,
+    "diagnosis": "rainfall_exposure_dominant_weak_mean_radar_change"
+  },
+  "key_values": {
+    "event_name": "Storm Boris Central and Eastern Europe floods",
+    "event_window": "2024-09-11/2024-09-20",
+    "raw_inputs": {
+      "gpm_peak_mm": 49.98999901488423,
+      "era5_peak_mm": 53.18394356403999,
+      "gpm_areal_mean_mm": 32.16654598622153,
+      "era5_areal_mean_mm": 40.72510684230845,
+      "population": 1025288.5409028549,
+      "mean_vv_change_db": -0.17870447469875872
+    },
+    "thresholds": {
+      "mean_peak_precip_mm_min": 50,
+      "population_million_min": 1,
+      "absolute_mean_vv_change_db_max": 0.25
+    },
+    "tolerances": {
+      "precip_mm": 0.01,
+      "ratio": 0.001,
+      "population_million": 0.001,
+      "rainfall_population_index": 0.01,
+      "mean_vv_change_db": 0.001
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final numeric JSON and diagnosis",
+        "points": 4,
+        "description": "Returns the requested fields and the label rainfall_exposure_dominant_weak_mean_radar_change.",
+        "partial_credit": "Award 1-3 points for the right label with one missing or misnamed numeric field, or for a complete ledger with one threshold mistake."
+      },
+      {
+        "name": "Precipitation aggregation",
+        "points": 4,
+        "description": "Averages the two non-null maxima to 51.587 mm and the two non-null areal means to 36.446 mm.",
+        "partial_credit": "Award 1-3 points for using only one precipitation product or rounding correctly computed values too coarsely."
+      },
+      {
+        "name": "Ratio and rainfall-population index",
+        "points": 3,
+        "description": "Computes peak_to_areal_ratio as 1.415 and rainfall_population_index as 52.892.",
+        "partial_credit": "Award 1-2 points for one correct derived value or for traceable arithmetic rounded outside tolerance."
+      },
+      {
+        "name": "Population and radar values",
+        "points": 3,
+        "description": "Uses population_million of 1.025 and mean_vv_change_db of -0.179.",
+        "partial_credit": "Award 1-2 points for using the correct raw quantities but applying the wrong scaling or sign."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 3,
+        "description": "Applies the three tests >= 50, >= 1, and < 0.25 to reach the diagnosis.",
+        "partial_credit": "Award 1-2 points for stating the correct diagnosis without showing all comparisons."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Explains that rainfall plus population drives the ledger while the mean radar statistic is weak by the stated threshold.",
+        "partial_credit": "Award 1 point for a generic flood interpretation tied to only one computed value."
+      },
+      {
+        "name": "Concision and scope control",
+        "points": 1,
+        "description": "Returns a compact answer without adding damage totals, outage statements, or broad management advice.",
+        "partial_credit": "Award 0.5 points for a mostly compact answer with minor extra narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Storm_Boris_Central_and_Eastern_Europe_floods.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "calculation_rule": {
+    "requires_computation": true,
+    "scenario": "Increase precipitation load, peak, and spatial spread by 15 percent while holding process, exposure, and monitoring terms constant.",
+    "summary": "Combine eruption duration and process terms, three precipitation summaries, AOI area, population, mapped response assets, and formal pre/post scene availability into a Merapi lahar-response stress index."
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2010-10-26 to 2010-11-30",
+    "event_name": "Merapi eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "location": "Central Java / Yogyakarta",
+    "package_id": "CSX-307"
+  },
+  "event_id": "CSX-307",
+  "key_values": {
+    "amenity_counts": {
+      "fire_station": 1,
+      "hospital": 32,
+      "police": 26,
+      "school": 205,
+      "shelter": 36
+    },
+    "computed_metrics": {
+      "amenity_total": 300,
+      "aoi_area_km2": 12257.406,
+      "critical_response_facilities": 95,
+      "direct_footprint_gap": 1,
+      "event_days": 36,
+      "formal_pre_post_scene_count": 0,
+      "hazard_process_completeness": 1.0,
+      "hazard_process_terms": {
+        "ashfall": true,
+        "lahar_risk": true,
+        "pyroclastic_flows": true
+      },
+      "population_density_per_km2": 903.237,
+      "population_m": 11.071,
+      "rain_concentration_ratio": 1.47,
+      "rain_mean_mm": 365.768,
+      "rain_peak_mean_mm": 537.7,
+      "rain_spatial_spread_mm": 180.629,
+      "school_count": 205
+    },
+    "event_window": {
+      "end": "2010-11-30",
+      "inclusive_days": 36,
+      "start": "2010-10-26"
+    },
+    "normalized_components": {
+      "exposure_response_norm": 0.917,
+      "monitoring_gap_norm": 1.0,
+      "rain_lahar_conditioning_norm": 0.846,
+      "volcanic_trigger_norm": 0.92
+    },
+    "precipitation_inputs_mm": {
+      "maxima": {
+        "chirps": 516.813,
+        "era5": 638.457,
+        "gpm": 457.828
+      },
+      "means": {
+        "chirps": 315.128,
+        "era5": 452.093,
+        "gpm": 330.084
+      }
+    },
+    "remote_sensing_counts": {
+      "optical": {
+        "post_count": 0,
+        "pre_count": 0
+      },
+      "radar": {
+        "post_count": 0,
+        "pre_count": 0
+      }
+    },
+    "response_priority_mapping": {
+      "high_lahar_response_pressure": "60 to < 75",
+      "lower_lahar_response_pressure": "< 40",
+      "moderate_lahar_response_pressure": "40 to < 60",
+      "very_high_lahar_response_pressure": ">= 75"
+    },
+    "scenario_analysis": {
+      "warmer_wetter_remobilization": {
+        "index_delta": 2.653,
+        "lahar_response_stress_index": 93.083,
+        "rain_concentration_ratio": 1.47,
+        "rain_lahar_conditioning_norm": 0.932,
+        "rain_mean_mm": 420.633,
+        "rain_peak_mean_mm": 618.355,
+        "rain_spatial_spread_mm": 207.723
+      }
+    }
+  },
+  "numeric_tolerances": {
+    "amenity_total": {
+      "absolute_tolerance": 0,
+      "target": 300
+    },
+    "aoi_area_km2": {
+      "absolute_tolerance": 0.001,
+      "target": 12257.406
+    },
+    "critical_response_facilities": {
+      "absolute_tolerance": 0,
+      "target": 95
+    },
+    "event_days": {
+      "absolute_tolerance": 0,
+      "target": 36
+    },
+    "exposure_response_norm": {
+      "absolute_tolerance": 0.001,
+      "target": 0.917
+    },
+    "formal_pre_post_scene_count": {
+      "absolute_tolerance": 0,
+      "target": 0
+    },
+    "hazard_process_completeness": {
+      "absolute_tolerance": 0.001,
+      "target": 1.0
+    },
+    "lahar_response_stress_index": {
+      "absolute_tolerance": 0.001,
+      "target": 90.43
+    },
+    "population_density_per_km2": {
+      "absolute_tolerance": 0.001,
+      "target": 903.237
+    },
+    "population_m": {
+      "absolute_tolerance": 0.001,
+      "target": 11.071
+    },
+    "rain_concentration_ratio": {
+      "absolute_tolerance": 0.001,
+      "target": 1.47
+    },
+    "rain_lahar_conditioning_norm": {
+      "absolute_tolerance": 0.001,
+      "target": 0.846
+    },
+    "rain_mean_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 365.768
+    },
+    "rain_peak_mean_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 537.7
+    },
+    "rain_spatial_spread_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 180.629
+    },
+    "scenario_index_delta": {
+      "absolute_tolerance": 0.001,
+      "target": 2.653
+    },
+    "scenario_lahar_response_stress_index": {
+      "absolute_tolerance": 0.001,
+      "target": 93.083
+    },
+    "school_count": {
+      "absolute_tolerance": 0,
+      "target": 205
+    },
+    "volcanic_trigger_norm": {
+      "absolute_tolerance": 0.001,
+      "target": 0.92
+    }
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "amenity_total": 300,
+      "aoi_area_km2": 12257.406,
+      "critical_response_facilities": 95,
+      "direct_footprint_gap": 1,
+      "event_days": 36,
+      "formal_pre_post_scene_count": 0,
+      "hazard_process_completeness": 1.0,
+      "hazard_process_terms": {
+        "ashfall": true,
+        "lahar_risk": true,
+        "pyroclastic_flows": true
+      },
+      "population_density_per_km2": 903.237,
+      "population_m": 11.071,
+      "rain_concentration_ratio": 1.47,
+      "rain_mean_mm": 365.768,
+      "rain_peak_mean_mm": 537.7,
+      "rain_spatial_spread_mm": 180.629,
+      "school_count": 205
+    },
+    "final_interpretation": "The package supports a very high response-stress reading: a sustained explosive Merapi eruption coincides with heavy, spatially uneven rainfall over a densely populated AOI with many schools and response facilities, while the formal pre/post scene count leaves the direct footprint poorly constrained.",
+    "lahar_response_stress_index": 90.43,
+    "normalized_components": {
+      "exposure_response_norm": 0.917,
+      "monitoring_gap_norm": 1.0,
+      "rain_lahar_conditioning_norm": 0.846,
+      "volcanic_trigger_norm": 0.92
+    },
+    "process_model": "merapi_2010_volcanic_rainfall_lahar_response_stress",
+    "response_priority": "very_high_lahar_response_pressure",
+    "scenario_analysis": {
+      "warmer_wetter_remobilization": {
+        "index_delta": 2.653,
+        "lahar_response_stress_index": 93.083,
+        "rain_concentration_ratio": 1.47,
+        "rain_lahar_conditioning_norm": 0.932,
+        "rain_mean_mm": 420.633,
+        "rain_peak_mean_mm": 618.355,
+        "rain_spatial_spread_mm": 207.723
+      }
+    },
+    "source_paths": {
+      "event_window_and_process": [
+        "metadata/event.json",
+        "data/event_reports/event_reports_003_Locked_event_anchor_Merapi_eruption.json",
+        "data/event_reports/event_reports_002_Wikipedia_Mount_Merapi.json"
+      ],
+      "exposure_and_response_assets": [
+        "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+      ],
+      "geospatial_context": [
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+      ],
+      "precipitation": [
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+      ],
+      "remote_sensing_support": [
+        "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+        "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+      ]
+    }
+  },
+  "process_model": "merapi_2010_volcanic_rainfall_lahar_response_stress",
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All values are recomputed from the local CSX-307 package using package-relative paths.",
+    "source_paths": {
+      "event_window_and_process": [
+        "metadata/event.json",
+        "data/event_reports/event_reports_003_Locked_event_anchor_Merapi_eruption.json",
+        "data/event_reports/event_reports_002_Wikipedia_Mount_Merapi.json"
+      ],
+      "exposure_and_response_assets": [
+        "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+      ],
+      "geospatial_context": [
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+      ],
+      "precipitation": [
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+      ],
+      "remote_sensing_support": [
+        "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+        "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+      ]
+    }
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns valid JSON in the requested schema and cites package-relative source paths for event, precipitation, geospatial, exposure, and remote-sensing inputs.",
+        "name": "Structured answer and citations",
+        "partial_credit": "Award 1-2 points if the answer is mostly structured but incomplete or has minor path omissions.",
+        "points": 3
+      },
+      {
+        "description": "Computes event_days = 36, identifies pyroclastic flows, ashfall, and lahar risk, and reports hazard_process_completeness = 1.0.",
+        "name": "Eruption-process reconstruction",
+        "partial_credit": "Award 1 point for duration and up to 2 points for correct process-term extraction.",
+        "points": 3
+      },
+      {
+        "description": "Computes rain_mean_mm = 365.768, rain_peak_mean_mm = 537.7, rain_concentration_ratio = 1.47, rain_spatial_spread_mm = 180.629, and rain_lahar_conditioning_norm = 0.846.",
+        "name": "Rainfall conditioning",
+        "partial_credit": "Award about 1 point for each substantially correct precipitation or normalization step.",
+        "points": 4
+      },
+      {
+        "description": "Uses the AOI polygon and population total to compute aoi_area_km2 = 12257.406, population_m = 11.071, and population_density_per_km2 = 903.237.",
+        "name": "AOI and population scaling",
+        "partial_credit": "Award 1 point per correct metric with reasonable rounding.",
+        "points": 3
+      },
+      {
+        "description": "Counts amenity_total = 300, critical_response_facilities = 95, school_count = 205, and computes exposure_response_norm = 0.917.",
+        "name": "Response-asset exposure",
+        "partial_credit": "Award 1-2 points for partial or slightly misclassified amenity counts.",
+        "points": 3
+      },
+      {
+        "description": "Reports formal_pre_post_scene_count = 0, direct_footprint_gap = 1, and monitoring_gap_norm = 1.0.",
+        "name": "Remote-sensing uncertainty",
+        "partial_credit": "Award 1 point for identifying the missing formal pre/post scene support.",
+        "points": 2
+      },
+      {
+        "description": "Computes lahar_response_stress_index = 90.430, scenario index = 93.083, index_delta = 2.653, and assigns very_high_lahar_response_pressure using the visible priority mapping with a process-grounded interpretation.",
+        "name": "Baseline and scenario synthesis",
+        "partial_credit": "Award 1 point if only the baseline or scenario is correct.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "task_id": "CSX-307_Q2",
+  "task_type": "numeric"
+}

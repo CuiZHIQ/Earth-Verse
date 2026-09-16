@@ -1,0 +1,222 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-328",
+  "key_values": {
+    "central_severely_bleached_percent": 33,
+    "degree_heating_week_bleaching_likely_threshold": 4,
+    "degree_heating_week_death_possible_threshold": 8,
+    "escaped_bleaching_reefs": 68,
+    "event_window_days": 121,
+    "marine_evidence_components": {
+      "climate_report_heat_stress": true,
+      "climate_report_unusually_warm_water": true,
+      "coral_watch_bleaching_heat_stress_concept": true,
+      "coral_watch_dhw_concept": true,
+      "coral_watch_gbr_context": true,
+      "degree_heating_week_reasoning_present": true,
+      "event_name_mentions_marine_heatwave": true,
+      "event_window_is_february_to_may_2016": true,
+      "hazard_family_is_marine_heatwave": true,
+      "northern_severe_bleaching_at_least_80_percent": true,
+      "oisst_2016_sst_anomaly_available": true,
+      "reef_atlas_bleaching_monitoring_context": true,
+      "surveyed_bleaching_at_least_90_percent": true
+    },
+    "marine_evidence_score": 13,
+    "marine_evidence_score_max": 13,
+    "marine_index_terms": [
+      "SST",
+      "SST anomaly",
+      "HotSpot",
+      "Degree Heating Week",
+      "Bleaching Alert Area",
+      "7-day SST Trend"
+    ],
+    "northern_severely_bleached_percent": 81,
+    "severely_bleached_reefs": 316,
+    "source_flags": {
+      "atlas_mentions_bleaching_monitoring": true,
+      "climate_report_mentions_degree_heating_weeks": true,
+      "climate_report_mentions_heat_stress": true,
+      "climate_report_unusually_warm_water": true,
+      "coral_watch_has_bleaching_heat_stress": true,
+      "coral_watch_has_dhw": true,
+      "coral_watch_has_gbr_products": true,
+      "coral_watch_has_hotspot": true,
+      "coral_watch_has_sst_anomaly": true,
+      "oisst_catalog_has_2016_sst_anomaly": true,
+      "oisst_catalog_has_2016_sst_mean": true
+    },
+    "southern_severely_bleached_percent": 1,
+    "surveyed_reefs": 900,
+    "surveyed_reefs_with_bleaching_percent": 93
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "reef_bleaching_heat_stress_priority",
+      "coral_bleaching_heat_stress_priority",
+      "marine_heatwave_reef_ecosystem_priority"
+    ],
+    "answer": "reef_bleaching_heat_stress_priority",
+    "answer_type": "structured_priority_with_judged_explanation",
+    "canonical_stance": "Prioritize coral bleaching and reef ecosystem heat stress from the 2016 Great Barrier Reef marine heatwave.",
+    "dominant_mechanism": "persistent_anomalously_warm_sea_surface_conditions",
+    "forbidden_claims": [
+      "Flooding, wind damage, land heat exposure, or generic land-cover change is the dominant disaster-impact pathway.",
+      "Land weather samples directly measure coral heat stress.",
+      "The task establishes exact tourism losses, fisheries losses, mortality, or reef-by-reef DHW distributions.",
+      "A gridded reef-scale SST anomaly or DHW value was computed when only priority and evidence anchors were computed."
+    ],
+    "impact_pathway": [
+      "marine_heatwave",
+      "degree_heating_week_heat_stress",
+      "coral_bleaching_and_reef_ecosystem_risk"
+    ],
+    "key_metrics": {
+      "degree_heating_week_death_possible_threshold": 8,
+      "event_window_days": 121,
+      "marine_evidence_score": 13,
+      "marine_evidence_score_max": 13,
+      "marine_index_terms": [
+        "SST",
+        "SST anomaly",
+        "HotSpot",
+        "Degree Heating Week",
+        "Bleaching Alert Area",
+        "7-day SST Trend"
+      ],
+      "northern_severely_bleached_percent": 81,
+      "surveyed_reefs_with_bleaching_percent": 93
+    },
+    "priority": "triage_coral_bleaching_and_reef_ecosystem_heat_stress",
+    "required_claims": [
+      "The event is a Great Barrier Reef marine heatwave and bleaching episode during February-May 2016.",
+      "Persistent anomalously warm sea surface conditions are the dominant mechanism.",
+      "Accumulated coral heat stress, especially Degree Heating Week type reasoning, is the relevant hazard pathway.",
+      "Observed bleaching severity makes coral bleaching and reef ecosystem risk the operational priority."
+    ],
+    "required_metrics": [
+      "event_window_days=121",
+      "marine_evidence_score=13",
+      "marine_evidence_score_max=13",
+      "surveyed_reefs_with_bleaching_percent=93",
+      "northern_severely_bleached_percent=81",
+      "degree_heating_week_death_possible_threshold=8"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2016_Great_Barrier_Reef_marine_heatwave_and_bleaching.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/event_catalogs/event_catalogs_002_NOAA_OISST_PSL_ERDDAP_sea-surface_temperature_THREDDS_catalog_XML.xml",
+      "data/exposure_impact/exposure_impact_001_ReefBase_Allen_Coral_Atlas_protected_areas.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects reef bleaching and reef ecosystem heat stress as the primary disaster-impact pathway, using reef_bleaching_heat_stress_priority or a clearly equivalent label.",
+        "name": "Correct final priority",
+        "partial_credit": "Award partial credit for identifying marine heatwave or coral risk but failing to make it the operational priority; little or no credit for prioritizing land heat, flood, wind, or generic land-cover change.",
+        "points": 4
+      },
+      {
+        "description": "Provides the requested structured elements: priority, dominant mechanism, impact pathway, and key metrics.",
+        "name": "Structured core answer",
+        "partial_credit": "Award partial credit for a scientifically correct prose answer that omits one or more requested fields or uses imprecise labels.",
+        "points": 3
+      },
+      {
+        "description": "Correctly reports the 121-day event window, marine_evidence_score 13/13, 93 percent surveyed-reef bleaching, 81 percent northern severe bleaching, and DHW threshold of 8.",
+        "name": "Quantitative reef anchors",
+        "partial_credit": "Award partial credit for several correct reef anchors or minor formatting errors.",
+        "points": 4
+      },
+      {
+        "description": "Explains that persistent anomalously warm sea surface conditions produce accumulated coral heat stress, with Degree Heating Week type interpretation central to bleaching risk.",
+        "name": "Marine heat-stress mechanism",
+        "partial_credit": "Award partial credit for generic ocean warming, sea-surface temperature, or heat-stress language that does not explain accumulated stress or DHW interpretation.",
+        "points": 3
+      },
+      {
+        "description": "Uses observed reef impacts, including widespread bleaching, severe bleaching counts, and the stronger northern severity gradient, to support the priority.",
+        "name": "Reef impact and severity interpretation",
+        "partial_credit": "Award partial credit for mentioning widespread bleaching without severity metrics or spatial gradient detail.",
+        "points": 3
+      },
+      {
+        "description": "Bases the decision on reef-specific bleaching, marine heat-stress, OISST, and reef-monitoring evidence rather than land-weather, population, AOI, or terrestrial remote-sensing proxies.",
+        "name": "Source-scope discipline",
+        "partial_credit": "Award partial credit if land proxies are mentioned but kept clearly secondary.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported claims about exact tourism losses, fisheries losses, mortality, reef-by-reef DHW distributions, or directly measured reef-scale SST anomaly values, and presents the answer concisely.",
+        "name": "Uncertainty discipline and concise delivery",
+        "partial_credit": "Award partial credit for minor overstatement that does not change the final priority or mechanism.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "event_identity": {
+      "anchor_location": "Great Barrier Reef",
+      "event_name": "2016 Great Barrier Reef marine heatwave and bleaching",
+      "hazard_family": "marine_heatwave_coastal_ecosystem",
+      "hazard_label": "Marine heatwave and coastal ecosystem impact",
+      "region": "Oceania",
+      "scale": "global_synoptic",
+      "temporal_window": {
+        "end_date": "2016-05-31",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2016-02-01"
+      }
+    },
+    "marine_evidence_components": {
+      "climate_report_heat_stress": true,
+      "climate_report_unusually_warm_water": true,
+      "coral_watch_bleaching_heat_stress_concept": true,
+      "coral_watch_dhw_concept": true,
+      "coral_watch_gbr_context": true,
+      "degree_heating_week_reasoning_present": true,
+      "event_name_mentions_marine_heatwave": true,
+      "event_window_is_february_to_may_2016": true,
+      "hazard_family_is_marine_heatwave": true,
+      "northern_severe_bleaching_at_least_80_percent": true,
+      "oisst_2016_sst_anomaly_available": true,
+      "reef_atlas_bleaching_monitoring_context": true,
+      "surveyed_bleaching_at_least_90_percent": true
+    },
+    "reef_impact_metrics": {
+      "central_severely_bleached_percent": 33,
+      "degree_heating_week_bleaching_likely_threshold": 4,
+      "degree_heating_week_death_possible_threshold": 8,
+      "escaped_bleaching_reefs": 68,
+      "northern_severely_bleached_percent": 81,
+      "severely_bleached_reefs": 316,
+      "southern_severely_bleached_percent": 1,
+      "surveyed_reefs": 900,
+      "surveyed_reefs_with_bleaching_percent": 93
+    },
+    "source_flags": {
+      "atlas_mentions_bleaching_monitoring": true,
+      "climate_report_mentions_degree_heating_weeks": true,
+      "climate_report_mentions_heat_stress": true,
+      "climate_report_unusually_warm_water": true,
+      "coral_watch_has_bleaching_heat_stress": true,
+      "coral_watch_has_dhw": true,
+      "coral_watch_has_gbr_products": true,
+      "coral_watch_has_hotspot": true,
+      "coral_watch_has_sst_anomaly": true,
+      "oisst_catalog_has_2016_sst_anomaly": true,
+      "oisst_catalog_has_2016_sst_mean": true
+    }
+  },
+  "task_id": "CSX-328_Q1",
+  "task_type": "short_answer"
+}

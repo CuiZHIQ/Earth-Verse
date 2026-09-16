@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-176_Q2",
+  "event_id": "CSX-176",
+  "task_type": "numeric",
+  "target_family": "greece_wildfire_smoke_transport_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": {
+      "target_family": "greece_wildfire_smoke_transport_score_ledger",
+      "event_window": "2023-08-22_to_2023-08-23",
+      "signal_counts": {
+        "event_blocks": 4,
+        "smoke_blocks": 3,
+        "urban_blocks": 1,
+        "fire_weather_blocks": 1
+      },
+      "candidate_scores": {
+        "smoke_transport_urban": 6,
+        "national_burn_severity": 1,
+        "national_health_burden": 1,
+        "drought_index_primary": 1
+      },
+      "top_candidate": "smoke_transport_urban",
+      "dominance_margin": 5,
+      "classification": "smoke_transport_dominant"
+    },
+    "interpretation": "The August 22-23 ledger is dominated by directly observed plume transport, fire-weather cues, and Athens-area urban impact signals, while the competing national burn, health, and drought ledgers lack numeric anchors."
+  },
+  "event": {
+    "event_id": "CSX-176",
+    "package_id": "CSX-176",
+    "event_name": "2023 Greece wildfires",
+    "hazard_family": "wildfire_burn_smoke",
+    "anchor_start": "2023-07-01",
+    "anchor_end": "2023-08-31"
+  },
+  "key_values": {
+    "event_phrases": [
+      "dozens more fires",
+      "alexandroupolis",
+      "plume",
+      "athens",
+      "extreme fire weather",
+      "mediterranean sea",
+      "effis"
+    ],
+    "signal_counts": {
+      "event_blocks": 4,
+      "smoke_blocks": 3,
+      "urban_blocks": 1,
+      "fire_weather_blocks": 1
+    },
+    "gates": {
+      "main_transport_gate": 1,
+      "aug23_extent_gate": 1,
+      "burn_phrase_gate": 1,
+      "national_burn_value_gate": 0,
+      "hospital_or_casualty_value_gate": 0,
+      "drought_index_value_gate": 0
+    },
+    "candidate_scores": {
+      "smoke_transport_urban": 6,
+      "national_burn_severity": 1,
+      "national_health_burden": 1,
+      "drought_index_primary": 1
+    },
+    "score_formula": {
+      "smoke_transport_urban": "2*(smoke_blocks>=3) + (urban_blocks>=1) + (fire_weather_blocks>=1) + main_transport_gate + aug23_extent_gate",
+      "national_burn_severity": "burn_phrase_gate + national_burn_value_gate",
+      "national_health_burden": "(urban_blocks>=1) + hospital_or_casualty_value_gate",
+      "drought_index_primary": "(fire_weather_blocks>=1) + drought_index_value_gate",
+      "classification": "smoke_transport_dominant when smoke score >= 5 and dominance margin >= 3"
+    },
+    "report_anchors": {
+      "image_date_and_sensor": "A fire in the country\u2019s northeast near Alexandroupolis produced a plume of smoke that stretched hundreds of miles southwest toward Italy. The plume is visible in this image, acquired in the afternoon on August 22, 2023, by the Visible Infrared Imaging Radiometer Suite (VIIRS) on the NOAA-NASA Suomi NPP satellite.",
+      "main_plume": "A fire in the country\u2019s northeast near Alexandroupolis produced a plume of smoke that stretched hundreds of miles southwest toward Italy. The plume is visible in this image, acquired in the afternoon on August 22, 2023, by the Visible Infrared Imaging Radiometer Suite (VIIRS) on the NOAA-NASA Suomi NPP satellite.",
+      "urban_impact": "Smaller plumes are visible from other fires burning elsewhere across the nation. According to news reports , fires near Athens burned homes and cars, and sent smoke wafting over the capital city.",
+      "fire_weather_and_extent": "Forecasts called for extreme fire weather\u2014hot, dry, and windy\u2014to continue on August 23. By that day, smoke was detected over Italy and across the Mediterranean Sea in northern Africa."
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/event_reports/event_reports_005_NASA_Earth_Observatory_wildfires_rage_in_Greece.html"
+    ],
+    "notes": "Narrative block counts and candidate scores are derived from the local CSX-176 incident report."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema and classification",
+        "points": 3,
+        "description": "Returns the requested compact JSON with target_family, event window, signal counts, candidate scores, top candidate, dominance margin, classification = smoke_transport_dominant, and one sentence of interpretation.",
+        "partial_credit": "Award partial credit for a complete ledger with minor naming or formatting drift."
+      },
+      {
+        "name": "Narrative block extraction",
+        "points": 4,
+        "description": "Identifies the 4 event blocks and derives smoke_blocks = 3, urban_blocks = 1, and fire_weather_blocks = 1.",
+        "partial_credit": "Award partial credit for a correct extraction method with one count off by one."
+      },
+      {
+        "name": "Gate evaluation",
+        "points": 4,
+        "description": "Sets main_transport_gate = 1, aug23_extent_gate = 1, burn_phrase_gate = 1, and national_burn_value_gate, hospital_or_casualty_value_gate, and drought_index_value_gate to 0.",
+        "partial_credit": "Award partial credit for correct positive gates with one mistaken absent numeric-value gate."
+      },
+      {
+        "name": "Candidate-score arithmetic",
+        "points": 4,
+        "description": "Applies the formulas to obtain scores of 6, 1, 1, and 1 for smoke transport, national burn severity, national health burden, and the drought-index ledger.",
+        "partial_credit": "Award partial credit for correctly identifying the smoke-transport candidate as strongest despite an arithmetic error that changes one secondary score."
+      },
+      {
+        "name": "Dominance test",
+        "points": 3,
+        "description": "Computes dominance_margin = 5 and applies the rule that smoke score at least 5 plus margin at least 3 gives smoke_transport_dominant.",
+        "partial_credit": "Award partial credit for the correct top candidate without the explicit margin rule."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 2,
+        "description": "Ties the interpretation to plume transport, fire weather, and Athens-area urban impact while avoiding added national burn-area, health-burden, casualty, hospital, or drought-index values.",
+        "partial_credit": "Award partial credit for a mostly ledger-based interpretation with one minor overstatement."
+      }
+    ]
+  }
+}

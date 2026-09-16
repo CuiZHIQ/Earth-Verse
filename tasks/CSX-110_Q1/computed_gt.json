@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-110_Q1",
+  "event_id": "CSX-110",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "triple_threshold_high_cyclone_load",
+    "duration_days": 36,
+    "peak_wind_kmh": 249.9984,
+    "local_event_rainfall_mm": 393.6,
+    "normalized_load_index": 3.762,
+    "threshold_pass_count": 3,
+    "tolerances": {
+      "duration_days": 0,
+      "peak_wind_kmh": 0.1,
+      "local_event_rainfall_mm": 0.5,
+      "normalized_load_index": 0.001
+    },
+    "reasoning_depth": {
+      "evidence_weighting": "Duration, GDACS peak wind, and locked-window hourly rainfall are co-decisive; the final label requires all three rather than any single extreme component.",
+      "counterfactual_rejection": "A wind-only or rainfall-only answer fails because the severity label requires persistence, wind, and rainfall thresholds to pass together.",
+      "uncertainty_or_scale_caveat": "The local hourly rainfall total is tied to the locked event window and should not be mixed with broader regional rainfall claims."
+    }
+  },
+  "key_values": {
+    "event_name": "Cyclone Freddy",
+    "event_window": {
+      "start_date": "2023-02-06",
+      "end_date": "2023-03-15",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "event_window_start_utc": "2023-02-06T00:00",
+    "event_window_end_utc": "2023-03-15T23:00",
+    "event_window_hour_count": 912,
+    "thresholds": {
+      "duration_days": 30,
+      "peak_wind_kmh": 200,
+      "local_event_rainfall_mm": 300
+    },
+    "component_ratios": {
+      "duration": 1.2,
+      "wind": 1.249992,
+      "rainfall": 1.312
+    },
+    "threshold_flags": {
+      "duration": true,
+      "wind": true,
+      "rainfall": true
+    },
+    "formula": "duration_days/30 + peak_wind_kmh/200 + local_event_rainfall_mm/300",
+    "decision_rule": "Use the high-load label when all three thresholds clear and normalized_load_index >= 3.0.",
+    "reasoning_depth": {
+      "evidence_weighting": "Duration, GDACS peak wind, and locked-window hourly rainfall are co-decisive; the final label requires all three rather than any single extreme component.",
+      "counterfactual_rejection": "A wind-only or rainfall-only answer fails because the severity label requires persistence, wind, and rainfall thresholds to pass together.",
+      "uncertainty_or_scale_caveat": "The local hourly rainfall total is tied to the locked event window and should not be mixed with broader regional rainfall claims."
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "base_values",
+        "points": 4,
+        "description": "Reports duration_days = 36, peak_wind_kmh = 249.9984, and local_event_rainfall_mm = 393.6 over the locked event window with correct units or unit-implied field names.",
+        "partial_credit": "Award up to 1.3 points per correct base value; withhold credit for values outside the listed tolerances."
+      },
+      {
+        "name": "threshold_ledger",
+        "points": 4,
+        "description": "Applies the 30-day, 200-km/h, and 300-mm tests correctly and reports threshold_pass_count = 3.",
+        "partial_credit": "Award up to 1 point for each correct pass/fail test and 1 point for the correct pass count."
+      },
+      {
+        "name": "normalized_load_index",
+        "points": 4,
+        "description": "Uses duration_days/30 + peak_wind_kmh/200 + local_event_rainfall_mm/300 and reports 3.762.",
+        "partial_credit": "Award 2 points for the correct formula with arithmetic mistakes, 1 point for correct component ratios, and 1 point for acceptable rounding."
+      },
+      {
+        "name": "severity_label",
+        "points": 3,
+        "description": "Gives triple_threshold_high_cyclone_load or a strictly equivalent compact label.",
+        "partial_credit": "Award 1-2 points for a high-load cyclone label that misses the three-threshold condition."
+      },
+      {
+        "name": "classification_reasoning",
+        "points": 3,
+        "description": "Shows that the final classification depends on persistence, wind intensity, and rainfall accumulation all clearing their tests.",
+        "partial_credit": "Award 1-2 points when the reasoning uses only two dimensions or does not connect the index to the threshold tests."
+      },
+      {
+        "name": "answer_format",
+        "points": 2,
+        "description": "Returns compact JSON with exactly the requested fields and no unverified extra loss or impact numbers. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "partial_credit": "Award 1 point for minor formatting problems that do not obscure the values."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Cyclone_Freddy.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  },
+  "audit": {
+    "question_issue_count": 0,
+    "question_issue_patterns": []
+  }
+}

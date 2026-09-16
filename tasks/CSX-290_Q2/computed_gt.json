@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-290_Q2",
+  "event_id": "CSX-290",
+  "task_type": "numeric",
+  "target_family": "antecedent_runoff_persistence_score_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "score_label": "antecedent_runoff_persistence_dominant",
+    "local_total_mm": 486.5,
+    "heavy_days_ge_50mm": 5,
+    "pre_peak_mm": 404.1,
+    "peak_day_mm": 82.4,
+    "antecedent_share": 0.8306,
+    "peak_share": 0.1694,
+    "pre_peak_to_peak_ratio": 4.9,
+    "regional_mean_mm": 210.4,
+    "bright_change_to_annual_change_ratio": 2.77,
+    "arps": 82.6,
+    "reasoning_depth": {
+      "evidence_weighting": "Decisive weight goes to the local precipitation split, heavy-day count, antecedent share, and regional precipitation mean; the image brightness ratio is a contextual surface-response check.",
+      "counterfactual_rejection": "A peak-day-only reading fails because the peak day is only 16.94 percent of the local total while pre-peak rainfall is 4.90 times larger than the peak day.",
+      "uncertainty_or_scale_caveat": "The RGB and annual-change ratio should not be interpreted as a direct flood-depth or runoff-volume measurement."
+    }
+  },
+  "answer_guidance": {
+    "answer": 82.6,
+    "source_disambiguation": "Local precipitation split quantities use the ISO-date local daily precipitation_sum series; NASA POWER is not used for returned ARPS local_total.",
+    "brightness_ratio_rule": "Use unrounded bright fractions and unrounded annual surface-change mean, then round the final ratio to 2 decimals.",
+    "structured_answer": {
+      "score_label": "antecedent_runoff_persistence_dominant",
+      "local_total_mm": 486.5,
+      "heavy_days_ge_50mm": 5,
+      "pre_peak_mm": 404.1,
+      "peak_day_mm": 82.4,
+      "antecedent_share": 0.8306,
+      "peak_share": 0.1694,
+      "pre_peak_to_peak_ratio": 4.9,
+      "regional_mean_mm": 210.4,
+      "bright_change_to_annual_change_ratio": 2.77,
+      "arps": 82.6
+    },
+    "reasoning_depth": {
+      "evidence_weighting": "Decisive weight goes to the local precipitation split, heavy-day count, antecedent share, and regional precipitation mean; the image brightness ratio is a contextual surface-response check.",
+      "counterfactual_rejection": "A peak-day-only reading fails because the peak day is only 16.94 percent of the local total while pre-peak rainfall is 4.90 times larger than the peak day.",
+      "uncertainty_or_scale_caveat": "The RGB and annual-change ratio should not be interpreted as a direct flood-depth or runoff-volume measurement."
+    }
+  },
+  "key_values": {
+    "event_name": "January 2023 California atmospheric river sequence",
+    "event_period_start": "2022-12-26",
+    "event_period_end": "2023-01-17",
+    "local_sample_start": "2022-12-26",
+    "local_sample_end": "2023-01-09",
+    "local_sample_days": 15,
+    "local_total_mm": 486.5,
+    "heavy_days_ge_50mm": 5,
+    "wet_days_ge_10mm": 10,
+    "max_consecutive_wet_days_ge_10mm": 4,
+    "peak_day": "2023-01-09",
+    "peak_day_mm": 82.4,
+    "pre_peak_mm": 404.1,
+    "antecedent_share": 0.8306,
+    "peak_share": 0.1694,
+    "top3_share": 0.4843,
+    "pre_peak_to_peak_ratio": 4.9,
+    "gpm_mean_mm": 193.1,
+    "chirps_mean_mm": 212.8,
+    "era5_mean_mm": 225.2,
+    "regional_mean_mm": 210.4,
+    "pre_event_bright_fraction": 0.190428,
+    "event_bright_fraction": 0.294818,
+    "bright_fraction_increase": 0.104389,
+    "annual_surface_change_mean": 0.037637,
+    "bright_change_to_annual_change_ratio": 2.77,
+    "arps_formula": "100*(0.35*min(local_total_mm/600,1)+0.25*min(heavy_days_ge_50mm/6,1)+0.25*antecedent_share+0.15*min(regional_mean_mm/250,1))",
+    "arps": 82.6,
+    "score_label": "antecedent_runoff_persistence_dominant",
+    "label_thresholds": {
+      "arps_min": 80.0,
+      "antecedent_share_min": 0.75,
+      "peak_share_max": 0.25
+    },
+    "reasoning_depth": {
+      "evidence_weighting": "Decisive weight goes to the local precipitation split, heavy-day count, antecedent share, and regional precipitation mean; the image brightness ratio is a contextual surface-response check.",
+      "counterfactual_rejection": "A peak-day-only reading fails because the peak day is only 16.94 percent of the local total while pre-peak rainfall is 4.90 times larger than the peak day.",
+      "uncertainty_or_scale_caveat": "The RGB and annual-change ratio should not be interpreted as a direct flood-depth or runoff-volume measurement."
+    }
+  },
+  "calculation_rule": {
+    "score_units": "index_points",
+    "share_rounding": 4,
+    "ratio_rounding": 2,
+    "score_rounding": 1
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "local_precipitation_ledger",
+        "points": 3,
+        "description": "Computes local_total_mm as 486.5 and heavy_days_ge_50mm as 5.",
+        "partial_credit": "1-2 points for one correct local precipitation anchor."
+      },
+      {
+        "name": "antecedent_peak_split",
+        "points": 4,
+        "description": "Computes pre_peak_mm, peak_day_mm, antecedent_share, and peak_share with the requested rounding.",
+        "partial_credit": "1 point per correct split quantity."
+      },
+      {
+        "name": "pre_peak_ratio",
+        "points": 2,
+        "description": "Computes pre_peak_to_peak_ratio as 4.90.",
+        "partial_credit": "1 point for the correct numerator and denominator with a rounding error."
+      },
+      {
+        "name": "regional_mean",
+        "points": 3,
+        "description": "Computes regional_mean_mm as 210.4 from the three regional precipitation means.",
+        "partial_credit": "1-2 points for using only two regional means or rounding slightly outside the requested precision."
+      },
+      {
+        "name": "brightness_ratio",
+        "points": 3,
+        "description": "Computes bright_change_to_annual_change_ratio as 2.77 from unrounded paired-image bright fractions and unrounded annual change mean, then rounds the final ratio.",
+        "partial_credit": "1-2 points for correct bright fractions but an incomplete ratio calculation."
+      },
+      {
+        "name": "arps_formula",
+        "points": 4,
+        "description": "Applies the ARPS formula and reports arps as 82.6.",
+        "partial_credit": "1-3 points for a formula attempt with one or two incorrect components."
+      },
+      {
+        "name": "json_contract",
+        "points": 1,
+        "description": "Returns concise JSON with the requested fields and numeric rounding. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "partial_credit": "0 points if the final answer is not machine-readable JSON."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg"
+    ]
+  }
+}

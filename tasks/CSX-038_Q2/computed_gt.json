@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-038_Q2",
+  "event_id": "CSX-038",
+  "task_type": "numeric",
+  "eval_mode": "deterministic",
+  "evaluation_mode": "deterministic",
+  "target_family": "storm_alexa_phase_split_mechanism_competition",
+  "primary_gt": {
+    "answer": "phase_split_consistent",
+    "mechanism_competition": [
+      {
+        "mechanism": "highland_snow_branch",
+        "support_score": 3,
+        "supporting_values": {
+          "jerusalem_snow_min_cm": 30,
+          "amman_snow_cm": 45,
+          "higher_elevation_snow": true,
+          "mountain_roads_closed": true,
+          "jerusalem_point_snow_ratio_min": 15.31,
+          "amman_point_snow_ratio": 22.96
+        },
+        "counter_evidence": "The local point snowfall total is much smaller than report-scale highland snow totals."
+      },
+      {
+        "mechanism": "coastal_heavy_rain_branch",
+        "support_score": 3,
+        "supporting_values": {
+          "gaza_flood_displaced_people": 40000,
+          "coastal_torrential_rain": true,
+          "event_precip_max_mm": {
+            "era5_land": 23.42,
+            "gpm": 6.5,
+            "chirps": 9.91
+          },
+          "precip_max_spread_mm": 16.92
+        },
+        "counter_evidence": "This branch does not explain the highland snow reports by itself."
+      },
+      {
+        "mechanism": "single_hard_freeze_snowfall",
+        "support_score": 0,
+        "supporting_values": {
+          "below_freezing_hours": 0,
+          "daily_below_freezing_days": 0
+        },
+        "counter_evidence": "The point record has 0 hourly freezing records and 0 daily freezing minima."
+      },
+      {
+        "mechanism": "local_point_windy_snow",
+        "support_score": 3,
+        "supporting_values": {
+          "point_snowfall_total_cm": 1.96,
+          "snowfall_hours": 16,
+          "max_wind_gust_kmh": 71.3
+        },
+        "counter_evidence": "The local point signal is bounded and does not replace the report-scale phase split."
+      }
+    ],
+    "report_snow_score_0to3": 3,
+    "point_windy_snow_score_0to3": 3,
+    "hard_freeze_score_0to2": 0,
+    "rain_branch_score_0to3": 3,
+    "jerusalem_point_snow_ratio_min": 15.31,
+    "amman_point_snow_ratio": 22.96,
+    "precip_max_spread_mm": 16.92,
+    "interpretation": "Storm Alexa is phase_split_consistent because report-scale highland snow and coastal heavy rain both score strongly, while the single hard-freeze snowfall mechanism fails despite a local windy-snow point signal."
+  },
+  "numeric_tolerances": {
+    "jerusalem_point_snow_ratio_min": {
+      "value": 15.31,
+      "tolerance": 0.02
+    },
+    "amman_point_snow_ratio": {
+      "value": 22.96,
+      "tolerance": 0.02
+    },
+    "precip_max_spread_mm": {
+      "value": 16.92,
+      "tolerance": 0.02
+    },
+    "report_snow_score_0to3": {
+      "value": 3,
+      "tolerance": 0
+    },
+    "point_windy_snow_score_0to3": {
+      "value": 3,
+      "tolerance": 0
+    },
+    "hard_freeze_score_0to2": {
+      "value": 0,
+      "tolerance": 0
+    },
+    "rain_branch_score_0to3": {
+      "value": 3,
+      "tolerance": 0
+    }
+  },
+  "key_values": {
+    "report_claims": {
+      "jerusalem_snow_min_cm": 30,
+      "jerusalem_snow_max_cm": 50,
+      "amman_snow_cm": 45,
+      "gaza_flood_displaced_people": 40000,
+      "higher_elevation_snow": true,
+      "mountain_roads_closed": true,
+      "coastal_torrential_rain": true
+    },
+    "point_weather": {
+      "point_snowfall_total_cm": 1.96,
+      "snowfall_hours": 16,
+      "max_wind_gust_kmh": 71.3,
+      "below_freezing_hours": 0,
+      "daily_below_freezing_days": 0,
+      "hours_temperature_le_5c": 46
+    },
+    "event_precip_max_mm": {
+      "era5_land": 23.42,
+      "gpm": 6.5,
+      "chirps": 9.91
+    },
+    "precip_max_spread_mm": 16.92,
+    "jerusalem_point_snow_ratio_min": 15.31,
+    "amman_point_snow_ratio": 22.96,
+    "computed_interpretation": "Report-scale highland snow greatly exceeds sampled point snowfall; the point record is windy and cold without hard-freeze hours; rainfall evidence remains present in the mechanism competition."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON response shape and final label",
+        "points": 4,
+        "description": "Returns the four-candidate competition structure and final answer phase_split_consistent.",
+        "partial_credit": "Award 1-2 points for the right label with one missing candidate."
+      },
+      {
+        "name": "Report snow score",
+        "points": 4,
+        "description": "Scores the highland-snow branch as 3 from Jerusalem snow, Amman snow, and the higher-elevation road-closure text cues.",
+        "partial_credit": "Award 1-3 points for correctly crediting one or two of the three score components; no credit for unrelated snow commentary without the threshold tests."
+      },
+      {
+        "name": "Point windy-snow score",
+        "points": 3,
+        "description": "Scores the local windy-snow branch as 3 from positive snowfall, at least 12 snowfall hours, and a maximum gust of at least 60 km/h, while keeping it local rather than event-wide.",
+        "partial_credit": "Award 1-2 points for correctly computing one or two of the three component tests; lose credit for using wind speed instead of gust where it changes the test."
+      },
+      {
+        "name": "Hard-freeze score",
+        "points": 3,
+        "description": "Scores the single hard-freeze snowfall mechanism as 0 from 0 hourly freezing records and 0 daily freezing minima.",
+        "partial_credit": "Award 1 point for recognizing either zero hourly freezing records or zero daily freezing minima, and 2 points for both counts with an incorrect final score."
+      },
+      {
+        "name": "Rain-branch score",
+        "points": 3,
+        "description": "Scores the coastal heavy-rain branch as 3 from Gaza displacement, lower coastal torrential rain, and a precipitation maximum above 20 mm.",
+        "partial_credit": "Award 1-2 points for correctly applying one or two of the three rain-branch tests; no credit for flood discussion without threshold use."
+      },
+      {
+        "name": "Snow-ratio computations",
+        "points": 2,
+        "description": "Computes the Jerusalem lower-bound and Amman snow-to-point-snow ratios within rounding tolerance.",
+        "partial_credit": "Award 1 point for one correct ratio or for both ratios within a loose rounding range but not the stated tolerance."
+      },
+      {
+        "name": "Precipitation spread and interpretation",
+        "points": 1,
+        "description": "Computes the product maximum spread and ties the interpretation to the mechanism-competition values.",
+        "partial_credit": "Award 0.5 point for either the spread value or a mechanism-tied interpretation alone."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

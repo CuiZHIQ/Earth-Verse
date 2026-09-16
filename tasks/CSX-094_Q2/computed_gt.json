@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-094_Q2",
+  "event_id": "CSX-094",
+  "task_type": "structured_reasoning",
+  "target_family": "storm_boris_rainfall_river_timing_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "storm_boris_rainfall_river_timing_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+    "computed_evidence": {
+      "final_process_alignment_label": "sustained_cutoff_low_rainfall_to_river_routing_supported",
+      "required_row_ids": [
+        "sustained_forcing",
+        "river_timing_and_severity",
+        "regional_local_rainfall_contrast",
+        "branch_loss_share",
+        "context_signal_check"
+      ],
+      "core_metrics": {
+        "alert_rain_ratio": 2.0,
+        "warning_mean_to_rain_ratio": 1.0,
+        "station_to_local_ratios": [
+          8.31,
+          8.84
+        ],
+        "romania_flash_loss_share": 0.259
+      },
+      "tolerances": {
+        "ratio_abs": 0.02,
+        "share_abs": 0.002,
+        "intensity_abs": 0.02
+      }
+    },
+    "mechanism_chain": [
+      "multiday rainfall loading",
+      "basin or terrain routing",
+      "river-response timing",
+      "instantaneous simplification rejection"
+    ],
+    "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+    "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+    "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+    "formula_derivation": "Compute routing lag as response_time - rainfall_peak_time where source fields permit it; compare ratios or differences across products."
+  },
+  "key_values": {
+    "event_name": "Storm Boris Central and Eastern Europe floods",
+    "event_window": "2024-09-11 to 2024-09-20",
+    "rain_window_hours": 72.0,
+    "station_3day_max_mm": 442.0,
+    "flood_alert_duration_hours": 144.0,
+    "reported_lives_lost": 27,
+    "romania_flash_flood_fatalities": 7,
+    "metrics": {
+      "alert_rain_ratio": 2.0,
+      "station_mm_per_day": 147.33,
+      "station_mm_per_hour": 6.139,
+      "affected_country_count": 6,
+      "warning_lead_range_hours": [
+        60.0,
+        84.0
+      ],
+      "warning_lead_mean_hours": 72.0,
+      "warning_mean_to_rain_ratio": 1.0,
+      "warning_min_to_rain_ratio": 0.833,
+      "return_period_x_flow_multiplier": 100.0,
+      "extreme_river_length_km": 8500,
+      "station_to_local_grid1_max_ratio": 8.31,
+      "station_to_local_grid2_max_ratio": 8.84,
+      "local_grid_max_agreement_ratio": 0.94,
+      "local_grid_mean_ratio": 1.266,
+      "romania_flash_loss_share": 0.259,
+      "non_romania_reported_loss_share": 0.741,
+      "population_density_per_km2": 95.5,
+      "sentinel1_pre_count": 36,
+      "sentinel1_post_count": 37,
+      "sentinel1_vv_mean_change_db": -0.179,
+      "alphaearth_mean_change": 0.0477
+    },
+    "routing_consistency_ledger": [
+      {
+        "row_id": "sustained_forcing",
+        "computed_value": {
+          "rain_window_hours": 72.0,
+          "flood_alert_duration_hours": 144.0,
+          "alert_rain_ratio": 2.0,
+          "station_mm_per_day": 147.33,
+          "station_mm_per_hour": 6.139,
+          "affected_country_count": 6
+        },
+        "test": "ratio >= 1.5, rain window >= 72 h, station total >= 400 mm, countries >= 4",
+        "result": "pass"
+      },
+      {
+        "row_id": "river_timing_and_severity",
+        "computed_value": {
+          "warning_lead_range_hours": [
+            60.0,
+            84.0
+          ],
+          "warning_lead_mean_hours": 72.0,
+          "warning_mean_to_rain_ratio": 1.0,
+          "warning_min_to_rain_ratio": 0.833,
+          "return_period_years": 20,
+          "flow_multiplier_lower_bound": 5.0,
+          "return_period_x_flow_multiplier": 100.0,
+          "extreme_river_length_km": 8500
+        },
+        "test": "mean warning lead >= rainfall-window length, minimum lead >= 0.75 of rainfall-window length, return period >= 20 years, flow multiplier >= 5, river length >= 1000 km",
+        "result": "pass"
+      },
+      {
+        "row_id": "regional_local_rainfall_contrast",
+        "computed_value": {
+          "station_to_local_grid1_max_ratio": 8.31,
+          "station_to_local_grid2_max_ratio": 8.84,
+          "local_grid_max_agreement_ratio": 0.94,
+          "local_grid_mean_ratio": 1.266
+        },
+        "test": "both station-to-local maximum ratios > 8 while local maxima agree within 0.8-1.25",
+        "result": "reject_direct_station_total_transfer"
+      },
+      {
+        "row_id": "branch_loss_share",
+        "computed_value": {
+          "romania_flash_flood_fatalities": 7,
+          "reported_lives_lost": 27,
+          "romania_flash_loss_share": 0.259,
+          "non_romania_reported_loss_share": 0.741
+        },
+        "test": "Romanian flash-flood share < 0.5 and remaining reported loss share > 0.5",
+        "result": "reject_branch_dominance"
+      },
+      {
+        "row_id": "context_signal_check",
+        "computed_value": {
+          "population_density_per_km2": 95.5,
+          "sentinel1_pre_count": 36,
+          "sentinel1_post_count": 37,
+          "sentinel1_vv_mean_change_db": -0.179,
+          "alphaearth_mean_change": 0.0477
+        },
+        "test": "context metrics are not strong enough to override duration, routing, and rainfall-contrast tests",
+        "result": "context_only"
+      }
+    ],
+    "rejected_overreads": [
+      "compact_local_pluvial_dominance",
+      "romanian_flash_flood_branch_dominance",
+      "coastal_surge_or_tide_control",
+      "direct_station_rainfall_transfer_to_local_grids",
+      "image_led_severity_classification",
+      "flow_threshold_only_detached_from_rainfall_forcing"
+    ],
+    "report_flags": {
+      "cutoff_low_reported": true,
+      "anchored_rainfall_zone_reported": true,
+      "transnational_river_basin_role_reported": true,
+      "oder_upper_danube_named": true,
+      "coastal_or_tide_terms_absent": true,
+      "wikipedia_confirms_flooding_and_fatalities": true
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Storm_Boris_Central_and_Eastern_Europe_floods.json",
+      "data/event_reports/event_reports_002_Wikipedia_Storm_Boris.json",
+      "data/other/other_001_ECMWF_-_Storm_Boris_and_European_flooding_September_2024.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Storm Boris Rainfall-River Timing Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "storm_boris_rainfall_river_timing_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "test whether multiday rainfall loading translates into routed river or basin response instead of an instantaneous local anomaly",
+      "computed_evidence": {
+        "final_process_alignment_label": "sustained_cutoff_low_rainfall_to_river_routing_supported",
+        "required_row_ids": [
+          "sustained_forcing",
+          "river_timing_and_severity",
+          "regional_local_rainfall_contrast",
+          "branch_loss_share",
+          "context_signal_check"
+        ],
+        "core_metrics": {
+          "alert_rain_ratio": 2.0,
+          "warning_mean_to_rain_ratio": 1.0,
+          "station_to_local_ratios": [
+            8.31,
+            8.84
+          ],
+          "romania_flash_loss_share": 0.259
+        },
+        "tolerances": {
+          "ratio_abs": 0.02,
+          "share_abs": 0.002,
+          "intensity_abs": 0.02
+        }
+      },
+      "mechanism_chain": [
+        "multiday rainfall loading",
+        "basin or terrain routing",
+        "river-response timing",
+        "instantaneous simplification rejection"
+      ],
+      "decisive_evidence": "Timing, persistence, and basin-scale response are decisive; isolated rainfall maxima are anchors but not the whole process.",
+      "rejected_simplifications": "Reject single-day, single-product, or same-hour response explanations if lagged or routed evidence is stronger.",
+      "bounded_interpretation": "The package supports timing and process reasoning, not calibrated hydraulic forecasts or complete damage accounting.",
+      "formula_derivation": "Compute routing lag as response_time - rainfall_peak_time where source fields permit it; compare ratios or differences across products."
+    },
+    "answer": "storm_boris_rainfall_river_timing_supported"
+  }
+}

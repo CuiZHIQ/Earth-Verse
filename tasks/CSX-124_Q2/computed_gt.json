@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-124_Q2",
+  "event_id": "CSX-124",
+  "task_type": "short_answer",
+  "target_family": "gabrielle_compound_rainfall_wind_exposure_stress",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": {
+      "process_model": "gabrielle_compound_rainfall_wind_exposure_stress",
+      "source_paths": [
+        "metadata/event.json",
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+        "data/event_reports/event_reports_004_Locked_event_anchor_Cyclone_Gabrielle.json",
+        "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+        "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+        "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+        "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+        "data/remote_sensing/remote_sensing_005_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+        "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+      ],
+      "event_window": {
+        "start": "2023-02-06",
+        "end": "2023-02-16"
+      },
+      "computed_metrics": {
+        "rainfall": {
+          "reported_max_station_rainfall_mm": 540.0,
+          "point_event_precip_mm": 153.0,
+          "point_wettest_24h_mm": 118.9,
+          "point_wettest_24h_share": 0.777,
+          "point_wettest_48h_mm": 135.8,
+          "point_wettest_48h_share": 0.888,
+          "point_wettest_72h_mm": 139.7,
+          "point_wettest_72h_share": 0.913,
+          "area_mean_precip_mm": 81.06,
+          "area_max_precip_mm": 117.2,
+          "reported_station_to_area_ratio": 6.662,
+          "aoi_area_km2": 1885.51,
+          "runoff_volume_proxy_million_m3": 152.84,
+          "population_rainfall_load_million_person_mm": 24.68,
+          "power_13_14_feb_precip_mm": 161.42,
+          "rainfall_stress": 0.833
+        },
+        "wind_pressure": {
+          "point_peak_gust_kmh": 106.6,
+          "point_peak_gust_time": "2023-02-13T12:00",
+          "point_min_pressure_hpa": 981.7,
+          "point_min_pressure_time": "2023-02-13T17:00",
+          "point_max_24h_pressure_fall_hpa": 23.5,
+          "reported_max_gust_kmh": 150.0,
+          "reported_lowest_pressure_hpa": 966.6,
+          "red_rain_warning_count": 5,
+          "red_wind_warning_count": 4,
+          "compound_rain_wind_hours": 20,
+          "wind_pressure_stress": 0.842
+        },
+        "exposure_access": {
+          "population_sum": 304521.05,
+          "population_density_per_km2": 161.51,
+          "critical_facility_count": 29,
+          "critical_facility_breakdown": {
+            "schools": 24,
+            "hospitals": 2,
+            "fire_stations": 2,
+            "police": 1,
+            "shelters_context": 35
+          },
+          "access_asset_count": 351,
+          "access_asset_breakdown": {
+            "major_roads": 347,
+            "bridges": 25,
+            "tunnels": 5,
+            "category_hit_total": 377,
+            "overlapping_category_hits": 26,
+            "count_definition": "unique features satisfying at least one access-asset condition"
+          },
+          "exposure_access_stress": 0.835
+        },
+        "remote_sensing": {
+          "sar_mean_change_db": 1.878,
+          "sar_max_change_db": 15.962,
+          "annual_embedding_max_change": 0.426521,
+          "disturbance_context": 0.797
+        },
+        "normalizations": {
+          "rainfall_load_norm": 0.811,
+          "rainfall_concentration_norm": 0.793,
+          "station_area_norm": 0.952,
+          "wind_kinetic_norm": 0.789,
+          "pressure_deficit_norm": 0.943,
+          "pressure_fall_norm": 0.783,
+          "population_norm": 0.87,
+          "access_norm": 0.78,
+          "critical_facility_norm": 0.829
+        },
+        "compound_storm_stress_index": 83.012
+      },
+      "scenario_analysis": {
+        "scenario": "+12% rainfall, +15% point gust, +10% exposed population",
+        "scenario_rainfall_stress": 0.91,
+        "scenario_wind_pressure_stress": 0.937,
+        "scenario_exposure_access_stress": 0.878,
+        "scenario_index": 89.169,
+        "delta_from_baseline": 6.157,
+        "scenario_runoff_volume_proxy_million_m3": 171.18,
+        "scenario_population_rainfall_load_million_person_mm": 30.41
+      },
+      "response_priorities": [
+        {
+          "rank": 1,
+          "priority": "flood_slope_situational_awareness",
+          "score": 85.489
+        },
+        {
+          "rank": 2,
+          "priority": "evacuation_and_shelter_readiness",
+          "score": 83.795
+        },
+        {
+          "rank": 3,
+          "priority": "lifeline_access_continuity",
+          "score": 81.413
+        }
+      ],
+      "mechanism_chain": [
+        "A short, intense rain pulse loaded an already broad storm footprint and produced a high station-to-area rainfall contrast.",
+        "Low pressure, rapid pressure fall, and severe gusts overlapped with rainfall for sustained compound forcing.",
+        "Population, critical facilities, and access assets convert the meteorological load into an emergency-service and lifeline problem.",
+        "SAR and annual embedding change support widespread disturbance context but do not replace the physical process evidence."
+      ],
+      "final_interpretation": "Cyclone Gabrielle should be treated as a compound rainfall-wind-pressure exposure event with high baseline stress and materially higher stress under the wetter, windier planning scenario."
+    },
+    "required_index": 83.012,
+    "scenario_index": 89.169,
+    "scenario_delta": 6.157,
+    "top_response_priority": "flood_slope_situational_awareness",
+    "tolerances": {
+      "indices_and_scores": 0.01,
+      "stresses": 0.001,
+      "large_physical_totals": 0.02,
+      "weather_values": 0.1,
+      "counts": 0,
+      "source_paths": "package-relative paths required; exact set may vary if all values are supported"
+    }
+  },
+  "event": {
+    "event_name": "Cyclone Gabrielle",
+    "hazard_family": "tropical_cyclone",
+    "event_date_or_window": "2023-02-06 to 2023-02-16",
+    "region": "Oceania"
+  },
+  "key_values": {
+    "area_mean_precip_mm": 81.06,
+    "aoi_area_km2": 1885.51,
+    "runoff_volume_proxy_million_m3": 152.84,
+    "population_rainfall_load_million_person_mm": 24.68,
+    "rainfall_stress": 0.833,
+    "wind_pressure_stress": 0.842,
+    "exposure_access_stress": 0.835,
+    "disturbance_context": 0.797,
+    "compound_storm_stress_index": 83.012,
+    "scenario_index": 89.169,
+    "scenario_delta": 6.157,
+    "response_priorities": [
+      {
+        "rank": 1,
+        "priority": "flood_slope_situational_awareness",
+        "score": 85.489
+      },
+      {
+        "rank": 2,
+        "priority": "evacuation_and_shelter_readiness",
+        "score": 83.795
+      },
+      {
+        "rank": 3,
+        "priority": "lifeline_access_continuity",
+        "score": 81.413
+      }
+    ],
+    "exposure_context_scope": "package exposure/access statistics are used as stress-context proxies, not location-specific loss attribution"
+  },
+  "judge_anchors": {
+    "must_not_depend_on_internet": true,
+    "must_cite_package_relative_paths": true,
+    "expected_source_families": [
+      "event narrative or anchor",
+      "hourly or daily meteorological record",
+      "multiple gridded precipitation products",
+      "population exposure",
+      "infrastructure/access features",
+      "AOI geometry",
+      "remote-sensing change products"
+    ],
+    "expected_interpretation": "compound rainfall-wind-pressure exposure stress, not a single wind or rain metric",
+    "exposure_context_scope": "package exposure/access statistics are stress-context proxies"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Uses the local package across narrative, meteorology, gridded precipitation, exposure, geospatial, infrastructure, and remote-sensing evidence, and cites package-relative paths for values used.",
+        "partial_credit": "Up to 2 points for mostly correct evidence families with incomplete path citation."
+      },
+      {
+        "name": "Event timing and hazard extraction",
+        "points": 3,
+        "description": "Correctly extracts the event window, reported station rainfall, reported gust and pressure anchors, point rainfall totals/windows, point gust, minimum pressure, pressure fall, and rain-wind overlap.",
+        "partial_credit": "Up to 2 points for correct values with one family missing or minor rounding errors."
+      },
+      {
+        "name": "Rainfall and runoff process calculations",
+        "points": 3,
+        "description": "Computes three-product area mean precipitation, AOI area, runoff-volume proxy, population rainfall load, station-to-area ratio, rainfall normalizations, and rainfall stress.",
+        "partial_credit": "Up to 2 points if formulas are right but one derived value is wrong."
+      },
+      {
+        "name": "Wind-pressure forcing calculations",
+        "points": 3,
+        "description": "Applies the squared gust kinetic proxy, pressure-deficit normalization, pressure-fall normalization, and wind-pressure stress with correct clipping and rounding.",
+        "partial_credit": "Up to 2 points for correct extraction but flawed normalization or weighting."
+      },
+      {
+        "name": "Exposure, access, and disturbance synthesis",
+        "points": 3,
+        "description": "Counts critical facilities and unique access assets correctly, computes exposure-access stress as a package exposure-context proxy, and uses SAR and annual embedding change only as disturbance context.",
+        "partial_credit": "Up to 2 points for correct exposure or remote-sensing treatment but not both."
+      },
+      {
+        "name": "Index, scenario, and priority ranking",
+        "points": 3,
+        "description": "Computes the baseline compound index, the +12%/+15%/+10% scenario index and delta, and ranks the three response priorities correctly.",
+        "partial_credit": "Up to 2 points if the baseline index is correct but scenario or ranking has an error."
+      },
+      {
+        "name": "Disaster-process interpretation and valid JSON",
+        "points": 2,
+        "description": "Returns valid structured JSON and gives a concise mechanism chain explaining compound rainfall, wind-pressure, exposure/access, and disturbance processes without generic unsupported claims.",
+        "partial_credit": "One point for valid JSON with weak process interpretation, or strong interpretation in imperfect JSON."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Cyclone_Gabrielle.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_003_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_005_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

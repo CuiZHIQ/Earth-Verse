@@ -1,0 +1,182 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-276_Q2",
+  "event_id": "CSX-276",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "interpretation": "contextual_drier_surface_signal_with_enso_drought_caution",
+    "image_change": {
+      "brightness_delta": 7.72,
+      "green_ratio_delta": -0.00159
+    },
+    "diagnostic_chain": [
+      "event image is brighter and slightly less green than the pre-event image",
+      "very strong El Nino conditions and negative SOI support an ENSO-linked drought-risk context",
+      "the true-color pair is contextual support, not standalone proof of regional drought severity"
+    ],
+    "reasoning_depth": {
+      "evidence_weighting": "The image pair supports local surface appearance change, while ENSO indicators and the NOAA briefing carry the stronger drought-context weight.",
+      "counterfactual_rejection": "A flood-damage or wildfire-smoke reading fails because the physical chain is ENSO-linked drought risk and the image signal is brighter and slightly less green.",
+      "uncertainty_or_scale_caveat": "Two true-color dates cannot by themselves establish regional drought severity or agricultural loss magnitude."
+    }
+  },
+  "answer_guidance": {
+    "answer_type": "hybrid_structured_short_answer",
+    "answer": "contextual_drier_surface_signal_with_enso_drought_caution",
+    "canonical_stance": "Contextual drier-surface or vegetation-stress image cue under strong ENSO drought risk; not standalone regional drought-severity proof.",
+    "required_claims": [
+      "event_image_brighter_and_slightly_less_green",
+      "strong_el_nino_negative_soi_failed_rains_context",
+      "true_color_pair_context_only_not_severity_or_loss_proof"
+    ],
+    "required_metrics": [
+      {
+        "name": "brightness_delta",
+        "value": 7.72,
+        "tolerance": 0.1
+      },
+      {
+        "name": "green_ratio_delta",
+        "value": -0.00159,
+        "tolerance": 0.0002
+      },
+      {
+        "name": "peak_oni_anomaly_c",
+        "value": 2.75,
+        "tolerance": 0.05
+      },
+      {
+        "name": "minimum_soi",
+        "value": -3.6,
+        "tolerance": 0.1
+      }
+    ],
+    "forbidden_claims": [
+      "standalone_regional_drought_severity_proof",
+      "flood_damage_primary_signal",
+      "wildfire_smoke_primary_signal",
+      "loss_or_soil_moisture_quantified_from_true_color_pair"
+    ],
+    "acceptable_variants": [
+      "natural_language_label_ok",
+      "brightness_7_7_or_7_72_green_ratio_about_minus_0_0016_ok"
+    ],
+    "reasoning_depth": {
+      "evidence_weighting": "The image pair supports local surface appearance change, while ENSO indicators and the NOAA briefing carry the stronger drought-context weight.",
+      "counterfactual_rejection": "A flood-damage or wildfire-smoke reading fails because the physical chain is ENSO-linked drought risk and the image signal is brighter and slightly less green.",
+      "uncertainty_or_scale_caveat": "Two true-color dates cannot by themselves establish regional drought severity or agricultural loss magnitude."
+    }
+  },
+  "key_values": {
+    "event_name": "2015-2016 El Nino and Southern Africa drought",
+    "hazard_family": "climate_teleconnection_enso_iod_mjo",
+    "locked_location_text": "Southern Africa drylands",
+    "event_window": {
+      "start_date": "2015-03-01",
+      "end_date": "2016-06-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "pre_image_stats": {
+      "width": 1024,
+      "height": 768,
+      "mean_red": 128.807,
+      "mean_green": 121.019,
+      "mean_blue": 106.938,
+      "brightness": 118.921,
+      "green_ratio": 0.33921
+    },
+    "event_image_stats": {
+      "width": 1024,
+      "height": 768,
+      "mean_red": 132.788,
+      "mean_green": 128.271,
+      "mean_blue": 118.864,
+      "brightness": 126.641,
+      "green_ratio": 0.33762
+    },
+    "brightness_delta": 7.72,
+    "green_ratio_delta": -0.00159,
+    "diagnostic_chain": [
+      "event_image_brighter_and_slightly_less_green_than_pre_event_image",
+      "very_strong_el_nino_and_negative_soi_support_enso_drought_risk_context",
+      "true_color_pair_is_context_not_standalone_regional_drought_proof"
+    ],
+    "peak_oni_anomaly_c": 2.75,
+    "peak_oni_season": "NDJ 2015",
+    "oni_seasons_at_or_above_1_5_c": 9,
+    "minimum_soi": -3.6,
+    "minimum_soi_month": "2016-01",
+    "report_flags": {
+      "three_strongest_el_nino": true,
+      "atmosphere_coupling_march_2015": true,
+      "rainfall_pressure_disruptions_december_2015": true,
+      "failed_rainy_seasons": true,
+      "drought_mentions": 10
+    },
+    "reasoning_depth": {
+      "evidence_weighting": "The image pair supports local surface appearance change, while ENSO indicators and the NOAA briefing carry the stronger drought-context weight.",
+      "counterfactual_rejection": "A flood-damage or wildfire-smoke reading fails because the physical chain is ENSO-linked drought risk and the image signal is brighter and slightly less green.",
+      "uncertainty_or_scale_caveat": "Two true-color dates cannot by themselves establish regional drought severity or agricultural loss magnitude."
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final_interpretation_label_and_stance",
+        "points": 4,
+        "description": "Identifies the result as contextual drier-surface or vegetation-stress support under ENSO-linked drought caution, not standalone regional severity proof.",
+        "partial_credit": "Names drought stress but omits either the ENSO framing or the caution against standalone proof."
+      },
+      {
+        "name": "image_metric_extraction",
+        "points": 4,
+        "description": "Reports brightness delta near 7.72 and green-ratio delta near -0.00159, with correct sign and interpretation.",
+        "partial_credit": "Gives one correct metric, correct direction with weaker rounding, or a qualitative image-change description."
+      },
+      {
+        "name": "enso_climate_context",
+        "points": 4,
+        "description": "Uses the very strong El Nino context, peak ONI near 2.75 C, negative SOI near -3.6, and report-supported rainfall disruption or failed rainy seasons.",
+        "partial_credit": "Mentions a generic El Nino/drought link without enough quantitative or report anchors."
+      },
+      {
+        "name": "cross_scale_fusion_and_limitation",
+        "points": 3,
+        "description": "Integrates the image cue with climate-index/report evidence and explains why a two-date true-color pair cannot prove regional drought severity alone.",
+        "partial_credit": "Combines image and climate evidence but gives only a vague limitation."
+      },
+      {
+        "name": "disaster_interpretation_and_operational_implication",
+        "points": 2,
+        "description": "Translates the result into cautious drought briefing or response-planning language.",
+        "partial_credit": "Provides a general disaster-impact statement without explaining how the interpretation should be used."
+      },
+      {
+        "name": "rejection_of_unsupported_alternatives",
+        "points": 2,
+        "description": "Rejects flood damage, wildfire smoke, and definitive crop-loss or regional-severity claims as unsupported by the physical chain.",
+        "partial_credit": "Rejects only one major distractor or rejects alternatives without physical justification."
+      },
+      {
+        "name": "output_clarity_and_source_discipline",
+        "points": 1,
+        "description": "Uses compact structured JSON or a clearly equivalent short answer and stays within the incident record. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "partial_credit": "Readable answer with minor formatting issues."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NOAA_Climate.gov.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015-2016_El_Nino_and_Southern_Africa_drought.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+name: earthscientist-ncl
+channels:
+  - conda-forge
+dependencies:
+  - ncl=6.6.2
+  - cdo>=2.4
+  - nco>=5.2
+  - netcdf4>=1.6

@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-208_Q2",
+  "event_id": "CSX-208",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "numeric_diagnosis",
+  "primary_gt": {
+    "fire_smoke_load": {
+      "fire_count": 17,
+      "smoke_score": 1.0,
+      "load": 17.0,
+      "pass": true
+    },
+    "burn_contrast": {
+      "dnbr_max": 0.6516,
+      "dnbr_mean": 0.0442,
+      "ratio": 14.75,
+      "pass": true
+    },
+    "weather_load": {
+      "heat_c_days": 30.04,
+      "dry_days": 46,
+      "days": 46,
+      "max_wind_mps": 6.81,
+      "load": 50.5,
+      "pass": true
+    },
+    "precipitation_clearing": {
+      "point_total_max_mm": 0.02,
+      "gridded_mean_max_mm": 3.2,
+      "absent_score": 1,
+      "pass": true
+    },
+    "exposure_normalized_index": {
+      "population": 4365.74,
+      "index": 12658.29,
+      "per_1000_people": 2899.46,
+      "pass": true
+    },
+    "classification": "compound_fire_smoke_hazard_supported"
+  },
+  "required_output": {
+    "top_level_keys": [
+      "fire_smoke_load",
+      "burn_contrast",
+      "weather_load",
+      "precipitation_clearing",
+      "exposure_normalized_index",
+      "classification"
+    ],
+    "rounding": "Round continuous values to two decimals except dNBR max and mean, which may use four decimals.",
+    "classification_rule": "Use compound_fire_smoke_hazard_supported only if fire-smoke, burn contrast, weather load, precipitation clearing, and exposure-normalized index all pass."
+  },
+  "formulas": {
+    "fire_smoke_load": "fire_count * smoke_score",
+    "burn_contrast_ratio": "dnbr_max / dnbr_mean",
+    "heat_c_days": "sum(max(Tmax - 35 C, 0))",
+    "weather_load": "heat_c_days * (dry_days / days) * (1 + max_wind_mps / 10)",
+    "precipitation_clearing_absent_score": "1 if max(point precipitation totals) <= 1 mm and max(gridded precipitation means) < 5 mm else 0",
+    "compound_index": "fire_smoke_load * burn_contrast_ratio * weather_load * precipitation_clearing_absent_score",
+    "exposure_normalized_index": "compound_index / (population / 1000)"
+  },
+  "thresholds": {
+    "fire_count_min": 10,
+    "smoke_score_required": 1.0,
+    "dnbr_max_min": 0.6,
+    "dnbr_mean_max": 0.1,
+    "dnbr_ratio_min": 10.0,
+    "weather_load_min": 40.0,
+    "dry_fraction_min": 0.9,
+    "point_precip_total_max_mm": 1.0,
+    "gridded_precip_mean_max_mm": 5.0,
+    "exposure_normalized_min_per_1000_people": 1000.0
+  },
+  "tolerances": {
+    "continuous_default_abs": 0.05,
+    "dnbr_values_abs": 0.0001,
+    "index_abs": 1.0,
+    "counts_exact": true,
+    "booleans_exact": true,
+    "classification_exact": true
+  },
+  "event": {
+    "package_id": "CSX-208",
+    "event_name": "2019-2020 Australian bushfire smoke and hazardous air-quality episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_window": "2019-09-01 to 2020-02-29",
+    "fire_weather_data_window": "2019-09-01 to 2019-10-16"
+  },
+  "key_values": {
+    "data_scope": {
+      "event_window": "2019-09-01 to 2020-02-29",
+      "nasa_power_weather_slice": "2019-09-01 to 2019-10-16",
+      "nasa_power_weather_days": 46,
+      "weather_slice_note": "Weather-load terms use the available NASA POWER daily slice only; missing daily weather values outside this slice are not inferred.",
+      "exposure_scope_note": "Population and road values are package-provided exposure statistics used for normalization only; coordinate metadata are not scored."
+    },
+    "australia_bounds": {
+      "lon_min": 112.0,
+      "lon_max": 154.0,
+      "lat_min": -44.0,
+      "lat_max": -10.0
+    },
+    "smoke_term_hits": {
+      "smoke": true,
+      "hazardous air quality": true,
+      "transported across the pacific": true
+    },
+    "smoke_terms_present": 3,
+    "eonet_australian_wildfire_event_count": 17,
+    "dnbr_max_raw": 0.65159,
+    "dnbr_mean_raw": 0.044189,
+    "dnbr_ratio_raw": 14.74546,
+    "nasa_power_days": 46,
+    "nasa_power_hot_day_count_gte_35c": 11,
+    "nasa_power_heat_c_days_raw": 30.04,
+    "nasa_power_dry_days_lte_0_1mm": 46,
+    "nasa_power_dry_fraction": 1.0,
+    "nasa_power_max_wind_mps": 6.81,
+    "weather_load_raw": 50.49724,
+    "open_meteo_precip_total_mm": 0.0,
+    "nasa_power_precip_total_mm": 0.02,
+    "gpm_precip_mean_mm": 3.19719,
+    "chirps_precip_mean_mm": 2.004634,
+    "population_sum": 4365.744481,
+    "mapped_road_elements": 22,
+    "compound_index_raw": 12658.285667,
+    "exposure_normalized_raw": 2899.456375
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON ledger",
+        "points": 4,
+        "description": "Returns the six requested top-level keys with nested numeric values and pass/fail states for fire-smoke load, burn contrast, weather load, precipitation clearing, exposure-normalized index, and classification.",
+        "partial_credit": "Award 1-3 points for a mostly complete structure with missing or misplaced fields."
+      },
+      {
+        "name": "Numeric anchors",
+        "points": 5,
+        "description": "Computes the decisive anchors within tolerance: 17 wildfire catalog events, smoke score 1.0, dNBR ratio about 14.75, heat load about 30.04 C-days, 46/46 dry days, max wind about 6.81 m/s, weather load about 50.50, point precipitation 0.02 mm, gridded mean precipitation 3.20 mm, population 4365.74, and normalized index 2899.46.",
+        "partial_credit": "Award 1-4 points for correct subsets or minor rounding differences."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 4,
+        "description": "Applies the pass/fail tests correctly for all five numeric components and assigns the supported classification only when all five pass.",
+        "partial_credit": "Award 1-3 points for mostly correct decisions with one or two threshold errors."
+      },
+      {
+        "name": "Formula reasoning",
+        "points": 3,
+        "description": "Uses or clearly implies the required formulas for fire-smoke load, dNBR ratio, heat C-days, weather load, compound index, and population normalization.",
+        "partial_credit": "Award 1-2 points when formulas are partly correct but incomplete."
+      },
+      {
+        "name": "Computed alternative rejection",
+        "points": 2,
+        "description": "Encodes the low dNBR mean, high max-to-mean dNBR ratio, and weak precipitation-clearing values in the JSON pass/fail states so broad-burn or rainfall-clearing alternatives are not selected.",
+        "partial_credit": "Award 1 point when one alternative is correctly ruled out by the JSON states."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 1,
+        "description": "Keeps the final answer JSON-only with the concise compound fire-smoke support classification.",
+        "partial_credit": "Award 0.5 point if the classification is correct but accompanied by minor extra prose outside the JSON."
+      },
+      {
+        "name": "No direct-loss transfer",
+        "points": 1,
+        "description": "Does not convert population, road elements, or report wording into measured casualties, infrastructure damage, or response actions.",
+        "partial_credit": "No credit if the answer makes a direct-loss claim not present in the ledger."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_bushfire_smoke_and_hazardous_air-quality_episode.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_WMO.html",
+      "data/air_quality/air_quality_001_NASA_Earth_Observatory_Fires_and_Smoke_Engulf_Southeastern_Australia.html",
+      "data/event_catalogs/event_catalogs_001_NASA_EONET_v3_events_categories_search.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "All values are derived deterministically from local event package data. Weather-load metrics use the available NASA POWER 2019-09-01 to 2019-10-16 slice, and exposure statistics are scored as package-provided values rather than by coordinate metadata."
+  }
+}

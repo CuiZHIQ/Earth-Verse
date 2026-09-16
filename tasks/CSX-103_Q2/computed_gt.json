@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-103_Q2",
+  "event_id": "CSX-103",
+  "task_type": "structured_reasoning",
+  "target_family": "sandy_coastal_forcing_mechanism_competition",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "surge_wave_coastal_flooding_primary",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "compare coastal water-level, pressure, wave, rainfall, and exposure evidence to identify the dominant flood forcing",
+    "computed_evidence": {
+      "required_fields": [
+        "coastal_signal",
+        "cyclone_forcing",
+        "rainfall_test",
+        "local_wind_test",
+        "grid_precip_context",
+        "final_label"
+      ],
+      "required_flags": {
+        "coastal_signal_passes": true,
+        "rainfall_only_passes": false,
+        "local_wind_only_passes": false
+      },
+      "canonical_values": {
+        "state_count": 3,
+        "coastal_terms": 5,
+        "duration_ratio": 0.725,
+        "wettest_fraction": 0.824,
+        "local_wind_ratio": 0.362,
+        "grid_mean_mm": 71.07
+      },
+      "tolerances": {
+        "mm": 0.05,
+        "ratios": 0.005,
+        "wind_proxy": 0.5,
+        "counts": 0
+      }
+    },
+    "mechanism_chain": [
+      "storm pressure or wind forcing",
+      "surge/wave water-level amplification",
+      "coastal exposure context",
+      "rainfall-only rejection"
+    ],
+    "decisive_evidence": "Coastal water-level and wave evidence should dominate unless rainfall-runoff metrics clearly overturn the coastal mechanism.",
+    "rejected_simplifications": "Reject rainfall-only, wind-only, or exposure-only explanations if they cannot explain the coastal flooding signature.",
+    "bounded_interpretation": "The result is not a tide-gauge reconstruction, property-loss model, or building-level flood map."
+  },
+  "key_values": {
+    "event_name": "Hurricane Sandy New York-New Jersey coastal flooding",
+    "event_window": "2012-10-22 to 2012-10-31",
+    "event_days": 10,
+    "event_hours": 240,
+    "named_state_count": 3,
+    "coastal_term_count": 5,
+    "coastal_signal_passes": true,
+    "catalog_duration_hours": 174.0,
+    "catalog_duration_days": 7.25,
+    "catalog_wind_kmh": 167.372,
+    "catalog_wind_squared_proxy": 28013.386,
+    "duration_window_ratio": 0.725,
+    "event_precip_mm": 45.4,
+    "wettest_24h_precip_mm": 37.4,
+    "wettest_24h_fraction": 0.824,
+    "event_daily_mean_mm_day": 4.54,
+    "rainfall_only_passes": false,
+    "local_peak_wind_kmh": 60.6,
+    "local_catalog_wind_ratio": 0.362,
+    "local_catalog_wind_squared_ratio": 0.131,
+    "wind_ge_50_hours": 8,
+    "wind_ge_50_fraction": 0.033,
+    "local_wind_only_passes": false,
+    "grid_precip_context": {
+      "product_mean_totals_mm": [
+        42.857,
+        55.05,
+        115.302
+      ],
+      "product_max_mean_ratios": [
+        2.122,
+        2.2,
+        1.704
+      ],
+      "mean_consensus_mm": 71.07,
+      "mean_spread_mm": 72.445,
+      "mean_of_product_max_mean_ratios": 2.009
+    },
+    "final_label": "surge_wave_coastal_flooding_primary"
+  },
+  "judge_anchors": {
+    "canonical_stance": "The ledger supports surge and wave coastal flooding as primary for Hurricane Sandy in the New York-New Jersey area.",
+    "required_metrics": [
+      "3 named states and 5 coastal terms",
+      "174.0 h over a 240 h event window, ratio 0.725",
+      "45.4 mm event precipitation and 0.824 wettest-24-hour fraction",
+      "0.362 local/catalog wind ratio and 0.033 high-wind-hour fraction",
+      "71.07 mm grid mean consensus and 72.445 mm product spread"
+    ],
+    "forbidden_claims": [
+      "Rainfall-only passes the specified threshold.",
+      "Local-wind-only passes the specified threshold.",
+      "A generic cyclone label is as specific as the computed coastal flooding label."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Sandy_New_York-New_Jersey_coastal_flooding.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Hurricane Sandy Coastal-Forcing Mechanism Competition"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "surge_wave_coastal_flooding_primary",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "compare coastal water-level, pressure, wave, rainfall, and exposure evidence to identify the dominant flood forcing",
+      "computed_evidence": {
+        "required_fields": [
+          "coastal_signal",
+          "cyclone_forcing",
+          "rainfall_test",
+          "local_wind_test",
+          "grid_precip_context",
+          "final_label"
+        ],
+        "required_flags": {
+          "coastal_signal_passes": true,
+          "rainfall_only_passes": false,
+          "local_wind_only_passes": false
+        },
+        "canonical_values": {
+          "state_count": 3,
+          "coastal_terms": 5,
+          "duration_ratio": 0.725,
+          "wettest_fraction": 0.824,
+          "local_wind_ratio": 0.362,
+          "grid_mean_mm": 71.07
+        },
+        "tolerances": {
+          "mm": 0.05,
+          "ratios": 0.005,
+          "wind_proxy": 0.5,
+          "counts": 0
+        }
+      },
+      "mechanism_chain": [
+        "storm pressure or wind forcing",
+        "surge/wave water-level amplification",
+        "coastal exposure context",
+        "rainfall-only rejection"
+      ],
+      "decisive_evidence": "Coastal water-level and wave evidence should dominate unless rainfall-runoff metrics clearly overturn the coastal mechanism.",
+      "rejected_simplifications": "Reject rainfall-only, wind-only, or exposure-only explanations if they cannot explain the coastal flooding signature.",
+      "bounded_interpretation": "The result is not a tide-gauge reconstruction, property-loss model, or building-level flood map."
+    },
+    "answer": "surge_wave_coastal_flooding_primary"
+  }
+}

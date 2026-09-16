@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-178_Q1",
+  "event_id": "CSX-178",
+  "task_type": "numeric",
+  "target_family": "reported_numeric_signature",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "dry_hotspot_smoke_transport_signature",
+    "metrics": {
+      "reported_rain_fraction_of_normal": 0.25,
+      "reported_fire_hotspots": 41000,
+      "smoke_transport_anchor_count": 3
+    },
+    "computed_implication": "The 0.25 rainfall fraction, roughly 41000 hotspots, and three smoke-transport anchors identify a dry Nepal fire-smoke episode with broad satellite-observed smoke movement."
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2021-03-26",
+      "end_date": "2021-04-15",
+      "inclusive_days": 21
+    },
+    "smoke_transport_anchors": {
+      "smoke_enveloping_country_text": true,
+      "smoke_pall_pokhara_text": true,
+      "eastward_smoke_transport_text": true
+    },
+    "hotspot_observation_window": {
+      "start_date": "2021-01-01",
+      "end_date": "2021-04-07",
+      "inclusive_days": 97
+    },
+    "aliases": [
+      "dry_hotspot_smoke_transport_signature",
+      "dry_fire_smoke_report_signature",
+      "dry_nepal_fire_smoke_signature"
+    ]
+  },
+  "numeric_tolerances": {
+    "metrics.reported_rain_fraction_of_normal": 0.001,
+    "metrics.reported_fire_hotspots": 500,
+    "metrics.smoke_transport_anchor_count": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON response contract",
+        "points": 3,
+        "description": "Returns parseable JSON with top-level answer, metrics, and computed_implication, and includes all three requested metric keys.",
+        "partial_credit": "Award 1-2 points for a clearly structured response with one missing or renamed field."
+      },
+      {
+        "name": "Compact label",
+        "points": 3,
+        "description": "Gives dry_hotspot_smoke_transport_signature or an accepted equivalent centered on dry conditions, hotspot burden, and smoke transport.",
+        "partial_credit": "Award 1-2 points for a wildfire-smoke label that is directionally correct but too generic."
+      },
+      {
+        "name": "Reported rainfall fraction",
+        "points": 4,
+        "description": "Extracts that Nepal received just a quarter of normal January-April rainfall and reports 0.25 within 0.001.",
+        "partial_credit": "Award 2-3 points for recognizing a severe rainfall deficit but missing the normalized fraction."
+      },
+      {
+        "name": "Reported hotspot count",
+        "points": 3,
+        "description": "Reports approximately 41,000 VIIRS hotspots within 500 detections and treats the value as an approximate detection count.",
+        "partial_credit": "Award 1-2 points for the right order of magnitude or a nearby rounded value outside tolerance."
+      },
+      {
+        "name": "Smoke transport anchors",
+        "points": 3,
+        "description": "Counts the three report anchors: smoke enveloping much of Nepal, a smoke pall near Pokhara, and eastward smoke transport toward India and Bangladesh.",
+        "partial_credit": "Award 1 point for each correct anchor."
+      },
+      {
+        "name": "Computation-to-label link",
+        "points": 2,
+        "description": "Connects the three values to the final label without adding claims beyond the report-supported numeric signature.",
+        "partial_credit": "Award 1 point for connecting only two of the three values to the label."
+      },
+      {
+        "name": "Concise bounded implication",
+        "points": 2,
+        "description": "Gives a one-sentence implication limited to dry conditions, hotspot detections, and smoke transport.",
+        "partial_credit": "Award 1 point if the implication is mostly bounded but includes one minor overstatement."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Nepal_2021_forest_fires.json"
+    ],
+    "notes": [
+      "Off-event Open-Meteo daily weather and Sentinel-2 dNBR are not used in this ground truth.",
+      "The scored values come from the declared event anchor and NASA Earth Observatory report text."
+    ]
+  }
+}

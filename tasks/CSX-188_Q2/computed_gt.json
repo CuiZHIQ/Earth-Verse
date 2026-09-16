@@ -1,0 +1,131 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-188",
+  "key_values": {
+    "cue_counts": {
+      "active_fire_cues": 4,
+      "settlement_impact_cues": 4,
+      "smoke_transport_cues": 5
+    },
+    "cue_flags": {
+      "active_fire": {
+        "extreme_fire_weather": true,
+        "hot_dry_windy_continuing": true,
+        "many_new_fires_within_24h": true,
+        "other_fires_elsewhere": true
+      },
+      "settlement_impact": {
+        "athens_fire": true,
+        "capital_city_smoke": true,
+        "cars_burned": true,
+        "homes_burned": true
+      },
+      "smoke_transport": {
+        "alexandroupolis_origin": true,
+        "capital_city_smoke": true,
+        "long_plume_to_italy": true,
+        "mediterranean_smoke": true,
+        "satellite_observed_plume": true
+      }
+    },
+    "dnbr_stats": {
+      "sentinel2_dnbr_max_raw": 0.8597047915007765,
+      "sentinel2_dnbr_mean": -0.08303745607691394,
+      "sentinel2_dnbr_min": -0.9506437100196524,
+      "sentinel2_dnbr_stdDev": 0.21288416478477762
+    },
+    "event_name": "2023 Greece wildfires",
+    "formulae": {
+      "cue_count": "count of true report-text tests in each named cue family",
+      "dnbr_max": "round(sentinel2_dnbr_max, 3)",
+      "event_window_days": "inclusive day count from locked start and end dates",
+      "final_label": "all four threshold tests must pass"
+    },
+    "gates": {
+      "active_fire_cues_ge_3": true,
+      "dnbr_max_ge_0_660": true,
+      "settlement_impact_cues_ge_2": true,
+      "smoke_transport_cues_ge_4": true
+    },
+    "hazard_family": "wildfire_burn_smoke",
+    "required_metrics": [
+      "event_window_days",
+      "narrative_date_span",
+      "active_fire_cues",
+      "smoke_transport_cues",
+      "settlement_impact_cues",
+      "dnbr_max",
+      "final_label"
+    ]
+  },
+  "primary_gt": {
+    "active_fire_cues": 4,
+    "dnbr_max": 0.86,
+    "event_window": "2023-07-01/2023-08-31",
+    "event_window_days": 62,
+    "final_label": "passes_smoke_burn_window_ledger",
+    "narrative_date_span": "2023-08-22/2023-08-23",
+    "settlement_impact_cues": 4,
+    "smoke_transport_cues": 5
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Includes exactly the requested eight fields with compact scalar values and the required final_label.",
+        "name": "Returned JSON shape",
+        "partial_credit": "Minor key-order or numeric presentation differences are acceptable; missing required fields or using non-JSON prose loses most credit.",
+        "points": 3
+      },
+      {
+        "description": "Uses the locked 2023-07-01/2023-08-31 window, computes 62 inclusive days, and extracts the 2023-08-22/2023-08-23 narrative date span.",
+        "name": "Window reconstruction",
+        "partial_credit": "Award up to 2 points for one correct window and up to 1 point for using exclusive rather than inclusive day counting.",
+        "points": 4
+      },
+      {
+        "description": "Reports active_fire_cues=4, smoke_transport_cues=5, and settlement_impact_cues=4 from the report narrative.",
+        "name": "Cue counts",
+        "partial_credit": "Award about 1.5 points per correct cue family, with small credit for identifying the right family but missing one cue.",
+        "points": 5
+      },
+      {
+        "description": "Reports dnbr_max=0.86 after rounding the satellite dNBR peak value 0.8597047915007765 to three decimals.",
+        "name": "dNBR extraction",
+        "partial_credit": "Award 2 points for the right unrounded value with different presentation, or 1 point for using the dNBR mean instead of the peak.",
+        "points": 3
+      },
+      {
+        "description": "Applies active_fire_cues >= 3, smoke_transport_cues >= 4, settlement_impact_cues >= 2, and dnbr_max >= 0.660.",
+        "name": "Threshold arithmetic",
+        "partial_credit": "Award roughly 0.75 points per correctly evaluated threshold.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the interpretation concise and limited to the computed smoke-plus-burn ledger.",
+        "name": "Computed interpretation",
+        "partial_credit": "Award 1 point if the label is right but the explanation converts qualitative report words into exact loss or area totals.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "wildfire_smoke_burn_threshold_ledger",
+  "task_id": "CSX-188_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "date": "exact",
+    "dnbr_abs": 0.001,
+    "final_label": "exact",
+    "integer_count_abs": 0
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-301",
+  "key_values": {
+    "annual_embedding_change_mean": 0.026,
+    "critical_amenities": 89,
+    "era5_precip_max_mm": 3.75,
+    "era5_precip_mean_mm": 1.66,
+    "event_precip_mm": 2.4,
+    "low_precip_days_le_1mm": 2,
+    "low_precip_run_days_le_1mm": 2,
+    "peak_wind_date": "2021-03-15",
+    "peak_wind_kmh": 22.1,
+    "population_millions": 11.4,
+    "power_event_precip_mm": 2.1,
+    "road_features": 211
+  },
+  "primary_gt": {
+    "answer": "air_quality_visibility_transport_public_health_priority",
+    "answer_type": "structured_json_with_expert_reasoning",
+    "evidence_roles": {
+      "annual_embedding": "non-primary structural-change context, not direct dust concentration",
+      "exposure_context": "population, road, and amenity context, not confirmed direct impacts for every exposed person",
+      "point_weather": "short-window point-sample wind and precipitation context, not a regional maximum claim"
+    },
+    "forbidden_claims": [
+      "exact casualties, hospitalizations, or measured PM concentrations are computed here",
+      "all exposed people are confirmed directly affected",
+      "annual embedding change directly measures dust concentration or visibility",
+      "hydrologic flooding is the leading response priority"
+    ],
+    "impact_chain": [
+      "dry_windy_surface_conditions",
+      "dust_transport_and_low_visibility",
+      "public_health_and_transport_priority"
+    ],
+    "key_metrics": {
+      "annual_embedding_change_mean": 0.026,
+      "critical_amenities": 89,
+      "event_precip_mm": 2.4,
+      "peak_wind_kmh": 22.1,
+      "population_millions": 11.4
+    },
+    "priority_bin": "high_exposure_acute_dust_disruption",
+    "required_claims": [
+      "the event is an acute dust/sandstorm disruption rather than a hydrologic flood or long-term land-cover damage case",
+      "dry windy short-window meteorology supports dust transport and low visibility",
+      "population, critical amenities, and roads make air-quality, visibility, transport, and public-health response operationally important"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March_2021_East_Asia_dust_storm.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns air_quality_visibility_transport_public_health_priority or an equivalent compact label.",
+        "name": "Priority label",
+        "partial_credit": "1-2 points for identifying dust response but omitting public health, visibility, or transport emphasis.",
+        "points": 3
+      },
+      {
+        "description": "Links the dust/sandstorm hazard to airborne dust, visibility reduction, transport disruption, and respiratory or public-health concerns.",
+        "name": "Dust-impact mechanism",
+        "partial_credit": "1-2 points for identifying dust transport but not connecting it to the full operational impact pathway.",
+        "points": 3
+      },
+      {
+        "description": "Uses peak wind near 22.1 km/h, Open-Meteo precipitation near 2.4 mm, NASA POWER precipitation near 2.1 mm, and ERA5-Land mean precipitation near 1.66 mm.",
+        "name": "Meteorological anchors",
+        "partial_credit": "1-3 points for using some wind or precipitation metrics but missing the dry-windy contrast.",
+        "points": 4
+      },
+      {
+        "description": "Uses exposure-context metrics correctly: about 11.4 million people, 89 critical amenities, and 211 road features, without treating them as confirmed direct impacts.",
+        "name": "Exposure anchors",
+        "partial_credit": "1-2 points for using one or two exposure metrics or for describing exposure qualitatively.",
+        "points": 3
+      },
+      {
+        "description": "Builds the chain from dry windy surface conditions to dust transport and low visibility to public-health and transport priority.",
+        "name": "Impact-chain construction",
+        "partial_credit": "1-2 points for a partial driver-hazard-priority chain.",
+        "points": 3
+      },
+      {
+        "description": "Treats annual embedding change near 0.026 as non-primary context rather than proof of long-term land-cover damage.",
+        "name": "Remote-sensing context",
+        "partial_credit": "1 point for mentioning annual change but not clearly separating it from acute dust impact.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported exact casualties, hospitalization, PM concentration, airport closure, or confirmed direct-impact claims.",
+        "name": "Unsupported-claim control",
+        "partial_credit": "1 point for avoiding most but not all unsupported impact escalations.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "annual_embedding_change_mean": 0.026,
+      "critical_amenities": 89,
+      "era5_precip_max_mm": 3.75,
+      "era5_precip_mean_mm": 1.66,
+      "event_precip_mm": 2.4,
+      "low_precip_days_le_1mm": 2,
+      "low_precip_run_days_le_1mm": 2,
+      "peak_wind_date": "2021-03-15",
+      "peak_wind_kmh": 22.1,
+      "population_millions": 11.4,
+      "power_event_precip_mm": 2.1,
+      "road_features": 211
+    },
+    "event_name": "March 2021 East Asia dust storm",
+    "event_window": {
+      "end_date": "2021-03-16",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2021-03-14"
+    },
+    "evidence_roles": {
+      "annual_embedding": "annual structural-change context only",
+      "exposure_context": "package population, road, and amenity context",
+      "point_weather": "short-window point-sample wind and precipitation context"
+    },
+    "hazard_family": "dust_sandstorm_extreme",
+    "hazard_label": "Extreme dust or sandstorm",
+    "osm_feature_counts": {
+      "amenity_counts": {
+        "fire_station": 7,
+        "hospital": 25,
+        "police": 33,
+        "school": 12,
+        "shelter": 12
+      },
+      "critical_amenities": 89,
+      "highway_counts": {
+        "motorway": 25,
+        "primary": 45,
+        "secondary": 45,
+        "tertiary": 74,
+        "trunk": 22
+      },
+      "road_features": 211
+    },
+    "rule_flags": {
+      "high_exposure": true,
+      "is_dust_event": true,
+      "low_rainfall_context": true,
+      "structural_land_change_not_primary": true,
+      "windy_enough_for_resuspension_or_transport": true
+    },
+    "spatial_window": {
+      "aoi_geometry_status": "not_defined_until_data_preparation",
+      "country_or_region": "East Asia",
+      "location_text": "Mongolia, northern China and Korea"
+    }
+  },
+  "task_id": "CSX-301_Q1",
+  "task_type": "short_answer"
+}

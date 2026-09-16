@@ -1,0 +1,140 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-118",
+  "key_values": {
+    "derived": {
+      "gust_to_wind_ratio": 1.82,
+      "point_minus_official_gust_kmh": 7.9,
+      "point_minus_official_pressure_hpa": 0.6,
+      "pressure_lag_hours": 1.0
+    },
+    "event": {
+      "family": "tropical_cyclone",
+      "name": "Ex-Hurricane Ophelia urban wind impacts in Ireland",
+      "window": [
+        "2017-10-15",
+        "2017-10-16"
+      ]
+    },
+    "official_dublin_table": {
+      "gust_kmh": 103.7,
+      "gust_kt": 56,
+      "pressure_hpa": 989.0,
+      "pressure_time": "16/1430",
+      "station": "Dublin Airport",
+      "wind_kmh": 66.7,
+      "wind_kt": 36,
+      "wind_time": "16/1330"
+    },
+    "point_weather": {
+      "hours": 48,
+      "latitude": 53.391914,
+      "longitude": -6.171417,
+      "max_hourly_rain": {
+        "time": "2017-10-15T16:00",
+        "value": 0.9
+      },
+      "minimum_pressure": {
+        "time": "2017-10-16T15:00",
+        "value": 989.6
+      },
+      "peak_gust": {
+        "time": "2017-10-16T14:00",
+        "value": 111.6
+      },
+      "peak_wind": {
+        "time": "2017-10-16T14:00",
+        "value": 61.4
+      },
+      "rainfall_total_mm": 5.8
+    }
+  },
+  "primary_gt": {
+    "answer": "wind_pressure_timing_core",
+    "core": {
+      "gust": [
+        "2017-10-16T14:00",
+        111.6
+      ],
+      "gust_gap_kmh": 7.9,
+      "lag_h": 1.0,
+      "max_hourly_rain_mm": 0.9,
+      "official_gust_kmh": 103.7,
+      "pressure": [
+        "2017-10-16T15:00",
+        989.6
+      ],
+      "rain_mm": 5.8,
+      "ratio": 1.82,
+      "wind": [
+        "2017-10-16T14:00",
+        61.4
+      ]
+    },
+    "required_claims": [
+      "wind and gust peak at 14:00 before the pressure minimum",
+      "rainfall is modest compared with the wind-pressure signal",
+      "official Dublin gust is close to the point-weather gust"
+    ],
+    "tolerances": {
+      "h": 0.1,
+      "hpa": 0.2,
+      "kmh": 0.2,
+      "mm": 0.1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are calculated from local CSX-118 weather JSON and the local NHC report PDF.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "States that the Dublin record is a wind-pressure timing core, not a rain-accumulation core.",
+        "name": "Core classification",
+        "partial_credit": "Award up to 2 points for a wind-led label that does not make the timing contrast explicit.",
+        "points": 3
+      },
+      {
+        "description": "Reports peak gust 111.6 km/h and peak wind 61.4 km/h at 2017-10-16T14:00, plus minimum pressure 989.6 hPa at 2017-10-16T15:00.",
+        "name": "Hourly extrema",
+        "partial_credit": "Award partial credit for correct values with one missing time or minor rounding within 0.2 units.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 1.0 hour lag from wind and gust peak to pressure minimum and the 1.82 gust-to-wind ratio.",
+        "name": "Derived timing and ratio",
+        "partial_credit": "Award up to 2 points for one correct derived value or a correct formula with arithmetic slips.",
+        "points": 3
+      },
+      {
+        "description": "Uses 5.8 mm total point rainfall and 0.9 mm maximum hourly rain to keep rain accumulation secondary.",
+        "name": "Rainfall contrast",
+        "partial_credit": "Award up to 2 points for the correct total without the hourly check, or for a correct low-rain conclusion with imprecise rounding.",
+        "points": 3
+      },
+      {
+        "description": "Converts the official 56 kt Dublin Airport gust to 103.7 km/h and computes the 7.9 km/h point-minus-official gust gap.",
+        "name": "Official table reconciliation",
+        "partial_credit": "Award up to 2 points for the correct knot value or conversion without the gap.",
+        "points": 3
+      },
+      {
+        "description": "Returns the requested compact JSON and a short explanation that stays within the computed weather ledger.",
+        "name": "Concise ledger and wording",
+        "partial_credit": "Award up to 3 points for a mostly complete ledger with minor format omissions and no extra outside numbers.",
+        "points": 4
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "timing_intensity_reconciliation",
+  "task_id": "CSX-118_Q1",
+  "task_type": "short_answer"
+}

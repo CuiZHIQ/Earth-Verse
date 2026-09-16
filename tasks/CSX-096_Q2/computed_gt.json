@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-096_Q2",
+  "event_id": "CSX-096",
+  "target_family": "pakistan_2022_monsoon_indus_persistence_gate",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "pakistan_2022_monsoon_indus_persistence_gate",
+    "metrics": {
+      "peak_to_mean_intensity": 10.972,
+      "heavy_rain_persistence": 0.2844,
+      "red_window_fraction": 0.7248,
+      "grid_mean_spread_fraction": 0.0661,
+      "peak_window_share": 0.3244
+    },
+    "gates": {
+      "intensity_gate": true,
+      "persistence_gate": true,
+      "regional_consensus_gate": true,
+      "pulse_guardrail": true
+    },
+    "final_label": "sustained_indus_storage_signal",
+    "computed_consequence": "persistent_loading_outweighs_short_peak"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 3,
+        "description": "Returns compact JSON with target_family, metrics, gates, final_label, and computed_consequence.",
+        "partial_credit": "Award 1-2 points if the response is mostly complete but omits one required field or gives a field in an unusable shape."
+      },
+      {
+        "name": "Event window and rainfall anchors",
+        "points": 4,
+        "description": "Computes the 109-day window, 1493.3 mm point total, 150.3 mm daily peak, and 31 days at or above 10 mm/day.",
+        "partial_credit": "Award 1-3 points for a correct window with one or two incorrect rainfall anchors, or correct rainfall anchors with a minor window error."
+      },
+      {
+        "name": "Intensity ratio",
+        "points": 3,
+        "description": "Computes peak_to_mean_intensity as the daily peak divided by the event-window daily mean, yielding 10.972 within tolerance.",
+        "partial_credit": "Award 1-2 points for the right formula with rounding or denominator errors that still preserve the gate outcome."
+      },
+      {
+        "name": "Persistence fractions",
+        "points": 4,
+        "description": "Computes heavy_rain_persistence of 0.2844 and red_window_fraction of 0.7248 within tolerance.",
+        "partial_credit": "Award 1-3 points if only one fraction is correct or both use the correct counts but the wrong denominator or rounding."
+      },
+      {
+        "name": "Consensus and pulse guardrail",
+        "points": 3,
+        "description": "Computes grid_mean_spread_fraction of 0.0661 over the declared 2022-06-14 to 2022-07-29 gridded comparison window, computes peak_window_share of 0.3244 over the point series, and applies the stated thresholds.",
+        "partial_credit": "Award 1-2 points if one metric is correct or the formulas are correct but the values are slightly outside tolerance."
+      },
+      {
+        "name": "Gate-derived final label",
+        "points": 2,
+        "description": "Marks all four gates true and returns sustained_indus_storage_signal.",
+        "partial_credit": "Award 1 point if the gate booleans are mostly correct but the final label or one threshold comparison is wrong."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 1,
+        "description": "Keeps the consequence as a short computed result and avoids loss accounting from local surface or receptor values.",
+        "partial_credit": "Award 0.5 points if the consequence is directionally correct but adds minor extra detail."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-096",
+    "event_name": "2022 Pakistan monsoon floods",
+    "hazard_family": "river_coastal_flood",
+    "event_date_or_window": "2022-06-14 to 2022-09-30"
+  },
+  "decision_rule": {
+    "summary": "All four deterministic gates must pass for the sustained Indus storage signal.",
+    "formulas": {
+      "peak_to_mean_intensity": "daily_peak_mm / (point_total_mm / event_days)",
+      "heavy_rain_persistence": "days_ge_10mm / event_days",
+      "red_window_fraction": "gdacs_red_flood_days / event_days",
+      "grid_mean_spread_fraction": "(max(gridded_window_means) - min(gridded_window_means)) / mean(gridded_window_means)",
+      "peak_window_share": "max_7day_precip_mm / point_total_mm"
+    },
+    "thresholds": {
+      "intensity_gate": "peak_to_mean_intensity >= 8.0",
+      "persistence_gate": "heavy_rain_persistence >= 0.25 and red_window_fraction >= 0.70",
+      "regional_consensus_gate": "grid_mean_spread_fraction <= 0.10",
+      "pulse_guardrail": "peak_window_share < 0.40"
+    }
+  },
+  "key_values": {
+    "event_days": 109,
+    "point_total_mm": 1493.3,
+    "event_mean_daily_mm": 13.7,
+    "daily_peak_mm": 150.3,
+    "heavy_rain_days_ge_10mm": 31,
+    "gdacs_red_flood_days": 79,
+    "gridded_comparison_window": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-07-29",
+      "inclusive_days": 46,
+      "role": "declared_shared_gridded_comparison_window_not_full_event_window"
+    },
+    "gridded_window_means_mm": {
+      "era5_land": 846.6,
+      "gpm_imerg": 792.5,
+      "chirps": 815.4
+    },
+    "gridded_window_mean_consensus_mm": 818.1,
+    "max_7day_precip_mm": 484.48
+  },
+  "numeric_tolerances": {
+    "peak_to_mean_intensity": {
+      "target": 10.972,
+      "absolute_tolerance": 0.001
+    },
+    "heavy_rain_persistence": {
+      "target": 0.2844,
+      "absolute_tolerance": 0.0001
+    },
+    "red_window_fraction": {
+      "target": 0.7248,
+      "absolute_tolerance": 0.0001
+    },
+    "grid_mean_spread_fraction": {
+      "target": 0.0661,
+      "absolute_tolerance": 0.0001
+    },
+    "peak_window_share": {
+      "target": 0.3244,
+      "absolute_tolerance": 0.0001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_monsoon_floods.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "Deterministic local-file calculation with fixed formulas and numeric tolerances. Point rainfall and GDACS duration use the full locked flood window; ERA5/GPM/CHIRPS precipitation means are scored only as cross-product agreement over their declared 2022-06-14 to 2022-07-29 gridded comparison window."
+  }
+}

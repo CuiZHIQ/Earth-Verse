@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-234_Q2",
+  "event_id": "CSX-234",
+  "target_family": "seismic_numeric_consistency_proof",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "seismic_sequence_consistent",
+    "numeric_answer": {
+      "elapsed_days": 17.04,
+      "may12_rank_by_magnitude": 2,
+      "mag_deficit": 0.5,
+      "may12_moment_share": 0.178,
+      "mainshock_to_may12_moment_ratio": 5.62,
+      "nepal_eq_mge6_count": 5,
+      "red_alert_share": 0.571,
+      "precip_mean_max_mm": 13.14,
+      "precip_means_ge_20mm_count": 0
+    },
+    "units": {
+      "elapsed_days": "days",
+      "mag_deficit": "Mw",
+      "may12_moment_share": "unitless",
+      "mainshock_to_may12_moment_ratio": "unitless",
+      "precip_mean_max_mm": "mm"
+    },
+    "tolerances": {
+      "elapsed_days": 0.01,
+      "mag_deficit": 0.0,
+      "may12_moment_share": 0.001,
+      "mainshock_to_may12_moment_ratio": 0.01,
+      "red_alert_share": 0.001,
+      "precip_mean_max_mm": 0.01
+    }
+  },
+  "key_values": {
+    "event_name": "2015 Gorkha Nepal earthquake sequence",
+    "mainshock_time_utc": "2015-04-25T06:11:25.950000Z",
+    "mainshock_magnitude": 7.8,
+    "may12_time_utc": "2015-05-12T07:05:19Z",
+    "may12_magnitude": 7.3,
+    "nepal_catalog_magnitudes_desc": [
+      7.8,
+      7.3,
+      6.7,
+      6.6,
+      6.3,
+      5.6,
+      5.6
+    ],
+    "nepal_catalog_count": 7,
+    "red_alert_count": 4,
+    "precip_means_mm": {
+      "gpm_mm": 13.143404704993,
+      "era5_land_mm": 6.912016848731205,
+      "chirps_mm": 3.1583145676406015
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "compact_numeric_answer",
+        "points": 4,
+        "description": "Returns all nine requested numeric fields and the sequence class in compact JSON.",
+        "partial_credit": "Award partial credit when the class is present but one or two numeric fields are missing or mislabeled."
+      },
+      {
+        "name": "event_pair_and_rank",
+        "points": 4,
+        "description": "Uses the M7.8 April 25 mainshock, the M7.3 May 12 Nepal earthquake, the 17.04-day interval, and rank 2.",
+        "partial_credit": "Award partial credit for identifying the correct pair but missing either the elapsed time or rank."
+      },
+      {
+        "name": "moment_math",
+        "points": 4,
+        "description": "Computes the 0.5 magnitude deficit, 0.178 May12/mainshock moment share, and 5.62 inverse ratio.",
+        "partial_credit": "Award partial credit for a correct formula with a rounding or reciprocal error."
+      },
+      {
+        "name": "catalog_counts",
+        "points": 3,
+        "description": "Counts five Nepal earthquakes at M>=6.0 and computes a red-alert share of 0.571.",
+        "partial_credit": "Award partial credit for one correct count or for a small denominator error."
+      },
+      {
+        "name": "precip_threshold_ledger",
+        "points": 3,
+        "description": "Finds the maximum precipitation mean of 13.14 mm and zero means at or above 20 mm.",
+        "partial_credit": "Award partial credit for the correct maximum or threshold count alone."
+      },
+      {
+        "name": "rounding_and_scope",
+        "points": 2,
+        "description": "Applies the requested rounding using only the requested computed fields.",
+        "partial_credit": "Award partial credit for minor formatting issues with otherwise correct numeric work."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_001_USGS_ComCat_earthquake_query.json",
+      "data/event_catalogs/event_catalogs_003_GDACS_earthquake_alert_API.json",
+      "data/physical_hazard/physical_hazard_001_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

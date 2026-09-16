@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-045_Q2",
+  "event_id": "CSX-045",
+  "task_type": "numeric",
+  "target_family": "east_asia_cold_wave_coupled_thermal_stress_index",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "persistent_cold_wave_consistency_pass",
+    "longest_subzero_run_h": 60,
+    "subzero_load_c_h": 177.4,
+    "apparent_stress_c_h": 149.4,
+    "snow_subzero_share": 0.809,
+    "precipitation_spread_ratio": 0.851,
+    "image_white_delta": 0.0179,
+    "consistency_index": 95.5
+  },
+  "event": {
+    "event_name": "January 2016 East Asia and subtropical Asia cold wave",
+    "hazard_family": "cold_wave_winter_storm",
+    "event_window": "2016-01-20 to 2016-01-26"
+  },
+  "key_values": {
+    "min_temperature_c": -6.3,
+    "min_apparent_temp_c": -17.1,
+    "apparent_hours_le_minus10c": 38,
+    "snowfall_total_cm": 9.87,
+    "snowfall_subzero_cm": 7.98,
+    "precipitation_mean_values_mm": [
+      24.03,
+      7.37,
+      3.58
+    ],
+    "image_white_fraction_pre": 0.305,
+    "image_white_fraction_event": 0.3229,
+    "component_scores": {
+      "duration": 1.0,
+      "subzero_load": 1.0,
+      "apparent_stress": 1.0,
+      "snow_phase": 0.809,
+      "precipitation_spread": 0.851,
+      "image_stability": 0.9821
+    },
+    "threshold": {
+      "pass_index_min": 75.0
+    },
+    "tolerances": {
+      "subzero_load_c_h": 0.2,
+      "apparent_stress_c_h": 0.3,
+      "snow_subzero_share": 0.002,
+      "precipitation_spread_ratio": 0.002,
+      "image_white_delta": 0.0005,
+      "consistency_index": 0.2
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer structure",
+        "points": 3,
+        "description": "Returns compact JSON with the requested cold-wave metrics and final answer.",
+        "partial_credit": "Award 1-2 points for correct label with one missing secondary metric."
+      },
+      {
+        "name": "Temperature persistence and load",
+        "points": 4,
+        "description": "Computes 60 subzero hours and 177.4 C-h subzero load.",
+        "partial_credit": "Award 2 points for one correct value or the correct formula with arithmetic error."
+      },
+      {
+        "name": "Wind-chill load",
+        "points": 4,
+        "description": "Applies the specified wind-chill formula and computes 149.4 C-h apparent stress.",
+        "partial_credit": "Award 2 points for using wind chill but missing the -10 C load threshold."
+      },
+      {
+        "name": "Snow, precipitation, and image metrics",
+        "points": 4,
+        "description": "Computes snow_subzero_share 0.809, precipitation_spread_ratio 0.851, and image_white_delta 0.0179.",
+        "partial_credit": "Award 1-3 points for one or two correct supporting metrics."
+      },
+      {
+        "name": "Weighted index",
+        "points": 4,
+        "description": "Combines the six components with the stated weights to obtain 95.5 and the pass label.",
+        "partial_credit": "Award 2-3 points for a correct pass state with a small weighted-sum error."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 1,
+        "description": "Keeps the diagnosis tied to thermal stress and supporting metrics rather than image-only or damage claims.",
+        "partial_credit": "No credit for uncomputed damage or response claims."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ],
+    "notes": "All values are computed from local CSX-045 package data without network access."
+  }
+}

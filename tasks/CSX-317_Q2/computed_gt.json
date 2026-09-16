@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-317_Q2",
+  "event_id": "CSX-317",
+  "task_type": "numeric",
+  "target_family": "palcacocha_15min_route_threshold_proof",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "rapid_ice_entry_glof_route",
+    "metrics": {
+      "travel_minutes": 15,
+      "rapid_index": 2.0,
+      "rain_ratio": 0.0,
+      "image_lag_years": 58.2,
+      "fatality_city_ratio": 0.1167
+    },
+    "pass_fail": {
+      "rapid_route": true,
+      "rainfall_control": false,
+      "event_window_footprint": false
+    },
+    "thresholds": {
+      "rapid_index_min": 1.0,
+      "rain_ratio_min": 1.0,
+      "image_lag_years_max": 1.0
+    },
+    "tolerances": {
+      "rapid_index": 0.001,
+      "rain_ratio": 0.001,
+      "image_lag_years": 0.1,
+      "fatality_city_ratio": 0.0001
+    },
+    "rejected_alternative": "rainfall_control_fails"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer form",
+        "points": 4,
+        "description": "Returns compact JSON with the requested fields and recoverable numeric values."
+      },
+      {
+        "name": "Route threshold",
+        "points": 4,
+        "description": "Computes 15 travel minutes and rapid_index = 2.0, then marks rapid_route true."
+      },
+      {
+        "name": "Rainfall threshold",
+        "points": 3,
+        "description": "Computes rain_ratio = 0.0 from the absence of a report-supported rainfall trigger and marks rainfall_control false."
+      },
+      {
+        "name": "Snapshot timing",
+        "points": 3,
+        "description": "Computes image_lag_years = 58.2 and marks event_window_footprint false."
+      },
+      {
+        "name": "Severity ratio",
+        "points": 2,
+        "description": "Computes fatality_city_ratio = 0.1167 from 7000 / 60000."
+      },
+      {
+        "name": "Final label",
+        "points": 2,
+        "description": "Uses rapid_ice_entry_glof_route or an equivalent short route label tied to the checks."
+      },
+      {
+        "name": "Failed-threshold rejection",
+        "points": 1,
+        "description": "Rejects one alternative directly from a failed computed threshold."
+      },
+      {
+        "name": "Overclaim control",
+        "points": 1,
+        "description": "Avoids adding new losses, mapped inundation, or facility failure beyond the checks."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-317",
+    "event_name": "Lake Palcacocha GLOF / Huaraz flood",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date": "1941-12-13",
+    "location": "Cordillera Blanca / Huaraz"
+  },
+  "decision_rule": {
+    "summary": "A route diagnosis passes when the 15-minute source-to-city time clears the rapid threshold while rainfall-control and event-window footprint tests fail.",
+    "formulae": {
+      "rapid_index": "30 / travel_minutes",
+      "rain_ratio": "precipitation_mm / 50",
+      "image_lag_years": "snapshot_date - event_date in years",
+      "fatality_city_ratio": "historical_fatalities / city_population"
+    }
+  },
+  "key_values": {
+    "event_date": "1941-12-13",
+    "snapshot_date": "2000-02-24",
+    "snapshot_date_source": "metadata/files.csv URL TIME query for the contextual image",
+    "rainfall_trigger_reported": false,
+    "city_population": 60000,
+    "historical_fatalities": 7000
+  },
+  "numeric_tolerances": {
+    "rapid_index": {
+      "target": 2.0,
+      "absolute_tolerance": 0.001
+    },
+    "rain_ratio": {
+      "target": 0.0,
+      "absolute_tolerance": 0.001
+    },
+    "image_lag_years": {
+      "target": 58.2,
+      "absolute_tolerance": 0.1
+    },
+    "fatality_city_ratio": {
+      "target": 0.1167,
+      "absolute_tolerance": 0.0001
+    },
+    "travel_minutes": {
+      "target": 15,
+      "absolute_tolerance": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Lake_Palcacocha_GLOF_Huaraz_flood.json",
+      "data/remote_sensing/remote_sensing_001_pre.jpg"
+    ]
+  }
+}

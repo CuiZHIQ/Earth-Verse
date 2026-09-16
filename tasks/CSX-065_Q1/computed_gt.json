@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-065_Q1",
+  "event_id": "CSX-065",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "monsoon_rainfall_exposure_diagnostic",
+  "primary_gt": {
+    "answer": "persistent_monsoon_rainfall_exposure_signal_no_image_pair",
+    "score": 5,
+    "score_denominator": 6,
+    "tests": {
+      "duration_persistence": "pass",
+      "rain_window": "pass",
+      "mean_rain": "pass",
+      "peak_rain": "pass",
+      "cross_product_agreement": "pass",
+      "image_pair": "fail"
+    },
+    "metrics": {
+      "event_days": 137,
+      "precip_days": 46,
+      "coverage_pct": 33.6,
+      "consensus_mean_mm": 327.483,
+      "daily_mean_mm": 7.119,
+      "mean_agreement_ratio": 0.863,
+      "max_peak_mm": 626.477,
+      "population_millions": 0.505,
+      "exposure_mm_million": 165.251,
+      "image_counts": [
+        0,
+        0
+      ]
+    },
+    "computed_interpretation": "The diagnostic supports a sustained monsoon rainfall-exposure signal, while the 0/0 image pair contributes no paired-scene change confirmation.",
+    "tolerances": {
+      "coverage_pct": 0.1,
+      "rainfall_mm": 0.5,
+      "daily_mean_mm": 0.01,
+      "ratio": 0.001,
+      "population_millions": 0.001,
+      "exposure_mm_million": 0.5
+    }
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2011-07-31",
+      "end_date": "2011-12-14",
+      "inclusive_days": 137
+    },
+    "precipitation_window": {
+      "start_date": "2011-07-31",
+      "end_date": "2011-09-14",
+      "inclusive_days": 46,
+      "coverage_pct": 33.6
+    },
+    "rainfall_inputs": {
+      "mean_accumulated_mm": [
+        360.117,
+        310.842,
+        311.49
+      ],
+      "max_accumulated_mm": [
+        536.513,
+        626.477,
+        587.479
+      ]
+    },
+    "derived_metrics": {
+      "event_days": 137,
+      "precip_days": 46,
+      "coverage_pct": 33.6,
+      "consensus_mean_mm": 327.483,
+      "daily_mean_mm": 7.119,
+      "mean_agreement_ratio": 0.863,
+      "max_peak_mm": 626.477,
+      "population_millions": 0.505,
+      "exposure_mm_million": 165.251,
+      "image_counts": [
+        0,
+        0
+      ]
+    },
+    "thresholds": {
+      "duration_persistence_days_min": 120,
+      "rain_window_days_min": 30,
+      "rain_window_coverage_pct_max": 50,
+      "mean_rain_mm_min": 300,
+      "peak_rain_mm_min": 600,
+      "mean_agreement_ratio_min": 0.85,
+      "image_pair_min_each": 1
+    },
+    "computed_interpretation": "The diagnostic supports a sustained monsoon rainfall-exposure signal, while the 0/0 image pair contributes no paired-scene change confirmation."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Compact final JSON and label",
+        "points": 3,
+        "description": "Returns valid JSON with exactly the requested top-level fields, the canonical label, and a score of 5.",
+        "partial_credit": "Award 2 points for the correct label with minor JSON field issues; award 1 point for a recognizable but incomplete diagnostic."
+      },
+      {
+        "name": "Duration and window arithmetic",
+        "points": 4,
+        "description": "Computes 137 event days, 46 precipitation days, 33.6 percent coverage, and the correct pass states for the two window tests.",
+        "partial_credit": "Award 2-3 points for one correct duration plus near-correct coverage; award 1 point for using the right dates but non-inclusive arithmetic."
+      },
+      {
+        "name": "Rainfall ensemble values",
+        "points": 4,
+        "description": "Computes 327.483 mm consensus mean, 7.119 mm/day daily mean, 626.477 mm peak, and 0.863 agreement ratio within tolerance.",
+        "partial_credit": "Award 2-3 points for mostly correct rainfall values with one formula or rounding error; award 1 point for using only one rainfall product."
+      },
+      {
+        "name": "Diagnostic test states and score",
+        "points": 4,
+        "description": "Marks the five rainfall-duration tests as pass, the image-pair test as fail, and returns the total score of 5.",
+        "partial_credit": "Award 2-3 points for one wrong pass/fail state with otherwise correct arithmetic; award 1 point for a pass-count idea without the exact diagnostic logic."
+      },
+      {
+        "name": "Exposure-weighted load",
+        "points": 2,
+        "description": "Converts 504,609.262 people to 0.505 million and computes 165.251 mm-million people.",
+        "partial_credit": "Award 1 point for the correct population conversion or the correct multiplication setup."
+      },
+      {
+        "name": "Image-pair handling",
+        "points": 2,
+        "description": "Reports [0, 0] and treats it as a failed paired-scene confirmation test.",
+        "partial_credit": "Award 1 point for reporting the counts without connecting them to the failed test."
+      },
+      {
+        "name": "Concise interpretation without intervention notes",
+        "points": 1,
+        "description": "Provides a one-sentence interpretation tied to the diagnostic and avoids added loss totals, closure counts, or intervention notes.",
+        "partial_credit": "No credit for this item if the answer expands into a broad event narrative or intervention note."
+      }
+    ]
+  },
+  "event": {
+    "event_name": "2011 Southeast Asia monsoon floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "region": "Southeast Asia",
+    "event_date_or_window": "2011-07-31 to 2011-12-14"
+  },
+  "decision_rule": {
+    "summary": "Compute all six threshold tests. The canonical label applies when the five rainfall-duration tests pass and the paired-image test fails.",
+    "score_rule": "score equals the number of pass states across six tests",
+    "canonical_label_rule": {
+      "required_pass": [
+        "duration_persistence",
+        "rain_window",
+        "mean_rain",
+        "peak_rain",
+        "cross_product_agreement"
+      ],
+      "required_fail": [
+        "image_pair"
+      ]
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2011_Southeast_Asia_monsoon_floods.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "Computed from local event files only; no network access is used."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-092",
+  "key_values": {
+    "event_window": {
+      "end_date": "2013-06-18",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2013-06-15"
+    },
+    "hourly_record_count": 96,
+    "peak_hour_mm": 6.2,
+    "peak_hour_time": "2013-06-16T06:00",
+    "report_heavy_reference_extraction": "greater than 300 millimeters",
+    "report_heavy_reference_mm": 300.0,
+    "wet_hours_ge_0_1mm": 78
+  },
+  "primary_gt": {
+    "answer": "persistent_multiday_monsoon_forcing",
+    "event_total_mm": 133.3,
+    "peak_hour_share": 0.047,
+    "report_heavy_map_gap_mm": 166.7,
+    "wet_hour_fraction": 0.812,
+    "wettest_72h_mm": 109.0,
+    "wettest_72h_share": 0.818,
+    "wettest_72h_window": "2013-06-15T00:00/2013-06-17T23:00"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2013_Uttarakhand_Himalayan_floods.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Severe_flooding_in_Northern_India_and_Nepal.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Uses the expected persistence label, or a clearly equivalent label, to reject a single-hour-burst summary.",
+        "name": "Final consistency label",
+        "partial_credit": "Award 1-2 points for identifying multi-day rainfall but giving an ambiguous or overly broad label.",
+        "points": 3
+      },
+      {
+        "description": "Reports 133.3 mm total precipitation and 109.0 mm for the wettest 72-hour window.",
+        "name": "Event total and window sum",
+        "partial_credit": "Award 1-3 points for one correct value, small rounding mistakes, or correct formulas with a minor extraction error.",
+        "points": 4
+      },
+      {
+        "description": "Identifies the wettest 72-hour window as 2013-06-15T00:00 through 2013-06-17T23:00.",
+        "name": "Window timing",
+        "partial_credit": "Award 1-2 points for the correct three calendar days without exact hourly endpoints.",
+        "points": 3
+      },
+      {
+        "description": "Gives ratios near 0.818 for the 72-hour share, 0.812 for wet-hour fraction, and 0.047 for peak-hour share.",
+        "name": "Ratio calculations",
+        "partial_credit": "Award 1-3 points for two correct ratios, incorrect rounding, or one arithmetic mistake.",
+        "points": 4
+      },
+      {
+        "description": "Computes the minimum 166.7 mm gap between the local event total and the report-extracted greater-than-300 mm heavy-rain reference.",
+        "name": "Report-map threshold contrast",
+        "partial_credit": "Award 1-2 points for recognizing the higher map reference but omitting or misrounding the gap.",
+        "points": 3
+      },
+      {
+        "description": "Explains that high wet-hour and 72-hour shares, together with a small peak-hour share, support a persistence-dominated rainfall state.",
+        "name": "Formula-linked interpretation",
+        "partial_credit": "Award 1 point for a correct interpretation that cites only one ratio.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON fields without unrelated management guidance or broad causal narration.",
+        "name": "Output discipline",
+        "partial_credit": "No partial credit; award the point only when the output stays focused on the ledger.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "window_threshold_reconstruction",
+  "task_id": "CSX-092_Q1",
+  "task_type": "short_answer",
+  "tolerances": {
+    "millimeter_fields": 0.1,
+    "ratio_fields": 0.001
+  }
+}

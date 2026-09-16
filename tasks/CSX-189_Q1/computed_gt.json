@@ -1,0 +1,143 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2022-03-04 to 2022-03-13",
+    "event_name": "2022 Uljin wildfire near Hanul nuclear plant corridor",
+    "hazard_family": "wildfire_burn_smoke",
+    "package_id": "CSX-189"
+  },
+  "event_id": "CSX-189",
+  "key_values": {
+    "annual_surface_change_mean": 0.013761,
+    "burn_change": {
+      "dnbr_max": 0.708527,
+      "dnbr_max_to_mean_ratio": 2.336,
+      "dnbr_mean": 0.303255
+    },
+    "era5_wind_components_mps": {
+      "u": -0.67,
+      "v": 1.22
+    },
+    "precipitation_means_mm": {
+      "chirps": 4.456,
+      "era5_land": 9.273,
+      "gpm": 2.884
+    },
+    "report_flags": {
+      "no_nuclear_damage_phrase": true,
+      "smoke_toward_southern_japan": true,
+      "strong_winds_and_dry_weather": true
+    },
+    "reported_charred_area_hectares": 17000
+  },
+  "numeric_tolerances": {
+    "dnbr_max_to_mean_ratio": {
+      "absolute_tolerance": 0.01,
+      "target": 2.336
+    },
+    "dnbr_mean": {
+      "absolute_tolerance": 0.001,
+      "target": 0.303255
+    },
+    "dnbr_to_annual_change_mean_ratio": {
+      "absolute_tolerance": 0.01,
+      "target": 22.037
+    },
+    "era5_mean_wind_speed_mps": {
+      "absolute_tolerance": 0.001,
+      "target": 1.392
+    },
+    "era5_wind_bearing_to_deg": {
+      "absolute_tolerance": 0.1,
+      "target": 331.3
+    },
+    "precip_mean_spread_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 6.389
+    },
+    "reported_charred_area_km2": {
+      "absolute_tolerance": 1.0,
+      "target": 170.0
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "dnbr_max_to_mean_ratio": 2.336,
+      "dnbr_mean": 0.303255,
+      "dnbr_to_annual_change_mean_ratio": 22.037,
+      "era5_mean_wind_speed_mps": 1.392,
+      "era5_wind_bearing_to_deg": 331.3,
+      "precip_mean_spread_mm": 6.389,
+      "report_dry_wind_flag": 1,
+      "reported_charred_area_km2": 170.0,
+      "smoke_transport_flag": 1
+    },
+    "interpretation": "The local package supports a dry, wind-assisted wildfire mechanism through the report text, a positive heterogeneous dNBR signal, and a 170.0 km2 reported burned-area anchor. Gridded precipitation remains context rather than a late-rain control, and the ledger should not infer nuclear-plant damage or radiation release.",
+    "tests": {
+      "late_rain_control_test": "fail",
+      "nuclear_damage_overclaim_test": "pass",
+      "positive_heterogeneous_burn_test": "pass",
+      "report_dry_wind_mechanism_test": "pass",
+      "smoke_transport_context_test": "pass"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Point-weather products are intentionally not used; calculations rely on report text, package gridded summaries, dNBR, and annual embedding context.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_USGS_remote_sensing_image.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2022_Uljin_wildfire_near_Hanul_nuclear_plant_corridor.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns answer, tests, and interpretation with all requested numeric and pass/fail fields.",
+        "name": "Requested JSON ledger",
+        "partial_credit": "Award 2-3 points for a mostly complete ledger with one missing metric family.",
+        "points": 4
+      },
+      {
+        "description": "Correctly identifies strong winds plus dry weather, smoke transport toward southern Japan, and absence of nuclear-damage evidence.",
+        "name": "Report mechanism extraction",
+        "partial_credit": "Award roughly one point per correct report flag, with an extra point for avoiding overclaim.",
+        "points": 4
+      },
+      {
+        "description": "Computes ERA5 mean wind speed and bearing, and the spread across ERA5, GPM, and CHIRPS precipitation means.",
+        "name": "Gridded context calculations",
+        "partial_credit": "Award partial credit across wind speed, bearing, and precipitation spread.",
+        "points": 4
+      },
+      {
+        "description": "Correctly reports dNBR mean, dNBR max-to-mean ratio, dNBR-to-annual-change ratio, and converts nearly 17,000 hectares to 170.0 km2.",
+        "name": "Burn and area calculations",
+        "partial_credit": "Award 1 point for each correct burn or area anchor.",
+        "points": 4
+      },
+      {
+        "description": "Marks dry/wind mechanism, smoke transport, and heterogeneous burn as pass, late-rain control as fail, and nuclear-damage overclaim as pass/avoided.",
+        "name": "Threshold states and rejected alternatives",
+        "partial_credit": "Award 1 point for the correct majority of test states.",
+        "points": 2
+      },
+      {
+        "description": "Gives a ledger-bound interpretation and avoids plant damage, radiation, or exposure-to-loss statements.",
+        "name": "Concise interpretation and limits",
+        "partial_credit": "Award 1 point for a correct but wordy interpretation or one minor extra inference.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "uljin_report_burn_change_consistency_ledger",
+  "task_id": "CSX-189_Q1",
+  "task_type": "numeric"
+}

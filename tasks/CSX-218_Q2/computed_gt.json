@@ -1,0 +1,180 @@
+{
+  "decision_rule": {
+    "formula": "persistence_score = source_flags + transport_flags + dry/weak-wind/stagnation/no-broad-precip-clearing pass_count + satellite_change_pass",
+    "max_score": 11,
+    "threshold": "label source_plus_transport_smoke_persistence when score >= 9, smoke_family_hits >= 4, and transport_source_ratio >= 1"
+  },
+  "evaluation_mode": "deterministic_with_rubric",
+  "event_id": "CSX-218",
+  "key_values": {
+    "clearing_and_stagnation_tests": {
+      "context_days": 15,
+      "era5_wind_ms": 0.74,
+      "gpm_max_mean_ratio": 15.24,
+      "gpm_max_mm": 85.95,
+      "gpm_mean_mm": 5.64,
+      "local_precip_mm": 1.04,
+      "local_wind_max_kmh": 8.2,
+      "low_precip_days_le2mm": 5,
+      "regional_mean_precip_mm": 5.34,
+      "threshold_flags": {
+        "dry_event_day": true,
+        "era5_stagnation": true,
+        "no_broad_precip_clearing": true,
+        "weak_local_wind": true
+      },
+      "threshold_pass_count": 4
+    },
+    "event_name": "August 2004 fire and smoke in Angola",
+    "event_window": {
+      "end": "2004-08-28",
+      "inclusive_days": 1,
+      "start": "2004-08-28"
+    },
+    "rejected_alternatives": [
+      "source_only_fails_transport_ratio_and_transport_flags",
+      "rainfall_clearing_fails_low_local_and_low_regional_mean_precipitation",
+      "point_wind_only_fails_because_regional_transport_flags_are_present"
+    ],
+    "satellite_change": {
+      "event_smoke_like_frac": 0.5482,
+      "mean_abs_rgb_delta": 82.66,
+      "normalized_rgb_delta": 0.324,
+      "pre_smoke_like_frac": 0.5429,
+      "satellite_change_pass": true,
+      "smoke_like_delta_pct_points": 0.53
+    },
+    "source_and_smoke_terms": {
+      "aod_pm_hits": 0,
+      "aod_pm_terms": {
+        "aerosol": 0,
+        "aod": 0,
+        "particulate": 0,
+        "pm10": 0,
+        "pm25": 0
+      },
+      "fire_term_hits": 2,
+      "smoke_family_hits": 4,
+      "smoke_terms": {
+        "haze": 1,
+        "smog": 1,
+        "smoke": 2
+      },
+      "source_flag_count": 3,
+      "source_flags": {
+        "charcoal_production": true,
+        "modis_fires": true,
+        "seasonal_burning": true
+      },
+      "transport_flag_count": 3,
+      "transport_flags": {
+        "atlantic_haze": true,
+        "counterclockwise_recirculation": true,
+        "semi_permanent_high_pressure": true
+      },
+      "transport_to_source_ratio": 1.0
+    }
+  },
+  "primary_gt": {
+    "answer": "source_plus_transport_smoke_persistence",
+    "clearing": {
+      "era5_wind_ms": 0.74,
+      "local_precip_mm": 1.04,
+      "local_wind_kmh": 8.2,
+      "low_precip_days_le2mm": 5,
+      "pass_count": 4,
+      "regional_max_mean_ratio": 15.24,
+      "regional_mean_mm": 5.34
+    },
+    "persistence_score": 11,
+    "satellite": {
+      "mean_abs_rgb_delta": 82.66,
+      "normalized_rgb_delta": 0.324,
+      "smoke_delta_pct_points": 0.53
+    },
+    "source_smoke": {
+      "aod_pm_hits": 0,
+      "fire_hits": 2,
+      "smoke_family_hits": 4,
+      "source_flags": 3,
+      "transport_flags": 3,
+      "transport_source_ratio": 1.0
+    },
+    "window_days": 1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August_2004_fire_and_smoke_in_Angola.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with numeric values, pass/fail flags, and the final computed label.",
+        "name": "requested_json_schema",
+        "partial_credit": "Award 1 point for the six requested top-level keys, 1 point for preserving the nested numeric fields, and 1 point for using the computed label field without extra keys.",
+        "points": 3
+      },
+      {
+        "description": "Correctly reports event-window duration, article-title-plus-body fire/source counts, transport/source ratio, smoke-family text hits, and zero AOD/PM term hits.",
+        "name": "source_and_smoke_counts",
+        "partial_credit": "Award 1 point for window_days = 1, 1 point for fire_hits = 2 with source_flags = 3, 1 point for transport_flags = 3 with transport_source_ratio = 1.0, and 1 point for smoke_family_hits = 4 with aod_pm_hits = 0.",
+        "points": 4
+      },
+      {
+        "description": "Computes local precipitation, low-precipitation-day count, regional mean precipitation, GPM max/mean ratio, wind speed, and the dry, weak-wind, stagnation, and no-broad-precip-clearing flags.",
+        "name": "clearing_and_stagnation_tests",
+        "partial_credit": "Award 1 point each for local_precip_mm = 1.04, low_precip_days_le2mm = 5, regional_mean_mm = 5.34 with regional_max_mean_ratio = 15.24, era5_wind_ms = 0.74 with local_wind_kmh = 8.2, and pass_count = 4.",
+        "points": 5
+      },
+      {
+        "description": "Computes the pre/event image mean absolute RGB change, normalized change, and smoke-like fraction delta within tolerance.",
+        "name": "satellite_change_metrics",
+        "partial_credit": "Award 1 point for mean_abs_rgb_delta = 82.66, 1 point for normalized_rgb_delta = 0.324, and 1 point for smoke_delta_pct_points = 0.53.",
+        "points": 3
+      },
+      {
+        "description": "Applies the persistence-score rule and threshold to reach the source-plus-transport persistence label.",
+        "name": "score_and_threshold_decision",
+        "partial_credit": "Award 1 point for the score formula, 1 point for persistence_score = 11, and 1 point for answer = source_plus_transport_smoke_persistence.",
+        "points": 3
+      },
+      {
+        "description": "Briefly rejects source-only, rainfall-clearing, and point-wind-only interpretations using the computed values.",
+        "name": "rejected_alternatives",
+        "partial_credit": "Award the point when at least two rejected alternatives are tied to the numeric ledger; otherwise award 0.",
+        "points": 1
+      },
+      {
+        "description": "Keeps the mechanism label concise and avoids health, loss, burn-scar, or response statements beyond the computed values.",
+        "name": "concise_interpretation",
+        "partial_credit": "Award the point when the final text stays within the requested data-driven diagnosis and does not add external impact or action statements.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-218_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "era5_wind_ms": 0.02,
+    "gpm_max_mean_ratio": 0.05,
+    "local_precip_mm": 0.05,
+    "mean_abs_rgb_delta": 0.05,
+    "normalized_rgb_delta": 0.001,
+    "regional_mean_mm": 0.05,
+    "smoke_delta_pct_points": 0.05
+  }
+}

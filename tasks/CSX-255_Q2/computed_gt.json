@@ -1,0 +1,196 @@
+{
+  "calculation_rule": {
+    "event_window_days": 39,
+    "max_score_formula": "mean(min(product_max_total_mm/150,1))",
+    "mean_score_formula": "mean(min(product_mean_total_mm/100,1))",
+    "pass_share_formula": "(count(mean_total_mm>=75)+count(max_total_mm>=150))/6",
+    "rainfall_score_formula": "100*(0.55*mean_score + 0.35*max_score + 0.10*pass_share)",
+    "surface_role_rule": "peak_only_check when area_mean_passes=0 and peak_passes>0"
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2023-02-21 to 2023-03-31",
+    "event_name": "Cyclone Freddy floods, landslides and cholera risk",
+    "hazard_family": "compound_cascading_events",
+    "location": "Madagascar, Mozambique and Malawi",
+    "package_id": "CSX-255"
+  },
+  "event_id": "CSX-255",
+  "key_values": {
+    "alphaearth_max_change": 0.4891,
+    "alphaearth_mean_change": 0.0156,
+    "area_mean_passes": 0,
+    "ensemble_max_total_mm": 200.145,
+    "ensemble_mean_total_mm": 83.974,
+    "event_window_days": 39,
+    "max_score": 0.92124,
+    "mean_score": 0.82099,
+    "osm_summary": {
+      "building_count": 311,
+      "facility_count": 163,
+      "facility_feature_share": 0.163,
+      "facility_rate_per_100k": 14.95,
+      "fire_station_count": 3,
+      "hospital_count": 10,
+      "osm_element_count": 1000,
+      "police_count": 9,
+      "residential_road_count": 413,
+      "school_count": 141
+    },
+    "pass_share": 0.66667,
+    "peak_passes": 2,
+    "population_sum": 1090345.739,
+    "precipitation_products": {
+      "chirps": {
+        "max_ge_150mm": true,
+        "max_total_mm": 158.826,
+        "mean_daily_mm": 2.71,
+        "mean_ge_75mm": true,
+        "mean_total_mm": 105.624
+      },
+      "era5_land": {
+        "max_ge_150mm": true,
+        "max_total_mm": 200.145,
+        "mean_daily_mm": 1.29,
+        "mean_ge_75mm": false,
+        "mean_total_mm": 50.37
+      },
+      "gpm_imerg": {
+        "max_ge_150mm": false,
+        "max_total_mm": 114.558,
+        "mean_daily_mm": 2.46,
+        "mean_ge_75mm": true,
+        "mean_total_mm": 95.927
+      }
+    },
+    "rainfall_score": 84.06,
+    "reasoning_depth": {
+      "counterfactual_rejection": "A surface-change-dominant reading fails because both area-mean surface checks fail even though peak surface checks pass.",
+      "evidence_weighting": "The three precipitation products and rainfall score are decisive; surface metrics are peak-only checks and mapped features provide exposure context.",
+      "uncertainty_or_scale_caveat": "Mapped facility rates are exposure indicators and should not be interpreted as direct damage or service-disruption counts."
+    },
+    "sentinel2_max_dnbr": 0.551,
+    "sentinel2_mean_dnbr": -0.0744,
+    "surface_role": "peak_only_check"
+  },
+  "numeric_tolerances": {
+    "ensemble_max_total_mm": {
+      "absolute_tolerance": 0.005,
+      "target": 200.145
+    },
+    "ensemble_mean_total_mm": {
+      "absolute_tolerance": 0.005,
+      "target": 83.974
+    },
+    "facility_rate_per_100k": {
+      "absolute_tolerance": 0.01,
+      "target": 14.95
+    },
+    "rainfall_score": {
+      "absolute_tolerance": 0.02,
+      "target": 84.06
+    }
+  },
+  "primary_gt": {
+    "event_window_days": 39,
+    "final_label": "rainfall_dominant_peak_surface_check",
+    "mapped_feature_ledger": {
+      "facility_count": 163,
+      "facility_rate_per_100k": 14.95
+    },
+    "precipitation_products": {
+      "chirps": {
+        "max_ge_150mm": true,
+        "max_total_mm": 158.826,
+        "mean_daily_mm": 2.71,
+        "mean_ge_75mm": true,
+        "mean_total_mm": 105.624
+      },
+      "era5_land": {
+        "max_ge_150mm": true,
+        "max_total_mm": 200.145,
+        "mean_daily_mm": 1.29,
+        "mean_ge_75mm": false,
+        "mean_total_mm": 50.37
+      },
+      "gpm_imerg": {
+        "max_ge_150mm": false,
+        "max_total_mm": 114.558,
+        "mean_daily_mm": 2.46,
+        "mean_ge_75mm": true,
+        "mean_total_mm": 95.927
+      }
+    },
+    "rainfall_ledger": {
+      "ensemble_max_total_mm": 200.145,
+      "ensemble_mean_total_mm": 83.974,
+      "max_score": 0.92124,
+      "mean_score": 0.82099,
+      "pass_share": 0.66667,
+      "rainfall_score": 84.06
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A surface-change-dominant reading fails because both area-mean surface checks fail even though peak surface checks pass.",
+      "evidence_weighting": "The three precipitation products and rainfall score are decisive; surface metrics are peak-only checks and mapped features provide exposure context.",
+      "uncertainty_or_scale_caveat": "Mapped facility rates are exposure indicators and should not be interpreted as direct damage or service-disruption counts."
+    },
+    "surface_check": {
+      "area_mean_passes": 0,
+      "peak_passes": 2,
+      "surface_role": "peak_only_check"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Cyclone_Freddy_floods_landslides_and_cholera_risk.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with numeric values, units implied by field names, and a final scalar score.",
+        "name": "Structured numeric ledger",
+        "points": 3
+      },
+      {
+        "description": "Uses the three event-total mean and maximum precipitation values, computes the 39-day period, daily means, ensemble mean, and ensemble maximum within tolerance.",
+        "name": "Precipitation arithmetic",
+        "points": 5
+      },
+      {
+        "description": "Applies the 75 mm mean-total and 150 mm maximum-total tests, derives mean_score, max_score, pass_share, and the weighted rainfall score of 84.06.",
+        "name": "Threshold and score calculation",
+        "points": 5
+      },
+      {
+        "description": "Computes the area-mean and peak surface-check counts from AlphaEarth and Sentinel-2 values and assigns the peak_only_check role from those counts.",
+        "name": "Surface-check ledger",
+        "points": 3
+      },
+      {
+        "description": "Counts schools, hospitals, police sites, fire stations, buildings, residential roads, and computes 14.95 facilities per 100,000 people.",
+        "name": "Mapped-feature rate",
+        "points": 2
+      },
+      {
+        "description": "Pairs the numeric score with the rainfall_dominant_peak_surface_check label and gives a short calculation-based synthesis. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Final label and concise synthesis",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "freddy_rainfall_surface_threshold_ledger",
+  "task_id": "CSX-255_Q2",
+  "task_type": "numeric"
+}

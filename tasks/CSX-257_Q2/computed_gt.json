@@ -1,0 +1,125 @@
+{
+  "decision_rule": {
+    "positive_label_rule": "score >= 4 and wind_ratio_ge_1; OSM/dNBR unavailable controls are reported but not scored",
+    "score_components": [
+      "wind_ratio_ge_1",
+      "mean_precip_lt_25mm",
+      "precip_concentration_ge_4",
+      "scene_l1_ge_0_05",
+      "population_ge_1m"
+    ]
+  },
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-257",
+  "primary_gt": {
+    "coastal_consistency_score": 5,
+    "control_counts": {
+      "dnbr_scene_count": 0,
+      "road_facility_elements": 0
+    },
+    "final_label": "coastal_flood_power_signal_consistent",
+    "population_m": 3.85,
+    "precip_concentration": 5.38,
+    "precip_max_mm": 60.9,
+    "precip_mean_mm": 11.3,
+    "scene_l1_delta": 0.112,
+    "wind_ratio": 1.41
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_005_Locked_event_anchor_Hurricane_Sandy_New_York_City_coastal_flood_and_power_outage_cascade.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_disaster_alert_API.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with numeric units implied by field names.",
+        "name": "JSON shape",
+        "partial_credit": "Award 1-2 points when the object is readable but misses one or two requested fields.",
+        "points": 3
+      },
+      {
+        "description": "Computes the Sandy catalog wind ratio against 119 km/h and applies the >= 1 gate correctly.",
+        "name": "Storm wind test",
+        "partial_credit": "Award 2 points for the correct wind speed or threshold but an incorrect ratio or gate.",
+        "points": 4
+      },
+      {
+        "description": "Computes mean precipitation, maximum precipitation, concentration ratio, and the two precipitation gates.",
+        "name": "Precipitation ledger",
+        "partial_credit": "Award 1-3 points for partially correct precipitation arithmetic or rounding.",
+        "points": 4
+      },
+      {
+        "description": "Uses the stated pixel rules after 256x192 RGB resizing and computes the L1 scene-change metric.",
+        "name": "Image change metric",
+        "partial_credit": "Award 1-3 points for correct pixel classes but incomplete deltas or rounding.",
+        "points": 4
+      },
+      {
+        "description": "Reports population in millions plus road/facility and dNBR scene counts, and treats unavailable OSM/dNBR controls as reported context rather than scored evidence of absence.",
+        "name": "Exposure and control counts",
+        "partial_credit": "Award 1-2 points for correct population or counts but not both.",
+        "points": 3
+      },
+      {
+        "description": "Sums the five substantive gates to a 5/5 score and returns the coastal flood and power-disruption consistency label.",
+        "name": "Final label",
+        "partial_credit": "Award 1 point for the right label with a minor score or naming error.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "source_values": {
+    "chirps_max_mm": 60.862159729003906,
+    "chirps_mean_mm": 15.995676892546632,
+    "control_status": {
+      "control_counts_are_not_scored": true,
+      "dnbr_control_unavailable": true,
+      "osm_control_unavailable": true
+    },
+    "event_image_fractions": {
+      "bright": 0.183,
+      "dark": 0.221,
+      "water_blue": 0.095
+    },
+    "event_name": "Hurricane Sandy New York City coastal flood and power outage cascade",
+    "event_window": {
+      "end_date": "2012-10-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2012-10-29"
+    },
+    "gpm_max_mm": 48.794998317956924,
+    "gpm_mean_mm": 6.616719137562833,
+    "hurricane_threshold_kmh": 119.0,
+    "image_delta": {
+      "bright": -0.031,
+      "dark": 0.063,
+      "water_blue": 0.018
+    },
+    "location_text": "New York City and New Jersey coast",
+    "population": 3848078,
+    "pre_image_fractions": {
+      "bright": 0.214,
+      "dark": 0.158,
+      "water_blue": 0.077
+    },
+    "wind_kmh": 167.4
+  },
+  "target_family": "sandy_coastal_flood_consistency_ledger",
+  "task_id": "CSX-257_Q2",
+  "task_type": "numeric",
+  "task_version": "v4.0"
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-182_Q2",
+  "event_id": "CSX-182",
+  "task_type": "numeric",
+  "target_family": "black_summer_early_fire_weather_surface_context_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "strong_compound_fire_weather_surface_context_signal",
+    "window": [
+      "2019-09-01",
+      "2019-10-16"
+    ],
+    "weather": {
+      "overlap_days": 46,
+      "dry_days": 27,
+      "dry_share": 0.586957,
+      "dry_windy_days": 9,
+      "longest_dry_run_days": 8,
+      "hottest_overlap_day": {
+        "date": "2019-10-06",
+        "tmax_c": 27.5,
+        "precip_mm": 0.0,
+        "wind_kmh": 28.4
+      }
+    },
+    "precip": {
+      "open_meteo_overlap_mm": 67.3,
+      "other_event_mean_range_mm": [
+        63.502197,
+        75.257064
+      ],
+      "rain_negates_weather_signal": false
+    },
+    "surface": {
+      "dnbr_mean": 0.155941,
+      "dnbr_max": 0.9738,
+      "alpha_change_max": 0.493836,
+      "surface_gate": true
+    },
+    "context": {
+      "population": 362810,
+      "road_features": 889,
+      "sensitive_facilities": 102,
+      "context_score": 3
+    },
+    "gates": {
+      "dry_share_gate": true,
+      "dry_windy_gate": true,
+      "surface_gate": true,
+      "context_gate": true,
+      "gate_score": 4
+    }
+  },
+  "thresholds": {
+    "dry_share_min": 0.5,
+    "dry_windy_days_min": 5,
+    "dnbr_mean_min_exclusive": 0,
+    "dnbr_max_min": 0.66,
+    "alpha_change_max_min": 0.25,
+    "context_score_min": 2,
+    "strong_signal_gate_score_min": 3,
+    "rain_negates_weather_signal": "not (dry_share_gate and dry_windy_gate)"
+  },
+  "numeric_tolerances": {
+    "mm": 0.1,
+    "share": 0.001,
+    "metric": 1e-06,
+    "counts": 0
+  },
+  "derived_values": {
+    "event_name": "2019-2020 Australian Black Summer bushfires",
+    "hazard_family": "wildfire_burn_smoke",
+    "event_window_days": 182,
+    "available_weather_window": [
+      "2019-08-18",
+      "2019-10-16"
+    ],
+    "amenity_counts": {
+      "shelter": 78,
+      "fire_station": 11,
+      "school": 7,
+      "police": 6
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON shape",
+        "points": 3,
+        "description": "Returns the requested fields: answer, window, weather, precip, surface, context, and gates.",
+        "partial_credit": "Give 1-2 points for a mostly complete object with one or two missing required fields; give 0 points if the response is not structured enough to grade."
+      },
+      {
+        "name": "Weather ledger",
+        "points": 5,
+        "description": "Computes 46 days, 27 no-rain days, dry share 0.586957, 9 dry-windy days, 8-day run, and 2019-10-06 with 27.5 C, 0.0 mm, 28.4 km/h.",
+        "partial_credit": "Give 2-4 points for correct window logic with minor rounding or one missing metric; give 1 point for using the right dates but incorrect threshold counting."
+      },
+      {
+        "name": "Precipitation counter-check",
+        "points": 3,
+        "description": "Reports 67.3 mm Open-Meteo overlap total, 63.502197-75.257064 mm comparison range, and keeps rain_negates_weather_signal false.",
+        "partial_credit": "Give 1-2 points for reporting the nonzero rainfall totals but misdescribing how they affect the dry-windy sequence."
+      },
+      {
+        "name": "Surface-change test",
+        "points": 4,
+        "description": "Uses dNBR mean 0.155941, dNBR max 0.9738, alpha-change max 0.493836, and marks the surface gate true.",
+        "partial_credit": "Give 2-3 points for correct values with an incomplete threshold comparison; give 1 point for recognizing positive surface change but omitting one required metric."
+      },
+      {
+        "name": "Context score",
+        "points": 3,
+        "description": "Computes population 362810, roads 889, sensitive facilities 102, context score 3, and a passing context gate.",
+        "partial_credit": "Give 1-2 points for two correct components or the right score with incomplete component reporting."
+      },
+      {
+        "name": "Final label and bounded interpretation",
+        "points": 2,
+        "description": "Uses gate score 4 and no precipitation override to give strong_compound_fire_weather_surface_context_signal, with no extra realized-loss inference.",
+        "partial_credit": "Give 1 point for the right label with weak linkage to the gate score, or for a correct gate score with an imprecise final label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_bushfires.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  }
+}

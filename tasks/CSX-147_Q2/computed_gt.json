@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-147_Q2",
+  "event_id": "CSX-147",
+  "task_type": "short_answer",
+  "task_subtype": "process_chain_control_ranking",
+  "target_family": "bangladesh_storm_flood_process_chain_control_ranking",
+  "eval_mode": "hybrid",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "rainfall_to_flood_timing",
+    "target_family": "bangladesh_storm_flood_process_chain_control_ranking",
+    "computed_values": {
+      "event_days": 14,
+      "storm_sequence_days": 11,
+      "storm_to_flood_lag_days": 7,
+      "anchor_to_flood_lag_days": 4,
+      "gpm_max_mm": 119.46,
+      "chirps_max_mm": 107.61,
+      "era5_max_mm": 63.55,
+      "gpm_ratio": 7.86,
+      "chirps_ratio": 2.54,
+      "grid_spread_frac": 0.856,
+      "reported_displaced": 500000,
+      "gdacs_bangladesh_flood_records": 0
+    },
+    "control_point_scores": {
+      "rainfall_to_flood_timing": 98.0,
+      "multi_day_rainfall_accumulation": 91.0,
+      "river_or_storage_response": 85.0,
+      "single_peak_rainfall_only": 43.0,
+      "reported_damage_only": 40.0,
+      "wind_or_storm_label_only": 10.0
+    },
+    "ranked_control_points": [
+      "rainfall_to_flood_timing",
+      "multi_day_rainfall_accumulation",
+      "river_or_storage_response",
+      "single_peak_rainfall_only",
+      "reported_damage_only",
+      "wind_or_storm_label_only"
+    ],
+    "top_control_point": "rainfall_to_flood_timing",
+    "rejected_control_point": "wind_or_storm_label_only",
+    "reasoning_path": [
+      "lag_controls_classification",
+      "grids_show_multiday_rain",
+      "khasi_jamuna_route_runoff",
+      "peak_damage_wind_decoys"
+    ]
+  },
+  "key_values": {
+    "event_name": "April 2004 Bangladesh severe storms and floods",
+    "hazard_label": "Extratropical storm and severe convection",
+    "event_anchor": {
+      "start_date": "2004-04-09",
+      "end_date": "2004-04-22"
+    },
+    "event_days": 14,
+    "report_signals": {
+      "storm_start": "2004-04-09",
+      "storm_end": "2004-04-19",
+      "storm_sequence_days": 11,
+      "flood_observation_date": "2004-04-26",
+      "storm_to_flood_lag_days": 7,
+      "anchor_end_to_flood_lag_days": 4,
+      "reported_displaced_bangladesh": 500000,
+      "flags": {
+        "storm_triggers_floods_title": true,
+        "extensive_flooding": true,
+        "khasi_hills_runoff": true,
+        "jamuna_river": true,
+        "manipur_impacts_present_but_not_scored": true
+      }
+    },
+    "gridded_precipitation": {
+      "products": {
+        "gpm": {
+          "max_mm": 119.46,
+          "mean_mm": 15.202,
+          "stddev_mm": 19.48,
+          "max_to_mean_ratio": 7.858,
+          "coefficient_of_variation": 1.281
+        },
+        "chirps": {
+          "max_mm": 107.613,
+          "mean_mm": 42.378,
+          "stddev_mm": 16.272,
+          "max_to_mean_ratio": 2.539,
+          "coefficient_of_variation": 0.384
+        },
+        "era5_land": {
+          "max_mm": 63.554,
+          "mean_mm": 37.687,
+          "stddev_mm": 8.949,
+          "max_to_mean_ratio": 1.686,
+          "coefficient_of_variation": 0.237
+        }
+      },
+      "consensus": {
+        "mean_mm": 31.755,
+        "max_mm": 96.876,
+        "mean_spread_fraction": 0.856,
+        "max_mean_ratio": 3.051
+      }
+    },
+    "catalog_context": {
+      "gdacs_feature_count": 2,
+      "gdacs_bangladesh_flood_records": 0
+    }
+  },
+  "control_score_formula": {
+    "rainfall_to_flood_timing": "0.35*min(storm_to_flood_lag/7,1)+0.20*min(storm_sequence_days/10,1)+0.25*flood_flags+0.15*process_flags+0.05*(1-anchor_to_flood_lag/10)",
+    "multi_day_rainfall_accumulation": "0.38*gridded_heavy_rain+0.32*gridded_unevenness+0.21*storm_span_norm",
+    "river_or_storage_response": "0.45*runoff_river_flags+0.25*lag_norm+0.15*impact_consistency+0.15*river_numeric_support",
+    "single_peak_rainfall_only": "0.38*gridded_peak_ratio_norm+0.05*gridded_heavy_rain+0.05*(1-lag_norm)",
+    "reported_damage_only": "0.30*impact_flags+0.08*extensive_flooding+0.02*min(displaced/500000,1)",
+    "wind_or_storm_label_only": "0.10*storm_label+0.05*local_catalog_match"
+  },
+  "numeric_tolerances": {
+    "precip_mm": 0.2,
+    "fractions": 0.005,
+    "scores": 0.2,
+    "lag_days": 0
+  },
+  "judge_anchors": {
+    "required_rank": [
+      "rainfall_to_flood_timing",
+      "multi_day_rainfall_accumulation",
+      "river_or_storage_response",
+      "single_peak_rainfall_only",
+      "reported_damage_only",
+      "wind_or_storm_label_only"
+    ],
+    "top_control_point": "rainfall_to_flood_timing",
+    "rejected_control_point": "wind_or_storm_label_only",
+    "required_metrics": {
+      "event_days": 14,
+      "storm_sequence_days": 11,
+      "storm_to_flood_lag_days": 7,
+      "anchor_to_flood_lag_days": 4,
+      "gpm_max_mm": 119.46,
+      "chirps_max_mm": 107.61,
+      "era5_max_mm": 63.55,
+      "gpm_ratio": 7.86,
+      "chirps_ratio": 2.54,
+      "grid_spread_frac": 0.856,
+      "reported_displaced": 500000,
+      "gdacs_bangladesh_flood_records": 0
+    },
+    "do_not_accept": [
+      "response priority or preparedness advice",
+      "wind/storm label as the top control point",
+      "reported damage as the top control point",
+      "single-day peak rainfall as the top control point",
+      "answers based on external web, exposure, population, OSM, or AOI files"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_April_2004_Bangladesh_severe_storms_and_floods.json",
+      "data/other/other_001_NASA_Earth_Observatory_Bangladesh_flood_follow-up_image.html",
+      "data/event_catalogs/event_catalogs_003_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "network_required": false
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required compact JSON and task family",
+        "points": 2,
+        "description": "Returns compact JSON with answer, target_family, computed_values, control_point_scores, ranked_control_points, top_control_point, rejected_control_point, and reasoning_path.",
+        "partial_credit": "Award 1 point for mostly valid JSON with one missing top-level field."
+      },
+      {
+        "name": "Package evidence discovery",
+        "points": 3,
+        "description": "Uses only local CSX-147 event anchor, flood-timing report text, gridded precipitation summaries, report process flags, and catalog context; does not rely on point weather, OSM, AOI, population, exposure, or web search evidence.",
+        "partial_credit": "Award 1-2 points if several required local evidence families are used but one major family is missing."
+      },
+      {
+        "name": "Timing and lag calculations",
+        "points": 4,
+        "description": "Computes the 14-day anchor window, 11-day severe-thunderstorm sequence, 7-day lag from storm-sequence end to the flood observation, and 4-day lag from anchor end to the flood observation.",
+        "partial_credit": "Award 2-3 points for correct dates with one missing lag; at most 1 point for date mentions without arithmetic."
+      },
+      {
+        "name": "Rainfall and wind diagnostics",
+        "points": 4,
+        "description": "Computes gridded precipitation maxima and ratios, including GPM 119.46 mm and 7.86, CHIRPS 107.61 mm and 2.54, ERA5-Land 63.55 mm, plus gridded spread and consensus ratios.",
+        "partial_credit": "Award 2-3 points for correct gridded rainfall with incomplete spread diagnostics; at most 1 point for uncomputed qualitative rainfall claims."
+      },
+      {
+        "name": "Process-chain interpretation",
+        "points": 3,
+        "description": "Uses report flags for extensive flooding, Khasi Hills runoff, Jamuna River language, and Bangladesh displacement to distinguish a lagged rainfall-runoff chain from wind-only, single-peak, or impact-only readings.",
+        "partial_credit": "Award 1-2 points if report flags are mentioned but not tied to process-chain control."
+      },
+      {
+        "name": "Control-point ranking",
+        "points": 3,
+        "description": "Ranks rainfall_to_flood_timing first, followed by multi_day_rainfall_accumulation, river_or_storage_response, single_peak_rainfall_only, reported_damage_only, and wind_or_storm_label_only.",
+        "partial_credit": "Award 1-2 points if the top control point is right but middle or low-ranking decoys are misplaced."
+      },
+      {
+        "name": "Rejection and non-response discipline",
+        "points": 1,
+        "description": "Identifies wind_or_storm_label_only as the rejected control candidate and keeps the answer diagnostic rather than response-priority advice.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  }
+}

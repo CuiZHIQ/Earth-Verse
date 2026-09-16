@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-232_Q2",
+  "event_id": "CSX-232",
+  "task_type": "short_answer",
+  "target_family": "earthquake_cascade_response_stress_model",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "process_model": {
+      "event_window": {
+        "start_date": "2023-02-06",
+        "end_date": "2023-02-20",
+        "duration_days": 15
+      },
+      "rupture_sequence": {
+        "largest_magnitude": 7.8,
+        "second_largest_magnitude": 7.5,
+        "dual_shock_gap_hours": 9.121,
+        "moment_energy_ratio": 0.355,
+        "max_mmi": 9.537,
+        "max_slip_m": 11.2122,
+        "local_catalog_event_count": 9,
+        "local_magnitude_5p5_or_larger_count": 9,
+        "sequence_pressure": 81.26
+      },
+      "cold_wet_ground_stress": {
+        "first_day_precip_mm": 31.4,
+        "total_point_precip_mm": 34.7,
+        "first_day_precip_share": 0.905,
+        "cold_nights_below_0c": 14,
+        "freezing_night_fraction": 0.933,
+        "gpm_event_precip_mm_mean": 37.87,
+        "gpm_event_precip_mm_max": 65.63,
+        "gpm_spatial_contrast": 0.733,
+        "era5_precipitation_sum_mm_mean": 19.06,
+        "gridded_precip_load": 0.95,
+        "cold_wet_ground_stress": 90.718
+      },
+      "exposure_access_load": {
+        "global_earthquake_feature_count": 6,
+        "event_local_earthquake_feature_count": 5,
+        "excluded_global_earthquake_feature_count": 1,
+        "red_alert_count": 2,
+        "orange_alert_count": 3,
+        "red_alert_fraction": 0.4,
+        "population_millions": 2.526,
+        "osm_sample_road_ways": 100,
+        "osm_minor_road_ways": 74,
+        "osm_bridge_road_ways": 8,
+        "osm_minor_road_share": 0.74,
+        "osm_bridge_share": 0.08,
+        "exposure_access_load": 80.99
+      },
+      "remote_sensing_disruption": {
+        "s1_pre_count": 85,
+        "s1_post_count": 87,
+        "s1_spread_db": 31.083,
+        "s1_zero_centered_variability": 0.635,
+        "s1_support_balance": 0.977,
+        "alphaearth_change_max": 0.526,
+        "observation_disruption_signal": 84.351
+      }
+    },
+    "computed_metrics": {
+      "compound_response_stress_index": 84.02,
+      "baseline_priority_class": "extreme_compound_response_stress"
+    },
+    "scenario_analysis": {
+      "scenario": "first-day precipitation +25%, GPM mean +10%, GPM maximum +15%, ERA5 mean precipitation +10%, and one additional freezing night",
+      "scenario_first_day_precip_share": 0.922,
+      "scenario_gpm_spatial_contrast": 0.812,
+      "scenario_freezing_night_fraction": 1.0,
+      "scenario_gridded_precip_load": 1.0,
+      "scenario_cold_wet_ground_stress": 94.006,
+      "scenario_compound_response_stress_index": 84.843,
+      "scenario_delta": 0.823,
+      "priority_class": "extreme_compound_response_stress"
+    },
+    "mechanism_chain": [
+      "A regional earthquake sequence began with two large shocks only about 9.121 hours apart, so response demand was driven by both rupture severity and rapid sequencing.",
+      "Strong shaking coincided with concentrated first-day precipitation, high freezing-night persistence, and gridded precipitation loads, increasing concern for cold-weather access and ground-stability complications.",
+      "Population exposure above 2.5 million people, red GDACS alerts, and bridge/minor-road shares in the local OSM sample raise the operational access load.",
+      "Sentinel-1 and annual embedding change statistics indicate heterogeneous surface-change signals rather than a uniform scene-wide offset."
+    ],
+    "source_paths": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_disaster_activation.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2023_Turkiye-Syria_earthquake_sequence.json",
+      "data/event_catalogs/event_catalogs_001_USGS_ComCat_earthquake_query.json",
+      "data/event_catalogs/event_catalogs_003_GDACS_earthquake_alert_API.json",
+      "data/event_catalogs/event_catalogs_006_USGS_event_GeoJSON_us6000jllz.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_004_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_OpenStreetMap_Overpass_small_AOI_sample.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "final_interpretation": "The package supports an extreme compound response-stress classification: paired major ruptures, cold wet ground conditions, high exposed population/access load, and heterogeneous remote-sensing change all reinforce the emergency-response burden."
+  },
+  "tolerances": {
+    "index": 0.01,
+    "component_score": 0.01,
+    "ratio": 0.005,
+    "hours": 0.005,
+    "population_millions": 0.001,
+    "db": 0.01
+  },
+  "event": {
+    "package_id": "CSX-232",
+    "event_name": "2023 Turkiye-Syria earthquake sequence",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "hazard_label": "Earthquake, tsunami, and geophysical hazard",
+    "event_date_or_window": "2023-02-06 to 2023-02-20",
+    "location_text": "Kahramanmaras / Gaziantep region, Turkiye / Syria"
+  },
+  "formula_specification": {
+    "clip": "clip all normalized terms to [0, 1]",
+    "sequence_pressure": "100*(0.30*clip(M1/8)+0.20*clip(max_mmi/10)+0.20*clip(max_slip_m/12)+0.15*clip(moment_energy_ratio/0.5)+0.15*clip((12-dual_shock_gap_hours)/12))",
+    "gridded_precip_load": "(clip(gpm_mean_event_precip_mm/40)+clip(era5_mean_event_precip_mm/20))/2",
+    "cold_wet_ground_stress": "100*(0.35*clip(max_mmi/10)+0.20*clip(first_day_precip_share)+0.15*clip(gpm_spatial_contrast)+0.15*clip(freezing_night_fraction)+0.15*gridded_precip_load)",
+    "exposure_access_load": "100*(0.45*clip(population_millions/3)+0.25*clip(red_alert_fraction/0.5)+0.15*clip(osm_minor_road_share)+0.15*clip(osm_bridge_share/0.10))",
+    "observation_disruption_signal": "100*(0.45*clip(s1_spread_db/35)+0.20*clip(s1_zero_centered_variability)+0.25*clip(alphaearth_change_max/0.6)+0.10*clip(s1_support_balance))",
+    "compound_response_stress_index": "0.35*sequence_pressure+0.25*cold_wet_ground_stress+0.25*exposure_access_load+0.15*observation_disruption_signal",
+    "priority_class": "extreme if index >= 80, high if index >= 65, otherwise moderate_or_lower"
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2023-02-06",
+      "end_date": "2023-02-20",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "duration_days": 15
+    },
+    "spatial_window": {
+      "location_text": "Kahramanmaras / Gaziantep region",
+      "country_or_region": "Turkiye / Syria",
+      "aoi_geometry_status": "not_defined_until_data_preparation"
+    },
+    "rupture_sequence": {
+      "sequence_filter_bounds": {
+        "min_longitude": 34.0,
+        "max_longitude": 40.0,
+        "min_latitude": 34.6,
+        "max_latitude": 40.0
+      },
+      "local_catalog_event_count": 9,
+      "local_magnitude_5p5_or_larger_count": 9,
+      "largest_magnitude": 7.8,
+      "largest_event_time_utc": "2023-02-06T01:17:34.342000Z",
+      "second_largest_magnitude": 7.5,
+      "second_event_time_utc": "2023-02-06T10:24:48.811000Z",
+      "dual_shock_gap_hours": 9.121,
+      "moment_energy_ratio": 0.355,
+      "max_mmi": 9.537,
+      "second_mmi": 8.963,
+      "largest_alert": "red",
+      "largest_significance": 2910,
+      "top_local_magnitudes": [
+        7.8,
+        7.5,
+        6.7,
+        6.0,
+        6.0,
+        5.8,
+        5.7,
+        5.7
+      ],
+      "finite_fault_segments": 3,
+      "max_slip_m": 11.2122,
+      "average_rupture_velocity_km_s": 1.51,
+      "derived_magnitude": 7.899
+    },
+    "gdacs_alerts": {
+      "global_earthquake_feature_count": 6,
+      "event_local_earthquake_feature_count": 5,
+      "excluded_global_earthquake_feature_count": 1,
+      "red_alert_count": 2,
+      "orange_alert_count": 3,
+      "red_alert_fraction": 0.4
+    },
+    "weather": {
+      "event_days": 15,
+      "first_day_precip_mm": 31.4,
+      "total_point_precip_mm": 34.7,
+      "first_day_precip_share": 0.905,
+      "cold_nights_below_0c": 14,
+      "freezing_night_fraction": 0.933,
+      "min_temperature_c": -10.7,
+      "max_wind_kmh": 29.0
+    },
+    "power_weather_crosscheck": {
+      "total_precip_mm": 12.47,
+      "first_day_precip_mm": 11.68,
+      "first_day_precip_share": 0.937,
+      "cold_nights_below_0c": 14,
+      "mean_wind_m_s": 3.727
+    },
+    "era5_precipitation_context": {
+      "precipitation_sum_mm_mean": 19.06,
+      "precipitation_sum_mm_max": 24.395,
+      "temperature_2m_max_c_mean": 9.541
+    },
+    "gpm_precipitation": {
+      "mean_event_precip_mm": 37.87,
+      "max_event_precip_mm": 65.63,
+      "event_precip_spatial_contrast": 0.733
+    },
+    "remote_sensing_signal": {
+      "s1_pre_count": 85,
+      "s1_post_count": 87,
+      "s1_support_balance": 0.977,
+      "s1_mean_db": -0.227,
+      "s1_min_db": -16.197,
+      "s1_max_db": 14.887,
+      "s1_stddev_db": 0.624,
+      "s1_spread_db": 31.083,
+      "s1_zero_centered_variability": 0.635,
+      "alphaearth_change_max": 0.526,
+      "alphaearth_change_mean": 0.035,
+      "alphaearth_change_stddev": 0.042
+    },
+    "exposure_access": {
+      "population_sum": 2525721.988,
+      "population_millions": 2.526,
+      "osm_sample_road_ways": 100,
+      "osm_bridge_road_ways": 8,
+      "osm_minor_road_ways": 74,
+      "osm_bridge_share": 0.08,
+      "osm_minor_road_share": 0.74
+    }
+  },
+  "computed_components": {
+    "sequence_pressure": 81.26,
+    "gridded_precip_load": 0.95,
+    "cold_wet_ground_stress": 90.718,
+    "exposure_access_load": 80.99,
+    "observation_disruption_signal": 84.351,
+    "compound_response_stress_index": 84.02
+  },
+  "scenario_values": {
+    "scenario": "first-day precipitation +25%, GPM mean +10%, GPM maximum +15%, ERA5 mean precipitation +10%, and one additional freezing night",
+    "scenario_first_day_precip_share": 0.922,
+    "scenario_gpm_spatial_contrast": 0.812,
+    "scenario_freezing_night_fraction": 1.0,
+    "scenario_gridded_precip_load": 1.0,
+    "scenario_cold_wet_ground_stress": 94.006,
+    "scenario_compound_response_stress_index": 84.843,
+    "scenario_delta": 0.823,
+    "priority_class": "extreme_compound_response_stress"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_disaster_activation.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2023_Turkiye-Syria_earthquake_sequence.json",
+      "data/event_catalogs/event_catalogs_001_USGS_ComCat_earthquake_query.json",
+      "data/event_catalogs/event_catalogs_003_GDACS_earthquake_alert_API.json",
+      "data/event_catalogs/event_catalogs_006_USGS_event_GeoJSON_us6000jllz.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_004_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_OpenStreetMap_Overpass_small_AOI_sample.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "Computed from local CSX-232 reports, seismic catalogs and event products, GDACS alerts, daily and gridded weather data, WorldPop and OSM exposure/access data, and Sentinel-1/AlphaEarth remote-sensing summaries."
+  },
+  "judge_anchors": {
+    "must_include_package_relative_citations": true,
+    "expected_baseline_index": 84.02,
+    "expected_scenario_index": 84.843,
+    "expected_scenario_delta": 0.823,
+    "expected_priority_class": "extreme_compound_response_stress",
+    "expected_component_scores": {
+      "sequence_pressure": 81.26,
+      "cold_wet_ground_stress": 90.718,
+      "exposure_access_load": 80.99,
+      "observation_disruption_signal": 84.351
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Finds the relevant report, seismic, weather, precipitation, exposure, alert, and remote-sensing files without being given exact filenames, and cites package-relative paths for values used."
+      },
+      {
+        "name": "Event window and sequence filtering",
+        "points": 3,
+        "description": "Uses the 2023-02-06 to 2023-02-20 window, applies the event-product ShakeMap bounds to exclude unrelated global catalog entries, and extracts the paired M7.8/M7.5 sequence with the 9.121 hour gap."
+      },
+      {
+        "name": "Rupture and alert process metrics",
+        "points": 3,
+        "description": "Correctly uses maximum MMI, finite-fault maximum slip, moment-energy ratio, local magnitude counts, and event-local GDACS red/orange alert counts after excluding unrelated global alerts."
+      },
+      {
+        "name": "Cold/wet ground-stress calculations",
+        "points": 3,
+        "description": "Computes precipitation concentration, freezing-night persistence, GPM spatial contrast, gridded precipitation load, and the cold-wet ground-stress component."
+      },
+      {
+        "name": "Exposure/access and observation metrics",
+        "points": 3,
+        "description": "Computes WorldPop exposure, OSM road/bridge/minor-road shares, Sentinel-1 spread and balance, AlphaEarth change, and their component scores."
+      },
+      {
+        "name": "Index and scenario arithmetic",
+        "points": 3,
+        "description": "Applies the normalization, clipping, weighted component formulas, scenario perturbation, index delta, and priority-class rule accurately."
+      },
+      {
+        "name": "Disaster-process interpretation",
+        "points": 2,
+        "description": "Explains the cascading earthquake response problem in terms of paired large ruptures, cold wet ground conditions, exposed population/access constraints, and heterogeneous remotely sensed surface change without unsupported claims."
+      }
+    ]
+  }
+}

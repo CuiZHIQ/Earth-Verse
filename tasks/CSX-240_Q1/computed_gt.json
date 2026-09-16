@@ -1,0 +1,258 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": {
+      "end_date": "2003-12-26",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2003-12-26"
+    },
+    "event_name": "2003 Bam earthquake",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "package_id": "CSX-240"
+  },
+  "event_id": "CSX-240",
+  "forbidden_overclaims": [
+    "Do not state an exact death toll as package-derived ground truth.",
+    "Do not claim package-derived ShakeMap, PAGER, or structural-fragility parameters.",
+    "Do not claim tsunami inundation, rainfall disruption, or remotely sensed damage extent as the leading impact pathway.",
+    "Do not treat counted critical-service features as a complete census of all facilities in Bam."
+  ],
+  "key_values": {
+    "answer": "urgent_urban_collapse_search_and_rescue",
+    "building_destroyed_percent": 60,
+    "catalog_magnitude": 6.7,
+    "critical_service_features": 49,
+    "data_scope": {
+      "critical_service_features": "Derived count from the declared masked OSM sample; use as sampled service-context evidence, not a complete or temporally current facility census.",
+      "tsunami_check": "The NOAA tsunami file is a generic database shell in this package and does not establish a local Bam inundation pathway."
+    },
+    "nearby_population": 195460,
+    "priority_band": "critical",
+    "priority_score": 89.4
+  },
+  "numeric_tolerances": {
+    "building_destroyed_percent": {
+      "target": 60,
+      "tolerance": 1
+    },
+    "catalog_magnitude": {
+      "target": 6.7,
+      "tolerance": 0.1
+    },
+    "critical_service_features": {
+      "target": 49,
+      "tolerance": 2
+    },
+    "nearby_population": {
+      "target": 195460,
+      "tolerance": 1000
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "urgent urban-collapse rescue",
+      "critical building-collapse search and rescue",
+      "earthquake urban search-and-rescue priority"
+    ],
+    "answer": "urgent_urban_collapse_search_and_rescue",
+    "answer_type": "deterministic_label_with_rubric_judged_explanation",
+    "canonical_stance": "The 2003 Bam earthquake response diagnosis should be led by urgent urban-collapse search-and-rescue because damaging inland shaking struck a vulnerable built environment with severe building destruction and substantial exposed population and critical-service context.",
+    "forbidden_claims": [
+      "Do not present tsunami inundation as the leading Bam impact pathway.",
+      "Do not present rainfall, flood, heat, or wind as the leading event mechanism.",
+      "Do not claim a complete facility census from the sampled critical-service features.",
+      "Do not invent package-derived ShakeMap, PAGER, structural-fragility, or direct remote-sensing damage extent values."
+    ],
+    "impact_chain": [
+      "tectonic_faulting",
+      "urban_building_collapse",
+      "mass_casualty_search_and_rescue"
+    ],
+    "key_numeric_anchors": {
+      "building_destroyed_percent": 60,
+      "catalog_magnitude": 6.7,
+      "critical_service_features": 49,
+      "nearby_population": 195460
+    },
+    "priority_band": "critical",
+    "priority_score": 89.4,
+    "required_claims": [
+      "Select urban collapse search-and-rescue as the leading priority.",
+      "Identify inland earthquake shaking as the physical driver.",
+      "Connect mud-brick vulnerability and about 60 percent building destruction to collapse rescue needs.",
+      "Use exposed population and critical-service context to justify urgent response triage.",
+      "Explain why coastal inundation, weather disruption, and image-led triage are lower priorities."
+    ],
+    "required_metrics": [
+      {
+        "name": "catalog_magnitude",
+        "target": 6.7,
+        "tolerance": 0.1
+      },
+      {
+        "name": "nearby_population",
+        "target": 195460,
+        "tolerance": 1000
+      },
+      {
+        "name": "critical_service_features",
+        "target": 49,
+        "tolerance": 2
+      },
+      {
+        "name": "building_destroyed_percent",
+        "target": 60,
+        "tolerance": 1
+      }
+    ],
+    "why_other_priorities_are_lower": [
+      "weather metrics are negligible for the event window",
+      "the local package does not establish a Bam tsunami inundation pathway",
+      "image-change reconnaissance is secondary because the package has no usable direct radar-change metric"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Critical-service exposure is a masked OSM-derived sample count, not a complete/current facility census. The tsunami database file is treated as insufficient for a local Bam inundation pathway.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2003_Bam_earthquake.json",
+      "data/other/other_002_NASA_Earth_Observatory_Bam_earthquake.html",
+      "data/event_catalogs/event_catalogs_008_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/other/other_001_NOAA_NCEI_WDS_Global_Historical_Tsunami_Database.txt"
+    ]
+  },
+  "question_leakage_audit": {
+    "frames_as_evidence_boundary_or_source_validation": false,
+    "implies_existing_footprint_threshold_or_high_impact_layer": false,
+    "lists_specific_files": false,
+    "reveals_all_key_metrics": false,
+    "reveals_hidden_workflow": false,
+    "uses_concrete_source_or_product_names": false
+  },
+  "reasoning_requirements": [
+    "Choose a response priority, not only a hazard label.",
+    "Link physical shaking to building-collapse casualties and service-access urgency.",
+    "Use numeric anchors as support for the impact-chain diagnosis rather than as a table-filling endpoint."
+  ],
+  "required_findings": [
+    {
+      "credit": 4.0,
+      "finding": "Treat the event as a damaging inland earthquake, not a weather or coastal-inundation event.",
+      "id": "physical_driver"
+    },
+    {
+      "credit": 4.0,
+      "finding": "Connect severe urban damage with mud-brick construction and about 60 percent building destruction.",
+      "id": "collapse_vulnerability"
+    },
+    {
+      "credit": 3.0,
+      "finding": "Use nearby population and critical-service exposure to justify urgent search-and-rescue triage.",
+      "id": "exposure_priority"
+    },
+    {
+      "credit": 2.0,
+      "finding": "Keep tsunami, weather, and image-change priorities below the urban-collapse response priority.",
+      "id": "secondary_priority_rejection"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects urgent urban-collapse search-and-rescue, or a clearly equivalent label, and identifies the priority band as critical.",
+        "name": "Final priority label and band",
+        "points": 4
+      },
+      {
+        "description": "Uses the key anchors correctly: magnitude about 6.7, nearby population about 195,460, 49 critical-service features, and about 60 percent building destruction.",
+        "name": "Quantitative anchors",
+        "points": 4
+      },
+      {
+        "description": "Connects inland earthquake shaking to vulnerable mud-brick urban building collapse and mass-casualty search-and-rescue needs.",
+        "name": "Physical mechanism and impact chain",
+        "points": 4
+      },
+      {
+        "description": "Explains why trapped survivors, damaged buildings, disrupted shelter, and service access make collapse rescue the leading response-triage priority.",
+        "name": "Operational response logic",
+        "points": 3
+      },
+      {
+        "description": "Rejects coastal inundation, weather disruption, and image-change-led triage with event-specific reasons, including that the tsunami file does not establish a local Bam inundation pathway.",
+        "name": "Lower-priority alternatives",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported exact death tolls, complete facility-census claims, ShakeMap/PAGER claims, structural-fragility values, or direct remote-sensing damage extent claims.",
+        "name": "Overclaim control",
+        "points": 2
+      },
+      {
+        "description": "Provides a concise answer in the requested JSON structure.",
+        "name": "Structured response",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "response_priority_impact_chain",
+  "supporting_metrics": {
+    "catalog_event": {
+      "alert_level": "Red",
+      "alert_score": 3,
+      "coordinates_lon_lat": [
+        58.27,
+        29.01
+      ],
+      "depth_km": 33.0,
+      "episode_alert_score": 2.5,
+      "eventid": 5511,
+      "fromdate": "2003-12-26T01:56:56",
+      "magnitude": 6.7,
+      "severity_text": "Magnitude 6.7M, Depth:33km"
+    },
+    "exposure_context": {
+      "critical_facility_counts": {
+        "fire_station": 1,
+        "hospital": 1,
+        "police": 8,
+        "school": 15,
+        "shelter": 24
+      },
+      "nearby_population_raw": 195459.68267831212,
+      "osm_elements_sampled": 1000
+    },
+    "priority_band": "critical",
+    "score_components": {
+      "building_vulnerability_score": 25.0,
+      "critical_facility_score": 15.0,
+      "hazard_score": 25.0,
+      "population_exposure_score": 24.4,
+      "priority_score": 89.4
+    },
+    "secondary_hazard_checks": {
+      "chirps_event_precip_mm_mean": 0.013,
+      "gpm_event_precip_mm_max": 0.005,
+      "radar_status": "no_sufficient_scenes",
+      "tsunami_file_has_database_shell_only": true,
+      "tsunami_local_pathway_supported": false
+    },
+    "text_claim_flags": {
+      "destroyed_building_share_found": true,
+      "killed_thousands": true,
+      "mud_brick_vulnerability": true,
+      "no_direct_radar_change_metric": true,
+      "tectonic_or_fault_context": true
+    }
+  },
+  "task_id": "CSX-240_Q1",
+  "task_type": "short_answer"
+}

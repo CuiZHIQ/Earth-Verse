@@ -1,0 +1,209 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-130",
+  "key_values": {
+    "daily_product": {
+      "max_daily_wind_kmh": 49.932,
+      "max_daily_wind_ms": 13.87,
+      "max_precip_date": "20171011",
+      "max_wind_date": "20171016",
+      "precip_total_mm": 25.02
+    },
+    "decision_rule": {
+      "final_label": "wind_led_post_tropical_ireland_uk_pathway",
+      "one_sentence_interpretation": "The 2017-10-16 impact is best calibrated as wind-led after transition: the wind-pressure score is 5/5 while the rainfall-primary score is 0/4.",
+      "rule": "wind score >= 4, rain-primary score <= 1, and timing score = 2"
+    },
+    "event": {
+      "event_name": "Hurricane Ophelia eastern Atlantic-to-Europe track",
+      "hazard_family": "tropical_cyclone",
+      "region": "Europe",
+      "temporal_window": {
+        "end_date": "2017-10-16",
+        "start_date": "2017-10-09"
+      }
+    },
+    "score_ledger": {
+      "post_tropical_timing": {
+        "key_values": {
+          "impact_date": "2017-10-16",
+          "report_title": "Ophelia Hits Ireland - NASA Science",
+          "transition_date": "2017-10-15"
+        },
+        "max_score": 2,
+        "score": 2,
+        "tests": {
+          "ireland_uk_impact_on_2017_10_16": true,
+          "transition_before_impact_day": true
+        }
+      },
+      "rain_primary_path": {
+        "key_values": {
+          "impact_day_precip_mm": 2.4,
+          "impact_day_precip_share": 0.183,
+          "local_precip_peak_date": "2017-10-11",
+          "local_wind_peak_date": "2017-10-16",
+          "max_hourly_precip_mm": 0.9,
+          "max_hourly_precip_time": "2017-10-11T07:00",
+          "peak_date_gap_days": 5,
+          "total_precip_mm": 13.1
+        },
+        "max_score": 4,
+        "score": 0,
+        "tests": {
+          "daily_product_precip_peak_matches_wind_peak": false,
+          "impact_day_share_ge_0_25": false,
+          "local_precip_peak_matches_wind_peak": false,
+          "max_hourly_precip_ge_5_mm": false
+        }
+      },
+      "wind_pressure_path": {
+        "key_values": {
+          "daily_wind_peak_date": "2017-10-16",
+          "gust_pressure_lag_hours": 1.0,
+          "hour_count": 192,
+          "max_gust_kmh": 111.6,
+          "max_gust_time": "2017-10-16T14:00",
+          "max_wind_kmh": 61.4,
+          "max_wind_time": "2017-10-16T14:00",
+          "min_pressure_hpa": 989.6,
+          "min_pressure_time": "2017-10-16T15:00"
+        },
+        "max_score": 5,
+        "score": 5,
+        "tests": {
+          "gust_ge_100_kmh": true,
+          "pressure_lag_le_2h": true,
+          "pressure_le_995_hpa": true,
+          "wind_ge_50_kmh": true,
+          "wind_peak_on_2017_10_16": true
+        }
+      }
+    }
+  },
+  "primary_gt": {
+    "final_label": "wind_led_post_tropical_ireland_uk_pathway",
+    "ledger_rows": [
+      {
+        "id": "wind_pressure_path",
+        "result": "pass",
+        "v": [
+          111.6,
+          61.4,
+          989.6,
+          1.0,
+          "2017-10-16"
+        ]
+      },
+      {
+        "id": "rain_primary_path",
+        "result": "reject",
+        "v": [
+          2.4,
+          13.1,
+          0.183,
+          0.9,
+          5
+        ]
+      },
+      {
+        "id": "daily_product_phase_check",
+        "result": "pass",
+        "v": [
+          25.02,
+          20171011,
+          20171016,
+          49.932
+        ]
+      },
+      {
+        "id": "post_tropical_timing",
+        "result": "pass",
+        "v": [
+          "2017-10-15",
+          "2017-10-16"
+        ]
+      }
+    ],
+    "rejected_path": "rainfall_primary",
+    "score_summary": {
+      "post_tropical_timing": 2,
+      "rain_primary_path": 0,
+      "wind_pressure_path": 5
+    },
+    "target_family": "ophelia_wind_rain_phase_score_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from local CSX-130 data and assembled into a wind-rain phase score ledger.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report.html",
+      "data/event_reports/event_reports_005_Locked_event_anchor_Hurricane_Ophelia_eastern_Atlantic-to-Europe_track.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Provides the requested JSON shape with target_family, three score rows, rejected_path, final_label, and a concise interpretation.",
+        "name": "Requested JSON score ledger",
+        "partial_credit": "Award 1-2 points for a mostly complete object with one missing row or misplaced field.",
+        "points": 3
+      },
+      {
+        "description": "Reports 111.6 km/h gust, 61.4 km/h wind, 989.6 hPa pressure, 1.0 hour lag, wind peak on 2017-10-16, and score 5/5.",
+        "name": "Local wind-pressure score",
+        "partial_credit": "Award 2-4 points for correct thresholds with minor value or timing errors.",
+        "points": 5
+      },
+      {
+        "description": "Reports 2.4 mm impact-day rainfall, 13.1 mm total, 0.183 share, 0.9 mm maximum hourly rainfall, 2017-10-11 precipitation peak, 2017-10-16 wind peak, 5-day gap, and score 0/4.",
+        "name": "Rainfall-primary rejection",
+        "partial_credit": "Award 1-3 points for the correct rejection with incomplete numeric anchors.",
+        "points": 4
+      },
+      {
+        "description": "Uses 25.02 mm total precipitation, 20171011 precipitation peak, 20171016 wind peak, 13.87 m/s maximum daily wind, and 49.932 km/h conversion.",
+        "name": "Daily product phase check",
+        "partial_credit": "Award 1-2 points for correct dates or values but missing the conversion or phase comparison.",
+        "points": 3
+      },
+      {
+        "description": "Applies the score rule and identifies a 5/5 wind-pressure path versus a 0/4 rainfall-primary path.",
+        "name": "Score arithmetic and decision",
+        "partial_credit": "Award 1 point for the right final label with incomplete score arithmetic.",
+        "points": 2
+      },
+      {
+        "description": "Uses the report timing: transition before 2017-10-16 and Ireland/UK impact on 2017-10-16.",
+        "name": "Report timing anchors",
+        "partial_credit": "Award 1 point for mentioning only one of the two timing anchors.",
+        "points": 2
+      },
+      {
+        "description": "Avoids converting cloud imagery, population values, or report language into unverified damage, casualty, or loss claims.",
+        "name": "No unverified loss transfer",
+        "partial_credit": "Award 0.5 points for a concise answer that omits those claims but does not explicitly guard against them.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "ophelia_wind_rain_phase_score_ledger",
+  "task_id": "CSX-130_Q1",
+  "task_type": "short_answer",
+  "tolerances": {
+    "accepted_result_states": [
+      "pass",
+      "reject"
+    ],
+    "lag_hours_abs": 0.1,
+    "precip_mm_abs": 0.05,
+    "pressure_hpa_abs": 0.1,
+    "ratio_abs": 0.01,
+    "wind_kmh_abs": 0.1
+  }
+}

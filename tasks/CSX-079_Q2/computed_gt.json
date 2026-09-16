@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-079_Q2",
+  "event_id": "CSX-079",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "central_chile_flood_uncertainty_propagation",
+  "primary_gt": {
+    "target_family": "central_chile_flood_uncertainty_propagation",
+    "uncertainty_propagation": [
+      {
+        "evidence_stream": "rainfall_duration_load",
+        "computed_values": {
+          "event_window": "2023-08-20 to 2023-08-26",
+          "event_precip_total_mm": 133.8,
+          "wet_hours": 78,
+          "longest_wet_run_hours": 69,
+          "max_1h_precip_mm": 6.8,
+          "max_1h_time_utc": "2023-08-21T09:00",
+          "max_24h_precip_mm": 68.0,
+          "max_24h_start_utc": "2023-08-21T08:00",
+          "max_48h_precip_mm": 117.1,
+          "max_48h_start_utc": "2023-08-20T12:00",
+          "max_72h_precip_mm": 132.9,
+          "max_72h_start_utc": "2023-08-20T00:00",
+          "max_1h_share_of_total": 0.0508,
+          "max_72h_share_of_total": 0.9933,
+          "max_72h_to_max_1h_ratio": 19.54,
+          "daily_precip_mm": {
+            "2023-08-20": 32.7,
+            "2023-08-21": 56.9,
+            "2023-08-22": 43.3,
+            "2023-08-23": 0.4,
+            "2023-08-24": 0.5,
+            "2023-08-25": 0.0,
+            "2023-08-26": 0.0
+          },
+          "max_wind_speed_kmh": 30.6
+        },
+        "robust_conclusion": "The rainfall signal is a sustained multi-day load, not a one-hour burst.",
+        "uncertainty_limit": "Hourly values constrain timing at one point and do not by themselves map flood depth.",
+        "rejected_alternative": "hourly_cloudburst_controls_chain"
+      },
+      {
+        "evidence_stream": "terrain_amplification",
+        "computed_values": {
+          "atmospheric_river_article_present": true,
+          "el_paico_rain_mm_nearly": 80,
+          "foothills_rain_mm_as_much_as": 370,
+          "foothill_to_valley_ratio": 4.625,
+          "orographic_multiplier_range": [
+            5,
+            10
+          ],
+          "snow_meters_reported_at_least": 2,
+          "annual_precipitation_from_atmospheric_rivers_percent_range": [
+            45,
+            60
+          ],
+          "regions_named": [
+            "Maule",
+            "Nuble",
+            "Biobio"
+          ]
+        },
+        "robust_conclusion": "The terrain contrast is strong enough to support orographic amplification of the moist-flow rainfall load.",
+        "uncertainty_limit": "The point ratio and reported multiplier describe terrain contrast, not basin-wide uniform rainfall.",
+        "rejected_alternative": "uniform_point_rainfall_or_snowmelt_dominance"
+      },
+      {
+        "evidence_stream": "official_people_burden",
+        "computed_values": {
+          "deaths": 3,
+          "sheltered": 1265,
+          "isolated": 42392,
+          "evacuated": 31863,
+          "official_people_burden": 75520,
+          "isolated_to_evacuated_ratio": 1.33
+        },
+        "robust_conclusion": "Official people counts document a large burden consistent with the rainfall-terrain chain.",
+        "uncertainty_limit": "These are reported burden counts and do not replace the physical rainfall mechanism.",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "evidence_stream": "official_housing_alert_burden",
+        "computed_values": {
+          "homes_damaged_or_destroyed_total": 21885,
+          "homes_severe_or_destroyed": 2813,
+          "homes_severe_or_destroyed_share": 0.1285,
+          "homes_under_evaluation": 1509,
+          "emergency_alert_activations": 170
+        },
+        "robust_conclusion": "Housing and alert counts support a broad official burden context.",
+        "uncertainty_limit": "They are administrative counts, not a direct hydrologic trigger or depth observation.",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "evidence_stream": "surface_change_context",
+        "computed_values": {
+          "event_minus_pre_brown_water_fraction": 0.1087,
+          "event_minus_pre_brown_water_percentage_points": 10.87,
+          "event_minus_pre_bright_cloud_or_snow_fraction": 0.0211,
+          "event_minus_pre_blue_water_fraction": -0.0077,
+          "sentinel1_post_minus_pre_db_mean": -0.2497,
+          "sentinel1_pre_count": 6,
+          "sentinel1_post_count": 8,
+          "alphaearth_annual_change_mean": 0.0624
+        },
+        "robust_conclusion": "Surface-change metrics provide contextual support for disturbed wet surfaces.",
+        "uncertainty_limit": "Image fractions and radar differences do not directly quantify flood depth or losses.",
+        "rejected_alternative": "imagery_quantifies_depth_or_loss"
+      },
+      {
+        "evidence_stream": "exposure_context",
+        "computed_values": {
+          "compact_study_area_population_sum": 56343.3,
+          "osm_element_count": 1000
+        },
+        "robust_conclusion": "Exposure layers describe receptors near the study area.",
+        "uncertainty_limit": "Exposure layers are denominator context and not observed losses.",
+        "rejected_alternative": "exposure_layers_measure_observed_losses"
+      }
+    ],
+    "evidence_stream_checks": [
+      {
+        "row_id": "rainfall_duration_load",
+        "computed_values": {
+          "event_precip_total_mm": 133.8,
+          "wet_hours": 78,
+          "longest_wet_run_hours": 69,
+          "max_72h_share_of_total": 0.9933
+        },
+        "pass_fail": "pass",
+        "rejected_alternative": "hourly_cloudburst_controls_chain"
+      },
+      {
+        "row_id": "terrain_amplification",
+        "computed_values": {
+          "foothill_to_valley_ratio": 4.625,
+          "orographic_multiplier_range": [
+            5,
+            10
+          ]
+        },
+        "pass_fail": "pass",
+        "rejected_alternative": "uniform_point_rainfall_or_snowmelt_dominance"
+      },
+      {
+        "row_id": "official_people_burden",
+        "computed_values": {
+          "official_people_burden": 75520,
+          "isolated_to_evacuated_ratio": 1.33
+        },
+        "pass_fail": "context_pass",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "row_id": "official_housing_alert_burden",
+        "computed_values": {
+          "homes_damaged_or_destroyed_total": 21885,
+          "homes_severe_or_destroyed_share": 0.1285,
+          "emergency_alert_activations": 170
+        },
+        "pass_fail": "context_pass",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "row_id": "surface_change_context",
+        "computed_values": {
+          "event_minus_pre_brown_water_percentage_points": 10.87,
+          "sentinel1_post_minus_pre_db_mean": -0.2497
+        },
+        "pass_fail": "context_pass",
+        "rejected_alternative": "imagery_quantifies_depth_or_loss"
+      },
+      {
+        "row_id": "exposure_context",
+        "computed_values": {
+          "compact_study_area_population_sum": 56343.3,
+          "osm_element_count": 1000
+        },
+        "pass_fail": "context_pass",
+        "rejected_alternative": "exposure_layers_measure_observed_losses"
+      }
+    ],
+    "fragile_links": [
+      "surface_change_context cannot be converted into flood depth",
+      "exposure_context cannot be converted into observed losses"
+    ],
+    "final_consistency_label": "moisture_transport_terrain_official_burden_chain_consistent"
+  },
+  "key_values": {
+    "evidence_stream_checks_full": [
+      {
+        "row_id": "rainfall_duration_load",
+        "formula": [
+          "event_precip_total_mm = sum(hourly_precip)",
+          "max_1h_share = max_1h_precip_mm / event_precip_total_mm",
+          "max_72h_share = max_72h_precip_mm / event_precip_total_mm",
+          "max72h_to_max1h_ratio = max_72h_precip_mm / max_1h_precip_mm"
+        ],
+        "computed_values": {
+          "event_window": "2023-08-20 to 2023-08-26",
+          "event_precip_total_mm": 133.8,
+          "wet_hours": 78,
+          "longest_wet_run_hours": 69,
+          "max_1h_precip_mm": 6.8,
+          "max_1h_time_utc": "2023-08-21T09:00",
+          "max_24h_precip_mm": 68.0,
+          "max_24h_start_utc": "2023-08-21T08:00",
+          "max_48h_precip_mm": 117.1,
+          "max_48h_start_utc": "2023-08-20T12:00",
+          "max_72h_precip_mm": 132.9,
+          "max_72h_start_utc": "2023-08-20T00:00",
+          "max_1h_share_of_total": 0.0508,
+          "max_72h_share_of_total": 0.9933,
+          "max_72h_to_max_1h_ratio": 19.54,
+          "daily_precip_mm": {
+            "2023-08-20": 32.7,
+            "2023-08-21": 56.9,
+            "2023-08-22": 43.3,
+            "2023-08-23": 0.4,
+            "2023-08-24": 0.5,
+            "2023-08-25": 0.0,
+            "2023-08-26": 0.0
+          },
+          "max_wind_speed_kmh": 30.6
+        },
+        "pass_fail": "pass",
+        "interpretation": "The 72 h window contains 99.33% of event rainfall and the strongest hour is only 5.08% of the total.",
+        "rejected_alternative": "hourly_cloudburst_controls_chain"
+      },
+      {
+        "row_id": "terrain_amplification",
+        "formula": [
+          "foothill_to_valley_ratio = foothills_rain_mm_as_much_as / el_paico_rain_mm_nearly",
+          "terrain test passes when ratio > 4 and atmospheric-river terrain context is present"
+        ],
+        "computed_values": {
+          "atmospheric_river_article_present": true,
+          "el_paico_rain_mm_nearly": 80,
+          "foothills_rain_mm_as_much_as": 370,
+          "foothill_to_valley_ratio": 4.625,
+          "orographic_multiplier_range": [
+            5,
+            10
+          ],
+          "snow_meters_reported_at_least": 2,
+          "annual_precipitation_from_atmospheric_rivers_percent_range": [
+            45,
+            60
+          ],
+          "regions_named": [
+            "Maule",
+            "Nuble",
+            "Biobio"
+          ]
+        },
+        "pass_fail": "pass",
+        "interpretation": "The foothill/valley contrast and orographic multiplier context support terrain-amplified rainfall.",
+        "rejected_alternative": "uniform_point_rainfall_or_snowmelt_dominance"
+      },
+      {
+        "row_id": "official_people_burden",
+        "formula": [
+          "official_people_burden = sheltered + isolated + evacuated",
+          "isolated_to_evacuated_ratio = isolated / evacuated"
+        ],
+        "computed_values": {
+          "deaths": 3,
+          "sheltered": 1265,
+          "isolated": 42392,
+          "evacuated": 31863,
+          "official_people_burden": 75520,
+          "isolated_to_evacuated_ratio": 1.33
+        },
+        "pass_fail": "context_pass",
+        "interpretation": "The people burden is large but serves as impact context rather than the rainfall trigger.",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "row_id": "official_housing_alert_burden",
+        "formula": [
+          "homes_damaged_or_destroyed_total = minor_damage + major_damage + destroyed",
+          "homes_severe_or_destroyed = major_damage + destroyed",
+          "severe_or_destroyed_share = homes_severe_or_destroyed / homes_damaged_or_destroyed_total"
+        ],
+        "computed_values": {
+          "homes_damaged_or_destroyed_total": 21885,
+          "homes_severe_or_destroyed": 2813,
+          "homes_severe_or_destroyed_share": 0.1285,
+          "homes_under_evaluation": 1509,
+          "emergency_alert_activations": 170
+        },
+        "pass_fail": "context_pass",
+        "interpretation": "Housing and alert counts document burden but do not diagnose the physical rainfall process.",
+        "rejected_alternative": "official_counts_replace_rainfall_mechanism"
+      },
+      {
+        "row_id": "surface_change_context",
+        "formula": [
+          "brown_water_delta = event_brown_water_fraction - pre_brown_water_fraction",
+          "brown_water_delta_percentage_points = brown_water_delta * 100"
+        ],
+        "computed_values": {
+          "event_minus_pre_brown_water_fraction": 0.1087,
+          "event_minus_pre_brown_water_percentage_points": 10.87,
+          "event_minus_pre_bright_cloud_or_snow_fraction": 0.0211,
+          "event_minus_pre_blue_water_fraction": -0.0077,
+          "sentinel1_post_minus_pre_db_mean": -0.2497,
+          "sentinel1_pre_count": 6,
+          "sentinel1_post_count": 8,
+          "alphaearth_annual_change_mean": 0.0624
+        },
+        "pass_fail": "context_pass",
+        "interpretation": "Surface-change metrics support flood context but are not depth or loss measurements.",
+        "rejected_alternative": "imagery_quantifies_depth_or_loss"
+      },
+      {
+        "row_id": "exposure_context",
+        "formula": [
+          "population_context = compact_study_area_population_sum",
+          "infrastructure_context = osm_element_count"
+        ],
+        "computed_values": {
+          "compact_study_area_population_sum": 56343.3,
+          "osm_element_count": 1000
+        },
+        "pass_fail": "context_pass",
+        "interpretation": "Exposure layers bound receptor context but do not measure observed losses.",
+        "rejected_alternative": "exposure_layers_measure_observed_losses"
+      }
+    ],
+    "rainfall_duration_load": {
+      "event_window": "2023-08-20 to 2023-08-26",
+      "event_precip_total_mm": 133.8,
+      "wet_hours": 78,
+      "longest_wet_run_hours": 69,
+      "max_1h_precip_mm": 6.8,
+      "max_1h_time_utc": "2023-08-21T09:00",
+      "max_24h_precip_mm": 68.0,
+      "max_24h_start_utc": "2023-08-21T08:00",
+      "max_48h_precip_mm": 117.1,
+      "max_48h_start_utc": "2023-08-20T12:00",
+      "max_72h_precip_mm": 132.9,
+      "max_72h_start_utc": "2023-08-20T00:00",
+      "max_1h_share_of_total": 0.0508,
+      "max_72h_share_of_total": 0.9933,
+      "max_72h_to_max_1h_ratio": 19.54,
+      "daily_precip_mm": {
+        "2023-08-20": 32.7,
+        "2023-08-21": 56.9,
+        "2023-08-22": 43.3,
+        "2023-08-23": 0.4,
+        "2023-08-24": 0.5,
+        "2023-08-25": 0.0,
+        "2023-08-26": 0.0
+      },
+      "max_wind_speed_kmh": 30.6
+    },
+    "terrain_amplification": {
+      "atmospheric_river_article_present": true,
+      "el_paico_rain_mm_nearly": 80,
+      "foothills_rain_mm_as_much_as": 370,
+      "foothill_to_valley_ratio": 4.625,
+      "orographic_multiplier_range": [
+        5,
+        10
+      ],
+      "snow_meters_reported_at_least": 2,
+      "annual_precipitation_from_atmospheric_rivers_percent_range": [
+        45,
+        60
+      ],
+      "regions_named": [
+        "Maule",
+        "Nuble",
+        "Biobio"
+      ]
+    },
+    "official_burden": {
+      "deaths": 3,
+      "sheltered": 1265,
+      "isolated": 42392,
+      "evacuated": 31863,
+      "official_people_burden": 75520,
+      "isolated_to_evacuated_ratio": 1.33,
+      "homes_minor_damage": 19072,
+      "homes_major_damage": 2789,
+      "homes_destroyed": 24,
+      "homes_damaged_or_destroyed_total": 21885,
+      "homes_severe_or_destroyed": 2813,
+      "homes_severe_or_destroyed_share": 0.1285,
+      "homes_under_evaluation": 1509,
+      "emergency_alert_activations": 170
+    },
+    "surface_change_context": {
+      "pre_image": {
+        "brown_water_fraction": 0.136,
+        "bright_cloud_or_snow_fraction": 0.0827,
+        "blue_water_fraction": 0.0525,
+        "width": 1024,
+        "height": 768
+      },
+      "event_image": {
+        "brown_water_fraction": 0.2447,
+        "bright_cloud_or_snow_fraction": 0.1037,
+        "blue_water_fraction": 0.0449,
+        "width": 1024,
+        "height": 768
+      },
+      "event_minus_pre_brown_water_fraction": 0.1087,
+      "event_minus_pre_brown_water_percentage_points": 10.87,
+      "event_minus_pre_bright_cloud_or_snow_fraction": 0.0211,
+      "event_minus_pre_blue_water_fraction": -0.0077,
+      "sentinel1_post_minus_pre_db_mean": -0.2497,
+      "sentinel1_pre_count": 6,
+      "sentinel1_post_count": 8,
+      "alphaearth_annual_change_mean": 0.0624
+    },
+    "exposure_context": {
+      "compact_study_area_population_sum": 56343.3,
+      "osm_element_count": 1000,
+      "inventory_rows": 43,
+      "metadata_total_files": 43
+    },
+    "tolerances": {
+      "rainfall_mm": 0.1,
+      "fractions": 0.001,
+      "percentage_points": 0.1,
+      "ratios": 0.02,
+      "people_or_home_counts": 0,
+      "sentinel1_db": 0.001,
+      "alphaearth_mean": 0.001
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Uncertainty structure",
+        "points": 3,
+        "description": "Returns six uncertainty_propagation streams, six evidence_stream_checks, fragile links, and final label.",
+        "partial_credit": "Award 1-2 points for the right label with one missing stream."
+      },
+      {
+        "name": "Rainfall duration and load arithmetic",
+        "points": 4,
+        "description": "Computes 133.8 mm total, 78 wet hours, 69 h longest wet run, 6.8/68.0/117.1/132.9 mm peak windows, 0.0508 peak-hour share, 0.9933 peak-72 h share, 19.54 peak-72 h to peak-1 h ratio, daily totals, and 30.6 km/h wind within tolerance.",
+        "partial_credit": "Award 2-3 points for most core rainfall values with minor rounding or one missing window; award 1 point for only the total or only the peak values."
+      },
+      {
+        "name": "Terrain amplification test",
+        "points": 3,
+        "description": "Uses 370/80=4.625, atmospheric-river presence, 5-10x orographic multiplier context, snow as context, 45-60% annual contribution range, and Maule/Nuble/Biobio.",
+        "partial_credit": "Award 1-2 points for computing the ratio but omitting either the atmospheric-river context or the regional context."
+      },
+      {
+        "name": "Official burden arithmetic",
+        "points": 4,
+        "description": "Computes 1,265+42,392+31,863=75,520 people, 42,392/31,863=1.33, 19,072+2,789+24=21,885 homes, 2,789+24=2,813 severe/destroyed homes, severe/destroyed share 0.1285, deaths, homes under evaluation, and 170 alert activations.",
+        "partial_credit": "Award 2-3 points for correct people or housing arithmetic but not both; award 1 point for listing official counts without derived totals or ratios."
+      },
+      {
+        "name": "Surface and exposure context values",
+        "points": 3,
+        "description": "Computes 0.1087 brown-water fraction change, 10.87 percentage points, 0.0211 bright change, -0.0077 blue change, -0.2497 dB Sentinel-1 mean change with 6/8 counts, 0.0624 AlphaEarth mean, 56,343.3 population, and 1,000 OSM elements.",
+        "partial_credit": "Award 1-2 points for the brown-water and radar values without the exposure or embedding values."
+      },
+      {
+        "name": "Rejected alternatives",
+        "points": 2,
+        "description": "Rejects hourly cloudburst control, uniform point rainfall, snowmelt dominance, image-derived depth/loss, exposure-derived observed losses, and official-counts-only diagnosis using numeric row evidence.",
+        "partial_credit": "Award 1-2 points for rejecting at least three alternatives with numeric support."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation concise and tied to computed values, with no broad response advice or extra loss statements beyond the calculations.",
+        "partial_credit": "Award 0.5 points for a mostly correct interpretation that adds minor speculation; award 0 points for a broad response note or extra escalation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/files.csv",
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Atmospheric_rivers_swamp_central_Chile.html",
+      "data/other/other_001_SENAPRED_-_Disaster_risk_committee_coordination_for_August_2023_frontal_system.html",
+      "data/remote_sensing/remote_sensing_008_pre.jpg",
+      "data/remote_sensing/remote_sensing_009_event.jpg",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ],
+    "notes": "Metrics are regenerated from local event records; surface and exposure values are context metrics, not direct loss measurements."
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "decision_rule": {
+    "high_seismic_coastal": "final_score >= 11",
+    "mixed_seismic_context": "7 <= final_score <= 10",
+    "weak_seismic_context": "final_score <= 6"
+  },
+  "evaluation_mode": "numeric_json_with_formula_checks",
+  "event_id": "CSX-233",
+  "key_values": {
+    "derived": {
+      "answer": 14,
+      "coastal_ground_score": 5,
+      "consistency_class": "high_seismic_coastal",
+      "context_score": 3,
+      "countercheck_penalty": 0,
+      "event_time_utc": "2024-01-01T07:10:09.476Z",
+      "final_score": 14,
+      "source_intensity_score": 6
+    },
+    "event_name": "2024 Noto Peninsula earthquake",
+    "formulas": {
+      "coastal_ground_score": "2*(tsunami_flag==1)+2*(liquefaction_population>=100000)+1*(liquefaction_to_landslide_ratio>=100)",
+      "context_score": "1*(population>=1000000)+1*(finite_fault_length>=100 km)+1*(maximum_slip>=5 m)",
+      "countercheck_penalty": "2*(max_mean_precip>=25 mm)+1*(abs(mean_S1_VV_change)>=5 dB)+1*(mean_embedding_change>=0.10)",
+      "final_score": "source_intensity_score+coastal_ground_score+context_score-countercheck_penalty",
+      "source_intensity_score": "2*(Mw>=7.0)+2*(MMI>=8.0)+1*(depth<=20 km)+1*(event_alert==red)"
+    },
+    "inputs": {
+      "alphaearth_change_mean": 0.026,
+      "chirps_mean_precip_mm": 0.349,
+      "depth_km": 10.0,
+      "event_alert": "red",
+      "event_time_utc": "2024-01-01T07:10:09.476Z",
+      "finite_fault_length_km": 175.0,
+      "gpm_mean_precip_mm": 0.013,
+      "landslide_population_exposure": 3800,
+      "liquefaction_population_exposure": 710000,
+      "liquefaction_to_landslide_population_ratio": 186.842,
+      "magnitude": 7.5,
+      "max_mean_precip_mm": 0.349,
+      "max_mmi": 8.8,
+      "maximum_slip_m": 6.03,
+      "sentinel1_vv_change_mean_db": -1.772,
+      "tsunami_flag": 1,
+      "worldpop_population": 10066670
+    }
+  },
+  "numeric_tolerances": {
+    "alphaearth_change_mean": {
+      "abs_tolerance": 0.005,
+      "expected": 0.026
+    },
+    "depth_km": {
+      "abs_tolerance": 0.5,
+      "expected": 10.0
+    },
+    "landslide_population_exposure": {
+      "abs_tolerance": 500,
+      "expected": 3800
+    },
+    "liquefaction_population_exposure": {
+      "abs_tolerance": 5000,
+      "expected": 710000
+    },
+    "liquefaction_to_landslide_population_ratio": {
+      "abs_tolerance": 0.5,
+      "expected": 186.842
+    },
+    "magnitude": {
+      "abs_tolerance": 0.1,
+      "expected": 7.5
+    },
+    "max_mean_precip_mm": {
+      "abs_tolerance": 0.01,
+      "expected": 0.349
+    },
+    "max_mmi": {
+      "abs_tolerance": 0.2,
+      "expected": 8.8
+    },
+    "sentinel1_vv_change_mean_db": {
+      "abs_tolerance": 0.01,
+      "expected": -1.772
+    }
+  },
+  "primary_gt": {
+    "answer": 14,
+    "coastal_ground_score": 5,
+    "consistency_class": "high_seismic_coastal",
+    "context_score": 3,
+    "countercheck_penalty": 0,
+    "event_time_utc": "2024-01-01T07:10:09.476Z",
+    "final_score": 14,
+    "source_intensity_score": 6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_path": "event_packages/standard_event_packages/packages/CSX-233",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_004_USGS_event_GeoJSON_us6000m0xl.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON fields with numeric values and the UTC event time.",
+        "name": "json_schema",
+        "points": 3
+      },
+      {
+        "description": "Computes the source and shaking score from Mw, MMI, depth, and red event alert.",
+        "name": "source_intensity_score",
+        "points": 4
+      },
+      {
+        "description": "Computes the coastal and ground-failure score from tsunami flag, exposure values, and their ratio.",
+        "name": "coastal_ground_score",
+        "points": 4
+      },
+      {
+        "description": "Computes the population, finite-fault length, and maximum-slip context score.",
+        "name": "context_score",
+        "points": 3
+      },
+      {
+        "description": "Applies the precipitation and surface-change thresholds and returns zero penalty.",
+        "name": "countercheck_penalty",
+        "points": 3
+      },
+      {
+        "description": "Computes final_score 14 and assigns high_seismic_coastal.",
+        "name": "final_score_and_class",
+        "points": 2
+      },
+      {
+        "description": "Does not infer exact casualty totals, damage totals, measured local inundation height, or rainfall causation.",
+        "name": "inference_control",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "subtype": "seismic_coastal_consistency_ledger",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-233_Q1",
+  "task_type": "numeric"
+}

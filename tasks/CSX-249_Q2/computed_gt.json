@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-249_Q2",
+  "target_family": "heat_drought_evidence_score_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "event": {
+    "package_id": "CSX-249",
+    "name": "2022 China heat wave and Yangtze drought",
+    "hazard_family": "compound_cascading_events",
+    "window": "2022-06-01 to 2022-08-31"
+  },
+  "primary_gt": {
+    "answer": 19,
+    "class_label": "sustained_heat_yangtze_dry_stress_confirmed",
+    "components": {
+      "heat_core": 6,
+      "persistence": 4,
+      "dry_stress": 5,
+      "context_checks": 4
+    },
+    "heat_c": {
+      "max": 39.46,
+      "mean": 36.421,
+      "peak_mean_delta": 3.039
+    },
+    "duration_days": {
+      "window": 92,
+      "streak_to_aug15": 64,
+      "record_excess": 2
+    },
+    "dry": {
+      "deficit_pct": 80.0,
+      "affected_million": 5.527,
+      "loss_billion_cny": 2.73
+    },
+    "cross": {
+      "gpm_chirps_diff_mm": 0.15,
+      "dnbr_ratio": 24.438,
+      "embedding_ratio": 25.072,
+      "population_million": 8.454,
+      "bounded_context_note": "These masked-product statistics are used as context checks, not as event-location validity tests or standalone drought proof."
+    }
+  },
+  "formulas": {
+    "event_window_days": "inclusive_days(locked_start_date, locked_end_date)",
+    "heat_streak_days": "inclusive_days(2022-06-13, 2022-08-15)",
+    "record_excess_days": "heat_streak_days - 62",
+    "heat_peak_mean_delta_c": "ERA5_Tmax_max_c - ERA5_Tmax_mean_c",
+    "gpm_chirps_mean_diff_mm": "abs(GPM_mean_mm - CHIRPS_mean_mm)",
+    "dnbr_max_mean_ratio": "Sentinel2_dNBR_max / abs(Sentinel2_dNBR_mean)",
+    "embedding_max_mean_ratio": "embedding_change_max / embedding_change_mean"
+  },
+  "scoring_rule": {
+    "components": {
+      "heat_core": "2*(mean>=35C)+2*(max>=39C)+1*(delta<=4C)+1*(red_warnings>=30)",
+      "persistence": "1*(window>=90d)+2*(streak>62d)+1*(record_excess>=2d)",
+      "dry_stress": "2*(deficit>=80%)+1*(affected>=5M)+1*(loss>=2B CNY)+1*(water_supply_flag)",
+      "context_checks": "precip agreement + surface ratios + masked population summary"
+    },
+    "final_label_rule": "confirmed when total>=17, heat_core=6, persistence>=3, and dry_stress>=4"
+  },
+  "numeric_tolerances": {
+    "heat_c": 0.01,
+    "duration_days": 0,
+    "dry_values": 0.01,
+    "precip_diff_mm": 0.01,
+    "surface_ratios": 0.01,
+    "population_million": 0.001,
+    "score": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Local data extraction",
+        "points": 4,
+        "description": "Parses the package JSON records and report text anchors needed for the ledger."
+      },
+      {
+        "name": "Derived heat and duration values",
+        "points": 4,
+        "description": "Computes heat peak-mean delta, inclusive event-window days, streak days, and record-excess days."
+      },
+      {
+        "name": "Dry-stress arithmetic",
+        "points": 4,
+        "description": "Uses the precipitation-deficit, affected-population, economic-loss, and water-supply flags correctly."
+      },
+      {
+        "name": "Bounded context-check calculations",
+        "points": 4,
+        "description": "Computes precipitation-product agreement, surface max-mean ratios, and population in millions as bounded context checks."
+      },
+      {
+        "name": "Score and label",
+        "points": 4,
+        "description": "Applies every component rule and returns total score 19 with the threshold-confirmed class label."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_Yangtze_drought.json",
+      "data/physical_hazard/physical_hazard_007_WMO_China_extreme_weather_heat_and_drought.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  }
+}

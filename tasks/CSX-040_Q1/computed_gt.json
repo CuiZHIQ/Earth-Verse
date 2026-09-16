@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-040_Q1",
+  "event_id": "CSX-040",
+  "task_type": "numeric",
+  "target_family": "snow_phase_refreeze_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "event_window": "2021-01-27/2021-02-04",
+    "snow": {
+      "total_cm": 72.1,
+      "peak_day_cm": 44.24,
+      "peak_day": "2021-01-30",
+      "snow_days": 5,
+      "longest_run_h": 49,
+      "max_depth_m": 0.32,
+      "depth_retention_ratio": 0.44
+    },
+    "phase": {
+      "snow_weighted_temp_c": 2.9,
+      "freezing_level_during_snow_m": 3155,
+      "freezing_level_coldest_m": 1925,
+      "snow_le_1c_cm": 5.6
+    },
+    "cold_wind": {
+      "subzero_h": 30,
+      "post_snow_subzero_h": 18,
+      "freezing_degree_hours_c_h": 57.6,
+      "peak_gust_kmh": 80.3,
+      "min_wind_chill_c": -9.12
+    },
+    "final_label": "sustained_high_terrain_snow_then_refreeze_wind"
+  },
+  "tolerances": {
+    "snowfall_cm": 0.1,
+    "snow_depth_m": 0.01,
+    "ratio": 0.01,
+    "temperature_c": 0.1,
+    "freezing_level_m": 75,
+    "freezing_degree_hours_c_h": 0.2,
+    "wind_kmh": 0.1,
+    "wind_chill_c": 0.05,
+    "hour_counts": 0
+  },
+  "formulas": {
+    "depth_retention_ratio": "max_depth_m / (snow_total_cm / 100)",
+    "snow_weighted_temp_c": "sum(temperature_c * snowfall_cm) / sum(snowfall_cm)",
+    "freezing_level_proxy_m": "elevation_m + temperature_c / 0.0065",
+    "freezing_degree_hours_c_h": "sum(max(0, -temperature_c))",
+    "post_snow_subzero_h": "count temperature_c < 0 after the final hour with snowfall_cm > 0",
+    "wind_chill_c": "13.12 + 0.6215*T - 11.37*V^0.16 + 0.3965*T*V^0.16"
+  },
+  "supporting_values": {
+    "event_name": "January 2021 rare summer snowstorm in the Andes",
+    "location": "Central Andes, Chile and Argentina",
+    "diagnostic_point": {
+      "latitude": -32.935,
+      "longitude": -70.147,
+      "elevation_m": 2710
+    },
+    "run_windows": {
+      "snowfall": {
+        "hours": 49,
+        "start": "2021-01-29T21:00",
+        "end": "2021-01-31T21:00"
+      },
+      "subzero": {
+        "hours": 13,
+        "start": "2021-02-01T21:00",
+        "end": "2021-02-02T09:00"
+      },
+      "final_snow_hour": "2021-02-01T20:00",
+      "max_depth_time": "2021-01-31T20:00",
+      "coldest_time": "2021-02-02T00:00",
+      "peak_gust_time": "2021-01-30T07:00"
+    },
+    "thresholds": {
+      "total_snow_cm": 50.0,
+      "snow_run_h": 24,
+      "max_depth_m": 0.2,
+      "freezing_degree_hours_c_h": 20.0,
+      "min_wind_chill_c": -5.0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON shape",
+        "points": 3,
+        "description": "Returns compact JSON with the requested five top-level fields and the nested metric groups.",
+        "partial_credit": "Give 1-2 points if all metric groups are present but naming or nesting differs."
+      },
+      {
+        "name": "Snow accumulation ledger",
+        "points": 5,
+        "description": "Computes total snowfall, peak day, snowy days, longest snowfall run, maximum depth, and depth-retention ratio.",
+        "partial_credit": "Give roughly 1 point per correct snow metric cluster, with small rounding differences allowed."
+      },
+      {
+        "name": "Phase and freezing-level calculations",
+        "points": 4,
+        "description": "Computes snowfall-weighted temperature, both freezing-level proxies, and snowfall at or below 1 C.",
+        "partial_credit": "Give up to 2 points for the weighted temperature and up to 2 points for the freezing-level and low-temperature snow metrics."
+      },
+      {
+        "name": "Cold and wind ledger",
+        "points": 4,
+        "description": "Computes subzero hours, post-snow subzero hours, freezing-degree hours, peak gust, and minimum wind chill.",
+        "partial_credit": "Give 2-3 points if the cold-duration values are right but wind chill or gust coupling is wrong."
+      },
+      {
+        "name": "Decision label",
+        "points": 2,
+        "description": "Applies all five gates and returns sustained_high_terrain_snow_then_refreeze_wind.",
+        "partial_credit": "Give 1 point if the label is directionally right but one gate is omitted."
+      },
+      {
+        "name": "Rounding, units, and interpretation",
+        "points": 2,
+        "description": "Uses the requested precision and keeps the interpretation tied to computed time-series metrics.",
+        "partial_credit": "Give 1 point for correct values with inconsistent precision or weak unit labeling."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2021_rare_summer_snowstorm_in_the_Andes.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json"
+    ],
+    "notes": "All values are rebuilt from the local CSX-040 event anchor and hourly/daily weather series."
+  }
+}

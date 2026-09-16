@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-209_Q1",
+  "event_id": "CSX-209",
+  "task_type": "structured_reasoning",
+  "target_family": "co_haze_partial_rain_clearing_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "severe_co_haze_exposure_with_partial_rain_clearing",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+    "computed_evidence": {
+      "pollutant_load": {
+        "usual_co_ppb": 100,
+        "peak_co_ppb": 1300,
+        "co_multiplier": 13.0,
+        "co_excess_ppb": 1200
+      },
+      "meteo_clearing": {
+        "meteo_start": "2015-09-01",
+        "meteo_end": "2015-10-16",
+        "meteo_days": 46,
+        "rain_clearing_fraction": 0.674,
+        "weak_wind_fraction": 0.761,
+        "dry_stagnation_fraction": 0.261
+      },
+      "visibility_proxy": {
+        "gray_haze_delta_pp": 7.86,
+        "mean_luminance_delta": 6.09
+      },
+      "exposure_index": {
+        "population": 410885,
+        "co_population_index": 53.42,
+        "compound_exposure_index": 72.65
+      },
+      "diagnostic_diagnostic_tests": {
+        "co_severe": true,
+        "visual_haze_increase": true,
+        "large_compound_exposure": true,
+        "partial_rain_clearing": true
+      },
+      "final_label": "severe_co_haze_exposure_with_partial_rain_clearing"
+    },
+    "mechanism_chain": [
+      "pollutant or aerosol burden",
+      "transport/stagnation duration",
+      "rain or ventilation modifier",
+      "receptor-context interpretation"
+    ],
+    "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+    "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+    "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package."
+  },
+  "answer_metadata": {
+    "answer_type": "numeric_haze_ledger",
+    "answer": "severe_co_haze_exposure_with_partial_rain_clearing",
+    "metrics": {
+      "co_multiplier": 13.0,
+      "rain_clearing_fraction": 0.674,
+      "dry_stagnation_fraction": 0.261,
+      "gray_haze_delta_pp": 7.86,
+      "compound_exposure_index": 72.65
+    },
+    "thresholds": {
+      "co_multiplier_min": 10,
+      "gray_haze_delta_pp_min": 5,
+      "compound_exposure_index_min": 60,
+      "rain_clearing_fraction_min": 0.5
+    },
+    "meteo_span": "2015-09-01_to_2015-10-16_46_days",
+    "units": "CO ppb; fractions 0-1; gray haze in percentage points; exposure index unitless"
+  },
+  "numeric_tolerances": {
+    "co_multiplier": {
+      "target": 13.0,
+      "absolute_tolerance": 0.1
+    },
+    "rain_clearing_fraction": {
+      "target": 0.674,
+      "absolute_tolerance": 0.005
+    },
+    "weak_wind_fraction": {
+      "target": 0.761,
+      "absolute_tolerance": 0.005
+    },
+    "dry_stagnation_fraction": {
+      "target": 0.261,
+      "absolute_tolerance": 0.005
+    },
+    "gray_haze_delta_pp": {
+      "target": 7.86,
+      "absolute_tolerance": 0.1
+    },
+    "mean_luminance_delta": {
+      "target": 6.09,
+      "absolute_tolerance": 0.1
+    },
+    "co_population_index": {
+      "target": 53.42,
+      "absolute_tolerance": 0.1
+    },
+    "compound_exposure_index": {
+      "target": 72.65,
+      "absolute_tolerance": 0.15
+    }
+  },
+  "event": {
+    "event_name": "September-October 2015 Singapore haze from Indonesian peat and forest fires",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_window": {
+      "start_date": "2015-09-01",
+      "end_date": "2015-10-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    }
+  },
+  "key_values": {
+    "pollutant_load": {
+      "usual_co_ppb": 100,
+      "peak_co_ppb": 1300,
+      "co_multiplier": 13.0,
+      "co_excess_ppb": 1200
+    },
+    "meteo_clearing": {
+      "daily_span_start": "2015-09-01",
+      "daily_span_end": "2015-10-16",
+      "meteo_days": 46,
+      "rain_clearing_days": 31,
+      "weak_wind_days": 35,
+      "dry_stagnation_days": 12,
+      "rain_clearing_fraction": 0.6739130434782609,
+      "weak_wind_fraction": 0.7608695652173914,
+      "dry_stagnation_fraction": 0.2608695652173913,
+      "total_precipitation_mm": 197.6,
+      "max_daily_precipitation_mm": 20.7,
+      "mean_daily_wind_kmh": 15.917391304347827,
+      "max_daily_wind_kmh": 25.8
+    },
+    "visibility_proxy": {
+      "pre_image": {
+        "valid_fraction": 0.8697357177734375,
+        "mean_luminance": 102.16847908004235,
+        "gray_haze_fraction": 0.4541834067264338,
+        "bright_fraction": 0.26932782446475667,
+        "low_contrast_fraction": 0.9390603343918315
+      },
+      "event_image": {
+        "valid_fraction": 0.9175262451171875,
+        "mean_luminance": 108.2632290041742,
+        "gray_haze_fraction": 0.5328186237825193,
+        "bright_fraction": 0.2445189114876963,
+        "low_contrast_fraction": 0.956363328954006
+      },
+      "gray_haze_delta_pp": 7.863521705608551,
+      "mean_luminance_delta": 6.094749924131861
+    },
+    "exposure_index": {
+      "population": 410884.77942285844,
+      "co_population_index": 53.4150213249716,
+      "compound_exposure_index": 72.6454074133291
+    },
+    "thresholds": {
+      "co_severe": true,
+      "visual_haze_increase": true,
+      "large_compound_exposure": true,
+      "partial_rain_clearing": true
+    },
+    "final_label": "severe_co_haze_exposure_with_partial_rain_clearing"
+  },
+  "answer_schema": {
+    "top_level_fields": [
+      "pollutant_load",
+      "meteo_clearing",
+      "visibility_proxy",
+      "exposure_index",
+      "thresholds",
+      "final_label"
+    ],
+    "rounding": "whole counts and ppb; three-decimal fractions; two-decimal image deltas and exposure indices"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September-October_2015_Singapore_haze_from_Indonesian_peat_and_forest.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ],
+    "notes": "All values are derived from local CSX-209 event package data."
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Singapore Severe CO Haze With Partial Rain Clearing Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "severe_co_haze_exposure_with_partial_rain_clearing",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+      "computed_evidence": {
+        "pollutant_load": {
+          "usual_co_ppb": 100,
+          "peak_co_ppb": 1300,
+          "co_multiplier": 13.0,
+          "co_excess_ppb": 1200
+        },
+        "meteo_clearing": {
+          "meteo_start": "2015-09-01",
+          "meteo_end": "2015-10-16",
+          "meteo_days": 46,
+          "rain_clearing_fraction": 0.674,
+          "weak_wind_fraction": 0.761,
+          "dry_stagnation_fraction": 0.261
+        },
+        "visibility_proxy": {
+          "gray_haze_delta_pp": 7.86,
+          "mean_luminance_delta": 6.09
+        },
+        "exposure_index": {
+          "population": 410885,
+          "co_population_index": 53.42,
+          "compound_exposure_index": 72.65
+        },
+        "diagnostic_diagnostic_tests": {
+          "co_severe": true,
+          "visual_haze_increase": true,
+          "large_compound_exposure": true,
+          "partial_rain_clearing": true
+        },
+        "final_label": "severe_co_haze_exposure_with_partial_rain_clearing"
+      },
+      "mechanism_chain": [
+        "pollutant or aerosol burden",
+        "transport/stagnation duration",
+        "rain or ventilation modifier",
+        "receptor-context interpretation"
+      ],
+      "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+      "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+      "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package."
+    },
+    "answer": "severe_co_haze_exposure_with_partial_rain_clearing"
+  }
+}

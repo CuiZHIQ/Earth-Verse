@@ -1,0 +1,224 @@
+{
+  "decision_rule": {
+    "requires_computation": true,
+    "score_rule": "One point for each passed threshold test; a score of 6 gives the transported_saharan_dust_optical_veil classification.",
+    "summary": "Classify the event scene pair by thresholded brightening, contrast loss, balanced RGB change, low precipitation, and low annual surface change.",
+    "tests": {
+      "brightness_delta": true,
+      "contrast_drop": true,
+      "rgb_delta_range": true,
+      "surface_screen": true,
+      "veil_index": true,
+      "wet_screen": true
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2022-03-15 to 2022-03-18",
+    "event_name": "Saharan dust over Western Europe",
+    "hazard_family": "dust_sandstorm_extreme",
+    "location": "Spain, Portugal and France",
+    "package_id": "CSX-303"
+  },
+  "event_id": "CSX-303",
+  "key_values": {
+    "classification": "transported_saharan_dust_optical_veil",
+    "event_image": {
+      "height": 768,
+      "mean_brightness": 170.35,
+      "mean_contrast": 64.506,
+      "mean_rgb": [
+        169.021,
+        169.786,
+        172.243
+      ],
+      "stddev_rgb": [
+        65.831,
+        64.354,
+        63.334
+      ],
+      "width": 1024
+    },
+    "event_minus_pre_rgb_delta": [
+      11.428,
+      12.028,
+      12.08
+    ],
+    "image_deltas": {
+      "brightness_delta": 11.846,
+      "contrast_drop": 7.514,
+      "rgb_delta_range": 0.652,
+      "veil_index": 11.719
+    },
+    "pre_image": {
+      "height": 768,
+      "mean_brightness": 158.504,
+      "mean_contrast": 72.02,
+      "mean_rgb": [
+        157.593,
+        157.758,
+        160.163
+      ],
+      "stddev_rgb": [
+        72.212,
+        71.471,
+        72.376
+      ],
+      "width": 1024
+    },
+    "precipitation": {
+      "event_precip_mm_max": 0.64,
+      "event_precip_mm_mean": 0.026,
+      "wet_ratio": 0.054
+    },
+    "report_flags": {
+      "north_africa_text": true,
+      "saharan_dust_title": true,
+      "storm_celia_text": true
+    },
+    "surface_change": {
+      "annual_max_1_minus_cosine": 0.5082,
+      "annual_mean_1_minus_cosine": 0.0752
+    },
+    "temperature_context": {
+      "temperature_2m_max_c_max": 12.533,
+      "temperature_2m_max_c_mean": 11.842
+    },
+    "threshold_tests": {
+      "brightness_delta": true,
+      "contrast_drop": true,
+      "rgb_delta_range": true,
+      "surface_screen": true,
+      "veil_index": true,
+      "wet_screen": true
+    }
+  },
+  "numeric_tolerances": {
+    "brightness_delta": {
+      "absolute_tolerance": 0.005,
+      "target": 11.846
+    },
+    "contrast_drop": {
+      "absolute_tolerance": 0.005,
+      "target": 7.514
+    },
+    "rgb_delta_range": {
+      "absolute_tolerance": 0.005,
+      "target": 0.652
+    },
+    "surface_change_max": {
+      "absolute_tolerance": 0.0001,
+      "target": 0.5082
+    },
+    "veil_index": {
+      "absolute_tolerance": 0.005,
+      "target": 11.719
+    },
+    "veil_score": {
+      "absolute_tolerance": 0,
+      "target": 6
+    },
+    "wet_ratio": {
+      "absolute_tolerance": 0.001,
+      "target": 0.054
+    }
+  },
+  "primary_gt": {
+    "answer": "transported_saharan_dust_optical_veil",
+    "metrics": {
+      "brightness_delta": 11.846,
+      "contrast_drop": 7.514,
+      "rgb_delta_range": 0.652,
+      "surface_change_max": 0.5082,
+      "veil_index": 11.719,
+      "veil_score": 6,
+      "wet_ratio": 0.054
+    },
+    "rejected": "wet_or_persistent_surface_dominance",
+    "thresholds": {
+      "brightness_delta_min": 10,
+      "contrast_drop_min": 5,
+      "precip_mean_max_mm": 0.1,
+      "rgb_delta_range_max": 2,
+      "surface_max_cap": 0.6,
+      "surface_mean_max": 0.1,
+      "veil_index_min": 10,
+      "wet_ratio_max": 0.1
+    },
+    "tolerances": {
+      "brightness_delta": 0.005,
+      "contrast_drop": 0.005,
+      "rgb_delta_range": 0.005,
+      "surface_change_max": 0.0001,
+      "veil_index": 0.005,
+      "veil_score": 0,
+      "wet_ratio": 0.001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All numeric anchors are recomputed from local CSX-303 image, precipitation, and surface-change data.",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Saharan_dust_over_Western_Europe.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_005_pre.jpg",
+      "data/remote_sensing/remote_sensing_006_event.jpg",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with the eight requested answer fields and one concise interpretation.",
+        "name": "answer_schema",
+        "partial_credit": "Award 1-2 points if the numeric answer is recoverable but fields are missing or renamed.",
+        "points": 3
+      },
+      {
+        "description": "Computes scene brightness, scene contrast, brightness delta, and contrast drop from the RGB scenes.",
+        "name": "brightness_contrast_calculation",
+        "partial_credit": "Award up to 2 points for correct brightness values and up to 2 points for correct contrast values.",
+        "points": 4
+      },
+      {
+        "description": "Computes rgb_delta_range and veil_index with the stated formulas and acceptable rounding.",
+        "name": "rgb_balance_and_veil_index",
+        "partial_credit": "Award 1 point for rgb_delta_range and 2 points for the normalized index.",
+        "points": 3
+      },
+      {
+        "description": "Computes wet_ratio from accumulated precipitation and applies the precipitation mean screen correctly.",
+        "name": "precipitation_screen",
+        "partial_credit": "Award 1-2 points if one precipitation component is correct.",
+        "points": 3
+      },
+      {
+        "description": "Applies the annual surface-change mean and maximum screens correctly.",
+        "name": "surface_change_screen",
+        "partial_credit": "Award partial credit for using only one of the two surface-change limits correctly.",
+        "points": 3
+      },
+      {
+        "description": "Counts all six threshold tests and returns veil_score = 6 with the deterministic classification.",
+        "name": "score_and_classification",
+        "partial_credit": "Award partial credit in proportion to correctly evaluated threshold tests.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the interpretation to a computed consequence and avoids escalating the numbers into unmeasured damage or regional concentration.",
+        "name": "computed_consequence",
+        "partial_credit": "Award this point only when the consequence follows from the numeric screens.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "western_europe_2022_saharan_dust_optical_veil_index_consistency",
+  "task_id": "CSX-303_Q2",
+  "task_type": "numeric"
+}

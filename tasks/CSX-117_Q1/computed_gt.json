@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-117_Q1",
+  "event_id": "CSX-117",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "tropical_cyclone_peak_timing_ledger",
+  "primary_gt": {
+    "answer": "wind_pressure_then_rain_same_day",
+    "answer_type": "timing_ledger_short_answer",
+    "timing_label": "wind_pressure_then_rain_same_day",
+    "event_window": {
+      "start": "2022-09-23",
+      "end": "2022-09-30"
+    },
+    "countries": [
+      "United States",
+      "Cuba"
+    ],
+    "required_values": {
+      "severity_kmh": 249.9984,
+      "wind_kmh": 105.7,
+      "gust_kmh": 185.4,
+      "pressure_hpa": 966.9,
+      "rain_total_mm": 211.5,
+      "hourly_rain_peak_mm": 14.4,
+      "daily_rain_peak_mm": 146.0,
+      "daily_share_pct": 69.0,
+      "peak_daily_same_date_as_wind": true
+    },
+    "required_lags_hours": {
+      "wind_to_gust": 1,
+      "wind_to_pressure_min": 1,
+      "wind_to_hourly_rain": 4,
+      "gust_to_hourly_rain": 3
+    }
+  },
+  "key_values": {
+    "alert_level": "Red",
+    "wind": {
+      "time": "2022-09-28T18:00",
+      "value": 105.7
+    },
+    "gust": {
+      "time": "2022-09-28T19:00",
+      "value": 185.4
+    },
+    "pressure_min": {
+      "time": "2022-09-28T19:00",
+      "value": 966.9
+    },
+    "hourly_rain_peak": {
+      "time": "2022-09-28T22:00",
+      "value": 14.4
+    },
+    "daily_rain_peak": {
+      "date": "2022-09-28",
+      "value": 146.0
+    },
+    "peak_daily_same_date_as_wind": true,
+    "timeseries_hour_count": 192
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final timing label",
+        "points": 3,
+        "description": "Gives wind_pressure_then_rain_same_day and rejects same-hour and rain-first summaries.",
+        "partial_credit": "Award 1-2 points for a near-equivalent phrase with the correct order but no exact label."
+      },
+      {
+        "name": "Event anchors",
+        "points": 3,
+        "description": "Reports 2022-09-23 to 2022-09-30, United States and Cuba, Red alert, and 249.9984 km/h severity.",
+        "partial_credit": "Award 1-2 points for at least two correct anchors."
+      },
+      {
+        "name": "Wind-pressure extrema",
+        "points": 4,
+        "description": "Reports 105.7 km/h at 2022-09-28T18:00, 185.4 km/h at 2022-09-28T19:00, and 966.9 hPa at 2022-09-28T19:00.",
+        "partial_credit": "Award 1-3 points for two correct extrema or correct values with incomplete timestamps."
+      },
+      {
+        "name": "Rainfall ledger",
+        "points": 4,
+        "description": "Reports 211.5 mm total, 14.4 mm at 2022-09-28T22:00, 146.0 mm on 2022-09-28, and 69.0% peak-day share.",
+        "partial_credit": "Award 1-3 points for correct rainfall values without the share, or the share with one minor value error."
+      },
+      {
+        "name": "Timing and daily rainfall concentration",
+        "points": 3,
+        "description": "Gives lag hours 1, 1, 4, and 3, reports the 69.0% peak-day share, and shows the peak daily rainfall occurs on the wind-pressure peak date.",
+        "partial_credit": "Award 1-2 points for correct lags without the daily concentration check, or the concentration check without all lags."
+      },
+      {
+        "name": "Compact answer discipline",
+        "points": 3,
+        "description": "Uses units, timestamps, the requested structured fields, and one concise sentence tying the label to the calculations.",
+        "partial_credit": "Award 1-2 points for a correct result with missing units, loose formatting, or extra narrative that does not change the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  }
+}

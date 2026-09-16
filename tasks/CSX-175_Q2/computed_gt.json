@@ -1,0 +1,186 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-175",
+  "judge_anchors": {
+    "acceptable_variants": [
+      "hotter_drier_fire_source_growth > aerosol_column_loading_increase > longer_smoke_transport_window > precipitation_recovery_delay > single_burn_area_only > generic_smoke_report_label",
+      "hotter_drier_fire_source_growth",
+      "hotter_drier_fire_source_growth first with aerosol and transport next",
+      "source growth dominant; aerosol loading second; transport third"
+    ],
+    "canonical_stance": "Future smoke-risk amplification is most strongly supported by hotter and drier fire-source growth, with aerosol loading and transport persistence as the next strongest pathways.",
+    "do_not_add": [
+      "response-priority recommendations",
+      "population exposure or AOI dependence",
+      "OSM-derived infrastructure counts",
+      "health outcome totals",
+      "advice framed as emergency operations"
+    ],
+    "required_elements": [
+      "Rank physical amplification pathways rather than response priorities.",
+      "Use fire-source count, out-of-control fraction, burn-area anomaly, and expected growth text.",
+      "Use AOD anchors and high-AOD fraction for aerosol-column loading.",
+      "Use report dates to calculate the transport window.",
+      "Use precipitation summaries and the hot-continuation report flag to keep precipitation-recovery delay below the source, aerosol, and transport pathways.",
+      "Reject the generic smoke label as non-diagnostic."
+    ]
+  },
+  "key_values": {
+    "event_identity": {
+      "event_name": "2023 Canadian wildfires and smoke",
+      "event_scope": "continental",
+      "hazard_family": "wildfire_burn_smoke",
+      "location_text": "Canada and downwind United States"
+    },
+    "flags": {
+      "continental_scope_flag": 1,
+      "growth_expectation_flag": 1,
+      "hot_continuation_flag": 1,
+      "transport_report_flag": 1
+    },
+    "normalizations": {
+      "aod_load_norm": 0.767,
+      "burn_anomaly_norm": 1.0,
+      "burn_change_norm": 0.787,
+      "fire_count_norm": 0.87,
+      "peak_aod_norm": 1.0,
+      "precip_gap_norm": 0.382,
+      "source_norm": 1.0,
+      "transport_norm": 0.7
+    },
+    "raw_anchors": {
+      "alberta_wildland_fire_count": 87,
+      "area_burned_hectares_by_mid_may": 478000,
+      "burned_area_average_multiple": 10,
+      "chirps_event_precip_mm_mean": 86.9228661689917,
+      "clear_sky_aod": 0.05,
+      "embedding_change_mean": 0.0451065067711521,
+      "goddard_average_aod": 1.0,
+      "gpm_event_precip_mm_mean": 82.54546579820062,
+      "grand_forks_average_aod": 2.3,
+      "grand_forks_peak_aod": 3.0,
+      "out_of_control_fraction": 0.25,
+      "sentinel2_dnbr_mean": 0.35477110498290715
+    }
+  },
+  "numeric_tolerances": {
+    "avg_aod_clear_sky_ratio": {
+      "tolerance": 0.5,
+      "value": 46.0
+    },
+    "estimated_out_of_control_fire_count": {
+      "tolerance": 0.5,
+      "value": 21.75
+    },
+    "high_aod_anchor_fraction": {
+      "tolerance": 0.01,
+      "value": 1.0
+    },
+    "local_burn_change_ratio": {
+      "tolerance": 0.05,
+      "value": 7.87
+    },
+    "precip_recovery_gap": {
+      "tolerance": 0.02,
+      "value": 0.15
+    },
+    "source_pressure_score": {
+      "tolerance": 0.05,
+      "value": 2.5
+    },
+    "transport_window_days": {
+      "tolerance": 0,
+      "value": 7
+    }
+  },
+  "primary_gt": {
+    "answer": "hotter_drier_fire_source_growth",
+    "computed_values": {
+      "avg_aod_clear_sky_ratio": 46.0,
+      "estimated_out_of_control_fire_count": 21.75,
+      "high_aod_anchor_fraction": 1.0,
+      "local_burn_change_ratio": 7.87,
+      "precip_recovery_gap": 0.15,
+      "source_pressure_score": 2.5,
+      "transport_window_days": 7
+    },
+    "pathway_scores": {
+      "aerosol_column_loading_increase": 89.7,
+      "generic_smoke_report_label": 15.0,
+      "hotter_drier_fire_source_growth": 96.8,
+      "longer_smoke_transport_window": 83.7,
+      "precipitation_recovery_delay": 56.7,
+      "single_burn_area_only": 42.9
+    },
+    "ranked_pathways": [
+      "hotter_drier_fire_source_growth",
+      "aerosol_column_loading_increase",
+      "longer_smoke_transport_window",
+      "precipitation_recovery_delay",
+      "single_burn_area_only",
+      "generic_smoke_report_label"
+    ],
+    "reasoning_path": "Source growth leads: 87 fires, 21.75 out of control, 10x burned area, expected growth, and heat outrank severe AOD, 7d transport, and weaker rain-delay evidence.",
+    "rejected_pathway": "generic_smoke_report_label",
+    "target_family": "wildfire_smoke_future_risk_amplification_ranking",
+    "top_amplification_pathway": "hotter_drier_fire_source_growth"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Canadian_wildfires_and_smoke.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Ranks hotter_drier_fire_source_growth first, aerosol_column_loading_increase second, longer_smoke_transport_window third, precipitation_recovery_delay fourth, single_burn_area_only fifth, and generic_smoke_report_label last.",
+        "name": "Final pathway ranking",
+        "partial_credit": "Award 2-3 points if the top pathway is correct but the middle order is partly reversed; award 1 point for a physical pathway ranking with the wrong dominant pathway.",
+        "points": 4
+      },
+      {
+        "description": "Computes 21.75 estimated out-of-control fires and a 2.5 source-pressure score from 87 fires, a quarter out of control, and the 10x burned-area anomaly.",
+        "name": "Fire-source calculations",
+        "partial_credit": "Award 2-3 points for one correct source metric; award 1 point for using the right report anchors without completing the calculation.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 46.0 Grand Forks average-to-clear-sky AOD ratio, the all-anchor high-AOD fraction of 1.0, and uses the peak AOD near 3.0 in the aerosol score.",
+        "name": "Aerosol and smoke-column calculations",
+        "partial_credit": "Award 2-3 points for correct AOD ratios with an incomplete score; award 1 point for recognizing severe aerosol loading without numeric support.",
+        "points": 4
+      },
+      {
+        "description": "Computes the seven-day May 10 to May 16 transport window and uses the report's wind/GOES downwind-smoke evidence plus continental event scope.",
+        "name": "Transport-window and scope evidence",
+        "partial_credit": "Award 1-2 points for identifying cross-border transport but missing the inclusive day calculation or scope flag.",
+        "points": 3
+      },
+      {
+        "description": "Computes the high-AOD anchor fraction of 1.0, precipitation recovery gap near 0.15, and dNBR-to-embedding burn-change ratio near 7.87.",
+        "name": "Precipitation and burn-change context",
+        "partial_credit": "Award 1-2 points for one or two of these context metrics; award no credit for substituting point-weather, population, or AOI exposure.",
+        "points": 3
+      },
+      {
+        "description": "Returns compact JSON with the requested top-level keys, rejects generic_smoke_report_label as non-diagnostic, and avoids response-priority or advice framing.",
+        "name": "Output discipline and rejected pathway",
+        "partial_credit": "Award 1 point for correct physical reasoning with minor JSON or wording deviations.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "wildfire_smoke_future_risk_amplification_ranking",
+  "task_id": "CSX-175_Q2",
+  "task_subtype": "future_risk_amplification_ranking",
+  "task_type": "short_answer"
+}

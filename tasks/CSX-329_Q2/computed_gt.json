@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-329_Q2",
+  "event_id": "CSX-329",
+  "task_type": "numeric",
+  "target_family": "northwest_pacific_bleaching_alert_score_consistency",
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "All scored values are exact string checks, threshold counts, date arithmetic, or numeric formulas from local package data.",
+  "primary_gt": {
+    "answer": "recent_7day_alert_heat_stress_consistent",
+    "alert_support_score": 12,
+    "event_days": 92,
+    "baa_window_days": 7,
+    "context_scores": {
+      "single_day": 0,
+      "land_precip_exposure": 5,
+      "surface_change": 0
+    },
+    "margins": {
+      "alert_minus_land": 7,
+      "alert_minus_surface": 12,
+      "event_to_baa_ratio": 13.143
+    },
+    "threshold_result": "pass_alert_dominance",
+    "rejected_alternative": "single_day_land_surface_proxy"
+  },
+  "tolerances": {
+    "integer_fields": 0,
+    "event_to_baa_ratio_abs": 0.001,
+    "source_metric_rounding_abs": 0.001
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2020-08-01",
+      "end_date": "2020-10-31"
+    },
+    "alert_flags": {
+      "marine_event_family": true,
+      "alert_level_2_wording": true,
+      "taiwan_japan_south_china_sea_named": true,
+      "recent_august_elevation_wording": true,
+      "severe_bleaching_mortality_wording": true,
+      "later_guam_micronesia_outlook_separable": true,
+      "hotspot_term": true,
+      "degree_heating_week_term": true,
+      "bleaching_alert_area_term": true,
+      "recent_maximum_term": true,
+      "single_day_inadequacy_term": true,
+      "accumulated_heat_stress_impacts_term": true
+    },
+    "source_metrics": {
+      "gpm_mean_mm": 451.939,
+      "chirps_mean_mm": 369.486,
+      "era5_land_tmax_c": 34.557,
+      "worldpop_population": 11395560.236,
+      "osm_road_like_features": 818,
+      "sentinel2_dnbr_mean": -0.108468,
+      "alphaearth_change_mean": 0.02831
+    },
+    "thresholds": {
+      "alert_support_min": 10,
+      "alert_minus_land_min": 5,
+      "alert_minus_surface_min": 10,
+      "event_to_baa_ratio_min": 10,
+      "single_day_score_max": 0
+    }
+  },
+  "decision_rule": {
+    "formula": "Pass when alert_support_score>=10, alert_minus_land>=5, alert_minus_surface>=10, event_to_baa_ratio>=10, and single_day_score<=0.",
+    "computed_result": "pass_alert_dominance"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns the requested compact JSON fields, nested score objects, exact pass/fail label, and no extra prose inside the final object."
+      },
+      {
+        "name": "Alert ledger",
+        "points": 5,
+        "description": "Computes alert_support_score as 12 from the event family, event wording, and heat-stress product wording."
+      },
+      {
+        "name": "Context ledgers",
+        "points": 4,
+        "description": "Computes single_day_score 0, land_precip_exposure_score 5, and surface_change_score 0 using the stated thresholds."
+      },
+      {
+        "name": "Margins and duration ratio",
+        "points": 4,
+        "description": "Computes 92 event days, 7 memory-window days, alert_minus_land 7, alert_minus_surface 12, and event_to_baa_ratio 13.143."
+      },
+      {
+        "name": "Rejected consequence",
+        "points": 2,
+        "description": "Rejects the single-day, land-weather, population, and surface-change proxy path as a consequence of the numeric ledgers."
+      },
+      {
+        "name": "Concise label",
+        "points": 1,
+        "description": "Uses a short mechanism label tied to the pass result without broad narration."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.php",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_Northwest_Pacific_coral_bleaching_heat-stress_event_near_Taiwan_a.json",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "Computed only from local CSX-329 package files; no network access."
+  }
+}

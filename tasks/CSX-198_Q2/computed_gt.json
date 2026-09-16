@@ -1,0 +1,133 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-198",
+  "key_values": {
+    "acres": 221835,
+    "active_days": 68,
+    "active_window_matches": true,
+    "affected_structures": 1086,
+    "answer": "major_structure_loss_with_long_progression_record",
+    "civilian_injuries": 5,
+    "containment_tail_days": 15,
+    "destruction_share": 0.925414,
+    "event_end": "2021-10-21",
+    "event_name": "2021 Caldor Fire near South Lake Tahoe",
+    "event_start": "2021-08-14",
+    "event_window_days": 68,
+    "firefighter_injuries": 16,
+    "firefighter_injury_share": 0.761905,
+    "hazard_family": "wildfire_burn_smoke",
+    "injury_total": 21,
+    "progression_days": 52,
+    "progression_end": "2021-10-06",
+    "progression_intervals_12h": 104,
+    "progression_start": "2021-08-15",
+    "progression_update_hours": 12,
+    "structures_damaged": 81,
+    "structures_destroyed": 1005,
+    "threshold_flags": {
+      "late_containment_tail": true,
+      "long_progression_record": true,
+      "major_structure_loss": true,
+      "responder_heavy_injury_record": true
+    }
+  },
+  "numeric_tolerances": {
+    "count_abs": 0,
+    "day_abs": 0,
+    "share_abs": 0.005
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "Equivalent short labels are acceptable if all ledgers and flags match."
+    ],
+    "answer": "major_structure_loss_with_long_progression_record",
+    "answer_type": "structured_numeric_ledger",
+    "canonical_summary": "Major structure-loss and long-progression thresholds are true; responder-heavy injury and late-tail flags are also true.",
+    "exact_values": {
+      "affected_structures": 1086,
+      "containment_tail_days": 15,
+      "destruction_share": 0.925,
+      "event_window_days": 68,
+      "firefighter_injury_share": 0.762,
+      "injury_total": 21,
+      "progression_intervals_12h": 104
+    },
+    "numeric_tolerances": {
+      "counts_abs": 0,
+      "days_abs": 0,
+      "shares_abs": 0.005
+    },
+    "overreach_limits": [
+      "Do not infer exact deaths, economic loss, road damage, or shelter totals.",
+      "Do not treat the post-visualization tail as a measured spread interval."
+    ],
+    "required_elements": [
+      "1005+81=1086 and 1005/1086=0.925",
+      "5+16=21 and 16/21=0.762",
+      "2021-08-14 to 2021-10-21 is 68 elapsed days, matching the active-day value",
+      "2021-08-15 to 2021-10-06 gives 52 days, 104 12-hour intervals, and 15 tail days"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Scientific_Visualization_Studio.html",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/event_reports/event_reports_005_Locked_event_anchor_2021_Caldor_Fire_near_South_Lake_Tahoe.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the expected short label or an equivalent label that states major structure loss with a long progression record.",
+        "name": "Final numeric diagnosis",
+        "partial_credit": "Award 1-2 points for a label that captures only the structure-loss or duration component.",
+        "points": 3
+      },
+      {
+        "description": "Reports 1,005 destroyed, 81 damaged, 1,086 affected structures, and destruction share about 0.925.",
+        "name": "Structure ledger",
+        "partial_credit": "Award about 1 point for each correct structure count or share; allow small rounding differences for the share.",
+        "points": 4
+      },
+      {
+        "description": "Reports 5 civilian injuries, 16 firefighter injuries, 21 total confirmed injuries, and firefighter share about 0.762.",
+        "name": "Injury ledger",
+        "partial_credit": "Award 1 point for the injury total, 1 point for the component counts, and 1 point for the share.",
+        "points": 3
+      },
+      {
+        "description": "Reconstructs 68 elapsed event-window days, 52 visualization-span days, 104 12-hour intervals, and a 15-day tail to containment.",
+        "name": "Window reconstruction",
+        "partial_credit": "Award about 1 point for each correct date-derived value.",
+        "points": 4
+      },
+      {
+        "description": "Sets all four threshold flags to true using the stated cutoffs and the computed values.",
+        "name": "Threshold ledger",
+        "partial_credit": "Award proportional credit for correct flags with clear arithmetic support.",
+        "points": 3
+      },
+      {
+        "description": "Shows enough arithmetic or date math to make the totals, shares, intervals, and tail reproducible.",
+        "name": "Formula consistency",
+        "partial_credit": "Award 1 point for partial formulas or formulas without clear units.",
+        "points": 2
+      },
+      {
+        "description": "Returns concise JSON with the requested ledger fields and stays within the computed values.",
+        "name": "Compact structured output",
+        "partial_credit": "Award 0.5 points for clear content with minor formatting defects.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "wildfire_damage_window_threshold_ledger",
+  "task_id": "CSX-198_Q2",
+  "task_type": "short_answer",
+  "task_version": "v4.1"
+}

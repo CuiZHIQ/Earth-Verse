@@ -1,0 +1,103 @@
+{
+  "eval_mode": "deterministic",
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-037",
+  "key_values": {
+    "hko_observatory_low_c": 3.3,
+    "hours_wind_chill_le_0c": 11,
+    "interpretation": "Lowland air temperature stayed above 0 C, while wind chill produced a small subzero load and the report text contains all three high-ground ice signals.",
+    "longest_run_temperature_le_5c_hours": 14,
+    "lowland_freezing_hours": 0,
+    "min_temperature_c": 4.3,
+    "min_wind_chill_c": -0.8,
+    "report_flags": {
+      "freezing_rain_flag": true,
+      "icing_flag": true,
+      "slippery_or_icy_road_flag": true
+    }
+  },
+  "numeric_tolerances": {
+    "high_ground_ice_report_score_0to3": {
+      "tolerance": 0,
+      "value": 3
+    },
+    "lowland_freezing_load_c_hours": {
+      "tolerance": 0.1,
+      "value": 0.0
+    },
+    "min_temp_threshold_anomaly_c": {
+      "tolerance": 0.2,
+      "value": -5.7
+    },
+    "severe_cold_duration_hours_le_5c": {
+      "tolerance": 0,
+      "value": 14
+    },
+    "wind_chill_freezing_load_c_hours": {
+      "tolerance": 0.2,
+      "value": 4.1
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "high_ground_ice_report_score_0to3": 3,
+      "lowland_freezing_load_c_hours": 0.0,
+      "min_temp_threshold_anomaly_c": -5.7,
+      "severe_cold_duration_hours_le_5c": 14,
+      "wind_chill_freezing_load_c_hours": 4.1
+    },
+    "interpretation": "Lowland air temperature stayed above 0 C, while wind chill produced a small subzero load and the report text contains all three high-ground ice signals."
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with the five requested numeric fields and one concise interpretation sentence.",
+        "name": "JSON response shape",
+        "partial_credit": "Award 2-3 points for readable JSON with one missing numeric field or a verbose but still relevant interpretation; award at most 1 point if the response is not machine-readable.",
+        "points": 4
+      },
+      {
+        "description": "Computes lowland freezing load as 0.0 C-hours and does not imply a lowland subzero air-temperature interval.",
+        "name": "Air-temperature freezing ledger",
+        "partial_credit": "Award 2 points for recognizing no lowland air-temperature freezing even if the C-hour formula is omitted; award 1 point for using the right formula with a minor threshold or rounding error.",
+        "points": 4
+      },
+      {
+        "description": "Computes the minimum-temperature anomaly as about -5.7 C relative to 10 C and the duration at or below 5 C as 14 hours.",
+        "name": "Cold-threshold ledger",
+        "partial_credit": "Award 2 points for either the correct anomaly or the correct duration; award 3 points if both are conceptually correct but one is slightly outside tolerance.",
+        "points": 4
+      },
+      {
+        "description": "Computes wind-chill freezing load near 4.1 C-hours from the hourly temperature and wind-speed series.",
+        "name": "Wind-chill ledger",
+        "partial_credit": "Award 2-3 points for applying wind chill and identifying subzero wind-chill exposure with a small arithmetic or rounding error; award at most 1 point for treating wind chill as air temperature.",
+        "points": 4
+      },
+      {
+        "description": "Scores freezing-rain, icing, and slippery/icy-road text flags as 1 + 1 + 1 = 3.",
+        "name": "Report-coded ice score",
+        "partial_credit": "Award 1 point for finding two of the three report-coded high-ground ice indicators or for the right total with unclear flag accounting.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the interpretation tied to the computed fingerprint rather than adding loss estimates, broad event narrative, or guidance.",
+        "name": "Computed interpretation",
+        "partial_credit": "Award 1 point for a mostly correct but over-broad interpretation; award no credit for guidance, loss claims, or a generic cold-wave summary not tied to the computed fields.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "cold_process_fingerprint",
+  "task_id": "CSX-037_Q2",
+  "task_type": "numeric"
+}

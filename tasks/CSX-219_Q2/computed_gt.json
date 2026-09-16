@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-219_Q2",
+  "event_id": "CSX-219",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "numeric_diagnosis",
+    "numeric_ledger": {
+      "rainfall_load": {
+        "antecedent_15d_mm": 218.2,
+        "event_day_gridded_max_mm": 4.13,
+        "antecedent_to_event_day_ratio": 52.83
+      },
+      "landslide_extent": {
+        "avg_speed_mph": 40,
+        "overrun_area_sqmi": 0.5,
+        "moved_mass_mtons": 18,
+        "mass_density_mtons_per_sqmi": 36.0
+      },
+      "river_extent": {
+        "dam_depth_ft": 25,
+        "temporary_lake_mi": 2.5,
+        "blockage_ft_mi": 62.5
+      },
+      "context_index_per_100k": 132.51,
+      "threshold_score": {
+        "passed": 8,
+        "possible": 8
+      },
+      "computed_label": "antecedent_wet_high_mobility_river_blockage"
+    },
+    "threshold_checks": {
+      "antecedent_precip_15d_ge_150mm": true,
+      "antecedent_to_event_day_ratio_ge_10": true,
+      "average_speed_ge_30mph": true,
+      "overrun_area_ge_0_25sqmi": true,
+      "moved_mass_ge_10mtons": true,
+      "dam_depth_ge_20ft": true,
+      "temporary_lake_ge_2mi": true,
+      "direct_impact_index_eq_3": true
+    },
+    "final_label": "antecedent_wet_high_mobility_river_blockage",
+    "label_rule": "score >= 7 and antecedent_to_event_day_ratio >= 10 => antecedent_wet_high_mobility_river_blockage",
+    "tolerances": {
+      "precip_mm": 0.1,
+      "ratio": 0.05,
+      "extent": 0.1,
+      "context_index": 0.05
+    }
+  },
+  "key_values": {
+    "fatalities": 43,
+    "homes_and_structures_covered_about": 40,
+    "state_route_530_covered_miles_nearly": 1.0,
+    "slope_failure_stage_count": 2,
+    "slope_failure_duration_min_about": 1,
+    "river_crossed_by_slide": true,
+    "rapid_deployment_gages_installed": 3,
+    "buoys_installed": 3,
+    "stillaguamish_streamgages_total": 8,
+    "antecedent_local_precip_15day_mm": 218.2,
+    "event_day_local_precip_mm": 0.0,
+    "event_day_gridded_precip_max_mm": 4.13,
+    "broad_context_population": 754664.6,
+    "broad_osm_way_count": 846,
+    "broad_osm_amenity_count": 154,
+    "radar_pre_scene_count": 0,
+    "radar_post_scene_count": 0,
+    "required_metrics": [
+      "rainfall_load",
+      "landslide_extent",
+      "river_extent",
+      "context_index_per_100k",
+      "threshold_score"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "answer_schema_and_final_label",
+        "points": 4,
+        "description": "Returns the six requested top-level JSON fields with units encoded in field names and gives antecedent_wet_high_mobility_river_blockage.",
+        "partial_credit": "Award 2-3 points for a recoverable JSON object with one missing or renamed field; award 1 point for the right label without a usable ledger."
+      },
+      {
+        "name": "rainfall_calculation",
+        "points": 4,
+        "description": "Computes 218.2 mm antecedent load, 4.13 mm event-day gridded maximum, and 52.83 antecedent/event-day ratio within tolerance.",
+        "partial_credit": "Award 2-3 points for correct rainfall values with one rounding or ratio error; award 1 point for using the right variables but not completing the ratio."
+      },
+      {
+        "name": "landslide_extent_ledger",
+        "points": 3,
+        "description": "Reports 40 mph, 0.5 sq mi, 18 million tons, and 36.0 million tons per square mile.",
+        "partial_credit": "Award 1-2 points for two or three correct extent values or for a correct density formula with one wrong input."
+      },
+      {
+        "name": "river_and_context_calculations",
+        "points": 3,
+        "description": "Reports 25 ft, 2.5 mi, 62.5 ft-mi, and context_index_per_100k = 132.51.",
+        "partial_credit": "Award 1-2 points for a correct river product or context formula with one incorrect input or rounding error."
+      },
+      {
+        "name": "threshold_score",
+        "points": 3,
+        "description": "Applies all eight threshold checks, including the three-part direct-impact index, and reports 8 passed out of 8.",
+        "partial_credit": "Award 1-2 points for mostly correct threshold logic with one or two missed pass states."
+      },
+      {
+        "name": "label_rule_reasoning",
+        "points": 2,
+        "description": "Connects the 8 of 8 score and passing rainfall-ratio check to the final label.",
+        "partial_credit": "Award 1 point for the correct label without clearly tying it to both required conditions."
+      },
+      {
+        "name": "concise_computed_interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation tied to the computed ledger and avoids adding extra outcome estimates.",
+        "partial_credit": "Award 0.5 points for a correct but wordy interpretation that does not change the computed result."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_anchor_report_USGS_feature.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Oso_landslide.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_osm_overpass_exposure_slice.json.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  }
+}

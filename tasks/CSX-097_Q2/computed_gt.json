@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-097_Q2",
+  "event_id": "CSX-097",
+  "task_type": "short_answer",
+  "target_family": "yagi_rainfall_persistence_threshold_proof",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "yagi_rainfall_persistence_threshold_proof",
+    "final_label": "persistent_multi_day_rainfall_cascade_supported",
+    "rainfall_metrics": {
+      "event_total_mm": 373.0,
+      "wettest_72h_share": 0.5236,
+      "wettest_5day_share": 0.7525,
+      "peak_hour_share": 0.0477,
+      "wet_day_fraction_ge10mm": 0.8333,
+      "mean_hourly_precip_rate_mm_h": 1.295
+    },
+    "daily_corroboration": {
+      "daily_to_hourly_total_ratio": 1.0424,
+      "daily_72h_share": 0.5595,
+      "daily_5day_share": 0.8711,
+      "daily_5day_to_wettest_day_ratio": 2.856,
+      "hourly_5day_to_wettest_day_ratio": 2.359
+    },
+    "gridded_concentration": {
+      "era5_max_to_mean_ratio": 2.259,
+      "gpm_max_to_mean_ratio": 4.6,
+      "chirps_max_to_mean_ratio": 1.702,
+      "gpm_max_to_chirps_max_ratio": 2.23,
+      "gpm_max_to_era5_max_ratio": 2.798
+    },
+    "threshold_results": {
+      "hourly_persistence": "pass",
+      "daily_corroboration": "pass",
+      "gridded_concentration": "pass"
+    },
+    "rejected_readings": [
+      "short_peak_burst",
+      "wind_only",
+      "single_grid_max_as_regional_loss"
+    ],
+    "tolerances": {
+      "precip_mm_abs": 0.1,
+      "ratio_abs": 0.005,
+      "label_match": "exact"
+    }
+  },
+  "key_values": {
+    "window_definition": {
+      "hourly_72h_and_5day_method": "aggregate hourly precipitation to calendar-day totals, then use rolling 3-calendar-day and 5-calendar-day sums",
+      "not_used": "arbitrary-offset rolling 120-hour windows"
+    },
+    "hourly_inputs": {
+      "event_total_mm": 373.0,
+      "wettest_72h_mm": 195.3,
+      "wettest_5day_mm": 280.7,
+      "max_1h_precip_mm": 17.8,
+      "wettest_day_mm": 119.0,
+      "wet_days_ge10mm": 10,
+      "window_days": 12,
+      "hour_count": 288
+    },
+    "daily_inputs": {
+      "daily_total_mm": 388.82,
+      "daily_wettest_day_mm": 118.6,
+      "daily_wettest_72h_mm": 217.54,
+      "daily_wettest_5day_mm": 338.72
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and schema",
+        "points": 3,
+        "description": "Gives the correct final label, target family, and requested structured fields.",
+        "partial_credit": "Award 1-2 points for a compatible persistence label with incomplete or mislabeled fields."
+      },
+      {
+        "name": "Hourly rainfall persistence",
+        "points": 4,
+        "description": "Computes event total, 72-hour share, 5-day share, peak-hour share, wet-day fraction, and mean hourly rate within tolerance.",
+        "partial_credit": "Award 1-3 points when the formulas are mostly correct but one or two metrics are missing or slightly outside tolerance."
+      },
+      {
+        "name": "Daily corroboration",
+        "points": 4,
+        "description": "Computes daily/hourly total ratio, daily 72-hour share, daily 5-day share, and both 5-day-to-wettest-day ratios within tolerance.",
+        "partial_credit": "Award 1-3 points for correct daily totals with incomplete ratio logic or minor rounding errors."
+      },
+      {
+        "name": "Gridded concentration",
+        "points": 3,
+        "description": "Computes all three max-to-mean ratios and both GPM-to-other-maximum ratios within tolerance.",
+        "partial_credit": "Award 1-2 points for the correct max/mean method with one or more omitted ratios."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 3,
+        "description": "Marks all three threshold tests as pass and links them to the stated inequalities.",
+        "partial_credit": "Award 1-2 points for the right overall conclusion with incomplete inequality checks."
+      },
+      {
+        "name": "Rejected weaker readings",
+        "points": 2,
+        "description": "Rejects short peak-hour burst, wind-only, and single-grid-maximum-as-loss readings from the computed values.",
+        "partial_credit": "Award 1 point if only one or two weaker readings are correctly rejected."
+      },
+      {
+        "name": "Concise structured answer",
+        "points": 1,
+        "description": "Keeps the answer compact and avoids adding realized-loss conclusions beyond the computed threshold proof.",
+        "partial_credit": "Award 0.5 points for a clear answer with extra prose that does not alter the conclusion."
+      }
+    ]
+  },
+  "numeric_tolerances": {
+    "precip_mm_abs": 0.1,
+    "ratio_abs": 0.005,
+    "label_match": "exact"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

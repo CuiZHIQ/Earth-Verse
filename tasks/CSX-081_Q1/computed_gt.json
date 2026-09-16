@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-081_Q1",
+  "event_id": "CSX-081",
+  "task_type": "numeric",
+  "target_family": "ida_northeast_rainfall_concentration_numeric",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "ida_northeast_rainfall_concentration_numeric",
+    "event_total_mm": 133.9,
+    "peak_hour": {
+      "time_utc": "2021-09-02T01:00",
+      "mm": 33.8,
+      "fraction_of_total": 0.2524
+    },
+    "max_3h": {
+      "start_utc": "2021-09-02T01:00",
+      "end_utc": "2021-09-02T03:00",
+      "mm": 79.8,
+      "fraction_of_total": 0.596
+    },
+    "max_6h": {
+      "start_utc": "2021-09-01T23:00",
+      "end_utc": "2021-09-02T04:00",
+      "mm": 98.3,
+      "fraction_of_total": 0.7341
+    },
+    "nyc_feedback": {
+      "record_count": 500,
+      "sewer_share": 0.914,
+      "street_flooding_share": 0.892,
+      "sep1_sep2_share": 0.998,
+      "top_hour_share": 0.244
+    },
+    "final_label": "concentrated_multi_hour_rainfall_with_nyc_drainage_feedback"
+  },
+  "key_values": {
+    "event_name": "September 2021 Hurricane Ida Northeast flooding",
+    "event_window": "2021-09-01 to 2021-09-03",
+    "event_total_mm": 133.9,
+    "peak_hour": {
+      "time_utc": "2021-09-02T01:00",
+      "mm": 33.8,
+      "fraction_of_total": 0.2524
+    },
+    "max_3h": {
+      "start_utc": "2021-09-02T01:00",
+      "end_utc": "2021-09-02T03:00",
+      "mm": 79.8,
+      "fraction_of_total": 0.596
+    },
+    "max_6h": {
+      "start_utc": "2021-09-01T23:00",
+      "end_utc": "2021-09-02T04:00",
+      "mm": 98.3,
+      "fraction_of_total": 0.7341
+    },
+    "nyc_feedback_counts": {
+      "record_count": 500,
+      "sewer_records": 457,
+      "street_flooding_records": 446,
+      "sep1_sep2_records": 499,
+      "top_hour_records": 122
+    },
+    "nyc_feedback": {
+      "record_count": 500,
+      "sewer_share": 0.914,
+      "street_flooding_share": 0.892,
+      "sep1_sep2_share": 0.998,
+      "top_hour_share": 0.244
+    },
+    "control_values": {
+      "central_park_record_hour_mm": 88.138,
+      "regional_peak_lower_bound_mm": 254.0,
+      "daily_total_mm": 80.62
+    },
+    "tolerances": {
+      "rain_mm": 0.2,
+      "fractions": 0.005
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested compact JSON",
+        "points": 3,
+        "description": "Provides the target family, rainfall windows, NYC feedback values, and final label in the requested compact object.",
+        "partial_credit": "Award 1-2 points if the structure is mostly correct but one required group is missing or field names are unclear."
+      },
+      {
+        "name": "Event total and peak hour",
+        "points": 4,
+        "description": "Computes 133.9 mm total precipitation, 33.8 mm peak hour at 2021-09-02T01:00 UTC, and 0.2524 peak-hour fraction.",
+        "partial_credit": "Award 2-3 points for correct values with minor rounding or time-format errors; 1 point for only the total or peak value."
+      },
+      {
+        "name": "Rolling rainfall windows",
+        "points": 4,
+        "description": "Computes the 79.8 mm maximum 3-hour window with 0.596 fraction and the 98.3 mm maximum 6-hour window with 0.7341 fraction.",
+        "partial_credit": "Award 2-3 points for one correct rolling window or small rounding errors; 1 point for using rolling-window logic but choosing the wrong maximum."
+      },
+      {
+        "name": "NYC feedback shares",
+        "points": 4,
+        "description": "Computes 500 records, 0.914 sewer share, 0.892 street-flooding share, 0.998 September 1-2 share, and 0.244 top-hour share.",
+        "partial_credit": "Award 2-3 points for correct counts but missing, swapped, or misrounded shares; award 1 point for only identifying the complaint-record source."
+      },
+      {
+        "name": "Consistency interpretation",
+        "points": 4,
+        "description": "Uses the rainfall fractions and feedback shares to conclude concentrated multi-hour rainfall with NYC drainage feedback.",
+        "partial_credit": "Award 2-3 points if the conclusion is broadly right but does not use both the rainfall concentration and local-feedback values; award 1 point for the right label without calculation-backed interpretation."
+      },
+      {
+        "name": "Concise bounded answer",
+        "points": 1,
+        "description": "Avoids management guidance and broad narrative beyond the computed consistency result.",
+        "partial_credit": "Award 0.5 points for minor extra prose that does not alter the numerical conclusion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/air_quality/air_quality_002_03_city_feedback_or_air_quality_NYC_311_Service_Requests_Socrata_flood_complaints.json.json"
+    ]
+  }
+}

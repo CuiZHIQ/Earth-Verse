@@ -1,0 +1,90 @@
+{
+  "decision_rule": {
+    "fail_label": "scale_window_fail",
+    "pass_label": "scale_window_pass",
+    "score_max": 6,
+    "tests": {
+      "basin_scope": true,
+      "ecosystem_impact_terms": true,
+      "hazard_family": true,
+      "long_window": true,
+      "marine_heatwave_terms": true,
+      "northeast_pacific_context": true
+    },
+    "thresholds": {
+      "min_ecosystem_impact_term_count": 1,
+      "min_event_days": 365,
+      "min_marine_heatwave_term_count": 3,
+      "min_northeast_pacific_reference_count": 1
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-323",
+  "numeric_tolerances": {
+    "ecosystem_impact_term_count": 0,
+    "event_window_days": 0,
+    "event_window_years": 0.01,
+    "marine_heatwave_term_count": 0,
+    "northeast_pacific_reference_count": 0,
+    "score": 0,
+    "source_result_count": 0
+  },
+  "primary_gt": {
+    "answer": "scale_window_pass",
+    "ecosystem_impact_term_count": 6,
+    "event_window_days": 1127,
+    "event_window_years": 3.09,
+    "final_label": "scale_window_pass",
+    "marine_heatwave_term_count": 14,
+    "northeast_pacific_reference_count": 6,
+    "score": 6,
+    "source_result_count": 6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2013-2016_Northeast_Pacific_marine_heatwave_The_Blob.json",
+      "data/other/other_002_01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Provides the requested compact JSON with all required fields and rounding.",
+        "name": "answer_schema",
+        "points": 4
+      },
+      {
+        "description": "Computes 1127 inclusive days and the 3.09-year duration from the locked event window.",
+        "name": "window_math",
+        "points": 4
+      },
+      {
+        "description": "Counts the 6 source results, 14 marine-heatwave terms, 6 ecosystem-impact terms, and 6 Northeast Pacific references.",
+        "name": "text_evidence_counts",
+        "points": 4
+      },
+      {
+        "description": "Applies the six evidence tests without using short point-weather, Sentinel-2, or other land-product samples.",
+        "name": "score_logic",
+        "points": 4
+      },
+      {
+        "description": "Returns scale_window_pass only when all six tests pass.",
+        "name": "final_label",
+        "points": 2
+      },
+      {
+        "description": "Keeps out unmeasured mortality, economic totals, service-disruption totals, and non-event land-product proxies.",
+        "name": "numeric_scope",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "scale_window_evidence_summary",
+  "task_id": "CSX-323_Q2",
+  "task_type": "numeric"
+}

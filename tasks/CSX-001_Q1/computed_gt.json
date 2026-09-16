@@ -1,0 +1,174 @@
+{
+  "eval_mode": "hybrid",
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-001",
+  "judge_anchors": {
+    "acceptable_variants": [
+      "expert_source_arbitration",
+      "Open-Meteo selected and ERA5 aggregate rejected",
+      "direct time-series source arbitration with numeric impact"
+    ],
+    "canonical_stance": "Use the locked event window and Open-Meteo direct daily/hourly series; reject ERA5 aggregate stats as non-reproducible for the 3-day and hot-hour RH calculations.",
+    "do_not_infer": [
+      "mortality or health impacts",
+      "a dry-recovery pass/fail score ledger",
+      "climatological rarity or return period",
+      "daily sequences or hot-hour RH from aggregate-only products",
+      "values from web sources or hidden answer files"
+    ],
+    "required_elements": [
+      "Use the locked event anchor for the inclusive 2021-06-25 to 2021-07-01 event window.",
+      "Select Open-Meteo because it has daily Tmax/Tmin and hourly temperature/RH arrays.",
+      "Reject ERA5-Land aggregate stats because it lacks the daily sequence and hourly RH rows.",
+      "Quantify the rejected aggregate max as 31.3 C and the peak understatement as 4.2 C.",
+      "Return compact source-arbitration JSON rather than a threshold ledger or broad disaster explanation."
+    ],
+    "required_metrics": [
+      {
+        "name": "peak_daily_tmax_c",
+        "tolerance": 0.1,
+        "value": 35.5
+      },
+      {
+        "name": "hottest_3day_mean_tmax_c",
+        "tolerance": 0.2,
+        "value": 33.9
+      },
+      {
+        "name": "hot_hour_mean_rh_percent",
+        "tolerance": 2.0,
+        "value": 24.0
+      },
+      {
+        "name": "rejected_value_c",
+        "tolerance": 0.1,
+        "value": 31.3
+      },
+      {
+        "name": "peak_underestimate_if_used_c",
+        "tolerance": 0.2,
+        "value": 4.2
+      }
+    ]
+  },
+  "key_values": {
+    "arbitration_basis": "direct time-series evidence outranks aggregate-only stats for reconstructing a windowed sequence calculation",
+    "hot_hour_temperature_threshold_c": 30.0,
+    "rounding": {
+      "temperatures_rh_and_differences": 1
+    }
+  },
+  "numeric_tolerances": {
+    "hot_hour_mean_rh_percent": {
+      "tolerance": 2.0,
+      "value": 24.0
+    },
+    "hottest_3day_mean_tmax_c": {
+      "tolerance": 0.2,
+      "value": 33.9
+    },
+    "peak_daily_tmax_c": {
+      "tolerance": 0.1,
+      "value": 35.5
+    },
+    "peak_underestimate_if_used_c": {
+      "tolerance": 0.2,
+      "value": 4.2
+    },
+    "rejected_value_c": {
+      "tolerance": 0.1,
+      "value": 31.3
+    }
+  },
+  "primary_gt": {
+    "answer_type": "expert_source_arbitration",
+    "arbitration_basis": "select_direct_daily_hourly_series_over_aggregate_stats",
+    "event_window": {
+      "daily_rows_used": 7,
+      "end_date": "2021-07-01",
+      "hourly_rows_used": 168,
+      "start_date": "2021-06-25"
+    },
+    "event_window_source": "data/event_reports/event_reports_003_Locked_event_anchor_June_2021_Pacific_Northwest_heat_wave.json",
+    "invalid_alternative": {
+      "claimed_field": "stats.temperature_2m_max_c_max",
+      "first_failure": "aggregate_stats_do_not_contain_daily_sequence_or_hourly_rh_rows",
+      "peak_underestimate_if_used_c": 4.2,
+      "rejected_value_c": 31.3
+    },
+    "rejected_source": "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+    "selected_calculation": {
+      "hot_hour_mean_rh_percent": 24.0,
+      "hot_hours_ge_30c": 29,
+      "hottest_3day_mean_tmax_c": 33.9,
+      "hottest_3day_window": "2021-06-27/2021-06-29",
+      "peak_daily_tmax_c": 35.5,
+      "peak_tmax_date": "2021-06-29"
+    },
+    "selected_source": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+    "source_path_reasoning": {
+      "event_window_role": "locked_inclusive_temporal_filter",
+      "rejected_role": "aggregate_temperature_stats_only_not_reproducible_for_3day_or_hot_hour_rh",
+      "selected_role": "direct_daily_tmax_tmin_and_hourly_temperature_rh_series"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2021_Pacific_Northwest_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns only the requested JSON with answer_type = expert_source_arbitration.",
+        "name": "JSON schema and answer type",
+        "partial_credit": "Award 1 point for mostly valid JSON with minor schema omissions.",
+        "points": 2
+      },
+      {
+        "description": "Selects the Open-Meteo archive, rejects the ERA5-Land aggregate stats file, and cites the locked event anchor, all with package-relative paths.",
+        "name": "Source arbitration",
+        "partial_credit": "Award 1-3 points for identifying some but not all roles correctly.",
+        "points": 4
+      },
+      {
+        "description": "Uses the inclusive 2021-06-25 to 2021-07-01 window and reports 7 daily rows plus 168 hourly rows.",
+        "name": "Event-window filtering",
+        "partial_credit": "Award 1-2 points for correct dates with incomplete row accounting.",
+        "points": 3
+      },
+      {
+        "description": "Reports peak Tmax 35.5 C on 2021-06-29, hottest 3-day mean 33.9 C for 2021-06-27/2021-06-29, 29 hot hours, and hot-hour mean RH 24.0 percent.",
+        "name": "Selected-source calculations",
+        "partial_credit": "Award up to 4 points for correct formulas with one missing or slightly misrounded value.",
+        "points": 5
+      },
+      {
+        "description": "Reads stats.temperature_2m_max_c_max as 31.3 C and computes the 4.2 C peak understatement if it is wrongly substituted.",
+        "name": "Invalid alternative and numeric impact",
+        "partial_credit": "Award 1-2 points for the right rejected field or the right consequence but not both.",
+        "points": 3
+      },
+      {
+        "description": "Explains that the selected source is direct daily/hourly series evidence and the rejected file is aggregate-only evidence that cannot reproduce the 3-day or hot-hour RH calculations.",
+        "name": "Source-path reasoning",
+        "partial_credit": "Award 1 point for a weaker but still package-grounded reason.",
+        "points": 2
+      },
+      {
+        "description": "Does not use web evidence, hidden answers, broad disaster explanation, response advice, or non-package values.",
+        "name": "Evidence boundary discipline",
+        "partial_credit": "No partial credit.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "expert_source_arbitration",
+  "task_id": "CSX-001_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,219 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-316",
+  "forbidden_overclaims": [
+    "Do not claim a confirmed immediate avalanche, GLOF, or snowmelt-flood emergency.",
+    "Do not infer a precise glacier area-loss rate from this task package.",
+    "Do not turn broad population context into a directly harmed population count.",
+    "Do not claim exact tourism revenue loss, water-supply loss, mortality, facility damage, or service outage.",
+    "Do not treat contextual scene material as a complete direct damage or retreat map."
+  ],
+  "key_values": {
+    "answer": "slow_onset_ice_field_monitoring_and_adaptation_priority",
+    "direct_observation_role": "contextual_not_a_discrete_damage_map",
+    "dominant_driver": "multi_decadal_high_mountain_ice_retreat",
+    "event_window_years": 20.0,
+    "hazard_mode": "slow_onset_cryosphere_loss",
+    "local_weather_sample_days": 15,
+    "mean_daily_temperature_c": 27.81,
+    "population_context": 1233444,
+    "response_priority": "monitoring_water_tourism_ecosystem_and_mountain_risk_adaptation"
+  },
+  "numeric_tolerances": {
+    "event_window_years": {
+      "tolerance": 0.2,
+      "value": 20.0
+    },
+    "local_weather_sample_days": {
+      "tolerance": 0,
+      "value": 15
+    },
+    "mean_daily_temperature_c": {
+      "tolerance": 0.05,
+      "value": 27.81
+    },
+    "population_context": {
+      "tolerance": 1,
+      "value": 1233444
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "slow_onset_cryosphere_monitoring_priority",
+      "long_horizon_ice_field_monitoring_and_adaptation",
+      "monitoring_and_adaptation_for_slow_onset_kilimanjaro_ice_retreat"
+    ],
+    "answer": "slow_onset_ice_field_monitoring_and_adaptation_priority",
+    "answer_type": "deterministic_label_with_rubric_scored_json_reasoning",
+    "canonical_answer": "slow_onset_ice_field_monitoring_and_adaptation_priority",
+    "canonical_stance": "Kilimanjaro ice-field retreat is a multi-decadal slow-onset cryosphere loss problem requiring monitoring and adaptation, not rapid emergency dispatch.",
+    "forbidden_claims": [
+      "A confirmed immediate avalanche, GLOF, or snowmelt-flood emergency occurred.",
+      "The task supports a precise glacier area-loss rate.",
+      "The population context is a directly harmed or directly affected population count.",
+      "The task proves exact tourism revenue loss, water-supply loss, mortality, facility damage, or service outage.",
+      "The contextual scene material is a complete direct damage or retreat map."
+    ],
+    "required_claims": [
+      "The dominant mechanism is multi-decadal high-mountain ice retreat.",
+      "The response priority is monitoring and adaptation for water, ecosystem, tourism, and mountain-risk planning.",
+      "Short local weather samples are context and do not define the multi-decadal event.",
+      "Direct-observation products are contextual rather than a complete discrete damage or retreat map.",
+      "Broad population context must not be treated as direct losses or directly affected population."
+    ],
+    "required_metrics": [
+      {
+        "name": "event_window_years",
+        "tolerance": 0.2,
+        "units": "years",
+        "value": 20.0
+      },
+      {
+        "name": "local_weather_sample_days",
+        "tolerance": 0,
+        "units": "days",
+        "value": 15
+      },
+      {
+        "name": "mean_daily_temperature_c",
+        "tolerance": 0.05,
+        "units": "degrees C",
+        "value": 27.81
+      },
+      {
+        "name": "population_context",
+        "tolerance": 1,
+        "units": "people",
+        "value": 1233444
+      }
+    ],
+    "structured_answer": {
+      "dominant_driver": "multi_decadal_high_mountain_ice_retreat",
+      "hazard_mode": "slow_onset_cryosphere_loss",
+      "priority_chain": [
+        "multi_decadal_high_mountain_ice_retreat",
+        "slow_onset_cryosphere_loss",
+        "monitoring_and_adaptation"
+      ],
+      "response_priority": "monitoring_water_tourism_ecosystem_and_mountain_risk_adaptation"
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Kilimanjaro_ice-field_retreat.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_critical-amenity_sample.json",
+      "data/event_catalogs/event_catalogs_002_GLIMS_glacier_database_and_RGI_outlines.html",
+      "metadata/files.csv"
+    ]
+  },
+  "reasoning_requirements": [
+    "Tie the priority to long-duration cryosphere retreat rather than a rapid emergency mechanism.",
+    "Use the short weather sample as context rather than as the event-defining driver.",
+    "Treat image or scene-derived material as contextual for this task unless it is converted into a valid pre/post loss metric.",
+    "Separate receptor exposure from observed damage or direct affected-population claims."
+  ],
+  "required_findings": [
+    {
+      "expected": "multi-decadal high-mountain ice retreat, not a discrete avalanche, GLOF, short storm, or burn-scar event",
+      "name": "dominant_mechanism"
+    },
+    {
+      "expected": "monitoring and adaptation for water, tourism, ecosystem, and mountain-risk planning",
+      "name": "response_priority"
+    },
+    {
+      "expected": "contextual_not_a_discrete_damage_map",
+      "name": "direct_observation_role"
+    },
+    {
+      "expected": "broad population context is relevant to adaptation but is not direct loss or directly affected population",
+      "name": "exposure_interpretation"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the correct compact priority label slow_onset_ice_field_monitoring_and_adaptation_priority or an unambiguous equivalent.",
+        "name": "final_priority_label",
+        "points": 4
+      },
+      {
+        "description": "Reports 20.0 event-window years (+/-0.2), 15 local weather sample days exactly, 27.81 degrees C mean daily temperature (+/-0.05), and 1,233,444 people as broad population context (+/-1).",
+        "name": "numeric_anchors",
+        "points": 4
+      },
+      {
+        "description": "Explains the event as multi-decadal Kilimanjaro high-mountain ice-field retreat and slow-onset cryosphere loss rather than an acute avalanche, GLOF, storm flood, snowmelt flood, or burn-scar process.",
+        "name": "cryosphere_mechanism",
+        "points": 4
+      },
+      {
+        "description": "Provides the correct chain from multi-decadal ice retreat to slow-onset cryosphere loss to monitoring and adaptation for water, ecosystem, tourism, and mountain-risk planning.",
+        "name": "priority_chain",
+        "points": 3
+      },
+      {
+        "description": "States that direct observation is contextual and not a complete discrete damage or retreat map.",
+        "name": "direct_observation_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Keeps broad population exposure context separate from observed damage, direct loss, or directly affected population.",
+        "name": "exposure_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported acute-emergency, precise area-loss, revenue-loss, mortality, facility-damage, or service-outage claims and returns concise valid JSON.",
+        "name": "overclaim_control_and_structure",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "chirps_precip_mean_mm": 199.1,
+      "era5_precip_mean_mm": 213.7,
+      "event_window_days": 7306,
+      "event_window_years": 20.0,
+      "insufficient_direct_observation_products": 2,
+      "local_weather_sample_days": 15,
+      "manifest_remote_sensing_files": 3,
+      "max_daily_temperature_c": 28.55,
+      "mean_daily_temperature_c": 27.81,
+      "nasa_power_precip_total_mm": 36.88,
+      "open_meteo_peak_tmax_c": 28.4,
+      "open_meteo_precip_total_mm": 26.4,
+      "population_context": 1233444,
+      "small_critical_amenity_count": 0
+    },
+    "direct_observation_status": {
+      "sentinel1": "no_sufficient_scenes",
+      "sentinel2": "no_sufficient_scenes"
+    },
+    "event_window": {
+      "end_date": "2020-02-21",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2000-02-21"
+    },
+    "text_claim_flags": {
+      "glims_supports_glacier_inventory": true,
+      "metadata_partial_hazard_match": true,
+      "slow_onset_anchor": true,
+      "snow_ice_benchmark": true
+    }
+  },
+  "task_id": "CSX-316_Q1",
+  "task_subtype": "response_priority_cryosphere_mechanism",
+  "task_type": "short_answer"
+}

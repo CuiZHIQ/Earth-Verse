@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-090_Q2",
+  "event_id": "CSX-090",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "target_family": "derna_flood_wave_amplification_chain_diagnosis",
+  "primary_gt": {
+    "answer": "derna_flood_wave_amplification_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+    "computed_evidence": {
+      "derivation_evidence_synthesis": [
+        {
+          "row_id": "rainfall_persistence",
+          "formula": "local_wettest_24h_mm/local_hourly_total_mm; local_wettest_6h_mm/local_hourly_total_mm; local_longest_wet_run_hours/local_wet_hours_ge_0p1mm",
+          "computed_value": {
+            "wettest_24h_share_of_local_total": 0.976,
+            "wettest_6h_share_of_local_total": 0.547,
+            "longest_wet_run_share_of_wet_hours": 0.906
+          },
+          "diagnostic_diagnostic_test_or_test": "24h share near-total, 6h share above one-half, wet-run share above 0.9",
+          "result": "local rainfall was concentrated and persistent enough to support a rainfall trigger"
+        },
+        {
+          "row_id": "cross_source_rainfall_support",
+          "formula": "regional_gridded_max_mm/contrasting_gridded_max_mm; regional_gridded_mean_mm/reanalysis_mean_mm; independent_daily_total_mm/local_hourly_total_mm; regional_gridded_max_mm/local_wettest_24h_mm",
+          "computed_value": {
+            "regional_to_contrasting_max_ratio": 24.95,
+            "regional_to_reanalysis_mean_ratio": 1.41,
+            "independent_daily_to_local_total_ratio": 1.6,
+            "regional_max_to_local_24h_ratio": 2.05,
+            "reported_rainfall_range_mm": [
+              150,
+              240
+            ],
+            "reported_al_bayda_daily_record_mm": 414.1
+          },
+          "diagnostic_diagnostic_test_or_test": "independent and regional rainfall support exceed local-only and contrasting-grid explanations",
+          "result": "multiple rainfall sources support a severe regional rainfall trigger, but regional rain alone does not prove neighborhood losses"
+        },
+        {
+          "row_id": "flood_wave_depth_amplification",
+          "formula": "regional_gridded_max_mm/1000; reported_wave_height_m_min/regional_rain_depth_m to reported_wave_height_m_max/regional_rain_depth_m",
+          "computed_value": {
+            "regional_rain_depth_m": 0.15044,
+            "wave_to_regional_rain_depth_ratio_range": [
+              19.94,
+              46.53
+            ],
+            "independent_daily_depth_m": 0.12033,
+            "wave_to_independent_daily_depth_ratio_range": [
+              24.93,
+              58.17
+            ]
+          },
+          "diagnostic_diagnostic_test_or_test": "reported 3-7 m wave is tens of times the event rainfall depth",
+          "result": "direct rainfall depth or urban ponding alone is not sufficient; flood-wave amplification through dam failure is required"
+        },
+        {
+          "row_id": "wadi_dam_exposure_coupling",
+          "formula": "bridge_features + destroyed_highway_features + waterway_features; exposed_population/linear_infrastructure_marker_count",
+          "computed_value": {
+            "long_narrow_wadi_reported": true,
+            "two_dams_collapsed": true,
+            "second_dam_distance_km": 1,
+            "linear_infrastructure_marker_count": 12,
+            "exposure_context_per_linear_marker": 4676.1,
+            "exposed_population": 56113.05,
+            "reported_derna_population_context": 90000
+          },
+          "diagnostic_diagnostic_test_or_test": "routing and dam facts true, with nonzero linear infrastructure and population context",
+          "result": "the confined wadi, nearby second dam, and exposed infrastructure context support a routed flood-wave pathway"
+        },
+        {
+          "row_id": "remote_disturbance_context",
+          "formula": "radar pre/post counts and post-minus-pre VV mean; annual embedding change maximum",
+          "computed_value": {
+            "radar_pre_count": 18,
+            "radar_post_count": 14,
+            "radar_vv_post_minus_pre_db_mean": -1.108,
+            "radar_vv_post_minus_pre_db_min": -10.254,
+            "radar_vv_post_minus_pre_db_max": 8.505,
+            "embedding_annual_change_mean": 0.0175,
+            "embedding_annual_change_max": 0.2047
+          },
+          "diagnostic_diagnostic_test_or_test": "surface-change context may support disturbance but cannot replace the hydraulic process alignment check",
+          "result": "remote metrics are supporting context only"
+        }
+      ],
+      "rejected_overreads": [
+        "direct pluvial or urban ponding alone cannot explain a 3-7 m wave that is tens of times the rainfall depth",
+        "coastal setting or exposure alone does not supply the upstream wadi and two-dam amplification chain",
+        "regional rainfall maxima cannot be transferred directly into neighborhood loss ranks",
+        "image summaries do not establish exact breach time, outflow hydrograph, parcel depth, casualty attribution, final death toll, or building-by-building structural loss"
+      ],
+      "final_process_alignment_label": "rainfall_triggered_dam_breach_flood_wave_supported"
+    },
+    "mechanism_chain": [
+      "storm or rainfall loading",
+      "dam-area pathway or storage release",
+      "downstream flood-wave amplification",
+      "regional-rainfall-only rejection"
+    ],
+    "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+    "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+    "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+    "formula_derivation": "When amplification is used, express it as a ratio or difference between upstream forcing and downstream response indicators."
+  },
+  "event": {
+    "package_id": "CSX-090",
+    "event_name": "Storm Daniel Derna flood",
+    "hazard_family": "river_coastal_flood",
+    "event_date_or_window": "2023-09-10 to 2023-09-11"
+  },
+  "key_values": {
+    "rainfall": {
+      "local_hourly_total_mm": 75.2,
+      "local_wettest_1h_mm": 9.3,
+      "local_wettest_6h_mm": 41.1,
+      "local_wettest_24h_mm": 73.4,
+      "local_wet_hours_ge_0p1mm": 32,
+      "local_longest_wet_run_hours": 29,
+      "local_hourly_record_hours": 48,
+      "independent_daily_total_mm": 120.33,
+      "independent_wettest_day_mm": 89.81,
+      "regional_gridded_mean_mm": 108.63,
+      "regional_gridded_max_mm": 150.44,
+      "reanalysis_mean_mm": 77.29,
+      "reanalysis_max_mm": 94.64,
+      "contrasting_gridded_mean_mm": 1.31,
+      "contrasting_gridded_max_mm": 6.03,
+      "regional_to_contrasting_max_ratio": 24.95,
+      "regional_to_reanalysis_mean_ratio": 1.41
+    },
+    "reported": {
+      "wmo_rainfall_range_mm": [
+        150,
+        240
+      ],
+      "wmo_al_bayda_daily_record_mm": 414.1,
+      "two_dams_collapsed": true,
+      "long_narrow_wadi": true,
+      "second_dam_distance_km": 1,
+      "flood_wave_height_m_range": [
+        3,
+        7
+      ],
+      "derna_population_context": 90000
+    },
+    "exposure_context": {
+      "exposed_population": 56113.05,
+      "linear_features": {
+        "elements": 1000,
+        "highway_features": 968,
+        "major_road_features": 57,
+        "destroyed_highway_features": 3,
+        "bridge_features": 6,
+        "amenity_features": 6,
+        "school_features": 2,
+        "police_features": 2,
+        "waterway_features": 3,
+        "storm_damage_text_mentions": 2
+      }
+    },
+    "remote_sensing": {
+      "radar_pre_count": 18,
+      "radar_post_count": 14,
+      "radar_vv_post_minus_pre_db_mean": -1.108,
+      "radar_vv_post_minus_pre_db_min": -10.254,
+      "radar_vv_post_minus_pre_db_max": 8.505,
+      "embedding_annual_change_mean": 0.0175,
+      "embedding_annual_change_max": 0.2047
+    }
+  },
+  "derived_metrics": {
+    "rainfall_persistence": {
+      "wettest_24h_share_of_local_total": 0.976,
+      "wettest_6h_share_of_local_total": 0.547,
+      "longest_wet_run_share_of_wet_hours": 0.906
+    },
+    "cross_source_rainfall_support": {
+      "regional_to_contrasting_max_ratio": 24.95,
+      "regional_to_reanalysis_mean_ratio": 1.41,
+      "independent_daily_to_local_total_ratio": 1.6,
+      "regional_max_to_local_24h_ratio": 2.05
+    },
+    "flood_wave_depth_amplification": {
+      "regional_rain_depth_m": 0.15044,
+      "wave_to_regional_rain_depth_ratio_range": [
+        19.94,
+        46.53
+      ],
+      "independent_daily_depth_m": 0.12033,
+      "wave_to_independent_daily_depth_ratio_range": [
+        24.93,
+        58.17
+      ]
+    },
+    "wadi_dam_exposure_coupling": {
+      "long_narrow_wadi_reported": true,
+      "two_dams_collapsed": true,
+      "second_dam_distance_km": 1,
+      "linear_infrastructure_marker_count": 12,
+      "exposure_context_per_linear_marker": 4676.1
+    },
+    "remote_disturbance_context": {
+      "radar_pre_count": 18,
+      "radar_post_count": 14,
+      "radar_vv_post_minus_pre_db_mean": -1.108,
+      "radar_vv_post_minus_pre_db_min": -10.254,
+      "radar_vv_post_minus_pre_db_max": 8.505,
+      "embedding_annual_change_mean": 0.0175,
+      "embedding_annual_change_max": 0.2047
+    }
+  },
+  "derivation_ledger": [
+    {
+      "row_id": "rainfall_persistence",
+      "formula": "local_wettest_24h_mm/local_hourly_total_mm; local_wettest_6h_mm/local_hourly_total_mm; local_longest_wet_run_hours/local_wet_hours_ge_0p1mm",
+      "computed_value": {
+        "wettest_24h_share_of_local_total": 0.976,
+        "wettest_6h_share_of_local_total": 0.547,
+        "longest_wet_run_share_of_wet_hours": 0.906
+      },
+      "threshold_or_test": "24h share near-total, 6h share above one-half, wet-run share above 0.9",
+      "result": "local rainfall was concentrated and persistent enough to support a rainfall trigger"
+    },
+    {
+      "row_id": "cross_source_rainfall_support",
+      "formula": "regional_gridded_max_mm/contrasting_gridded_max_mm; regional_gridded_mean_mm/reanalysis_mean_mm; independent_daily_total_mm/local_hourly_total_mm; regional_gridded_max_mm/local_wettest_24h_mm",
+      "computed_value": {
+        "regional_to_contrasting_max_ratio": 24.95,
+        "regional_to_reanalysis_mean_ratio": 1.41,
+        "independent_daily_to_local_total_ratio": 1.6,
+        "regional_max_to_local_24h_ratio": 2.05,
+        "reported_rainfall_range_mm": [
+          150,
+          240
+        ],
+        "reported_al_bayda_daily_record_mm": 414.1
+      },
+      "threshold_or_test": "independent and regional rainfall support exceed local-only and contrasting-grid explanations",
+      "result": "multiple rainfall sources support a severe regional rainfall trigger, but regional rain alone does not prove neighborhood losses"
+    },
+    {
+      "row_id": "flood_wave_depth_amplification",
+      "formula": "regional_gridded_max_mm/1000; reported_wave_height_m_min/regional_rain_depth_m to reported_wave_height_m_max/regional_rain_depth_m",
+      "computed_value": {
+        "regional_rain_depth_m": 0.15044,
+        "wave_to_regional_rain_depth_ratio_range": [
+          19.94,
+          46.53
+        ],
+        "independent_daily_depth_m": 0.12033,
+        "wave_to_independent_daily_depth_ratio_range": [
+          24.93,
+          58.17
+        ]
+      },
+      "threshold_or_test": "reported 3-7 m wave is tens of times the event rainfall depth",
+      "result": "direct rainfall depth or urban ponding alone is not sufficient; flood-wave amplification through dam failure is required"
+    },
+    {
+      "row_id": "wadi_dam_exposure_coupling",
+      "formula": "bridge_features + destroyed_highway_features + waterway_features; exposed_population/linear_infrastructure_marker_count",
+      "computed_value": {
+        "long_narrow_wadi_reported": true,
+        "two_dams_collapsed": true,
+        "second_dam_distance_km": 1,
+        "linear_infrastructure_marker_count": 12,
+        "exposure_context_per_linear_marker": 4676.1,
+        "exposed_population": 56113.05,
+        "reported_derna_population_context": 90000
+      },
+      "threshold_or_test": "routing and dam facts true, with nonzero linear infrastructure and population context",
+      "result": "the confined wadi, nearby second dam, and exposed infrastructure context support a routed flood-wave pathway"
+    },
+    {
+      "row_id": "remote_disturbance_context",
+      "formula": "radar pre/post counts and post-minus-pre VV mean; annual embedding change maximum",
+      "computed_value": {
+        "radar_pre_count": 18,
+        "radar_post_count": 14,
+        "radar_vv_post_minus_pre_db_mean": -1.108,
+        "radar_vv_post_minus_pre_db_min": -10.254,
+        "radar_vv_post_minus_pre_db_max": 8.505,
+        "embedding_annual_change_mean": 0.0175,
+        "embedding_annual_change_max": 0.2047
+      },
+      "threshold_or_test": "surface-change context may support disturbance but cannot replace the hydraulic consistency check",
+      "result": "remote metrics are supporting context only"
+    }
+  ],
+  "rejected_overreads": [
+    "direct pluvial or urban ponding alone cannot explain a 3-7 m wave that is tens of times the rainfall depth",
+    "coastal setting or exposure alone does not supply the upstream wadi and two-dam amplification chain",
+    "regional rainfall maxima cannot be transferred directly into neighborhood loss ranks",
+    "image summaries do not establish exact breach time, outflow hydrograph, parcel depth, casualty attribution, final death toll, or building-by-building structural loss"
+  ],
+  "supporting_metrics": {
+    "catalog_context": {
+      "red_flood_alert": true,
+      "country": "Libya",
+      "window_start": "2023-09-08T01:00:00",
+      "window_end": "2023-09-14T00:00:00"
+    },
+    "not_estimated_from_this_ledger": [
+      "exact breach time of each dam",
+      "dam outflow hydrograph or flood-wave velocity",
+      "parcel-level flood depth",
+      "casualty attribution",
+      "final death toll",
+      "building-by-building structural loss"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Storm_Daniel_Derna_flood.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Storm_aftermath_in_Derna_Libya.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Derna Flood-Wave Amplification Chain Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "derna_flood_wave_amplification_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+      "computed_evidence": {
+        "derivation_evidence_synthesis": [
+          {
+            "row_id": "rainfall_persistence",
+            "formula": "local_wettest_24h_mm/local_hourly_total_mm; local_wettest_6h_mm/local_hourly_total_mm; local_longest_wet_run_hours/local_wet_hours_ge_0p1mm",
+            "computed_value": {
+              "wettest_24h_share_of_local_total": 0.976,
+              "wettest_6h_share_of_local_total": 0.547,
+              "longest_wet_run_share_of_wet_hours": 0.906
+            },
+            "diagnostic_diagnostic_test_or_test": "24h share near-total, 6h share above one-half, wet-run share above 0.9",
+            "result": "local rainfall was concentrated and persistent enough to support a rainfall trigger"
+          },
+          {
+            "row_id": "cross_source_rainfall_support",
+            "formula": "regional_gridded_max_mm/contrasting_gridded_max_mm; regional_gridded_mean_mm/reanalysis_mean_mm; independent_daily_total_mm/local_hourly_total_mm; regional_gridded_max_mm/local_wettest_24h_mm",
+            "computed_value": {
+              "regional_to_contrasting_max_ratio": 24.95,
+              "regional_to_reanalysis_mean_ratio": 1.41,
+              "independent_daily_to_local_total_ratio": 1.6,
+              "regional_max_to_local_24h_ratio": 2.05,
+              "reported_rainfall_range_mm": [
+                150,
+                240
+              ],
+              "reported_al_bayda_daily_record_mm": 414.1
+            },
+            "diagnostic_diagnostic_test_or_test": "independent and regional rainfall support exceed local-only and contrasting-grid explanations",
+            "result": "multiple rainfall sources support a severe regional rainfall trigger, but regional rain alone does not prove neighborhood losses"
+          },
+          {
+            "row_id": "flood_wave_depth_amplification",
+            "formula": "regional_gridded_max_mm/1000; reported_wave_height_m_min/regional_rain_depth_m to reported_wave_height_m_max/regional_rain_depth_m",
+            "computed_value": {
+              "regional_rain_depth_m": 0.15044,
+              "wave_to_regional_rain_depth_ratio_range": [
+                19.94,
+                46.53
+              ],
+              "independent_daily_depth_m": 0.12033,
+              "wave_to_independent_daily_depth_ratio_range": [
+                24.93,
+                58.17
+              ]
+            },
+            "diagnostic_diagnostic_test_or_test": "reported 3-7 m wave is tens of times the event rainfall depth",
+            "result": "direct rainfall depth or urban ponding alone is not sufficient; flood-wave amplification through dam failure is required"
+          },
+          {
+            "row_id": "wadi_dam_exposure_coupling",
+            "formula": "bridge_features + destroyed_highway_features + waterway_features; exposed_population/linear_infrastructure_marker_count",
+            "computed_value": {
+              "long_narrow_wadi_reported": true,
+              "two_dams_collapsed": true,
+              "second_dam_distance_km": 1,
+              "linear_infrastructure_marker_count": 12,
+              "exposure_context_per_linear_marker": 4676.1,
+              "exposed_population": 56113.05,
+              "reported_derna_population_context": 90000
+            },
+            "diagnostic_diagnostic_test_or_test": "routing and dam facts true, with nonzero linear infrastructure and population context",
+            "result": "the confined wadi, nearby second dam, and exposed infrastructure context support a routed flood-wave pathway"
+          },
+          {
+            "row_id": "remote_disturbance_context",
+            "formula": "radar pre/post counts and post-minus-pre VV mean; annual embedding change maximum",
+            "computed_value": {
+              "radar_pre_count": 18,
+              "radar_post_count": 14,
+              "radar_vv_post_minus_pre_db_mean": -1.108,
+              "radar_vv_post_minus_pre_db_min": -10.254,
+              "radar_vv_post_minus_pre_db_max": 8.505,
+              "embedding_annual_change_mean": 0.0175,
+              "embedding_annual_change_max": 0.2047
+            },
+            "diagnostic_diagnostic_test_or_test": "surface-change context may support disturbance but cannot replace the hydraulic process alignment check",
+            "result": "remote metrics are supporting context only"
+          }
+        ],
+        "rejected_overreads": [
+          "direct pluvial or urban ponding alone cannot explain a 3-7 m wave that is tens of times the rainfall depth",
+          "coastal setting or exposure alone does not supply the upstream wadi and two-dam amplification chain",
+          "regional rainfall maxima cannot be transferred directly into neighborhood loss ranks",
+          "image summaries do not establish exact breach time, outflow hydrograph, parcel depth, casualty attribution, final death toll, or building-by-building structural loss"
+        ],
+        "final_process_alignment_label": "rainfall_triggered_dam_breach_flood_wave_supported"
+      },
+      "mechanism_chain": [
+        "storm or rainfall loading",
+        "dam-area pathway or storage release",
+        "downstream flood-wave amplification",
+        "regional-rainfall-only rejection"
+      ],
+      "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+      "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+      "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+      "formula_derivation": "When amplification is used, express it as a ratio or difference between upstream forcing and downstream response indicators."
+    },
+    "answer": "derna_flood_wave_amplification_supported"
+  }
+}

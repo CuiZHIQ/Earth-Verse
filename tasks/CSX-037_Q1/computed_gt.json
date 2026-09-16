@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-037_Q1",
+  "event_id": "CSX-037",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "event_window": "2016-01-23T00:00/2016-01-24T23:00",
+    "temperature": {
+      "min_c": 4.3,
+      "hours_le_7c": 33,
+      "longest_run_h": 28,
+      "cold_load_c_h": 46.4
+    },
+    "wind": {
+      "peak_gust_kmh": 66.2,
+      "overlap_h": 25,
+      "min_wind_chill_c": -0.82
+    },
+    "snow": {
+      "total_cm": 0.35,
+      "max_depth_m": 0.0,
+      "passes_depth_gate": false
+    },
+    "final_label": "sustained_cold_surge_with_wind_chill_not_snow_accumulation"
+  },
+  "tolerances": {
+    "temperature_c": 0.1,
+    "cold_load_c_h": 0.1,
+    "wind_kmh": 0.1,
+    "wind_chill_c": 0.05,
+    "snowfall_cm": 0.01,
+    "snow_depth_m": 0.01,
+    "hour_counts": 0
+  },
+  "formulas": {
+    "cold_load_c_h": "sum(max(0, 7 - temperature_c)) over 48 hourly values",
+    "cold_hours": "count(temperature_c <= 7)",
+    "longest_run": "longest consecutive hourly run with temperature_c <= 7",
+    "gust_overlap": "count(temperature_c <= 7 and gust_kmh >= 55)",
+    "wind_chill_c": "13.12 + 0.6215*T - 11.37*V^0.16 + 0.3965*T*V^0.16",
+    "snow_depth_gate": "max_depth_m > 0 and total_snowfall_cm >= 1"
+  },
+  "supporting_values": {
+    "event_dates": {
+      "start_date": "2016-01-23",
+      "end_date": "2016-01-24",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "report_flags": {
+      "hko_low_c": 3.3,
+      "intense_cold_surge": true,
+      "freezing_rain_icing": true,
+      "ice_pellets": true,
+      "wind_chill_mentioned": true
+    },
+    "hourly_record_count": 48,
+    "thresholds": {
+      "cold_c": 7.0,
+      "gust_kmh": 55.0,
+      "snowfall_cm": 1.0,
+      "snow_depth_m": 0.0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON shape",
+        "points": 4,
+        "description": "Returns the five requested top-level fields with nested temperature, wind, and snow ledgers.",
+        "partial_credit": "Give 2 points if all metric groups are present but naming or nesting differs."
+      },
+      {
+        "name": "Temperature duration and load",
+        "points": 5,
+        "description": "Computes minimum temperature, hours at or below 7 C, longest cold run, and cold-load degree-hours with stated rounding.",
+        "partial_credit": "Give up to 3 points for correct threshold counting but an incorrect or missing cold-load formula."
+      },
+      {
+        "name": "Wind coupling",
+        "points": 4,
+        "description": "Computes peak gust, cold-plus-gust overlap hours, and minimum wind chill from temperature and 10 m wind speed.",
+        "partial_credit": "Give up to 2 points if the overlap count is correct but wind chill is rounded or formula-applied incorrectly."
+      },
+      {
+        "name": "Snow-depth gate",
+        "points": 3,
+        "description": "Uses total snowfall and maximum snow depth to fail the snow-accumulation gate.",
+        "partial_credit": "Give 1 point for using snowfall alone without the depth gate."
+      },
+      {
+        "name": "Final label",
+        "points": 2,
+        "description": "Labels the episode as sustained cold surge with wind chill rather than snow accumulation.",
+        "partial_credit": "Give 1 point if the label names cold surge but omits wind chill or the snow contrast."
+      },
+      {
+        "name": "Rounding and units",
+        "points": 2,
+        "description": "Reports units or unit-implied field names and applies the requested decimal precision.",
+        "partial_credit": "Give 1 point for correct values with inconsistent precision."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin",
+      "data/event_reports/event_reports_003_Locked_event_anchor_January_2016_East_Asia_cold_wave_in_Hong_Kong.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive_cold_variables.json"
+    ],
+    "notes": "All numeric values are rebuilt from local CSX-037 package files."
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-057_Q2",
+  "event_id": "CSX-057",
+  "task_type": "numeric",
+  "target_family": "harvey_rainfall_volume_diagnostic",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "event_duration_days": 7,
+    "peak_gauge_mm": 1224.3,
+    "hobby_4day_mm": 904.2,
+    "two_day_mm": 609.6,
+    "four_day_to_two_day_ratio": 1.483,
+    "two_day_peak_share": 0.498,
+    "min_20in_volume_km3": 38.16,
+    "per_person_min_volume_m3": 5694.9,
+    "threshold_state": "pass_multiday_volume; fail_two_day_only",
+    "diagnosis_label": "multi_day_broad_area_record_rainfall"
+  },
+  "key_values": {
+    "event_name": "Hurricane Harvey Houston catastrophic rainfall flooding",
+    "event_window": "2017-08-25 to 2017-08-31",
+    "inputs": {
+      "highest_gauge_inches": 48.2,
+      "hobby_four_day_inches": 35.6,
+      "two_day_inches": 24.0,
+      "broad_area_threshold_inches": 20.0,
+      "broad_area_sqmi": 29000,
+      "exposed_population_million": 6.7,
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31"
+    },
+    "computed_ledger": {
+      "event_duration_days": 7,
+      "peak_gauge_mm": 1224.3,
+      "hobby_4day_mm": 904.2,
+      "two_day_mm": 609.6,
+      "four_day_to_two_day_ratio": 1.483,
+      "two_day_peak_share": 0.498,
+      "min_20in_volume_km3": 38.16,
+      "per_person_min_volume_m3": 5694.9,
+      "threshold_state": "pass_multiday_volume; fail_two_day_only",
+      "diagnosis_label": "multi_day_broad_area_record_rainfall"
+    },
+    "tolerances": {
+      "event_duration_days": 0,
+      "peak_gauge_mm": 0.1,
+      "hobby_4day_mm": 0.1,
+      "two_day_mm": 0.1,
+      "four_day_to_two_day_ratio": 0.01,
+      "two_day_peak_share": 0.01,
+      "min_20in_volume_km3": 0.05,
+      "per_person_min_volume_m3": 1.0
+    },
+    "thresholds": {
+      "event_duration_days_min": 7,
+      "peak_gauge_mm_min": 1000,
+      "four_day_to_two_day_ratio_min": 1.25,
+      "min_20in_volume_km3_min": 35,
+      "per_person_min_volume_m3_min": 5000,
+      "two_day_peak_share_max_for_two_day_only_failure": 0.6
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final numeric ledger",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields with the correct threshold state and diagnosis label.",
+        "partial_credit": "Award 1-2 points when the answer is mostly structured correctly but omits one or two required fields."
+      },
+      {
+        "name": "Rainfall conversions and duration",
+        "points": 4,
+        "description": "Computes 7 days, 1224.3 mm, 904.2 mm, and 609.6 mm from the Harvey record values.",
+        "partial_credit": "Award proportional credit for each correct value; cap at 2 points if the unit conversion formula is wrong."
+      },
+      {
+        "name": "Duration ratio checks",
+        "points": 3,
+        "description": "Computes four_day_to_two_day_ratio = 1.483 and two_day_peak_share = 0.498.",
+        "partial_credit": "Award 1-2 points for correct formulas with one arithmetic or rounding error."
+      },
+      {
+        "name": "Minimum water volume",
+        "points": 4,
+        "description": "Computes min_20in_volume_km3 = 38.16 and per_person_min_volume_m3 = 5694.9.",
+        "partial_credit": "Award 2 points for the correct area-depth method with a unit error, or 1 point for identifying the area-depth multiplication only."
+      },
+      {
+        "name": "Threshold state",
+        "points": 3,
+        "description": "Applies all inequalities and returns pass_multiday_volume plus fail_two_day_only.",
+        "partial_credit": "Award 1-2 points for one correct threshold result or for correct logic with one missed inequality."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Uses the ratios and volume result to reject a two-day-only interpretation.",
+        "partial_credit": "Award 1 point if the rejection is present but tied to only one computed value."
+      },
+      {
+        "name": "Concise scope",
+        "points": 1,
+        "description": "Keeps the answer focused on the rainfall ledger and avoids extra loss estimates.",
+        "partial_credit": "Award this point when the interpretation stays subordinate to the computations."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Harvey_Houston_catastrophic_rainfall_flooding.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.bin"
+    ],
+    "method": "Local event dates plus Harvey technical-report rainfall, footprint, and population anchors are parsed and converted with explicit unit formulas."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_name": "Calbuco eruption",
+    "event_window": "2015-04-22 to 2015-04-30",
+    "hazard_family": "volcano_ash_lahar",
+    "package_id": "CSX-309"
+  },
+  "event_id": "CSX-309",
+  "primary_gt": {
+    "conclusion": "obstructed_window_not_surface_map",
+    "method_notes": {
+      "rounding_order": "Round RGB white shares to three decimals before computing the one-decimal white_ratio; round RGB spread, Sentinel-1 mean change, and rain max/mean ratio to one decimal.",
+      "s1_definition": "s1_mean_change_db is the package Sentinel-1 VV post-minus-pre mean-change statistic.",
+      "side_product_scope": "Sentinel-1, Sentinel-2, and rainfall values are side metrics for observation-window interpretation, not measured surface damage."
+    },
+    "metrics": {
+      "event_rgb_spread": 1.2,
+      "event_white_share": 0.704,
+      "pre_white_share": 0.027,
+      "rain_max_mean_ratio": 2.3,
+      "s1_mean_change_db": 1.4,
+      "s2_status": "no_sufficient_scenes",
+      "white_ratio": 26.1
+    },
+    "tests": {
+      "event_rgb_spread_le_5": true,
+      "event_white_ge_0_60": true,
+      "s2_scene_gap": true,
+      "white_ratio_ge_20": true
+    },
+    "tolerances": {
+      "db": 0.1,
+      "ratio": 0.1,
+      "rgb": 0.1,
+      "share": 0.002
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Calbuco_eruption.json",
+      "data/remote_sensing/remote_sensing_004_pre.jpg",
+      "data/remote_sensing/remote_sensing_005_event.jpg",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON structure with the numeric fields, threshold object, final label, and one-sentence interpretation.",
+        "name": "Return structure",
+        "points": 3
+      },
+      {
+        "description": "Computes event white share, pre-event white share, and event RGB spread using the stated formulas.",
+        "name": "RGB pixel metrics",
+        "points": 5
+      },
+      {
+        "description": "Derives the white ratio, Sentinel-1 mean change, and precipitation max/mean ratio with the stated definitions and rounding order.",
+        "name": "Derived side metrics",
+        "points": 4
+      },
+      {
+        "description": "Applies all four threshold tests and reports the correct Boolean outcomes.",
+        "name": "Threshold tests",
+        "points": 4
+      },
+      {
+        "description": "Gives the final label obstructed_window_not_surface_map and ties it directly to the threshold results.",
+        "name": "Conclusion wording",
+        "points": 3
+      },
+      {
+        "description": "Keeps Sentinel-1, Sentinel-2, and rainfall as side metrics and does not turn them into measured surface damage.",
+        "name": "Scope control",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-309_Q2",
+  "task_type": "numeric"
+}

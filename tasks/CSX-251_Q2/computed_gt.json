@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-251_Q2",
+  "task_type": "numeric",
+  "target_family": "haze_dryness_score_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "final_index": 66.1,
+    "image": {
+      "pre_mean_brightness": 90.19,
+      "event_mean_brightness": 100.86,
+      "brightness_delta": 10.67,
+      "pre_low_bright_share": 0.3094,
+      "event_low_bright_share": 0.3444,
+      "low_bright_delta_pp": 3.5
+    },
+    "dryness": {
+      "analysis_window": "2015-09-01 to 2015-10-16",
+      "day_count": 46,
+      "dry_day_count": 15,
+      "dry_share": 0.3261,
+      "longest_dry_run": 3,
+      "point_precip_mm": 197.6
+    },
+    "precipitation": {
+      "gpm_mean_mm": 275.3,
+      "chirps_mean_mm": 234.4,
+      "gap_mm": 40.9,
+      "ratio": 1.174
+    },
+    "burn_gate": 1,
+    "receptor_density": {
+      "area_km2": 2478.94,
+      "population": 2750.7,
+      "population_density_km2": 1.11,
+      "osm_elements": 183,
+      "osm_density_km2": 0.0738
+    },
+    "reasoning_depth": {
+      "evidence_weighting": "Image brightness and low-bright share changes drive the visual dryness component, Open-Meteo dryness supports persistence, and GPM/CHIRPS plus receptor density provide context.",
+      "counterfactual_rejection": "A burn-scar-confirmation reading fails because the dNBR pre/post counts are zero and the burn gate is only a scoring condition, not mapped burn severity.",
+      "uncertainty_or_scale_caveat": "Masked AOI, OSM, and population products are authoritative for derived density statistics but not for judging absolute place metadata."
+    }
+  },
+  "event": {
+    "package_id": "CSX-251",
+    "name": "2015 Indonesian drought, peat fires and transboundary haze",
+    "interval_used": "2015-09-01 to 2015-10-16"
+  },
+  "calculation_spec": {
+    "dry_day_rule": "Open-Meteo precipitation_sum < 1.0 mm",
+    "low_bright_pixel_rule": "RGB channel range <25 and brightness >120",
+    "area_rule": "(delta_lon*111.320*cos(mean_lat))*(delta_lat*110.574)",
+    "final_index": "100*(0.45*min(1,d_b/15)+0.25*min(1,d_low_pp/5)+0.20*dry_share+0.10*burn_gate)"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Image metrics",
+        "points": 4,
+        "description": "Computes all-pixel brightness means, low-bright shares, and deltas with the requested rounding."
+      },
+      {
+        "name": "Daily precipitation ledger",
+        "points": 4,
+        "description": "Uses the shared 2015-09-01 to 2015-10-16 weather-analysis window to compute dry count, dry share, longest run, and total point precipitation."
+      },
+      {
+        "name": "Cross-product precipitation arithmetic",
+        "points": 3,
+        "description": "Computes GPM-CHIRPS mean gap and ratio from structured precipitation products."
+      },
+      {
+        "name": "dNBR count gate",
+        "points": 3,
+        "description": "Applies the burn gate exactly from Sentinel-2 dNBR pre/post scene counts."
+      },
+      {
+        "name": "AOI and receptor densities",
+        "points": 3,
+        "description": "Computes compact AOI area and derives population and OSM element densities from masked authoritative product statistics."
+      },
+      {
+        "name": "Final formula and rounding",
+        "points": 3,
+        "description": "Applies the final weighted index formula and returns the requested JSON schema. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_2015_Indonesian_drought_peat_fires_and_transboundary_haze.json",
+      "data/remote_sensing/remote_sensing_001_pre.jpg",
+      "data/remote_sensing/remote_sensing_002_event.jpg",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ]
+  }
+}

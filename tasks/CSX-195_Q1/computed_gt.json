@@ -1,0 +1,152 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-195",
+  "formulas": {
+    "altitude_margin_km": "minimum_reported_smoke_height_km - 12",
+    "event_days": "inclusive_days(event_start, event_end)",
+    "image_to_height_lag_days": "height_anchor_date - image_anchor_date",
+    "score_gap": "transport_score - surface_score"
+  },
+  "key_values": {
+    "classification_rule": "transport_score == 4 and score_gap >= 2",
+    "event_name": "2019-2020 Australian smoke over the South Pacific",
+    "event_window": "2019-12-29 to 2020-01-10",
+    "hazard_family": "wildfire_burn_smoke",
+    "height_date": "2020-01-06",
+    "image_date": "2020-01-04",
+    "mean_annual_feature_change_proxy": 0.026,
+    "mean_burn_index_proxy": 0.236,
+    "remote_image_dates": {
+      "data/remote_sensing/remote_sensing_004_pre.jpg": "2019-11-29",
+      "data/remote_sensing/remote_sensing_005_event.jpg": "2020-01-04"
+    },
+    "smoke_altitude_km_range": [
+      15,
+      19
+    ],
+    "surface_proxy_scope": "Surface proxy layers are used only as a comparison score against the upper-air transport ledger; they are not treated as proof of an event burn perimeter.",
+    "surface_tests": {
+      "annual_change_mean_at_least_0_05": false,
+      "burn_index_mean_at_least_0_27": false,
+      "event_image_inside_window": true
+    },
+    "transport_signals": {
+      "fire_cloud_dates": true,
+      "jan4_image_context": true,
+      "pacific_new_zealand": true,
+      "pyrocumulonimbus": true,
+      "snow_halfway_travel": true,
+      "tan_smoke": true
+    },
+    "transport_tests": {
+      "altitude_margin_nonnegative": true,
+      "duration_10_to_16_days": true,
+      "lag_no_more_than_2_days": true,
+      "signal_count_at_least_5": true
+    },
+    "upper_air_threshold_km": 12
+  },
+  "numeric_tolerances": {
+    "altitude_margin_km": {
+      "absolute_tolerance": 0,
+      "target": 3
+    },
+    "event_days": {
+      "absolute_tolerance": 0,
+      "target": 13
+    },
+    "image_to_height_lag_days": {
+      "absolute_tolerance": 0,
+      "target": 2
+    },
+    "score_gap": {
+      "absolute_tolerance": 0,
+      "target": 3
+    },
+    "surface_score": {
+      "absolute_tolerance": 0,
+      "target": 1
+    },
+    "transport_score": {
+      "absolute_tolerance": 0,
+      "target": 4
+    },
+    "transport_signal_count": {
+      "absolute_tolerance": 0,
+      "target": 6
+    }
+  },
+  "primary_gt": {
+    "altitude_margin_km": 3,
+    "event_days": 13,
+    "final_label": "upper_air_smoke_transport_pass",
+    "image_to_height_lag_days": 2,
+    "score_gap": 3,
+    "surface_score": 1,
+    "transport_score": 4,
+    "transport_signal_count": 6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_smoke_over_the_South_Pacific.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/other/other_001_NASA_Earth_Observatory_Explosive_Fire_Activity_in_Australia.html",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns exactly the requested eight-key compact JSON ledger with integer counts and the final label.",
+        "name": "Ledger structure",
+        "partial_credit": "Award 1-2 points for a mostly correct structure with one or two missing or renamed fields; no credit for prose-only output.",
+        "points": 3
+      },
+      {
+        "description": "Computes 13 inclusive event days and a 2-day image-to-height lag.",
+        "name": "Window and lag arithmetic",
+        "partial_credit": "Award 2 points for one correct value; award 1 point for traceable exclusive-date arithmetic.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 15-19 km smoke range, the 12 km threshold, and the 3 km minimum-height margin.",
+        "name": "Altitude threshold test",
+        "partial_credit": "Award 1-2 points for using the right range but the wrong margin or threshold comparison.",
+        "points": 3
+      },
+      {
+        "description": "Counts all six specified report signals and applies the at-least-5 pass rule.",
+        "name": "Transport signal count",
+        "partial_credit": "Award 1-2 points for recognizing most signals but missing a paired wording test.",
+        "points": 3
+      },
+      {
+        "description": "Computes transport_score = 4 from the duration, lag, altitude, and signal-count tests.",
+        "name": "Transport score",
+        "partial_credit": "Award 1-2 points for correct component tests with an arithmetic or threshold error.",
+        "points": 3
+      },
+      {
+        "description": "Computes surface_score = 1 from two failed surface proxy thresholds and the event-image date pass, while treating surface proxies as comparison evidence rather than burn-perimeter proof.",
+        "name": "Surface comparison score",
+        "partial_credit": "Award 1 point for using the right proxy values but the wrong threshold outcome.",
+        "points": 2
+      },
+      {
+        "description": "Computes score_gap = 3 and assigns upper_air_smoke_transport_pass.",
+        "name": "Gap and label",
+        "partial_credit": "Award 1 point for the right label with a wrong gap, or the right gap with an incorrect label.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "upper_air_smoke_transport_score_ledger",
+  "task_id": "CSX-195_Q1",
+  "task_type": "short_answer"
+}

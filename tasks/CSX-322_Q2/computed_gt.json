@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-322_Q2",
+  "event_id": "CSX-322",
+  "event_name": "Hassanabad / Shishper Glacier GLOF",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "hassanabad_shishper_glof_pathway_margin_consistency",
+  "primary_gt": {
+    "answer": "passes_localized_glof_pathway_signal",
+    "radar_event_score": 0.6395,
+    "context_max_score": 0.2172,
+    "pathway_margin": 0.4223,
+    "rainfall_support_score": 0.1241,
+    "thermal_gate_c": 0.6093
+  },
+  "key_values": {
+    "event_date": "2022-05-07",
+    "s1_mean_db": 0.5554,
+    "s1_std_db": 0.6423,
+    "s1_max_db": 5.4371,
+    "alpha_mean": 0.0109,
+    "dnbr_mean": -0.1587,
+    "dnbr_max": 0.5379,
+    "gpm_mean_mm": 2.982,
+    "chirps_mean_mm": 0.6202,
+    "era5_precip_mean_mm": 2.7265,
+    "event_day_tmax_mean_c": 30.6093,
+    "annual_change_score": 0.2172,
+    "burn_like_score": 0.2017
+  },
+  "formulas": {
+    "radar_event_score": "0.65*clamp(abs(s1_mean_db)/1.0)+0.20*clamp(s1_std_db/1.0)+0.15*clamp(s1_max_db/5.0)",
+    "annual_change_score": "clamp(alpha_mean/0.05)",
+    "burn_like_score": "0.70*clamp(max(dnbr_mean,0)/0.3)+0.30*clamp(max(dnbr_max,0)/0.8)",
+    "rainfall_support_score": "clamp((gpm_mean_mm+chirps_mean_mm)/40.0+era5_precip_mean_mm/80.0)",
+    "pathway_margin": "radar_event_score-context_max_score",
+    "thermal_gate_c": "event_day_tmax_mean_c-30.0"
+  },
+  "thresholds": {
+    "radar_event_score_min": 0.55,
+    "context_max_score_max": 0.3,
+    "pathway_margin_min": 0.25,
+    "rainfall_support_score_max_exclusive": 0.2,
+    "thermal_gate_c_min_exclusive": 0.0
+  },
+  "tolerances": {
+    "score_abs": 0.0005,
+    "temperature_c_abs": 0.0005
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "json_schema_and_rounding",
+        "points": 3,
+        "description": "Returns the six requested fields with numeric values rounded to 4 decimals and the final label as a string.",
+        "partial_credit": "1 to 2 points for minor rounding or field-name errors."
+      },
+      {
+        "name": "radar_score_calculation",
+        "points": 4,
+        "description": "Applies the weighted radar formula with the maximum VV term clamped to 1.0 and reports 0.6395.",
+        "partial_credit": "Up to 3 points for correct components with one arithmetic or clamp error."
+      },
+      {
+        "name": "context_score_calculations",
+        "points": 4,
+        "description": "Computes annual 0.2172, burn-like 0.2017, rainfall 0.1241, and context maximum 0.2172.",
+        "partial_credit": "1 point for each correct score or maximum."
+      },
+      {
+        "name": "margin_and_threshold_tests",
+        "points": 4,
+        "description": "Computes pathway margin 0.4223 and verifies the radar, context, margin, and rainfall thresholds.",
+        "partial_credit": "Up to 3 points for correct margin with incomplete threshold checks."
+      },
+      {
+        "name": "thermal_gate",
+        "points": 3,
+        "description": "Computes thermal_gate_c = 0.6093 C and uses the positive value in the final rule result.",
+        "partial_credit": "1 to 2 points for correct temperature anchor with incomplete subtraction or threshold use."
+      },
+      {
+        "name": "compact_consequence_label",
+        "points": 2,
+        "description": "Returns passes_localized_glof_pathway_signal and keeps any final sentence tied to the calculations without a broad narrative.",
+        "partial_credit": "1 point for a close pass label with weaker calculation linkage."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hassanabad_Shishper_Glacier_GLOF.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

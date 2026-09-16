@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-200_Q2",
+  "event_id": "CSX-200",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "numeric_diagnosis",
+  "primary_gt": {
+    "dnbr_metrics": {
+      "dnbr_max": 0.859705,
+      "dnbr_mean": -0.083037,
+      "dnbr_std_dev": 0.212884,
+      "dnbr_peak_z": 4.428428
+    },
+    "annual_change_metrics": {
+      "annual_change_max": 0.807727,
+      "annual_change_mean": 0.061316,
+      "annual_peak_mean_ratio": 13.173189
+    },
+    "threshold_flags": {
+      "local_high_dnbr": true,
+      "uniform_scene_burn": false,
+      "mixed_scene": true,
+      "localized_annual_change": true
+    },
+    "consistency_class": "consistent_patchy_high_severity_fire_change",
+    "interpretation": "Local high-severity dNBR is consistent with patchy fire-linked surface change, not uniform burn."
+  },
+  "answer_schema": {
+    "required_top_level_fields": [
+      "dnbr_metrics",
+      "annual_change_metrics",
+      "threshold_flags",
+      "consistency_class",
+      "interpretation"
+    ],
+    "required_numeric_fields": [
+      "dnbr_max",
+      "dnbr_mean",
+      "dnbr_std_dev",
+      "dnbr_peak_z",
+      "annual_change_max",
+      "annual_change_mean",
+      "annual_peak_mean_ratio"
+    ]
+  },
+  "event": {
+    "package_id": "CSX-200",
+    "event_name": "2023 Greece wildfires",
+    "hazard_family": "wildfire_burn_smoke",
+    "event_window": "2023-07-01 to 2023-08-31"
+  },
+  "thresholds": {
+    "dnbr_high_severity_min": 0.66,
+    "dnbr_broad_positive_mean_min": 0.27,
+    "mixed_scene_mean_max": 0.0,
+    "mixed_scene_std_min": 0.1,
+    "annual_local_change_max_min": 0.75,
+    "annual_scene_mean_max": 0.1,
+    "annual_peak_mean_ratio_min": 10.0
+  },
+  "key_values": {
+    "dnbr": {
+      "max": 0.859705,
+      "mean": -0.083037,
+      "min": -0.950644,
+      "std_dev": 0.212884,
+      "peak_abs_mean_ratio": 10.353217,
+      "peak_z": 4.428428,
+      "pre_window": [
+        "2023-05-02",
+        "2023-06-24"
+      ],
+      "post_window": [
+        "2023-07-01",
+        "2023-09-29"
+      ],
+      "counts": {
+        "pre_count": 50,
+        "post_count": 82
+      }
+    },
+    "annual_change": {
+      "max": 0.807727,
+      "mean": 0.061316,
+      "min": -0.008994,
+      "std_dev": 0.099605,
+      "peak_mean_ratio": 13.173189,
+      "peak_z": 7.493675,
+      "pre_year": 2022,
+      "post_year": 2023
+    },
+    "threshold_flags": {
+      "local_high_dnbr": true,
+      "uniform_scene_burn": false,
+      "mixed_scene": true,
+      "localized_annual_change": true
+    },
+    "consistency_class": "consistent_patchy_high_severity_fire_change",
+    "tolerances": {
+      "absolute_numeric": 0.005,
+      "ratio_or_z_score": 0.05
+    }
+  },
+  "decision_rule": {
+    "formulae": {
+      "dnbr_peak_z": "(dnbr_max - dnbr_mean) / dnbr_std_dev",
+      "annual_peak_mean_ratio": "annual_change_max / annual_change_mean"
+    },
+    "classification_logic": "The patchy high-severity class is assigned when local_high_dnbr, mixed_scene, and localized_annual_change are true while uniform_scene_burn is false.",
+    "rejected_states": [
+      "broad uniform burn: fails because dNBR mean is below 0.27 and is negative",
+      "weak surface change: fails because dNBR max exceeds 0.66",
+      "broad annual transformation: fails because annual mean is below 0.10 despite a high local maximum"
+    ]
+  },
+  "judge_anchors": {
+    "canonical_stance": "The local post-fire metrics support patchy high-severity fire-linked surface change inside a mixed scene, not uniform severe burn or a smoke-only reading.",
+    "must_include": [
+      "dNBR max meets the high-severity threshold",
+      "dNBR mean is negative, so the scene-average signal is not broad positive burn",
+      "dNBR spread and z-score show a localized high-end signal",
+      "annual change is concentrated because max/mean is about 13.17 while mean is about 0.061"
+    ],
+    "forbidden_overclaims": [
+      "treating the whole scene as uniformly severe burn",
+      "using the negative mean to erase the local high-dNBR fire signal",
+      "claiming observed population losses or management conclusions from these metrics"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns the requested compact JSON with dNBR metrics, annual-change metrics, threshold flags, a consistency class, and one calculation-grounded interpretation.",
+        "partial_credit": "Award 2-3 points for mostly complete JSON with minor field omissions."
+      },
+      {
+        "name": "Metric extraction and derived calculations",
+        "points": 6,
+        "description": "Reports the decisive values within tolerance: dNBR max 0.859705, mean -0.083037, std 0.212884, dNBR peak z-score 4.428428, annual max 0.807727, annual mean 0.061316, and annual peak/mean ratio 13.173189.",
+        "partial_credit": "Award proportional credit for correct values, formulas, signs, and rounding."
+      },
+      {
+        "name": "Threshold tests",
+        "points": 4,
+        "description": "Correctly marks local high dNBR as true, uniform scene burn as false, mixed scene as true, and localized annual change as true using the stated thresholds.",
+        "partial_credit": "Award 1 point for each correct threshold flag with a valid comparison."
+      },
+      {
+        "name": "Consistency proof",
+        "points": 3,
+        "description": "Combines the pass/fail states to reach consistent_patchy_high_severity_fire_change rather than broad uniform burn or weak surface change.",
+        "partial_credit": "Award 1-2 points for a partly correct conclusion with incomplete logic."
+      },
+      {
+        "name": "Rejected overreads",
+        "points": 2,
+        "description": "Uses the calculations to reject at least two overreads: uniform severe burn, smoke-only interpretation, negative-mean veto of local fire effects, or annual hotspot as broad change.",
+        "partial_credit": "Award 1 point for one correctly rejected overread."
+      },
+      {
+        "name": "Concise interpretation",
+        "points": 1,
+        "description": "Provides a short numeric label consistent with the numeric result and avoids extra-data loss claims.",
+        "partial_credit": "Award 0.5 points for a correct but overly broad interpretation."
+      }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2023-07-01 to 2023-08-31",
+    "event_name": "2023 Greece wildfires",
+    "hazard_family": "wildfire_burn_smoke"
+  },
+  "event_id": "CSX-176",
+  "forbidden_claims": [
+    "Do not add casualty, hospital, smoke-dose, structure-loss, or national damage totals as computed outputs.",
+    "Do not collapse the result to Athens-only when the five-anchor active-fire/smoke score is present."
+  ],
+  "key_values": {
+    "active_flags": {
+      "alexandroupolis_plume_toward_italy": true,
+      "hot_dry_windy_fire_weather_aug23": true,
+      "italy_northern_africa_smoke": true,
+      "late_august_fires_24h": true,
+      "satellite_image_date": true
+    },
+    "comparison_flags": {
+      "annual_burned_area_context": true,
+      "athens_homes_cars_smoke": true
+    },
+    "date_ledger": {
+      "image_date": "2023-08-22",
+      "weather_smoke_context_date": "2023-08-23"
+    },
+    "report_claims": {
+      "alexandroupolis_plume": "A fire in the country\u2019s northeast near Alexandroupolis produced a plume of smoke that stretched hundreds of miles southwest toward Italy. The plume is visible in this image, acquired in the afternoon on August 22, 2023, by theVisible Infrared Imaging Radiometer Suite (VIIRS) on the NOAA-NASA Suomi NPP satellite.",
+      "annual_burned_area_context": "area burned in Greece so far in 2023 has surpassed that of the destructive 2021 fire season",
+      "athens_local_impact": "Smaller plumes are visible from other fires burning elsewhere across the nation. According to news reports, fires near Athens burned homes and cars, and sent smoke wafting over the capital city.",
+      "fire_weather_aug23": "Forecasts called for extreme fire weather\u2014hot, dry, and windy\u2014to continue on August 23. By that day, smoke was detected over Italy and across the Mediterranean Sea in northern Africa.",
+      "late_august_fires": "A month after fires tore across parts of Greece in July 2023, dozens more fires ignited within 24 hours across the country in late August 2023.",
+      "mediterranean_smoke": "Forecasts called for extreme fire weather\u2014hot, dry, and windy\u2014to continue on August 23. By that day, smoke was detected over Italy and across the Mediterranean Sea in northern Africa."
+    },
+    "score_ledger": {
+      "annual_burned_area_context": 1,
+      "athens_only_local_fire": 1,
+      "late_august_active_fire_smoke": 5
+    }
+  },
+  "primary_gt": {
+    "anchors": [
+      "dozens_more_fires_within_24h",
+      "alexandroupolis_plume_toward_italy",
+      "satellite_image_2023_08_22",
+      "hot_dry_windy_fire_weather_2023_08_23",
+      "smoke_over_italy_and_northern_africa",
+      "athens_homes_cars_smoke_context",
+      "annual_burned_area_surpassed_2021_context"
+    ],
+    "answer": "late_august_active_fire_smoke_phase",
+    "comparison_rule": "use highest phase score; active_fire_smoke wins at >=4/5",
+    "dates": {
+      "image_date": "2023-08-22",
+      "weather_smoke_context_date": "2023-08-23"
+    },
+    "scores": {
+      "annual_burned_area_context": 1,
+      "athens_only_local_fire": 1,
+      "late_august_active_fire_smoke": 5
+    },
+    "stance": "Late-August phase is active-fire/smoke transport; annual burned-area and Athens anchors are context.",
+    "tolerances": {
+      "dates": "exact",
+      "scores": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Greece_wildfires.json",
+      "data/event_reports/event_reports_005_NASA_Earth_Observatory_wildfires_rage_in_Greece.html"
+    ]
+  },
+  "quality_audit": {
+    "primary_gt_compact_json_bytes": 726,
+    "primary_gt_key_count": 7,
+    "primary_gt_pretty_json_bytes": 844,
+    "response_advice_centered": false,
+    "rubric_points": 20
+  },
+  "required_findings": [
+    "Extract 2023-08-22 as the satellite image date.",
+    "Extract 2023-08-23 as the hot/dry/windy fire-weather and smoke context date.",
+    "Count all five active-fire/smoke anchors as present.",
+    "Treat annual burned-area comparison and Athens impacts as one-point context anchors."
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns late_august_active_fire_smoke_phase as the final canonical label.",
+        "name": "canonical_label",
+        "partial_credit": "Credit an equivalent active-fire/smoke phase label with wording differences.",
+        "points": 3
+      },
+      {
+        "description": "Reports image_date 2023-08-22 and weather_smoke_context_date 2023-08-23.",
+        "name": "date_ledger",
+        "partial_credit": "Credit one correct date or correct dates with non-ISO formatting.",
+        "points": 3
+      },
+      {
+        "description": "Computes late_august_active_fire_smoke = 5 from all five requested anchors.",
+        "name": "active_fire_smoke_score",
+        "partial_credit": "Credit a score of 3 or 4 when the omitted anchors are clear.",
+        "points": 4
+      },
+      {
+        "description": "Computes annual_burned_area_context = 1 and athens_only_local_fire = 1.",
+        "name": "comparison_scores",
+        "partial_credit": "Credit recognition of either comparison anchor alone.",
+        "points": 3
+      },
+      {
+        "description": "Names at least three specific anchors among late-August fires, Alexandroupolis-to-Italy plume, hot/dry/windy fire weather, Italy/northern Africa smoke, and Athens homes/cars/smoke.",
+        "name": "anchor_specificity",
+        "partial_credit": "Credit one or two specific anchors; reduce for generic wildfire-only wording.",
+        "points": 3
+      },
+      {
+        "description": "Explains that the five-anchor score selects the active-fire/smoke code over comparison codes.",
+        "name": "score_based_interpretation",
+        "partial_credit": "Credit the correct label without explicit score comparison.",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON-like fields and avoids adding casualty, health-burden, or national damage totals.",
+        "name": "output_structure",
+        "partial_credit": "Credit correct content delivered in prose rather than the requested structure.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "report_anchor_score_ledger",
+  "task_id": "CSX-176_Q1",
+  "task_subtype": "late_august_wildfire_smoke_score_ledger",
+  "task_type": "short_answer"
+}

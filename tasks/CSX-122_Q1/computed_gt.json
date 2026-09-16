@@ -1,0 +1,243 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-122",
+  "key_values": {
+    "catalog_context": {
+      "flood": {
+        "alertlevel": "Orange",
+        "country": "Malawi",
+        "episodeid": 1,
+        "eventid": 1101890,
+        "fromdate": "2023-03-13T10:00:00",
+        "name": "Flood in Malawi",
+        "todate": "2023-03-16T10:00:00"
+      },
+      "tc": {
+        "alertlevel": "Red",
+        "country": "Mozambique, Madagascar",
+        "episodeid": 60,
+        "eventid": 1000961,
+        "fromdate": "2023-02-06T06:00:00",
+        "name": "Tropical Cyclone FREDDY-23",
+        "severity_kmh": 249.9984,
+        "todate": "2023-03-12T00:00:00"
+      }
+    },
+    "derived_tests": {
+      "gridded_mean_to_late_point_rain_ratio": 0.865,
+      "late_phase_share_of_event_point_rain": 0.347
+    },
+    "event_context": {
+      "event_name": "Cyclone Freddy",
+      "hazard_family": "tropical_cyclone",
+      "locked_end_date": "2023-03-15",
+      "locked_location": "Madagascar, Mozambique and Malawi",
+      "locked_start_date": "2023-02-06",
+      "wmo_distance_km": 12785.0,
+      "wmo_duration_days": 36.0
+    },
+    "exposure_context": {
+      "osm_summary": {
+        "element_count": 1000,
+        "element_types": {
+          "node": 867,
+          "way": 133
+        },
+        "top_amenities": {
+          "fire_station": 1,
+          "hospital": 38,
+          "police": 44,
+          "school": 779,
+          "shelter": 5
+        },
+        "top_highways": {
+          "primary": 20,
+          "residential": 4,
+          "secondary": 45,
+          "tertiary": 46,
+          "trunk": 1
+        }
+      },
+      "worldpop_year": 2020
+    },
+    "gridded_rainfall_components": {
+      "chirps_max_mm": 328.847,
+      "chirps_mean_mm": 120.942,
+      "gpm_max_mm": 389.398,
+      "gpm_mean_mm": 115.284
+    },
+    "numeric_anchors": {
+      "event_total_point_rain_mm": 393.6,
+      "exposed_population_context": 701660.812,
+      "gridded_rainfall_mean_mm": 118.113,
+      "late_phase_point_rain_mm": 136.6
+    },
+    "numeric_tolerances": {
+      "event_total_point_rain_mm": {
+        "absolute_tolerance": 0.5,
+        "expected": 393.6,
+        "units": "mm"
+      },
+      "exposed_population_context": {
+        "absolute_tolerance": 1.0,
+        "expected": 701660.812,
+        "units": "people"
+      },
+      "gridded_mean_to_late_point_rain_ratio": {
+        "absolute_tolerance": 0.02,
+        "expected": 0.865,
+        "units": "unitless"
+      },
+      "gridded_rainfall_mean_mm": {
+        "absolute_tolerance": 1.0,
+        "expected": 118.113,
+        "units": "mm"
+      },
+      "late_phase_point_rain_mm": {
+        "absolute_tolerance": 0.5,
+        "expected": 136.6,
+        "units": "mm"
+      },
+      "late_phase_share_of_event_point_rain": {
+        "absolute_tolerance": 0.01,
+        "expected": 0.347,
+        "units": "unitless"
+      }
+    },
+    "point_rainfall_context": {
+      "max_wind_gust_kmh": 65.9,
+      "peak_daily_precip_date": "2023-03-12",
+      "peak_daily_precip_mm": 45.6,
+      "point_latitude": -15.430579,
+      "point_longitude": 35.323944
+    },
+    "remote_sensing_context": {
+      "alphaearth_change_mean": 0.012791,
+      "sentinel1_counts": {
+        "post_count": 196,
+        "pre_count": 126
+      },
+      "sentinel1_vv_change_mean_db": -0.085934,
+      "sentinel1_windows": {
+        "post": [
+          "2023-02-06",
+          "2023-04-29"
+        ],
+        "pre": [
+          "2022-12-08",
+          "2023-01-30"
+        ]
+      }
+    }
+  },
+  "primary_gt": {
+    "answer": "late_phase_rainfall_runoff_dominant_signal",
+    "derived_tests": {
+      "gridded_mean_to_late_point_rain_ratio": 0.865,
+      "late_phase_share_of_event_point_rain": 0.347
+    },
+    "diagnostic_class": "high",
+    "numeric_anchors": {
+      "event_total_point_rain_mm": 393.6,
+      "exposed_population_context": 701660.812,
+      "gridded_rainfall_mean_mm": 118.113,
+      "late_phase_point_rain_mm": 136.6
+    },
+    "structured_findings": {
+      "closest_alternative": "Wind intensity is the closest competing reading because Freddy was a tropical cyclone, but the late rainfall ledger and flood timing give it less weight for this target.",
+      "dominant_signal": "Cyclone Freddy's final southern Africa phase is best diagnosed as a late-phase rainfall-runoff signal.",
+      "imagery_or_exposure_context": "Population, mapped-place, and imagery/change context support analytic importance but should not be treated as direct proof of inundated population, damage, or disruption.",
+      "rainfall_test": "Late point rainfall is 34.7% of the event point total, and the paired gridded mean is 86.5% of that late point amount.",
+      "timing_test": "The 2023-03-12 through 2023-03-15 rainfall window aligns with the 2023-03-13 through 2023-03-16 Malawi flood catalog entry."
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All scored values are extracted from local CSX-122 records; no network access is used. WorldPop, OSM, and remote-sensing products are used as package-declared derived context; coordinates, place names, bounding boxes, and georeferencing metadata inside masked products are not used for event-location validity scoring.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Cyclone_Freddy.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_006_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_005_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant signal as late-phase rainfall-runoff and assigns high diagnostic class.",
+        "name": "Final label and class",
+        "partial_credit": "Award 2-3 points for a flood or heavy-rain answer that misses either the late-phase framing or high class; award up to 1 point for only naming Cyclone Freddy.",
+        "points": 4
+      },
+      {
+        "description": "Reports 393.6 mm event-total point rainfall, 136.6 mm late-phase point rainfall, 118.113 mm paired gridded rainfall mean, and 701660.812 people as exposure context within the specified tolerances.",
+        "name": "Numeric anchors",
+        "partial_credit": "Award 1 point for each correct numeric anchor with units or clear field meaning; half credit for values that are directionally correct but outside tolerance.",
+        "points": 4
+      },
+      {
+        "description": "Computes late-phase share as 0.347 and gridded-mean to late-point-rain ratio as 0.865 with clear denominators.",
+        "name": "Derived arithmetic",
+        "partial_credit": "Award 1-2 points for one correct ratio or for correct formulas with minor rounding error.",
+        "points": 3
+      },
+      {
+        "description": "Connects the February-March Freddy record to the 2023-03-12 through 2023-03-15 rainfall phase and the 2023-03-13 through 2023-03-16 Malawi flood entry.",
+        "name": "Timing ledger",
+        "partial_credit": "Award 1-2 points for recognizing late timing or flood timing without clearly linking both date windows.",
+        "points": 3
+      },
+      {
+        "description": "Treats wind intensity, track persistence, or image-visible landscape change as plausible but less supported for the late-phase target.",
+        "name": "Competing readings",
+        "partial_credit": "Award 1 point for naming alternatives without explaining why the rainfall ledger carries more weight.",
+        "points": 2
+      },
+      {
+        "description": "Uses population and imagery/change context without converting it into realized inundation, casualties, building damage, hospital disruption, or road closure.",
+        "name": "Imagery and exposure discipline",
+        "partial_credit": "Award 1 point for mild overstatement that does not drive the answer.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested JSON with the label, class, numeric anchors, derived tests, and concise findings.",
+        "name": "Structured output",
+        "partial_credit": "Award 1 point for mostly correct content with minor formatting or field-name errors.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "structured_answer": {
+    "answer": "late_phase_rainfall_runoff_dominant_signal",
+    "derived_tests": {
+      "gridded_mean_to_late_point_rain_ratio": 0.865,
+      "late_phase_share_of_event_point_rain": 0.347
+    },
+    "diagnostic_class": "high",
+    "numeric_anchors": {
+      "event_total_point_rain_mm": 393.6,
+      "exposed_population_context": 701660.812,
+      "gridded_rainfall_mean_mm": 118.113,
+      "late_phase_point_rain_mm": 136.6
+    },
+    "structured_findings": {
+      "closest_alternative": "Wind intensity is the closest competing reading because Freddy was a tropical cyclone, but the late rainfall ledger and flood timing give it less weight for this target.",
+      "dominant_signal": "Cyclone Freddy's final southern Africa phase is best diagnosed as a late-phase rainfall-runoff signal.",
+      "imagery_or_exposure_context": "Population, mapped-place, and imagery/change context support analytic importance but should not be treated as direct proof of inundated population, damage, or disruption.",
+      "rainfall_test": "Late point rainfall is 34.7% of the event point total, and the paired gridded mean is 86.5% of that late point amount.",
+      "timing_test": "The 2023-03-12 through 2023-03-15 rainfall window aligns with the 2023-03-13 through 2023-03-16 Malawi flood catalog entry."
+    }
+  },
+  "target_family": "late_phase_rainfall_signal_ledger",
+  "task_id": "CSX-122_Q1",
+  "task_type": "short_answer"
+}

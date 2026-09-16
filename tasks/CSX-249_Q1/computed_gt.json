@@ -1,0 +1,146 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-249",
+  "key_values": {
+    "affected_people_millions": 5.527,
+    "alphaearth_change_mean": 0.027,
+    "alternative_priority_scores": {
+      "compound_heat_drought_water_supply_priority": 99.3,
+      "flood_response_priority": 27.0,
+      "heat_only_health_alert_priority": 83.1,
+      "remote_sensing_land_change_priority": 23.9
+    },
+    "chirps_mean_precip_mm": 348.5,
+    "component_scores": {
+      "drought_water_stress": 1.0,
+      "heat_extremity": 0.973,
+      "local_exposure": 1.0,
+      "official_response": 1.0,
+      "reported_human_impact": 1.0
+    },
+    "economic_loss_billion_yuan": 2.73,
+    "era5_max_tmax_c": 39.5,
+    "era5_mean_tmax_c": 36.4,
+    "event_name": "2022 China heat wave and Yangtze drought",
+    "gpm_mean_precip_mm": 348.4,
+    "hazard_family": "compound_cascading_events",
+    "population_in_aoi": 8453613,
+    "priority_index_formula": "round(100 * (0.25*heat_extremity + 0.30*drought_water_stress + 0.20*reported_human_impact + 0.15*official_response + 0.10*local_exposure), 1)",
+    "sentinel2_dnbr_mean": 0.042,
+    "text_claim_flags": {
+      "above_40c_largest_on_record": true,
+      "heat_duration_record_62_days": true,
+      "heat_strongest_since_1961": true,
+      "meteorological_drought_orange_warning": true,
+      "yangtze_low_precip_more_than_80_percent": true,
+      "yangtze_water_supply_reservoir_response": true
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "compound heat and drought with drought relief priority",
+      "heat-amplified Yangtze drought and water-supply response priority",
+      "very-high compound heat-drought water-stress priority"
+    ],
+    "answer": "compound_heat_drought_water_supply_priority",
+    "answer_type": "priority_index_plus_expert_justification",
+    "brief_reasoning": "Record-scale heat, Yangtze-region precipitation deficit, drought warning, and reservoir operations jointly point to a compound heat-drought water-supply emergency. The reported affected population and economic loss make the water-supply pathway operationally dominant, while heat-only, flood-response, and land-change framings omit key evidence.",
+    "canonical_stance": "The dominant response priority is compound heat-drought water-supply management, not heat-only alerting, flood response, or generic land-change monitoring.",
+    "component_scores": {
+      "drought_water_stress": 1.0,
+      "heat_extremity": 0.973,
+      "local_exposure": 1.0,
+      "official_response": 1.0,
+      "reported_human_impact": 1.0
+    },
+    "forbidden_claims": [
+      "exact mortality or morbidity totals not present in the event record",
+      "formal hydrological drought attribution or return-period estimates",
+      "flood response or remote-sensing land change as the primary priority",
+      "outside-source extensions of timeline, loss totals, or policy response"
+    ],
+    "impact_chain": [
+      "persistent_extreme_heat",
+      "yangtze_meteorological_drought",
+      "water_supply_and_drought_relief_priority"
+    ],
+    "priority_index": 99.3,
+    "priority_index_formula": "round(100 * (0.25*heat_extremity + 0.30*drought_water_stress + 0.20*reported_human_impact + 0.15*official_response + 0.10*local_exposure), 1)",
+    "required_claims": [
+      "persistent record-scale heat and Yangtze-region drought operated together",
+      "documented drought warning and reservoir operations make water supply a primary response concern",
+      "reported affected population and economic loss show an operational impact chain"
+    ],
+    "required_metrics": [
+      "priority_index_99.3",
+      "era5_max_tmax_c_39.5",
+      "affected_people_millions_5.527",
+      "economic_loss_billion_yuan_2.73",
+      "population_in_aoi_8453613"
+    ],
+    "severity_bin": "very_high"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_007_WMO_China_extreme_weather_heat_and_drought.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects compound heat-drought water-supply priority, reports a priority index near 99.3 using the stated weighted formula, and interprets the result as very high.",
+        "name": "Correct final priority and index",
+        "partial_credit": "Give 2-3 points for the correct compound priority without the index or severity; give 1 point for recognizing heat-drought importance but not making it the main priority.",
+        "points": 4
+      },
+      {
+        "description": "Uses the five component scores and key metrics: 39.5 C ERA5 maximum Tmax, 36.4 C mean Tmax, 5.527 million affected people, 2.73 billion yuan loss, and about 8.45 million exposed people.",
+        "name": "Quantitative anchors and component scores",
+        "partial_credit": "Give 2-3 points for several correct metrics with minor omissions; give 1 point for generic severity language with only one quantitative anchor.",
+        "points": 4
+      },
+      {
+        "description": "Explains how persistent extreme heat and Yangtze-region precipitation deficit produced meteorological drought and water-supply stress.",
+        "name": "Compound physical mechanism",
+        "partial_credit": "Give 1-2 points for mentioning heat and drought separately without explaining the coupled mechanism or operational pathway.",
+        "points": 3
+      },
+      {
+        "description": "Connects affected population, economic loss, reservoir-group operations, and the orange meteorological drought warning to the operational priority.",
+        "name": "Impact and official response linkage",
+        "partial_credit": "Give 1-2 points for mentioning impacts or warnings without tying them to the response decision.",
+        "points": 3
+      },
+      {
+        "description": "Integrates institutional report claims, gridded heat context, precipitation context, exposure context, and remote-sensing context without over-weighting a single signal.",
+        "name": "Cross-scale synthesis",
+        "partial_credit": "Give 1 point for using either text or numeric evidence well but not combining both.",
+        "points": 2
+      },
+      {
+        "description": "Explains why heat-only alerting, flood response, and remote-sensing land-change monitoring are weaker as primary priorities.",
+        "name": "Rejection of weaker alternatives",
+        "partial_credit": "Give 1 point for rejecting one or two alternatives with plausible reasoning.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested JSON-style short answer, uses compact expert reasoning, and avoids unsupported mortality, formal attribution, or outside-source claims.",
+        "name": "Concise structure and uncertainty control",
+        "partial_credit": "Give 1 point for a correct answer with formatting issues or minor overstatement that does not change the conclusion.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-249_Q1",
+  "task_type": "short_answer"
+}

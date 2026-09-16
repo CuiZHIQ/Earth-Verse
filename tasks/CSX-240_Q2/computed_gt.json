@@ -1,0 +1,263 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-240",
+  "forbidden_overclaims": [
+    "Do not report an exact displaced-population count as established by this task.",
+    "Do not claim weather caused the earthquake disaster.",
+    "Do not diagnose flood, heat, or damaging wind as the primary day-of-event stressor.",
+    "Do not claim a definitive remote-sensing damage map from this task.",
+    "Do not present the shelter stress index as an official emergency-management metric."
+  ],
+  "formulas": {
+    "cold_score": "clamp((5 - mean_min_temp_c) / 5, 0, 1) * 35",
+    "displacement_score": "clamp(building_destroyed_percent / 60, 0, 1) * 20",
+    "dryness_score": "25 if mean_precip_mm < 0.1, else 12.5 if mean_precip_mm < 5.0, else 0",
+    "shelter_stress_index": "cold_score + dryness_score + wind_score + displacement_score + vulnerability_score",
+    "vulnerability_score": "5 if mud-brick vulnerability is present, else 0",
+    "wind_score": "15 if max_wind_kmh < 25, else 7.5 if max_wind_kmh < 50, else 0"
+  },
+  "key_values": {
+    "answer": "cold_dry_shelter_support_risk",
+    "building_destroyed_percent": 60,
+    "exposure_band": "high",
+    "max_wind_kmh": 20.6,
+    "mean_max_temp_c": 10.88,
+    "mean_min_temp_c": 0.94,
+    "mean_precip_mm": 0.003,
+    "mud_brick_vulnerability": true,
+    "shelter_stress_index": 93.5
+  },
+  "numeric_tolerances": {
+    "building_destroyed_percent": {
+      "tolerance": 2,
+      "value": 60
+    },
+    "max_wind_kmh": {
+      "tolerance": 1.0,
+      "value": 20.6
+    },
+    "mean_min_temp_c": {
+      "tolerance": 0.3,
+      "value": 0.94
+    },
+    "mean_precip_mm": {
+      "tolerance": 0.02,
+      "value": 0.003
+    },
+    "shelter_stress_index": {
+      "tolerance": 0.2,
+      "value": 93.5
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "cold_dry_exposure_support_priority",
+      "cold_dry_first_night_shelter_risk",
+      "shelter_and_warmth_support_priority"
+    ],
+    "answer": "cold_dry_shelter_support_risk",
+    "answer_type": "deterministic_label_with_rubric_judged_impact_chain",
+    "canonical_stance": "The Bam earthquake created severe shelter disruption, and the same-day modifier most relevant to immediate survivor support was cold, very dry, modest-wind overnight exposure.",
+    "deterministic_fields": {
+      "answer": "cold_dry_shelter_support_risk",
+      "exposure_band": "high",
+      "shelter_stress_index": 93.5
+    },
+    "diagnosis_chain": [
+      "severe_building_loss",
+      "cold_dry_low_wind_weather",
+      "shelter_and_warmth_support"
+    ],
+    "forbidden_claims": [
+      "Weather caused the earthquake disaster.",
+      "Flood, heat, or damaging wind was the primary day-of-event stressor.",
+      "A definitive remote-sensing damage map is established by this task.",
+      "The benchmark shelter stress index is an official emergency-management metric.",
+      "An exact displaced-population count is established by this task."
+    ],
+    "key_metrics": {
+      "building_destroyed_percent": 60,
+      "max_wind_kmh": 20.6,
+      "mean_min_temp_c": 0.94,
+      "mean_precip_mm": 0.003
+    },
+    "required_claims": [
+      "Earthquake building damage, not weather, is the initiating disaster context.",
+      "Cold near-freezing minimum temperatures are the dominant environmental exposure concern.",
+      "Near-zero precipitation rules against rain or flood response as the primary stressor.",
+      "Modest wind can contribute to exposure but does not support a damaging-wind diagnosis.",
+      "Immediate support should prioritize emergency shelter, warmth, and overnight exposure protection."
+    ],
+    "required_metrics": [
+      {
+        "name": "mean_min_temp_c",
+        "tolerance": 0.3,
+        "unit": "C",
+        "value": 0.94
+      },
+      {
+        "name": "mean_precip_mm",
+        "tolerance": 0.02,
+        "unit": "mm",
+        "value": 0.003
+      },
+      {
+        "name": "max_wind_kmh",
+        "tolerance": 1.0,
+        "unit": "km/h",
+        "value": 20.6
+      },
+      {
+        "name": "building_destroyed_percent",
+        "tolerance": 2,
+        "unit": "percent",
+        "value": 60
+      },
+      {
+        "name": "shelter_stress_index",
+        "tolerance": 0.2,
+        "unit": "index points",
+        "value": 93.5
+      }
+    ],
+    "shelter_stress_index": 93.5
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2003_Bam_earthquake.json",
+      "data/other/other_002_NASA_Earth_Observatory_Bam_earthquake.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "reasoning_requirements": [
+    "Connect earthquake building loss to likely shelter disruption rather than treating weather as the disaster cause.",
+    "Use cold and negligible precipitation as the environmental modifier of the response priority.",
+    "Treat image-change evidence as secondary for this task unless it directly changes the shelter-stress diagnosis."
+  ],
+  "required_findings": [
+    {
+      "name": "dominant_response_priority",
+      "value": "shelter_and_warmth_support_for_displaced_survivors",
+      "weight": 2.0
+    },
+    {
+      "name": "earthquake_damage_context",
+      "value": "severe_building_loss_with_mud_brick_vulnerability",
+      "weight": 2.0
+    },
+    {
+      "name": "weather_modifier",
+      "value": "cold_dry_low_wind_day_of_event_conditions",
+      "weight": 2.0
+    },
+    {
+      "name": "rejected_primary_pathways",
+      "value": "rain_flood_heat_high_wind_and_image_change_led_triage_are_not_primary",
+      "weight": 1.5
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects cold_dry_shelter_support_risk or a clearly equivalent cold/dry shelter-support diagnosis.",
+        "name": "answer_label",
+        "points": 4
+      },
+      {
+        "description": "Reports the core anchors within tolerance: mean minimum temperature near 0.94 C, precipitation effectively zero near 0.003 mm, maximum wind near 20.6 km/h, building destruction near 60 percent, and applies the stated shelter_stress_index formula.",
+        "name": "quantitative_anchors",
+        "points": 4
+      },
+      {
+        "description": "Explains that earthquake building loss and mud-brick vulnerability created shelter disruption, without treating weather as the disaster cause.",
+        "name": "damage_to_shelter_chain",
+        "points": 3
+      },
+      {
+        "description": "Identifies cold overnight exposure and very dry conditions as the dominant same-day environmental modifier.",
+        "name": "environmental_modifier_reasoning",
+        "points": 3
+      },
+      {
+        "description": "States the operational implication as emergency shelter, warmth, and first-night exposure protection for survivors.",
+        "name": "response_priority",
+        "points": 2
+      },
+      {
+        "description": "Rejects or deprioritizes rain/flood, heat, damaging-wind, and remote-sensing-led damage triage as primary diagnoses for this task.",
+        "name": "distractor_rejection",
+        "points": 2
+      },
+      {
+        "description": "Uses the shelter stress index as a benchmark-derived value and avoids unsupported official-metric, exact-displacement, and definitive-damage-map claims.",
+        "name": "index_and_overclaim_control",
+        "points": 1
+      },
+      {
+        "description": "Returns a compact JSON-style answer with key anchors and an impact chain.",
+        "name": "structured_output",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "event_window": {
+      "end_date": "2003-12-26",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2003-12-26"
+    },
+    "exposure_band": "high",
+    "package_hazard_family": "earthquake_tsunami_geophysical",
+    "precipitation_context": {
+      "chirps_mean_precip_mm": 0.01342904889114721,
+      "era5_mean_precip_mm": 0.0017225741544280027,
+      "gpm_mean_precip_mm": 1.1738926017157518e-05,
+      "mean_precip_mm": 0.003033,
+      "nasa_power_precip_mm": 0.0,
+      "open_meteo_precip_mm": 0.0
+    },
+    "remote_sensing_context": {
+      "post_count": 0,
+      "pre_count": 0,
+      "sentinel1_status": "no_sufficient_scenes"
+    },
+    "score_components": {
+      "cold_score": 28.5,
+      "displacement_score": 20.0,
+      "dryness_score": 25.0,
+      "exposure_index": 93.5,
+      "vulnerability_score": 5.0,
+      "wind_score": 15.0
+    },
+    "temperature_context": {
+      "mean_max_temp_c": 10.88,
+      "mean_min_temp_c": 0.935,
+      "nasa_power_max_c": 9.66,
+      "nasa_power_min_c": -1.13,
+      "open_meteo_max_c": 12.1,
+      "open_meteo_min_c": 3.0
+    },
+    "text_claim_flags": {
+      "destroyed_building_share_found": true,
+      "killed_thousands": true,
+      "mud_brick_vulnerability": true
+    },
+    "wind_context": {
+      "max_wind_kmh": 20.592,
+      "nasa_power_wind_kmh": 20.592,
+      "open_meteo_wind_kmh": 11.7
+    }
+  },
+  "task_id": "CSX-240_Q2",
+  "task_subtype": "compound_impact_chain_response_priority",
+  "task_type": "short_answer"
+}

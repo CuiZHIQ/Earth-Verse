@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-314_Q1",
+  "event_id": "CSX-314",
+  "task_type": "numeric",
+  "target_family": "report_supported_cascade_model",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": {
+      "process_hits": 9,
+      "object_hits": 7,
+      "mechanism_coverage": 1.0,
+      "impact_coverage": 1.0,
+      "cascade_score": 100.0,
+      "classification": "rock_ice_debris_flow_cascade_report_consistent"
+    },
+    "interpretation": "The report text supports a rock-ice-sediment-water cascade that connects source mechanics to hydropower, settlement, tunnel, bridge, and road impacts."
+  },
+  "event": {
+    "event_id": "CSX-314",
+    "event_name": "2021 Chamoli rock-ice avalanche and flood",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date_or_window": "2021-02-07"
+  },
+  "key_values": {
+    "process_phrases": [
+      "rock",
+      "ice",
+      "sediment",
+      "water",
+      "hanging glacier",
+      "freefalling",
+      "landslide",
+      "slurry",
+      "rishiganga river valley"
+    ],
+    "object_phrases": [
+      "hydropower stations",
+      "villages",
+      "workers",
+      "tunnels",
+      "homes",
+      "bridges",
+      "roads"
+    ],
+    "process_hits": 9,
+    "object_hits": 7,
+    "mechanism_coverage": 1.0,
+    "impact_coverage": 1.0,
+    "cascade_score": 100.0,
+    "classification_rule": "process_hits >= 8 and object_hits >= 6"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2021_Chamoli_rock-ice_avalanche_and_flood.json"
+    ],
+    "notes": "MINOR cleanup removed precipitation, Sentinel, and AOI-derived products from the scoring path."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer shape",
+        "points": 3,
+        "description": "Returns the requested compact JSON shape with all six fields under answer plus a one-sentence interpretation.",
+        "partial_credit": "Give partial credit when one or two fields are missing but the computed values are otherwise traceable."
+      },
+      {
+        "name": "Narrative preprocessing",
+        "points": 3,
+        "description": "Uses the local event report text, strips HTML, case-folds, and normalizes whitespace before phrase counting.",
+        "partial_credit": "Give partial credit when the correct report is used but preprocessing is incomplete."
+      },
+      {
+        "name": "Process phrase hits",
+        "points": 4,
+        "description": "Counts process_hits = 9 from the stripped event narrative text.",
+        "partial_credit": "Give partial credit when the method is correct but the phrase list is off by one or two."
+      },
+      {
+        "name": "Impact-object phrase hits",
+        "points": 4,
+        "description": "Counts object_hits = 7 from the stripped event narrative text.",
+        "partial_credit": "Give partial credit when the method is correct but the object phrase list is off by one or two."
+      },
+      {
+        "name": "Coverage and score",
+        "points": 3,
+        "description": "Computes mechanism_coverage = 1.000, impact_coverage = 1.000, and cascade_score = 100.00.",
+        "partial_credit": "Give partial credit for correct coverage values with a minor score or rounding error."
+      },
+      {
+        "name": "Classification and interpretation",
+        "points": 2,
+        "description": "Returns rock_ice_debris_flow_cascade_report_consistent and ties it to the source-to-impact chain.",
+        "partial_credit": "Give partial credit for a correct label with a generic interpretation."
+      },
+      {
+        "name": "Scope control",
+        "points": 1,
+        "description": "Avoids unsupported rainfall-trigger, lake-breach, precise-casualty, or auxiliary-product claims.",
+        "partial_credit": "No partial credit unless the answer is mostly cautious but includes one minor unsupported extrapolation."
+      }
+    ]
+  }
+}

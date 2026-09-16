@@ -1,0 +1,309 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_name": "Tropical Cyclone Freddy Indian Ocean traverse",
+    "event_window": {
+      "end": "2023-03-14",
+      "start": "2023-02-04"
+    },
+    "package_id": "CSX-283",
+    "region": "Africa"
+  },
+  "event_id": "CSX-283",
+  "forbidden_overclaims": [
+    "Do not claim exact national exposure totals from bounded population or facility context layers.",
+    "Do not treat contextual remote-sensing change as a direct national damage footprint.",
+    "Do not reduce the event to only a short Malawi flood episode.",
+    "Do not claim climate-change attribution, exact full economic loss, or final global rankings beyond the package text.",
+    "Do not use package error files as positive evidence."
+  ],
+  "key_values": {
+    "compound_mechanism": "wind_rainfall_flooding_from_repeated_land_interactions",
+    "computed_metrics": {
+      "bounded_critical_facilities": 867,
+      "bounded_highway_features": 116,
+      "bounded_population_context": 701661,
+      "catalog_alert_level": "Red",
+      "catalog_alert_score": 3,
+      "catalog_episode_alert_level": "Red",
+      "catalog_episode_alert_score": 3.0,
+      "catalog_max_wind_kmh": 250.0,
+      "event_rainfall_max_mm": 417.0,
+      "event_rainfall_mean_mm": 112.0,
+      "event_window_end": "2023-03-14",
+      "event_window_start": "2023-02-04",
+      "reanalysis_precip_max_mm": 278.5,
+      "reanalysis_precip_mean_mm": 58.7,
+      "remote_sensing_change_max": 0.56107,
+      "remote_sensing_change_mean": 0.01279,
+      "reported_affected_madagascar": 200000,
+      "reported_affected_mozambique": 1300000,
+      "reported_damage_usd_million": 481,
+      "reported_dead_or_missing_malawi": 1200,
+      "reported_deaths_mozambique": 180,
+      "reported_injured_malawi": 2100,
+      "secondary_rainfall_max_mm": 327.4,
+      "secondary_rainfall_mean_mm": 115.4,
+      "wmo_duration_days": 36.0,
+      "wmo_track_distance_km": 12785
+    },
+    "deterministic_answer": "record_duration_compound_cyclone_high_priority",
+    "event_name": "Tropical Cyclone Freddy Indian Ocean traverse",
+    "event_window": {
+      "end_date": "2023-03-14",
+      "start_date": "2023-02-04"
+    },
+    "hazard_driver": "exceptional_persistence_and_red_alert_cyclone_intensity",
+    "osm_exposure_counts": {
+      "amenity_counts": {
+        "fire_station": 1,
+        "hospital": 38,
+        "police": 44,
+        "school": 779,
+        "shelter": 5
+      },
+      "building_features": 0,
+      "critical_facilities": 867,
+      "highway_features": 116,
+      "total_elements": 1000
+    },
+    "priority_level": "high",
+    "region": "Africa",
+    "response_focus": "life_safety_humanitarian_response_across_southern_africa",
+    "text_claims": {
+      "accumulated_energy_claim": true,
+      "early_warning_claim": true,
+      "major_impacts_claim": true,
+      "multiple_landfalls_claim": true,
+      "record_duration_claim": true,
+      "southern_africa_impacts_claim": true
+    }
+  },
+  "numeric_tolerances": {
+    "bounded_population_context": 5000,
+    "malawi_dead_or_missing": 50,
+    "maximum_wind_kmh": 5.0,
+    "record_duration_days": 0.2
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "Equivalent compact labels are acceptable if they preserve record-duration or exceptional-persistence, compound tropical-cyclone mechanism, and high-priority response posture.",
+      "The priority chain may use equivalent wording if it preserves hazard driver, compound mechanism, and life-safety or humanitarian response focus."
+    ],
+    "answer": "record_duration_compound_cyclone_high_priority",
+    "answer_type": "structured_json_with_deterministic_label_and_judged_reasoning",
+    "brief_rationale": "Freddy should be handled as a high-priority compound tropical-cyclone disaster: exceptional duration and red-alert wind intensity combined with rainfall/flood impacts and major reported humanitarian consequences. Population, facilities, roads, and imagery provide response context, not exact national loss or damage totals.",
+    "canonical_stance": "Tropical Cyclone Freddy should be diagnosed as a high-priority prolonged compound tropical-cyclone disaster, driven by exceptional persistence and red-alert cyclone intensity, with wind-rainfall-flood impacts and major humanitarian consequences across southern Africa.",
+    "forbidden_claims": [
+      "Do not claim exact national exposure totals from bounded population or facility context layers.",
+      "Do not treat contextual remote-sensing change as a direct national damage footprint.",
+      "Do not reduce the event to only a short Malawi flood episode.",
+      "Do not claim climate-change attribution, exact full economic loss, or final global rankings beyond the reference text.",
+      "Do not frame the answer as package-quality, source-validation, or data-inventory commentary."
+    ],
+    "numeric_anchors": [
+      {
+        "name": "record_duration_days",
+        "tolerance": 0.2,
+        "value": 36.0
+      },
+      {
+        "name": "maximum_wind_kmh",
+        "tolerance": 5.0,
+        "value": 250.0
+      },
+      {
+        "name": "malawi_dead_or_missing",
+        "tolerance": 50,
+        "value": 1200
+      },
+      {
+        "name": "bounded_population_context",
+        "tolerance": 5000,
+        "value": 701661
+      }
+    ],
+    "priority_chain": [
+      "exceptional_persistence_and_red_alert_cyclone_intensity",
+      "wind_rainfall_flooding_from_repeated_land_interactions",
+      "life_safety_humanitarian_response_across_southern_africa"
+    ],
+    "priority_level": "high",
+    "required_claims": [
+      "Freddy's exceptional persistence is a central hazard driver.",
+      "Red-alert or near-250 km/h tropical-cyclone intensity supports a severe-cyclone diagnosis.",
+      "The mechanism links repeated land interactions with wind, rainfall, flooding, and humanitarian consequences.",
+      "The response posture should be high priority and multi-country, not a short isolated flood, image-led monitoring case, or weak-cyclone watch.",
+      "Population, facility, road, and imagery metrics should be treated as response context rather than exact national loss or damage totals."
+    ],
+    "required_metrics": [
+      {
+        "name": "record_duration_days",
+        "target": 36.0,
+        "tolerance": 0.2
+      },
+      {
+        "name": "maximum_wind_kmh",
+        "target": 250.0,
+        "tolerance": 5.0
+      },
+      {
+        "name": "malawi_dead_or_missing",
+        "target": 1200,
+        "tolerance": 50
+      },
+      {
+        "name": "bounded_population_context",
+        "target": 701661,
+        "tolerance": 5000
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Tropical_Cyclone_Freddy_Indian_Ocean_traverse.json",
+      "data/event_reports/event_reports_006_CSX-283_05_event_anchor_report_Locked_anchor_WMO.html.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_alert_API.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "question_leakage_audit": {
+    "absolute_path_hits": 0,
+    "boundary_main_hits": 0,
+    "existence_hint_hits": 0,
+    "issue_score": 0,
+    "lists_specific_files": false,
+    "product_hits": 0,
+    "stem_caution_cue_hits": 0,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 1
+  },
+  "reasoning_requirements": [
+    "Identify a high-priority compound tropical-cyclone posture rather than a single-flood, image-led, or weak-cyclone interpretation.",
+    "Tie the priority chain to persistence, intensity, rainfall/flooding, and reported humanitarian consequences.",
+    "Use bounded exposure context as response-planning context, not as exact proof of affected people or facilities."
+  ],
+  "required_findings": [
+    {
+      "finding": "Exceptional cyclone persistence plus red-alert intensity should be treated as the leading hazard driver.",
+      "id": "hazard_driver"
+    },
+    {
+      "finding": "The response diagnosis must connect repeated land interactions with wind, rainfall, flooding, and humanitarian impacts.",
+      "id": "compound_mechanism"
+    },
+    {
+      "finding": "Population and facility context should inform response priority without becoming exact observed impact totals.",
+      "id": "exposure_context"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns record_duration_compound_cyclone_high_priority with priority_level=high, or an equivalent compact label and high-priority posture that preserve the same answer target.",
+        "name": "final_structured_priority",
+        "points": 4
+      },
+      {
+        "description": "Provides 2-4 correct numeric anchors within tolerance, including 36.0 days duration and at least two of 250 km/h maximum wind, about 1200 dead or missing in Malawi, 701661 bounded population context, or comparable report-supported humanitarian scale.",
+        "name": "quantitative_anchors",
+        "points": 4
+      },
+      {
+        "description": "Explains exceptional cyclone persistence plus severe tropical-cyclone forcing as the hazard driver, and does not treat Freddy as weak, ordinary, or short-lived.",
+        "name": "physical_mechanism_reasoning",
+        "points": 4
+      },
+      {
+        "description": "Connects repeated land interactions, wind, rainfall, flooding, and southern Africa humanitarian consequences into one compound response-priority chain.",
+        "name": "compound_impact_chain",
+        "points": 3
+      },
+      {
+        "description": "Uses settlement, infrastructure, population, and imagery metrics as response-planning context without converting them into exact national exposure, damage, or loss totals.",
+        "name": "response_context_and_overclaim_control",
+        "points": 2
+      },
+      {
+        "description": "Substantively rejects the short isolated flood, image-led monitoring, and weak-cyclone-watch interpretations.",
+        "name": "distractor_rejection",
+        "points": 2
+      },
+      {
+        "description": "Returns valid JSON in the requested shape with concise strings and a two- or three-sentence rationale.",
+        "name": "format_and_clarity",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "strict_audit_fields": {
+    "absolute_path_hits": 0,
+    "issue_score": 0,
+    "numeric_anchor_count": 4,
+    "visible_package_directive_hits": 0
+  },
+  "supporting_metrics": {
+    "computed_metrics": {
+      "bounded_critical_facilities": 867,
+      "bounded_highway_features": 116,
+      "bounded_population_context": 701661,
+      "catalog_alert_level": "Red",
+      "catalog_alert_score": 3,
+      "catalog_episode_alert_level": "Red",
+      "catalog_episode_alert_score": 3.0,
+      "catalog_max_wind_kmh": 250.0,
+      "event_rainfall_max_mm": 417.0,
+      "event_rainfall_mean_mm": 112.0,
+      "event_window_end": "2023-03-14",
+      "event_window_start": "2023-02-04",
+      "reanalysis_precip_max_mm": 278.5,
+      "reanalysis_precip_mean_mm": 58.7,
+      "remote_sensing_change_max": 0.56107,
+      "remote_sensing_change_mean": 0.01279,
+      "reported_affected_madagascar": 200000,
+      "reported_affected_mozambique": 1300000,
+      "reported_damage_usd_million": 481,
+      "reported_dead_or_missing_malawi": 1200,
+      "reported_deaths_mozambique": 180,
+      "reported_injured_malawi": 2100,
+      "secondary_rainfall_max_mm": 327.4,
+      "secondary_rainfall_mean_mm": 115.4,
+      "wmo_duration_days": 36.0,
+      "wmo_track_distance_km": 12785
+    },
+    "osm_exposure_counts": {
+      "amenity_counts": {
+        "fire_station": 1,
+        "hospital": 38,
+        "police": 44,
+        "school": 779,
+        "shelter": 5
+      },
+      "building_features": 0,
+      "critical_facilities": 867,
+      "highway_features": 116,
+      "total_elements": 1000
+    },
+    "text_claims": {
+      "accumulated_energy_claim": true,
+      "early_warning_claim": true,
+      "major_impacts_claim": true,
+      "multiple_landfalls_claim": true,
+      "record_duration_claim": true,
+      "southern_africa_impacts_claim": true
+    }
+  },
+  "task_id": "CSX-283_Q1",
+  "task_subtype": "compound_impact_chain_response_priority",
+  "task_type": "short_answer"
+}

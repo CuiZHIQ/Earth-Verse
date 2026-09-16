@@ -1,0 +1,373 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-271",
+  "forbidden_overclaims": [
+    "Exact deaths, economic losses, or countrywide damaged-asset totals.",
+    "Treating compact AOI receptor files as representative of all Peru and Ecuador.",
+    "Treating off-event CHIRPS, ERA5, WorldPop, OSM, catalog search, or preview imagery as direct proof of local flood severity.",
+    "Claiming ENSO alone proves local impacts without the locked Peru/Ecuador flooding anchor."
+  ],
+  "key_values": {
+    "anchor_event_name": "1997-1998 El Nino and Peru/Ecuador flooding",
+    "anchor_region": "Peru / Ecuador",
+    "answer": "enso_amplified_coastal_flood_preparedness_priority",
+    "event_window": {
+      "end_date": "1998-05-31",
+      "start_date": "1997-06-01"
+    },
+    "minimum_soi": -4.4,
+    "negative_soi_months": 11,
+    "oni_ge_1p5_seasons": 8,
+    "oni_ge_2p0_seasons": 5,
+    "peak_oni_anomaly_c": 2.4,
+    "peak_oni_season": "OND 1997",
+    "priority": "high",
+    "psl_oni_peak_cross_check": 2.4,
+    "strongly_negative_soi_months": 9
+  },
+  "numeric_tolerances": {
+    "negative_soi_months": {
+      "abs_tolerance": 1,
+      "target": 11
+    },
+    "oni_ge_1p5_seasons": {
+      "abs_tolerance": 1,
+      "target": 8
+    },
+    "peak_oni_anomaly_c": {
+      "abs_tolerance": 0.1,
+      "target": 2.4
+    },
+    "strongly_negative_soi_months": {
+      "abs_tolerance": 1,
+      "target": 9
+    }
+  },
+  "primary_gt": {
+    "answer": "enso_amplified_coastal_flood_preparedness_priority",
+    "key_findings": [
+      "Peak ONI reaches 2.4 C in OND 1997 and remains at or above 1.5 C for eight event-window seasons.",
+      "SOI is negative for 11 event-window months and strongly negative for 9 months, supporting ocean-atmosphere coupling.",
+      "The locked event anchor identifies Peru/Ecuador flooding, so the briefing should prioritize flood preparedness rather than drought, wildfire, or monitoring-only handling."
+    ],
+    "mechanism_chain": [
+      "strong_el_nino_ocean_atmosphere_coupling",
+      "peru_ecuador_flooding_anchor",
+      "high_flood_preparedness_priority"
+    ],
+    "priority": "high"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event local precipitation, WorldPop, OSM, HDX, EONET, and preview imagery are not used in this ground truth.",
+      "The local hazard statement comes from the locked Peru/Ecuador flooding event anchor; quantitative support comes from ONI and SOI indices."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_1997-1998_El_Nino_and_Peru_Ecuador_flooding.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_007_NOAA_PSL_ONI_data.data",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data"
+    ]
+  },
+  "reasoning_requirements": [
+    "Classify the event as a coupled climate-to-coastal-flood preparedness problem, not a generic climate-index monitoring case.",
+    "Use ONI magnitude/persistence and SOI coupling as quantitative climate-driver evidence.",
+    "Use the locked event anchor for the Peru/Ecuador flooding hazard statement instead of off-event local precipitation or receptor files.",
+    "Reject drought, wildfire/catalog, and monitoring-only pathways unless the flooding anchor is absent."
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the ENSO-amplified Peru/Ecuador coastal flood-preparedness pathway and assigns high priority.",
+        "full_credit": [
+          "Uses enso_amplified_coastal_flood_preparedness_priority or a semantically equivalent label.",
+          "Sets priority to high or clearly indicates high initial flood preparedness priority."
+        ],
+        "id": "final_answer_and_priority",
+        "name": "Final answer and priority",
+        "partial_credit": [
+          "Names ENSO flooding but omits priority.",
+          "Gives high priority but uses an overly generic climate label."
+        ],
+        "points": 4
+      },
+      {
+        "description": "Uses ONI magnitude and persistence as the large-scale climate-driver anchor.",
+        "full_credit": [
+          "Mentions peak ONI near 2.4 C in OND 1997.",
+          "Mentions sustained warm ENSO across about eight seasons at or above 1.5 C."
+        ],
+        "id": "enso_magnitude_persistence",
+        "name": "ENSO magnitude and persistence",
+        "partial_credit": [
+          "Identifies a strong El Nino without quantitative support.",
+          "Provides one correct ONI metric but misses persistence."
+        ],
+        "points": 4
+      },
+      {
+        "description": "Uses the pressure-coupling signal to support the mechanism.",
+        "full_credit": [
+          "Cites mostly negative SOI, about 11 negative months, or 9 strongly negative months.",
+          "Explains that SOI supports coupled ocean-atmosphere behavior."
+        ],
+        "id": "ocean_atmosphere_coupling",
+        "name": "Ocean-atmosphere coupling",
+        "partial_credit": [
+          "Mentions SOI without explaining its role.",
+          "Recognizes atmospheric coupling but gives no quantitative anchor."
+        ],
+        "points": 3
+      },
+      {
+        "description": "Uses the locked event anchor to connect the climate driver to Peru/Ecuador flooding without relying on off-event local rainfall products.",
+        "full_credit": [
+          "Mentions the locked Peru/Ecuador flooding event framing.",
+          "Treats the flooding anchor as the local hazard statement and does not substitute off-event AOI rainfall."
+        ],
+        "id": "flooding_anchor",
+        "name": "Peru/Ecuador flooding anchor",
+        "partial_credit": [
+          "Mentions Peru/Ecuador flooding but does not distinguish it from climate monitoring.",
+          "Uses the anchor weakly or with unsupported local rainfall claims."
+        ],
+        "points": 3
+      },
+      {
+        "description": "Rejects drought, vegetation stress, wildfire/catalog monitoring, and monitoring-only pathways.",
+        "full_credit": [
+          "Explains why strong ENSO plus flooding anchor favors flood preparedness.",
+          "Does not overstate exact losses or countrywide damaged-asset totals."
+        ],
+        "id": "distractor_rejection",
+        "name": "Distractor rejection",
+        "partial_credit": [
+          "Rejects some distractors without explanation.",
+          "Generally avoids overclaims but leaves one ambiguous statement."
+        ],
+        "points": 3
+      },
+      {
+        "description": "Returns concise valid JSON in the requested structure with answer, mechanism_chain, three key_findings, and priority.",
+        "full_credit": [
+          "Includes exactly the requested high-level fields and three useful findings."
+        ],
+        "id": "json_structure_concision",
+        "name": "Output structure",
+        "partial_credit": [
+          "Mostly follows the requested structure but has minor formatting or concision issues."
+        ],
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "event_window": {
+      "end_date": "1998-05-31",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "1997-06-01"
+    },
+    "minimum_soi": -4.4,
+    "oni_event_records": [
+      {
+        "anomaly_c": 1.22,
+        "season": "MJJ",
+        "total_c": 28.75,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 1.6,
+        "season": "JJA",
+        "total_c": 28.8,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 1.9,
+        "season": "JAS",
+        "total_c": 28.81,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 2.14,
+        "season": "ASO",
+        "total_c": 28.88,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 2.33,
+        "season": "SON",
+        "total_c": 29.01,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 2.4,
+        "season": "OND",
+        "total_c": 29.02,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 2.39,
+        "season": "NDJ",
+        "total_c": 28.97,
+        "year": 1997
+      },
+      {
+        "anomaly_c": 2.24,
+        "season": "DJF",
+        "total_c": 28.87,
+        "year": 1998
+      },
+      {
+        "anomaly_c": 1.93,
+        "season": "JFM",
+        "total_c": 28.78,
+        "year": 1998
+      },
+      {
+        "anomaly_c": 1.44,
+        "season": "FMA",
+        "total_c": 28.68,
+        "year": 1998
+      },
+      {
+        "anomaly_c": 0.99,
+        "season": "MAM",
+        "total_c": 28.59,
+        "year": 1998
+      }
+    ],
+    "oni_ge_2p0_seasons": 5,
+    "psl_oni_event_values": [
+      {
+        "season": "MJJ",
+        "value": 1.22,
+        "year": 1997
+      },
+      {
+        "season": "JJA",
+        "value": 1.6,
+        "year": 1997
+      },
+      {
+        "season": "JAS",
+        "value": 1.9,
+        "year": 1997
+      },
+      {
+        "season": "ASO",
+        "value": 2.14,
+        "year": 1997
+      },
+      {
+        "season": "SON",
+        "value": 2.33,
+        "year": 1997
+      },
+      {
+        "season": "OND",
+        "value": 2.4,
+        "year": 1997
+      },
+      {
+        "season": "NDJ",
+        "value": 2.39,
+        "year": 1997
+      },
+      {
+        "season": "DJF",
+        "value": 2.24,
+        "year": 1998
+      },
+      {
+        "season": "JFM",
+        "value": 1.93,
+        "year": 1998
+      },
+      {
+        "season": "FMA",
+        "value": 1.44,
+        "year": 1998
+      },
+      {
+        "season": "MAM",
+        "value": 0.99,
+        "year": 1998
+      },
+      {
+        "season": "AMJ",
+        "value": 0.45,
+        "year": 1998
+      }
+    ],
+    "psl_oni_matches_cpc_peak": true,
+    "soi_event_values": [
+      {
+        "month": "jun",
+        "value": -2.3,
+        "year": 1997
+      },
+      {
+        "month": "jul",
+        "value": -1.2,
+        "year": 1997
+      },
+      {
+        "month": "aug",
+        "value": -2.4,
+        "year": 1997
+      },
+      {
+        "month": "sep",
+        "value": -2.4,
+        "year": 1997
+      },
+      {
+        "month": "oct",
+        "value": -2.4,
+        "year": 1997
+      },
+      {
+        "month": "nov",
+        "value": -2.0,
+        "year": 1997
+      },
+      {
+        "month": "dec",
+        "value": -1.6,
+        "year": 1997
+      },
+      {
+        "month": "jan",
+        "value": -4.4,
+        "year": 1998
+      },
+      {
+        "month": "feb",
+        "value": -3.4,
+        "year": 1998
+      },
+      {
+        "month": "mar",
+        "value": -4.0,
+        "year": 1998
+      },
+      {
+        "month": "apr",
+        "value": -2.4,
+        "year": 1998
+      },
+      {
+        "month": "may",
+        "value": 0.4,
+        "year": 1998
+      }
+    ]
+  },
+  "target_family": "enso_amplified_coastal_flood_preparedness_priority",
+  "task_id": "CSX-271_Q1",
+  "task_subtype": "response_priority_mechanism_synthesis",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,121 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-075",
+  "key_values": {
+    "chirps_max_raw_mm": 307.5949935913086,
+    "era5_max_raw_mm": 261.5612387655446,
+    "event_window": "2021-07-17 to 2021-07-23",
+    "gpm_max_raw_mm": 484.25498931854963,
+    "max_gridded_spread_raw_mm": 222.69375055300503,
+    "point_hour_count": 168,
+    "point_max24h_mm": 172.50000000000003,
+    "point_max72h_mm": 283.9,
+    "point_peak_mm": 23.3,
+    "point_peak_time": "2021-07-20T02:00",
+    "point_total_mm": 332.2,
+    "previous_record_mm": 198.5,
+    "reasoning_depth": {
+      "counterfactual_rejection": "A burst-only reading fails because the 72-hour point load exceeds the reported one-hour burst, while an accumulation-only reading misses the record-hour threshold crossing.",
+      "evidence_weighting": "The reported one-hour record anchors the urban burst scale, while the point 72-hour load and gridded maxima anchor multiday accumulation scale.",
+      "uncertainty_or_scale_caveat": "The nearby point peak should not be used to downgrade the reported city record because the task explicitly separates point and report scales."
+    },
+    "report_burst_mm": 201.9,
+    "tolerances": {
+      "mm": 0.05,
+      "ratio": 0.005
+    }
+  },
+  "primary_gt": {
+    "gridded_load": {
+      "chirps_max_mm": 307.595,
+      "era5_max_mm": 261.561,
+      "gpm_max_mm": 484.255,
+      "max_spread_mm": 222.694
+    },
+    "partition_tests": {
+      "final_label": "dual_scale_record_burst_and_multiday_load",
+      "max72h_to_report_burst_ratio": 1.40614,
+      "report_burst_to_gpm_max_ratio": 0.41693
+    },
+    "point_series_load": {
+      "event_total_mm": 332.2,
+      "max24h_mm": 172.5,
+      "max72h_fraction_of_total": 0.85461,
+      "max72h_mm": 283.9,
+      "peak_hour_mm": 23.3,
+      "reported_to_point_peak_ratio": 8.665
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A burst-only reading fails because the 72-hour point load exceeds the reported one-hour burst, while an accumulation-only reading misses the record-hour threshold crossing.",
+      "evidence_weighting": "The reported one-hour record anchors the urban burst scale, while the point 72-hour load and gridded maxima anchor multiday accumulation scale.",
+      "uncertainty_or_scale_caveat": "The nearby point peak should not be used to downgrade the reported city record because the task explicitly separates point and report scales."
+    },
+    "record_hour": {
+      "margin_mm": 3.4,
+      "ratio_to_previous_record": 1.017128,
+      "threshold_state": "record_hour_threshold_crossed"
+    },
+    "rejected_substitutions": [
+      "burst_only",
+      "accumulation_only",
+      "point_peak_downgrade"
+    ],
+    "target_family": "zhengzhou_rainfall_scale_partition_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All numeric anchors are parsed or computed from local package files.",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON structure with target family, metric groups, final label, and rejected substitutions.",
+        "name": "Compact answer structure",
+        "partial_credit": "Up to 2 points for an incomplete JSON object; 1 point for prose with the right final label.",
+        "points": 4
+      },
+      {
+        "description": "Computes the report one-hour record minus the previous record, the record ratio, and the threshold-crossed state.",
+        "name": "Record-hour threshold",
+        "partial_credit": "Up to 2 points for citing both depths with one correct derived value.",
+        "points": 4
+      },
+      {
+        "description": "Computes the point total, peak hour, reported-to-point ratio, rolling 24-hour maximum, rolling 72-hour maximum, and 72-hour fraction.",
+        "name": "Point-series rolling load",
+        "partial_credit": "2-3 points for mostly correct point-series values with minor rounding or one missing window.",
+        "points": 4
+      },
+      {
+        "description": "Reads the three gridded event maxima and computes their maximum spread.",
+        "name": "Gridded accumulation spread",
+        "partial_credit": "Up to 2 points if at least two gridded maxima and the large accumulation signal are correct.",
+        "points": 3
+      },
+      {
+        "description": "Computes report-burst to GPM maximum and rolling-72-hour to report-burst ratios, then gives the dual-scale final label.",
+        "name": "Scale-partition tests",
+        "partial_credit": "Up to 2 points for one correct partition ratio and a broadly correct dual-scale conclusion.",
+        "points": 3
+      },
+      {
+        "description": "Rejects burst-only, accumulation-only, and point-peak-downgrade substitutions without adding uncomputed impact assertions. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Rejected substitutions",
+        "partial_credit": "1 point for rejecting at least two of the three substitutions.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "zhengzhou_rainfall_scale_partition_ledger",
+  "task_id": "CSX-075_Q1",
+  "task_type": "short_answer"
+}

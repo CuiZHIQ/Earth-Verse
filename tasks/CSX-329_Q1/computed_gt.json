@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-329_Q1",
+  "event_id": "CSX-329",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "nw_pacific_bleaching_alert_dominance_consistency",
+  "primary_gt": {
+    "region_fraction": 1.0,
+    "term_fraction": 1.0,
+    "scores": {
+      "heat": 10,
+      "rain": 2,
+      "land": 1,
+      "later": 2,
+      "ceiling": 2
+    },
+    "margin": 8,
+    "precip_ratio": 1.223,
+    "land_values": {
+      "alpha_mean": 0.02831,
+      "dnbr_mean": -0.108468,
+      "dnbr_max": 0.682589
+    },
+    "passes": true,
+    "label": "alert_level2_bleaching_heat_stress_dominant"
+  },
+  "event": {
+    "package_id": "CSX-329",
+    "event_name": "2020 Northwest Pacific coral bleaching heat-stress event around Taiwan and Japan",
+    "hazard_family": "marine_heatwave_coastal_ecosystem",
+    "event_date_or_window": "2020-08-01 to 2020-10-31",
+    "event_location": "Taiwan, Ryukyu Islands/Japan, and South China Sea coral reef regions"
+  },
+  "decision_rule": {
+    "summary": "Pass when named-region coverage is 1.0, product-term coverage is 1.0, and heat score minus the largest context score is at least 5.",
+    "formulas": {
+      "region_fraction": "present(Taiwan, Japan/Ryukyu, South China Sea) / 3",
+      "term_fraction": "present(HotSpot, Degree Heating Week, Bleaching Alert Area, 7-day maximum) / 4",
+      "heat_score": "hazard_match + Alert_Level_2 + severity_definition + region_count + term_count",
+      "rain_score": "I(GPM_mean_mm >= 100) + I(CHIRPS_mean_mm >= 100)",
+      "land_score": "I(alpha_mean >= 0.1) + I(dnbr_mean >= 0.2) + I(dnbr_max >= 0.5)",
+      "later_score": "I(Guam_CNMI_warning_current) + I(Guam_Alert_Level_2_later)",
+      "dominance_margin": "heat_score - max(rain_score, land_score, later_score)"
+    }
+  },
+  "key_values": {
+    "regions_present": {
+      "taiwan": true,
+      "japan_or_ryukyu": true,
+      "south_china_sea": true
+    },
+    "product_terms_present": {
+      "hotspot": true,
+      "degree_heating_week": true,
+      "bleaching_alert_area": true,
+      "seven_day_maximum": true
+    },
+    "score_inputs": {
+      "hazard_match": 1,
+      "alert_level2_present": 1,
+      "alert_level2_definition": 1,
+      "region_count": 3,
+      "term_count": 4
+    },
+    "precip_means_mm": {
+      "era5": 254.772,
+      "gpm": 451.939,
+      "chirps": 369.486
+    },
+    "land_metrics": {
+      "alpha_mean": 0.02831,
+      "dnbr_mean": -0.108468,
+      "dnbr_max": 0.682589
+    },
+    "score_thresholds": {
+      "rain_mm": 100.0,
+      "alpha_mean": 0.1,
+      "dnbr_mean": 0.2,
+      "dnbr_max": 0.5,
+      "required_margin": 5
+    },
+    "manifest": {
+      "row_count": 34,
+      "categories": {
+        "event_catalogs": 5,
+        "event_reports": 4,
+        "exposure_impact": 5,
+        "geospatial_context": 2,
+        "other": 3,
+        "physical_hazard": 9,
+        "remote_sensing": 6
+      },
+      "statuses": {
+        "downloaded": 10,
+        "local_file_found": 12,
+        "remote_verified": 1,
+        "success": 11
+      }
+    }
+  },
+  "numeric_tolerances": {
+    "fraction": 0.001,
+    "score": 0,
+    "margin": 0,
+    "precip_ratio": 0.002,
+    "precip_mean_mm": 0.01,
+    "alpha_mean": 1e-05,
+    "dnbr": 1e-06
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON shape",
+        "points": 4,
+        "description": "Returns the requested answer object with fractions, scores, margin, precipitation ratio, land values, pass state, label, and one calculation-tied sentence."
+      },
+      {
+        "name": "Region and product coverage",
+        "points": 4,
+        "description": "Computes 3/3 named-region coverage and 4/4 heat-stress product-term coverage, both reported as 1.0."
+      },
+      {
+        "name": "Score formulas",
+        "points": 4,
+        "description": "Computes heat=10, rain=2, land=1, later=2, and ceiling=2 from the stated indicators."
+      },
+      {
+        "name": "Rule result",
+        "points": 3,
+        "description": "Computes margin=8 and applies the margin >= 5 plus two full-coverage gates correctly."
+      },
+      {
+        "name": "Numeric anchors",
+        "points": 2,
+        "description": "Reports GPM/CHIRPS ratio 1.223 and land values alpha_mean 0.02831, dnbr_mean -0.108468, dnbr_max 0.682589 within tolerance."
+      },
+      {
+        "name": "Computed context rejection",
+        "points": 2,
+        "description": "Treats rainfall, land-change, and later eastward context as non-dominant because their scores do not exceed 2."
+      },
+      {
+        "name": "Concise label",
+        "points": 1,
+        "description": "Uses the compact label alert_level2_bleaching_heat_stress_dominant without adding unscored impact estimates."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.php",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2020_Northwest_Pacific_coral_bleaching_heat-stress_event_near_Taiwan_a.json",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "Computed from local CSX-329 package files."
+  }
+}

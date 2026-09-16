@@ -1,0 +1,139 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-144",
+  "event_name": "July 2023 northern Italy severe hailstorms",
+  "key_values": {
+    "checks": {
+      "hail_size": true,
+      "place": true,
+      "record_context": true,
+      "remote_context": true,
+      "time_window": true,
+      "weather_context": true
+    },
+    "event_window": {
+      "end_date": "2023-07-25",
+      "start_date": "2023-07-19"
+    },
+    "formulas": [
+      "severe_ratio = hail_cm / 2",
+      "giant_ratio = hail_cm / 5",
+      "previous_record_ratio = hail_cm / previous_record_cm",
+      "world_record_gap_cm = world_record_cm - hail_cm",
+      "final_score = passed_checks / total_checks"
+    ],
+    "image_context": {
+      "event_image_date": "2023-07-22",
+      "rgb_share_diff_gt25": 0.745764
+    },
+    "thresholds_cm": {
+      "giant_hail": 5.0,
+      "previous_european_record": 16,
+      "severe_hail": 2.0,
+      "world_record_comparison": 20.3
+    }
+  },
+  "primary_gt": {
+    "answer": "consistent_giant_hail_threshold_context_ledger",
+    "context_metrics": {
+      "era5_max_mm": 21.954,
+      "gpm_max_mm": 46.155,
+      "worldpop_2020_rounded": 1025289
+    },
+    "event_match": {
+      "date_in_window": true,
+      "hit": "2023-07-24 about 23:00",
+      "italy_match": true,
+      "place": "Azzano Decimo, Italy"
+    },
+    "final_score": {
+      "label": "consistent_giant_hail_threshold_context_ledger",
+      "passed_checks": 6,
+      "percent": 100.0,
+      "total_checks": 6
+    },
+    "hail_thresholds": {
+      "confirmed_hailstone_cm": 19,
+      "giant_ratio": 3.8,
+      "previous_record_ratio": 1.188,
+      "severe_ratio": 9.5,
+      "world_record_gap_cm": 1.3
+    },
+    "remote_sensing_check": {
+      "alpha_max": 0.525615,
+      "alpha_mean": 0.039874,
+      "event_image_lead_days": 2,
+      "event_image_post_hit": false,
+      "rgb_mean_abs_diff": 80.36
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All values are extracted from local CSX-144 package files without network access.",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_July_2023_northern_Italy_severe_hailstorms.json",
+      "data/other/other_001_ESSL_confirmed_19_cm_hailstone_in_northern_Italy.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_004_pre.jpg",
+      "data/remote_sensing/remote_sensing_005_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns only the requested compact JSON structure and gives consistent_giant_hail_threshold_context_ledger as both answer and final score label.",
+        "name": "Final JSON contract and label",
+        "partial_credit": "Award 1-2 points for a mostly correct structure or label with minor naming omissions; no credit if the output is prose-only or gives a conflicting final label.",
+        "points": 3
+      },
+      {
+        "description": "Uses 19 cm for Azzano Decimo and correctly computes severe ratio 9.5, giant ratio 3.8, previous-record ratio 1.188, and world-record gap 1.3 cm.",
+        "name": "Hail threshold arithmetic",
+        "partial_credit": "Award 2-3 points for using 19 cm with one or two arithmetic or rounding errors; 1 point for recognizing the giant-hail threshold without the record comparisons.",
+        "points": 4
+      },
+      {
+        "description": "Reports Azzano Decimo, Italy; normalizes the hit to 2023-07-24 about 23:00; and marks both date-in-window and Italy match as true.",
+        "name": "Time and place matching",
+        "partial_credit": "Award 1-2 points for the right place or date but missing the late-evening normalization or one boolean check.",
+        "points": 3
+      },
+      {
+        "description": "Reports GPM 46.155 mm, ERA5-Land 21.954 mm, and rounded WorldPop 1025289.",
+        "name": "Weather and population context",
+        "partial_credit": "Award 2-3 points for two correct context values with tolerable rounding; 1 point for identifying the needed metric family but not computing the package precipitation summaries.",
+        "points": 4
+      },
+      {
+        "description": "Reports AlphaEarth mean 0.039874, AlphaEarth maximum 0.525615, RGB mean absolute difference 80.36, two-day lead time, and event_image_post_hit false.",
+        "name": "Remote-sensing timing metrics",
+        "partial_credit": "Award 1-2 points for correct image timing but missing one or more numeric metrics; no credit for treating the 2023-07-22 image as post-hit.",
+        "points": 3
+      },
+      {
+        "description": "Computes 6 passed checks out of 6, 100.0 percent, and explains that the remote-sensing result is contextual rather than direct damage confirmation.",
+        "name": "Final score and bounded interpretation",
+        "partial_credit": "Award 1-2 points for a correct score with a weak interpretation, or a correct bounded statement with an arithmetic slip.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "azzano_decimo_hail_threshold_context_score_ledger",
+  "task_id": "CSX-144_Q1",
+  "task_type": "short_answer",
+  "tolerances": {
+    "alpha": 0.0005,
+    "hail_cm": 0,
+    "population": 1000,
+    "precip_mm": 0.5,
+    "ratios": 0.01,
+    "rgb_mad": 0.1
+  }
+}

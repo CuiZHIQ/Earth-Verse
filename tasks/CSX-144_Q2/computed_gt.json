@@ -1,0 +1,301 @@
+{
+  "baseline_index": 87.48,
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-144",
+  "judge_anchors": {
+    "must_include": [
+      "19 cm hail",
+      "2023-07-19 through 2023-07-25",
+      "GPM peak 46.155 mm and mean 16.398 mm",
+      "60 critical-service amenities",
+      "baseline index about 87.48",
+      "scenario delta about 2.65"
+    ],
+    "should_not_claim": [
+      "remote-sensing annual change proves direct hail damage",
+      "all package AOI products are a precise Italy-wide footprint",
+      "outside web information was used"
+    ]
+  },
+  "key_values": {
+    "baseline_component_norms": {
+      "critical_facility_norm": 0.8,
+      "exposure_norm": 0.92,
+      "hail_severity_norm": 0.933,
+      "landscape_change_norm": 0.813,
+      "population_norm": 1.0,
+      "precip_concentration_norm": 0.938,
+      "precip_peak_norm": 0.923,
+      "storm_environment_norm": 0.761,
+      "thermal_norm": 0.83,
+      "wind_norm": 0.186
+    },
+    "critical_service_counts": {
+      "fire_station": 26,
+      "hospital": 1,
+      "police": 12,
+      "school": 21,
+      "total": 60
+    },
+    "event_name": "July 2023 northern Italy severe hailstorms",
+    "event_window": {
+      "duration_days": 7,
+      "end_date": "2023-07-25",
+      "start_date": "2023-07-19"
+    },
+    "precipitation_metrics_mm": {
+      "chirps_event_max": null,
+      "era5_land_event_max": 21.954,
+      "era5_land_wind_vector_max_kmh": 9.301,
+      "gpm_event_mean": 16.398,
+      "gpm_event_min": 3.505,
+      "gpm_event_peak": 46.155,
+      "gpm_event_stddev": 12.317,
+      "max_cross_source_precip": 46.155
+    },
+    "response_priorities": [
+      {
+        "priority": "roof_and_outdoor_object_safety",
+        "rank": 1,
+        "score": 91.33
+      },
+      {
+        "priority": "critical_service_continuity",
+        "rank": 2,
+        "score": 86.59
+      },
+      {
+        "priority": "drainage_and_debris_clearance",
+        "rank": 3,
+        "score": 82.78
+      }
+    ],
+    "scenario_component_norms": {
+      "critical_facility_norm": 0.96,
+      "exposure_norm": 0.984,
+      "hail_severity_norm": 0.933,
+      "landscape_change_norm": 0.813,
+      "population_norm": 1.0,
+      "precip_concentration_norm": 0.938,
+      "precip_peak_norm": 1.0,
+      "storm_environment_norm": 0.803,
+      "thermal_norm": 0.887,
+      "wind_norm": 0.205
+    }
+  },
+  "numeric_tolerances": {
+    "area_or_density": 0.5,
+    "indices": 0.05,
+    "normalized_terms": 0.005,
+    "source_values": 0.01
+  },
+  "primary_gt": {
+    "computed_metrics": {
+      "aoi_area_km2": 10739.2,
+      "critical_service_counts": {
+        "fire_station": 26,
+        "hospital": 1,
+        "police": 12,
+        "school": 21,
+        "total": 60
+      },
+      "embedding_change": {
+        "max_1_minus_cosine": 0.525615,
+        "mean_1_minus_cosine": 0.039874
+      },
+      "event_precip_mean_mm": 16.398,
+      "event_precip_peak_mm": 46.155,
+      "exposed_population": 1025288.541,
+      "hail_cm": 19,
+      "max_temp_c": 29.043,
+      "max_wind_kmh": 9.301,
+      "population_density_per_km2": 95.472,
+      "precip_concentration": 2.815,
+      "precipitation_mm": {
+        "chirps_event_max": null,
+        "era5_land_event_max": 21.954,
+        "era5_land_wind_vector_max_kmh": 9.301,
+        "gpm_event_mean": 16.398,
+        "gpm_event_min": 3.505,
+        "gpm_event_peak": 46.155,
+        "gpm_event_stddev": 12.317,
+        "max_cross_source_precip": 46.155
+      }
+    },
+    "event_window": {
+      "duration_days": 7,
+      "end_date": "2023-07-25",
+      "start_date": "2023-07-19"
+    },
+    "final_interpretation": "The baseline index is very high because giant hail coincides with a concentrated precipitation signal and dense exposed services; the warmer, wetter, higher-exposure scenario mainly raises the storm-environment and exposure terms.",
+    "mechanism_chain": [
+      "An institutionally confirmed 19 cm hailstone makes impact energy from hard hail the dominant immediate damage mechanism.",
+      "The GPM precipitation peak is much larger than the domain mean, so the storm signal is spatially concentrated rather than uniformly wet.",
+      "More than one million exposed people and 60 critical-service amenities raise the operational load even where direct damage data are absent.",
+      "The annual embedding change is treated as landscape-context stress, not proof of hail damage at a specific structure."
+    ],
+    "process_model": {
+      "component_norms": {
+        "critical_facility_norm": 0.8,
+        "exposure_norm": 0.92,
+        "hail_severity_norm": 0.933,
+        "landscape_change_norm": 0.813,
+        "population_norm": 1.0,
+        "precip_concentration_norm": 0.938,
+        "precip_peak_norm": 0.923,
+        "storm_environment_norm": 0.761,
+        "thermal_norm": 0.83,
+        "wind_norm": 0.186
+      },
+      "hail_response_load_index": 87.48
+    },
+    "response_priorities": [
+      {
+        "priority": "roof_and_outdoor_object_safety",
+        "rank": 1,
+        "score": 91.33
+      },
+      {
+        "priority": "critical_service_continuity",
+        "rank": 2,
+        "score": 86.59
+      },
+      {
+        "priority": "drainage_and_debris_clearance",
+        "rank": 3,
+        "score": 82.78
+      }
+    ],
+    "scenario_analysis": {
+      "changed_inputs": {
+        "critical_service_counts": {
+          "fire_station": 31.2,
+          "hospital": 1.2,
+          "police": 14.4,
+          "school": 25.2,
+          "total": 72.0
+        },
+        "event_precip_mean_mm": 18.858,
+        "event_precip_peak_mm": 53.078,
+        "exposed_population": 1230346.249,
+        "max_temp_c": 31.043,
+        "max_wind_kmh": 10.231
+      },
+      "component_norms": {
+        "critical_facility_norm": 0.96,
+        "exposure_norm": 0.984,
+        "hail_severity_norm": 0.933,
+        "landscape_change_norm": 0.813,
+        "population_norm": 1.0,
+        "precip_concentration_norm": 0.938,
+        "precip_peak_norm": 1.0,
+        "storm_environment_norm": 0.803,
+        "thermal_norm": 0.887,
+        "wind_norm": 0.205
+      },
+      "delta_from_baseline": 2.65,
+      "hail_response_load_index": 90.13,
+      "scenario_name": "warm_wet_exposure_push"
+    },
+    "source_paths": {
+      "event_window": [
+        "data/event_reports/event_reports_004_Locked_event_anchor_July_2023_northern_Italy_severe_hailstorms.json",
+        "metadata/event.json"
+      ],
+      "exposure": [
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json"
+      ],
+      "geospatial_context": [
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+      ],
+      "hail_report": [
+        "data/other/other_001_ESSL_confirmed_19_cm_hailstone_in_northern_Italy.html",
+        "data/event_reports/event_reports_001_Locked_anchor_report_European_Severe_Storms_Laboratory.html"
+      ],
+      "remote_sensing": [
+        "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ],
+      "weather": [
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+      ]
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event Open-Meteo and NASA POWER daily point-weather fills are not used in the official answer.",
+      "Weather scoring uses declared package-relative gridded or aggregate precipitation and ERA5-Land aggregate wind/temperature fields.",
+      "AOI, WorldPop, and OSM exposure values are evaluated as declared package-relative derived statistics."
+    ],
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_European_Severe_Storms_Laboratory.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_July_2023_northern_Italy_severe_hailstorms.json",
+      "data/other/other_001_ESSL_confirmed_19_cm_hailstone_in_northern_Italy.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "required_top_priority": "roof_and_outdoor_object_safety",
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Finds relevant event-report, weather, exposure, geospatial, and remote-sensing files without being given exact names, and cites package-relative paths for all values.",
+        "name": "Self-directed package discovery and source citation",
+        "partial_credit": "Award 2 points for broad multi-family discovery with some missing citations; award 1 point for using only one or two evidence families.",
+        "points": 3
+      },
+      {
+        "description": "Correctly extracts 2023-07-19 to 2023-07-25, inclusive duration 7 days, and confirmed 19 cm maximum hailstone diameter.",
+        "name": "Event-window and giant-hail extraction",
+        "partial_credit": "Award 2 points for correct dates but missing duration or hail; award 1 point for only the event identity.",
+        "points": 3
+      },
+      {
+        "description": "Uses usable gridded or aggregate event-window precipitation, GPM peak and mean, precipitation concentration, ERA5 wind-vector conversion to km/h, and ERA5 maximum temperature.",
+        "name": "Weather process calculations",
+        "partial_credit": "Award 2-3 points for mostly correct values with one missed source or conversion; award 1 point for weather values without process calculations.",
+        "points": 4
+      },
+      {
+        "description": "Correctly computes exposed population, amenity counts, total critical-service count, AOI area, population density, and embedding mean/max change.",
+        "name": "Exposure, AOI, and remote-sensing synthesis",
+        "partial_credit": "Award 2 points for correct exposure and remote-sensing values but missing AOI area; award 1 point for only population or amenities.",
+        "points": 3
+      },
+      {
+        "description": "Applies clipping, component weights, and rounding to produce the baseline component norms and hail_response_load_index of 87.48.",
+        "name": "Baseline index arithmetic",
+        "partial_credit": "Award 2 points for a close index with minor rounding or weighting error; award 1 point for computing several norms but not the final index.",
+        "points": 3
+      },
+      {
+        "description": "Applies the warm/wet/exposure perturbation, reports scenario index about 90.13 and delta about 2.65, and ranks response priorities with roof/outdoor-object safety first.",
+        "name": "Scenario and response-priority reasoning",
+        "partial_credit": "Award 2 points for correct scenario or priority ranking but not both; award 1 point for a qualitative scenario only.",
+        "points": 3
+      },
+      {
+        "description": "Returns valid JSON with a concise mechanism chain tied to giant hail, concentrated precipitation, exposure load, and cautious use of annual landscape change.",
+        "name": "Mechanism interpretation and valid JSON",
+        "partial_credit": "No partial credit unless the JSON is parseable.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "scenario_delta": 2.65,
+  "scenario_index": 90.13,
+  "schema_version": "2.0",
+  "target_family": "deep_disaster_science_reasoning",
+  "task_id": "CSX-144_Q2",
+  "task_type": "structured_json"
+}

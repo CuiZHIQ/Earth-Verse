@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-071_Q2",
+  "event_id": "CSX-071",
+  "task_type": "numeric",
+  "target_family": "rainfall_partition_numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "rainfall_partition_numeric_diagnosis",
+    "event_window": "2021-09-01 to 2021-09-02",
+    "numeric_target": {
+      "city_hour_mm": 88.138,
+      "regional_lower_bound_mm": 254.0,
+      "city_hour_share": 0.347,
+      "regional_minus_city_hour_mm": 165.862,
+      "gridded_max_mm": 136.888,
+      "gridded_max_to_regional_lower_bound": 0.539,
+      "final_label": "hourly_burst_with_larger_storm_total_accumulation"
+    },
+    "tolerances": {
+      "rainfall_mm": 0.01,
+      "ratio": 0.001
+    },
+    "required_interpretation": "combined hourly-burst plus larger storm-total accumulation diagnosis"
+  },
+  "event": {
+    "event_id": "CSX-071",
+    "event_name": "Post-Tropical Cyclone Ida NYC flash flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2021-09-01 to 2021-09-02"
+  },
+  "key_values": {
+    "record_hour_rainfall_inches": 3.47,
+    "record_hour_window": "7:51 and 8:51 pm",
+    "city_hour_mm": 88.138,
+    "regional_lower_bound_inches": 10.0,
+    "regional_lower_bound_mm": 254.0,
+    "city_hour_share": 0.347,
+    "regional_minus_city_hour_mm": 165.862,
+    "product_max_mm": {
+      "era5_land": 127.156,
+      "gpm_imerg": 136.888,
+      "chirps": 116.957
+    },
+    "product_mean_mm": {
+      "era5_land": 50.475,
+      "gpm_imerg": 53.177,
+      "chirps": 56.63
+    },
+    "gridded_max_mm": 136.888,
+    "min_gridded_product_max_mm": 116.957,
+    "gridded_product_max_spread_mm": 19.932,
+    "mean_of_gridded_product_means_mm": 53.427,
+    "gridded_max_to_mean_of_means_ratio": 2.562,
+    "gridded_max_to_city_hour_ratio": 1.553,
+    "gridded_max_to_regional_lower_bound": 0.539
+  },
+  "decision_rule": {
+    "formulae": [
+      "city_hour_mm = 3.47 * 25.4",
+      "regional_lower_bound_mm = 10.0 * 25.4",
+      "city_hour_share = city_hour_mm / regional_lower_bound_mm",
+      "regional_minus_city_hour_mm = regional_lower_bound_mm - city_hour_mm",
+      "gridded_max_to_regional_lower_bound = gridded_max_mm / regional_lower_bound_mm"
+    ],
+    "pass_condition": "88.138 < 136.888 < 254.0 and 165.862 > 0",
+    "label": "hourly_burst_with_larger_storm_total_accumulation"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Compact numeric response",
+        "points": 4,
+        "description": "Provides the requested compact JSON fields, correct event window, and final label.",
+        "partial_credit": "Award up to 2 points for a mostly correct structure with one or two missing fields."
+      },
+      {
+        "name": "Rainfall unit conversions",
+        "points": 4,
+        "description": "Correctly converts 3.47 inches to 88.138 mm and 10.0 inches to 254.0 mm with appropriate units.",
+        "partial_credit": "Award up to 2 points for using the correct conversion but rounding poorly or omitting one unit."
+      },
+      {
+        "name": "Partition arithmetic",
+        "points": 3,
+        "description": "Correctly computes the partition ratio 0.347 and residual 165.862 mm.",
+        "partial_credit": "Award up to 1.5 points for one correct value or a correct formula with arithmetic error."
+      },
+      {
+        "name": "Gridded precipitation comparison",
+        "points": 3,
+        "description": "Correctly identifies the gridded maximum as 136.888 mm and computes its regional ratio as 0.539.",
+        "partial_credit": "Award up to 1.5 points for using a valid product value but missing the maximum or ratio."
+      },
+      {
+        "name": "Inequality reasoning",
+        "points": 3,
+        "description": "Interprets 88.138 < 136.888 < 254.0, city-hour share below 1, and residual above 0 consistently.",
+        "partial_credit": "Award up to 1.5 points for one correct inequality without the full partition logic."
+      },
+      {
+        "name": "Single-measure rejection",
+        "points": 2,
+        "description": "Explains that neither the record hour nor the regional total alone captures the computed diagnosis.",
+        "partial_credit": "Award 1 point for rejecting only one single-measure substitution."
+      },
+      {
+        "name": "Calculation-bound interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation concise and tied to the computed rainfall metrics.",
+        "partial_credit": "Award no credit if the answer mainly becomes a broad narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_package_json.evidence_inventory.reports_0_.url.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "All values are computed or extracted from local CSX-071 rainfall records."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "answer_guidance": {
+    "answer": "smoke_health_exposure_window",
+    "structured_answer": {
+      "answer": "smoke_health_exposure_window",
+      "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package.",
+      "computed_evidence": {
+        "computed_consequence": "10/10 smoke-health score using gridded heat, precipitation consensus, large exposure, and low surface-change counter-scores.",
+        "diagnostic_tests": {
+          "dry_window": true,
+          "hazard_family": true,
+          "heat_context": true,
+          "low_rainfall": true,
+          "low_surface_change": true,
+          "population": true,
+          "report_text": true
+        },
+        "evidence_scores": {
+          "burnscar_map": 0,
+          "heat_only": 2,
+          "rainfall_or_flood": 0,
+          "smoke_health": 10
+        },
+        "metrics": {
+          "dnbr_mean": -0.1268,
+          "embedding_change_mean": 0.0215,
+          "era5_tmax_max_c": 40.5,
+          "era5_tmax_mean_c": 36.6,
+          "exposed_population": 3703791,
+          "precip_consensus_mean_mm": 12.8,
+          "window_days": 16
+        },
+        "window": "2021-03-26/2021-04-10"
+      },
+      "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+      "formula_derivation": "Use an exposure-window concept: burden proxy times duration, with rain or ventilation acting as a removal/moderation term.",
+      "mechanism_chain": [
+        "pollutant or aerosol burden",
+        "transport/stagnation duration",
+        "rain or ventilation modifier",
+        "receptor-context interpretation"
+      ],
+      "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+      "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Kathmandu Smoke-Health Exposure Window Diagnosis",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-212",
+  "key_values": {
+    "event_name": "Kathmandu wildfire smoke air pollution episode",
+    "flood_wording_present": false,
+    "hazard_family": "air_pollution_smoke_heat",
+    "icimod_text_hits": 7,
+    "nasa_text_hits": 4,
+    "precipitation_means_mm": {
+      "chirps": 19.388,
+      "era5": 6.97,
+      "gpm": 12.136
+    },
+    "scoring_formula": "1*hazard + 2*report_text + 2*dry_window + 1*heat_context + 2*population + 1*low_rainfall + 1*low_surface_change"
+  },
+  "method_requirements": [
+    "Use the locked event-window dates from the anchor record.",
+    "Use ERA5-Land temperature and ERA5/GPM/CHIRPS precipitation summaries for heat and rainfall gates.",
+    "Use WorldPop, Sentinel-2 dNBR, and annual embedding-change package summaries for the remaining numeric entries.",
+    "Apply the score rule exactly before assigning the final label."
+  ],
+  "numeric_tolerances": {
+    "dnbr_mean": {
+      "target": -0.1268,
+      "tolerance": 0.0001,
+      "unit": "index"
+    },
+    "embedding_change_mean": {
+      "target": 0.0215,
+      "tolerance": 0.0001,
+      "unit": "index"
+    },
+    "era5_tmax_max_c": {
+      "target": 40.5,
+      "tolerance": 0.05,
+      "unit": "C"
+    },
+    "era5_tmax_mean_c": {
+      "target": 36.6,
+      "tolerance": 0.05,
+      "unit": "C"
+    },
+    "exposed_population": {
+      "target": 3703791,
+      "tolerance": 0,
+      "unit": "people"
+    },
+    "precip_consensus_mean_mm": {
+      "target": 12.8,
+      "tolerance": 0.05,
+      "unit": "mm"
+    },
+    "window_days": {
+      "target": 16,
+      "tolerance": 0,
+      "unit": "days"
+    }
+  },
+  "primary_gt": {
+    "answer": "smoke_health_exposure_window",
+    "bounded_interpretation": "Do not infer individual dose, clinical outcomes, emissions inventory, or source apportionment beyond the package.",
+    "computed_evidence": {
+      "computed_consequence": "10/10 smoke-health score using gridded heat, precipitation consensus, large exposure, and low surface-change counter-scores.",
+      "diagnostic_tests": {
+        "dry_window": true,
+        "hazard_family": true,
+        "heat_context": true,
+        "low_rainfall": true,
+        "low_surface_change": true,
+        "population": true,
+        "report_text": true
+      },
+      "evidence_scores": {
+        "burnscar_map": 0,
+        "heat_only": 2,
+        "rainfall_or_flood": 0,
+        "smoke_health": 10
+      },
+      "metrics": {
+        "dnbr_mean": -0.1268,
+        "embedding_change_mean": 0.0215,
+        "era5_tmax_max_c": 40.5,
+        "era5_tmax_mean_c": 36.6,
+        "exposed_population": 3703791,
+        "precip_consensus_mean_mm": 12.8,
+        "window_days": 16
+      },
+      "window": "2021-03-26/2021-04-10"
+    },
+    "decisive_evidence": "Burden, duration, and receptor context carry the diagnosis; precipitation or surface products are modifiers or counterchecks.",
+    "formula_derivation": "Use an exposure-window concept: burden proxy times duration, with rain or ventilation acting as a removal/moderation term.",
+    "mechanism_chain": [
+      "pollutant or aerosol burden",
+      "transport/stagnation duration",
+      "rain or ventilation modifier",
+      "receptor-context interpretation"
+    ],
+    "mechanism_question": "diagnose whether pollutant or aerosol burden persists over a receptor window after accounting for meteorology and removal modifiers",
+    "rejected_simplifications": "Reject ordinary-weather, rain-dominated, local-heat, or surface-change explanations if they fail to explain the receptor burden.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Kathmandu_wildfire_smoke_air_pollution_episode.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_ICIMOD.html",
+      "data/other/other_001_NASA_Earth_Observatory_A_Fierce_Fire_Season_in_Nepal.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 3
+      },
+      {
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding.",
+        "name": "computed_evidence",
+        "points": 4
+      },
+      {
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values.",
+        "name": "formula_derivation",
+        "points": 3
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 3
+      },
+      {
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "scope_limits": [
+    "Do not treat the ledger as an observed PM2.5 or AQI time series.",
+    "Do not add mortality, hospital-admission, complete burned-area, economic-loss, or full fire-source attribution values."
+  ],
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "smoke_health_exposure_window_diagnosis",
+  "task_id": "CSX-212_Q1",
+  "task_type": "structured_reasoning"
+}

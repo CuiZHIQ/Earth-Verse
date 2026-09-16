@@ -1,0 +1,153 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-218",
+  "key_values": {
+    "event_date": "2004-08-28",
+    "event_name": "August 2004 fire and smoke in Angola",
+    "population_sum": 82984.1,
+    "remote_and_catalog_metrics": {
+      "burn_scar_status": "no_sufficient_scenes",
+      "dnbr_post_count": 0,
+      "dnbr_pre_count": 0,
+      "eonet_events": 0
+    },
+    "score_components": {
+      "dry_low_wind_pass": 1,
+      "next_best_score": 1,
+      "population_context_pass": 1,
+      "smoke_term_pass": 1
+    },
+    "text_metrics": {
+      "smoke_family_hits": 7,
+      "smoke_terms": {
+        "haze": 1,
+        "smog": 1,
+        "smoke": 5
+      },
+      "source_flag_count": 3,
+      "source_flags": {
+        "charcoal_production": true,
+        "modis_detected_fires": true,
+        "seasonal_agricultural_burning": true
+      },
+      "transport_flag_count": 4,
+      "transport_flags": {
+        "air_recirculation": true,
+        "atlantic_haze_outflow": true,
+        "counterclockwise_recirculation": true,
+        "semi_permanent_high_pressure": true
+      }
+    },
+    "weather_metrics": {
+      "event_date": "2004-08-28",
+      "gpm_max_mean_ratio": 15.24,
+      "local_precip_mm": 1.04,
+      "local_wind_kmh": 8.2,
+      "power_tmax_c": 33.06,
+      "regional_precip_mm": 5.34,
+      "tmax_c": 31.1,
+      "tmax_ge_30c_run_days": 2
+    }
+  },
+  "primary_gt": {
+    "answer": "source_transport_smoke_fit",
+    "decision_rule": "answer=source_transport_smoke_fit when source_transport_smoke>=8 and next_best<=3",
+    "metrics": {
+      "burn_scar_status": "no_sufficient_scenes",
+      "eonet_events": 0,
+      "local_precip_mm": 1.04,
+      "local_wind_kmh": 8.2,
+      "population_sum": 82984.1,
+      "regional_precip_mm": 5.34,
+      "smoke_family_hits": 7,
+      "source_flags": 3,
+      "tmax_c": 31.1,
+      "tmax_ge_30c_run_days": 2,
+      "transport_flags": 4
+    },
+    "score_ledger": {
+      "burn_scar_mapping": 0,
+      "heat_only_weather": 1,
+      "local_catalog_fire": 1,
+      "margin_over_next": 9,
+      "rainfall_clearing": 0,
+      "source_transport_smoke": 10
+    },
+    "threshold_tests": {
+      "burn_scar_not_available": true,
+      "local_precip_lt_2mm": true,
+      "next_best_le_3": true,
+      "regional_precip_lt_10mm": true,
+      "source_transport_ge_8": true
+    },
+    "window_days": 1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_August_2004_fire_and_smoke_in_Angola.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_wildfire_events.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested top-level keys, nested numeric fields, threshold booleans, and the final source_transport_smoke_fit label.",
+        "name": "json_shape_and_label",
+        "partial_credit": "Award 1-2 points for a mostly complete JSON object with one missing nested group or a near-equivalent final label.",
+        "points": 3
+      },
+      {
+        "description": "Computes source_flags=3, transport_flags=4, and event-narrative smoke_family_hits=7.",
+        "name": "text_flag_extraction",
+        "partial_credit": "Award 1-3 points for using the correct narrative signals with one or two count errors.",
+        "points": 4
+      },
+      {
+        "description": "Computes local_precip_mm=1.04, regional_precip_mm=5.34, local_wind_kmh=8.2, tmax_c=31.1, and tmax_ge_30c_run_days=2.",
+        "name": "weather_threshold_metrics",
+        "partial_credit": "Award 1-3 points for correct variables with minor rounding errors or one missing value.",
+        "points": 4
+      },
+      {
+        "description": "Reports eonet_events=0, burn_scar_status=no_sufficient_scenes, and population_sum=82984.1.",
+        "name": "catalog_burn_scar_population_metrics",
+        "partial_credit": "Award 1-2 points for two correct metrics or correct qualitative use with imprecise values.",
+        "points": 3
+      },
+      {
+        "description": "Applies the formulas to produce scores 10, 1, 1, 0, 0 and margin_over_next=9.",
+        "name": "candidate_score_ledger",
+        "partial_credit": "Award 1-3 points for applying the ledger formula but missing one component or the margin.",
+        "points": 4
+      },
+      {
+        "description": "Applies source_transport_smoke>=8 and next_best<=3, then explains the label using computed values.",
+        "name": "threshold_decision_and_interpretation",
+        "partial_credit": "Award 1 point for the right label without both threshold tests or with a thin interpretation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "angola_smoke_candidate_score_ledger",
+  "task_id": "CSX-218_Q1",
+  "task_type": "numeric",
+  "tolerances": {
+    "local_precip_mm": 0.01,
+    "local_wind_kmh": 0.1,
+    "population_sum": 0.1,
+    "regional_precip_mm": 0.01,
+    "tmax_c": 0.1
+  }
+}

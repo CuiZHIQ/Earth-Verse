@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-020_Q2",
+  "event_id": "CSX-020",
+  "task_type": "structured_reasoning",
+  "target_family": "compound_dry_heat_fire_weather_chain_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "compound_dry_heat_fire_weather_exposure_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "test whether dry daytime heat and atmospheric dryness dominate the event instead of humid heat, rainfall, or exposure-only context",
+    "computed_evidence": {
+      "label": "compound_dry_heat_fire_weather_exposure_supported",
+      "evidence_score": 6,
+      "heat_load_c_days_gt35": 36.9,
+      "warm_nights_ge18c": 5,
+      "dryness_evidence_synthesis": {
+        "peak_vpd_kpa": 7.62,
+        "hot_dry_hours": 75,
+        "hot_humid_hours": 0
+      },
+      "exposure_evidence_synthesis": {
+        "population": 344722,
+        "critical_amenities": 81
+      }
+    },
+    "mechanism_chain": [
+      "hot daytime forcing",
+      "dry-air or vapor-pressure stress",
+      "rainfall moderation check",
+      "exposure context"
+    ],
+    "decisive_evidence": "The strongest evidence is the combination of hot daytime load and dry-air stress, with receptors treated as context rather than the trigger.",
+    "rejected_simplifications": "Reject humid-heat dominance, rainfall moderation, and exposure-only explanations when meteorological forcing is stronger.",
+    "bounded_interpretation": "The package can diagnose local dry-heat stress but cannot estimate actual fire spread, burned assets, or health outcomes."
+  },
+  "key_values": {
+    "event_name": "2019-2020 Australian extreme heat during Black Summer",
+    "event_window": {
+      "start": "2019-12-01",
+      "end": "2020-01-31",
+      "days": 62
+    },
+    "thresholds": {
+      "heat_load_c_days_gt35": 30.0,
+      "warm_nights_ge18c": 3,
+      "peak_vpd_kpa": 6.0,
+      "hot_dry_hours": 24,
+      "hot_humid_hours_max": 1,
+      "population_min": 300000,
+      "critical_amenities_min": 50
+    },
+    "computed_values": {
+      "heat_load_c_days_gt35": 36.9,
+      "warm_nights_ge18c": 5,
+      "peak_vpd_kpa": 7.62,
+      "hot_dry_hours": 75,
+      "hot_humid_hours": 0,
+      "population": 344722,
+      "critical_amenities": 81
+    },
+    "test_passes": {
+      "heat_load": true,
+      "warm_nights": true,
+      "dry_air": true,
+      "hot_dry": true,
+      "humid_countercheck": true,
+      "exposure": true
+    },
+    "tolerances": {
+      "heat_load_c_days_gt35": 0.2,
+      "peak_vpd_kpa": 0.05,
+      "hot_dry_hours": 1,
+      "population": 100
+    }
+  },
+  "decision_rule": {
+    "score_per_passed_test": 1,
+    "labels": {
+      "score_5_to_6": "compound_dry_heat_fire_weather_exposure_supported",
+      "score_3_to_4": "partial_support",
+      "score_0_to_2": "not_supported"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_package_id": "CSX-020",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_Overpass_small_roads_and_critical_amenities.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Black Summer Dry-Heat Fire-Weather Exposure Chain"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "compound_dry_heat_fire_weather_exposure_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "test whether dry daytime heat and atmospheric dryness dominate the event instead of humid heat, rainfall, or exposure-only context",
+      "computed_evidence": {
+        "label": "compound_dry_heat_fire_weather_exposure_supported",
+        "evidence_score": 6,
+        "heat_load_c_days_gt35": 36.9,
+        "warm_nights_ge18c": 5,
+        "dryness_evidence_synthesis": {
+          "peak_vpd_kpa": 7.62,
+          "hot_dry_hours": 75,
+          "hot_humid_hours": 0
+        },
+        "exposure_evidence_synthesis": {
+          "population": 344722,
+          "critical_amenities": 81
+        }
+      },
+      "mechanism_chain": [
+        "hot daytime forcing",
+        "dry-air or vapor-pressure stress",
+        "rainfall moderation check",
+        "exposure context"
+      ],
+      "decisive_evidence": "The strongest evidence is the combination of hot daytime load and dry-air stress, with receptors treated as context rather than the trigger.",
+      "rejected_simplifications": "Reject humid-heat dominance, rainfall moderation, and exposure-only explanations when meteorological forcing is stronger.",
+      "bounded_interpretation": "The package can diagnose local dry-heat stress but cannot estimate actual fire spread, burned assets, or health outcomes."
+    },
+    "answer": "compound_dry_heat_fire_weather_exposure_supported"
+  }
+}

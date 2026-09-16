@@ -1,0 +1,179 @@
+{
+  "evaluation_mode": "deterministic",
+  "event": {
+    "date": "2011-02-22",
+    "event_name": "2011 Christchurch New Zealand earthquake",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "location": "Christchurch, Canterbury, South Island",
+    "package_id": "CSX-238"
+  },
+  "event_id": "CSX-238",
+  "formula_rules": {
+    "G": "sqrt((liquefaction_pop/landslide_pop)*(liquefaction_hazard/landslide_hazard))",
+    "G_norm": "clamp(ln(G)/ln(40))",
+    "I": "mean(clamp(deaths/100), clamp(injuries/1000), clamp(buildings/50000), landslide_flag, liquefaction_flag)",
+    "R": "1 + mean(five precipitation values in mm)/10",
+    "S": "mean(clamp(M/6.5), clamp(MMI/8.8), clamp(CDI/8.5), clamp(10/depth_km), clamp(felt/200))",
+    "score": "100*(0.35*S + 0.35*G_norm + 0.25*I + 0.05/R)"
+  },
+  "key_values": {
+    "data_scope": {
+      "used_source_scope": "This score uses the listed catalog, ground-failure, impact-text, and precipitation files only; AOI, OSM, WorldPop, and remote-sensing georeferencing metadata are not part of this Q1 scoring path."
+    },
+    "final_label": "shallow_liquefaction_weighted_urban_seismic_record",
+    "ledger": [
+      {
+        "term": "S",
+        "threshold_result": "pass",
+        "value": 0.988
+      },
+      {
+        "term": "G",
+        "threshold_result": "pass",
+        "value": 33.431
+      },
+      {
+        "term": "G_norm",
+        "threshold_result": "pass",
+        "value": 0.951
+      },
+      {
+        "term": "I",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "R",
+        "threshold_result": "pass",
+        "value": 1.359
+      }
+    ],
+    "ratios": {
+      "liquefaction_hazard_vs_landslide": 22.353,
+      "liquefaction_pop_vs_landslide": 50.0,
+      "precip_mean_mm": 3.594
+    },
+    "raw_inputs": {
+      "buildings": 100000,
+      "cdi": 8.5,
+      "deaths": 181,
+      "depth_km": 5.9,
+      "felt": 229,
+      "injuries": 1500,
+      "landslide_hazard": 1.7,
+      "landslide_pop": 500,
+      "liquefaction_hazard": 38.0,
+      "liquefaction_pop": 25000,
+      "magnitude": 6.1,
+      "mmi": 8.808,
+      "precip_values_mm": [
+        1.3,
+        12.7,
+        0.742,
+        0.038,
+        3.188
+      ],
+      "tsunami_flag": 0
+    },
+    "score": 96.5,
+    "threshold_states": {
+      "G": "pass",
+      "G_norm": "pass",
+      "I": "pass",
+      "R": "pass",
+      "S": "pass"
+    }
+  },
+  "primary_gt": {
+    "final_label": "shallow_liquefaction_weighted_urban_seismic_record",
+    "numeric_note": "All five threshold terms pass; score 96.5 is driven by shallow high-intensity shaking, liquefaction-dominant ground-failure ratios, high reported impacts, and low precipitation loading.",
+    "score": 96.5,
+    "target_family": "christchurch_liquefaction_weighted_seismic_score",
+    "terms": [
+      {
+        "term": "S",
+        "threshold_result": "pass",
+        "value": 0.988
+      },
+      {
+        "term": "G",
+        "threshold_result": "pass",
+        "value": 33.431
+      },
+      {
+        "term": "G_norm",
+        "threshold_result": "pass",
+        "value": 0.951
+      },
+      {
+        "term": "I",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "R",
+        "threshold_result": "pass",
+        "value": 1.359
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "AOI/OSM/WorldPop/remote-sensing metadata are not used in this Q1 score; threshold labels are computed from formula results rather than hard-coded.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2011_Christchurch_New_Zealand_earthquake.json",
+      "data/event_catalogs/event_catalogs_004_USGS_earthquake_event_GeoJSON_usp000huvq.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns target family, five term rows, score, final label, and a compact numeric note.",
+        "name": "JSON ledger shape",
+        "partial_credit": "Award 1-2 points for a parsable ledger with one missing row group.",
+        "points": 3
+      },
+      {
+        "description": "Reads M6.1, 5.9 km depth, MMI 8.808, CDI 8.5, felt 229, ground-failure values, impact-text counts, and five precipitation values.",
+        "name": "Source value parsing",
+        "partial_credit": "Award 2-3 points for most anchors with minor rounding errors.",
+        "points": 4
+      },
+      {
+        "description": "Computes S=0.988, G=33.431, G_norm=0.951, I=1.000, and R=1.359 within tolerance.",
+        "name": "Term arithmetic",
+        "partial_credit": "Award 2-4 points for correct formulas with one or two term errors.",
+        "points": 5
+      },
+      {
+        "description": "Applies 100*(0.35*S + 0.35*G_norm + 0.25*I + 0.05/R) and reports 96.5.",
+        "name": "Weighted score",
+        "partial_credit": "Award 2-3 points for the right formula with arithmetic or rounding errors.",
+        "points": 4
+      },
+      {
+        "description": "Computes each threshold result from its stated gate, marks all five terms as passing, and assigns the final label only when score and all five gates pass.",
+        "name": "Threshold logic",
+        "partial_credit": "Award 1 point for the right label with one threshold mistake.",
+        "points": 2
+      },
+      {
+        "description": "Shows units, rounded ratios, and the final label in compact calculation-led prose.",
+        "name": "Numeric clarity",
+        "partial_credit": "Award 1 point for minor formatting issues that keep the numbers checkable.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "christchurch_liquefaction_weighted_seismic_score",
+  "task_id": "CSX-238_Q1",
+  "task_type": "numeric"
+}

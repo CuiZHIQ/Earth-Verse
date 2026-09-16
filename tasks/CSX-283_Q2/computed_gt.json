@@ -1,0 +1,98 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-283",
+  "key_values": {
+    "chirps_mean_mm": 115.3586,
+    "chirps_peak_mm": 327.3622,
+    "chirps_peak_to_mean": 2.838,
+    "duration_days": 36.0,
+    "event_days": 39,
+    "event_end": "2023-03-14",
+    "event_start": "2023-02-04",
+    "first_mozambique_wind_mph": 50.0,
+    "gpm_mean_mm": 111.9749,
+    "gpm_peak_mm": 416.972,
+    "gpm_peak_to_mean": 3.724,
+    "madagascar_wind_kmh": 130.0,
+    "madagascar_wind_mph": 80.8,
+    "second_mozambique_wind_mph": 90.0,
+    "threshold_ledger": {
+      "both_means_at_least_100_mm": true,
+      "both_peaks_at_least_300_mm": true,
+      "duration_fraction_at_least_0_90": true,
+      "first_ratio_under_0_70": true,
+      "rebound_ratio_at_least_1_75": true
+    }
+  },
+  "primary_gt": {
+    "answer": 8.81,
+    "duration_fraction": 0.923,
+    "first_ratio": 0.62,
+    "pass_count": 5,
+    "rain_concentration": 3.28,
+    "rebound_ratio": 1.8,
+    "tolerance": 0.01,
+    "units": "index"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Tropical_Cyclone_Freddy_Indian_Ocean_traverse.json",
+      "data/event_reports/event_reports_004_NASA_Tracks_Freddy_Longest-lived_Tropical_Cyclone_on_Record.html",
+      "data/event_reports/event_reports_006_CSX-283_05_event_anchor_report_Locked_anchor_WMO.html.html",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Reports the persistence index as 8.81 within +/-0.01.",
+        "name": "Final index",
+        "partial_credit": "Award 2 points for a value within +/-0.10 after using the same formula.",
+        "points": 4
+      },
+      {
+        "description": "Converts 130 km/h to 80.8 mph and computes the 0.62 first Mozambique-to-Madagascar ratio.",
+        "name": "Wind conversion and first ratio",
+        "partial_credit": "Award 1-2 points for correct extraction with a minor rounding or unit error.",
+        "points": 3
+      },
+      {
+        "description": "Computes 90.0 mph divided by 50.0 mph as 1.80.",
+        "name": "Mozambique rebound ratio",
+        "partial_credit": "Award 1 point for extracting both winds but not forming the ratio.",
+        "points": 3
+      },
+      {
+        "description": "Computes both peak-to-mean rainfall ratios and averages them to about 3.28.",
+        "name": "Rain concentration",
+        "partial_credit": "Award 2 points for using only one rainfall summary correctly.",
+        "points": 4
+      },
+      {
+        "description": "Uses 36.0 tropical-storm days over 39 inclusive event days to obtain 0.923.",
+        "name": "Duration normalization",
+        "partial_credit": "Award 1-2 points for using the right duration but a wrong inclusive day count.",
+        "points": 3
+      },
+      {
+        "description": "Counts all five numeric tests as true.",
+        "name": "Threshold ledger",
+        "partial_credit": "Award 1 point for four correct ledger tests.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON with numeric fields and sensible rounding.",
+        "name": "JSON precision",
+        "partial_credit": "Award 0.5 points for correct numbers in a less compact structure.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "cyclone_phase_persistence_index_ledger",
+  "task_id": "CSX-283_Q2",
+  "task_type": "numeric"
+}

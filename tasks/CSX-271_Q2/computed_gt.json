@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-271_Q2",
+  "event_id": "CSX-271",
+  "target_family": "peru_ecuador_el_nino_rainfall_coupling_score_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": 79.12,
+    "score_name": "enso_rainfall_coupling_score",
+    "tolerance": 0.02,
+    "label": "strong_enso_rainfall_coupling",
+    "inputs": {
+      "oni_ge15": 8,
+      "oni_ge20": 5,
+      "oni_peak": 2.4,
+      "oni_mean": 1.75,
+      "final_oni": 0.45,
+      "soi_mean": -2.34,
+      "soi_le_neg1": 11,
+      "chirps_mean": 84.93,
+      "era5_mean": 164.13,
+      "rain_ratio": 1.93,
+      "chirps_mm_per_day": 1.85,
+      "era5_mm_per_day": 3.57
+    },
+    "components": {
+      "oni_ge15": 20.0,
+      "oni_ge20": 4.17,
+      "oni_peak": 9.6,
+      "oni_mean": 4.38,
+      "soi_count": 13.75,
+      "soi_mean": 7.81,
+      "chirps": 10.0,
+      "era5": 5.0,
+      "ratio": 4.66,
+      "late_penalty": 0.25
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "ONI ledger",
+        "points": 4,
+        "description": "Parses the 12 ONI seasons and computes threshold counts, peak, mean, and final value."
+      },
+      {
+        "name": "SOI ledger",
+        "points": 4,
+        "description": "Parses the 12 SOI months and computes the mean plus count at or below -1.0."
+      },
+      {
+        "name": "Rainfall ledger",
+        "points": 4,
+        "description": "Extracts CHIRPS and ERA5-Land rainfall means, inclusive day count, rates, and cross-source ratio."
+      },
+      {
+        "name": "Score arithmetic",
+        "points": 4,
+        "description": "Applies every formula term, cap, and deduction to obtain 79.12 within 0.02."
+      },
+      {
+        "name": "Spatial numeric audit",
+        "points": 2,
+        "description": "Computes AOI area, population density, and mapped feature density from structured package data."
+      },
+      {
+        "name": "Structured answer",
+        "points": 2,
+        "description": "Returns compact JSON with component scores, total score, class label, derived values, and trace."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-271",
+    "event_name": "1997-1998 El Nino and Peru/Ecuador flooding",
+    "period": "1997-06-01 to 1998-05-31",
+    "scale": "neighborhood_asset",
+    "region": "South America"
+  },
+  "key_values": {
+    "manifest_file_count": 28,
+    "oni_first": "MJJ 1997 1.22",
+    "oni_peak": "OND 1997 2.40",
+    "oni_final": "AMJ 1998 0.45",
+    "rain_days": 46,
+    "density_checks": {
+      "aoi_area_square_degrees": 0.2,
+      "population_per_square_degree": 45948.08,
+      "mapped_feature_density_per_square_degree": 4938.27
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Locked_event_anchor_1997-1998_El_Nino_and_Peru_Ecuador_flooding.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_010_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_ERA5-Land_hourly_aggregate_stats.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  }
+}

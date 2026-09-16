@@ -1,0 +1,264 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-289",
+  "forbidden_overclaims": [
+    "Do not claim exact hydraulic depth, subway inundation depth, or mapped flood extent from the computed metrics.",
+    "Do not convert population exposure into verified casualties.",
+    "Do not make annual land-surface change the primary damage map for this flood response task.",
+    "Do not attribute the event to coastal surge or wind-core damage."
+  ],
+  "key_values": {
+    "critical_service_features": 838,
+    "diagnosis_label": "short_duration_urban_flood_life_safety_priority",
+    "event_precipitation_maximum_mm": 523.3,
+    "event_total_rainfall_mm": 586.8,
+    "peak_daily_rainfall_date": "2021-07-20",
+    "peak_daily_rainfall_mm": 334.6,
+    "peak_day_share_of_event_rainfall": 0.57,
+    "population_millions": 17.68,
+    "priority_stance": "urban_entrapment_evacuation_and_critical_services",
+    "road_features": 130
+  },
+  "numeric_tolerances": {
+    "event_precipitation_maximum_mm": {
+      "expected": 523.3,
+      "max": 528.3,
+      "min": 518.3
+    },
+    "peak_daily_rainfall_mm": {
+      "expected": 334.6,
+      "max": 336.6,
+      "min": 332.6
+    },
+    "peak_day_share_of_event_rainfall": {
+      "expected": 0.57,
+      "max": 0.59,
+      "min": 0.55
+    },
+    "population_millions": {
+      "expected": 17.68,
+      "max": 17.9,
+      "min": 17.4
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "urban pluvial flash-flood response priority",
+      "concentrated-rainfall urban entrapment and evacuation priority",
+      "short-duration extreme-rainfall life-safety flood diagnosis"
+    ],
+    "answer": "short_duration_urban_flood_life_safety_priority",
+    "answer_type": "deterministic_label_with_rubric_judged_explanation",
+    "canonical_stance": "The July 2021 Henan response diagnosis should prioritize short-duration urban pluvial/flash flooding, life safety, evacuation, trapped transport, and critical-service continuity.",
+    "deterministic_fields": {
+      "diagnosis_label": "short_duration_urban_flood_life_safety_priority",
+      "priority_stance": "urban_entrapment_evacuation_and_critical_services",
+      "response_chain": [
+        "concentrated_monsoon_extreme_rainfall",
+        "urban_pluvial_and_flash_flooding",
+        "life_safety_transport_and_evacuation"
+      ]
+    },
+    "diagnosis_label_aliases": [
+      "urban_pluvial_flash_flood_life_safety_priority",
+      "concentrated_rainfall_urban_flood_response_priority",
+      "short_duration_flash_flood_evacuation_priority"
+    ],
+    "forbidden_claims": [
+      "Coastal surge, wind-core damage, or tide-driven flooding is the lead mechanism.",
+      "Population exposure is a verified casualty count.",
+      "The metrics prove exact hydraulic depth, subway inundation depth, or complete mapped flood extent.",
+      "Annual land-surface change is the primary flood damage map for this response task."
+    ],
+    "required_claims": [
+      "Concentrated monsoon or mesoscale extreme rainfall is the response-leading trigger.",
+      "The rainfall concentration supports rapid urban pluvial or flash-flood entrapment risk.",
+      "Dense population, road, and critical-service exposure justify life-safety, evacuation, and service-continuity priorities.",
+      "Broad imagery or land-surface context is secondary orientation, not direct proof of flood depth, casualties, or complete damage."
+    ],
+    "required_metrics": [
+      {
+        "expected": 334.6,
+        "name": "peak_daily_rainfall_mm",
+        "required_date": "2021-07-20",
+        "tolerance": "+/-2 mm"
+      },
+      {
+        "expected": 0.57,
+        "name": "peak_day_share_of_event_rainfall",
+        "tolerance": "0.55-0.59"
+      },
+      {
+        "expected": 523.3,
+        "name": "event_precipitation_maximum_mm",
+        "tolerance": "+/-5 mm"
+      },
+      {
+        "expected": 17.68,
+        "name": "population_millions",
+        "tolerance": "17.4-17.9 million"
+      }
+    ],
+    "structured_answer": {
+      "diagnosis_label": "short_duration_urban_flood_life_safety_priority",
+      "imagery_role": "contextual_not_primary_damage_or_depth_evidence",
+      "priority_stance": "urban_entrapment_evacuation_and_critical_services",
+      "response_chain": [
+        "concentrated_monsoon_extreme_rainfall",
+        "urban_pluvial_and_flash_flooding",
+        "life_safety_transport_and_evacuation"
+      ]
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Henan_extreme_rainfall.json",
+      "data/event_reports/event_reports_002_Wikipedia_2021_Henan_floods.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "quality_audit": {
+    "absolute_path_hits": 0,
+    "issue_score": 0,
+    "numeric_anchor_count_gt": 4,
+    "numeric_anchor_count_visible": 2,
+    "visible_package_directive_hits": 0
+  },
+  "reasoning_requirements": [
+    "Make concentrated short-duration rainfall the trigger for the diagnosis.",
+    "Connect the rainfall concentration and one-hour record claim to urban pluvial or flash-flood entrapment risk.",
+    "Use population and critical-service exposure to justify life safety, transport, and evacuation as the operational priority.",
+    "Treat broad visual or land-surface change context as secondary to the rainfall and exposure chain."
+  ],
+  "required_findings": [
+    {
+      "date": "2021-07-20",
+      "name": "peak_daily_rainfall",
+      "tolerance": "+/-2 mm; date must be 2021-07-20",
+      "unit": "mm",
+      "value": 334.6
+    },
+    {
+      "name": "peak_day_share_of_event_rainfall",
+      "tolerance": "0.55-0.59",
+      "unit": "fraction",
+      "value": 0.57
+    },
+    {
+      "name": "event_precipitation_maximum",
+      "tolerance": "+/-5 mm",
+      "unit": "mm",
+      "value": 523.3
+    },
+    {
+      "name": "population_scale",
+      "tolerance": "17.4-17.9 million",
+      "unit": "million people",
+      "value": 17.68
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies short-duration urban pluvial or flash flooding as the response-leading diagnosis and makes life safety, evacuation, trapped transport, and critical-service continuity the priority.",
+        "name": "final_diagnosis_label_and_priority_stance",
+        "partial_credit": "Award partial credit for a correct extreme-rainfall flood stance that omits either the urban/pluvial-flash process or the life-safety priority. Award no credit for coastal surge, wind damage, or retrospective landscape mapping as the lead mechanism.",
+        "points": 4
+      },
+      {
+        "description": "Reports the key numeric anchors: peak daily rainfall near 334.6 mm on July 20, 2021; peak-day share near 0.57; event precipitation maximum near 523.3 mm; and population scale near 17.68 million people.",
+        "name": "quantitative_anchors",
+        "partial_credit": "Award up to 1 point for each correct anchor with units, date, or tolerance as applicable: peak daily rainfall, peak-day share, event precipitation maximum, and population scale.",
+        "points": 4
+      },
+      {
+        "description": "Explains concentrated monsoon or mesoscale extreme rainfall, uses the one-hour Zhengzhou rainfall record as supporting intensity evidence, and connects rapid rainfall concentration to pluvial or flash-flood onset rather than a slow-only flood mechanism.",
+        "name": "physical_mechanism_reasoning",
+        "partial_credit": "Award partial credit when the answer recognizes extreme rainfall but misses the short-duration concentration, the one-hour intensity support, or the drainage-exceedance/flash-flood process link.",
+        "points": 4
+      },
+      {
+        "description": "Links dense population, roads, and critical services to life safety, evacuation, trapped transport, rescue access, and continuity of essential services.",
+        "name": "impact_chain_and_operational_priority",
+        "partial_credit": "Award partial credit for mentioning exposed people or infrastructure without connecting them to concrete response priorities, or for naming priorities without tying them to the Henan exposure context.",
+        "points": 3
+      },
+      {
+        "description": "Treats broad visual or land-surface context as orientation for urban setting and terrain, not as direct flood depth, verified damage, or casualty evidence.",
+        "name": "imagery_and_land_surface_interpretation",
+        "partial_credit": "Award partial credit for noting that imagery is contextual but leaving unclear which claims it cannot support. Give little or no credit if the answer treats broad context as direct damage proof.",
+        "points": 2
+      },
+      {
+        "description": "Rejects coastal surge for inland Henan, avoids verified-casualty and exact-depth claims, and does not make retrospective mapping the main response diagnosis.",
+        "name": "distractor_rejection_and_overclaim_control",
+        "partial_credit": "Award partial credit for rejecting one or two major distractors while missing another, or for avoiding overclaims without explaining why the competing mechanism is weaker.",
+        "points": 2
+      },
+      {
+        "description": "Uses the requested fields or an equivalently compact structure with a clear three-part response chain.",
+        "name": "structured_communication",
+        "partial_credit": "Award partial credit only if the response is understandable but omits some requested field structure or makes the response chain less explicit.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "chirps_event_precip_mm_max": 324.7,
+      "chirps_event_precip_mm_mean": 119.0,
+      "era5_precip_sum_mm_max": 460.1,
+      "era5_precip_sum_mm_mean": 112.1,
+      "gpm_event_precip_mm_max": 523.3,
+      "gpm_event_precip_mm_mean": 138.1,
+      "land_change_mean": 0.038,
+      "open_meteo_event_total_mm": 332.2,
+      "open_meteo_peak_day": "2021-07-20",
+      "open_meteo_peak_day_fraction": 0.511,
+      "open_meteo_peak_day_mm": 169.6,
+      "open_meteo_rainy_run_days_ge_25mm": 4,
+      "osm_critical_service_features": 838,
+      "osm_road_features": 130,
+      "population_millions": 17.68,
+      "power_event_total_mm": 586.8,
+      "power_peak_day": "20210720",
+      "power_peak_day_fraction": 0.57,
+      "power_peak_day_mm": 334.6,
+      "power_top_two_day_fraction": 0.813
+    },
+    "event_window": {
+      "end_date": "2021-07-23",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2021-07-17"
+    },
+    "osm_counts": {
+      "elements": 1000,
+      "fire_stations": 11,
+      "hospitals": 175,
+      "police": 149,
+      "roads": 130,
+      "schools": 343,
+      "shelters": 160
+    },
+    "text_claim_flags": {
+      "affected_population": true,
+      "evacuation": true,
+      "heavy_rainfall": true,
+      "monsoon_mesoscale_anchor": true,
+      "one_hour_record": true
+    }
+  },
+  "task_id": "CSX-289_Q1",
+  "task_subtype": "compound_flood_mechanism_response_priority",
+  "task_type": "short_answer"
+}

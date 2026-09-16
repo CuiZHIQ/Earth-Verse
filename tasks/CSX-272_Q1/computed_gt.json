@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-272_Q1",
+  "event_id": "CSX-272",
+  "task_type": "numeric",
+  "target_family": "queensland_la_nina_rainfall_load_score_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": {
+      "score": 98.58,
+      "climate_period": "2010-09-01_to_2011-02-28",
+      "precip_evidence_window": "2010-09-01_to_2010-10-16",
+      "oni_cold_n": 4,
+      "oni_mean": -1.53,
+      "soi_pos_n": 6,
+      "soi_mean": 3.63,
+      "grid_mean_mm": 118.11,
+      "grid_max_mm": 202.71,
+      "ratio_mean": 1.46
+    },
+    "derivation": "The score is 20.00 + 20.00 + 15.00 + 9.08 + 14.76 + 10.00 + 9.74 = 98.58."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "ONI ledger",
+        "points": 4,
+        "description": "Parses the four ONI seasons and computes the cold-season count plus mean anomaly."
+      },
+      {
+        "name": "SOI ledger",
+        "points": 4,
+        "description": "Parses the six SOI months and computes the positive-month count plus mean value."
+      },
+      {
+        "name": "Rainfall ledger",
+        "points": 4,
+        "description": "Extracts gridded precipitation means, maxima, max-to-mean ratios, and the declared precipitation evidence window from all three summaries."
+      },
+      {
+        "name": "Score arithmetic",
+        "points": 5,
+        "description": "Applies every denominator and cap to obtain 98.58 within 0.02."
+      },
+      {
+        "name": "Auditable derivation",
+        "points": 3,
+        "description": "Shows enough intermediate arithmetic to reproduce the numeric result."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-272",
+    "event_name": "2010-2011 La Nina and Queensland floods",
+    "period": "2010-09-01 to 2011-02-28",
+    "region": "Oceania",
+    "scale": "global_synoptic"
+  },
+  "key_values": {
+    "manifest_file_count": 35,
+    "oni_rows": [
+      "SON 2010 -1.64",
+      "OND 2010 -1.64",
+      "NDJ 2010 -1.54",
+      "DJF 2011 -1.31"
+    ],
+    "soi_values": [
+      3.7,
+      2.9,
+      2.1,
+      4.8,
+      3.8,
+      4.5
+    ],
+    "grid_sources": [
+      {
+        "name": "era5_land",
+        "window": "2010-09-01_to_2010-10-16",
+        "mean_mm": 120.98,
+        "max_mm": 140.06,
+        "ratio": 1.16
+      },
+      {
+        "name": "gpm_imerg",
+        "window": "2010-09-01_to_2010-10-16",
+        "mean_mm": 121.75,
+        "max_mm": 171.3,
+        "ratio": 1.41
+      },
+      {
+        "name": "chirps",
+        "window": "2010-09-01_to_2010-10-16",
+        "mean_mm": 111.59,
+        "max_mm": 202.71,
+        "ratio": 1.82
+      }
+    ],
+    "score_terms": {
+      "oni_count": 20.0,
+      "oni_mean": 20,
+      "soi_count": 15.0,
+      "soi_mean": 9.08,
+      "grid_mean": 14.76,
+      "grid_max": 10,
+      "ratio": 9.74
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2010-2011_La_Nina_and_Queensland_floods.json",
+      "data/physical_hazard/physical_hazard_006_NOAA_CPC_ONI_ASCII.txt",
+      "data/physical_hazard/physical_hazard_008_NOAA_PSL_SOI_data.data",
+      "data/physical_hazard/physical_hazard_011_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_012_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_013_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

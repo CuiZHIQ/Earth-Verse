@@ -1,0 +1,123 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-179",
+  "key_values": {
+    "event": {
+      "end_date": "2015-11-30",
+      "event_name": "2015 Southeast Asia haze from Indonesian fires",
+      "hazard_family": "wildfire_burn_smoke",
+      "region": "Southeast Asia",
+      "start_date": "2015-08-01"
+    },
+    "judge_anchors": {
+      "classification": "transboundary_fire_smoke_air_quality",
+      "severity_ledger": {
+        "aerosol_multiplier": 6,
+        "co_ratio_nearly": 13.0,
+        "hotspots_min": 120000,
+        "psi_ratio_min": 5.71
+      },
+      "transport_check": {
+        "central_kalimantan_plume_km": 2,
+        "direction": "northwesterly",
+        "places": [
+          "Malaysia",
+          "Singapore",
+          "southern Thailand",
+          "southern Cambodia",
+          "Vietnam"
+        ],
+        "typical_smoke_upper_km": 3
+      }
+    },
+    "report_values": {
+      "aerosol_multiplier": 6,
+      "central_kalimantan_plume_km": 2,
+      "co_ratio_nearly": 13.0,
+      "downwind_places": [
+        "Malaysia",
+        "Singapore",
+        "southern Thailand",
+        "southern Cambodia",
+        "Vietnam"
+      ],
+      "fire_regions": [
+        "Sumatra",
+        "Kalimantan"
+      ],
+      "hazardous_psi_threshold_above": 350,
+      "hotspots_min": 120000,
+      "peak_surface_co_ppb_nearly": 1300,
+      "psi_above": 2000,
+      "psi_ratio_min": 5.71,
+      "transport_direction": "northwesterly",
+      "typical_smoke_upper_km": 3,
+      "usual_surface_co_ppb": 100
+    }
+  },
+  "primary_gt": {
+    "classification": "transboundary_fire_smoke_air_quality",
+    "rationale": "The more-than-120000 Indonesian hot spots, PSI ratio of at least 5.71, 6-fold aerosol increase, and near-13.0 CO ratio support a cross-border fire-smoke air-quality classification. Ordinary weather haze, local burn-area mapping, and population counting are weaker because they do not jointly explain the fire, chemical, air-quality, and transport anchors.",
+    "severity_ledger": {
+      "aerosol_multiplier": 6,
+      "co_ratio_nearly": 13.0,
+      "hotspots_min": 120000,
+      "psi_ratio_min": 5.71
+    },
+    "transport_check": "Smoke was usually below 3 km, a central Kalimantan plume reached 2 km, and upper-level northwesterly transport could carry smoke toward Malaysia, Singapore, southern Thailand, southern Cambodia, and Vietnam."
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Ground truth is derived from the local event metadata and NASA report text.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2015_Southeast_Asia_haze_from_Indonesian_fires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the cross-border Indonesian fire-smoke air-quality label or a close equivalent.",
+        "name": "Final classification",
+        "partial_credit": "Credit a generic wildfire-smoke label that omits either cross-border transport or air-quality severity.",
+        "points": 4
+      },
+      {
+        "description": "Uses the 2015 incident window, Sumatra/Kalimantan, and the more-than-120000 hot-spot anchor.",
+        "name": "Fire and event anchors",
+        "partial_credit": "Credit only the event window, only the geography, or only the hot-spot count.",
+        "points": 3
+      },
+      {
+        "description": "Reports PSI above 2000, threshold above 350, 5.71 ratio, 6-fold aerosol increase, and near-13.0 CO ratio.",
+        "name": "Severity ledger arithmetic",
+        "partial_credit": "Credit correct raw values with incomplete ratios or one missing severity metric.",
+        "points": 5
+      },
+      {
+        "description": "Connects smoke below 3 km, the 2 km central Kalimantan plume, and northwesterly movement to downwind countries.",
+        "name": "Smoke-layer and transport check",
+        "partial_credit": "Credit downwind movement without both height and direction details.",
+        "points": 4
+      },
+      {
+        "description": "Rejects ordinary weather haze, local burn-area mapping, and population-counting readings.",
+        "name": "Rejection of weaker readings",
+        "partial_credit": "Credit rejection of only one or two weaker readings.",
+        "points": 2
+      },
+      {
+        "description": "Returns compact JSON and avoids extra-data independent loss, dose-response, or complete burn-map claims.",
+        "name": "Output control",
+        "partial_credit": "Credit mostly correct structure with minor formatting issues or one mild overstatement.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "report_metric_diagnosis",
+  "task_id": "CSX-179_Q1",
+  "task_type": "short_answer"
+}

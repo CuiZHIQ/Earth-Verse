@@ -1,0 +1,163 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-324",
+  "key_values": {
+    "answer": "marine_heatwave_coastal_ecosystem_heat_stress_priority",
+    "dominant_mechanism": "persistent_anomalously_warm_sea_surface_conditions",
+    "event_identity": {
+      "anchor_location": "Northern Indian Ocean / Arabian Sea",
+      "event_name": "2023 Indian Ocean/Arabian Sea marine heatwave context",
+      "hazard_family": "marine_heatwave_coastal_ecosystem",
+      "hazard_label": "Marine heatwave and coastal ecosystem impact",
+      "region": "South Asia",
+      "scale": "regional_basin",
+      "temporal_window": {
+        "end_date": "2023-09-30",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2023-04-01"
+      }
+    },
+    "impact_pathway": [
+      "marine_heatwave",
+      "coral_bleaching_heat_stress",
+      "coastal_ecosystem_risk"
+    ],
+    "judge_anchors": [
+      "The priority should be marine heatwave coastal ecosystem heat stress.",
+      "The dominant mechanism is persistent anomalously warm sea-surface conditions.",
+      "The answer should use the 183-day April-September window and marine heat-stress index concepts.",
+      "The score is built only from event identity, marine report/catalog context, and marine heat-stress terms.",
+      "The answer should avoid unsupported precise SST anomaly, Degree Heating Week, coral mortality, flood dominance, or basin-wide impact claims."
+    ],
+    "key_metrics": {
+      "event_window_days": 183,
+      "marine_evidence_score": 9,
+      "marine_evidence_score_max": 9,
+      "marine_index_term_count": 6,
+      "marine_index_terms": [
+        "SST",
+        "SST anomaly",
+        "HotSpot",
+        "Degree Heating Week",
+        "Bleaching Alert Area",
+        "7-day SST Trend"
+      ],
+      "source_flags": {
+        "coral_bleaching_heat_stress_concept": true,
+        "oisst_2023_sst_anomaly_available": true,
+        "oisst_2023_sst_available": true,
+        "wmo_ecosystem_context": true,
+        "wmo_surface_temperature_context": true
+      }
+    },
+    "marine_evidence_components": {
+      "coral_bleaching_heat_stress_concept": true,
+      "event_name_mentions_marine_heatwave": true,
+      "hazard_family_is_marine_heatwave": true,
+      "marine_index_terms_at_least_three": true,
+      "oisst_2023_sst_anomaly_available": true,
+      "oisst_2023_sst_available": true,
+      "seasonal_window_at_least_180_days": true,
+      "wmo_ecosystem_context": true,
+      "wmo_surface_temperature_context": true
+    },
+    "priority": "monitor_and_triage_coastal_ecosystem_heat_stress"
+  },
+  "numeric_tolerances": {
+    "event_window_days": 0,
+    "marine_evidence_score": 0,
+    "marine_evidence_score_max": 0,
+    "marine_index_term_count": 0
+  },
+  "primary_gt": {
+    "answer": "marine_heatwave_coastal_ecosystem_heat_stress_priority",
+    "dominant_mechanism": "persistent_anomalously_warm_sea_surface_conditions",
+    "impact_pathway": [
+      "marine_heatwave",
+      "coral_bleaching_heat_stress",
+      "coastal_ecosystem_risk"
+    ],
+    "key_metrics": {
+      "event_window_days": 183,
+      "marine_evidence_score": 9,
+      "marine_evidence_score_max": 9,
+      "marine_index_term_count": 6,
+      "marine_index_terms": [
+        "SST",
+        "SST anomaly",
+        "HotSpot",
+        "Degree Heating Week",
+        "Bleaching Alert Area",
+        "7-day SST Trend"
+      ],
+      "source_flags": {
+        "coral_bleaching_heat_stress_concept": true,
+        "oisst_2023_sst_anomaly_available": true,
+        "oisst_2023_sst_available": true,
+        "wmo_ecosystem_context": true,
+        "wmo_surface_temperature_context": true
+      }
+    },
+    "priority": "monitor_and_triage_coastal_ecosystem_heat_stress"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2023_Indian_Ocean_Arabian_Sea_marine_heatwave_context.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/event_catalogs/event_catalogs_002_NOAA_OISST_PSL_ERDDAP_sea-surface_temperature_THREDDS_catalog_XML.xml"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects marine_heatwave_coastal_ecosystem_heat_stress_priority or an equivalent compact label.",
+        "name": "Priority label",
+        "partial_credit": "2 points for a marine heatwave label that omits the coastal ecosystem heat-stress priority.",
+        "points": 4
+      },
+      {
+        "description": "Identifies persistent anomalously warm sea-surface conditions as the controlling mechanism.",
+        "name": "Dominant mechanism",
+        "partial_credit": "1.5 points for a generic warm-ocean or heatwave mechanism without persistence or sea-surface emphasis.",
+        "points": 3
+      },
+      {
+        "description": "Connects marine heatwave conditions to coral bleaching heat stress and coastal ecosystem risk.",
+        "name": "Impact pathway",
+        "partial_credit": "1.5 points for naming either coral bleaching heat stress or ecosystem risk.",
+        "points": 3
+      },
+      {
+        "description": "Reports the 183-day event window and marine_evidence_score 9/9.",
+        "name": "Event duration and evidence score",
+        "partial_credit": "Partial credit for correct duration or a mostly correct evidence score.",
+        "points": 3
+      },
+      {
+        "description": "Names at least three marine heat-stress index or product concepts from the local marine context.",
+        "name": "Marine index concepts",
+        "partial_credit": "Award 1 point per valid term, capped at 3.",
+        "points": 3
+      },
+      {
+        "description": "Bases the decision on marine event identity and marine report/catalog context rather than land-weather, population, AOI, or terrestrial remote-sensing proxies.",
+        "name": "Source-scope discipline",
+        "partial_credit": "1 point if the answer mentions land proxies but keeps them clearly secondary.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported precise SST anomaly, Degree Heating Week, coral mortality, flooding dominance, or exact basin-wide impact claims.",
+        "name": "Overclaim control",
+        "partial_credit": "1 point if only one minor unsupported detail is included.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-324_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,206 @@
+{
+  "answer_guidance": {
+    "answer": "localized_dam_area_cascade_consistent",
+    "structured_answer": {
+      "answer": "localized_dam_area_cascade_consistent",
+      "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+      "computed_evidence": {
+        "decision_rule": "consistent if score >= 4 and areal rainfall agreement plus process flags pass",
+        "evidence_score": 5,
+        "final_label": "localized_dam_area_cascade_consistent",
+        "max_evidence_score": 5,
+        "required_rows": [
+          "local_damage_concentration",
+          "service_damage_per_impacted_village",
+          "areal_rainfall_agreement",
+          "point_weather_contrast",
+          "dam_cascade_process_flags"
+        ],
+        "tolerances": {
+          "count": 0,
+          "percent": 0.1,
+          "ratio": 0.01
+        }
+      },
+      "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+      "mechanism_chain": [
+        "storm or rainfall loading",
+        "dam-area pathway or storage release",
+        "downstream flood-wave amplification",
+        "regional-rainfall-only rejection"
+      ],
+      "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+      "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+      "task_mode": "deep_mechanism_diagnosis"
+    }
+  },
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "new_title": "Arbaat Dam Rainfall-Report Cascade Alignment",
+    "replaces_table_only_task": true
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-078",
+  "key_values": {
+    "destroyed_village_share": 0.286,
+    "event_window_days": 24,
+    "final_label": "localized_dam_area_cascade_consistent",
+    "gpm_chirps_mean_agreement_pct": 99.06,
+    "gpm_max_to_nasa_power_wettest_day_ratio": 15.91,
+    "gpm_mean_to_nasa_power_total_ratio": 2.988,
+    "gpm_mean_to_open_meteo_total_ratio": 46.985,
+    "local_severe_to_wider_impacted_ratio": 0.161,
+    "max_score": 5,
+    "report_true_flag_count": 7,
+    "severely_affected_per_impacted_village": 714.3,
+    "three_product_mean_mm": 87.549,
+    "three_product_spread_pct": 4.94,
+    "total_score": 5,
+    "water_school_damage_index": 2.2
+  },
+  "primary_gt": {
+    "answer": "localized_dam_area_cascade_consistent",
+    "bounded_interpretation": "Do not estimate breach hydrographs, exact wave heights, engineering fault, or complete loss totals unless sourced.",
+    "computed_evidence": {
+      "decision_rule": "consistent if score >= 4 and areal rainfall agreement plus process flags pass",
+      "evidence_score": 5,
+      "final_label": "localized_dam_area_cascade_consistent",
+      "max_evidence_score": 5,
+      "required_rows": [
+        "local_damage_concentration",
+        "service_damage_per_impacted_village",
+        "areal_rainfall_agreement",
+        "point_weather_contrast",
+        "dam_cascade_process_flags"
+      ],
+      "tolerances": {
+        "count": 0,
+        "percent": 0.1,
+        "ratio": 0.01
+      }
+    },
+    "decisive_evidence": "The mechanism must connect forcing with pathway amplification; rainfall magnitude alone is not a complete explanation.",
+    "mechanism_chain": [
+      "storm or rainfall loading",
+      "dam-area pathway or storage release",
+      "downstream flood-wave amplification",
+      "regional-rainfall-only rejection"
+    ],
+    "mechanism_question": "connect rainfall or report anchors to a localized dam-area cascade and downstream flood-wave pathway",
+    "rejected_simplifications": "Reject regional-rainfall-only or exposure-only explanations if they do not explain the cascade pathway.",
+    "task_mode": "deep_mechanism_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Floods_swamp_Sudan.html",
+      "data/other/other_001_UN_Geneva_OCHA_-_Flooding_from_Sudan_dam_collapse_worsens_humanitarian_crisis.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis.",
+        "name": "mechanism_diagnosis",
+        "points": 4
+      },
+      {
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values.",
+        "name": "computed_evidence",
+        "points": 5
+      },
+      {
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies.",
+        "name": "evidence_weighting",
+        "points": 4
+      },
+      {
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion.",
+        "name": "counterfactual_rejection",
+        "points": 3
+      },
+      {
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts.",
+        "name": "bounded_interpretation",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist.",
+        "name": "json_contract",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "score_rows": [
+    {
+      "pass": true,
+      "reason": "Concentrated local ratios support a dam-area phase within the wider flood season.",
+      "row_id": "local_damage_concentration",
+      "value": {
+        "destroyed_village_share": 0.286,
+        "event_window_days": 24,
+        "local_severe_to_wider_impacted_ratio": 0.161,
+        "severely_affected_per_impacted_village": 714.3
+      }
+    },
+    {
+      "pass": true,
+      "reason": "The water-and-school damage load exceeds two damaged service assets per impacted village.",
+      "row_id": "service_damage_per_impacted_village",
+      "value": {
+        "collapsed_borehole_wells": 84,
+        "schools_destroyed_or_damaged": 70,
+        "villages_impacted": 70,
+        "water_school_damage_index": 2.2
+      }
+    },
+    {
+      "pass": true,
+      "reason": "Areal rainfall products cluster tightly enough to support the runoff signal.",
+      "row_id": "areal_rainfall_agreement",
+      "value": {
+        "chirps_mean_mm": 88.433,
+        "era5_mean_mm": 84.943,
+        "gpm_chirps_mean_agreement_pct": 99.06,
+        "gpm_mean_mm": 89.272,
+        "three_product_mean_mm": 87.549,
+        "three_product_spread_pct": 4.94
+      }
+    },
+    {
+      "pass": true,
+      "reason": "Point-weather totals are too low to overturn the areal rainfall signal.",
+      "row_id": "point_weather_contrast",
+      "value": {
+        "gpm_max_to_nasa_power_wettest_day_ratio": 15.91,
+        "gpm_mean_to_nasa_power_total_ratio": 2.988,
+        "gpm_mean_to_open_meteo_total_ratio": 46.985,
+        "nasa_power_total_mm": 29.88,
+        "nasa_power_wettest_day_mm": 7.8,
+        "open_meteo_total_mm": 1.9
+      }
+    },
+    {
+      "pass": true,
+      "reason": "All required report flags align with a dam-centered local cascade.",
+      "row_id": "dam_cascade_process_flags",
+      "value": {
+        "dam_distance_nw_port_sudan_km": 38,
+        "required_flag_count": 7,
+        "true_flag_count": 7
+      }
+    }
+  ],
+  "subtype": "deep_mechanism_diagnosis",
+  "target_family": "arbaat_dam_rainfall_report_cascade_alignment",
+  "task_id": "CSX-078_Q2",
+  "task_type": "structured_reasoning"
+}

@@ -1,0 +1,159 @@
+{
+  "answer_summary": {
+    "aerosol_days": 47,
+    "answer": "regional_smoke_aerosol_score_10",
+    "fire_front_miles": 20,
+    "image_span_degrees": 35.0,
+    "source_region_count": 4
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-180",
+  "key_values": {
+    "aerosol_window": {
+      "end": "2000-09-29",
+      "inclusive_days": 47,
+      "start": "2000-08-14"
+    },
+    "burn_index_counts": {
+      "post_count": 0,
+      "pre_count": 0
+    },
+    "context_counts": {
+      "amenities": {
+        "hospital": 1,
+        "school": 3
+      },
+      "facility_count": 4,
+      "highway_elements": 42,
+      "highways": {
+        "secondary": 2,
+        "tertiary": 27,
+        "trunk": 13
+      },
+      "population_2000": 72066
+    },
+    "event_window": {
+      "end": "2000-09-30",
+      "inclusive_days": 61,
+      "start": "2000-08-01"
+    },
+    "heavy_burning_regions": [
+      "western Zambia",
+      "southern Angola",
+      "northern Namibia",
+      "northern Botswana"
+    ],
+    "image_metadata": {
+      "event_snapshot": {
+        "height_px": 768,
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "span_degrees": 35.0,
+        "time": "2000-08-31",
+        "width_px": 1024
+      },
+      "pre_snapshot": {
+        "height_px": 768,
+        "layer": "MODIS_Terra_CorrectedReflectance_TrueColor",
+        "span_degrees": 35.0,
+        "time": "2000-07-02",
+        "width_px": 1024
+      }
+    },
+    "threshold_ledger": {
+      "aerosol_window": 2,
+      "burn_index_zero_count": 1,
+      "fire_front": 1,
+      "smoke_phrase": 2,
+      "source_belt": 2,
+      "vegetation_fire_source": 1,
+      "wide_event_snapshot": 1
+    },
+    "threshold_tests": {
+      "aerosol_window_pass": true,
+      "burn_index_zero_count": true,
+      "fire_front_pass": true,
+      "smoke_phrase_present": true,
+      "source_belt_pass": true,
+      "vegetation_source_present": true,
+      "wide_snapshot_pass": true
+    }
+  },
+  "primary_gt": {
+    "answer_label": "regional_smoke_aerosol",
+    "context_counts": {
+      "facility_count": 4,
+      "highway_elements": 42,
+      "population_2000": 72066
+    },
+    "one_sentence_check": "The 10/10 ledger supports the regional smoke-aerosol label, while the population and facility counts remain separate local context values.",
+    "threshold_ledger": {
+      "aerosol_window": 2,
+      "burn_index_zero_count": 1,
+      "fire_front": 1,
+      "smoke_phrase": 2,
+      "source_belt": 2,
+      "vegetation_fire_source": 1,
+      "wide_event_snapshot": 1
+    },
+    "total_score": 10
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2000_southern_Africa_fires_and_river_of_smoke.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/air_quality/air_quality_001_NASA_Earth_Observatory_Airborne_Particulates_over_Southern_Africa.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_001_pre.jpg",
+      "data/remote_sensing/remote_sensing_002_event.jpg",
+      "metadata/files.csv"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns regional_smoke_aerosol, total_score = 10, and the compact regional_smoke_aerosol_score_10 answer string.",
+        "name": "Final structured answer",
+        "partial_credit": "Give 2 points for the right label with the wrong total, or 1 point for a smoke-related label without the ledger total.",
+        "points": 4
+      },
+      {
+        "description": "Identifies the smoke-river phrase, all four source-belt regions, and the 20-mile fire-front value.",
+        "name": "Event-report extraction",
+        "partial_credit": "Give 1 point for the phrase, 2 points for at least three correct regions, and 1 point for the fire-front value within 1 mile.",
+        "points": 4
+      },
+      {
+        "description": "Computes 47 inclusive days from 2000-08-14 to 2000-09-29 and applies the 30-day threshold correctly.",
+        "name": "Aerosol-window arithmetic",
+        "partial_credit": "Give 2 points for the correct dates with an off-by-one day count, and 1 point for recognizing that the window passes the threshold without showing the formula.",
+        "points": 4
+      },
+      {
+        "description": "Credits the grass/shrubland source phrase and verifies that 2000-08-31 lies inside the event window with a 35-degree snapshot span.",
+        "name": "Source and image tests",
+        "partial_credit": "Give 1 point for the source phrase and 1-2 points for partially correct image-date or span checks.",
+        "points": 3
+      },
+      {
+        "description": "Reports pre_count = 0, post_count = 0, population_2000 = 72066, facility_count = 4, and highway_elements = 42.",
+        "name": "Burn-index and context counts",
+        "partial_credit": "Give 1 point for the burn-index counts or 1 point for at least two correct local context counts.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the seven threshold-test point values separate from local context counts and returns compact JSON with the requested keys.",
+        "name": "Ledger discipline and format",
+        "partial_credit": "Give 1-2 points for correct reasoning with missing JSON keys or for mixing a context count into the 10-point score.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "threshold_score_ledger",
+  "task_id": "CSX-180_Q1",
+  "task_type": "short_answer"
+}

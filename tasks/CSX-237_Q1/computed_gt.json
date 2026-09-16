@@ -1,0 +1,194 @@
+{
+  "decision_rule": {
+    "positive_thresholds": {
+      "F": 0.8,
+      "K": 0.8,
+      "S": 0.8,
+      "V": 0.95,
+      "X": 0.9,
+      "Z": 0.8
+    },
+    "rainfall_threshold": {
+      "R_lt": 0.05
+    },
+    "score_formula": "100*(0.26S+0.16K+0.16Z+0.12V+0.18X+0.12F-0.04R)",
+    "score_threshold": 90.0,
+    "summary": "Compute seven normalized terms and assign the high-consistency label when the score is at least 90, all six positive terms pass, and R is below 0.05."
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "category_counts": {
+      "event_catalogs": 7,
+      "event_reports": 3,
+      "exposure_impact": 8,
+      "geospatial_context": 3,
+      "other": 1,
+      "physical_hazard": 10,
+      "remote_sensing": 4
+    },
+    "event_date_or_window": "2010-02-27",
+    "event_name": "2010 Maule Chile earthquake and tsunami",
+    "file_count": 36,
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "hazard_label": "Earthquake, tsunami, and geophysical hazard",
+    "package_id": "CSX-237"
+  },
+  "event_id": "CSX-237",
+  "key_values": {
+    "component_ledger": [
+      {
+        "term": "S",
+        "threshold_result": "pass",
+        "value": 0.867
+      },
+      {
+        "term": "K",
+        "threshold_result": "pass",
+        "value": 0.886
+      },
+      {
+        "term": "Z",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "V",
+        "threshold_result": "pass",
+        "value": 1.0
+      },
+      {
+        "term": "X",
+        "threshold_result": "pass",
+        "value": 0.966
+      },
+      {
+        "term": "F",
+        "threshold_result": "pass",
+        "value": 0.833
+      },
+      {
+        "term": "R",
+        "threshold_result": "pass",
+        "value": 0.019
+      }
+    ],
+    "final_label": "high_consistency_catalog_led_record",
+    "positive_terms_passing": 6,
+    "rainfall_term_pass": true,
+    "raw_inputs": {
+      "alertscore": 3,
+      "amenity_count": 1000,
+      "building_count": 0,
+      "depth_km": 35.0,
+      "magnitude": 8.8,
+      "mean_precip_mm": 0.095,
+      "population_sum": 5823675.13,
+      "post_count": 0,
+      "pre_count": 0,
+      "precip_values_mm": [
+        0.0,
+        0.0,
+        0.081,
+        0.136,
+        0.258
+      ],
+      "runner_up_magnitude": 5.7
+    },
+    "score": 92.0
+  },
+  "primary_gt": {
+    "answer": 92.0,
+    "components": {
+      "F": 0.833,
+      "K": 0.886,
+      "R": 0.019,
+      "S": 0.867,
+      "V": 1.0,
+      "X": 0.966,
+      "Z": 1.0
+    },
+    "final_label": "high_consistency_catalog_led_record",
+    "positive_terms_passing": 6,
+    "rainfall_term_pass": true,
+    "target_family": "maule_event_data_consistency_score_ledger",
+    "tolerance": 0.1,
+    "unit": "points_out_of_100"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Computed from local CSX-237 records only.",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2010_Maule_Chile_earthquake_and_tsunami.json",
+      "data/event_catalogs/event_catalogs_002_GDACS_earthquake_alert_API.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "question_conversion_audit": {
+    "calculation_first_design": true,
+    "conversion_note_created": false,
+    "lettered_answer_absent": true,
+    "prescriptive_guidance_points": 0,
+    "prose_centered_points": 0,
+    "visible_list_framing_absent": true
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns seven ledger rows plus score, positive-term count, rainfall pass flag, and final label.",
+        "name": "JSON ledger completeness",
+        "partial_credit": "Award 1-2 points for a mostly complete structure with missing rows or missing summary fields.",
+        "points": 3
+      },
+      {
+        "description": "Parses M8.8, alert score 3, 35 km depth, runner-up magnitude 5.7, five precipitation values, 0 pre and 0 post radar counts, population 5823675.13, and amenity count 1000.",
+        "name": "Raw value parsing",
+        "partial_credit": "Award 2-3 points for most anchors with minor rounding mistakes, and 1 point for a few correct anchors.",
+        "points": 4
+      },
+      {
+        "description": "Computes S=0.867, K=0.886, Z=1.000, V=1.000, X=0.966, F=0.833, and R=0.019 within tolerance.",
+        "name": "Normalized terms",
+        "partial_credit": "Award 2-3 points for mostly correct terms with one or two formula errors.",
+        "points": 4
+      },
+      {
+        "description": "Applies the stated coefficients and reports 92.0 points out of 100 within 0.1.",
+        "name": "Weighted score",
+        "partial_credit": "Award 2-3 points for the right formula with arithmetic or rounding errors.",
+        "points": 4
+      },
+      {
+        "description": "Marks all six positive terms as passing and marks the rainfall term as passing.",
+        "name": "Threshold logic",
+        "partial_credit": "Award 1 point if the final label is right but one threshold result is missing or wrong.",
+        "points": 2
+      },
+      {
+        "description": "Assigns high_consistency_catalog_led_record from the score and threshold gates.",
+        "name": "Final label",
+        "partial_credit": "Award 1 point for a correct score with an incorrect or missing label.",
+        "points": 2
+      },
+      {
+        "description": "Uses compact numeric wording and clear units.",
+        "name": "Numeric clarity",
+        "partial_credit": "Award 0.5 point for minor formatting issues that do not change the result.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "maule_event_data_consistency_score_ledger",
+  "task_id": "CSX-237_Q1",
+  "task_type": "numeric"
+}

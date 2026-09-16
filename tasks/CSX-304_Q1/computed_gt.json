@@ -1,0 +1,178 @@
+{
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "Every requested value is a fixed calculation from local event-window dates, report text flags, physical summaries, surface statistics, and stated thresholds.",
+  "event": {
+    "event_name": "Iraq multi-day dust storm",
+    "hazard_family": "dust_sandstorm_extreme",
+    "region": "Iraq and Mesopotamia",
+    "window_end": "2022-04-10",
+    "window_start": "2022-04-07"
+  },
+  "event_id": "CSX-304",
+  "key_values": {
+    "evidence_roles": {
+      "annual_surface_change": "durable-change countermetric",
+      "event_anchor": "dust-family and location text support",
+      "point_hydromet": "countermetric inputs only",
+      "regional_summaries": "regional countermetric context"
+    },
+    "formulas": {
+      "event_days": "inclusive_days(start,end)",
+      "point_regional_precip_ratio": "max_point_precip_total_mm / regional_precip_mean_mm",
+      "regional_precip_mean_mm": "mean(two regional event-precipitation means)",
+      "score_margin": "dust_transport - max(countermetric scores)",
+      "temperature_margin_below_35c": "35 - max_temperature_c"
+    },
+    "gates": {
+      "dust_score_ge_7": true,
+      "max_temperature_lt_35": true,
+      "regional_max_precip_lt_50": true,
+      "regional_mean_precip_lt_25": true,
+      "score_margin_ge_4": true,
+      "surface_max_lt_0_5": true,
+      "surface_mean_lt_0_1": true
+    },
+    "raw_inputs": {
+      "chirps_precip_mean_mm": 6.315098,
+      "gpm_precip_mean_mm": 5.321299,
+      "max_point_precip_total_mm": 53.89,
+      "max_point_wind_m_s": 6.944,
+      "openmeteo_precip_total_mm": 40.6,
+      "openmeteo_temp_max_c": 28.8,
+      "power_precip_total_mm": 53.89,
+      "power_temp_max_c": 28.42,
+      "regional_precip_max_mm": 14.1592,
+      "regional_temp_max_c": 34.5902,
+      "regional_wind_vector_mean_m_s": 1.212,
+      "surface_change_mean": 0.010858
+    }
+  },
+  "primary_gt": {
+    "answer": {
+      "component_scores": {
+        "dust_transport": 8,
+        "heat_counter": 0,
+        "rain_counter": 2,
+        "surface_counter": 0,
+        "wind_only_counter": 1
+      },
+      "event_days": 4,
+      "final_label": "iraq_multiday_dust_transport_pass",
+      "hydromet": {
+        "max_temperature_c": 34.59,
+        "point_regional_precip_ratio": 9.262,
+        "regional_precip_mean_mm": 5.8182,
+        "temperature_margin_below_35c": 0.41
+      },
+      "score_margin": 6,
+      "surface_change_max": 0.070014
+    },
+    "canonical_answer": "iraq_multiday_dust_transport_pass",
+    "evidence_roles": {
+      "annual_surface_change": "durable surface-change countermetric only",
+      "event_anchor": "dust family, visibility/air-quality wording, date window, and Iraq/Mesopotamia location",
+      "point_hydromet": "package point-weather countermetrics for rain, heat, and wind-only alternatives",
+      "regional_summaries": "regional precipitation, temperature, and wind countermetric context"
+    },
+    "expected_json": {
+      "component_scores": {
+        "dust_transport": 8,
+        "heat_counter": 0,
+        "rain_counter": 2,
+        "surface_counter": 0,
+        "wind_only_counter": 1
+      },
+      "event_days": 4,
+      "final_label": "iraq_multiday_dust_transport_pass",
+      "hydromet": {
+        "max_temperature_c": 34.59,
+        "point_regional_precip_ratio": 9.262,
+        "regional_precip_mean_mm": 5.8182,
+        "temperature_margin_below_35c": 0.41
+      },
+      "score_margin": 6,
+      "surface_change_max": 0.070014
+    },
+    "rule": "dust>=7 and margin>=4 with rainfall, heat, and surface gates below threshold",
+    "thresholds": {
+      "dust_min": 7,
+      "margin_min": 4,
+      "rain_max_max_mm": 50.0,
+      "rain_mean_max_mm": 25.0,
+      "surface_max_max": 0.5,
+      "surface_mean_max": 0.1,
+      "temp_max_c": 35.0
+    },
+    "tolerances": {
+      "mm": 0.01,
+      "ratio": 0.005,
+      "surface": 1e-06,
+      "temp_c": 0.01
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All numeric anchors are regenerated from local CSX-304 package files.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Iraq_multi-day_dust_storm.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested six top-level JSON fields with nested metric groups and final label.",
+        "name": "Output schema",
+        "partial_credit": "Award 1-2 points for a recoverable object with one missing field or inconsistent rounding.",
+        "points": 3
+      },
+      {
+        "description": "Computes regional precipitation mean near 5.8182 mm, point-to-regional ratio near 9.262, and the regional rainfall gate states.",
+        "name": "Hydrometeorological arithmetic",
+        "partial_credit": "Award 1-4 points for correct extraction with one arithmetic or gate error.",
+        "points": 5
+      },
+      {
+        "description": "Computes maximum temperature near 34.59 C, margin near 0.41 C, and surface_change_max near 0.070014 with threshold states.",
+        "name": "Temperature and surface thresholds",
+        "partial_credit": "Award 1-2 points for two of the three threshold checks.",
+        "points": 3
+      },
+      {
+        "description": "Applies all five component-score formulas and reports scores 8, 2, 0, 1, and 0.",
+        "name": "Component scores",
+        "partial_credit": "Award 1 point per mostly correct score group, up to 3 points for four groups.",
+        "points": 4
+      },
+      {
+        "description": "Computes score_margin = 6 and applies all final gates to get the pass label.",
+        "name": "Final threshold rule",
+        "partial_credit": "Award 1-2 points for the right label with one missing gate or margin error.",
+        "points": 3
+      },
+      {
+        "description": "Keeps the consequence label concise and directly tied to the threshold result.",
+        "name": "Computed consequence",
+        "partial_credit": "Award 0.5 points for a correct label with extra narration.",
+        "points": 1
+      },
+      {
+        "description": "Does not add measured health burden, direct damage, or operational advice beyond the computed values.",
+        "name": "Scope control",
+        "partial_credit": "Award 0.5 points for one minor extra inference that does not alter the result.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "iraq_multiday_dust_transport_countermetric_score",
+  "task_id": "CSX-304_Q1",
+  "task_type": "numeric"
+}

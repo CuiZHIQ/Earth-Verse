@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-076_Q1",
+  "event_id": "CSX-076",
+  "task_type": "short_answer",
+  "target_family": "pakistan_monsoon_flood_load_numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "pakistan_monsoon_flood_load_numeric_diagnosis",
+    "gridded_means_mm": {
+      "gpm": 792.492,
+      "chirps": 815.383,
+      "era5_land": 846.553
+    },
+    "gridded_comparison_window": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-07-29"
+    },
+    "ensemble_mean_mm": 818.143,
+    "point_rainfall": {
+      "event_days": 110,
+      "total_mm": 1493.3,
+      "peak_day_mm": 150.31,
+      "peak_day_share": 0.1007,
+      "wet_day_fraction": 0.3818,
+      "heavy_day_fraction": 0.2818,
+      "longest_heavy_spell_days": 13,
+      "max_14day_share": 0.4438
+    },
+    "threshold_state": "all_gridded_means_gt_700mm_and_peak_day_lt_15pct",
+    "final_label": "persistent_monsoon_flood_load_consistent"
+  },
+  "key_values": {
+    "event_name": "2022 Pakistan monsoon floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_window": [
+      "2022-06-14",
+      "2022-10-01"
+    ],
+    "catalog_alertlevel": "Red",
+    "gridded_comparison_window": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-07-29"
+    },
+    "gridded_means_mm": {
+      "gpm": 792.492,
+      "chirps": 815.383,
+      "era5_land": 846.553
+    },
+    "ensemble_mean_mm": 818.143,
+    "all_gridded_means_gt_700mm": true,
+    "point_rainfall": {
+      "event_days": 110,
+      "total_mm": 1493.3,
+      "peak_day_mm": 150.31,
+      "peak_day_date": "2022-08-18",
+      "peak_day_share": 0.1007,
+      "wet_days_ge_1mm": 42,
+      "wet_day_fraction": 0.3818,
+      "heavy_days_ge_10mm": 31,
+      "heavy_day_fraction": 0.2818,
+      "longest_heavy_spell": {
+        "days": 13,
+        "start_date": "2022-08-13",
+        "end_date": "2022-08-25"
+      },
+      "max_14day": {
+        "mm": 662.76,
+        "start_date": "2022-08-13",
+        "end_date": "2022-08-26",
+        "share": 0.4438
+      }
+    },
+    "decision_rule": {
+      "gridded_load_pass": "all three accumulated means > 700 mm",
+      "single_day_control_fails": "peak_day_share < 0.15",
+      "persistence_pass": "heavy_days_ge_10mm >= 30 and longest_heavy_spell_days >= 10",
+      "final_label": "persistent_monsoon_flood_load_consistent"
+    },
+    "judge_anchors": {
+      "required_metric_groups": [
+        "gridded accumulated rainfall over the declared comparison window",
+        "point total and peak-day concentration",
+        "wet and heavy-day persistence",
+        "maximum 14-day concentration"
+      ],
+      "weak_alternatives_to_reject": [
+        "single_day_only",
+        "report_wording_only"
+      ]
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final structured answer",
+        "points": 3,
+        "description": "Returns the requested JSON fields, target family, threshold state, and final label.",
+        "partial_credit": "Award 1-2 points for a mostly complete JSON answer with one missing field group."
+      },
+      {
+        "name": "Gridded rainfall calculations",
+        "points": 4,
+        "description": "Reports the declared gridded comparison window, GPM 792.492 mm, CHIRPS 815.383 mm, ERA5-Land 846.553 mm, ensemble mean 818.143 mm, and that all three comparison-window means exceed 700 mm.",
+        "partial_credit": "Award 2-3 points for correct means with missing or rounded ensemble arithmetic."
+      },
+      {
+        "name": "Point total and peak-day concentration",
+        "points": 4,
+        "description": "Reports 110 days, 1493.3 mm total, 150.31 mm peak day, and peak-day share 0.1007.",
+        "partial_credit": "Award 2-3 points for the total and peak value without a correct ratio test; award 1 point for only one correct anchor."
+      },
+      {
+        "name": "Persistence metrics",
+        "points": 3,
+        "description": "Reports wet-day fraction 42/110=0.3818, heavy-day fraction 31/110=0.2818, and the 13-day heavy spell.",
+        "partial_credit": "Award 1-2 points for two of the three persistence anchors."
+      },
+      {
+        "name": "Rolling-window calculation",
+        "points": 2,
+        "description": "Reports the maximum 14-day total of 662.76 mm and its share of 0.4438.",
+        "partial_credit": "Award 1 point for the correct window total without the share, or the correct share without the total."
+      },
+      {
+        "name": "Threshold reasoning",
+        "points": 2,
+        "description": "Combines the gridded load check, peak-day share below 15 percent, and heavy-day persistence into the threshold state.",
+        "partial_credit": "Award 1 point for applying only one threshold correctly."
+      },
+      {
+        "name": "Weak alternative rejection",
+        "points": 1,
+        "description": "Rejects a single-day-only or report-only explanation using the computed values.",
+        "partial_credit": "Award 0.5 points for rejecting one weak alternative without a numeric reason."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Provides a short event-specific interpretation without adding new loss estimates.",
+        "partial_credit": "Award 0.5 points for a correct label with overly broad prose."
+      }
+    ]
+  },
+  "tolerances": {
+    "millimeter_values": 0.01,
+    "share_values": 0.0005
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_monsoon_floods.json",
+      "data/event_catalogs/event_catalogs_002_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "Daily point-rainfall metrics use the full 2022-06-14 to 2022-10-01 event window; gridded precipitation means use their declared 2022-06-14 to 2022-07-29 package comparison window."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-207_Q2",
+  "event_id": "CSX-207",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "event_window_days": 52,
+    "ledger": [
+      {
+        "test": "smoke_pm_proxy_load",
+        "formula": "150 reported 2024 PM2.5 exceedance days / 52 event days",
+        "value": 2.88,
+        "threshold_result": "pass: >= 1.00",
+        "implication": "The annual reported PM2.5 exceedance burden is a strong smoke/PM proxy when normalized by the event-window duration."
+      },
+      {
+        "test": "burn_event_density",
+        "formula": "459 regional wildfire records / 46 catalog days; 44 active days / 46 days",
+        "value": {
+          "density_per_day": 9.98,
+          "active_day_fraction": 0.96
+        },
+        "threshold_result": "pass: density >= 5 and active fraction >= 0.80",
+        "implication": "Many regional burn records support a distributed smoke source field over the available daily catalog slice."
+      },
+      {
+        "test": "fire_weather_support",
+        "formula": "sum(max(Tmax - 35, 0)); longest precip <= 0.1 mm/day run; count wind max >= 20 km/h",
+        "value": {
+          "heat_load_c_day": 32.7,
+          "dry_run_days": 19,
+          "windy_days": 21
+        },
+        "threshold_result": "pass: heat load >= 25, dry run >= 14, windy days >= 15",
+        "implication": "The available daily weather slice is hot, dry, and periodically windy enough to support fire activity and smoke movement."
+      },
+      {
+        "test": "precipitation_clearing",
+        "formula": "62.4048 mm CHIRPS mean / 46 available CHIRPS days; 39 dry days / 46 weather days",
+        "value": {
+          "chirps_mm_day": 1.36,
+          "dry_day_fraction": 0.85
+        },
+        "threshold_result": "clearing fails: < 2 mm/day and dry fraction >= 0.75",
+        "implication": "Rainfall in the available product slice is too diffuse to reset the fire-smoke classification."
+      },
+      {
+        "test": "satellite_localization",
+        "formula": "dNBR max/mean and embedding-change max/mean, with broad conversion ruled out if both means are low",
+        "value": {
+          "dnbr_ratio": 8.04,
+          "embedding_ratio": 14.5,
+          "broad_conversion": false
+        },
+        "threshold_result": "localized: ratios > 5, dNBR mean 0.112 < 0.20, embedding mean 0.053 < 0.08",
+        "implication": "Large maxima but low means indicate localized burn or surface change, not broad regional conversion."
+      }
+    ],
+    "final_classification": "Regional wildfire-smoke loading is numerically consistent with distributed burns, supportive fire weather, incomplete rain clearing, and localized burn scars.",
+    "rejected_alternative": "A compact local fire, heat-only event, rainfall-cleared recovery, or basin-wide land-cover conversion fails at least one computed test."
+  },
+  "judge_anchors": {
+    "answer_type": "numeric_consistency_ledger",
+    "answer": "regional_wildfire_smoke_consistency_pass",
+    "target_family": "numeric_diagnosis",
+    "required_schema": [
+      "event_window_days",
+      "ledger",
+      "final_classification",
+      "rejected_alternative"
+    ],
+    "required_metrics": {
+      "event_window_days": 52,
+      "pm_ratio": 2.88,
+      "burn_density_per_day": 9.98,
+      "active_day_fraction": 0.96,
+      "heat_load_c_day": 32.7,
+      "dry_run_days": 19,
+      "windy_days": 21,
+      "chirps_mm_day": 1.36,
+      "weather_dry_fraction": 0.85,
+      "dnbr_ratio": 8.04,
+      "embedding_ratio": 14.5
+    },
+    "required_states": {
+      "smoke_pm_pass": true,
+      "burn_density_pass": true,
+      "fire_weather_pass": true,
+      "precipitation_clearing_fails": true,
+      "satellite_localized": true,
+      "broad_conversion": false
+    },
+    "rejected_alternatives": [
+      "compact_local_fire",
+      "heat_only",
+      "rainfall_cleared",
+      "broad_conversion"
+    ],
+    "tolerances": {
+      "ratios": 0.05,
+      "counts": 0,
+      "heat_c_day": 0.2,
+      "fractions": 0.02
+    }
+  },
+  "event": {
+    "package_id": "CSX-207",
+    "event_name": "2024 South America historic wildfire smoke emissions",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_date_or_window": "2024-08-01 to 2024-09-21",
+    "event_duration_days": 52
+  },
+  "key_values": {
+    "event_window": {
+      "start": "2024-08-01",
+      "end": "2024-09-21",
+      "duration_days": 52
+    },
+    "coverage_scope": {
+      "available_daily_slice_start": "2024-08-01",
+      "available_daily_slice_end": "2024-09-15",
+      "available_daily_slice_days": 46,
+      "uncovered_event_tail_days": 6,
+      "daily_slice_note": "Catalog, daily weather, and CHIRPS-derived daily-normalized tests use the available 2024-08-01 to 2024-09-15 slice rather than inferred Sep 16-21 daily records."
+    },
+    "smoke_pm_load": {
+      "pm25_days_above_35_ug_m3": 150.0,
+      "pm25_days_per_event_day": 2.8846153846153846,
+      "pm25_proxy_scope": "reported 2024 burden proxy normalized by event-window duration; not a direct event-day PM monitor series",
+      "legal_amazon_carbon_megatonnes": 176.6,
+      "pantanal_burned_fraction": 0.075
+    },
+    "burn_event_density": {
+      "start": "2024-08-01",
+      "end": "2024-09-15",
+      "period_days": 46,
+      "regional_record_count": 459,
+      "records_per_day": 9.978260869565217,
+      "active_day_count": 44,
+      "active_day_fraction": 0.9565217391304348,
+      "country_title_counts": {
+        "Brazil": 368,
+        "Bolivia": 82,
+        "Paraguay": 18
+      }
+    },
+    "fire_weather": {
+      "start": "2024-08-01",
+      "end": "2024-09-15",
+      "period_days": 46,
+      "heat_load_c_day_over_35": 32.70000000000001,
+      "days_tmax_ge_35c": 18,
+      "dry_day_count_precip_le_0_1mm": 39,
+      "dry_day_fraction": 0.8478260869565217,
+      "longest_dry_run_days": 19,
+      "longest_dry_run_start": "2024-08-25",
+      "longest_dry_run_end": "2024-09-12",
+      "windy_day_count_ge_20kmh": 21,
+      "mean_wind_max_kmh": 19.639130434782608,
+      "max_wind_max_kmh": 35.7
+    },
+    "precipitation_clearing": {
+      "chirps_mean_accumulated_mm": 62.40479256676154,
+      "chirps_days": 46,
+      "chirps_mm_day": 1.3566259253643813,
+      "dry_day_fraction": 0.8478260869565217,
+      "clearing_fails": true
+    },
+    "satellite_localization": {
+      "dnbr_mean": 0.11238615527118169,
+      "dnbr_max": 0.9036522820445674,
+      "dnbr_peak_to_mean_ratio": 8.040601441201574,
+      "embedding_change_mean": 0.05313105454741848,
+      "embedding_change_max": 0.7702315879158653,
+      "embedding_change_peak_to_mean_ratio": 14.496824775582947,
+      "broad_conversion": false,
+      "localized": true
+    },
+    "final_classification": "Regional wildfire-smoke loading is numerically consistent with distributed burns, supportive fire weather, incomplete rain clearing, and localized burn scars.",
+    "rejected_alternative": "A compact local fire, heat-only event, rainfall-cleared recovery, or basin-wide land-cover conversion fails at least one computed test."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "requested JSON schema",
+        "points": 4,
+        "description": "Returns event_window_days, a row-wise ledger with formulas, a final classification, and a rejected alternative.",
+        "partial_credit": "Award 2-3 points for a parseable JSON object with one missing or renamed requested field; award 1 point if the required fields are mostly recoverable from prose."
+      },
+      {
+        "name": "numeric anchors",
+        "points": 5,
+        "description": "Correctly computes the 52-day window, annual-proxy PM ratio 2.88, burn density 9.98/day, active fraction 0.96, heat load 32.7 C-day, dry run 19 days, windy days 21, CHIRPS 1.36 mm/day over the available slice, dry fraction 0.85, and satellite ratios 8.04 and 14.50.",
+        "partial_credit": "Award proportional credit for correct values with units; reduce credit for rounding drift, one missed count, or one misplaced denominator."
+      },
+      {
+        "name": "threshold tests",
+        "points": 4,
+        "description": "Applies the smoke, burn-density, fire-weather, precipitation-clearing, and satellite-localization thresholds correctly.",
+        "partial_credit": "Award 1 point for each correctly applied gate group, capped at 4 points; no full credit if the final state contradicts the gates."
+      },
+      {
+        "name": "ledger reasoning",
+        "points": 3,
+        "description": "Ties each row to the consistency proof and avoids replacing the calculations with a broad mechanism essay.",
+        "partial_credit": "Award 1-2 points when most rows connect numbers to threshold results but one implication is vague or too narrative."
+      },
+      {
+        "name": "rejected alternatives",
+        "points": 2,
+        "description": "Uses the computed tests to reject compact local fire, heat-only, rainfall-cleared, or broad-conversion alternatives.",
+        "partial_credit": "Award 1 point for rejecting one weaker alternative with a correct numeric reason."
+      },
+      {
+        "name": "concise classification",
+        "points": 1,
+        "description": "Provides a concise final classification label consistent with the numeric proof.",
+        "partial_credit": "Award 0.5 points for the right classification stated too verbosely or with minor wording drift."
+      },
+      {
+        "name": "overstatement control",
+        "points": 1,
+        "description": "Avoids uncalculated loss, infrastructure-damage, or basin-wide conversion statements.",
+        "partial_credit": "Award 0.5 points if there is one small extra assertion that does not alter the numeric conclusion."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_006_Locked_event_anchor_2024_South_America_historic_wildfire_smoke_emissions.json",
+      "data/event_reports/event_reports_003_Copernicus_CAMS_global_wildfires_review_2024.html",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_wildfire_events.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "All values are recomputed from local package files; no network access is used. PM2.5 days are treated as a reported 2024 burden proxy, and catalog/weather/CHIRPS daily tests are bounded to the available 2024-08-01 to 2024-09-15 slice."
+  }
+}

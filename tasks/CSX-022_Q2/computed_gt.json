@@ -1,0 +1,155 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-022",
+  "key_values": {
+    "event_name": "2022 India-Pakistan pre-monsoon heatwave",
+    "event_window": {
+      "end_date": "2022-05-15",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2022-03-01"
+    },
+    "formulae": {
+      "acclim_anom_c": "max 3-day mean Tmean minus preceding 30-day mean Tmean; Tmean=(Tmax+Tmin)/2",
+      "peak_tmax_c": "max(daily Tmax)",
+      "peak_wbt_c": "max hourly Stull wet-bulb approximation from temperature and relative humidity",
+      "run_tmax_ge40_d": "longest consecutive run where daily Tmax >= 40.0 C",
+      "warm_nights_ge25": "count(daily Tmin >= 25.0 C)"
+    },
+    "gate_thresholds": {
+      "early_season_jump": "acclim_anom_c >= 4.0",
+      "isolated_spike": "run_tmax_ge40_d <= 2",
+      "persistent_heat": "run_tmax_ge40_d >= 7",
+      "warm_night_recovery_loss": "warm_nights_ge25 >= 20",
+      "wet_bulb_ceiling": "peak_wbt_c >= 28.0"
+    },
+    "hazard_family": "heat_wave_urban_heat",
+    "supporting_values": {
+      "acclim_anom_end_date": "2022-04-12",
+      "acclim_prior_30_day_mean_c": 28.4,
+      "acclim_three_day_mean_c": 32.9,
+      "days_apparent_ge40": 15,
+      "days_tmax_ge40": 26,
+      "days_tmax_ge42": 9,
+      "first_tmax_ge40_date": "2022-04-08",
+      "hours_wbt_ge26": 3,
+      "hours_wbt_ge28": 0,
+      "longest_tmin_ge25_run_d": 10,
+      "peak_apparent_temp_c": 42.8,
+      "peak_apparent_temp_date": "2022-05-13",
+      "peak_tmax_date": "2022-05-13",
+      "peak_tmin_c": 31.1,
+      "peak_tmin_date": "2022-05-15",
+      "peak_wbt_time": "2022-03-28T17:00",
+      "warm_nights_ge28": 9
+    },
+    "weather_point": {
+      "end_date": "2022-05-15",
+      "latitude": 25.975393,
+      "longitude": 75.04918,
+      "start_date": "2022-03-01",
+      "timezone": "Asia/Kolkata"
+    }
+  },
+  "numeric_tolerances": {
+    "acclim_anom_c": {
+      "absolute_tolerance": 0.3,
+      "value": 4.5
+    },
+    "peak_tmax_c": {
+      "absolute_tolerance": 0.2,
+      "value": 45.3
+    },
+    "peak_wbt_c": {
+      "absolute_tolerance": 0.3,
+      "value": 27.3
+    },
+    "run_tmax_ge40_d": {
+      "absolute_tolerance": 0,
+      "value": 9
+    },
+    "warm_nights_ge25": {
+      "absolute_tolerance": 1,
+      "value": 25
+    }
+  },
+  "primary_gt": {
+    "answer": "persistent_early_season_dry_heat_recovery_stress",
+    "computed_consequence": "The ledger supports cumulative daytime heat with limited night recovery, not a humid-ceiling or one-day-spike diagnosis.",
+    "gates": {
+      "early_season_jump": true,
+      "isolated_spike": false,
+      "persistent_heat": true,
+      "warm_night_recovery_loss": true,
+      "wet_bulb_ceiling": false
+    },
+    "metrics": {
+      "acclim_anom_c": 4.5,
+      "peak_tmax_c": 45.3,
+      "peak_wbt_c": 27.3,
+      "run_tmax_ge40_d": 9,
+      "warm_nights_ge25": 25
+    },
+    "rejected_alternative": "wet_bulb_ceiling_or_isolated_spike",
+    "target_family": "numeric_diagnosis"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_India-Pakistan_early_heatwave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns target_family = numeric_diagnosis and the final label persistent_early_season_dry_heat_recovery_stress or an exact semantic equivalent.",
+        "name": "target_family_and_answer",
+        "partial_credit": "Give partial credit for a persistent dry-heat label that omits either early-season timing or night-recovery stress.",
+        "points": 3
+      },
+      {
+        "description": "Reports peak_tmax_c = 45.3, run_tmax_ge40_d = 9, warm_nights_ge25 = 25, peak_wbt_c = 27.3, and acclim_anom_c = 4.5 within stated tolerances.",
+        "name": "metric_ledger_values",
+        "partial_credit": "Score proportionally for correct metric values, units, and rounding.",
+        "points": 5
+      },
+      {
+        "description": "Uses longest-run logic, warm-night counting, hourly Stull wet-bulb estimation, and the 3-day mean versus prior-30-day anomaly formula correctly.",
+        "name": "formula_and_window_reconstruction",
+        "partial_credit": "Give partial credit for correct values with one formula or window error.",
+        "points": 4
+      },
+      {
+        "description": "Sets persistent_heat, warm_night_recovery_loss, and early_season_jump to true, sets wet_bulb_ceiling and isolated_spike to false, and uses those gates to reach the final label.",
+        "name": "gate_ledger_and_decision_rule",
+        "partial_credit": "Give partial credit for one incorrect gate with the correct overall diagnosis.",
+        "points": 3
+      },
+      {
+        "description": "Rejects wet-bulb-ceiling and isolated-spike alternatives using the inequalities 27.3 < 28.0 and 9 > 2.",
+        "name": "computed_alternative_rejection",
+        "partial_credit": "Give partial credit for rejecting only one alternative with a numeric basis.",
+        "points": 2
+      },
+      {
+        "description": "Gives one consequence tied to cumulative daytime heat and limited night recovery, without turning the answer into an action plan.",
+        "name": "bounded_computed_consequence",
+        "partial_credit": "Give partial credit for a plausible consequence that is weakly tied to the ledger.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the JSON compact and avoids uncomputed mortality, crop-loss, power-grid, or region-wide damage totals.",
+        "name": "compact_output_and_overclaim_control",
+        "partial_credit": "No credit if the answer becomes a broad disaster explanation or extra loss accounting.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-022_Q2",
+  "task_type": "numeric"
+}

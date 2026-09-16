@@ -1,0 +1,176 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-266",
+  "key_values": {
+    "component_scores": {
+      "burn_score": 1.0,
+      "dryness_score": 1.0,
+      "exposure_only_index": 100.0,
+      "exposure_score": 1.0,
+      "fuel_burn_index": 94.6,
+      "heat_dryness_score": 0.844,
+      "pyroconvective_priority_index": 96.9,
+      "rainfall_index": 21.6,
+      "rainfall_score": 0.288,
+      "smoke_score": 1.0,
+      "wind_score": 1.0
+    },
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.03,
+      "chirps_mean_precip_mm": 58.8,
+      "dry_day_fraction": 0.94,
+      "era5_grid_tmax_max_c": 29.2,
+      "event_days": 182,
+      "event_end_date": "2020-02-29",
+      "event_start_date": "2019-09-01",
+      "gpm_mean_precip_mm": 62.0,
+      "heat_days_ge_40c": 38,
+      "hot_windy_days": 6,
+      "longest_dry_run_days": 79,
+      "longest_heat_run_ge_40c_days": 15,
+      "peak_tmax_c": 46.0,
+      "peak_tmax_date": "2019-12-24",
+      "peak_wind_date": "2020-01-10",
+      "peak_wind_kmh": 49.2,
+      "population_exposed": 344722,
+      "power_heat_days_ge_40c": 56,
+      "power_total_precip_mm": 21.8,
+      "sentinel2_dnbr_max": 0.974,
+      "sentinel2_dnbr_mean": 0.123,
+      "smoke_escalation_flags": 6,
+      "total_precip_mm": 86.5,
+      "wind_days_ge_35kmh": 14
+    },
+    "coverage_windows": {
+      "chirps": "2019-09-01 to 2019-10-16",
+      "dnbr_post": "2019-09-01 to 2019-11-30",
+      "dnbr_pre": "2019-07-03 to 2019-08-25",
+      "era5_land": "2019-09-01 to 2019-10-16",
+      "gpm_imerg": "2019-09-01 to 2019-10-16",
+      "open_meteo": "2019-09-01 to 2020-02-29"
+    },
+    "event_window": {
+      "end_date": "2020-02-29",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2019-09-01"
+    },
+    "evidence_scope": {
+      "dnbr": "Sentinel-2 dNBR post window 2019-09-01 to 2019-11-30 supports burn/land-surface context but is not a full-season national burn-severity map.",
+      "gridded_products": "ERA5-Land, GPM, and CHIRPS overlap from 2019-09-01 to 2019-10-16; use them as bounded early-season context rather than full-event coverage.",
+      "point_weather": "Open-Meteo daily point sample spans the full event window and supports heat, dryness, wind, and hot-windy persistence metrics.",
+      "population": "Masked WorldPop statistic is used as exposure context, not as a direct-harm count."
+    },
+    "text_claim_counts": {
+      "dry_mentions": 3,
+      "fire_mentions": 27,
+      "hot_mentions": 5,
+      "smoke_mentions": 27
+    },
+    "text_claim_flags": {
+      "air_quality_impact": true,
+      "cross_pacific_or_global_transport": true,
+      "firestorms": true,
+      "pyrocumulonimbus": true,
+      "smoke_height_15_19_km": true,
+      "stratosphere": true
+    }
+  },
+  "primary_gt": {
+    "answer": "pyroconvective_smoke_injection_priority",
+    "evidence_scope": {
+      "dnbr": "Sentinel-2 dNBR post window 2019-09-01 to 2019-11-30 supports burn/land-surface context but is not a full-season national burn-severity map.",
+      "gridded_products": "ERA5-Land, GPM, and CHIRPS overlap from 2019-09-01 to 2019-10-16; use them as bounded early-season context rather than full-event coverage.",
+      "point_weather": "Open-Meteo daily point sample spans the full event window and supports heat, dryness, wind, and hot-windy persistence metrics.",
+      "population": "Masked WorldPop statistic is used as exposure context, not as a direct-harm count."
+    },
+    "formula_trace": {
+      "burn_score": 1.0,
+      "dryness_score": 1.0,
+      "exposure_score": 1.0,
+      "fuel_burn_index": 94.6,
+      "heat_dryness_score": 0.844,
+      "priority_index_formula": "round(100*(0.20*heat_dryness + 0.15*dryness + 0.10*wind + 0.15*burn + 0.30*smoke + 0.10*exposure), 1)",
+      "smoke_score": 1.0,
+      "wind_score": 1.0
+    },
+    "impact_chain": [
+      "hot_dry_fuels_and_wind",
+      "pyroconvective_smoke_injection",
+      "regional_to_long_range_air_quality_impacts"
+    ],
+    "key_metrics": {
+      "heat_days_ge_40c": 38,
+      "longest_dry_run_days": 79,
+      "population_exposed": 344722,
+      "sentinel2_dnbr_mean": 0.123,
+      "smoke_escalation_flags": 6,
+      "wind_days_ge_35kmh": 14
+    },
+    "priority_index": 96.9
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2019-2020_Australian_Black_Summer_heat-drought-fire-smoke_event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects pyroconvective_smoke_injection_priority and reports the explicit weighted priority index near 96.9.",
+        "name": "Priority label",
+        "partial_credit": "Award 1-2 points for a fire-atmosphere answer that misses the smoke-injection priority label.",
+        "points": 3
+      },
+      {
+        "description": "Uses heat, dryness, and wind metrics, including 38 days >=40 C, 79 dry-run days, 14 windy days, and 6 hot-windy days.",
+        "name": "Fire-weather preconditioning",
+        "partial_credit": "Award 2-3 points for using some but not all major preconditioning metrics.",
+        "points": 4
+      },
+      {
+        "description": "Identifies pyrocumulonimbus, firestorms, 15-19 km smoke height, stratospheric injection, long-distance transport, and air-quality impacts.",
+        "name": "Smoke escalation",
+        "partial_credit": "Award 2-3 points for recognizing smoke escalation but missing height/transport or air-quality implications.",
+        "points": 4
+      },
+      {
+        "description": "Uses dNBR mean 0.123 and max 0.974 as bounded burn or land-surface context, noting that its post window ends before the full event period and should not be the only priority.",
+        "name": "Burn and surface context",
+        "partial_credit": "Award 1-2 points for mentioning burn context but over-weighting it.",
+        "points": 3
+      },
+      {
+        "description": "Uses population exposure as impact context without reducing the answer to exposure-only reasoning.",
+        "name": "Exposure context",
+        "partial_credit": "Award 1 point if population is mentioned but its role is unclear.",
+        "points": 2
+      },
+      {
+        "description": "Rejects rainfall or flood as the primary mechanism and explains the heat-drought-fire-smoke chain.",
+        "name": "Mechanism rejection",
+        "partial_credit": "Award 1 point if rainfall/flood is rejected without explanation.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported national loss, mortality, attribution, exact burned-area, or direct-harm claims.",
+        "name": "Overclaim control",
+        "partial_credit": "Award 1 point if only minor overclaiming appears.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-266_Q1",
+  "task_type": "short_answer"
+}

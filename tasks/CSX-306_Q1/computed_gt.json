@@ -1,0 +1,168 @@
+{
+  "decision_rule": {
+    "final_label": "source_proximal_ash_anchor_controls",
+    "requires_computation": true,
+    "score_rule": "The context-controls label requires at least three passed tests; this event passes one.",
+    "summary": "Compute a four-test gate for whether rain context and change-map availability can control the Barren Island ash-plume classification."
+  },
+  "evaluation_mode": "deterministic",
+  "event": {
+    "event_date_or_window": "2010-09-03 to 2010-09-03",
+    "event_name": "2010 Barren Island ash plume",
+    "hazard_family": "volcano_ash_lahar",
+    "location": "Barren Island, Andaman Sea",
+    "package_id": "CSX-306"
+  },
+  "event_id": "CSX-306",
+  "key_values": {
+    "change_counts": {
+      "optical_post_count": 0,
+      "optical_pre_count": 0,
+      "radar_post_count": 0,
+      "radar_pre_count": 0
+    },
+    "gate_tests": {
+      "change_scenes": false,
+      "date_alignment": false,
+      "point_rain": false,
+      "regional_peak": true
+    },
+    "locked_event_start": "2010-09-03",
+    "point_precip_inputs_mm": {
+      "open_meteo": 13.3,
+      "power": 13.99
+    },
+    "regional_peak_inputs_mm": {
+      "chirps_event_precip_mm_max": 39.192,
+      "era5_precipitation_sum_mm_max": 64.043,
+      "gpm_event_precip_mm_max": 184.585
+    },
+    "report": {
+      "ash_plume_sentence_present": true,
+      "description": "Remote Barren Island Volcano emits a small plume of ash on September 25, 2010.",
+      "report_image_date": "September 25, 2010",
+      "small_ash_phrase_present": true
+    }
+  },
+  "numeric_tolerances": {
+    "change_scene_total": {
+      "absolute_tolerance": 0,
+      "target": 0
+    },
+    "date_offset_days": {
+      "absolute_tolerance": 0,
+      "target": 22
+    },
+    "peak_to_point_ratio": {
+      "absolute_tolerance": 0.001,
+      "target": 13.528
+    },
+    "point_precip_mean_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 13.645
+    },
+    "rain_change_gate_score": {
+      "absolute_tolerance": 0,
+      "target": 1
+    },
+    "regional_peak_precip_mm": {
+      "absolute_tolerance": 0.001,
+      "target": 184.585
+    }
+  },
+  "primary_gt": {
+    "answer": "source_proximal_ash_anchor_controls",
+    "metrics": {
+      "change_scene_total": 0,
+      "date_offset_days": 22,
+      "peak_to_point_ratio": 13.528,
+      "point_precip_mean_mm": 13.645,
+      "rain_change_gate_score": 1,
+      "regional_peak_precip_mm": 184.585
+    },
+    "rejected": "rain_or_change_context_controls",
+    "target_family": "barren_island_ash_plume_rain_change_gate_consistency",
+    "tests": {
+      "change_scenes": false,
+      "date_alignment": false,
+      "point_rain": false,
+      "regional_peak": true
+    },
+    "thresholds": {
+      "change_scene_min": 1,
+      "date_offset_max_days": 3,
+      "point_mean_min_mm": 25,
+      "regional_peak_min_mm": 100,
+      "score_min_for_context_controls": 3
+    },
+    "tolerances": {
+      "change_scene_total": 0,
+      "date_offset_days": 0,
+      "peak_to_point_ratio": 0.001,
+      "point_precip_mean_mm": 0.001,
+      "rain_change_gate_score": 0,
+      "regional_peak_precip_mm": 0.001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All scored values are recomputed from local CSX-306 dates, precipitation summaries, and change-scene counts.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2010_Barren_Island_ash_plume.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with the requested numeric fields, final classification, and one short computed consequence.",
+        "name": "Answer form",
+        "partial_credit": "Award 1-2 points if the values are recoverable but field names or nesting differ.",
+        "points": 3
+      },
+      {
+        "description": "Computes the report image date, locked event start, and date offset correctly: 2010-09-25 minus 2010-09-03 equals 22 days.",
+        "name": "Timing term",
+        "partial_credit": "Award 1-3 points for finding the two dates but making a small arithmetic or direction error.",
+        "points": 4
+      },
+      {
+        "description": "Computes point_precip_mean_mm = 13.645, regional_peak_precip_mm = 184.585, and peak_to_point_ratio = 13.528 within tolerance.",
+        "name": "Rain aggregation",
+        "partial_credit": "Award about 1 point for each correct precipitation component and 1 point for the ratio.",
+        "points": 4
+      },
+      {
+        "description": "Computes change_scene_total = 0 from the four radar and optical pre/post counts.",
+        "name": "Change-scene count",
+        "partial_credit": "Award 1-2 points for finding the zero-count products but summing only one sensor.",
+        "points": 3
+      },
+      {
+        "description": "Applies the four threshold tests correctly and reports rain_change_gate_score = 1.",
+        "name": "Gate score",
+        "partial_credit": "Award 1 point per correctly evaluated threshold test.",
+        "points": 4
+      },
+      {
+        "description": "Returns source_proximal_ash_anchor_controls and rejects rain_or_change_context_controls from the score being below 3.",
+        "name": "Computed consequence",
+        "partial_credit": "Award 1 point for the correct rejection with incomplete wording.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "barren_island_ash_plume_rain_change_gate_consistency",
+  "task_id": "CSX-306_Q1",
+  "task_type": "numeric"
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-312_Q1",
+  "event_id": "CSX-312",
+  "task_type": "numeric",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "integrated_lerz_lava_collapse_chain",
+    "target_family": "candidate_explanation_score_ledger",
+    "metrics": {
+      "fissure_km": 6.8,
+      "lava_km2": 35.5,
+      "rate_m3s": 100.0,
+      "eq_mw": 6.9,
+      "collapse_mw": [
+        4.7,
+        5.4
+      ],
+      "precip_mm": 193.836
+    },
+    "flags": {
+      "orange_alert": true,
+      "scale_200yr": true,
+      "lava_extent": true,
+      "effusion": true,
+      "quake": true,
+      "collapse_energy": true,
+      "summit_sequence": true
+    },
+    "scores": {
+      "integrated": 10,
+      "rainfall_context": 2,
+      "ash_only": 0,
+      "earthquake_only": 0
+    },
+    "decision_rule": "integrated>=8 and integrated>max(counters)",
+    "tolerances": {
+      "fissure_km": 0.2,
+      "lava_km2": 0.5,
+      "rate_m3s": 1,
+      "eq_mw": 0.1,
+      "collapse_mw": 0.1,
+      "precip_mm": 0.01
+    }
+  },
+  "event": {
+    "event_id": "CSX-312",
+    "event_name": "2018 Kilauea eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "event_date_or_window": {
+      "start_date": "2018-05-03",
+      "end_date": "2018-08-04",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    }
+  },
+  "key_values": {
+    "gdacs_alert_level": "Orange",
+    "gdacs_alert_score": 2.0,
+    "metrics": {
+      "fissure_km": 6.8,
+      "lava_km2": 35.5,
+      "rate_m3s": 100.0,
+      "eq_mw": 6.9,
+      "collapse_mw": [
+        4.7,
+        5.4
+      ],
+      "precip_mm": 193.836
+    },
+    "flags": {
+      "orange_alert": true,
+      "scale_200yr": true,
+      "lava_extent": true,
+      "effusion": true,
+      "quake": true,
+      "collapse_energy": true,
+      "summit_sequence": true
+    },
+    "score_formula": "2*orange_alert + 2*scale_200yr + 2*lava_extent + 1*effusion + 1*quake + 1*collapse_energy + 1*summit_sequence",
+    "counter_score_rules": {
+      "rainfall_context": "2 if precip_mm >= 150 else 0",
+      "ash_only": "1 if volcano alert is Green/Orange and lava_flow_covered_area is false else 0",
+      "earthquake_only": "2 if eq_mw >= 6.5 and eruptive_fissures_opened is false else 0"
+    },
+    "decision_rule": "integrated>=8 and integrated>max(counters)"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2018_Kilauea_eruption.json",
+      "data/event_reports/event_reports_004_USGS_Kilauea_2018_summit_collapse_and_Lower_East_Rift_Zone_eruption.html",
+      "data/event_catalogs/event_catalogs_004_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer shape",
+        "points": 3,
+        "description": "Returns compact JSON with target_family, metrics, flags, scores, answer, and one computed_consequence.",
+        "partial_credit": "Give partial credit when the final label is present but one ledger block is incomplete."
+      },
+      {
+        "name": "Metric extraction",
+        "points": 4,
+        "description": "Extracts fissure length 6.8 km, lava area 35.5 sq km, minimum lava rate 100 m3/s, Mw 6.9 earthquake, summit-collapse Mw 4.7-5.4, and precipitation maximum 193.836 mm within tolerance.",
+        "partial_credit": "Give partial credit for at least four correct metrics with units or recognizable field names."
+      },
+      {
+        "name": "Integrated-score formula",
+        "points": 4,
+        "description": "Applies the integrated score formula exactly: 2*orange_alert + 2*200yr_scale + 2*lava_extent + 1*effusion + 1*quake + 1*collapse_energy + 1*summit_sequence.",
+        "partial_credit": "Give partial credit for using the right gates but making one weight or arithmetic error."
+      },
+      {
+        "name": "Counter-score tests",
+        "points": 3,
+        "description": "Computes the counter scores as rainfall_context = 2, ash_only = 0, and earthquake_only = 0 using the defined tests.",
+        "partial_credit": "Give partial credit for rejecting the counterlabels qualitatively while omitting one score."
+      },
+      {
+        "name": "Decision rule and label",
+        "points": 3,
+        "description": "Uses integrated_score >= 8 and integrated_score > max(counter_scores) to return integrated_lerz_lava_collapse_chain.",
+        "partial_credit": "Give partial credit when the label is correct but the threshold comparison is not shown."
+      },
+      {
+        "name": "Computed consequence",
+        "points": 2,
+        "description": "States only the short consequence supported by the ledger: rainfall remains contextual while the coupled LERZ lava, summit-collapse, and earthquake chain dominates.",
+        "partial_credit": "Give partial credit for a concise event-specific consequence with one minor unsupported embellishment."
+      },
+      {
+        "name": "No overclaim",
+        "points": 1,
+        "description": "Avoids unsupported response advice, casualty/loss totals, road-closure claims, gas concentrations, ashfall depths, or treating the task as a broad disaster interpretation.",
+        "partial_credit": "No credit for this item if the answer centers operational advice or uncomputed impacts."
+      }
+    ]
+  }
+}

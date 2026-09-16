@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-237_Q2",
+  "event_id": "CSX-237",
+  "task_type": "numeric",
+  "target_family": "formula_threshold_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "result": {
+      "ledger_score": 4,
+      "final_numeric_label": "compound_seismic_high_facility_imbalance",
+      "seismic_depth_score": 4.462,
+      "school_share": 0.945,
+      "safety_care_ratio": 8.167,
+      "population_per_non_school_amenity": 105885.0,
+      "population_per_care_node": 970612.5
+    },
+    "ledger": [
+      {
+        "row": "seismic_depth",
+        "values": {
+          "magnitude": 8.8,
+          "depth_km": 35.0,
+          "alert_numeric": 3,
+          "seismic_depth_score": 4.462
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "compound_link",
+        "values": {
+          "compound_flag": 1,
+          "hazard_family": "earthquake_tsunami_geophysical"
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "facility_imbalance",
+        "values": {
+          "school_share": 0.945,
+          "safety_care_ratio": 8.167,
+          "safety_nodes": 49,
+          "care_nodes": 6
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "population_load",
+        "values": {
+          "population_sum": 5823675.1,
+          "non_school_amenities": 55,
+          "population_per_non_school_amenity": 105885.0,
+          "population_per_care_node": 970612.5
+        },
+        "threshold_result": "pass"
+      }
+    ],
+    "calculation_note": "All four rows pass: the ledger combines 8.8 magnitude, 35.0 km depth, Red alert, a 0.945 school share, a 49:6 safety-care split, and 5823675.1 people."
+  },
+  "event": {
+    "package_id": "CSX-237",
+    "event_name": "2010 Maule Chile earthquake and tsunami",
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "event_date": "2010-02-27",
+    "location_text": "Maule, Chile"
+  },
+  "formulas": {
+    "seismic_depth_score": "magnitude * alert_numeric / sqrt(depth_km)",
+    "school_share": "school_count / amenity_element_count",
+    "safety_care_ratio": "(police_count + fire_station_count) / (hospital_count + shelter_count)",
+    "population_per_non_school_amenity": "population_sum / (amenity_element_count - school_count)",
+    "population_per_care_node": "population_sum / (hospital_count + shelter_count)"
+  },
+  "thresholds": {
+    "seismic_depth": "magnitude >= 8.5 and depth_km <= 70 and alert_numeric == 3 and seismic_depth_score >= 4",
+    "compound_link": "compound_flag == 1",
+    "facility_imbalance": "school_share >= 0.90 and safety_care_ratio >= 5",
+    "population_load": "population_per_non_school_amenity >= 100000 and population_per_care_node >= 900000",
+    "final_label": "compound_seismic_high_facility_imbalance if ledger_score == 4 else partial_numeric_match"
+  },
+  "key_values": {
+    "magnitude": 8.8,
+    "depth_km": 35.0,
+    "alert_level": "Red",
+    "alert_numeric": 3,
+    "compound_flag": 1,
+    "population_sum": 5823675.1,
+    "safety_nodes": 49,
+    "care_nodes": 6,
+    "non_school_amenities": 55,
+    "ledger": [
+      {
+        "row": "seismic_depth",
+        "values": {
+          "magnitude": 8.8,
+          "depth_km": 35.0,
+          "alert_numeric": 3,
+          "seismic_depth_score": 4.462
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "compound_link",
+        "values": {
+          "compound_flag": 1,
+          "hazard_family": "earthquake_tsunami_geophysical"
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "facility_imbalance",
+        "values": {
+          "school_share": 0.945,
+          "safety_care_ratio": 8.167,
+          "safety_nodes": 49,
+          "care_nodes": 6
+        },
+        "threshold_result": "pass"
+      },
+      {
+        "row": "population_load",
+        "values": {
+          "population_sum": 5823675.1,
+          "non_school_amenities": 55,
+          "population_per_non_school_amenity": 105885.0,
+          "population_per_care_node": 970612.5
+        },
+        "threshold_result": "pass"
+      }
+    ],
+    "counts": {
+      "amenities": 1000,
+      "school": 945,
+      "police": 36,
+      "fire_station": 13,
+      "hospital": 3,
+      "shelter": 3
+    },
+    "states": {
+      "seismic_depth": "pass",
+      "compound_link": "pass",
+      "facility_imbalance": "pass",
+      "population_load": "pass"
+    },
+    "tolerances": {
+      "score": 0,
+      "ratio": 0.005,
+      "share": 0.001,
+      "population": 1.0
+    },
+    "data_scope": {
+      "masked_exposure_products": "OSM and WorldPop are used for declared derived amenity counts and population totals only; coordinates, place names, bbox, or other georeferencing metadata inside those masked products are not used to judge event-location validity."
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Final label is defined by the four-row ledger score. Masked exposure products are authoritative for derived counts/totals only.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2010_Maule_Chile_earthquake_and_tsunami.json",
+      "data/event_catalogs/event_catalogs_006_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "JSON result shape",
+        "points": 3,
+        "description": "Returns compact JSON with a result block, four ledger rows, a ledger_score, and the final numeric label."
+      },
+      {
+        "name": "Structured extraction",
+        "points": 4,
+        "description": "Extracts the event magnitude, depth, alert level, hazard family, masked OSM amenity counts, and WorldPop total from structured local files, using derived counts/totals rather than georeferencing metadata."
+      },
+      {
+        "name": "Formula calculations",
+        "points": 5,
+        "description": "Computes seismic_depth_score, school_share, safety_care_ratio, population_per_non_school_amenity, and population_per_care_node within tolerance."
+      },
+      {
+        "name": "Threshold ledger",
+        "points": 4,
+        "description": "Applies all four threshold tests and reports four passing ledger rows."
+      },
+      {
+        "name": "Final label",
+        "points": 2,
+        "description": "Reports ledger_score = 4 and label compound_seismic_high_facility_imbalance."
+      },
+      {
+        "name": "Rounding and units",
+        "points": 2,
+        "description": "Uses ratios as unitless values, population loads as people per node, and clear rounding for the returned metrics."
+      }
+    ]
+  }
+}

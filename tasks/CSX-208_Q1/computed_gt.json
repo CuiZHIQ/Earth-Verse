@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-208_Q1",
+  "event_id": "CSX-208",
+  "target_family": "australia_bushfire_air_smoke_fire_consistency_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "australia_bushfire_air_smoke_fire_consistency_ledger",
+    "ledger": [
+      {
+        "row_id": "hot_dry_fire_weather",
+        "formula": "heat_load_c_days = sum(max(Tmax - 35 C, 0)); max_temperature_c = max(cross-source Tmax)",
+        "computed_values": {
+          "max_temperature_c": 40.98,
+          "heat_load_c_days": 30.04
+        },
+        "threshold_or_test": "max_temperature_c >= 40 and heat_load_c_days >= 25",
+        "result": "pass_hot_dry_fire_weather"
+      },
+      {
+        "row_id": "rainfall_suppression",
+        "formula": "local_precip_total_max = max(local daily totals); gridded means are compared separately",
+        "computed_values": {
+          "open_meteo_total_precip_mm": 0.0,
+          "nasa_power_total_precip_mm": 0.02,
+          "gpm_event_mean_mm": 3.197,
+          "chirps_event_mean_mm": 2.005
+        },
+        "threshold_or_test": "local totals <= 1 mm and both gridded event means < 5 mm",
+        "result": "pass_rainfall_suppression"
+      },
+      {
+        "row_id": "wind_smoke_transport",
+        "formula": "max_wind_kmh = max(Open-Meteo km/h, NASA_POWER m/s * 3.6)",
+        "computed_values": {
+          "max_wind_kmh": 32.3
+        },
+        "threshold_or_test": "max_wind_kmh >= 25",
+        "result": "pass_wind_smoke_transport"
+      },
+      {
+        "row_id": "smoke_report_anchor",
+        "formula": "smoke_keyword_count = sum(required text anchors present)",
+        "computed_values": {
+          "smoke_keyword_count": 3,
+          "required_term_count": 3
+        },
+        "threshold_or_test": "smoke_keyword_count == 3",
+        "result": "pass_smoke_report_anchor"
+      },
+      {
+        "row_id": "burn_fire_context",
+        "formula": "fire_context_score = I(dNBR_max >= 0.4) + I(dNBR_mean >= 0.03) + I(embedding_mean >= 0.02) + I(report_fire_smoke_context_count >= 5)",
+        "computed_values": {
+          "sentinel2_dnbr_max": 0.6516,
+          "sentinel2_dnbr_mean": 0.0442,
+          "alphaearth_1_minus_cosine_mean": 0.0304,
+          "report_fire_smoke_context_count": 7,
+          "fire_context_score": 4
+        },
+        "threshold_or_test": "fire_context_score >= 3",
+        "result": "pass_burn_fire_context"
+      },
+      {
+        "row_id": "direct_loss_guardrail",
+        "formula": "direct_loss_support_flag = I(local humanitarian report count > 0)",
+        "computed_values": {
+          "humanitarian_report_count": 0,
+          "direct_loss_support_flag": 0
+        },
+        "threshold_or_test": "direct_loss_support_flag == 0",
+        "result": "pass_direct_loss_guardrail"
+      }
+    ],
+    "score": 6,
+    "final_label": "compound_fire_smoke_air_hazard_consistent",
+    "rejected_alternatives": [
+      "rainfall_moderated_hazard_label",
+      "direct_loss_from_receptors_label"
+    ]
+  },
+  "event": {
+    "package_id": "CSX-208",
+    "event_name": "2019-2020 Australian bushfire smoke and hazardous air-quality episode",
+    "hazard_family": "air_pollution_smoke_heat",
+    "event_date_or_window": "2019-09-01 to 2020-02-29"
+  },
+  "decision_rule": {
+    "row_score": "one point per passing ledger row",
+    "final_label_rule": "score >= 5 gives compound_fire_smoke_air_hazard_consistent; otherwise insufficient_fire_smoke_air_consistency",
+    "positive_rows": [
+      "hot_dry_fire_weather",
+      "rainfall_suppression",
+      "wind_smoke_transport",
+      "smoke_report_anchor",
+      "burn_fire_context"
+    ],
+    "guardrail_row": "direct_loss_guardrail"
+  },
+  "ledger_rows": [
+    {
+      "row_id": "hot_dry_fire_weather",
+      "formula": "heat_load_c_days = sum(max(Tmax - 35 C, 0)); max_temperature_c = max(cross-source Tmax)",
+      "computed_values": {
+        "weather_days": 46,
+        "weather_window": "2019-09-01 to 2019-10-16",
+        "max_temperature_c": 40.98,
+        "heat_load_c_days": 30.04,
+        "hot_day_count_ge_35c": 11,
+        "extreme_day_count_ge_40c": 3
+      },
+      "threshold_or_test": "max_temperature_c >= 40 and heat_load_c_days >= 25",
+      "result": "pass_hot_dry_fire_weather"
+    },
+    {
+      "row_id": "rainfall_suppression",
+      "formula": "local_precip_total_max = max(local daily totals); gridded means are compared separately",
+      "computed_values": {
+        "open_meteo_total_precip_mm": 0.0,
+        "nasa_power_total_precip_mm": 0.02,
+        "dry_day_fraction": 1.0,
+        "gpm_event_mean_mm": 3.197,
+        "chirps_event_mean_mm": 2.005
+      },
+      "threshold_or_test": "local totals <= 1 mm and both gridded event means < 5 mm",
+      "result": "pass_rainfall_suppression"
+    },
+    {
+      "row_id": "wind_smoke_transport",
+      "formula": "max_wind_kmh = max(Open-Meteo km/h, NASA_POWER m/s * 3.6)",
+      "computed_values": {
+        "open_meteo_max_wind_kmh": 32.3,
+        "nasa_power_max_wind_kmh": 24.516,
+        "max_wind_kmh": 32.3
+      },
+      "threshold_or_test": "max_wind_kmh >= 25",
+      "result": "pass_wind_smoke_transport"
+    },
+    {
+      "row_id": "smoke_report_anchor",
+      "formula": "smoke_keyword_count = sum(required text anchors present)",
+      "computed_values": {
+        "required_terms": [
+          "fires",
+          "smoke",
+          "southeastern australia"
+        ],
+        "smoke_keyword_count": 3,
+        "required_term_count": 3,
+        "anchor_keyword_count": 7
+      },
+      "threshold_or_test": "smoke_keyword_count == 3",
+      "result": "pass_smoke_report_anchor"
+    },
+    {
+      "row_id": "burn_fire_context",
+      "formula": "fire_context_score = I(dNBR_max >= 0.4) + I(dNBR_mean >= 0.03) + I(embedding_mean >= 0.02) + I(report_fire_smoke_context_count >= 5)",
+      "computed_values": {
+        "sentinel2_dnbr_max": 0.6516,
+        "sentinel2_dnbr_mean": 0.0442,
+        "alphaearth_1_minus_cosine_mean": 0.0304,
+        "report_fire_smoke_context_count": 7,
+        "fire_context_score": 4
+      },
+      "threshold_or_test": "fire_context_score >= 3",
+      "result": "pass_burn_fire_context"
+    },
+    {
+      "row_id": "direct_loss_guardrail",
+      "formula": "direct_loss_support_flag = I(local humanitarian report count > 0)",
+      "computed_values": {
+        "humanitarian_report_count": 0,
+        "direct_loss_support_flag": 0,
+        "worldpop_population_sum": 4365.744,
+        "osm_small_element_count": 22
+      },
+      "threshold_or_test": "direct_loss_support_flag == 0",
+      "result": "pass_direct_loss_guardrail"
+    }
+  ],
+  "key_values": {
+    "available_weather_window": {
+      "start": "2019-09-01",
+      "end": "2019-10-16",
+      "days": 46
+    },
+    "event_lock_window": {
+      "start_date": "2019-09-01",
+      "end_date": "2020-02-29",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "max_temperature_c": 40.98,
+    "nasa_power_heat_load_c_days_above_35c": 30.04,
+    "nasa_power_hot_day_count_ge_35c": 11,
+    "nasa_power_extreme_day_count_ge_40c": 3,
+    "dry_day_fraction": 1.0,
+    "open_meteo_total_precipitation_mm": 0.0,
+    "nasa_power_total_precipitation_mm": 0.02,
+    "gpm_event_precip_mean_mm": 3.197,
+    "chirps_event_precip_mean_mm": 2.005,
+    "max_wind_speed_kmh": 32.3,
+    "smoke_keyword_hits": {
+      "fires": true,
+      "smoke": true,
+      "southeastern australia": true
+    },
+    "anchor_keyword_hits": {
+      "fire": true,
+      "fires": true,
+      "smoke": true,
+      "hazardous air quality": true,
+      "hottest": true,
+      "driest": true,
+      "pacific": true
+    },
+    "smoke_keyword_count": 3,
+    "anchor_keyword_count": 7,
+    "sentinel2_dnbr_max": 0.6516,
+    "sentinel2_dnbr_mean": 0.0442,
+    "alphaearth_1_minus_cosine_mean": 0.0304,
+    "humanitarian_report_count": 0,
+    "direct_loss_support_flag": 0,
+    "worldpop_population_sum": 4365.744,
+    "osm_small_element_count": 22,
+    "row_passes": {
+      "hot_dry_fire_weather": true,
+      "rainfall_suppression": true,
+      "wind_smoke_transport": true,
+      "smoke_report_anchor": true,
+      "burn_fire_context": true,
+      "direct_loss_guardrail": true
+    },
+    "score": 6,
+    "final_label": "compound_fire_smoke_air_hazard_consistent"
+  },
+  "numeric_tolerances": {
+    "max_temperature_c": {
+      "target": 40.98,
+      "absolute_tolerance": 0.05
+    },
+    "heat_load_c_days": {
+      "target": 30.04,
+      "absolute_tolerance": 0.05
+    },
+    "dry_day_fraction": {
+      "target": 1.0,
+      "absolute_tolerance": 0.001
+    },
+    "gpm_event_precip_mean_mm": {
+      "target": 3.197,
+      "absolute_tolerance": 0.005
+    },
+    "chirps_event_precip_mean_mm": {
+      "target": 2.005,
+      "absolute_tolerance": 0.005
+    },
+    "max_wind_kmh": {
+      "target": 32.3,
+      "absolute_tolerance": 0.1
+    },
+    "sentinel2_dnbr_max": {
+      "target": 0.6516,
+      "absolute_tolerance": 0.0005
+    },
+    "alphaearth_1_minus_cosine_mean": {
+      "target": 0.0304,
+      "absolute_tolerance": 0.0005
+    },
+    "score": {
+      "target": 6,
+      "absolute_tolerance": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON structure",
+        "points": 3,
+        "description": "Returns the target family, all six required row IDs, score, final label, and rejected alternatives.",
+        "partial_credit": "Award 1-2 points for a mostly usable JSON answer with one missing top-level field, one missing row, or minor field-name differences."
+      },
+      {
+        "name": "Weather and precipitation calculations",
+        "points": 5,
+        "description": "Computes the heat load, maximum temperature, dry-day fraction, local precipitation totals, gridded precipitation means, and harmonized wind value with correct units and tolerances.",
+        "partial_credit": "Award 2-4 points when most heat, precipitation, and wind values are correct but one source, threshold, or unit conversion is missing; award 1 point for only a qualitative hot-dry reading."
+      },
+      {
+        "name": "Smoke and fire-context calculations",
+        "points": 4,
+        "description": "Computes the smoke-anchor count and burn/fire-context score using dNBR, embedding change, and report fire/smoke context anchors.",
+        "partial_credit": "Award 2-3 points if either the text-anchor count or burn-context score is complete and the other is partly correct; award 1 point for naming the right evidence family without the numeric count."
+      },
+      {
+        "name": "Threshold and final-label logic",
+        "points": 3,
+        "description": "Applies each row threshold and the final score rule correctly, yielding the compound fire-smoke-air hazard label.",
+        "partial_credit": "Award 1-2 points for the correct final label with an incomplete row-score tally or one threshold mistake."
+      },
+      {
+        "name": "Rejected alternatives",
+        "points": 2,
+        "description": "Rejects rainfall-moderated and direct-loss-from-receptors labels using the precipitation and direct-loss guardrail values.",
+        "partial_credit": "Award 1 point for rejecting only one alternative or for using the correct guardrail values without naming both rejected labels."
+      },
+      {
+        "name": "Formula-led reasoning",
+        "points": 2,
+        "description": "Shows formulas or equivalent derivations for the ledger rows rather than only narrative explanation.",
+        "partial_credit": "Award 1 point for showing formulas for some rows while leaving others as threshold summaries."
+      },
+      {
+        "name": "Answer discipline",
+        "points": 1,
+        "description": "Keeps the interpretation concise and avoids uncomputed impact estimates.",
+        "partial_credit": "Award 0.5 points for a readable but slightly wordy answer that still keeps impact estimates bounded to computed fields."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_bushfire_smoke_and_hazardous_air-quality_episode.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_WMO.html",
+      "data/air_quality/air_quality_001_NASA_Earth_Observatory_Fires_and_Smoke_Engulf_Southeastern_Australia.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/event_reports/event_reports_002_HDX_CKAN_package_search.json"
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-230_Q1",
+  "event_id": "CSX-230",
+  "target_family": "langtang_seismic_avalanche_threshold_window_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "langtang_seismic_avalanche_threshold_window_ledger",
+    "answer": "seismic_avalanche_chain_confirmed",
+    "ledger_total": 10,
+    "score_breakdown": {
+      "report": 4,
+      "rain": 2,
+      "radar_optical": 3,
+      "river": 1
+    },
+    "metrics": {
+      "fatalities_min": 200,
+      "precip_values_mm": {
+        "open_meteo_point_mm": 4.1,
+        "power_point_mm": 1.28,
+        "era5_land_max_mm": 17.15,
+        "gpm_imerg_max_mm": 12.96,
+        "chirps_max_mm": 3.19
+      },
+      "precip_range_mm": [
+        1.28,
+        17.15
+      ],
+      "precip_range_width_mm": 15.87,
+      "s1_counts": {
+        "pre": 19,
+        "post": 25
+      },
+      "s1_vv_change_db": {
+        "mean": 0.3856,
+        "max": 22.09
+      },
+      "s2_status": "no_sufficient_scenes"
+    },
+    "gate_trace": [
+      "report_score = earthquake_release + village_buried + fatalities_min_ge_200 + river_covered = 4",
+      "rain_score = I(max_precip_mm <= 25) + I(precip_range_width_mm <= 20) = 2",
+      "radar_optical_score = I(pre/post S1 counts >= 10) + I(abs(mean VV) <= 1 and max VV >= 20) + I(S2 status is no_sufficient_scenes) = 3",
+      "river_score = I(no lake yet behind the blockage) = 1",
+      "ledger_total = 4 + 2 + 3 + 1 = 10"
+    ],
+    "threshold_result": "10/10 >= 8",
+    "reasoning_depth": {
+      "evidence_weighting": "Report evidence for earthquake release, village burial, fatalities, and river blockage is decisive; precipitation and radar/optical diagnostics are exclusion and consistency tests.",
+      "counterfactual_rejection": "A rainfall-trigger explanation fails because all event-day precipitation diagnostics remain below the specified maxima and range-width checks.",
+      "uncertainty_or_scale_caveat": "Sentinel-1 localized change supports consistency, but Sentinel-2 no-sufficient-scenes status prevents detailed optical mapping claims."
+    }
+  },
+  "key_values": {
+    "event": {
+      "event_name": "Langtang avalanche/landslide",
+      "event_date": "2015-04-25",
+      "location": "Langtang Valley",
+      "country_or_region": "Nepal",
+      "hazard_family": "landslide_mass_movement"
+    },
+    "report_checks": {
+      "earthquake_release": true,
+      "village_buried": true,
+      "fatalities_min": 200,
+      "river_covered": true,
+      "no_lake_yet": true,
+      "sentences": {
+        "earthquake_release": "The ice and rocks were shaken loose by the earthquake that struck central Nepal on April 25, 2015.",
+        "village_buried": "The headline in the Nepali Times said it all: \u201cLangtang is gone.\u201d The small village, which was located along a popular trekking route near the base of Mount Langtang, was completely buried by an avalanche.",
+        "river_covered": "\u201cThe Langtang River was completely covered by the deposit that buried Langtang Village, but there is no evidence yet of a lake forming behind the blockage,\u201d the scientists noted on their Mountain Hydrology website.",
+        "no_lake_yet": "\u201cThe Langtang River was completely covered by the deposit that buried Langtang Village, but there is no evidence yet of a lake forming behind the blockage,\u201d the scientists noted on their Mountain Hydrology website."
+      }
+    },
+    "precipitation": {
+      "values_mm": {
+        "open_meteo_point_mm": 4.1,
+        "power_point_mm": 1.28,
+        "era5_land_max_mm": 17.15,
+        "gpm_imerg_max_mm": 12.96,
+        "chirps_max_mm": 3.19
+      },
+      "range_mm": [
+        1.28,
+        17.15
+      ],
+      "range_width_mm": 15.87,
+      "gates": {
+        "max_precip_le_25mm": true,
+        "range_width_le_20mm": true
+      }
+    },
+    "radar_optical": {
+      "s1_counts": {
+        "pre": 19,
+        "post": 25
+      },
+      "s1_vv_change_db": {
+        "mean": 0.3856,
+        "max": 22.09
+      },
+      "s2_status": "no_sufficient_scenes",
+      "gates": {
+        "s1_counts_ge_10_each": true,
+        "s1_localized_vv_change": true,
+        "s2_status_no_sufficient_scenes": true
+      }
+    },
+    "score_rule": {
+      "scores": {
+        "report": 4,
+        "rain": 2,
+        "radar_optical": 3,
+        "river": 1
+      },
+      "ledger_total": 10,
+      "pass_threshold": 8,
+      "max_total": 10,
+      "threshold_result": "10/10 >= 8"
+    },
+    "formula_trace": [
+      "report_score = 1 + 1 + 1 + 1 = 4",
+      "rain_score = I(17.15 <= 25) + I(15.87 <= 20) = 2",
+      "radar_optical_score = I(19 >= 10 and 25 >= 10) + I(abs(0.3856) <= 1 and 22.09 >= 20) + I(status match) = 3",
+      "river_score = I(no lake yet behind blockage) = 1",
+      "ledger_total = 4 + 2 + 3 + 1 = 10"
+    ],
+    "reasoning_depth": {
+      "evidence_weighting": "Report evidence for earthquake release, village burial, fatalities, and river blockage is decisive; precipitation and radar/optical diagnostics are exclusion and consistency tests.",
+      "counterfactual_rejection": "A rainfall-trigger explanation fails because all event-day precipitation diagnostics remain below the specified maxima and range-width checks.",
+      "uncertainty_or_scale_caveat": "Sentinel-1 localized change supports consistency, but Sentinel-2 no-sufficient-scenes status prevents detailed optical mapping claims."
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and target family",
+        "points": 3,
+        "description": "Returns the target family, seismic_avalanche_chain_confirmed label, the complete requested metrics/gate_trace schema, and the 10/10 >= 8 threshold result.",
+        "partial_credit": "Give 1-2 points for the correct label with a missing target family or incomplete threshold statement."
+      },
+      {
+        "name": "Report anchor extraction",
+        "points": 4,
+        "description": "Finds earthquake release, avalanche burial of Langtang village, fatalities_min 200, river coverage, and no lake found behind the blockage.",
+        "partial_credit": "Award proportional credit for each correct extraction, with no credit for reversing the earthquake and rainfall roles."
+      },
+      {
+        "name": "Precipitation window calculations",
+        "points": 3,
+        "description": "Computes the five event-day precipitation values, range 1.28-17.15 mm, width 15.87 mm, and both rain gates as true.",
+        "partial_credit": "Give credit for correct formulas with small rounding errors or for omitting one product while preserving the final gate state."
+      },
+      {
+        "name": "Radar and optical calculations",
+        "points": 4,
+        "description": "Computes Sentinel-1 counts 19/25, VV mean 0.3856 dB, VV max 22.09 dB, Sentinel-2 status no_sufficient_scenes, and all three gate states.",
+        "partial_credit": "Award proportional credit for correct values or correct gate comparisons when one metric is missing."
+      },
+      {
+        "name": "Ledger arithmetic and threshold decision",
+        "points": 3,
+        "description": "Computes score breakdown 4, 2, 3, 1, total 10, and applies the >= 8 threshold.",
+        "partial_credit": "Give 1-2 points for a correct total with one component error or a correct component ledger with a final-threshold mistake."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 2,
+        "description": "Explains that the numeric result confirms a seismic avalanche chain, treats rainfall as context, and keeps the river-lake conclusion bounded to the computed record.",
+        "partial_credit": "Give 1 point for a mostly correct interpretation that omits either the rainfall comparison or the river-lake distinction."
+      },
+      {
+        "name": "JSON clarity and numeric discipline",
+        "points": 1,
+        "description": "Returns compact JSON with clear units, rounded values, and no extra narrative outside the object. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "partial_credit": "Give 0.5 points for a readable answer with minor formatting drift."
+      }
+    ]
+  },
+  "numeric_tolerances": {
+    "fatalities_min": {
+      "target": 200,
+      "absolute_tolerance": 0
+    },
+    "precip_max_mm": {
+      "target": 17.15,
+      "absolute_tolerance": 0.02
+    },
+    "precip_range_width_mm": {
+      "target": 15.87,
+      "absolute_tolerance": 0.02
+    },
+    "s1_vv_mean_db": {
+      "target": 0.3856,
+      "absolute_tolerance": 0.0001
+    },
+    "s1_vv_max_db": {
+      "target": 22.09,
+      "absolute_tolerance": 0.01
+    },
+    "ledger_total": {
+      "target": 10,
+      "absolute_tolerance": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_Langtang_avalanche_landslide.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "notes": "Structured records provide event-day precipitation, radar counts and change statistics, optical scene status, and locked event metadata; the report parser extracts the event text anchors."
+  }
+}

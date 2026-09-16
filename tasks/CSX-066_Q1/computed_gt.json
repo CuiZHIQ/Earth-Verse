@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-066_Q1",
+  "event_id": "CSX-066",
+  "task_type": "numeric",
+  "target_family": "rainfall_exposure_diagnostic",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "event_window_days": 24,
+    "largest_product": "GPM IMERG V07",
+    "rainfall": {
+      "largest_product_max_mm": 258.84,
+      "largest_product_mean_mm": 83.362,
+      "max_to_mean_ratio": 3.105,
+      "peak_excess_mm": 175.478,
+      "peak_excess_pct": 210.5,
+      "product_peak_spread_ratio": 1.513,
+      "largest_vs_ensemble_peak_ratio": 1.291
+    },
+    "facility_exposure": {
+      "likely_affected_facilities": 7,
+      "unaffected_facilities": 5,
+      "assessed_facilities": 12,
+      "likely_affected_share": 0.583,
+      "likely_affected_pct": 58.333,
+      "likely_to_unaffected_ratio": 1.4
+    },
+    "rainfall_exposure_index_mm": 150.99,
+    "threshold_flags": {
+      "rainfall_concentration": true,
+      "product_spread_guard": true,
+      "facility_majority": true,
+      "composite_load": true
+    },
+    "final_label": "concentrated_rainfall_majority_facility_exposure",
+    "computed_interpretation": "The event-window rainfall maximum is highly concentrated, remains within the product-spread guard, and combines with a majority health-facility exposure signal."
+  },
+  "key_values": {
+    "event": {
+      "event_name": "2024 Sudan floods and Arba'at Dam flood",
+      "hazard_family": "extreme_precip_pluvial_flood",
+      "date_window": "2024-08-13 to 2024-09-05",
+      "location": "Red Sea State, Port Sudan and Arba'at Dam area"
+    },
+    "event_window_days": 24,
+    "rainfall_products": [
+      {
+        "dataset": "ERA5-Land",
+        "start": "2024-08-13",
+        "end": "2024-09-05",
+        "max_mm": 171.63,
+        "mean_mm": 102.47,
+        "max_to_mean_ratio": 1.675,
+        "peak_excess_mm": 69.161,
+        "peak_excess_pct": 67.494
+      },
+      {
+        "dataset": "GPM IMERG V07",
+        "start": "2024-08-13",
+        "end": "2024-09-05",
+        "max_mm": 258.84,
+        "mean_mm": 83.362,
+        "max_to_mean_ratio": 3.105,
+        "peak_excess_mm": 175.478,
+        "peak_excess_pct": 210.5
+      },
+      {
+        "dataset": "CHIRPS daily",
+        "start": "2024-08-13",
+        "end": "2024-09-05",
+        "max_mm": 171.054,
+        "mean_mm": 96.895,
+        "max_to_mean_ratio": 1.765,
+        "peak_excess_mm": 74.159,
+        "peak_excess_pct": 76.536
+      }
+    ],
+    "largest_product": "GPM IMERG V07",
+    "rainfall": {
+      "largest_product_max_mm": 258.84,
+      "largest_product_mean_mm": 83.362,
+      "max_to_mean_ratio": 3.105,
+      "peak_excess_mm": 175.478,
+      "peak_excess_pct": 210.5,
+      "product_peak_spread_ratio": 1.513,
+      "largest_vs_ensemble_peak_ratio": 1.291
+    },
+    "facility_exposure": {
+      "likely_affected_facilities": 7,
+      "unaffected_facilities": 5,
+      "assessed_facilities": 12,
+      "likely_affected_share": 0.583,
+      "likely_affected_pct": 58.333,
+      "likely_to_unaffected_ratio": 1.4
+    },
+    "rainfall_exposure_index_mm": 150.99,
+    "compact_answer": {
+      "answer": "concentrated_rainfall_majority_facility_exposure",
+      "largest_product": "GPM IMERG V07",
+      "event_window_days": 24,
+      "peak_accum_mm": 258.84,
+      "peak_to_mean_ratio": 3.105,
+      "affected_share_pct": 58.333,
+      "rainfall_exposure_index_mm": 150.99,
+      "threshold_flags": {
+        "rainfall_concentration": true,
+        "product_spread_guard": true,
+        "facility_majority": true,
+        "composite_load": true
+      }
+    },
+    "threshold_rules": {
+      "rainfall_concentration": "max_to_mean_ratio >= 3.0 and peak_excess_mm >= 150",
+      "product_spread_guard": "product_peak_spread_ratio <= 1.6",
+      "facility_majority": "likely_affected_share >= 0.50 and likely_to_unaffected_ratio > 1.0",
+      "composite_load": "rainfall_exposure_index_mm >= 150"
+    },
+    "threshold_flags": {
+      "rainfall_concentration": true,
+      "product_spread_guard": true,
+      "facility_majority": true,
+      "composite_load": true
+    },
+    "final_label": "concentrated_rainfall_majority_facility_exposure",
+    "computed_interpretation": "The event-window rainfall maximum is highly concentrated, remains within the product-spread guard, and combines with a majority health-facility exposure signal."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON and label",
+        "points": 4,
+        "description": "Returns the requested JSON shape with all required fields, all four threshold flags, and the exact final label concentrated_rainfall_majority_facility_exposure when all flags are true.",
+        "partial_credit": "Award partial credit for a mostly complete JSON response with one missing nested field or a synonymous but less exact label."
+      },
+      {
+        "name": "Rainfall extraction and arithmetic",
+        "points": 4,
+        "description": "Identifies GPM IMERG V07 as the largest product and computes max, mean, max-to-mean ratio, peak excess, peak excess percent, product spread ratio, and largest-versus-ensemble ratio.",
+        "partial_credit": "Award partial credit for correct product identification with one or two arithmetic mistakes."
+      },
+      {
+        "name": "Facility exposure arithmetic",
+        "points": 3,
+        "description": "Uses 7 likely affected, 5 unaffected, 12 assessed, share 0.583, percent 58.333, and ratio 1.4.",
+        "partial_credit": "Award partial credit for correct counts with one derived ratio missing or rounded too coarsely."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 3,
+        "description": "Applies all four pass/fail tests with the stated inequalities.",
+        "partial_credit": "Award partial credit for correct flags but incomplete comparison values, or for one incorrect flag."
+      },
+      {
+        "name": "Composite rainfall-exposure index",
+        "points": 3,
+        "description": "Computes 258.840 * 7/12 = 150.990 mm and recognizes that it passes the 150 mm threshold.",
+        "partial_credit": "Award partial credit for using the right formula with a minor rounding error, or for computing the value but missing the threshold comparison."
+      },
+      {
+        "name": "Computed interpretation inside JSON",
+        "points": 2,
+        "description": "Uses the requested computed_interpretation field to tie the four true flags to concentrated rainfall and majority facility exposure, without adding response planning or realized-loss claims.",
+        "partial_credit": "Award partial credit for a mostly correct interpretation that omits one link or adds minor extra narrative."
+      },
+      {
+        "name": "Concision and scope control",
+        "points": 1,
+        "description": "Provides a compact computed interpretation without response planning or extra realized-loss assertions.",
+        "partial_credit": "Award partial credit for a mostly concise interpretation with minor extra narrative."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_HDX_Sudan_Arbaat_flood_package_search.json"
+    ]
+  }
+}

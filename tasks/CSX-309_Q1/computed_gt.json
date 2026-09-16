@@ -1,0 +1,315 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-309",
+  "forbidden_overclaims": [
+    "Do not claim exact ash depth, ash mass loading, or plume dispersion from this package alone.",
+    "Do not claim precise casualty, mortality, or loss totals beyond the report's limited statement.",
+    "Do not treat precipitation files as proof that lahars did or did not occur everywhere in the region.",
+    "Do not treat radar change as a direct lava or burn-scar map.",
+    "Do not infer official evacuation-zone geometry beyond the reported 20 km radius."
+  ],
+  "key_values": {
+    "answer": "ashfall_evacuation_and_air_quality_priority",
+    "key_numeric_anchors": {
+      "critical_service_count": 55,
+      "evacuated_people_range": [
+        1500,
+        2000
+      ],
+      "nearby_population_estimate": 2826.8,
+      "plume_height_km_at_least": 15.0
+    },
+    "priority_rank": [
+      "ashfall_evacuation_and_air_quality_priority",
+      "lahar_and_wet_ash_route_monitoring_secondary",
+      "lava_or_burn_scar_image_triage_low_priority",
+      "ordinary_weather_response_low_priority"
+    ],
+    "priority_scores": {
+      "ashfall_evacuation_and_air_quality_priority": 90.4,
+      "lahar_and_wet_ash_route_monitoring_secondary": 73.8,
+      "lava_or_burn_scar_image_triage_low_priority": 21.0,
+      "ordinary_weather_response_low_priority": 6.1
+    }
+  },
+  "numeric_anchor_count": 4,
+  "numeric_tolerances": {
+    "critical_service_count": {
+      "expected": 55,
+      "tolerance": 0
+    },
+    "evacuated_people_range": {
+      "expected": [
+        1500,
+        2000
+      ],
+      "tolerance": 100
+    },
+    "nearby_population_estimate": {
+      "expected": 2826.8,
+      "tolerance": 10.0
+    },
+    "plume_height_km_at_least": {
+      "expected": 15.0,
+      "tolerance": 0.5
+    }
+  },
+  "package_relative_path": "event_packages/standard_event_packages/packages/CSX-309",
+  "primary_gt": {
+    "acceptable_variants": [
+      "near_field_ashfall_evacuation_air_quality",
+      "ashfall_and_evacuation_priority",
+      "ash_plume_air_quality_evacuation_priority"
+    ],
+    "answer": "ashfall_evacuation_and_air_quality_priority",
+    "answer_type": "deterministic_priority_label_with_judged_explanation",
+    "canonical_stance": "The immediate response posture should prioritize near-field ashfall, evacuation, and air-quality management, with wet-ash/lahar access monitoring as a secondary watch.",
+    "forbidden_claims": [
+      "Exact ash depth, ash mass loading, or plume dispersion values not supported by the task evidence.",
+      "Precise casualty, mortality, or loss totals beyond the limited report statement.",
+      "Definitive regional lahar occurrence or absence inferred only from precipitation context.",
+      "Radar change interpreted directly as a lava or burn-scar map.",
+      "Official evacuation-zone geometry beyond the reported 20 km radius."
+    ],
+    "impact_chain": [
+      "explosive_eruption",
+      "high_ash_plume_and_nearfield_evacuation",
+      "ashfall_air_quality_and_access_management"
+    ],
+    "key_numeric_anchors": {
+      "critical_service_count": 55,
+      "evacuated_people_range": [
+        1500,
+        2000
+      ],
+      "nearby_population_estimate": 2826.8,
+      "plume_height_km_at_least": 15.0
+    },
+    "priority_index": 90.4,
+    "priority_rank": [
+      "ashfall_evacuation_and_air_quality_priority",
+      "lahar_and_wet_ash_route_monitoring_secondary",
+      "lava_or_burn_scar_image_triage_low_priority",
+      "ordinary_weather_response_low_priority"
+    ],
+    "rationale": "Prioritize ashfall, evacuation, and air-quality management; keep wet-ash/lahar access monitoring as a secondary watch.",
+    "required_claims": [
+      "Names ashfall, evacuation, and air-quality management as the dominant immediate priority.",
+      "Connects the priority to explosive eruption behavior, a high ash plume, and a second ash pulse.",
+      "Uses evacuation and nearby exposure indicators to justify life-safety and service-access urgency.",
+      "Places wet-ash/lahar route monitoring below the ashfall and evacuation priority.",
+      "Rejects lava or burn-scar image triage and ordinary weather response as weaker primary frames."
+    ],
+    "required_metrics": [
+      {
+        "expected": 15.0,
+        "name": "plume_height_km_at_least",
+        "tolerance": 0.5
+      },
+      {
+        "expected": [
+          1500,
+          2000
+        ],
+        "name": "evacuated_people_range",
+        "tolerance": 100
+      },
+      {
+        "expected": 2826.8,
+        "name": "nearby_population_estimate",
+        "tolerance": 10.0
+      },
+      {
+        "expected": 55,
+        "name": "critical_service_count",
+        "tolerance": 0
+      }
+    ],
+    "secondary_watch": "lahar_and_wet_ash_route_monitoring_secondary"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Calbuco_eruption.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/other/other_001_Volcanic_Ash_Advisory_Centers_advisories.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_002_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  },
+  "quality_audit": {
+    "absolute_path_hits": 0,
+    "existence_hint_hits": 0,
+    "issue_score": 0,
+    "lists_specific_files": false,
+    "numeric_anchor_count": 4,
+    "product_hits": 0,
+    "stem_caution_cue_hits": 0,
+    "visible_numeric_anchor_count": 0,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 1
+  },
+  "required_findings": [
+    {
+      "finding": "Treat explosive eruption behavior and high ash plume as the response driver.",
+      "id": "eruption_driver",
+      "support": [
+        "explosive_eruption",
+        "ash_cloud_or_plume",
+        "second_ash_pulse"
+      ]
+    },
+    {
+      "finding": "Connect ashfall and plume exposure to evacuation, air quality, and nearby service/access concern.",
+      "id": "nearfield_response_priority",
+      "support": [
+        "evacuation_order",
+        "evacuated_people_range",
+        "critical_service_count"
+      ]
+    },
+    {
+      "finding": "Keep wet-ash/lahar route monitoring secondary rather than primary.",
+      "id": "secondary_watch",
+      "support": [
+        "precipitation_context",
+        "waterway_and_road_context",
+        "ash_mechanism_dominance"
+      ]
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects ashfall, evacuation, and air-quality management as the highest-priority posture, using the canonical label or a clear semantic equivalent.",
+        "name": "primary_priority_label",
+        "points": 4
+      },
+      {
+        "description": "Ranks the postures as ashfall/evacuation/air quality first, wet-ash/lahar access monitoring second, lava or burn-scar image triage third, and ordinary weather response last.",
+        "name": "priority_ranking",
+        "points": 3
+      },
+      {
+        "description": "Includes the key numeric anchors within tolerance: plume at least 15 km, 1,500 to 2,000 evacuees, nearby population about 2,827, and 55 critical service amenities.",
+        "name": "quantitative_anchors",
+        "points": 4
+      },
+      {
+        "description": "Explains that explosive eruption behavior, a high ash plume, a second ash pulse, and near-field exposure drive evacuation and air-quality management.",
+        "name": "eruption_mechanism_reasoning",
+        "points": 3
+      },
+      {
+        "description": "Treats wet-ash and lahar-access monitoring as a secondary watch supported by precipitation, waterway, and road context, not as the dominant posture.",
+        "name": "secondary_lahar_watch_logic",
+        "points": 2
+      },
+      {
+        "description": "Rejects lava or burn-scar image triage as primary because image-change evidence is contextual, and rejects ordinary weather response because the event is an explosive volcanic crisis.",
+        "name": "distractor_rejection",
+        "points": 2.5
+      },
+      {
+        "description": "Avoids unsupported claims about exact ash depth or loading, exact losses, definitive lahar occurrence, radar-derived lava or burn scars, or official evacuation-zone geometry.",
+        "name": "overclaim_control",
+        "points": 1
+      },
+      {
+        "description": "Returns concise, well-formed JSON with answer, priority_rank, key_numeric_anchors, impact_chain, and rationale fields.",
+        "name": "json_structure_and_concision",
+        "points": 0.5
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "computed_metrics": {
+      "ash_mechanism_score": 100.0,
+      "bounded_amenities_count": 35,
+      "bounded_building_features": 790,
+      "bounded_highway_features": 171,
+      "bounded_waterway_features": 19,
+      "burn_index_status": "no_sufficient_scenes",
+      "critical_service_count": 55,
+      "evacuated_max": 2000,
+      "evacuated_min": 1500,
+      "event_window_days_inclusive": 9,
+      "image_context_score": 60.0,
+      "nearby_population_estimate": 2826.8,
+      "nearfield_exposure_score": 98.6,
+      "plume_height_km_at_least": 15.0,
+      "precip_a_max_mm": 20.7,
+      "precip_a_mean_mm": 9.1,
+      "precip_b_max_mm": 28.7,
+      "precip_b_mean_mm": 18.4,
+      "precip_c_mean_mm": 8.6,
+      "radar_max_change_db": 26.8,
+      "radar_mean_change_db": 1.4,
+      "wet_ash_lahar_watch_score": 48.4
+    },
+    "event_identity": {
+      "event_name": "Calbuco eruption",
+      "hazard_family": "volcano_ash_lahar",
+      "package_id": "CSX-309",
+      "temporal_window": {
+        "end_date": "2015-04-30",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2015-04-22"
+      }
+    },
+    "evidence_roles": {
+      "event_report_and_advisory": "physical driver and evacuation/ash-plume anchor",
+      "image_change_context": "situational context, not a lava or burn-scar primary decision",
+      "masked_exposure_statistics": "operational exposure context from derived package statistics",
+      "precipitation_and_waterway_context": "secondary wet-ash/lahar access watch only"
+    },
+    "map_amenity_counts": {
+      "bounded_slice": {
+        "bus_stop": 1,
+        "community_centre": 3,
+        "doctors": 1,
+        "fire_station": 1,
+        "kindergarten": 1,
+        "place_of_worship": 4,
+        "police": 1,
+        "restaurant": 1,
+        "school": 18,
+        "shelter": 3,
+        "toilets": 1
+      },
+      "critical_slice": {
+        "fire_station": 4,
+        "police": 2,
+        "school": 46,
+        "shelter": 3
+      }
+    },
+    "priority_scores": {
+      "ashfall_evacuation_and_air_quality_priority": 90.4,
+      "lahar_and_wet_ash_route_monitoring_secondary": 73.8,
+      "lava_or_burn_scar_image_triage_low_priority": 21.0,
+      "ordinary_weather_response_low_priority": 6.1
+    },
+    "text_claim_flags": {
+      "ash_advisory_context": true,
+      "ash_cloud_or_plume": true,
+      "evacuation_order": true,
+      "explosive_eruption": true,
+      "no_casualties_reported": true,
+      "second_ash_pulse": true
+    }
+  },
+  "task_id": "CSX-309_Q1",
+  "task_subtype": "response_priority",
+  "task_type": "short_answer",
+  "task_version": "v3.1"
+}

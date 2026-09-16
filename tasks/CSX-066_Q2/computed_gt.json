@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-066_Q2",
+  "event_id": "CSX-066",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "target_family": "flood_timing_exposure_diagnostic",
+  "primary_gt": {
+    "answer": "rainfall_late_overflow_facility_exposure",
+    "precipitation_concentration": {
+      "ratios_by_product": {
+        "era5_land": 1.675,
+        "gpm_imerg": 3.105,
+        "chirps": 1.765
+      },
+      "largest_product": "gpm_imerg",
+      "satellite_daily_max_gap_mm": 87.786
+    },
+    "timing": {
+      "event_window_days": 24,
+      "overflow_day_indices": [
+        18,
+        19
+      ],
+      "overflow_fractions": [
+        0.75,
+        0.792
+      ],
+      "assessment_day_index": 21,
+      "assessment_fraction": 0.875,
+      "overflow_to_assessment_lags_days": [
+        3,
+        2
+      ]
+    },
+    "facility_exposure": {
+      "likely_affected": 7,
+      "apparently_unaffected": 5,
+      "total_listed": 12,
+      "likely_fraction": 0.583,
+      "likely_to_unaffected_ratio": 1.4
+    },
+    "denominator_check": {
+      "affected_state_fraction": 0.722,
+      "population_per_listed_facility": 22494.38,
+      "population_per_likely_affected_facility": 38561.79,
+      "use_as_driver": false
+    },
+    "decision": "Use the concentrated-rainfall, late-overflow, facility-exposure diagnostic; do not let a single maximum rainfall cell or population denominator replace the local timing and exposure calculation."
+  },
+  "key_values": {
+    "event": {
+      "name": "2024 Sudan floods and Arba'at Dam flood",
+      "hazard_family": "extreme_precip_pluvial_flood",
+      "window": "2024-08-13 to 2024-09-05"
+    },
+    "precipitation_concentration": {
+      "products": {
+        "era5_land": {
+          "mean_mm": 102.47,
+          "max_mm": 171.63,
+          "max_to_mean_ratio": 1.675
+        },
+        "gpm_imerg": {
+          "mean_mm": 83.362,
+          "max_mm": 258.84,
+          "max_to_mean_ratio": 3.105
+        },
+        "chirps": {
+          "mean_mm": 96.895,
+          "max_mm": 171.054,
+          "max_to_mean_ratio": 1.765
+        }
+      },
+      "ratios_by_product": {
+        "era5_land": 1.675,
+        "gpm_imerg": 3.105,
+        "chirps": 1.765
+      },
+      "largest_product": "gpm_imerg",
+      "satellite_daily_max_gap_mm": 87.786
+    },
+    "timing": {
+      "event_window_days": 24,
+      "overflow_day_indices": [
+        18,
+        19
+      ],
+      "overflow_fractions": [
+        0.75,
+        0.792
+      ],
+      "assessment_day_index": 21,
+      "assessment_fraction": 0.875,
+      "overflow_to_assessment_lags_days": [
+        3,
+        2
+      ]
+    },
+    "facility_exposure": {
+      "likely_affected": 7,
+      "apparently_unaffected": 5,
+      "total_listed": 12,
+      "likely_fraction": 0.583,
+      "likely_to_unaffected_ratio": 1.4
+    },
+    "denominator_check": {
+      "affected_state_fraction": 0.722,
+      "population_per_listed_facility": 22494.38,
+      "population_per_likely_affected_facility": 38561.79,
+      "use_as_driver": false
+    },
+    "tolerances": {
+      "ratio": 0.002,
+      "mm": 0.005,
+      "population": 0.02,
+      "count": 0
+    },
+    "answer_object": {
+      "answer": "rainfall_late_overflow_facility_exposure",
+      "precipitation_concentration": {
+        "ratios_by_product": {
+          "era5_land": 1.675,
+          "gpm_imerg": 3.105,
+          "chirps": 1.765
+        },
+        "largest_product": "gpm_imerg",
+        "satellite_daily_max_gap_mm": 87.786
+      },
+      "timing": {
+        "event_window_days": 24,
+        "overflow_day_indices": [
+          18,
+          19
+        ],
+        "overflow_fractions": [
+          0.75,
+          0.792
+        ],
+        "assessment_day_index": 21,
+        "assessment_fraction": 0.875,
+        "overflow_to_assessment_lags_days": [
+          3,
+          2
+        ]
+      },
+      "facility_exposure": {
+        "likely_affected": 7,
+        "apparently_unaffected": 5,
+        "total_listed": 12,
+        "likely_fraction": 0.583,
+        "likely_to_unaffected_ratio": 1.4
+      },
+      "denominator_check": {
+        "affected_state_fraction": 0.722,
+        "population_per_listed_facility": 22494.38,
+        "population_per_likely_affected_facility": 38561.79,
+        "use_as_driver": false
+      },
+      "decision": "Use the concentrated-rainfall, late-overflow, facility-exposure diagnostic; do not let a single maximum rainfall cell or population denominator replace the local timing and exposure calculation."
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer label and JSON shape",
+        "points": 3,
+        "description": "Returns the requested compact JSON fields and the answer label rainfall_late_overflow_facility_exposure or a clear equivalent.",
+        "partial_credit": "Award 1-2 points for a mostly complete structure with one or two missing fields, or for a label that omits one component."
+      },
+      {
+        "name": "Precipitation concentration arithmetic",
+        "points": 4,
+        "description": "Computes the three max-to-mean precipitation ratios, identifies gpm_imerg as largest, and gives the 87.786 mm satellite-daily maximum gap within tolerance.",
+        "partial_credit": "Award 2-3 points for correct formulas with one wrong or missing value; award 1 point for using max divided by mean but not completing the diagnostic."
+      },
+      {
+        "name": "Overflow timing reconstruction",
+        "points": 4,
+        "description": "Computes the 24-day event window, overflow day indices 18 and 19, fractions 0.750 and 0.792, assessment day 21, fraction 0.875, and lags 3 and 2 days.",
+        "partial_credit": "Award 2-3 points for correct dates and lags with one inclusive-index or rounding error; award 1 point for recognizing the late-window sequence without complete values."
+      },
+      {
+        "name": "Facility exposure ratios",
+        "points": 3,
+        "description": "Computes 7 likely affected, 5 apparently unaffected, 12 total listed, likely fraction 0.583, and likely-to-unaffected ratio 1.400.",
+        "partial_credit": "Award 1-2 points for correct counts with a missing ratio or a small arithmetic error."
+      },
+      {
+        "name": "Denominator check",
+        "points": 3,
+        "description": "Computes affected-state fraction 0.722, population per listed facility 22494.38, population per likely affected facility 38561.79, and sets use_as_driver to false.",
+        "partial_credit": "Award 1-2 points for computing the denominators but not clearly treating them as non-controlling for the local diagnosis."
+      },
+      {
+        "name": "Calculation-linked decision",
+        "points": 2,
+        "description": "Connects rainfall concentration, late overflow timing, and facility exposure while rejecting single-cell rainfall and population-denominator substitutes.",
+        "partial_credit": "Award 1 point for a correct final decision that omits one computed support or one rejected substitute."
+      },
+      {
+        "name": "Concise computed interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation limited to what the diagnostic calculates and avoids extra assertions about exact flood depth, velocity, mortality, or facility service status.",
+        "partial_credit": "Award 0.5 points for minor extra wording that does not change the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2024_Sudan_floods_and_Arba_at_Dam_flood.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Floods_swamp_Sudan.html.html",
+      "data/exposure_impact/exposure_impact_002_HDX_Sudan_Arbaat_flood_package_search.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

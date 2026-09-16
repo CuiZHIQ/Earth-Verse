@@ -1,0 +1,406 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-008",
+  "key_values": {
+    "expanded_reference_answer": {
+      "answer_type": "paper_grade_text_numeric_alignment_audit",
+      "calculations": {
+        "burn_change_context": {
+          "dnbr_max": 0.953,
+          "dnbr_max_minus_mean": 0.904,
+          "dnbr_mean": 0.049,
+          "post_window": [
+            "2019-12-01",
+            "2020-02-29"
+          ],
+          "source_path": "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+        },
+        "local_dry_heat": {
+          "hot_dry_hours": 75,
+          "max_apparent_temperature_c": 40.6,
+          "max_vpd_kpa": 7.62,
+          "max_vpd_time": "2020-01-04T15:00",
+          "max_wet_bulb_c": 21.8,
+          "source_path": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+          "temperature_peak_c": 42.2,
+          "temperature_peak_time": "2020-01-04T15:00",
+          "warm_night_dates": [
+            "2019-12-29",
+            "2019-12-30",
+            "2020-01-04",
+            "2020-01-26",
+            "2020-01-28"
+          ],
+          "warm_nights": 5,
+          "wet_bulb_shortfall_c": 6.2,
+          "wet_bulb_threshold_c": 28.0
+        },
+        "precipitation_context": {
+          "coverage_days_inclusive": 46,
+          "coverage_end": "2020-01-15",
+          "coverage_fraction": 0.742,
+          "coverage_start": "2019-12-01",
+          "mean_precip_mm_by_product": {
+            "CHIRPS": 19.21,
+            "ERA5_Land": 21.48,
+            "GPM_IMERG": 16.79
+          },
+          "mean_precip_spread_mm": 4.69,
+          "missing_tail_days": 16,
+          "official_window_days_inclusive": 62,
+          "role": "partial_local_short_window_context"
+        }
+      },
+      "claim_map": [
+        {
+          "claim_id": "C1",
+          "claim_label": "bom_reports_national_record_heat_dryness_and_fire_weather",
+          "evidence_paths": [
+            "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf"
+          ],
+          "reason_code": "downloaded_primary_report_contains_national_claims",
+          "report_path": "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+          "support_status": "report_supported_national_context"
+        },
+        {
+          "claim_id": "C2",
+          "claim_label": "wwa_links_fire_weather_risk_to_extreme_heat_and_lack_of_rainfall",
+          "evidence_paths": [
+            "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html",
+            "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+            "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+            "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+            "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+          ],
+          "reason_code": "local_heat_and_short_precip_context_but_no_local_fwi_or_attribution_recompute",
+          "report_path": "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html",
+          "support_status": "partially_aligned_local_physical_context"
+        },
+        {
+          "claim_id": "C3",
+          "claim_label": "nasa_says_heat_helped_australian_fires_grow_rapidly",
+          "evidence_paths": [
+            "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html",
+            "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+            "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+          ],
+          "reason_code": "local_heat_and_dnbr_support_context_not_national_biome_or_smoke_claim",
+          "report_path": "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html",
+          "support_status": "partially_aligned_local_burn_and_heat_context"
+        },
+        {
+          "claim_id": "C4",
+          "claim_label": "wmo_locked_anchor_can_supply_report_text",
+          "evidence_paths": [
+            "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json"
+          ],
+          "reason_code": "http_404_and_claim_extraction_not_started",
+          "report_path": "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+          "support_status": "unsupported_weak_anchor"
+        }
+      ],
+      "conflict_resolution": [
+        {
+          "basis": "spatial_scale_mismatch",
+          "conflict": "national_report_peak_vs_local_package_weather_peak",
+          "conflict_id": "S1",
+          "numeric_impact": {
+            "bom_national_peak_c": 41.88,
+            "local_minus_national_c": 0.32,
+            "local_open_meteo_peak_c": 42.2
+          },
+          "rejected_substitution": "treat_national_area_average_as_local_canberra_measurement",
+          "selected_role": "use_bom_for_national_context_and_open_meteo_for_local_weather_calculations"
+        },
+        {
+          "basis": "wrong_mechanism",
+          "conflict": "humid_heat_lead_vs_hot_dry_fire_weather",
+          "conflict_id": "S2",
+          "numeric_impact": {
+            "hot_dry_hours": 75,
+            "max_vpd_kpa": 7.62,
+            "max_wet_bulb_c": 21.8,
+            "wet_bulb_shortfall_c": 6.2,
+            "wet_bulb_threshold_c": 28.0
+          },
+          "rejected_substitution": "humid_wet_bulb_lead",
+          "selected_role": "dry_heat_fire_weather_context"
+        },
+        {
+          "basis": "event_window_mismatch",
+          "conflict": "short_precip_products_vs_full_event_drought_claim",
+          "conflict_id": "S3",
+          "numeric_impact": {
+            "mean_precip_spread_mm": 4.69,
+            "missing_tail_days": 16,
+            "official_window_days": 62,
+            "precip_product_days": 46
+          },
+          "rejected_substitution": "claim_full_dec_jan_drought_from_precip_products",
+          "selected_role": "reports_for_national_dryness_precip_products_for_partial_local_context"
+        }
+      ],
+      "counterfactuals": [
+        {
+          "correct_result": {
+            "claim_audit_status": "weak_or_missing_report_claim",
+            "support_status": "unsupported_weak_anchor"
+          },
+          "counterfactual": "use_wmo_locked_anchor_json_as_main_report_text",
+          "counterfactual_id": "CF1",
+          "error_class": "weak_source_provenance",
+          "wrong_result": {
+            "http_status": "404",
+            "support_status": "report_supported"
+          }
+        },
+        {
+          "correct_result": {
+            "coverage_assumption": "2019-12-01_to_2020-01-15",
+            "coverage_fraction": 0.742,
+            "missing_tail_days": 16
+          },
+          "counterfactual": "treat_short_precipitation_files_as_full_event_window_evidence",
+          "counterfactual_id": "CF2",
+          "error_class": "wrong_window",
+          "wrong_result": {
+            "coverage_assumption": "2019-12-01_to_2020-01-31",
+            "coverage_fraction": 1.0
+          }
+        },
+        {
+          "correct_result": {
+            "lead_mechanism": "dry_heat_fire_weather_context",
+            "max_vpd_kpa": 7.62,
+            "wet_bulb_shortfall_c": 6.2
+          },
+          "counterfactual": "classify_the_local_event_as_humid_heat_led",
+          "counterfactual_id": "CF3",
+          "error_class": "wrong_mechanism",
+          "wrong_result": {
+            "lead_mechanism": "humid_wet_bulb_lead",
+            "max_wet_bulb_c": 21.8
+          }
+        }
+      ],
+      "evidence_table": {
+        "physical_hazard": [
+          "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "rejected_or_limited": {
+          "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json": "weak_report_anchor_not_claim_text_source",
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json": "shorter_precip_window_not_full_dec_jan_drought_proof",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json": "shorter_precip_window_not_full_dec_jan_drought_proof",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json": "shorter_precip_window_not_full_dec_jan_drought_proof",
+          "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json": "annual_embedding_change_not_burn_severity_metric"
+        },
+        "remote_sensing": [
+          "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+          "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+        ],
+        "reports": [
+          "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+          "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html",
+          "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html",
+          "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json"
+        ]
+      },
+      "final_ruling": {
+        "confidence": "medium",
+        "label": "local_dry_heat_fire_weather_chain_supported",
+        "limits": [
+          "wmo_anchor_json_is_weak_for_claim_text",
+          "precipitation_products_end_before_official_event_window",
+          "dNBR_supports_local_burn_change_not_national_burned_area"
+        ],
+        "why": "Local weather and burn-change files align with report fire-weather context, while national report claims and short-window precipitation files must keep their bounded roles."
+      },
+      "reference_trace": [
+        "read_metadata_and_event_lock_for_official_window",
+        "extract_short_claim_labels_from_bom_wwa_nasa_and_flag_weak_wmo_anchor",
+        "compute_local_open_meteo_wet_bulb_vpd_hot_dry_hours_warm_nights_and_apparent_temperature",
+        "compare_precipitation_product_dates_and_means_against_the_full_event_window",
+        "read_dnbr_as_burn_change_context_without_converting_it_to_national_burned_area",
+        "resolve_scale_window_and_mechanism_conflicts_before_returning_json"
+      ],
+      "research_question": "local_dry_heat_fire_weather_chain_vs_wrong_substitutions",
+      "scope": {
+        "event_id": "CSX-008",
+        "event_window": {
+          "days_inclusive": 62,
+          "end": "2020-01-31",
+          "source_path": "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+          "start": "2019-12-01"
+        }
+      }
+    },
+    "hot_dry_hour_rule": "temperature >= 35 C, RH <= 20%, VPD >= 4 kPa",
+    "official_event_window_days": 62,
+    "precipitation_coverage_fraction": 0.742,
+    "report_text_checks": {
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf": [
+        "hottest Australia-wide day",
+        "dangerous fire weather",
+        "warmest and driest year"
+      ],
+      "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html": [
+        "sustained high temperatures",
+        "heat wave helped the fires grow rapidly"
+      ],
+      "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html": [
+        "southeastern Australian bushfires",
+        "extreme high temperatures and lack of rainfall",
+        "Fire Weather Index"
+      ]
+    },
+    "wet_bulb_threshold_c": 28.0
+  },
+  "numeric_tolerances": {
+    "dnbr_abs": 0.01,
+    "hot_dry_hours_abs": 2,
+    "max_vpd_kpa_abs": 0.1,
+    "max_wet_bulb_c_abs": 0.3,
+    "mean_precip_mm_abs": 0.05,
+    "mean_precip_spread_mm_abs": 0.05,
+    "temperature_peak_c_abs": 0.2,
+    "warm_nights_abs": 0,
+    "wet_bulb_shortfall_c_abs": 0.3
+  },
+  "primary_gt": {
+    "answer": "local_dry_heat_fire_weather_chain_supported",
+    "burn_change_context": {
+      "dnbr_max": 0.953,
+      "dnbr_max_minus_mean": 0.904,
+      "dnbr_mean": 0.049
+    },
+    "conflict_resolution": [
+      "scale",
+      "mechanism",
+      "window"
+    ],
+    "counterfactuals_rejected": [
+      "weak_source",
+      "wrong_window",
+      "wrong_mechanism"
+    ],
+    "event_window": {
+      "end_date": "2020-01-31",
+      "inclusive_days": 62,
+      "start_date": "2019-12-01"
+    },
+    "final_label": "local_dry_heat_fire_weather_chain_supported",
+    "local_physical_calculations": {
+      "hot_dry_hours": 75,
+      "max_apparent_temperature_c": 40.6,
+      "max_vpd_kpa": 7.62,
+      "max_vpd_time": "2020-01-04T15:00",
+      "max_wet_bulb_c": 21.8,
+      "temperature_peak_c": 42.2,
+      "temperature_peak_time": "2020-01-04T15:00",
+      "warm_nights_tmin_ge_18c": 5,
+      "wet_bulb_shortfall_from_28c": 6.2
+    },
+    "precipitation_window_check": {
+      "coverage_days": 46,
+      "coverage_end": "2020-01-15",
+      "coverage_fraction": 0.742,
+      "coverage_start": "2019-12-01",
+      "mean_precip_mm": {
+        "chirps": 19.21,
+        "era5_land": 21.48,
+        "gpm": 16.79
+      },
+      "mean_precip_spread_mm": 4.69,
+      "missing_tail_days": 16
+    },
+    "report_claim_alignment": {
+      "bom_national_context": "report_supported_national_context",
+      "nasa_fire_growth_context": "partial_local_burn_heat_context",
+      "wmo_locked_anchor": "unsupported_weak_anchor",
+      "wwa_fire_weather_context": "partial_local_physical_context"
+    },
+    "source_files_used": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html",
+      "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+    ],
+    "target_family": "paper_grade_text_numeric_alignment_audit"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/files.csv",
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/physical_hazard/physical_hazard_010_03_World_Weather_Attribution_-_Australian_bushfires_2019-2020.html.html",
+      "data/other/other_003_02_NASA_-_Climate_events_of_2020.html.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Uses the requested descriptive JSON schema, official event window, inclusive day count, and package-relative paths for report, weather, precipitation, and burn-change evidence.",
+        "name": "schema_and_scope",
+        "partial_credit": "Partial credit for correct JSON with one missing source or window field.",
+        "points": 3
+      },
+      {
+        "description": "Correctly maps BOM, WWA, NASA, and weak WMO-anchor claims to support statuses and short reason codes.",
+        "name": "report_claim_alignment",
+        "partial_credit": "Partial credit for identifying report roles but missing support-status distinctions.",
+        "points": 4
+      },
+      {
+        "description": "Reconstructs peak temperature/time, VPD, wet-bulb shortfall, hot-dry hours, warm nights, and apparent-temperature maximum.",
+        "name": "local_physical_calculations",
+        "partial_credit": "Partial credit for correct heat metrics with one formula or count error.",
+        "points": 4
+      },
+      {
+        "description": "Computes the shorter precipitation coverage, missing tail days, coverage fraction, product means, and spread.",
+        "name": "precipitation_window_and_product_spread",
+        "partial_credit": "Partial credit for product means without the event-window mismatch.",
+        "points": 3
+      },
+      {
+        "description": "Uses dNBR as local burn-change context and reports max, mean, and max-minus-mean values without converting it into national burned-area claims.",
+        "name": "burn_change_context",
+        "partial_credit": "Partial credit for citing the dNBR source with incomplete values.",
+        "points": 2
+      },
+      {
+        "description": "Resolves national/local scale, humid/dry mechanism, and short precipitation-window conflicts with numeric impacts.",
+        "name": "conflict_and_counterfactual_analysis",
+        "partial_credit": "Partial credit for conflict labels without numeric consequences.",
+        "points": 3
+      },
+      {
+        "description": "Returns the bounded final ruling and package-grounded limitations without external facts or response advice.",
+        "name": "final_ruling_and_limits",
+        "partial_credit": "No credit for broad disaster narrative replacing the ruling.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "paper_grade_text_numeric_alignment_audit",
+  "task_id": "CSX-008_Q2",
+  "task_type": "short_answer"
+}

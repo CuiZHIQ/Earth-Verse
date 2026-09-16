@@ -1,0 +1,314 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "Saharan fine-dust air-quality event",
+      "trans-Atlantic mineral-dust respiratory exposure event",
+      "public-health air-quality response priority"
+    ],
+    "answer": "transatlantic_fine_dust_air_quality_event",
+    "answer_type": "deterministic_labels_plus_rubric_judged_synthesis",
+    "canonical_stance": "The June 2020 Saharan dust Godzilla outbreak was primarily a trans-Atlantic fine-dust air-quality event requiring respiratory exposure warnings and exposure reduction.",
+    "dominant_driver": "saharan_dust_plume_transport",
+    "forbidden_claims": [
+      "Exact death, illness, hospitalization, or economic-loss counts.",
+      "Precise dust concentration throughout the full trans-Atlantic plume.",
+      "Rainfall, heat, or burn-scar damage as the leading impact pathway.",
+      "Point-sampled meteorology treated as a full plume transport model."
+    ],
+    "impact_chain": [
+      "saharan_dust_lofting_and_transport",
+      "large_dense_transatlantic_plume",
+      "fine_particles_near_surface",
+      "unhealthy_air_quality_and_respiratory_exposure"
+    ],
+    "impact_index": "air_quality_respiratory_exposure",
+    "key_numeric_anchors": [
+      {
+        "name": "event duration",
+        "tolerance": 0,
+        "unit": "days",
+        "value": 15
+      },
+      {
+        "name": "point-sampled maximum daily wind speed",
+        "tolerance": 0.1,
+        "unit": "km/h",
+        "value": 31.1
+      },
+      {
+        "name": "point-sampled event precipitation sum",
+        "tolerance": 0.01,
+        "unit": "mm",
+        "value": 2.37
+      },
+      {
+        "name": "rounded exposed-population context",
+        "tolerance": 1,
+        "unit": "people",
+        "value": 43914.0
+      }
+    ],
+    "mechanism_summary": "The event is best diagnosed as a trans-Atlantic Saharan fine-dust plume with respiratory air-quality exposure as the lead response priority.",
+    "required_claims": [
+      "Identify Saharan dust lofting and trans-Atlantic plume transport as the dominant mechanism.",
+      "Identify respiratory air-quality warning and exposure reduction as the lead response priority.",
+      "Connect fine near-surface particles to unhealthy air quality and respiratory exposure.",
+      "Explain why rainfall/flood disruption, heat stress, and land-surface damage are weaker primary interpretations."
+    ],
+    "required_metrics": [
+      "event duration: 15 days",
+      "point-sampled maximum daily wind speed: about 31.1 km/h",
+      "point-sampled event precipitation sum: about 2.37 mm",
+      "rounded exposed-population context: about 43,914 people"
+    ],
+    "response_priority": "respiratory_air_quality_warning_and_exposure_reduction",
+    "severity_bin": "high",
+    "structured_answer": {
+      "answer": "transatlantic_fine_dust_air_quality_event",
+      "impact_chain": [
+        "saharan_dust_lofting_and_transport",
+        "large_dense_transatlantic_plume",
+        "fine_particles_near_surface",
+        "unhealthy_air_quality_and_respiratory_exposure"
+      ],
+      "key_numeric_anchors": [
+        {
+          "name": "event duration",
+          "unit": "days",
+          "value": 15
+        },
+        {
+          "name": "point-sampled maximum daily wind speed",
+          "unit": "km/h",
+          "value": 31.1
+        },
+        {
+          "name": "point-sampled event precipitation sum",
+          "unit": "mm",
+          "value": 2.37
+        },
+        {
+          "name": "rounded exposed-population context",
+          "unit": "people",
+          "value": 43914.0
+        }
+      ],
+      "mechanism_summary": "The event is best diagnosed as a trans-Atlantic Saharan fine-dust plume with respiratory air-quality exposure as the lead response priority.",
+      "response_priority": "respiratory_air_quality_warning_and_exposure_reduction"
+    }
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-298",
+  "forbidden_overclaims": [
+    "Do not claim exact death, illness, hospitalization, or economic-loss counts.",
+    "Do not infer precise dust concentration at every location in the plume.",
+    "Do not treat point-sampled meteorology as a full trans-Atlantic transport model.",
+    "Do not treat annual land-surface change as direct proof of dust concentration or human exposure.",
+    "Do not make rainfall, heat, or burn-scar damage the leading impact pathway for this task."
+  ],
+  "numeric_anchor_count": 4,
+  "numeric_anchors": [
+    {
+      "name": "event duration",
+      "tolerance": 0,
+      "unit": "days",
+      "value": 15
+    },
+    {
+      "name": "point-sampled maximum daily wind speed",
+      "tolerance": 0.1,
+      "unit": "km/h",
+      "value": 31.1
+    },
+    {
+      "name": "point-sampled event precipitation sum",
+      "tolerance": 0.01,
+      "unit": "mm",
+      "value": 2.37
+    },
+    {
+      "name": "rounded exposed-population context",
+      "tolerance": 1,
+      "unit": "people",
+      "value": 43914.0
+    }
+  ],
+  "numeric_tolerances": {
+    "event duration": {
+      "tolerance": 0,
+      "unit": "days",
+      "value": 15
+    },
+    "point-sampled event precipitation sum": {
+      "tolerance": 0.01,
+      "unit": "mm",
+      "value": 2.37
+    },
+    "point-sampled maximum daily wind speed": {
+      "tolerance": 0.1,
+      "unit": "km/h",
+      "value": 31.1
+    },
+    "rounded exposed-population context": {
+      "tolerance": 1,
+      "unit": "people",
+      "value": 43914.0
+    }
+  },
+  "primary_gt": {
+    "answer": "transatlantic_fine_dust_air_quality_event",
+    "impact_chain": [
+      "saharan_dust_lofting_and_transport",
+      "large_dense_transatlantic_plume",
+      "fine_particles_near_surface",
+      "unhealthy_air_quality_and_respiratory_exposure"
+    ],
+    "key_numeric_anchors": [
+      {
+        "name": "event duration",
+        "unit": "days",
+        "value": 15
+      },
+      {
+        "name": "point-sampled maximum daily wind speed",
+        "unit": "km/h",
+        "value": 31.1
+      },
+      {
+        "name": "point-sampled event precipitation sum",
+        "unit": "mm",
+        "value": 2.37
+      },
+      {
+        "name": "rounded exposed-population context",
+        "unit": "people",
+        "value": 43914.0
+      }
+    ],
+    "mechanism_summary": "The event is best diagnosed as a trans-Atlantic Saharan fine-dust plume with respiratory air-quality exposure as the lead response priority.",
+    "response_priority": "respiratory_air_quality_warning_and_exposure_reduction"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2020_Saharan_dust_Godzilla_outbreak.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "question_leakage_audit": {
+    "absolute_path_hits": 0,
+    "boundary_framing_hits": 0,
+    "expected_issue_score": 0,
+    "product_leak_hits": 0,
+    "visible_numeric_anchor_count": 0,
+    "visible_package_directive_hits": 0,
+    "workflow_hits": 0
+  },
+  "required_findings": [
+    "Identify trans-Atlantic Saharan fine-dust transport as the dominant mechanism.",
+    "Set respiratory air-quality warning and exposure reduction as the response priority.",
+    "Use the event duration, wind context, low point precipitation, and population context as concise quantitative anchors.",
+    "Explain why rainfall/flood disruption, heat-stress response, and land-surface damage are weaker interpretations.",
+    "Connect plume transport, near-surface fine particles, and respiratory exposure in the impact chain."
+  ],
+  "requires_computation": true,
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Award up to 2 points for identifying a trans-Atlantic fine-dust air-quality event and up to 2 points for choosing respiratory air-quality warning/exposure reduction as the response priority.",
+        "name": "correct_final_labels",
+        "points": 4
+      },
+      {
+        "description": "Award 1 point each for event duration of 15 days, maximum daily wind speed of about 31.1 km/h, point-sampled precipitation sum of about 2.37 mm, and rounded exposed population of about 43,914 people.",
+        "name": "quantitative_anchors",
+        "points": 4
+      },
+      {
+        "description": "Award for explaining Saharan dust lofting and transport, the large dense trans-Atlantic plume, fine particles near the surface, and air-quality degradation.",
+        "name": "physical_mechanism",
+        "points": 4
+      },
+      {
+        "description": "Award for linking source/driver, atmospheric hazard process, near-surface exposure, and respiratory or public-health receptors.",
+        "name": "impact_chain",
+        "points": 3
+      },
+      {
+        "description": "Award for rejecting rainfall/flood disruption, heat stress, and land-surface damage as leading interpretations using event-specific reasoning.",
+        "name": "alternative_framing_rejection",
+        "points": 2
+      },
+      {
+        "description": "Award for avoiding unsupported mortality, morbidity, economic-loss, or exact plume-wide concentration claims and for not overinterpreting point meteorology or annual surface-change metrics.",
+        "name": "overclaim_control",
+        "points": 2
+      },
+      {
+        "description": "Award for concise, JSON-compatible output with the requested fields and readable reasoning.",
+        "name": "structured_output_quality",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "response_priority_mechanism_synthesis",
+  "supporting_metrics": {
+    "file_category_counts": {
+      "event_catalogs": 5,
+      "event_reports": 4,
+      "exposure_impact": 4,
+      "geospatial_context": 2,
+      "other": 3,
+      "physical_hazard": 9,
+      "remote_sensing": 8
+    },
+    "key_metrics": {
+      "alphaearth_1_minus_cosine_mean": 0.0082,
+      "aoi_area_km2_approx": 17839.5,
+      "chirps_event_precip_mm_mean": 54.1,
+      "era5_temperature_2m_max_c_max": 32.57,
+      "event_duration_days": 15,
+      "gpm_event_precip_mm_mean": 64.19,
+      "open_meteo_max_wind_kmh": 31.1,
+      "open_meteo_precip_sum_mm": 1.6,
+      "open_meteo_windy_days_ge_25kmh": 5,
+      "open_meteo_windy_run_days_ge_25kmh": 2,
+      "osm_amenity_count": 4,
+      "osm_road_way_count": 42,
+      "population_density_per_km2_approx": 2.5,
+      "power_max_wind_ms": 6.83,
+      "power_mean_temp_c": 24.19,
+      "power_mean_wind_ms": 5.1,
+      "power_precip_sum_mm": 2.37,
+      "worldpop_population_sum": 43914.0
+    },
+    "supporting_decisions": {
+      "catalog_absence_not_disqualifying": true,
+      "precipitation_not_primary": true,
+      "vegetation_change_not_primary": true
+    },
+    "text_flags": {
+      "caribbean_hardest_hit": true,
+      "darkened_caribbean_skies": true,
+      "dry_dust_inhibits_clouds": true,
+      "large_dense_plume": true,
+      "low_altitude_fine_dust_health": true,
+      "record_or_historic_aod": true,
+      "unhealthy_pm25_aqi": true
+    }
+  },
+  "task_id": "CSX-298_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "task_version": "v3.2_numeric",
+  "task_id": "CSX-321_Q2",
+  "event_id": "CSX-321",
+  "task_type": "numeric",
+  "target_family": "marmolada_local_collapse_extreme_ratio_check",
+  "evaluation_mode": "deterministic",
+  "package_relative_path": "event_packages/standard_event_packages/packages/CSX-321",
+  "primary_gt": {
+    "answer": "localized_collapse_consistent",
+    "optical_extreme_ratio": 67.52,
+    "radar_extreme_ratio": 64.09,
+    "optical_peak_z": 8.64,
+    "radar_peak_z": 11.76,
+    "local_signal_gate": true,
+    "annual_mean_lt_0.08": true,
+    "precipitation_mean_lt_5_mm": true,
+    "event_anchor_2022_07_03": true,
+    "pass_count": 4,
+    "rejected_reading": "massif_wide_or_rain_led"
+  },
+  "event": {
+    "event_name": "2022 Marmolada glacier collapse",
+    "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+    "event_date_or_window": "2022-07-03"
+  },
+  "key_values": {
+    "raw_inputs": {
+      "optical_mean": 0.024941,
+      "optical_max": 1.684037,
+      "optical_std": 0.192076,
+      "radar_mean_db": 0.267552,
+      "radar_max_db": 17.14775,
+      "radar_std_db": 1.435302,
+      "annual_embedding_mean": 0.041398,
+      "era5_event_precip_mean_mm": 1.808061
+    },
+    "formulas": {
+      "extreme_ratio": "maximum / max(abs(mean), 0.001)",
+      "peak_z": "(maximum - mean) / max(stdDev, 0.001)"
+    },
+    "thresholds": {
+      "local_extreme_ratio_min": 20,
+      "local_peak_z_min": 5,
+      "annual_mean_max": 0.08,
+      "precip_mean_mm_max": 5
+    },
+    "checks": {
+      "local_signal_pass": true,
+      "annual_mean_lt_0.08": true,
+      "precipitation_mean_lt_5_mm": true,
+      "event_anchor_2022_07_03": true
+    },
+    "rejected_reading": "massif_wide_or_rain_led"
+  },
+  "tolerances": {
+    "optical_ratio": 0.05,
+    "radar_ratio": 0.05,
+    "optical_z": 0.02,
+    "radar_z": 0.02,
+    "annual_mean": 0.001,
+    "precip_mean_mm": 0.01,
+    "pass_count": 0
+  },
+  "decision_rule": {
+    "summary": "Return localized_collapse_consistent when the local optical and radar gates, annual-context gate, weather-context gate, and event-date anchor all pass.",
+    "computed_consequence": "Strong local optical and radar extremes with low mean annual change and low same-day precipitation."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "answer_schema",
+        "points": 3,
+        "description": "Returns compact JSON with answer, four computed signal metrics, four explicit gate booleans, pass_count, and rejected_reading."
+      },
+      {
+        "name": "optical_signal_math",
+        "points": 4,
+        "description": "Computes optical_extreme_ratio as 67.52 and optical_peak_z as 8.64 using the stated formulas, with tolerance 0.05 for the ratio and 0.02 for z."
+      },
+      {
+        "name": "radar_signal_math",
+        "points": 4,
+        "description": "Computes radar_extreme_ratio as 64.09 and radar_peak_z as 11.76 using the stated formulas, with tolerance 0.05 for the ratio and 0.02 for z."
+      },
+      {
+        "name": "threshold_tests",
+        "points": 4,
+        "description": "Applies all four gates correctly: local_signal_gate, annual_mean_lt_0.08, precipitation_mean_lt_5_mm, and event_anchor_2022_07_03 are true."
+      },
+      {
+        "name": "final_label",
+        "points": 2,
+        "description": "Reports localized_collapse_consistent and pass_count 4 from the deterministic rule."
+      },
+      {
+        "name": "computed_rejection",
+        "points": 2,
+        "description": "Rejects a massif-wide or rain-led reading as a direct consequence of the low annual mean change and low event-day precipitation mean."
+      },
+      {
+        "name": "concise_consequence",
+        "points": 1,
+        "description": "Keeps the final consequence short and numeric, without adding loss, volume, runout, or attribution statements beyond the computed gates."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2022_Marmolada_glacier_collapse.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  }
+}

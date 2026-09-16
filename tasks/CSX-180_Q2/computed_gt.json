@@ -1,0 +1,161 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-180",
+  "judge_anchors": {
+    "must_avoid": [
+      "quantified smoke dose or health loss not derived in the ledger",
+      "crop loss or infrastructure-disruption totals not derived in the ledger",
+      "treating local dNBR mapping as available",
+      "reframing the event as a flood-first case"
+    ],
+    "must_include": [
+      "event_days=61 and local_days=46 with coverage_fraction=0.754",
+      "smoke_phrase_hits=7 from the seven listed motifs",
+      "precipitation mean=275.0 mm and spread=101.3 mm",
+      "wind speed=0.713 m/s and bearing_to_deg=77.9",
+      "dnbr_status=no_sufficient_scenes",
+      "verdict matches regional smoke-and-aerosol window confirmed"
+    ]
+  },
+  "key_values": {
+    "dnbr": {
+      "post_count": 0,
+      "pre_count": 0,
+      "status": "no_sufficient_scenes"
+    },
+    "event_name": "September 2000 southern Africa fires and river of smoke",
+    "event_window": {
+      "days": 61,
+      "end": "2000-09-30",
+      "start": "2000-08-01"
+    },
+    "local_product_window": {
+      "days": 46,
+      "end": "2000-09-15",
+      "start": "2000-08-01"
+    },
+    "motif_flags": {
+      "burning of grass and shrubland": true,
+      "daily satellite maps": true,
+      "fire fronts 20 miles long": true,
+      "heat-absorbing aerosols": true,
+      "heaviest burning": true,
+      "river of smoke": true,
+      "warming influence": true
+    },
+    "precip_ledger_mm": {
+      "mean": 275.0,
+      "spread": 101.3
+    },
+    "precip_source_means_mm": {
+      "chirps": 281.5,
+      "era5_land": 221.1,
+      "gpm": 322.4
+    },
+    "threshold_results": {
+      "coverage_gate": true,
+      "dnbr_not_available": true,
+      "smoke_phrase_gate": true
+    },
+    "thresholds": {
+      "coverage_fraction_min": 0.75,
+      "requires_dnbr_available": false,
+      "smoke_phrase_min": 5
+    },
+    "wind_mps": {
+      "bearing_to_deg": 77.9,
+      "speed": 0.713,
+      "u": 0.697,
+      "v": 0.149
+    }
+  },
+  "numeric_tolerances": {
+    "bearing_deg_abs": 0.1,
+    "coverage_fraction_abs": 0.001,
+    "day_count_abs": 0,
+    "phrase_count_abs": 0,
+    "precip_mm_abs": 0.2,
+    "wind_mps_abs": 0.001
+  },
+  "primary_gt": {
+    "consistency_verdict": "The ledger confirms a regional smoke-and-aerosol window; local dNBR burn mapping is not available, and rainfall remains contextual.",
+    "coverage_fraction": 0.754,
+    "dnbr_status": "no_sufficient_scenes",
+    "event_days": 61,
+    "local_days": 46,
+    "precip_mm": {
+      "mean": 275.0,
+      "spread": 101.3
+    },
+    "smoke_phrase_hits": 7,
+    "wind_mps": {
+      "bearing_to_deg": 77.9,
+      "speed": 0.713,
+      "u": 0.697,
+      "v": 0.149
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/air_quality/air_quality_001_NASA_Earth_Observatory_Airborne_Particulates_over_Southern_Africa.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2000_southern_Africa_fires_and_river_of_smoke.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Computes the 61-day inclusive event window, the 46-day local product window, and the 0.754 coverage fraction.",
+        "name": "Window reconstruction",
+        "partial_credit": "Award 1 point for each correct day count and 2 points for the correct fraction with an explicit inclusive-day formula.",
+        "points": 4
+      },
+      {
+        "description": "Finds all 7 listed smoke, aerosol, burning, and satellite-tracking motifs, including burning of grass and shrubland.",
+        "name": "Report motif count",
+        "partial_credit": "Award proportional credit for each motif presence or absence handled correctly.",
+        "points": 4
+      },
+      {
+        "description": "Uses ERA5-Land, GPM IMERG, and CHIRPS means to compute 275.0 mm mean precipitation and 101.3 mm spread.",
+        "name": "Precipitation ledger",
+        "partial_credit": "Award 1 point for the three source means, 1 point for the mean, and 1 point for the spread.",
+        "points": 3
+      },
+      {
+        "description": "Computes u = 0.697 m/s, v = 0.149 m/s, speed = 0.713 m/s, and bearing toward 77.9 degrees clockwise from north.",
+        "name": "Wind vector calculation",
+        "partial_credit": "Award credit for the component extraction, speed formula, and bearing formula.",
+        "points": 3
+      },
+      {
+        "description": "Reports Sentinel-2 dNBR status as no_sufficient_scenes and does not treat a local burn map as available.",
+        "name": "Burn-map availability check",
+        "partial_credit": "Award 1 point for the status and 1 point for the correct implication.",
+        "points": 2
+      },
+      {
+        "description": "States that the numeric ledger supports a regional smoke-and-aerosol window while keeping rainfall and local exposure context secondary.",
+        "name": "Consistency verdict",
+        "partial_credit": "Award 1 point for the smoke-and-aerosol verdict and 1 point for not overextending other layers.",
+        "points": 2
+      },
+      {
+        "description": "Uses requested units and rounding, and avoids quantified health-loss, crop-loss, or infrastructure-disruption statements that are not derived in the ledger.",
+        "name": "Precision and limits",
+        "partial_credit": "Award partial credit for minor rounding or formatting issues that leave the calculations interpretable.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "wildfire_smoke_aerosol_window_ledger",
+  "task_id": "CSX-180_Q2",
+  "task_type": "numeric"
+}

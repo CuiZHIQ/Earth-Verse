@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-055_Q2",
+  "event_id": "CSX-055",
+  "task_type": "short_answer",
+  "target_family": "basin_flood_process_model",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_summary": "high_stress_routed_basin_flood",
+    "required_output": {
+      "source_paths": {
+        "event_window": [
+          "data/event_reports/event_reports_004_Locked_event_anchor_2024_Rio_Grande_do_Sul_floods.json"
+        ],
+        "event_process_report": [
+          "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html"
+        ],
+        "precipitation": [
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "remote_sensing": [
+          "data/remote_sensing/remote_sensing_010_pre_2024-03-28_modis_truecolor.jpg.jpg",
+          "data/remote_sensing/remote_sensing_009_event_2024-05-07_modis_truecolor.jpg.jpg",
+          "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+          "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+        ],
+        "exposure": [
+          "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+          "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json"
+        ]
+      },
+      "process_model": {
+        "event_duration_days": 35,
+        "burst_min_daily_rate_mm_day": 42.857,
+        "duration_to_burst_reference_ratio": 5.0,
+        "gpm_localization_ratio": 3.733,
+        "product_peak_spread_ratio": 2.008,
+        "rainfall_loading_index": 64.251,
+        "surface_inundation_norm": 0.83,
+        "exposure_access_norm": 0.849,
+        "routing_amplifier": 1.2,
+        "compound_basin_flood_stress": 90.229,
+        "routed_response_stress": 108.275
+      },
+      "remote_sensing_metrics": {
+        "dark_pixel_share_gain": 0.1467,
+        "brown_water_proxy_gain": 0.0668,
+        "visual_inundation_score": 0.966,
+        "sar_water_change_score": 0.61,
+        "annual_land_change_score": 0.908
+      },
+      "exposure_metrics": {
+        "population": 56343.3,
+        "road_elements": 76,
+        "critical_amenities": 12,
+        "road_elements_per_10000_people": 13.489,
+        "critical_amenities_per_10000_people": 2.13
+      },
+      "scenario_analysis": {
+        "burst_increase_percent": 15,
+        "scenario_rainfall_loading_index": 73.889,
+        "scenario_compound_basin_flood_stress": 94.086,
+        "scenario_routed_response_stress": 112.903,
+        "routed_response_stress_delta": 4.629
+      },
+      "mechanism_chain": [
+        "A 35-day event window with a conservative burst rate of 42.857 mm/day indicates a long rainfall-loaded episode rather than an isolated short storm.",
+        "GPM localization and cross-product peak spread show concentrated precipitation, while the report describes named-river overtopping, urban inundation, transport disruption, and sediment-laden runoff toward Patos Lagoon.",
+        "Visible-image dark and brown-water gains, negative mean Sentinel-1 VV change, annual embedding change, and mapped population/road/amenity load together support a routed basin flood with substantial response pressure."
+      ],
+      "final_interpretation": "The model indicates a high-stress routed basin flood: persistent rainfall loading and named-river overtopping dominate the mechanism, remote sensing confirms broad inundation, and the 15 percent burst sensitivity increases routed response stress by about 4.63 points."
+    },
+    "key_numeric_targets": {
+      "compound_basin_flood_stress": 90.229,
+      "routed_response_stress": 108.275,
+      "scenario_routed_response_stress": 112.903,
+      "routed_response_stress_delta": 4.629
+    }
+  },
+  "event": {
+    "event_name": "2024 Rio Grande do Sul floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "event_date_or_window": "2024-04-27 to 2024-05-31"
+  },
+  "answer_detail": {
+    "key_values": {
+      "event_window_start": "2024-04-27",
+      "event_window_end": "2024-05-31",
+      "event_duration_days": 35,
+      "reported_burst_lower_bound_mm": 300.0,
+      "burst_reference_days": 7,
+      "burst_min_daily_rate_mm_day": 42.857142857142854,
+      "duration_to_burst_reference_ratio": 5.0,
+      "precipitation": {
+        "era5_land_max_mm": 77.78241194145252,
+        "gpm_max_mm": 134.5049971230328,
+        "chirps_max_mm": 66.97785657830536,
+        "gpm_mean_mm": 36.03429930162901,
+        "gpm_localization_ratio": 3.7326935650154907,
+        "product_peak_spread_ratio": 2.008200978569386,
+        "rainfall_loading_index": 64.25141888540364
+      },
+      "remote_sensing": {
+        "pre_image": {
+          "available": true,
+          "width": 1024,
+          "height": 768,
+          "dark_pixel_share": 0.1516,
+          "brown_water_proxy_share": 0.0024
+        },
+        "event_image": {
+          "available": true,
+          "width": 1024,
+          "height": 768,
+          "dark_pixel_share": 0.2983,
+          "brown_water_proxy_share": 0.0692
+        },
+        "dark_pixel_share_gain": 0.1467,
+        "brown_water_proxy_gain": 0.0668,
+        "visual_inundation_score": 0.9661428571428571,
+        "sentinel1_vv_post_minus_pre_db_mean": -1.2204094794168256,
+        "sar_water_change_score": 0.6102047397084128,
+        "annual_embedding_change_mean": 0.05448082183871875,
+        "annual_land_change_score": 0.9080136973119792,
+        "surface_inundation_norm": 0.8299386840746261
+      },
+      "exposure": {
+        "population": 56343.28411129998,
+        "road_elements": 76,
+        "critical_amenities": 12,
+        "road_elements_per_10000_people": 13.48874159515983,
+        "critical_amenities_per_10000_people": 2.1298013044989204,
+        "exposure_access_norm": 0.8489110728528712
+      },
+      "routing": {
+        "flags": {
+          "named_river_overtopping": true,
+          "patos_sediment_runoff": true,
+          "transport_disruption": true,
+          "porto_alegre_inundation": true,
+          "upriver_farmland": true,
+          "climate_sensitivity_context": true
+        },
+        "routing_amplifier": 1.2000000000000002
+      },
+      "stress": {
+        "concentration_norm": 0.9665866956269363,
+        "compound_basin_flood_stress": 90.22876598073691,
+        "routed_response_stress": 108.27451917688431
+      },
+      "scenario": {
+        "burst_increase_percent": 15,
+        "scenario_burst_lower_bound_mm": 345.0,
+        "scenario_rainfall_loading_index": 73.88913171821419,
+        "scenario_compound_basin_flood_stress": 94.08590883787977,
+        "scenario_routed_response_stress": 112.90309060545574,
+        "routed_response_stress_delta": 4.628571428571433
+      }
+    },
+    "expected_answer": {
+      "source_paths": {
+        "event_window": [
+          "data/event_reports/event_reports_004_Locked_event_anchor_2024_Rio_Grande_do_Sul_floods.json"
+        ],
+        "event_process_report": [
+          "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html"
+        ],
+        "precipitation": [
+          "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+          "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+          "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+        ],
+        "remote_sensing": [
+          "data/remote_sensing/remote_sensing_010_pre_2024-03-28_modis_truecolor.jpg.jpg",
+          "data/remote_sensing/remote_sensing_009_event_2024-05-07_modis_truecolor.jpg.jpg",
+          "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+          "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+        ],
+        "exposure": [
+          "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+          "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json"
+        ]
+      },
+      "process_model": {
+        "event_duration_days": 35,
+        "burst_min_daily_rate_mm_day": 42.857,
+        "duration_to_burst_reference_ratio": 5.0,
+        "gpm_localization_ratio": 3.733,
+        "product_peak_spread_ratio": 2.008,
+        "rainfall_loading_index": 64.251,
+        "surface_inundation_norm": 0.83,
+        "exposure_access_norm": 0.849,
+        "routing_amplifier": 1.2,
+        "compound_basin_flood_stress": 90.229,
+        "routed_response_stress": 108.275
+      },
+      "remote_sensing_metrics": {
+        "dark_pixel_share_gain": 0.1467,
+        "brown_water_proxy_gain": 0.0668,
+        "visual_inundation_score": 0.966,
+        "sar_water_change_score": 0.61,
+        "annual_land_change_score": 0.908
+      },
+      "exposure_metrics": {
+        "population": 56343.3,
+        "road_elements": 76,
+        "critical_amenities": 12,
+        "road_elements_per_10000_people": 13.489,
+        "critical_amenities_per_10000_people": 2.13
+      },
+      "scenario_analysis": {
+        "burst_increase_percent": 15,
+        "scenario_rainfall_loading_index": 73.889,
+        "scenario_compound_basin_flood_stress": 94.086,
+        "scenario_routed_response_stress": 112.903,
+        "routed_response_stress_delta": 4.629
+      },
+      "mechanism_chain": [
+        "A 35-day event window with a conservative burst rate of 42.857 mm/day indicates a long rainfall-loaded episode rather than an isolated short storm.",
+        "GPM localization and cross-product peak spread show concentrated precipitation, while the report describes named-river overtopping, urban inundation, transport disruption, and sediment-laden runoff toward Patos Lagoon.",
+        "Visible-image dark and brown-water gains, negative mean Sentinel-1 VV change, annual embedding change, and mapped population/road/amenity load together support a routed basin flood with substantial response pressure."
+      ],
+      "final_interpretation": "The model indicates a high-stress routed basin flood: persistent rainfall loading and named-river overtopping dominate the mechanism, remote sensing confirms broad inundation, and the 15 percent burst sensitivity increases routed response stress by about 4.63 points."
+    },
+    "numeric_tolerances": {
+      "event_duration_days": {
+        "target": 35,
+        "absolute_tolerance": 0
+      },
+      "burst_min_daily_rate_mm_day": {
+        "target": 42.857,
+        "absolute_tolerance": 0.01
+      },
+      "duration_to_burst_reference_ratio": {
+        "target": 5.0,
+        "absolute_tolerance": 0.01
+      },
+      "gpm_localization_ratio": {
+        "target": 3.733,
+        "absolute_tolerance": 0.01
+      },
+      "product_peak_spread_ratio": {
+        "target": 2.008,
+        "absolute_tolerance": 0.01
+      },
+      "rainfall_loading_index": {
+        "target": 64.251,
+        "absolute_tolerance": 0.02
+      },
+      "dark_pixel_share_gain": {
+        "target": 0.1467,
+        "absolute_tolerance": 0.0005
+      },
+      "brown_water_proxy_gain": {
+        "target": 0.0668,
+        "absolute_tolerance": 0.0005
+      },
+      "visual_inundation_score": {
+        "target": 0.966,
+        "absolute_tolerance": 0.01
+      },
+      "sar_water_change_score": {
+        "target": 0.61,
+        "absolute_tolerance": 0.01
+      },
+      "annual_land_change_score": {
+        "target": 0.908,
+        "absolute_tolerance": 0.01
+      },
+      "surface_inundation_norm": {
+        "target": 0.83,
+        "absolute_tolerance": 0.01
+      },
+      "population": {
+        "target": 56343.3,
+        "absolute_tolerance": 0.2
+      },
+      "road_elements": {
+        "target": 76,
+        "absolute_tolerance": 0
+      },
+      "critical_amenities": {
+        "target": 12,
+        "absolute_tolerance": 0
+      },
+      "road_elements_per_10000_people": {
+        "target": 13.489,
+        "absolute_tolerance": 0.02
+      },
+      "critical_amenities_per_10000_people": {
+        "target": 2.13,
+        "absolute_tolerance": 0.01
+      },
+      "exposure_access_norm": {
+        "target": 0.849,
+        "absolute_tolerance": 0.01
+      },
+      "routing_amplifier": {
+        "target": 1.2,
+        "absolute_tolerance": 0.001
+      },
+      "compound_basin_flood_stress": {
+        "target": 90.229,
+        "absolute_tolerance": 0.02
+      },
+      "routed_response_stress": {
+        "target": 108.275,
+        "absolute_tolerance": 0.03
+      },
+      "scenario_rainfall_loading_index": {
+        "target": 73.889,
+        "absolute_tolerance": 0.02
+      },
+      "scenario_compound_basin_flood_stress": {
+        "target": 94.086,
+        "absolute_tolerance": 0.02
+      },
+      "scenario_routed_response_stress": {
+        "target": 112.903,
+        "absolute_tolerance": 0.03
+      },
+      "routed_response_stress_delta": {
+        "target": 4.629,
+        "absolute_tolerance": 0.02
+      }
+    },
+    "judge_anchors": [
+      "The answer must cite package-relative paths discovered from the local package.",
+      "The answer should connect persistent rainfall loading to named-river routing and observed surface-water change.",
+      "The 15 percent sensitivity case changes the burst lower bound only; precipitation ratios, duration, exposure, remote-sensing terms, and routing amplifier remain fixed."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Structured answer and citations",
+        "points": 3,
+        "description": "Uses the required JSON structure and cites package-relative paths for event window, report, precipitation, remote-sensing, and exposure values.",
+        "partial_credit": "Award 1-2 points for a mostly structured answer with incomplete path coverage."
+      },
+      {
+        "name": "Event process extraction",
+        "points": 4,
+        "description": "Extracts the event window, burst lower bound, named-river overtopping, Patos Lagoon sediment runoff, and transport disruption from package evidence.",
+        "partial_credit": "Award proportional credit for correct event and process claims."
+      },
+      {
+        "name": "Rainfall loading calculations",
+        "points": 4,
+        "description": "Computes duration, burst rate, duration ratio, GPM localization, product peak spread, and rainfall loading index within tolerance.",
+        "partial_credit": "Award proportional credit for correct formulas and numeric values."
+      },
+      {
+        "name": "Remote-sensing synthesis",
+        "points": 3,
+        "description": "Computes image gains, visual score, Sentinel-1 score, annual land-change score, and the surface inundation norm.",
+        "partial_credit": "Award partial credit for correct use of at least two remote-sensing families."
+      },
+      {
+        "name": "Exposure and access load",
+        "points": 2,
+        "description": "Computes population, road count, critical-amenity count, per-capita ratios, and exposure/access norm.",
+        "partial_credit": "Award 1 point if counts are correct but normalization is incomplete."
+      },
+      {
+        "name": "Stress model and routing amplifier",
+        "points": 2,
+        "description": "Applies the compound stress formula, routing amplifier, and routed stress score.",
+        "partial_credit": "Award 1 point for either the compound score or the amplifier/routed score."
+      },
+      {
+        "name": "Sensitivity case",
+        "points": 1,
+        "description": "Correctly recomputes the 15 percent burst sensitivity and routed-stress delta.",
+        "partial_credit": "No partial credit unless the changed burst lower bound is clear."
+      },
+      {
+        "name": "Disaster-science interpretation",
+        "points": 1,
+        "description": "Provides a concise interpretation linking rainfall persistence, river routing, inundation signals, and response pressure without unsupported claims.",
+        "partial_credit": "Award this point when the final interpretation follows from the computed model."
+      }
+    ]
+  },
+  "numeric_tolerances": {
+    "event_duration_days": {
+      "target": 35,
+      "absolute_tolerance": 0
+    },
+    "burst_min_daily_rate_mm_day": {
+      "target": 42.857,
+      "absolute_tolerance": 0.01
+    },
+    "duration_to_burst_reference_ratio": {
+      "target": 5.0,
+      "absolute_tolerance": 0.01
+    },
+    "gpm_localization_ratio": {
+      "target": 3.733,
+      "absolute_tolerance": 0.01
+    },
+    "product_peak_spread_ratio": {
+      "target": 2.008,
+      "absolute_tolerance": 0.01
+    },
+    "rainfall_loading_index": {
+      "target": 64.251,
+      "absolute_tolerance": 0.02
+    },
+    "dark_pixel_share_gain": {
+      "target": 0.1467,
+      "absolute_tolerance": 0.0005
+    },
+    "brown_water_proxy_gain": {
+      "target": 0.0668,
+      "absolute_tolerance": 0.0005
+    },
+    "visual_inundation_score": {
+      "target": 0.966,
+      "absolute_tolerance": 0.01
+    },
+    "sar_water_change_score": {
+      "target": 0.61,
+      "absolute_tolerance": 0.01
+    },
+    "annual_land_change_score": {
+      "target": 0.908,
+      "absolute_tolerance": 0.01
+    },
+    "surface_inundation_norm": {
+      "target": 0.83,
+      "absolute_tolerance": 0.01
+    },
+    "population": {
+      "target": 56343.3,
+      "absolute_tolerance": 0.2
+    },
+    "road_elements": {
+      "target": 76,
+      "absolute_tolerance": 0
+    },
+    "critical_amenities": {
+      "target": 12,
+      "absolute_tolerance": 0
+    },
+    "road_elements_per_10000_people": {
+      "target": 13.489,
+      "absolute_tolerance": 0.02
+    },
+    "critical_amenities_per_10000_people": {
+      "target": 2.13,
+      "absolute_tolerance": 0.01
+    },
+    "exposure_access_norm": {
+      "target": 0.849,
+      "absolute_tolerance": 0.01
+    },
+    "routing_amplifier": {
+      "target": 1.2,
+      "absolute_tolerance": 0.001
+    },
+    "compound_basin_flood_stress": {
+      "target": 90.229,
+      "absolute_tolerance": 0.02
+    },
+    "routed_response_stress": {
+      "target": 108.275,
+      "absolute_tolerance": 0.03
+    },
+    "scenario_rainfall_loading_index": {
+      "target": 73.889,
+      "absolute_tolerance": 0.02
+    },
+    "scenario_compound_basin_flood_stress": {
+      "target": 94.086,
+      "absolute_tolerance": 0.02
+    },
+    "scenario_routed_response_stress": {
+      "target": 112.903,
+      "absolute_tolerance": 0.03
+    },
+    "routed_response_stress_delta": {
+      "target": 4.629,
+      "absolute_tolerance": 0.02
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_paths": {
+      "event_window": [
+        "data/event_reports/event_reports_004_Locked_event_anchor_2024_Rio_Grande_do_Sul_floods.json"
+      ],
+      "event_process_report": [
+        "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html"
+      ],
+      "precipitation": [
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+      ],
+      "remote_sensing": [
+        "data/remote_sensing/remote_sensing_010_pre_2024-03-28_modis_truecolor.jpg.jpg",
+        "data/remote_sensing/remote_sensing_009_event_2024-05-07_modis_truecolor.jpg.jpg",
+        "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+        "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ],
+      "exposure": [
+        "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json"
+      ]
+    },
+    "notes": "All values are computed or extracted from local CSX-055 package files."
+  }
+}

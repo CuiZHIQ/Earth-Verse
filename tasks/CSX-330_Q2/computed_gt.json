@@ -1,0 +1,238 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-330_Q2",
+  "event_id": "CSX-330",
+  "task_type": "deep_disaster_science_reasoning",
+  "target_family": "florida_keys_marine_heat_stress_coral_rescue_triage_model",
+  "evaluation_mode": "deterministic_with_structured_reasoning",
+  "evaluation_mode_justification": "The numeric fields are fixed by package extraction and stated formulas; reasoning fields are judged against the same process chain and source citations.",
+  "event": {
+    "package_id": "CSX-330",
+    "event_name": "2023 Florida Keys marine heatwave and coral bleaching",
+    "hazard_family": "marine_heatwave_coastal_ecosystem",
+    "event_date_or_window": "June-August 2023"
+  },
+  "primary_gt": {
+    "answer_label": "extreme_persistent_heat_stress_with_immediate_coral_rescue_priority",
+    "source_paths": {
+      "event_narrative": [
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html"
+      ],
+      "heat_monitoring": [
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+        "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html"
+      ],
+      "precipitation": [
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+      ],
+      "exposure_response": [
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+        "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+        "data/exposure_impact/exposure_impact_001_ReefBase_Allen_Coral_Atlas_protected_areas.html"
+      ],
+      "remote_sensing": [
+        "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+        "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json"
+      ],
+      "geospatial_context": [
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+        "data/geospatial_context/geospatial_context_003_04_nominatim.json.json"
+      ]
+    },
+    "process_model": {
+      "sst_anchors_c": {
+        "maximum_monthly_mean": 29.63,
+        "bleaching_threshold": 30.63,
+        "peak": 33.6
+      },
+      "event_timing": {
+        "threshold_crossing_date": "2023-06-14",
+        "peak_sst_date": "2023-07-13",
+        "duration_days": 30
+      },
+      "thermal_exceedance": {
+        "above_bleaching_c": 2.97,
+        "above_mmm_c": 3.97,
+        "peak_equivalent_dhw_c_weeks": 12.73,
+        "dhw_severity_band": "severe_equivalent"
+      }
+    },
+    "context_metrics": {
+      "precipitation_mm": {
+        "gpm_mean": 122.7,
+        "chirps_mean": 243.0,
+        "era5_mean": 217.2,
+        "precip_consensus_mean": 194.3,
+        "precip_spread_ratio": 1.98
+      },
+      "exposure_response": {
+        "worldpop_population": 46416,
+        "osm_emergency_facilities": 27,
+        "unique_elkhorn_individuals": 150,
+        "unique_staghorn_individuals": 300,
+        "minimum_rescue_fragments": 900,
+        "forecast_persistence_chance_percent": [
+          70,
+          100
+        ]
+      },
+      "remote_sensing": {
+        "embedding_change_mean": 0.01,
+        "dnbr_mean": -0.012,
+        "remote_disturbance_norm": 0.16
+      }
+    },
+    "computed_metrics": {
+      "normalizers": {
+        "thermal_dhw_norm": 1.0,
+        "duration_norm": 0.667,
+        "hotspot_norm": 0.99,
+        "mmm_anomaly_norm": 0.993,
+        "precip_norm": 0.777,
+        "population_norm": 0.928,
+        "genetic_rescue_norm": 0.9,
+        "facility_coordination_norm": 0.9
+      },
+      "marine_heat_stress_index": 91.35,
+      "coral_rescue_priority_score": 89.74
+    },
+    "scenario_analysis": {
+      "storm_mixing_cool_peak": {
+        "peak_sst_c": 32.1,
+        "duration_days": 30,
+        "peak_equivalent_dhw_c_weeks": 6.3,
+        "dhw_severity_band": "significant_not_severe",
+        "marine_heat_stress_index": 67.23,
+        "coral_rescue_priority_score": 80.09,
+        "priority_delta_from_baseline": -9.65
+      },
+      "continued_hot_persistence": {
+        "peak_sst_c": 34.1,
+        "duration_days": 44,
+        "peak_equivalent_dhw_c_weeks": 21.81,
+        "dhw_severity_band": "severe_equivalent",
+        "marine_heat_stress_index": 99.44,
+        "coral_rescue_priority_score": 92.98,
+        "priority_delta_from_baseline": 3.24
+      }
+    },
+    "mechanism_chain": [
+      "Satellite SST exceeded the bleaching threshold for 30 inclusive days before the reported peak.",
+      "The peak-equivalent heat accumulation exceeded the severe bleaching and mortality threshold.",
+      "Low land-surface disturbance metrics make direct heat stress the dominant process signal in the package evidence.",
+      "Genetically unique elkhorn and staghorn rescue needs create immediate triage pressure alongside exposed Keys communities."
+    ],
+    "final_interpretation": "The package supports an extreme, persistent marine heat-stress event requiring immediate coral-rescue prioritization, with storm mixing able to reduce but not remove the operational concern."
+  },
+  "key_values": {
+    "raw_values": {
+      "mmm_c": 29.63,
+      "bleaching_threshold_c": 30.63,
+      "peak_sst_c": 33.6,
+      "threshold_crossing_date": "2023-06-14",
+      "peak_sst_date": "2023-07-13",
+      "duration_days": 30,
+      "gpm_mean_mm": 122.73459519879809,
+      "chirps_mean_mm": 243.0467544270659,
+      "era5_mean_mm": 217.19423911802514,
+      "population": 46416.06331180823,
+      "osm_emergency_facilities": 27,
+      "unique_elkhorn_individuals": 150,
+      "unique_staghorn_individuals": 300,
+      "embedding_change_mean": 0.009982231716951374,
+      "dnbr_mean": -0.01196028381856147
+    },
+    "formulas": {
+      "above_bleaching_c": "peak_sst_c - bleaching_threshold_c",
+      "above_mmm_c": "peak_sst_c - maximum_monthly_mean_sst_c",
+      "duration_days": "inclusive day count from threshold crossing through peak date",
+      "peak_equivalent_dhw_c_weeks": "above_bleaching_c * duration_days / 7",
+      "precip_consensus_mean_mm": "mean of GPM, CHIRPS, and ERA5-Land event-window accumulated precipitation means",
+      "remote_disturbance_norm": "clip(((embedding_change_mean / 0.05) + (abs(dnbr_mean) / 0.10)) / 2, 0, 1)",
+      "marine_heat_stress_index": "100 * (0.40 * thermal_dhw_norm + 0.25 * duration_norm + 0.20 * hotspot_norm + 0.15 * mmm_anomaly_norm)",
+      "coral_rescue_priority_score": "100 * (0.40 * marine_heat_stress_index / 100 + 0.25 * genetic_rescue_norm + 0.15 * population_norm + 0.10 * precip_norm + 0.10 * facility_coordination_norm)"
+    },
+    "dhw_thresholds_c_weeks": {
+      "significant": 4.0,
+      "severe": 8.0
+    },
+    "label_rule": "extreme_persistent_heat_stress_with_immediate_coral_rescue_priority when baseline band is severe_equivalent, marine_heat_stress_index >= 85, and coral_rescue_priority_score >= 85"
+  },
+  "tolerances": {
+    "temperature_c": 0.05,
+    "duration_days": 0,
+    "dhw_c_weeks": 0.03,
+    "precipitation_mm": 0.1,
+    "ratio_or_normalized": 0.002,
+    "index_or_score": 0.03,
+    "integer_fields": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed discovery and source citation",
+        "points": 3,
+        "description": "Finds relevant package files without being given exact names in the question and cites package-relative paths across narrative, heat-monitoring, precipitation, exposure, remote-sensing, and geospatial evidence."
+      },
+      {
+        "name": "Thermal process reconstruction",
+        "points": 4,
+        "description": "Extracts MMM 29.63 C, bleaching threshold 30.63 C, peak 33.60 C, June 14 crossing, July 13 peak, and 30 inclusive days; computes 2.97 C, 3.97 C, and 12.73 C-weeks."
+      },
+      {
+        "name": "Multi-source context metrics",
+        "points": 4,
+        "description": "Uses three precipitation products, WorldPop population, OSM emergency facilities, elkhorn/staghorn rescue counts, and remote-sensing disturbance summaries with correct rounding."
+      },
+      {
+        "name": "Index formulas and label",
+        "points": 4,
+        "description": "Applies clipping, normalization, marine heat-stress index, coral-rescue priority score, DHW severity band, and final label exactly as specified."
+      },
+      {
+        "name": "Counterfactual scenarios",
+        "points": 3,
+        "description": "Correctly recomputes the cooling and continued-hot-persistence scenarios while holding non-thermal context fixed and reports priority deltas."
+      },
+      {
+        "name": "Disaster-process interpretation",
+        "points": 2,
+        "description": "Explains a concise mechanism chain linking persistent heat accumulation, coral bleaching/mortality risk, rescue triage, community exposure, and why remote-sensing disturbance is contextual rather than the primary hazard signal."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "required_label": "extreme_persistent_heat_stress_with_immediate_coral_rescue_priority",
+    "required_baseline_scores": {
+      "marine_heat_stress_index": 91.35,
+      "coral_rescue_priority_score": 89.74
+    },
+    "required_scenario_direction": {
+      "storm_mixing_cool_peak": "lower priority than baseline and DHW band significant_not_severe",
+      "continued_hot_persistence": "higher priority than baseline and DHW band severe_equivalent"
+    },
+    "minimum_evidence_families": 6
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/exposure_impact/exposure_impact_001_ReefBase_Allen_Coral_Atlas_protected_areas.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/geospatial_context/geospatial_context_003_04_nominatim.json.json",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "metadata/event.json"
+    ]
+  }
+}

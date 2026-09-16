@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-194_Q2",
+  "event_id": "CSX-194",
+  "task_type": "short_answer",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "period_scores": {
+      "baseline_watch": {
+        "total_precipitation_mm": 6.5,
+        "dry_day_count": 12,
+        "zero_rain_day_count": 4,
+        "maximum_daily_high_temperature_c": 17.4,
+        "maximum_daily_wind_speed_kmh": 30.1,
+        "score": 0.659
+      },
+      "initial_spread": {
+        "total_precipitation_mm": 39.2,
+        "dry_day_count": 14,
+        "zero_rain_day_count": 10,
+        "maximum_daily_high_temperature_c": 21.9,
+        "maximum_daily_wind_speed_kmh": 30.3,
+        "score": 0.782
+      },
+      "later_renewed_spread": {
+        "total_precipitation_mm": 28.1,
+        "dry_day_count": 24,
+        "zero_rain_day_count": 17,
+        "maximum_daily_high_temperature_c": 27.5,
+        "maximum_daily_wind_speed_kmh": 28.4,
+        "score": 0.767
+      }
+    },
+    "score_comparison": {
+      "dominant_period": "initial_spread",
+      "secondary_period": "later_renewed_spread",
+      "baseline_period": "baseline_watch",
+      "gap_top_minus_second": 0.015
+    },
+    "strongest_later_day": {
+      "date": "2019-10-06",
+      "temperature_c": 27.5,
+      "precipitation_mm": 0.0,
+      "wind_kmh": 28.4,
+      "score": 0.896
+    },
+    "burn_signal": {
+      "dnbr_mean": 0.123,
+      "dnbr_max": 0.974,
+      "state": "positive_mean_burn_disturbance",
+      "positive_mean_supports_burn_disturbance": true
+    },
+    "final_label": "initial_spread_peak_with_later_rekindling_secondary"
+  },
+  "numeric_tolerances": {
+    "scores": 0.002,
+    "weather": 0.1
+  },
+  "key_values": {
+    "event_metadata": {
+      "package_id": "CSX-194",
+      "event_name": "2019-2020 Australian Black Summer bushfires",
+      "hazard_label": "Wildfire, burn scar, and smoke",
+      "scale": "neighborhood_asset"
+    },
+    "target_family": "candidate_explanation_score_ledger",
+    "period_score_formula": "0.35*dry_day_fraction + 0.25*zero_rain_fraction + 0.20*(max_daily_high_temperature_c/30) + 0.20*(max_daily_wind_speed_kmh/35)",
+    "single_day_score_formula": "0.45*(temperature_c/30) + 0.35*(wind_kmh/35) + 0.20 if precipitation is 0 mm",
+    "weather_source_scope": "The Open-Meteo daily record is a package point-weather phase diagnostic, not a complete southeastern-Australia regional weather field.",
+    "period_summaries": [
+      {
+        "label": "baseline_watch",
+        "start": "2019-08-18",
+        "end": "2019-08-31",
+        "day_count": 14,
+        "total_precipitation_mm": 6.5,
+        "dry_days_lt_1mm": 12,
+        "zero_rain_days": 4,
+        "dry_day_fraction": 0.857,
+        "zero_rain_day_fraction": 0.286,
+        "maximum_daily_high_temperature_c": 17.4,
+        "maximum_daily_wind_speed_kmh": 30.1,
+        "score": 0.659
+      },
+      {
+        "label": "initial_spread",
+        "start": "2019-09-01",
+        "end": "2019-09-16",
+        "day_count": 16,
+        "total_precipitation_mm": 39.2,
+        "dry_days_lt_1mm": 14,
+        "zero_rain_days": 10,
+        "dry_day_fraction": 0.875,
+        "zero_rain_day_fraction": 0.625,
+        "maximum_daily_high_temperature_c": 21.9,
+        "maximum_daily_wind_speed_kmh": 30.3,
+        "score": 0.782
+      },
+      {
+        "label": "later_renewed_spread",
+        "start": "2019-09-17",
+        "end": "2019-10-16",
+        "day_count": 30,
+        "total_precipitation_mm": 28.1,
+        "dry_days_lt_1mm": 24,
+        "zero_rain_days": 17,
+        "dry_day_fraction": 0.8,
+        "zero_rain_day_fraction": 0.567,
+        "maximum_daily_high_temperature_c": 27.5,
+        "maximum_daily_wind_speed_kmh": 28.4,
+        "score": 0.767
+      }
+    ],
+    "score_sequence": [
+      {
+        "position": 1,
+        "label": "initial_spread",
+        "score": 0.782
+      },
+      {
+        "position": 2,
+        "label": "later_renewed_spread",
+        "score": 0.767
+      },
+      {
+        "position": 3,
+        "label": "baseline_watch",
+        "score": 0.659
+      }
+    ],
+    "score_gap_top_minus_second": 0.015,
+    "strongest_post_sep16_single_day_warning": {
+      "date": "2019-10-06",
+      "temperature_c": 27.5,
+      "precipitation_mm": 0.0,
+      "wind_kmh": 28.4,
+      "score": 0.896
+    },
+    "burn_signal": {
+      "sentinel2_pre_window": [
+        "2019-07-03",
+        "2019-08-25"
+      ],
+      "sentinel2_post_window": [
+        "2019-09-01",
+        "2019-11-30"
+      ],
+      "sentinel2_dnbr_mean": 0.123,
+      "sentinel2_dnbr_max": 0.974,
+      "state": "positive_mean_burn_disturbance",
+      "interpretation": "Positive mean dNBR supports burn disturbance; the maximum indicates localized high disturbance but does not imply uniform severe burning."
+    },
+    "decision_rule": "Use the highest period score as the dominant phase. If the post-2019-09-16 period remains within 0.03 of the top score or contains the strongest later zero-rain hot-windy day, retain later renewed-spread concern as secondary."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger answer",
+        "points": 4,
+        "description": "Returns compact JSON with the requested fields and the exact final label initial_spread_peak_with_later_rekindling_secondary.",
+        "partial_credit": "Award 1-3 points for a mostly complete JSON object with a partially correct final label."
+      },
+      {
+        "name": "Period metric computation",
+        "points": 5,
+        "description": "Correctly computes each period's precipitation total, dry-day count, zero-rain-day count, maximum temperature, maximum wind, and score with units and rounding.",
+        "partial_credit": "Award 1-4 points when some period values are correct but counts, units, or rounding are incomplete."
+      },
+      {
+        "name": "Window score comparison and threshold decision",
+        "points": 4,
+        "description": "Identifies initial_spread as dominant, later_renewed_spread as close secondary, and baseline_watch as baseline, and concludes that the later period is not rain-suppressed because its score remains close to the top score.",
+        "partial_credit": "Award 1-3 points for a correct score comparison without a clear rain-suppression rejection, or vice versa."
+      },
+      {
+        "name": "Later single-day warning",
+        "points": 3,
+        "description": "Identifies 2019-10-06 as the strongest post-2019-09-16 warning day with 27.5 C, 0.0 mm precipitation, 28.4 km/h wind, and score 0.896.",
+        "partial_credit": "Award 1-2 points for the right date with incomplete values or the right formula with the wrong date."
+      },
+      {
+        "name": "Burn-signal consistency check",
+        "points": 2,
+        "description": "Uses dNBR mean 0.123 and maximum 0.974 to support burn disturbance while avoiding a claim of uniform severe burning.",
+        "partial_credit": "Award 1 point for citing positive dNBR without the maximum value or overclaim caution."
+      },
+      {
+        "name": "Bounded mechanism interpretation",
+        "points": 1,
+        "description": "Keeps the mechanism statement as a short consequence of the score ledger.",
+        "partial_credit": "Award 0.5 points for a mostly concise interpretation with minor excess narrative."
+      },
+      {
+        "name": "No extra overclaim",
+        "points": 1,
+        "description": "Avoids extra action claims, external loss claims, and treating the benchmark score as an official fire-danger index.",
+        "partial_credit": "Award 0.5 points for one minor extra embellishment that does not change the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ],
+    "notes": "Weather values come from the package daily weather record and dNBR values come from the Sentinel-2 summary. The score is a benchmark diagnostic ledger, not an official fire-danger index."
+  }
+}

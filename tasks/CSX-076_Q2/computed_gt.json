@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-076_Q2",
+  "event_id": "CSX-076",
+  "task_type": "short_answer",
+  "task_subtype": "process_chain_control_ranking",
+  "target_family": "pakistan_monsoon_flood_process_chain_control_ranking",
+  "eval_mode": "hybrid",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "antecedent_monsoon_accumulation",
+    "target_family": "pakistan_monsoon_flood_process_chain_control_ranking",
+    "computed_values": {
+      "event_days": 110,
+      "point_total_mm": 1493.3,
+      "antecedent_mm": 962.7,
+      "antecedent_frac": 0.645,
+      "late_aug18_25_mm": 522.4,
+      "late_aug18_25_frac": 0.35,
+      "max7_frac": 0.324,
+      "single_day_frac": 0.101,
+      "peak_to_end_lag_days": 44,
+      "gdacs_to_end_lag_days": 31,
+      "gridded_comparison_window": {
+        "start_date": "2022-06-14",
+        "end_date": "2022-07-29"
+      },
+      "grid_consensus_mean_mm": 818.1,
+      "grid_spread_frac": 0.066,
+      "s1_signal_to_sd": 1.808
+    },
+    "control_point_scores": {
+      "antecedent_monsoon_accumulation": 98.2,
+      "indus_routing_storage_lag": 95.1,
+      "late_august_rainfall_pulse": 76.1,
+      "surface_water_or_sar_change": 66.6,
+      "single_day_peak_rainfall_only": 46.2,
+      "generic_disaster_report_label": 15.0
+    },
+    "ranked_control_points": [
+      "antecedent_monsoon_accumulation",
+      "indus_routing_storage_lag",
+      "late_august_rainfall_pulse",
+      "surface_water_or_sar_change",
+      "single_day_peak_rainfall_only",
+      "generic_disaster_report_label"
+    ],
+    "top_control_point": "antecedent_monsoon_accumulation",
+    "rejected_control_point": "generic_disaster_report_label",
+    "reasoning_path": [
+      "accumulation_sets_wet_basin",
+      "late_aug_pulse_amplifies_only",
+      "lags_route_storage_to_plain",
+      "sar_confirms_downstream_water",
+      "peak_and_label_rejected"
+    ]
+  },
+  "key_values": {
+    "event_anchor": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-10-01"
+    },
+    "gdacs_alert_level": "Red",
+    "gdacs_window": {
+      "from": "2022-06-14T01:00:00",
+      "to": "2022-08-31T01:00:00"
+    },
+    "duration_days": 110,
+    "point_precip_total_mm": 1493.3,
+    "antecedent_before_late_aug_mm": 962.7,
+    "late_aug18_25_mm": 522.4,
+    "august_precip_mm": 924.3,
+    "wet_days_ge_1mm": 42,
+    "days_ge_10mm": 31,
+    "longest_wet_spell_ge_1mm_days": 14,
+    "max_daily_precip_mm": 150.3,
+    "max_daily_precip_date": "20220818",
+    "max_3day_precip_mm": 306.2,
+    "max_7day_precip_mm": 484.5,
+    "fractions": {
+      "antecedent_before_late_aug": 0.645,
+      "late_aug18_25": 0.35,
+      "single_day_peak": 0.101,
+      "max_3day": 0.205,
+      "max_7day": 0.324,
+      "august": 0.619
+    },
+    "peak_to_end_lag_days": 44,
+    "gdacs_end_lag_days": 31,
+    "gridded_comparison_window": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-07-29"
+    },
+    "grid_means_mm": {
+      "era5_land": 846.6,
+      "gpm": 792.5,
+      "chirps": 815.4
+    },
+    "grid_maxima_mm": {
+      "era5_land": 1297.1,
+      "gpm": 981.8,
+      "chirps": 1078.3
+    },
+    "grid_consensus": {
+      "mean_mm": 818.1,
+      "spread_fraction": 0.066,
+      "max_mean_ratio": 1.368
+    },
+    "s1_vv_change": {
+      "mean_db": 2.326,
+      "stddev_db": 1.287,
+      "signal_to_sd": 1.808,
+      "post_fraction": 0.61,
+      "windows": {
+        "pre": [
+          "2022-04-15",
+          "2022-06-07"
+        ],
+        "post": [
+          "2022-06-14",
+          "2022-09-12"
+        ]
+      },
+      "counts": {
+        "pre_count": 39,
+        "post_count": 61
+      }
+    },
+    "report_flags": {
+      "torrential_monsoon_rains": true,
+      "indus_river_focus": true,
+      "floodplain_lake_like_plains": true,
+      "out_of_bank_rivers": true,
+      "rain_and_meltwater": true,
+      "reservoir_channel_pressure": true,
+      "glacier_melt_contribution": true,
+      "satellite_water_extents": true
+    }
+  },
+  "control_score_formula": {
+    "antecedent_monsoon_accumulation": "0.60*min(antecedent_frac/0.65,1)+0.20*min(wet_days_ge_1mm/40,1)+0.20*(1-grid_spread_fraction)",
+    "indus_routing_storage_lag": "0.50*mean(min(peak_lag/45,1),min(gdacs_lag/35,1))+0.35*route_report_flags+0.15*min(s1_signal_to_sd/2,1)",
+    "late_august_rainfall_pulse": "0.55*min(late_aug18_25_frac/0.50,1)+0.25*min(max7_frac/0.40,1)+0.20*min((late_aug18_25_mm/max_daily_mm)/4,1)",
+    "surface_water_or_sar_change": "0.75*(0.55*min(s1_signal_to_sd/2,1)+0.30*surface_report_flags+0.15*s1_post_fraction)",
+    "single_day_peak_rainfall_only": "0.70*min(single_day_frac/0.25,1)+0.30*(1-peak_to_end_lag_days/event_days)",
+    "generic_disaster_report_label": "0.10*event_label_present+0.05*gdacs_red_alert"
+  },
+  "numeric_tolerances": {
+    "precip_mm": 0.2,
+    "fractions": 0.005,
+    "scores": 0.2,
+    "lag_days": 0
+  },
+  "judge_anchors": {
+    "required_rank": [
+      "antecedent_monsoon_accumulation",
+      "indus_routing_storage_lag",
+      "late_august_rainfall_pulse",
+      "surface_water_or_sar_change",
+      "single_day_peak_rainfall_only",
+      "generic_disaster_report_label"
+    ],
+    "top_control_point": "antecedent_monsoon_accumulation",
+    "rejected_control_point": "generic_disaster_report_label",
+    "required_metrics": {
+      "point_total_mm": 1493.3,
+      "antecedent_mm": 962.7,
+      "late_aug18_25_mm": 522.4,
+      "antecedent_frac": 0.645,
+      "late_aug18_25_frac": 0.35,
+      "single_day_frac": 0.101,
+      "peak_to_end_lag_days": 44,
+      "gdacs_to_end_lag_days": 31,
+      "grid_mean_mm": 818.1,
+      "grid_spread_frac": 0.066,
+      "s1_signal_to_sd": 1.808,
+      "gridded_comparison_window": {
+        "start_date": "2022-06-14",
+        "end_date": "2022-07-29"
+      }
+    },
+    "do_not_accept": [
+      "response priority or preparedness advice",
+      "single-day peak rainfall as the top control point",
+      "generic disaster label as a physical control point",
+      "answers based on external web, exposure, population, OSM, or AOI files"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_monsoon_floods.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Devastating_floods_in_Pakistan.html",
+      "data/event_catalogs/event_catalogs_002_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_011_sentinel1_vv_change_stats.json.json"
+    ],
+    "network_required": false,
+    "notes": [
+      "The daily NASA POWER point series is used for the full 2022-06-14 to 2022-10-01 event-window accumulation and lag calculations.",
+      "ERA5-Land, GPM, and CHIRPS gridded summaries are used only for their declared 2022-06-14 to 2022-07-29 package comparison window."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required compact JSON and task family",
+        "points": 2,
+        "description": "Returns compact JSON with answer, target_family, computed_values, control_point_scores, ranked_control_points, top_control_point, rejected_control_point, and reasoning_path.",
+        "partial_credit": "Award 1 point for mostly valid JSON with one missing top-level field."
+      },
+      {
+        "name": "Package evidence discovery",
+        "points": 3,
+        "description": "Uses local CSX-076 event anchor/catalog, daily precipitation, gridded precipitation summaries, report process text, and SAR or surface-water change evidence without external files.",
+        "partial_credit": "Award 1-2 points if several required evidence families are used but one major family is missing."
+      },
+      {
+        "name": "Rainfall accumulation and pulse calculations",
+        "points": 4,
+        "description": "Computes the 1493.3 mm point total, 962.7 mm antecedent accumulation before 2022-08-18, 522.4 mm for 2022-08-18 through 2022-08-25, and the 0.645, 0.350, 0.324, and 0.101 fractions.",
+        "partial_credit": "Award 2-3 points for correct formulas with minor rounding or one missing fraction; at most 1 point for unnormalized totals only."
+      },
+      {
+        "name": "Routing lag and process-chain interpretation",
+        "points": 4,
+        "description": "Computes the 44-day rainfall-peak-to-anchor-end lag and 31-day GDACS-to-anchor-end lag, then uses Indus, floodplain, out-of-bank, rain/meltwater, reservoir/channel, and glacier-melt report flags.",
+        "partial_credit": "Award 1-3 points for correct lag arithmetic or process terms without tying them to routed flood diagnosis."
+      },
+      {
+        "name": "Grid and remote-sensing support",
+        "points": 3,
+        "description": "Uses the three gridded precipitation means over their declared 2022-06-14 to 2022-07-29 comparison window to compute an 818.1 mm consensus and 0.066 spread fraction, and uses Sentinel-1 VV post-minus-pre change of 2.326 dB with a 1.808 signal-to-standard-deviation ratio.",
+        "partial_credit": "Award 1-2 points if either the grid consensus or SAR change calculation is correct but not both."
+      },
+      {
+        "name": "Control-point ranking",
+        "points": 3,
+        "description": "Ranks antecedent_monsoon_accumulation first, then indus_routing_storage_lag, late_august_rainfall_pulse, surface_water_or_sar_change, single_day_peak_rainfall_only, and generic_disaster_report_label.",
+        "partial_credit": "Award 1-2 points if the top point is right but middle or low-ranking decoys are misplaced."
+      },
+      {
+        "name": "Rejection discipline",
+        "points": 1,
+        "description": "Identifies generic_disaster_report_label as the rejected non-control candidate and treats single-day peak rainfall as a weak physical decoy rather than the primary control point.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  }
+}

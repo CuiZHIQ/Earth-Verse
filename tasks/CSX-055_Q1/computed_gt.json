@@ -1,0 +1,158 @@
+{
+  "decision_rule": {
+    "answer_when_passed": "persistent_rainfall_displacement_surface_signal_supported",
+    "pass_state": "threshold_score == 5",
+    "score_formula": "count five passing diagnostic checks: event window, rain rate, precipitation spread, displacement load, and surface-signal count"
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "end_date": "2024-05-31",
+    "event_name": "2024 Rio Grande do Sul floods",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "primary_region": "Rio Grande do Sul, Brazil",
+    "start_date": "2024-04-27"
+  },
+  "event_id": "CSX-055",
+  "key_values": {
+    "displaced_people_lower_bound": 160000,
+    "precipitation_maxima_mm": {
+      "daily_blend_max_mm": 66.978,
+      "reanalysis_max_mm": 77.782,
+      "satellite_max_mm": 134.505
+    },
+    "rainfall_lower_bound_mm": 300,
+    "surface_tests": {
+      "embedding_change_pass": true,
+      "luminance_drop_pass": true,
+      "vv_drop_pass": true
+    },
+    "surface_values": {
+      "embedding_change": 0.054481,
+      "true_color_luminance_delta": -5.371,
+      "vv_change_db": -1.220409
+    },
+    "threshold_tests": {
+      "displacement_load_pass": true,
+      "event_window_pass": true,
+      "precip_spread_pass": true,
+      "rain_rate_pass": true,
+      "surface_signal_pass": true
+    },
+    "thresholds": {
+      "displacement_per_100mm_min": 50000.0,
+      "event_window_days_min": 30,
+      "precip_spread_ratio_min": 2.0,
+      "rain_rate_mm_day_min": 40.0,
+      "surface_signal_count_min": 2
+    }
+  },
+  "numeric_tolerances": {
+    "displacement_per_100mm": {
+      "absolute_tolerance": 0.1,
+      "target": 53333.3
+    },
+    "embedding_change": {
+      "absolute_tolerance": 0.001,
+      "target": 0.054481
+    },
+    "event_window_days": {
+      "absolute_tolerance": 0,
+      "target": 35
+    },
+    "precip_spread_ratio": {
+      "absolute_tolerance": 0.001,
+      "target": 2.008
+    },
+    "rain_rate_mm_day": {
+      "absolute_tolerance": 0.001,
+      "target": 42.857
+    },
+    "surface_signal_count": {
+      "absolute_tolerance": 0,
+      "target": 3
+    },
+    "threshold_score": {
+      "absolute_tolerance": 0,
+      "target": 5
+    },
+    "true_color_luminance_delta": {
+      "absolute_tolerance": 0.05,
+      "target": -5.371
+    },
+    "vv_change_db": {
+      "absolute_tolerance": 0.001,
+      "target": -1.220409
+    }
+  },
+  "primary_gt": {
+    "answer": "persistent_rainfall_displacement_surface_signal_supported",
+    "displacement_per_100mm": 53333.3,
+    "event_window_days": 35,
+    "precip_spread_ratio": 2.008,
+    "rain_rate_mm_day": 42.857,
+    "surface_signal_count": 3,
+    "threshold_score": 5,
+    "threshold_state": "pass"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are extracted from local CSX-055 records and image files; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2024_Rio_Grande_do_Sul_floods.json",
+      "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_009_event_2024-05-07_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_010_pre_2024-03-28_modis_truecolor.jpg.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the exact JSON fields and final diagnostic state with the canonical answer, threshold_score of 5, and threshold_state of pass.",
+        "name": "final_diagnostic_state",
+        "partial_credit": "Award up to 2 points for the correct final state with missing or renamed fields, and up to 1 point for a plausible pass label without the numeric score.",
+        "points": 3
+      },
+      {
+        "description": "Computes 35 inclusive event-window days and 42.857 mm/day from the 300 mm rainfall lower bound over 7 days, with both thresholds passing.",
+        "name": "rainfall_window_and_rate",
+        "partial_credit": "Award 2 points for one correct value, 1 point for correct units or rounding, and 1 point for the correct threshold comparisons.",
+        "points": 4
+      },
+      {
+        "description": "Computes the precipitation-spread ratio as 134.505 / 66.978 = 2.008 and marks it as passing the 2.0 threshold.",
+        "name": "precipitation_spread_ratio",
+        "partial_credit": "Award 1 point for the three maxima, 1 point for the max/min formula, and 1 point for the correct rounded ratio or pass state.",
+        "points": 3
+      },
+      {
+        "description": "Computes displacement_per_100mm as 160000 / (300 / 100) = 53333.3 people per 100 mm and marks it as passing.",
+        "name": "displacement_load_index",
+        "partial_credit": "Award 1 point for the displaced-people lower bound, 1 point for the formula, and 1 point for the correct rounded value or threshold comparison.",
+        "points": 3
+      },
+      {
+        "description": "Evaluates VV change, embedding change, and true-color luminance delta against their thresholds and returns surface_signal_count of 3.",
+        "name": "surface_signal_count",
+        "partial_credit": "Award up to 1 point for each correctly evaluated surface indicator and 1 point for the final count.",
+        "points": 4
+      },
+      {
+        "description": "Combines the five checks into a concise flood-signal interpretation without adding a broad planning narrative or converting surface metrics into a mapped flood extent.",
+        "name": "integrated_flood_signal_interpretation",
+        "partial_credit": "Award up to 2 points for correct integration with minor extra prose, and up to 1 point for a useful but incomplete interpretation.",
+        "points": 3
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "flood_process_diagnostic",
+  "task_id": "CSX-055_Q1",
+  "task_type": "numeric"
+}

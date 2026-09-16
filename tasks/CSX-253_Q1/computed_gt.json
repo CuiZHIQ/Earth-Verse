@@ -1,0 +1,116 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-253",
+  "key_values": {
+    "canonical_stance": "The disaster is best attributed to intense localized rainfall that saturated steep coastal slopes, causing compound landslides and flooding and requiring priority attention to settled slopes, buildings, roads, and access lifelines.",
+    "event_name": "2023 Sao Sebastiao compound flood-landslide disaster",
+    "event_window": {
+      "end_date": "2023-02-21",
+      "start_date": "2023-02-18"
+    },
+    "forbidden_claims": [
+      "the answer requires exact casualty counts",
+      "burn-scar runoff, heat stress, or wind damage is the dominant mechanism",
+      "the hazard should be treated as spatially uniform across the whole region",
+      "gridded products exactly reproduce the public point rainfall total everywhere"
+    ],
+    "image_date": "2023-02-26",
+    "infrastructure_access_signals": {
+      "buildings_destroyed": true,
+      "highway_blocked": true,
+      "hilly_or_coastal_municipality": true,
+      "homes_or_infrastructure_impacted": true
+    },
+    "rain_saturation_signals": {
+      "reported_680_mm_24h": true,
+      "saturated_soils_or_hillslopes": true,
+      "seasonal_rainfall_steep_slopes": true,
+      "torrential_rain": true
+    }
+  },
+  "numeric_tolerances": {
+    "event_window_days": 0,
+    "image_lag_after_event_end_days": 0,
+    "infrastructure_access_signal_count": 0,
+    "rain_saturation_signal_count": 0,
+    "reported_24h_rain_mm": 0
+  },
+  "primary_gt": {
+    "answer": "rainfall_triggered_compound_flood_landslide",
+    "impact_chain": [
+      "extreme_24h_rainfall",
+      "soil_saturation_landslides_and_flooding",
+      "prioritize_steep_settlements_buildings_highway_access"
+    ],
+    "key_metrics": {
+      "event_window_days": 4,
+      "image_lag_after_event_end_days": 5,
+      "infrastructure_access_signal_count": 4,
+      "rain_saturation_signal_count": 4,
+      "reported_24h_rain_mm": 680
+    },
+    "priority": "localized_steep_coastal_community_lifeline_priority"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event gridded precipitation, point weather, WorldPop, dNBR, and AlphaEarth products are not used in this ground truth.",
+      "The official answer path uses the event anchor and NASA Earth Observatory report text."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_002_Locked_event_anchor_2023_Sao_Sebastiao_compound_flood-landslide_disaster.json",
+      "data/event_reports/event_reports_005_001_event_anchor_report_Locked_anchor_NASA_Earth_Observatory.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies rainfall-triggered compound flooding and landsliding, and assigns a localized steep coastal community and lifeline response priority.",
+        "name": "Correct mechanism and response priority",
+        "partial_credit": "Award partial credit for identifying heavy-rain flooding or landslides without the compound cascade, or for naming the compound mechanism but missing the localized lifeline priority.",
+        "points": 4
+      },
+      {
+        "description": "Uses 680 mm in 24 hours, a 4-day event window, and a 5-day post-event image lag.",
+        "name": "Report-supported numeric anchors",
+        "partial_credit": "Award partial credit for two of the three numeric anchors or for correct values with unclear provenance.",
+        "points": 4
+      },
+      {
+        "description": "Counts the four rain-saturation signals: torrential rain, 680 mm in a day, saturated soils/hillslopes, and high seasonal rainfall plus steep slopes.",
+        "name": "Rainfall-saturation process signals",
+        "partial_credit": "Award partial credit for two or three correctly identified signals.",
+        "points": 3
+      },
+      {
+        "description": "Counts the four terrain/impact signals: hilly or coastal municipality, homes/infrastructure impacts, destroyed buildings, and blocked highway SP-55/BR-101.",
+        "name": "Infrastructure and access signals",
+        "partial_credit": "Award partial credit for two or three correctly identified impact/access signals.",
+        "points": 3
+      },
+      {
+        "description": "Explains the causal sequence from intense localized rain to soil saturation, slope failure, flooding, and infrastructure or access impacts.",
+        "name": "Physical impact chain",
+        "partial_credit": "Award partial credit for a correct but incomplete chain.",
+        "points": 3
+      },
+      {
+        "description": "Rejects burn-scar runoff, heat stress, wind damage, and spatially uniform regional hazard as weaker explanations.",
+        "name": "Rejection of competing mechanisms",
+        "partial_credit": "Award partial credit for rejecting only some alternatives.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON and avoids unsupported exact casualty claims or gridded-product precision claims.",
+        "name": "Format and uncertainty discipline",
+        "partial_credit": "Award partial credit for a mostly clear answer with minor JSON formatting issues.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "target_family": "sao_sebastiao_reported_flood_landslide_mechanism",
+  "task_id": "CSX-253_Q1",
+  "task_type": "short_answer"
+}

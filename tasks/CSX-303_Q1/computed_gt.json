@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-303_Q1",
+  "event_id": "CSX-303",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "celia_saharan_dust_countermetric_pathway_index",
+  "primary_gt": {
+    "event_days": 4,
+    "peak_fraction": 0.5,
+    "transport_anchor_count": 6,
+    "max_countermetric_ratio": 0.847,
+    "dust_pathway_index": 6.653,
+    "conclusion": "celia_saharan_dust_pathway_pass"
+  },
+  "answer_guidance": {
+    "answer": "celia_saharan_dust_pathway_pass",
+    "expected_json": {
+      "event_days": 4,
+      "peak_fraction": 0.5,
+      "transport_anchor_count": 6,
+      "max_countermetric_ratio": 0.847,
+      "dust_pathway_index": 6.653,
+      "conclusion": "celia_saharan_dust_pathway_pass"
+    },
+    "counter_ratios": {
+      "rain": 0.554,
+      "heat": 0.831,
+      "wind": 0.608,
+      "surface": 0.847
+    },
+    "rule": "anchors==6 and peak_fraction>=0.5 and max_countermetric_ratio<1 and dust_pathway_index>=6.5",
+    "tolerances": {
+      "fraction": 0.01,
+      "ratio": 0.005,
+      "index": 0.01
+    }
+  },
+  "event": {
+    "event_name": "Saharan dust over Western Europe",
+    "hazard_family": "dust_sandstorm_extreme",
+    "window_start": "2022-03-15",
+    "window_end": "2022-03-18",
+    "region": "Spain, Portugal and France"
+  },
+  "key_values": {
+    "formulas": {
+      "peak_fraction": "peak_days/event_days",
+      "rain_ratio": "max(max_point_daily_precip_mm/25, max_regional_mean_event_precip_mm/10)",
+      "heat_ratio": "max_temperature_c/35",
+      "wind_ratio": "max_wind_ms/10",
+      "surface_ratio": "max(annual_embedding_change_mean/0.1, annual_embedding_change_max/0.6)",
+      "dust_pathway_index": "transport_anchor_count + peak_fraction + (1 - max_countermetric_ratio)"
+    },
+    "thresholds": {
+      "rain_point_daily_mm": 25.0,
+      "rain_regional_mean_mm": 10.0,
+      "heat_c": 35.0,
+      "wind_ms": 10.0,
+      "surface_mean": 0.1,
+      "surface_max": 0.6,
+      "index": 6.5
+    },
+    "transport_anchors": {
+      "dust_or_sandstorm_family": true,
+      "storm_celia_north_african_air": true,
+      "sahara_passage": true,
+      "three_receptor_countries": true,
+      "peak_inside_locked_window": true,
+      "air_quality_and_visibility": true
+    },
+    "report_values": {
+      "peak_days": 2,
+      "countries_named": [
+        "france",
+        "spain",
+        "portugal"
+      ]
+    },
+    "numeric_inputs": {
+      "max_point_daily_precip_mm": 13.86,
+      "max_regional_mean_event_precip_mm": 0.44,
+      "max_temperature_c": 29.1,
+      "max_wind_ms": 6.083,
+      "annual_embedding_change_mean": 0.075241,
+      "annual_embedding_change_max": 0.508235
+    },
+    "countermetric_ratios": {
+      "rain": 0.554,
+      "heat": 0.831,
+      "wind": 0.608,
+      "surface": 0.847
+    },
+    "gates": {
+      "all_transport_anchors_present": true,
+      "peak_fraction_ge_0_5": true,
+      "all_countermetric_ratios_lt_1": true,
+      "index_ge_6_5": true
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Output schema",
+        "points": 3,
+        "description": "Returns compact JSON with exactly the six requested fields and the threshold label.",
+        "partial_credit": "Award 1-2 points for a mostly complete object with one missing field or inconsistent rounding."
+      },
+      {
+        "name": "Event window arithmetic",
+        "points": 4,
+        "description": "Computes the event duration, peak days, and peak fraction correctly from the locked dates and reported March 15-16 peak.",
+        "partial_credit": "Award 2 points for correct dates but incorrect inclusive-day arithmetic."
+      },
+      {
+        "name": "Transport anchors",
+        "points": 3,
+        "description": "Scores all six transport anchors correctly and reports transport_anchor_count = 6.",
+        "partial_credit": "Award 1-2 points for missing one or two anchors."
+      },
+      {
+        "name": "Countermetric ratios",
+        "points": 5,
+        "description": "Computes the four countermetric ratios with the correct thresholds and unit conversion, including rain_ratio = 0.554, heat_ratio = 0.831, wind_ratio = 0.608, and surface_ratio = 0.847.",
+        "partial_credit": "Award 1 point per correct ratio plus 1 point for using the correct maximum."
+      },
+      {
+        "name": "Index and threshold rule",
+        "points": 3,
+        "description": "Applies the index formula and threshold rule correctly, including dust_pathway_index = 6.653 and the passing state.",
+        "partial_credit": "Award 1-2 points for the right formula with one arithmetic or threshold error."
+      },
+      {
+        "name": "Computed consequence",
+        "points": 1,
+        "description": "Keeps the computed consequence concise and tied to the threshold proof.",
+        "partial_credit": "Award 0.5 points for a correct label surrounded by unnecessary narration."
+      },
+      {
+        "name": "Scope control",
+        "points": 1,
+        "description": "Does not add measured health burden, surface cleanup, direct losses, or rainfall-driven dominance beyond the computed ratios.",
+        "partial_credit": "Award 0.5 points for one minor extra inference that is not central."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Saharan_dust_over_Western_Europe.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "All values are regenerated from local CSX-303 package files."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-061_Q1",
+  "event_id": "CSX-061",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "station_hour_grid_contrast_diagnostic",
+  "primary_gt": {
+    "answer": {
+      "station_hour_local": "2021-09-01 7:51-8:51 pm",
+      "station_hour_mm": 88.138,
+      "regional_share_pct": 34.7,
+      "grid_max_over_hour": {
+        "ERA5_Land": 0.122753,
+        "GPM_IMERG": 0.20831,
+        "CHIRPS": 0.204759
+      },
+      "grid_max_over_mean": {
+        "ERA5_Land": 6.801075,
+        "GPM_IMERG": 9.180265,
+        "CHIRPS": 127.194447
+      },
+      "below_quarter_count": 3,
+      "label": "record_hour_dominant_grid_below_quarter"
+    },
+    "interpretation": "The Central Park record hour converts to 88.138 mm and all three gridded event-accumulation maxima are only 0.123-0.208 of that one-hour depth, so the station-hour threshold signal dominates the gridded event summaries."
+  },
+  "key_values": {
+    "station_hour_in": 3.47,
+    "regional_reference_in": 10.0,
+    "regional_reference_note": "The report phrase 'just above 10 inches' is scored as a conservative 10.0-inch lower-bound reference.",
+    "threshold_ratio": 0.25,
+    "grid_values_mm": {
+      "ERA5_Land": {
+        "max_mm": 10.819160418066076,
+        "mean_mm": 1.590801452206311
+      },
+      "GPM_IMERG": {
+        "max_mm": 18.359999949112535,
+        "mean_mm": 1.9999421710597909
+      },
+      "CHIRPS": {
+        "max_mm": 18.04706382751465,
+        "mean_mm": 0.1418856262825933
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer completeness",
+        "points": 4,
+        "description": "Returns the requested JSON answer with station time, converted station depth, regional share, both three-product ratio groups, below-quarter count, deterministic label, and one interpretation sentence.",
+        "partial_credit": "Give 2-3 points for a mostly complete JSON answer with one missing field group; give 1 point for a recognizable but incomplete structure."
+      },
+      {
+        "name": "Station and regional anchors",
+        "points": 4,
+        "description": "Extracts 3.47 in, 2021-09-01 7:51-8:51 pm, a conservative 10.0 in lower-bound regional reference from the 'just above 10 inches' phrase, 88.138 mm, and 34.7%.",
+        "partial_credit": "Give 2-3 points for correct station conversion but missing time or regional share; give 1 point for the right formula with a wrong or missing anchor."
+      },
+      {
+        "name": "Station-normalized grid ratios",
+        "points": 4,
+        "description": "Computes max-over-station-hour ratios within tolerance: ERA5_Land 0.122753, GPM_IMERG 0.208310, and CHIRPS 0.204759.",
+        "partial_credit": "Give 2-3 points for two correct ratios or minor rounding drift; give 1 point for only one correct ratio or a consistent denominator mistake."
+      },
+      {
+        "name": "Grid concentration ratios",
+        "points": 3,
+        "description": "Computes max-over-mean ratios within tolerance: ERA5_Land 6.801075, GPM_IMERG 9.180265, and CHIRPS 127.194447.",
+        "partial_credit": "Give 2 points for two correct ratios; give 1 point for one correct ratio or correct formula with arithmetic errors."
+      },
+      {
+        "name": "Quarter-threshold decision",
+        "points": 3,
+        "description": "Applies the less-than-0.25 rule to all three products and returns below_quarter_count = 3.",
+        "partial_credit": "Give 2 points for identifying that all products fall below the threshold but omitting the count; give 1 point for applying the threshold to most products."
+      },
+      {
+        "name": "Final label",
+        "points": 1,
+        "description": "Returns record_hour_dominant_grid_below_quarter.",
+        "partial_credit": "Give 0.5 point for an equivalent concise label that preserves both the record-hour dominance and below-quarter threshold result."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation tied to the rainfall calculations and avoids response, loss, or neighborhood-scale claims beyond the computed contrast diagnostic.",
+        "partial_credit": "Give 0.5 point for a mostly focused interpretation with minor extra context."
+      }
+    ]
+  },
+  "event": {
+    "name": "September 2021 Hurricane Ida rainfall flooding in New York City",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "date_span": "2021-09-01 to 2021-09-02"
+  },
+  "numeric_tolerances": {
+    "station_hour_mm": 0.05,
+    "regional_share_pct": 0.1,
+    "grid_max_over_hour": 0.0005,
+    "grid_max_over_mean": 0.005
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

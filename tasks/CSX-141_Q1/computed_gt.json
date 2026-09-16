@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-141_Q1",
+  "event_id": "CSX-141",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "dense_lower_rated_short_window_subset",
+    "local_tornado_count": 22,
+    "modal_rating": "EF-1",
+    "ef0_ef1_share_pct": 81.8,
+    "national_24h_share_pct": 93.2,
+    "local_national_share_pct": 15.1,
+    "tests_passed": 4,
+    "threshold_result": "all_four_pass"
+  },
+  "key_values": {
+    "event_name": "March 31-April 1, 2023 U.S. tornado outbreak",
+    "analysis_region": "NWS Chicago forecast area",
+    "event_window": {
+      "start_date": "2023-03-31",
+      "end_date": "2023-04-01"
+    },
+    "rating_counts": {
+      "EF-0": 6,
+      "EF-1": 12,
+      "EF-2": 3,
+      "EF-U": 1
+    },
+    "modal_rating_count": 12,
+    "national_tornado_count": 146,
+    "tornadoes_within_24h": 136,
+    "ef0_ef1_count": 18,
+    "tests": {
+      "local_count_ge_20": true,
+      "ef0_ef1_share_ge_75": true,
+      "national_24h_share_ge_90": true,
+      "local_national_share_10_to_20": true
+    },
+    "tolerances": {
+      "local_tornado_count": 0,
+      "ef0_ef1_share_pct": 0.1,
+      "national_24h_share_pct": 0.1,
+      "local_national_share_pct": 0.1,
+      "tests_passed": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger state",
+        "points": 4,
+        "description": "Gives the exact final label dense_lower_rated_short_window_subset and tests_passed = 4.",
+        "partial_credit": "Award 2-3 points for the correct label with an incorrect pass count, or the correct pass count with a near-equivalent label."
+      },
+      {
+        "name": "Local tornado and EF ledger",
+        "points": 4,
+        "description": "Reports 22 local tornadoes, EF-1 as the modal rating, and EF counts EF-U: 1, EF-0: 6, EF-1: 12, EF-2: 3.",
+        "partial_credit": "Award 2-3 points for the right total and modal rating but incomplete counts; award 1 point for only the total."
+      },
+      {
+        "name": "Percentage calculations",
+        "points": 4,
+        "description": "Computes 81.8%, 93.2%, and 15.1% with correct numerators and denominators.",
+        "partial_credit": "Award 2-3 points for two correct percentages; award 1 point for one correct percentage."
+      },
+      {
+        "name": "Threshold tests",
+        "points": 3,
+        "description": "Applies all four thresholds correctly, including the inclusive 10% to 20% local-share band.",
+        "partial_credit": "Award 1-2 points for evaluating two or three thresholds correctly."
+      },
+      {
+        "name": "Timing and rating pattern",
+        "points": 3,
+        "description": "Connects the 24-hour concentration and lower-rated local mix to the final ledger state.",
+        "partial_credit": "Award 1-2 points for using only timing or only rating mix."
+      },
+      {
+        "name": "Compact output discipline",
+        "points": 2,
+        "description": "Returns the requested fields and avoids added casualty, loss, or track-geometry assertions not derived from the computed ledger.",
+        "partial_credit": "Award 1 point for a mostly correct but verbose or partly missing output."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_005_Locked_anchor_report_NOAA_NWS.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_March_31-April_1_2023_U.S._tornado_outbreak.json"
+    ]
+  }
+}

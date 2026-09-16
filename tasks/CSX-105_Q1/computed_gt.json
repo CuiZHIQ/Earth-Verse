@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-105_Q1",
+  "event_id": "CSX-105",
+  "task_type": "short_answer",
+  "target_family": "threshold_window_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "landfall_window_confirmed",
+    "score": "6/6",
+    "failed_tests": [],
+    "anchors": {
+      "catalog_wind_kmh": 249.998,
+      "min_pressure_hpa": 966.9,
+      "min_pressure_time": "2022-09-28T19:00",
+      "peak_gust_kmh": 185.4,
+      "peak_gust_time": "2022-09-28T19:00",
+      "gust_pressure_lag_hr": 0.0,
+      "wettest_24h_mm": 149.9,
+      "wettest_24h_start": "2022-09-28T02:00",
+      "wettest_24h_share": 0.709,
+      "peak_hourly_rain_time": "2022-09-28T22:00",
+      "peak_rain_after_pressure_hr": 3.0
+    },
+    "tolerances": {
+      "wind_kmh": 1.0,
+      "pressure_hpa": 1.0,
+      "rain_mm": 2.0,
+      "lag_hr": 0.25
+    }
+  },
+  "key_values": {
+    "event_name": "Hurricane Ian",
+    "hazard_family": "tropical_cyclone",
+    "locked_event_window": {
+      "start_date": "2022-09-23",
+      "end_date": "2022-09-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "catalog_event": "IAN-22",
+    "catalog_wind_kmh": 249.998,
+    "hour_count": 192,
+    "peak_wind_kmh": {
+      "time": "2022-09-28T18:00",
+      "value": 105.7
+    },
+    "peak_gust_kmh": {
+      "time": "2022-09-28T19:00",
+      "value": 185.4
+    },
+    "min_pressure_hpa": {
+      "time": "2022-09-28T19:00",
+      "value": 966.9
+    },
+    "event_rain_mm": 211.5,
+    "peak_hourly_rain_mm": {
+      "time": "2022-09-28T22:00",
+      "value": 14.4
+    },
+    "wettest_24h_mm": {
+      "start": "2022-09-28T02:00",
+      "value": 149.9
+    },
+    "wettest_24h_share": 0.709,
+    "wettest_48h_mm": {
+      "start": "2022-09-27T05:00",
+      "value": 188.0
+    },
+    "wettest_48h_share": 0.889,
+    "peak_daily_rain": {
+      "date": "20220927",
+      "value": 70.9
+    },
+    "peak_daily_wind": {
+      "date": "20220928",
+      "value": 14.05
+    },
+    "tests": {
+      "catalog_wind_ge_240": true,
+      "pressure_le_970": true,
+      "gust_ge_178": true,
+      "gust_pressure_lag_le_1h": true,
+      "wettest_24h_rain_and_share": true,
+      "peak_rain_0_to_6h_after_pressure": true
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger result",
+        "points": 4,
+        "description": "Returns landfall_window_confirmed, score 6/6, and an empty failed_tests list.",
+        "partial_credit": "Award 2-3 points for the correct label with an incomplete score or missing failed-test field; award 1 point for stating that most checks pass."
+      },
+      {
+        "name": "Wind and pressure anchors",
+        "points": 4,
+        "description": "Reports catalog wind near 249.998 km/h, minimum pressure near 966.9 hPa at 2022-09-28T19:00, and peak gust near 185.4 km/h at 2022-09-28T19:00.",
+        "partial_credit": "Award about 1 point for each correct numeric anchor or timestamp, allowing the stated tolerance."
+      },
+      {
+        "name": "Gust-pressure timing",
+        "points": 3,
+        "description": "Computes the absolute lag between peak gust and minimum pressure as 0.0 hours and compares it with the 1-hour limit.",
+        "partial_credit": "Award 1-2 points for recognizing close timing without calculating the exact lag."
+      },
+      {
+        "name": "Rainfall-window arithmetic",
+        "points": 4,
+        "description": "Computes event rainfall near 211.5 mm, wettest 24-hour rainfall near 149.9 mm, wettest 24-hour share near 0.709, and peak-rain lag near 3.0 hours.",
+        "partial_credit": "Award 1 point for each correct rainfall anchor, allowing small rounding differences."
+      },
+      {
+        "name": "Threshold proof",
+        "points": 3,
+        "description": "Applies all six inequalities or timing windows and shows that each test passes.",
+        "partial_credit": "Award 1-2 points for correct calculations with missing or loosely applied pass/fail checks."
+      },
+      {
+        "name": "Compact JSON output",
+        "points": 2,
+        "description": "Uses the requested JSON fields, UTC timestamps where included, and concise rounded numeric anchors.",
+        "partial_credit": "Award 1 point for a mostly readable structure that includes the label and main anchors but is not valid compact JSON."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json"
+    ]
+  }
+}

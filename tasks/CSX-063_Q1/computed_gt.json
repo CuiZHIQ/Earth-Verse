@@ -1,0 +1,201 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_id": "CSX-063",
+    "event_name": "July 2021 Henan Zhengzhou extreme rainfall and flood",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "hazard_label": "Extreme precipitation and pluvial flooding",
+    "region": "East Asia",
+    "temporal_window": {
+      "days": 7,
+      "end": "2021-07-23",
+      "start": "2021-07-17"
+    }
+  },
+  "event_id": "CSX-063",
+  "key_values": {
+    "event_window": {
+      "days": 7,
+      "end": "2021-07-23",
+      "start": "2021-07-17"
+    },
+    "exposure_context": {
+      "amenity_features": 48,
+      "highway_features": 252,
+      "population_million": 5.26,
+      "population_sum": 5262538.859,
+      "tunnel_features": 0
+    },
+    "final_label": "short_burst_multiday_urban_exposure",
+    "formulas": {
+      "annual_ratio": "three_day_mm / annual_average_mm",
+      "hour_share": "one_hour_mm / three_day_mm",
+      "max_grid_mm": "max(dataset max_mm values)",
+      "max_mean_dataset": "dataset with largest event-window mean_mm"
+    },
+    "gridded_accumulation": {
+      "by_dataset": {
+        "chirps": {
+          "dataset": "UCSB-CHG/CHIRPS/DAILY",
+          "max_mm": 307.595,
+          "mean_mm": 245.924,
+          "min_mm": 218.221
+        },
+        "era5_land": {
+          "dataset": "ECMWF/ERA5_LAND/HOURLY",
+          "max_mm": 229.038,
+          "mean_mm": 217.454,
+          "min_mm": 201.341
+        },
+        "gpm_imerg": {
+          "dataset": "NASA/GPM_L3/IMERG_V07",
+          "max_mm": 484.255,
+          "mean_mm": 460.551,
+          "min_mm": 435.34
+        }
+      },
+      "gpm_mean_to_chirps_mean_ratio": 1.8727,
+      "gpm_mean_to_era5_mean_ratio": 2.1179,
+      "max_grid_mm": 484.255,
+      "max_mean_dataset": "gpm_imerg",
+      "max_mean_mm": 460.551,
+      "mean_order": [
+        "gpm_imerg",
+        "chirps",
+        "era5_land"
+      ]
+    },
+    "reported_rainfall": {
+      "annual_average_mm": 640.8,
+      "annual_ratio": 0.963,
+      "hour_share": 0.3272,
+      "one_hour_mm": 201.9,
+      "three_day_mm": 617.1,
+      "trains_suspended_over": 160
+    },
+    "threshold_flags": {
+      "annual_ratio_ge_0_90": true,
+      "highway_features_ge_200": true,
+      "hour_share_ge_0_30": true,
+      "population_ge_5m": true
+    }
+  },
+  "numeric_tolerances": {
+    "annual_ratio": {
+      "abs_tolerance": 0.005,
+      "expected": 0.963
+    },
+    "highway_features": {
+      "abs_tolerance": 0,
+      "expected": 252
+    },
+    "hour_share": {
+      "abs_tolerance": 0.005,
+      "expected": 0.3272
+    },
+    "max_grid_mm": {
+      "abs_tolerance": 0.5,
+      "expected": 484.255
+    },
+    "max_mean_mm": {
+      "abs_tolerance": 0.5,
+      "expected": 460.551
+    },
+    "one_hour_mm": {
+      "abs_tolerance": 0.2,
+      "expected": 201.9
+    },
+    "population_million": {
+      "abs_tolerance": 0.05,
+      "expected": 5.26
+    },
+    "three_day_mm": {
+      "abs_tolerance": 0.2,
+      "expected": 617.1
+    }
+  },
+  "primary_gt": {
+    "answer": "short_burst_multiday_urban_exposure",
+    "metrics": {
+      "annual_ratio": 0.963,
+      "highway_features": 252,
+      "hour_share": 0.3272,
+      "max_mean_dataset": "gpm_imerg",
+      "max_mean_mm": 460.551,
+      "one_hour_mm": 201.9,
+      "population_million": 5.26,
+      "three_day_mm": 617.1
+    },
+    "thresholds": {
+      "annual_ratio_min": 0.9,
+      "highway_features_min": 200,
+      "hour_share_min": 0.3,
+      "population_million_min": 5.0
+    },
+    "tolerances": {
+      "grid_mm": 0.5,
+      "population_million": 0.05,
+      "rain_mm": 0.2,
+      "ratio": 0.005
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Computed from local CSX-063 records and data layers.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Henan_Zhengzhou_extreme_rainfall_and_flood.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_003_Overpass_small_roads_and_critical_amenities.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested compact JSON fields with units clear in field names and one concise interpretation sentence.",
+        "name": "output_schema",
+        "partial_credit": "1 point if the answer has the final label and most numeric fields but omits or misnests one ledger block.",
+        "points": 2
+      },
+      {
+        "description": "Gives 617.1 mm, 201.9 mm, 201.9 / 617.1 = 0.3272, and 617.1 / 640.8 = 0.963 within tolerance.",
+        "name": "reported_rainfall_arithmetic",
+        "partial_credit": "2-3 points for correct rainfall anchors with one missing or rounded ratio; 1 point for only copying one or two rainfall values.",
+        "points": 4
+      },
+      {
+        "description": "Orders mean accumulation as GPM IMERG, CHIRPS, ERA5-Land; gives 460.551 mm for the top mean and 484.255 mm for the gridded maximum within tolerance.",
+        "name": "gridded_accumulation_ledger",
+        "partial_credit": "2-3 points for the right top dataset with one numeric error; 1 point for recognizing GPM IMERG is largest without the ledger values.",
+        "points": 4
+      },
+      {
+        "description": "Gives 5.26 million people, 252 highway features, 48 amenity features, and 0 tunnel features within tolerance.",
+        "name": "urban_context_ledger",
+        "partial_credit": "2 points for correct population and highway count with minor omissions; 1 point for only the population value.",
+        "points": 3
+      },
+      {
+        "description": "Correctly evaluates all four Boolean checks and assigns short_burst_multiday_urban_exposure only when all are true.",
+        "name": "threshold_logic_and_final_label",
+        "partial_credit": "3-4 points for the correct label with one threshold mistake; 1-2 points for correct individual checks but an incorrect or missing final label.",
+        "points": 5
+      },
+      {
+        "description": "Ties the one-hour share, near-annual multi-day total, gridded rainfall, and urban context into a concise computed interpretation.",
+        "name": "computed_interpretation",
+        "partial_credit": "1 point if the interpretation mentions only the rainfall thresholds or only the urban context.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "numeric_diagnosis",
+  "task_id": "CSX-063_Q1",
+  "task_type": "numeric"
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-052_Q2",
+  "event_id": "CSX-052",
+  "task_type": "short_answer",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "answer_type": "compact_json_score_ledger",
+  "primary_gt": {
+    "event_window": "2023-12-03 to 2023-12-06",
+    "runoff_equivalent_mm": 110.0,
+    "report_to_max_gridded_ratio": 19.0,
+    "highway_per_waterway": 5.44,
+    "critical_per_million": 78.1,
+    "wet_surface_flag": true,
+    "score": 5,
+    "final_label": "rainfall_runoff_exposure_consistent"
+  },
+  "rejected_explanation": "wind-only or image-only explanation",
+  "numeric_tolerances": {
+    "runoff_equivalent_mm": 0.1,
+    "report_to_max_gridded_ratio": 0.1,
+    "highway_per_waterway": 0.01,
+    "critical_per_million": 0.1
+  },
+  "key_values": {
+    "masked_spatial_product_contract": {
+      "applies_to": [
+        "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+      ],
+      "derived_statistics_authoritative": true,
+      "absolute_coordinates_place_names_and_georeferencing_not_for_event_validity": true
+    },
+    "reported_rainfall_lower_bound_mm": 200.0,
+    "runoff_coefficient": 0.55,
+    "gridded_precipitation_maxima_mm": {
+      "era5_land_mm": 10.5489,
+      "gpm_mm": 4.485,
+      "chirps_mm": 9.7155
+    },
+    "largest_gridded_event_precipitation_max_mm": 10.5489,
+    "population": 3368009.16,
+    "receptors": {
+      "highway_elements": 598,
+      "waterway_elements": 110,
+      "critical_amenities": 263
+    },
+    "radar_backscatter_mean_change_db": -0.809,
+    "embedding_mean_change": 0.022,
+    "score_components": {
+      "rainfall_threshold": true,
+      "runoff_threshold": true,
+      "highway_waterway_threshold": true,
+      "critical_density_threshold": true,
+      "wet_surface_threshold": true
+    },
+    "thresholds": {
+      "rainfall_mm": 200.0,
+      "runoff_equivalent_mm": 100.0,
+      "highway_per_waterway": 5.0,
+      "critical_per_million": 50.0,
+      "radar_backscatter_mean_change_db": -0.5,
+      "embedding_mean_change": 0.05
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger and label",
+        "points": 4,
+        "description": "Provides the required compact JSON fields with score 5 and final_label rainfall_runoff_exposure_consistent.",
+        "partial_credit": "Award 2-3 points for the correct label with one or two missing fields; award 1 point for a plausible label without the ledger."
+      },
+      {
+        "name": "Rainfall and runoff arithmetic",
+        "points": 4,
+        "description": "Uses 200 mm as the rainfall lower bound and computes 200 * 0.55 = 110.0 mm.",
+        "partial_credit": "Award 2-3 points for the right formula with rounding or unit mistakes; award 1 point for using rainfall qualitatively without the runoff calculation."
+      },
+      {
+        "name": "Gridded-maximum ratio",
+        "points": 3,
+        "description": "Identifies 10.5489 mm as the largest gridded event-precipitation maximum and computes a report-to-maximum ratio of about 19.0.",
+        "partial_credit": "Award 2 points for using the right ratio idea with the wrong gridded maximum; award 1 point for listing gridded rainfall numbers without the ratio."
+      },
+      {
+        "name": "Exposure ratios",
+        "points": 4,
+        "description": "Computes 598 / 110 = 5.44 and 263 / 3.368009 = 78.1 per million people, with correct units or field names, treating masked OSM/WorldPop derived statistics as package-authoritative rather than judging them by internal coordinates or place names.",
+        "partial_credit": "Award 2-3 points for one correct ratio; award 1 point for listing receptor counts without derived ratios."
+      },
+      {
+        "name": "Wet-surface flag and score arithmetic",
+        "points": 3,
+        "description": "Applies both thresholds, -0.809 <= -0.5 and 0.022 <= 0.05, sets wet_surface_flag to true, and counts all five passing tests.",
+        "partial_credit": "Award 2 points for the right flag but incomplete score logic; award 1 point for using only one remote-sensing condition."
+      },
+      {
+        "name": "Rejected competing explanation",
+        "points": 2,
+        "description": "Explicitly rejects wind-only or image-only explanation as weaker than the computed rainfall-runoff exposure ledger.",
+        "partial_credit": "Award 1 point for a correct but generic interpretation that does not name the rejected explanation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_Cyclone_Michaung_Chennai_urban_flooding.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "data_inputs": [
+      "event anchor",
+      "report rainfall lower bound",
+      "precipitation summaries",
+      "population sum",
+      "mapped receptor counts",
+      "radar backscatter change",
+      "annual embedding change"
+    ],
+    "notes": "WorldPop and OSM receptor products are treated as spatially masked products; derived statistics are authoritative, while absolute coordinates/place names/georeferencing are not event-location validity checks."
+  }
+}

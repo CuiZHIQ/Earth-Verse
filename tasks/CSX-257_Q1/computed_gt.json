@@ -1,0 +1,181 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-257",
+  "forbidden_overclaims": [
+    "Do not assert exact inundation depth or peak storm tide unless directly derived in the answer.",
+    "Do not assert substation-level outage counts, exact mortality, exact economic loss, or borough-level damage totals.",
+    "Do not claim rainfall was irrelevant; the supported distinction is that rainfall-only drainage flooding is not the dominant mechanism.",
+    "Do not treat visual previews or fill weather layers as direct proof of local damage or precise New York City meteorology."
+  ],
+  "key_values": {
+    "answer": "coastal_surge_lifeline_outage_cascade",
+    "cascade_signal_score": 4,
+    "cyclone_wind_kmh": 167.4,
+    "impact_chain": [
+      "tropical_cyclone_forcing",
+      "coastal_flooding",
+      "power_outage_cascade"
+    ],
+    "population_exposed": 3848078,
+    "priority": "critical_lifeline_priority",
+    "risk_index_0_100": 91.8
+  },
+  "numeric_tolerances": {
+    "cascade_signal_score": {
+      "target": 4,
+      "tolerance": 0
+    },
+    "cyclone_wind_kmh": {
+      "target": 167.4,
+      "tolerance": 0.5
+    },
+    "population_exposed": {
+      "target": 3848078,
+      "tolerance": 5000
+    },
+    "risk_index_0_100": {
+      "target": 91.8,
+      "tolerance": 0.5
+    }
+  },
+  "primary_gt": {
+    "answer": "coastal_surge_lifeline_outage_cascade",
+    "impact_chain": [
+      "tropical_cyclone_forcing",
+      "coastal_flooding",
+      "power_outage_cascade"
+    ],
+    "key_metrics": {
+      "cascade_signal_score": 4,
+      "cyclone_wind_kmh": 167.4,
+      "population_exposed": 3848078,
+      "risk_index_0_100": 91.8
+    },
+    "priority": "critical_lifeline_priority"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_005_Locked_event_anchor_Hurricane_Sandy_New_York_City_coastal_flood_and_power_outage_cascade.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_disaster_alert_API.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/event_reports/event_reports_003_NOAA_NHC_Tropical_Cyclone_Sandy_report_and_tide_gauges.html"
+    ]
+  },
+  "reasoning_requirements": [
+    "Link tropical cyclone forcing to coastal flooding and subsequent lifeline disruption.",
+    "Use exposed population and cascade indicators to justify the critical response-priority stance.",
+    "Treat precipitation as contextual rather than as the dominant rainfall-only mechanism.",
+    "Reject wind-only structural damage as incomplete for this event package."
+  ],
+  "required_findings": [
+    {
+      "expected": "coastal surge / coastal flooding linked to lifeline outage cascade, not rainfall-only drainage flooding",
+      "name": "dominant_mechanism"
+    },
+    {
+      "expected": "critical lifeline or critical infrastructure priority for a dense coastal urban exposure setting",
+      "name": "response_priority"
+    },
+    {
+      "expected": "tropical cyclone forcing with hurricane-strength wind context affecting the United States",
+      "name": "cyclone_forcing"
+    },
+    {
+      "expected": "multi-million exposed population context",
+      "name": "urban_exposure"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Selects coastal_surge_lifeline_outage_cascade, or an equivalent coastal flood plus power/lifeline outage cascade mechanism, as the dominant answer.",
+        "name": "dominant_mechanism",
+        "points": 4
+      },
+      {
+        "description": "Selects critical_lifeline_priority, or an equivalent critical infrastructure/lifeline response stance for dense coastal urban exposure.",
+        "name": "response_priority",
+        "points": 3
+      },
+      {
+        "description": "Reports risk_index_0_100 91.8 +/- 0.5, cyclone_wind_kmh 167.4 +/- 0.5, population_exposed 3,848,078 +/- 5,000, and cascade_signal_score 4 exactly.",
+        "name": "quantitative_anchors",
+        "points": 4
+      },
+      {
+        "description": "Gives a three-step chain equivalent to tropical cyclone forcing -> coastal flooding -> power outage cascade.",
+        "name": "impact_chain",
+        "points": 3
+      },
+      {
+        "description": "Treats precipitation as storm context and does not classify the event as a rainfall-dominant urban drainage flood.",
+        "name": "rainfall_alternative_handling",
+        "points": 2
+      },
+      {
+        "description": "Recognizes that a wind-only structural-damage interpretation is incomplete because it omits the coastal flood to lifeline disruption pathway.",
+        "name": "wind_only_alternative_handling",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported exact claims about inundation depth, peak storm tide, substation outage counts, deaths, economic losses, or borough-level damage totals.",
+        "name": "overclaim_control",
+        "points": 1
+      },
+      {
+        "description": "Returns concise valid JSON matching the requested structure.",
+        "name": "format",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "cyclone_catalog_context": {
+      "affected_iso3": [
+        "CUB",
+        "JAM",
+        "USA"
+      ],
+      "alert_level": "Orange",
+      "duration_hours": 174.0,
+      "event_name": "Tropical Cyclone SANDY-12",
+      "event_type": "TC",
+      "overall_alert_level": "Orange",
+      "severity_text": "Hurricane/Typhoon > 74 mph (maximum wind speed of 167 km/h)"
+    },
+    "event_window": {
+      "end_date": "2012-10-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2012-10-29"
+    },
+    "index_components": {
+      "cascade_norm": 1.0,
+      "exposure_norm": 0.983,
+      "precip_norm": 0.452,
+      "wind_norm": 0.94
+    },
+    "package_claim_flags": {
+      "cascade_signal": true,
+      "coastal_signal": true,
+      "coastal_water_context": true,
+      "flood_signal": true,
+      "power_outage_signal": true,
+      "successful_manifest_files": 20
+    },
+    "precipitation_context": {
+      "chirps_mean_mm": 16.0,
+      "combined_mean_mm": 11.3,
+      "gpm_mean_mm": 6.6
+    }
+  },
+  "task_id": "CSX-257_Q1",
+  "task_subtype": "compound_impact_chain_response_priority",
+  "task_type": "short_answer"
+}

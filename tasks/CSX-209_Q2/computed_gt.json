@@ -1,0 +1,134 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-209",
+  "key_values": {
+    "event_name": "September-October 2015 Singapore haze from Indonesian peat and forest fires",
+    "gates": {
+      "co_ratio_ge_10": true,
+      "dnbr_no_scenes": true,
+      "hazard_family_match": true,
+      "positive_population": true,
+      "precip_pair_present": true,
+      "true_color_pair_valid": true
+    },
+    "hazard_family": "air_pollution_smoke_heat",
+    "ordinary_co_ppb": 100,
+    "peak_co_ppb": 1300,
+    "precip_product_windows": [
+      {
+        "end": "2015-10-16",
+        "has_stats": true,
+        "path": "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "present": true,
+        "start": "2015-09-01"
+      },
+      {
+        "end": "2015-10-16",
+        "has_stats": true,
+        "path": "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+        "present": true,
+        "start": "2015-09-01"
+      }
+    ],
+    "sentinel_status": "no_sufficient_scenes",
+    "true_color_image_checks": [
+      {
+        "bytes": 206284,
+        "height": 768,
+        "nonzero_pixel_variation": true,
+        "openable": true,
+        "path": "data/remote_sensing/remote_sensing_002_pre.jpg",
+        "present": true,
+        "valid": true,
+        "width": 1024
+      },
+      {
+        "bytes": 190428,
+        "height": 768,
+        "nonzero_pixel_variation": true,
+        "openable": true,
+        "path": "data/remote_sensing/remote_sensing_003_event.jpg",
+        "present": true,
+        "valid": true,
+        "width": 1024
+      }
+    ],
+    "true_color_pair_valid": true,
+    "worldpop_population_sum": 410884.77942285844
+  },
+  "primary_gt": {
+    "co_excess_ppb": 1200,
+    "co_ratio": 13.0,
+    "exposed_population": 410885,
+    "final_label": "co_plume_exposure_supported_no_burnscar_map",
+    "precip_products_present": 2,
+    "sentinel_scene_total": 0,
+    "window": "2015-09-01/2015-10-31",
+    "window_days": 61
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Precipitation summaries are available-package stats objects for 2015-09-01 to 2015-10-16, not a full-window rainfall-clearing calculation. True-color gate validates openable image dimensions and pixel variation rather than file size alone.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September-October_2015_Singapore_haze_from_Indonesian_peat_and_forest.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_002_pre.jpg",
+      "data/remote_sensing/remote_sensing_003_event.jpg"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Includes exactly the eight requested fields with valid JSON types and no extra fields.",
+        "name": "Returned JSON shape",
+        "partial_credit": "Award 1-2 points if the ledger is recoverable but has one minor field-name or formatting issue.",
+        "points": 3
+      },
+      {
+        "description": "Reports the locked 2015-09-01/2015-10-31 window, 61 inclusive days, and uses the relevant source summaries.",
+        "name": "Event window and source fields",
+        "partial_credit": "Award 1-2 points for the correct window with an off-by-one day count or incomplete source use.",
+        "points": 3
+      },
+      {
+        "description": "Extracts 100 ppb and 1,300 ppb correctly, computes co_ratio 13.0, and computes co_excess_ppb 1200.",
+        "name": "Carbon-monoxide arithmetic",
+        "partial_credit": "Award 2-3 points for correct inputs with one rounding or subtraction error; award 1 point for recognizing the large CO increase without correct arithmetic.",
+        "points": 4
+      },
+      {
+        "description": "Rounds WorldPop to 410885, computes zero Sentinel dNBR scenes, counts two available precipitation summaries with stats, and validates the true-color image pair as openable images with positive dimensions and pixel variation.",
+        "name": "Exposure and data-availability values",
+        "partial_credit": "Award up to 1 point each for population, Sentinel scene total/status handling, precipitation count/window awareness, and true-color image validation.",
+        "points": 4
+      },
+      {
+        "description": "Applies every threshold exactly and returns co_plume_exposure_supported_no_burnscar_map.",
+        "name": "Gate logic and final label",
+        "partial_credit": "Award 2-3 points for the right label with one missed gate, or for correct gates with a noncanonical label.",
+        "points": 4
+      },
+      {
+        "description": "Keeps the response to the requested ledger and avoids uncomputed health, burn-area, or rainfall-causation details.",
+        "name": "Compact interpretation discipline",
+        "partial_credit": "Award 1 point for a correct ledger with minor extra prose that does not change the result.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "smoke_plume_threshold_ledger",
+  "task_id": "CSX-209_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "co_ratio_abs": 0.05,
+    "integer_abs": 0,
+    "label": "exact"
+  }
+}

@@ -1,0 +1,548 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "warm-dry ablation stress during slow tropical glacier retreat",
+      "slow glacier-retreat monitoring diagnosis with repeated local thermal forcing",
+      "climate-stress-driven glacier retreat rather than acute flood, avalanche, or GLOF trigger"
+    ],
+    "answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+    "answer_type": "hybrid_numeric_label_plus_expert_briefing",
+    "canonical_stance": "The shared point-weather window shows repeated warm, nearly rain-free conditions, best diagnosed as ablation stress during a slow glacier-retreat stage rather than an acute flood trigger.",
+    "forbidden_claims": [
+      "the warm-dry index directly measures glacier mass balance",
+      "the point samples prove the full mountain glacier surface was dry",
+      "a rain-on-snow flood is diagnosed from the local daily sample",
+      "regional precipitation summaries prove local flood impacts at Puncak Jaya",
+      "casualties, displacement, infrastructure damage, or emergency evacuations are inferable from these metrics",
+      "weak or absent surface-change confirmation proves no local cryosphere change occurred"
+    ],
+    "required_claims": [
+      "Diagnose the episode as warm-dry ablation stress during a slow Puncak Jaya glacier-retreat stage.",
+      "Use the 6-of-15 consensus warm-dry count and 0.400 index as the core local climate signal.",
+      "Use low point-window precipitation and mean temperature near 28.18 C to support thermal forcing, not a rain-on-snow trigger.",
+      "Use the 183-day duration to distinguish slow retreat from an acute avalanche, flood, or GLOF event.",
+      "Treat weak or incomplete surface-change summaries as limiting evidence for abrupt disruption.",
+      "Recommend continued glacier, snowline, meltwater, and lake or outlet monitoring rather than unsupported emergency-impact claims."
+    ],
+    "required_metrics": [
+      {
+        "name": "warm_dry_index",
+        "tolerance": 0.001,
+        "value": 0.4
+      },
+      {
+        "name": "consensus_warm_dry_days",
+        "tolerance": 0,
+        "value": 6
+      },
+      {
+        "name": "total_point_days",
+        "tolerance": 0,
+        "value": 15
+      },
+      {
+        "name": "point_precip_total_mean_mm",
+        "tolerance": 0.1,
+        "value": 3.6
+      },
+      {
+        "name": "point_temperature_mean_c",
+        "tolerance": 0.02,
+        "value": 28.18
+      },
+      {
+        "name": "event_duration_days",
+        "tolerance": 0,
+        "value": 183
+      },
+      {
+        "name": "sentinel1_mean_change_db",
+        "tolerance": 0.001,
+        "value": -0.147
+      }
+    ],
+    "structured_answer": {
+      "annual_surface_change_interpretation": "Remote-sensing summaries provide weak or incomplete confirmation of abrupt surface disruption, fitting slow retreat context better than a sudden event.",
+      "answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+      "consensus_warm_dry_days": 6,
+      "event_duration_days": 183,
+      "gridded_precip_mean_mm": 393.2,
+      "hydrologic_outburst_risk": "The materials do not support a specific GLOF or sudden hydrologic outburst diagnosis.",
+      "interpretation": "The point samples show repeated warm, nearly rain-free days, supporting ablation stress during a slow retreat stage while not proving an acute flood trigger.",
+      "mass_balance_stress": "Warm conditions with little compensating snowfall or rainfall context are best interpreted as ablation and negative mass-balance stress rather than a direct mass-balance measurement.",
+      "physical_forcing_diagnosis": "The shared point-weather window shows repeated warm, nearly rain-free conditions, best diagnosed as ablation stress during a slow glacier-retreat stage rather than an acute flood trigger.",
+      "point_precip_total_mean_mm": 3.6,
+      "point_temperature_mean_c": 28.18,
+      "precipitation_snow_rain_context": "The local daily sample is nearly rain-free, so precipitation is not diagnosed as an acute rain-on-snow or flood trigger from these data.",
+      "remote_sensing_context": {
+        "sentinel1_mean_change_db": -0.147,
+        "sentinel2_status": "no_sufficient_scenes"
+      },
+      "response_monitoring_implication": "Prioritize repeated glacier-area, snowline, meltwater, and lake/outlet monitoring rather than emergency response claims unsupported by the local metrics.",
+      "thermal_forcing": "The aligned local weather records show repeated days near or above 28 C, consistent with sustained melt-season thermal forcing.",
+      "total_point_days": 15,
+      "warm_dry_index": 0.4
+    },
+    "visible_answer": {
+      "answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+      "key_findings": [
+        {
+          "name": "climate_signal",
+          "value": "6 of 15 aligned point-weather days are consensus warm-dry days, giving warm_dry_index = 0.400."
+        },
+        {
+          "name": "glacier_process",
+          "value": "The signal supports warm-dry ablation stress during a 183-day slow retreat stage, not an acute rain-on-snow flood, avalanche, or GLOF diagnosis."
+        },
+        {
+          "name": "monitoring_priority",
+          "value": "Continue glacier-area, snowline, meltwater, and lake/outlet monitoring rather than unsupported emergency-impact claims."
+        }
+      ],
+      "limitations": [
+        "The point-window index is not a direct glacier mass-balance measurement.",
+        "The point samples do not prove the entire glacier surface was dry.",
+        "The package metrics do not support casualties, displacement, infrastructure damage, evacuations, or a diagnosed GLOF."
+      ],
+      "structured_answer": {
+        "annual_surface_change_interpretation": "Remote-sensing summaries provide weak or incomplete confirmation of abrupt surface disruption, fitting slow retreat context better than a sudden event.",
+        "consensus_warm_dry_days": 6,
+        "event_duration_days": 183,
+        "hydrologic_outburst_risk": "The materials do not support a specific GLOF or sudden hydrologic outburst diagnosis.",
+        "mass_balance_stress": "Warm conditions with little compensating snowfall or rainfall context are best interpreted as ablation and negative mass-balance stress rather than a direct mass-balance measurement.",
+        "point_precip_total_mean_mm": 3.6,
+        "point_temperature_mean_c": 28.18,
+        "precipitation_snow_rain_context": "The local daily sample is nearly rain-free, so precipitation is not diagnosed as an acute rain-on-snow or flood trigger from these data.",
+        "response_monitoring_implication": "Prioritize repeated glacier-area, snowline, meltwater, and lake/outlet monitoring rather than emergency response claims unsupported by the local metrics.",
+        "thermal_forcing": "The aligned local weather records show repeated days near or above 28 C, consistent with sustained melt-season thermal forcing.",
+        "total_point_days": 15,
+        "warm_dry_index": 0.4
+      }
+    }
+  },
+  "canonical_answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-315",
+  "forbidden_overclaims": [
+    "Do not claim the index measures glacier mass balance directly.",
+    "Do not claim the point samples prove the full mountain glacier surface was dry.",
+    "Do not diagnose a rain-on-snow flood from the local daily sample.",
+    "Do not claim regional precipitation summaries prove local flood impacts at Puncak Jaya.",
+    "Do not infer casualties, displacement, infrastructure damage, or emergency evacuations.",
+    "Do not treat absent or weak surface-change evidence as proof that no local cryosphere change occurred."
+  ],
+  "judge_anchors": {
+    "acceptable_variants": [
+      "warm-dry ablation stress during slow tropical glacier retreat",
+      "slow glacier-retreat monitoring diagnosis with repeated local thermal forcing",
+      "climate-stress-driven glacier retreat rather than acute flood, avalanche, or GLOF trigger"
+    ],
+    "canonical_stance": "The shared point-weather window shows repeated warm, nearly rain-free conditions, best diagnosed as ablation stress during a slow glacier-retreat stage rather than an acute flood trigger.",
+    "forbidden_claims": [
+      "the warm-dry index directly measures glacier mass balance",
+      "the point samples prove the full mountain glacier surface was dry",
+      "a rain-on-snow flood is diagnosed from the local daily sample",
+      "regional precipitation summaries prove local flood impacts at Puncak Jaya",
+      "casualties, displacement, infrastructure damage, or emergency evacuations are inferable from these metrics",
+      "weak or absent surface-change confirmation proves no local cryosphere change occurred"
+    ],
+    "required_claims": [
+      "Diagnose the episode as warm-dry ablation stress during a slow Puncak Jaya glacier-retreat stage.",
+      "Use the 6-of-15 consensus warm-dry count and 0.400 index as the core local climate signal.",
+      "Use low point-window precipitation and mean temperature near 28.18 C to support thermal forcing, not a rain-on-snow trigger.",
+      "Use the 183-day duration to distinguish slow retreat from an acute avalanche, flood, or GLOF event.",
+      "Treat weak or incomplete surface-change summaries as limiting evidence for abrupt disruption.",
+      "Recommend continued glacier, snowline, meltwater, and lake or outlet monitoring rather than unsupported emergency-impact claims."
+    ],
+    "required_metrics": [
+      {
+        "name": "warm_dry_index",
+        "tolerance": 0.001,
+        "value": 0.4
+      },
+      {
+        "name": "consensus_warm_dry_days",
+        "tolerance": 0,
+        "value": 6
+      },
+      {
+        "name": "total_point_days",
+        "tolerance": 0,
+        "value": 15
+      },
+      {
+        "name": "point_precip_total_mean_mm",
+        "tolerance": 0.1,
+        "value": 3.6
+      },
+      {
+        "name": "point_temperature_mean_c",
+        "tolerance": 0.02,
+        "value": 28.18
+      },
+      {
+        "name": "event_duration_days",
+        "tolerance": 0,
+        "value": 183
+      },
+      {
+        "name": "sentinel1_mean_change_db",
+        "tolerance": 0.001,
+        "value": -0.147
+      }
+    ]
+  },
+  "key_values": {
+    "consensus_warm_dry_days": 6,
+    "event_duration_days": 183,
+    "gridded_precip_mean_mm": 393.2,
+    "point_precip_total_mean_mm": 3.6,
+    "point_temperature_mean_c": 28.18,
+    "sentinel1_mean_change_db": -0.147,
+    "sentinel2_status": "no_sufficient_scenes",
+    "total_point_days": 15,
+    "warm_dry_index": 0.4
+  },
+  "numeric_tolerances": {
+    "consensus_warm_dry_days": {
+      "absolute_tolerance": 0,
+      "expected": 6
+    },
+    "event_duration_days": {
+      "absolute_tolerance": 0,
+      "expected": 183
+    },
+    "gridded_precip_mean_mm": {
+      "absolute_tolerance": 0.1,
+      "expected": 393.2,
+      "rounding": "1 decimal"
+    },
+    "point_precip_total_mean_mm": {
+      "absolute_tolerance": 0.1,
+      "expected": 3.6,
+      "rounding": "1 decimal"
+    },
+    "point_temperature_mean_c": {
+      "absolute_tolerance": 0.02,
+      "expected": 28.18,
+      "rounding": "2 decimals"
+    },
+    "sentinel1_mean_change_db": {
+      "absolute_tolerance": 0.001,
+      "expected": -0.147,
+      "rounding": "3 decimals"
+    },
+    "total_point_days": {
+      "absolute_tolerance": 0,
+      "expected": 15
+    },
+    "warm_dry_index": {
+      "absolute_tolerance": 0.001,
+      "expected": 0.4,
+      "rounding": "3 decimals"
+    }
+  },
+  "primary_gt": {
+    "answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+    "key_findings": [
+      {
+        "name": "climate_signal",
+        "value": "6 of 15 aligned point-weather days are consensus warm-dry days, giving warm_dry_index = 0.400."
+      },
+      {
+        "name": "glacier_process",
+        "value": "The signal supports warm-dry ablation stress during a 183-day slow retreat stage, not an acute rain-on-snow flood, avalanche, or GLOF diagnosis."
+      },
+      {
+        "name": "monitoring_priority",
+        "value": "Continue glacier-area, snowline, meltwater, and lake/outlet monitoring rather than unsupported emergency-impact claims."
+      }
+    ],
+    "limitations": [
+      "The point-window index is not a direct glacier mass-balance measurement.",
+      "The point samples do not prove the entire glacier surface was dry.",
+      "The package metrics do not support casualties, displacement, infrastructure damage, evacuations, or a diagnosed GLOF."
+    ],
+    "structured_answer": {
+      "annual_surface_change_interpretation": "Remote-sensing summaries provide weak or incomplete confirmation of abrupt surface disruption, fitting slow retreat context better than a sudden event.",
+      "consensus_warm_dry_days": 6,
+      "event_duration_days": 183,
+      "hydrologic_outburst_risk": "The materials do not support a specific GLOF or sudden hydrologic outburst diagnosis.",
+      "mass_balance_stress": "Warm conditions with little compensating snowfall or rainfall context are best interpreted as ablation and negative mass-balance stress rather than a direct mass-balance measurement.",
+      "point_precip_total_mean_mm": 3.6,
+      "point_temperature_mean_c": 28.18,
+      "precipitation_snow_rain_context": "The local daily sample is nearly rain-free, so precipitation is not diagnosed as an acute rain-on-snow or flood trigger from these data.",
+      "response_monitoring_implication": "Prioritize repeated glacier-area, snowline, meltwater, and lake/outlet monitoring rather than emergency response claims unsupported by the local metrics.",
+      "thermal_forcing": "The aligned local weather records show repeated days near or above 28 C, consistent with sustained melt-season thermal forcing.",
+      "total_point_days": 15,
+      "warm_dry_index": 0.4
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Puncak_Jaya_glacier_retreat_episode.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "python_computation_extraction_path": [
+    "Resolve task_dir from compute_gt.py.",
+    "Resolve workspace_root as task_dir.parents[2].",
+    "Load hidden CSX-315 package JSON files from metadata, event_reports, physical_hazard, and remote_sensing subdirectories.",
+    "Align daily point-weather records by date and compute the warm-dry consensus count.",
+    "Extract event duration, gridded precipitation context, and surface-change status metrics.",
+    "Write computed_gt.json with numeric tolerances, required findings, reasoning requirements, forbidden overclaims, and a 20-point scoring guide."
+  ],
+  "reasoning_requirements": [
+    "Use the hidden local file choices without relying on the public question to name products.",
+    "Align daily point-weather records by date before counting consensus warm-dry days.",
+    "Use the short-window forcing index as a physical consistency diagnosis, not as direct glacier mass-balance measurement.",
+    "Reconcile the low point-scale precipitation signal with wetter regional precipitation context.",
+    "Use event duration and weak/incomplete surface-change summaries to avoid acute flood, avalanche, or GLOF overclaims.",
+    "Include a response or monitoring implication appropriate to slow glacier retreat."
+  ],
+  "required_findings": [
+    {
+      "finding": "The aligned initial point-weather window contains 15 daily samples.",
+      "id": "shared_point_window"
+    },
+    {
+      "finding": "Six of the 15 aligned daily samples meet the warm-dry consensus rule, giving an index of 0.400.",
+      "id": "consensus_warm_dry_signal"
+    },
+    {
+      "finding": "The mean of the two point-product precipitation totals is 3.6 mm.",
+      "id": "low_point_precipitation"
+    },
+    {
+      "finding": "The event window is 183 days, so the signal is context for a slow retreat episode rather than proof of a sudden trigger.",
+      "id": "long_event_context"
+    },
+    {
+      "finding": "Local surface-change summaries do not provide strong confirmation of sudden surface disruption.",
+      "id": "remote_sensing_limits"
+    },
+    {
+      "finding": "The response implication is continued glacier, snowline, meltwater, and lake/outlet monitoring rather than unsupported emergency-impact claims.",
+      "id": "monitoring_implication"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives warm_dry_ablation_stress_slow_retreat_monitor or a semantically equivalent diagnosis linking warm-dry ablation stress, slow glacier retreat, and monitoring.",
+        "name": "Mechanism and stage diagnosis",
+        "partial_credit": "Award 2-3 points for identifying slow retreat or ablation stress but not the full mechanism-stage-monitoring connection; award 1 point for a generic glacier retreat label.",
+        "points": 4
+      },
+      {
+        "description": "Computes 6 consensus warm-dry days out of 15 and a warm_dry_index of 0.400 within tolerance.",
+        "name": "Warm-dry index computation",
+        "partial_credit": "Award up to 2 points for the correct count or denominator alone, and up to 3 points for a correct ratio with incomplete threshold or date-alignment explanation.",
+        "points": 4
+      },
+      {
+        "description": "Reports mean point-record precipitation total as 3.6 mm and mean point temperature as 28.18 C within tolerance, with units and appropriate low-precipitation/high-temperature interpretation.",
+        "name": "Temperature and precipitation anchors",
+        "partial_credit": "Award 1-2 points for one correct value or a correct qualitative reading without both numeric anchors.",
+        "points": 3
+      },
+      {
+        "description": "Uses the 183-day duration to frame the event as a slow retreat stage rather than a sudden trigger.",
+        "name": "Slow-event phase reconstruction",
+        "partial_credit": "Award 1-2 points for mentioning the long duration without clearly using it to reject acute flood, avalanche, or GLOF overinterpretation.",
+        "points": 3
+      },
+      {
+        "description": "Interprets repeated warmth as thermal melt forcing and ablation or negative mass-balance stress while avoiding the claim that the index directly measures mass balance.",
+        "name": "Glacier-climate mechanism",
+        "partial_credit": "Award 1 point for generic warming or melt reasoning without the mass-balance caveat.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported rain-on-snow, avalanche, or GLOF diagnosis and interprets weak or incomplete surface-change summaries cautiously rather than as abrupt-disruption proof.",
+        "name": "Hydrologic and surface-change interpretation",
+        "partial_credit": "Award 1 point for correctly handling either hydrologic risk or surface-change limits, with full credit requiring both.",
+        "points": 2
+      },
+      {
+        "description": "Provides a monitoring implication centered on glacier area, snowline, meltwater, and lake or outlet checks while avoiding unsupported realized-impact or emergency-response claims.",
+        "name": "Operational implication and overclaim control",
+        "partial_credit": "Award 1 point for a generic monitoring recommendation or for good overclaim control without event-specific cryosphere monitoring targets.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "structured_answer": {
+    "annual_surface_change_interpretation": "Remote-sensing summaries provide weak or incomplete confirmation of abrupt surface disruption, fitting slow retreat context better than a sudden event.",
+    "answer": "warm_dry_ablation_stress_slow_retreat_monitor",
+    "consensus_warm_dry_days": 6,
+    "event_duration_days": 183,
+    "gridded_precip_mean_mm": 393.2,
+    "hydrologic_outburst_risk": "The materials do not support a specific GLOF or sudden hydrologic outburst diagnosis.",
+    "interpretation": "The point samples show repeated warm, nearly rain-free days, supporting ablation stress during a slow retreat stage while not proving an acute flood trigger.",
+    "mass_balance_stress": "Warm conditions with little compensating snowfall or rainfall context are best interpreted as ablation and negative mass-balance stress rather than a direct mass-balance measurement.",
+    "physical_forcing_diagnosis": "The shared point-weather window shows repeated warm, nearly rain-free conditions, best diagnosed as ablation stress during a slow glacier-retreat stage rather than an acute flood trigger.",
+    "point_precip_total_mean_mm": 3.6,
+    "point_temperature_mean_c": 28.18,
+    "precipitation_snow_rain_context": "The local daily sample is nearly rain-free, so precipitation is not diagnosed as an acute rain-on-snow or flood trigger from these data.",
+    "remote_sensing_context": {
+      "sentinel1_mean_change_db": -0.147,
+      "sentinel2_status": "no_sufficient_scenes"
+    },
+    "response_monitoring_implication": "Prioritize repeated glacier-area, snowline, meltwater, and lake/outlet monitoring rather than emergency response claims unsupported by the local metrics.",
+    "thermal_forcing": "The aligned local weather records show repeated days near or above 28 C, consistent with sustained melt-season thermal forcing.",
+    "total_point_days": 15,
+    "warm_dry_index": 0.4
+  },
+  "subtype": "glacier_climate_physical_consistency_diagnosis",
+  "supporting_metrics": {
+    "consensus_warm_dry_dates": [
+      "2015-10-04",
+      "2015-10-07",
+      "2015-10-12",
+      "2015-10-13",
+      "2015-10-14",
+      "2015-10-15"
+    ],
+    "daily_records": [
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-01",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.0,
+        "power_precip_mm": 0.87,
+        "power_t2m_c": 27.9
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-02",
+        "open_meteo_precip_mm": 0.1,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.14,
+        "power_t2m_c": 27.92
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-03",
+        "open_meteo_precip_mm": 0.3,
+        "open_meteo_tmax_c": 28.0,
+        "power_precip_mm": 0.14,
+        "power_t2m_c": 28.04
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-04",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.2,
+        "power_precip_mm": 0.15,
+        "power_t2m_c": 28.24
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-05",
+        "open_meteo_precip_mm": 0.2,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.11,
+        "power_t2m_c": 27.84
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-06",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.0,
+        "power_precip_mm": 0.21,
+        "power_t2m_c": 27.96
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-07",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.1,
+        "power_t2m_c": 28.35
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-08",
+        "open_meteo_precip_mm": 0.2,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.21,
+        "power_t2m_c": 28.25
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-09",
+        "open_meteo_precip_mm": 0.6,
+        "open_meteo_tmax_c": 28.2,
+        "power_precip_mm": 0.29,
+        "power_t2m_c": 28.28
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-10",
+        "open_meteo_precip_mm": 1.4,
+        "open_meteo_tmax_c": 28.5,
+        "power_precip_mm": 0.26,
+        "power_t2m_c": 28.53
+      },
+      {
+        "consensus_warm_dry": false,
+        "date": "2015-10-11",
+        "open_meteo_precip_mm": 0.5,
+        "open_meteo_tmax_c": 28.3,
+        "power_precip_mm": 1.04,
+        "power_t2m_c": 28.18
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-12",
+        "open_meteo_precip_mm": 0.1,
+        "open_meteo_tmax_c": 28.3,
+        "power_precip_mm": 0.19,
+        "power_t2m_c": 28.28
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-13",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.07,
+        "power_t2m_c": 28.32
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-14",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.5,
+        "power_precip_mm": 0.02,
+        "power_t2m_c": 28.29
+      },
+      {
+        "consensus_warm_dry": true,
+        "date": "2015-10-15",
+        "open_meteo_precip_mm": 0.0,
+        "open_meteo_tmax_c": 28.1,
+        "power_precip_mm": 0.0,
+        "power_t2m_c": 28.27
+      }
+    ],
+    "event_name": "Puncak Jaya glacier retreat episode",
+    "hazard_match": "partial: slow-onset glacier retreat, not avalanche/GLOF event",
+    "open_meteo_mean_tmax_c": 28.17,
+    "open_meteo_total_precip_mm": 3.4,
+    "power_mean_t2m_c": 28.18,
+    "power_total_precip_mm": 3.8
+  },
+  "task_id": "CSX-315_Q2",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-020_Q1",
+  "event_id": "CSX-020",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "target_family": "compound_heat_exposure_process_diagnosis",
+  "primary_gt": {
+    "answer": "persistent_heat_exposure",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+    "computed_evidence": {
+      "heat_evidence_score": "4/4",
+      "heat_evidence_synthesis": {
+        "hdd35_c_day": 36.9,
+        "longest_ge35c_run_days": 6,
+        "days_ge40c": 2,
+        "p_hdd35_per_100k": 127.2
+      },
+      "alternative_flags": {
+        "rainfall_centered": false,
+        "broad_surface_change": false
+      },
+      "peak_tmax": {
+        "date": "2020-01-04",
+        "c": 42.2
+      }
+    },
+    "mechanism_chain": [
+      "event-window thermal forcing",
+      "accumulated heat-load calculation",
+      "persistence or recovery constraint",
+      "non-heat alternative rejection"
+    ],
+    "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+    "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+    "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+    "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units."
+  },
+  "key_values": {
+    "event_name": "2019-2020 Australian extreme heat during Black Summer",
+    "hdd35_c_day": 36.9,
+    "days_ge35c": 16,
+    "days_ge40c": 2,
+    "longest_ge35c_run": {
+      "days": 6,
+      "start": "2019-12-27",
+      "end": "2020-01-01"
+    },
+    "peak_tmax": {
+      "date": "2020-01-04",
+      "c": 42.2
+    },
+    "population": 344721.75821224134,
+    "p_hdd35_per_100k": 127.2,
+    "precip_max_mm": 21.9,
+    "mean_dnbr": 0.0361,
+    "mean_embedding_change": 0.03,
+    "heat_checks": {
+      "hdd35_pass": true,
+      "longest_run_pass": true,
+      "days_ge40_pass": true,
+      "population_scaled_pass": true
+    }
+  },
+  "decision_rule": {
+    "heat_classification": "persistent_heat_exposure when all four heat checks pass",
+    "heat_thresholds": {
+      "hdd35_c_day_min": 30.0,
+      "longest_ge35c_run_days_min": 5,
+      "days_ge40c_min": 2,
+      "p_hdd35_per_100k_min": 100.0
+    },
+    "rainfall_centered_threshold_mm": 50.0,
+    "broad_surface_change_thresholds": {
+      "mean_dnbr_min": 0.1,
+      "mean_embedding_change_min": 0.05
+    }
+  },
+  "tolerances": {
+    "hdd35_c_day": 0.1,
+    "p_hdd35_per_100k": 0.2,
+    "peak_tmax_c": 0.1,
+    "precip_max_mm": 0.1,
+    "mean_dnbr": 0.0001,
+    "mean_embedding_change": 0.0001,
+    "integer_counts": 0,
+    "dates": "exact"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 3,
+        "description": "Identifies the dominant physical process and gives the correct compact mechanism label or equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 4,
+        "description": "Recomputes the package-derived quantitative evidence with correct units, signs, ratios, dates, and rounding."
+      },
+      {
+        "name": "formula_derivation",
+        "points": 3,
+        "description": "Shows the requested physical formula, scaling relation, or timing relation and connects it to the computed values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 3,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects tempting simplified explanations using computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "audit": {
+    "absolute_path_hits": 0,
+    "benchmark_word_hits": 0,
+    "local_path_word_hits": 0
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Black Summer Heat-Exposure Coupled Load Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "persistent_heat_exposure",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "separate cumulative heat stress from a single peak-temperature story by combining thermal load, persistence, recovery, and contextual evidence",
+      "computed_evidence": {
+        "heat_evidence_score": "4/4",
+        "heat_evidence_synthesis": {
+          "hdd35_c_day": 36.9,
+          "longest_ge35c_run_days": 6,
+          "days_ge40c": 2,
+          "p_hdd35_per_100k": 127.2
+        },
+        "alternative_flags": {
+          "rainfall_centered": false,
+          "broad_surface_change": false
+        },
+        "peak_tmax": {
+          "date": "2020-01-04",
+          "c": 42.2
+        }
+      },
+      "mechanism_chain": [
+        "event-window thermal forcing",
+        "accumulated heat-load calculation",
+        "persistence or recovery constraint",
+        "non-heat alternative rejection"
+      ],
+      "decisive_evidence": "Accumulated heat load, duration, and exposure scaling carry the mechanism decision; rainfall or image signals only test competing explanations.",
+      "rejected_simplifications": "Reject peak-only, rainfall-led, and image-primary explanations when the computed heat-load chain is stronger.",
+      "bounded_interpretation": "The result is a package-scale heat mechanism diagnosis, not exact mortality, outage, damage, or full regional attribution.",
+      "formula_derivation": "Derive heat load as sum(max(T - T_ref, 0)); if exposure is used, scale it as heat_load * exposed_population / 100000 and explain the units."
+    },
+    "answer": "persistent_heat_exposure"
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-239",
+  "key_values": {
+    "context_checks": {
+      "comcat_feature_count": 0,
+      "mean_precipitation_mm": {
+        "chirps": 0.812,
+        "era5": 0.53,
+        "gpm": 0.214
+      },
+      "sentinel1_status": "no_sufficient_scenes",
+      "worldpop_population_context": 624420
+    },
+    "event_window": {
+      "end_date": "2004-12-26",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2004-12-26"
+    },
+    "gdacs": {
+      "earthquake_count": 5,
+      "feature_count": 6,
+      "flood_count": 1,
+      "magnitude_advantage_over_flood_index": 2.85,
+      "main_event_coordinates_lon_lat": [
+        95.78,
+        3.3
+      ],
+      "main_event_country": "Indonesia",
+      "main_event_depth_km": 10.0,
+      "main_event_id": 9059,
+      "main_event_magnitude": 8.5,
+      "main_event_time": "2004-12-26T00:58:50",
+      "max_flood_severity": 5.65,
+      "red_earthquake_count": 1,
+      "red_flood_count": 1
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall, heat, wind, or generic remote-sensing interpretation fails because none supplies the megathrust-to-runup causal chain.",
+      "evidence_weighting": "USGS mechanism text and GDACS earthquake context are decisive for the source mechanism; precipitation and Sentinel-1 checks are mainly alternative-mechanism exclusions.",
+      "uncertainty_or_scale_caveat": "The local ComCat query being empty should not override the institutional USGS report and GDACS event-window earthquake entry."
+    },
+    "usgs_report": {
+      "casualties_more_than": 200000.0,
+      "indonesia_displaced": 426800.0,
+      "indonesia_killed_at_least": 108100.0,
+      "indonesia_missing_presumed_dead": 127700.0,
+      "mechanism_flags": {
+        "earthquake_triggered_tsunami": true,
+        "ocean_basin_reach": true,
+        "plate_interface": true,
+        "seafloor_uplift": true,
+        "water_displacement": true
+      },
+      "reported_magnitude": 9.1,
+      "runup_more_than_m": 30.0
+    }
+  },
+  "primary_gt": {
+    "acceptable_variants": [
+      "Equivalent compact labels that clearly state megathrust earthquake, seafloor uplift, tsunami runup, and coastal life-safety priority.",
+      "Reasonable response phrasing such as coastal evacuation, lifesaving response, search and rescue, or emergency coastal triage.",
+      "Use of either USGS magnitude 9.1 or GDACS magnitude 8.5 as long as their different source roles are not confused."
+    ],
+    "answer": "megathrust_seafloor_uplift_tsunami_priority",
+    "answer_type": "structured_short_answer_with_exact_core_and_judged_reasoning",
+    "canonical_stance": "The 2004 Indian Ocean disaster should be prioritized as a megathrust seafloor-uplift tsunami with coastal life-safety response needs, not as rainfall flooding, heat/wind stress, or a generic remote-sensing change-index case.",
+    "forbidden_claims": [
+      "Do not claim rainfall accumulation was the dominant trigger.",
+      "Do not claim heat or wind stress was the dominant hazard mechanism.",
+      "Do not treat Sentinel-1 change detection as the primary index when the scene status is insufficient.",
+      "Do not use the empty local ComCat query to deny the earthquake occurred.",
+      "Do not report exact total mortality or complete inundation extent as proven by the local evidence."
+    ],
+    "impact_chain": [
+      "megathrust_plate_interface_rupture",
+      "seafloor_uplift_and_water_displacement",
+      "ocean_basin_tsunami_runup",
+      "coastal_life_safety_impact"
+    ],
+    "not_primary": [
+      "rainfall_flooding",
+      "heat_or_wind_stress",
+      "remote_sensing_change_index"
+    ],
+    "primary_index": "tsunami_runup_and_ocean_basin_exposure",
+    "priority": "coastal_tsunami_life_safety_and_evacuation",
+    "quantitative_anchors": {
+      "context_rejection": "Low event-window precipitation means and insufficient Sentinel-1 scenes make rainfall or generic change detection secondary.",
+      "earthquake": "USGS magnitude 9.1 Sumatra-Andaman earthquake; GDACS red Indonesia earthquake entry at magnitude 8.5 and 10 km depth.",
+      "impact": "More than 200,000 casualties, with Indonesia-specific killed, missing, and displaced thresholds.",
+      "runup": "USGS runup heights of more than 30 meters along the west coast of Sumatra."
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A rainfall, heat, wind, or generic remote-sensing interpretation fails because none supplies the megathrust-to-runup causal chain.",
+      "evidence_weighting": "USGS mechanism text and GDACS earthquake context are decisive for the source mechanism; precipitation and Sentinel-1 checks are mainly alternative-mechanism exclusions.",
+      "uncertainty_or_scale_caveat": "The local ComCat query being empty should not override the institutional USGS report and GDACS event-window earthquake entry."
+    },
+    "required_claims": [
+      "Identifies the dominant source as the Sumatra-Andaman megathrust or plate-interface earthquake.",
+      "Explains seafloor uplift and water displacement as the tsunami-generation mechanism.",
+      "Links the hazard expression to ocean-basin tsunami runup and coastal life-safety impacts.",
+      "Prioritizes coastal tsunami evacuation, search and rescue, and life-safety response over rainfall, heat/wind, or remote-sensing change priorities."
+    ],
+    "required_metrics": [
+      {
+        "name": "usgs_reported_magnitude",
+        "tolerance": 0.1,
+        "unit": "Mw",
+        "value": 9.1
+      },
+      {
+        "name": "gdacs_main_event_magnitude",
+        "tolerance": 0.1,
+        "unit": "magnitude",
+        "value": 8.5
+      },
+      {
+        "name": "gdacs_main_event_depth_km",
+        "tolerance": 0.5,
+        "unit": "km",
+        "value": 10.0
+      },
+      {
+        "name": "runup_more_than_m",
+        "threshold_relation": "greater_than",
+        "unit": "m",
+        "value": 30.0
+      },
+      {
+        "name": "casualties_more_than",
+        "threshold_relation": "greater_than",
+        "unit": "people",
+        "value": 200000.0
+      },
+      {
+        "interpretation": "low event-window means; not a primary rainfall trigger",
+        "name": "precipitation_mean_mm",
+        "unit": "mm",
+        "value": {
+          "chirps": 0.812,
+          "era5": 0.53,
+          "gpm": 0.214
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_Locked_event_anchor_2004_Indian_Ocean_tsunami.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_feature.html",
+      "data/event_catalogs/event_catalogs_010_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/event_catalogs/event_catalogs_011_05_event_specific_usgs_comcat_USGS_ComCat_earthquake_search_for_package_dates.json.json",
+      "data/physical_hazard/physical_hazard_001_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_002_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_001_Sentinel-1_GRD_VV_pre_post_change.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the correct compact labels for a megathrust seafloor-uplift tsunami priority, coastal tsunami life-safety and evacuation, and a tsunami runup plus ocean-basin exposure index.",
+        "name": "Core mechanism and priority labels",
+        "partial_credit": "Award 1-3 points for equivalent wording that captures some but not all of the mechanism, priority, and index labels.",
+        "points": 4
+      },
+      {
+        "description": "Uses the USGS magnitude 9.1 anchor, the GDACS red earthquake magnitude/depth context, more-than-30-meter runup, and casualty or displacement thresholds with correct units and interpretation.",
+        "name": "Quantitative severity anchors",
+        "partial_credit": "Award 1-3 points for two or three correct values, minor rounding differences, or correct values with incomplete units.",
+        "points": 4
+      },
+      {
+        "description": "Explains the plate-interface rupture, seafloor uplift, water displacement, tsunami propagation, and coastal runup sequence.",
+        "name": "Physical mechanism chain",
+        "partial_credit": "Award 1-3 points for identifying the earthquake-tsunami link without the full uplift and displacement mechanism.",
+        "points": 4
+      },
+      {
+        "description": "Connects basin-scale runup and exposed coastlines to life-safety response priorities such as evacuation, search and rescue, medical support, shelter, and access restoration.",
+        "name": "Impact chain and operational decision",
+        "partial_credit": "Award 1-2 points for a generic tsunami response priority that is not clearly linked to the event's quantitative severity.",
+        "points": 3
+      },
+      {
+        "description": "Correctly rejects rainfall/flooding, heat or wind stress, and generic remote-sensing change as primary mechanisms using the low precipitation means and insufficient Sentinel-1 scene status where relevant.",
+        "name": "Rejection of competing hazard interpretations",
+        "partial_credit": "Award 1 point for rejecting the alternatives without citing the supporting context checks.",
+        "points": 2
+      },
+      {
+        "description": "Handles the red flood entry and empty local ComCat result as contextual rather than mechanism-defining, and avoids letting either override the USGS mechanism report and GDACS earthquake evidence.",
+        "name": "Evidence integration and uncertainty handling",
+        "partial_credit": "Award 1 point for correctly handling either the flood entry or the empty ComCat query, but not both.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested JSON-style structure and avoids unsupported claims about exact total mortality, complete inundation mapping, or proof that no flooding occurred anywhere. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Structured output and no unsupported escalation",
+        "partial_credit": "No partial credit; this point requires both formatting and restraint.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-239_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-117_Q2",
+  "event_id": "CSX-117",
+  "target_family": "ian_landfall_core_timing_rainfall_concentration_ledger",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "passes_all_five_checks",
+    "target_family": "ian_landfall_core_timing_rainfall_concentration_ledger",
+    "final_classification": "Ian passes all five checks as a locked wind-pressure event with concentrated multi-day rainfall around the landfall-core hour.",
+    "required_check_ids": [
+      "catalog_window",
+      "wind_pressure_lock",
+      "rainfall_concentration",
+      "duration_balance",
+      "gridded_peak_contrast"
+    ],
+    "pass_count": 5,
+    "tolerances": {
+      "kmh": 0.2,
+      "hpa": 0.2,
+      "mm": 0.2,
+      "hours": 0.1,
+      "ratio": 0.01
+    }
+  },
+  "key_values": {
+    "catalog_alert_level": "Red",
+    "catalog_wind_severity_kmh": 249.9984,
+    "affected_countries": [
+      "United States",
+      "Cuba"
+    ],
+    "affected_has_united_states": true,
+    "affected_has_cuba": true,
+    "mentions_florida": true,
+    "mentions_carolinas": true,
+    "mentions_cuba": true,
+    "report_text_source_role": "local_event_summary_report_text",
+    "peak_gust_kmh": 185.4,
+    "peak_gust_time": "2022-09-28T19:00",
+    "peak_wind_kmh": 105.7,
+    "pressure_baseline_time": "2022-09-23T00:00",
+    "pressure_baseline_hpa": 1010.3,
+    "min_pressure_hpa": 966.9,
+    "min_pressure_time": "2022-09-28T19:00",
+    "pressure_drop_hpa": 43.4,
+    "gust_pressure_lag_hours": 0.0,
+    "total_precip_mm": 211.5,
+    "max_6h_precip_mm": 67.0,
+    "max_6h_window_start": "2022-09-28T18:00",
+    "max_6h_window_end": "2022-09-28T23:00",
+    "max_24h_precip_mm": 149.9,
+    "max_24h_window_start": "2022-09-28T02:00",
+    "max_24h_window_end": "2022-09-29T01:00",
+    "max_72h_precip_mm": 202.9,
+    "max_72h_window_start": "2022-09-26T08:00",
+    "max_72h_window_end": "2022-09-29T07:00",
+    "max24_to_total_fraction": 0.709,
+    "max72_to_total_fraction": 0.959,
+    "max6_to_max24_fraction": 0.447,
+    "peak_rain_time": "2022-09-28T22:00",
+    "peak_rain_pressure_lag_hours": 3.0,
+    "grid_precip_maxima_mm": [
+      46.63,
+      53.225,
+      73.144
+    ],
+    "max_grid_precip_mm": 73.144,
+    "max_grid_to_point_24h_fraction": 0.488
+  },
+  "expected_checks": [
+    {
+      "id": "catalog_window",
+      "test": "alert_level == 'Red' and affected_has_us_cuba and mentions_florida and mentions_carolinas and mentions_cuba",
+      "values": {
+        "catalog_alert_level": "Red",
+        "catalog_wind_severity_kmh": 249.9984,
+        "affected_has_united_states": true,
+        "affected_has_cuba": true,
+        "report_text_source_role": "local_event_summary_report_text",
+        "mentions_florida": true,
+        "mentions_carolinas": true,
+        "mentions_cuba": true
+      },
+      "pass": true,
+      "reason": "The catalog and report flags all match the Ian verification window."
+    },
+    {
+      "id": "wind_pressure_lock",
+      "test": "peak_gust_time == min_pressure_time and pressure_drop_hpa > 40",
+      "values": {
+        "shared_time": "2022-09-28T19:00",
+        "peak_gust_kmh": 185.4,
+        "peak_wind_kmh": 105.7,
+        "pressure_baseline_time": "2022-09-23T00:00",
+        "pressure_baseline_hpa": 1010.3,
+        "min_pressure_hpa": 966.9,
+        "pressure_drop_hpa": 43.4,
+        "gust_pressure_lag_hours": 0.0
+      },
+      "pass": true,
+      "reason": "The gust maximum and pressure minimum are simultaneous, and the first-hour to minimum-pressure drop is 43.4 hPa."
+    },
+    {
+      "id": "rainfall_concentration",
+      "test": "total_precip_mm > 200 and max24_to_total_fraction > 0.65 and peak_rain_pressure_lag_hours <= 6",
+      "values": {
+        "total_precip_mm": 211.5,
+        "max_24h_precip_mm": 149.9,
+        "max24_to_total_fraction": 0.709,
+        "peak_rain_time": "2022-09-28T22:00",
+        "min_pressure_time": "2022-09-28T19:00",
+        "peak_rain_pressure_lag_hours": 3.0
+      },
+      "pass": true,
+      "reason": "The point rainfall total clears 200 mm, the wettest 24 hours contain 70.9 percent of it, and peak-hour rain is 3 hours from the pressure minimum."
+    },
+    {
+      "id": "duration_balance",
+      "test": "max72_to_total_fraction > 0.90 and max6_to_max24_fraction < 0.50",
+      "values": {
+        "total_precip_mm": 211.5,
+        "max_6h_precip_mm": 67.0,
+        "max_24h_precip_mm": 149.9,
+        "max_72h_precip_mm": 202.9,
+        "max72_to_total_fraction": 0.959,
+        "max6_to_max24_fraction": 0.447
+      },
+      "pass": true,
+      "reason": "Nearly all rainfall sits inside the wettest 72 hours, while the wettest 6 hours are less than half of the wettest 24-hour total."
+    },
+    {
+      "id": "gridded_peak_contrast",
+      "test": "max_grid_precip_mm / point_max_24h_precip_mm < 0.50",
+      "values": {
+        "grid_precip_maxima_mm": [
+          46.63,
+          53.225,
+          73.144
+        ],
+        "max_grid_precip_mm": 73.144,
+        "point_max_24h_precip_mm": 149.9,
+        "max_grid_to_point_24h_fraction": 0.488
+      },
+      "pass": true,
+      "reason": "The largest gridded maximum is 0.488 of the point wettest-24-hour amount, which is below the 0.50 cutoff."
+    }
+  ],
+  "score_summary": "passes_all_five_checks; 5 of 5 checks pass.",
+  "event": {
+    "name": "Hurricane Ian",
+    "hazard_family": "tropical_cyclone",
+    "date_window": "2022-09-23 to 2022-09-30",
+    "region": "North America"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and classification",
+        "points": 3,
+        "description": "Gives passes_all_five_checks, states that 5 of 5 checks pass, and classifies Ian as a locked wind-pressure event with concentrated multi-day rainfall around the landfall-core hour.",
+        "partial_credit": "Award 1-2 points for the correct pass count without the exact label or with a vague classification."
+      },
+      {
+        "name": "Required JSON ledger shape",
+        "points": 3,
+        "description": "Returns the target family, exactly five checks in order, and the required test, values, pass, reason, final_classification, and score_summary fields.",
+        "partial_credit": "Award 1-2 points for a mostly correct structure with one missing check or minor field omissions."
+      },
+      {
+        "name": "Numeric anchors",
+        "points": 5,
+        "description": "Reports the catalog, report-text flags, wind, pressure baseline/minimum/drop, rainfall, duration, and gridded precipitation values accurately with units or unit-implied keys.",
+        "partial_credit": "Award 3-4 points for mostly correct wind-pressure and rainfall values; award 1-2 points for copied values with missing ratios or timing."
+      },
+      {
+        "name": "Threshold and timing arithmetic",
+        "points": 4,
+        "description": "Applies all catalog, wind-pressure, rainfall concentration, duration balance, and gridded contrast tests with the correct inequalities and lags.",
+        "partial_credit": "Award 2-3 points for correct decisions with one or two arithmetic or threshold mistakes; award 1 point for qualitative pass/fail statements without inequalities."
+      },
+      {
+        "name": "Duration and grid reasoning",
+        "points": 3,
+        "description": "Explains why the duration and grid checks refine the ledger through the 24-hour share, 72-hour share, 6-hour fraction, and lower gridded maxima.",
+        "partial_credit": "Award 1-2 points for explanations that mention these checks but do not connect them to the computed ratios."
+      },
+      {
+        "name": "Concise calculation-led output",
+        "points": 2,
+        "description": "Keeps the answer compact and calculation-led, without adding casualty totals, damage estimates, or instructions outside the requested ledger.",
+        "partial_credit": "Award 1 point for a correct ledger with extra prose that does not change the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_id": "CSX-117",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Hurricane_Ian.json",
+      "data/event_reports/event_reports_003_Wikipedia_Hurricane_Ian.json",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-177_Q1",
+  "event_id": "CSX-177",
+  "task_type": "numeric",
+  "task_subtype": "reported_wind_dry_burn_forcing_index",
+  "evaluation_mode": "hybrid",
+  "target_family": "uljin_samcheok_reported_wind_dry_burn_forcing_index",
+  "primary_gt": {
+    "reported_wind_dry_burn_forcing_index": 20.4,
+    "units": "thousand-hectare anchor-fraction index",
+    "inputs": {
+      "A_report_anchor_count": 3,
+      "E_early_active_days": 4,
+      "N_event_days": 10,
+      "early_active_fraction": 0.4,
+      "H_burned_area_kha": 17.0,
+      "anchors": {
+        "strong_winds_text": true,
+        "dry_weather_text": true,
+        "westerly_smoke_transport_text": true
+      }
+    },
+    "severity_class": "high",
+    "interpretation": "The 20.40 reported wind-dry-burn index crosses the high threshold because all three report anchors are present, early fire activity spans 4 of 10 event days, and the report gives about 17.0 kha burned."
+  },
+  "key_values": {
+    "event_name": "2022 Uljin-Samcheok wildfire in South Korea",
+    "hazard_family": "wildfire_burn_smoke",
+    "event_window": {
+      "start_date": "2022-03-04",
+      "end_date": "2022-03-13",
+      "inclusive_days": 10
+    },
+    "supporting_context": {
+      "continued_fire_activity_date": "2022-03-07",
+      "burned_hectares": 17000,
+      "homes_destroyed_more_than": 300,
+      "evacuated_people_more_than": 7000,
+      "firefighters_mobilized_about": 18000
+    },
+    "thresholds": {
+      "high": "RWDBFI >= 20",
+      "moderate": "10 <= RWDBFI < 20",
+      "lower": "RWDBFI < 10"
+    }
+  },
+  "numeric_tolerances": {
+    "reported_wind_dry_burn_forcing_index": 0.05,
+    "inputs.E_early_active_days": 0,
+    "inputs.N_event_days": 0,
+    "inputs.H_burned_area_kha": 0.05,
+    "inputs.early_active_fraction": 0.001
+  },
+  "judge_anchors": {
+    "required_claims": [
+      "Uses March 4-13, 2022 as a 10-day inclusive event window.",
+      "Uses March 4-7 as the 4-day early active fire interval within the event window.",
+      "Counts strong winds, dry weather, and westerly smoke transport as three report anchors.",
+      "Uses nearly 17,000 hectares as 17.0 thousand hectares.",
+      "Computes 3 * (4 / 10) * 17.0 = 20.40 and classifies it as high."
+    ],
+    "forbidden_claims": [
+      "Using off-event Open-Meteo or NASA POWER daily weather values as local Uljin-Samcheok measurements.",
+      "Treating the index as measured PM2.5 concentration, smoke dose, health outcome, ignition cause, or exact spread path."
+    ],
+    "acceptable_variants": [
+      "Final answer may be reported as 20.4 or 20.40 if the class and units are clear.",
+      "Units may be described as a thousand-hectare report-anchor index or equivalent dimensionless screening units."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final numeric index",
+        "points": 4,
+        "description": "Reports the reported wind-dry-burn forcing index as 20.40 or an equivalent value within +/-0.05.",
+        "partial_credit": "Give 2-3 points for a value within +/-1.0 caused by rounding or a small arithmetic error."
+      },
+      {
+        "name": "Report anchor extraction",
+        "points": 4,
+        "description": "Finds all three report anchors: strong winds, dry weather, and westerly smoke transport toward southern Japan.",
+        "partial_credit": "Give 1 point for each correct anchor and 1 point for correctly counting the anchors."
+      },
+      {
+        "name": "Early activity window",
+        "points": 3,
+        "description": "Uses March 4-13 as a 10-day event window and March 4-7 as a 4-day early active fire interval.",
+        "partial_credit": "Give 1-2 points if the dates are identified but one inclusive-day calculation is wrong."
+      },
+      {
+        "name": "Burned-area extraction",
+        "points": 3,
+        "description": "Extracts nearly 17,000 hectares and converts it to 17.0 thousand hectares for the formula.",
+        "partial_credit": "Give 1-2 points if the hectare value is found but conversion or rounding is wrong."
+      },
+      {
+        "name": "Formula and threshold",
+        "points": 3,
+        "description": "Applies RWDBFI = A * (E / N) * Hkha and classifies the result as high because it is at least 20.",
+        "partial_credit": "Give 1-2 points for using the right variables but misapplying the threshold or fraction."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 2,
+        "description": "Interprets the score as a report-grounded screening index, not a measured PM2.5 concentration, smoke dose, or health outcome.",
+        "partial_credit": "Give 1 point for a mostly bounded interpretation with one minor overstatement."
+      },
+      {
+        "name": "Requested output format",
+        "points": 1,
+        "description": "Returns compact JSON with the requested top-level fields.",
+        "partial_credit": "Give no credit if the answer is unstructured prose only."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Uljin-Samcheok_wildfire_in_South_Korea.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html"
+    ],
+    "notes": [
+      "Off-event Open-Meteo and NASA POWER weather files are not used in this ground truth.",
+      "The score is computed from declared event anchor metadata and NASA Earth Observatory report text."
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-113_Q1",
+  "event_id": "CSX-113",
+  "task_type": "short_answer",
+  "target_family": "freddy_late_phase_segmentation",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "phases": [
+      {
+        "phase": "long_duration_chronology",
+        "time_window": "2023-02-04 through 2023-03-14 event chronology",
+        "computed_values": {
+          "duration_days": 36.0
+        },
+        "phase_role": "The full Freddy chronology is long-lived context rather than the deciding rainfall phase."
+      },
+      {
+        "phase": "full_period_rain_accumulation",
+        "time_window": "2023-02-04 through 2023-03-14 local precipitation period",
+        "computed_values": {
+          "event_rain_mm": 375.2
+        },
+        "phase_role": "The full-period rainfall total is the denominator for testing late-stage concentration."
+      },
+      {
+        "phase": "late_malawi_concentration",
+        "time_window": "2023-03-12 through 2023-03-14",
+        "computed_values": {
+          "late_3day_mm": 111.7,
+          "late_share_pct": 29.8
+        },
+        "phase_role": "The final three days contain more than one quarter of the full-period local rainfall."
+      },
+      {
+        "phase": "flood_entry_lag_alignment",
+        "time_window": "2023-03-12T00:00 to 2023-03-13T10:00",
+        "computed_values": {
+          "lag_hours": 34.0
+        },
+        "phase_role": "The Malawi flood entry follows the wettest final-window day within the allowed 48-hour lag."
+      }
+    ],
+    "duration_days": 36.0,
+    "event_rain_mm": 375.2,
+    "late_3day_mm": 111.7,
+    "late_share_pct": 29.8,
+    "lag_hours": 34.0,
+    "status": "pass",
+    "interpretation": "The Malawi episode is a distinct late-phase concentration because 111.7 mm falls in the final three days, representing 29.8% of local event rainfall, and the flood entry follows the wettest final-window day by 34.0 hours."
+  },
+  "key_values": {
+    "event_name": "Tropical Cyclone Freddy",
+    "event_window": [
+      "2023-02-04",
+      "2023-03-14"
+    ],
+    "late_window": [
+      "2023-03-12",
+      "2023-03-14"
+    ],
+    "daily_late_mm": {
+      "2023-03-12": 45.6,
+      "2023-03-13": 42.7,
+      "2023-03-14": 23.4
+    },
+    "wettest_late_day": "2023-03-12",
+    "flood_start": "2023-03-13T10:00:00",
+    "max_3day_window": {
+      "start": "2023-03-12",
+      "end": "2023-03-14",
+      "rain_mm": 111.7
+    },
+    "checks": {
+      "late_3day_mm": true,
+      "late_share_pct": true,
+      "lag_hours": true
+    },
+    "metrics": {
+      "duration_days": {
+        "value": 36.0,
+        "unit": "days",
+        "tolerance": 0.2
+      },
+      "event_rain_mm": {
+        "value": 375.2,
+        "unit": "mm",
+        "tolerance": 0.5
+      },
+      "late_3day_mm": {
+        "value": 111.7,
+        "unit": "mm",
+        "tolerance": 0.5
+      },
+      "late_share_pct": {
+        "value": 29.8,
+        "unit": "percent",
+        "tolerance": 0.5
+      },
+      "lag_hours": {
+        "value": 34.0,
+        "unit": "hours",
+        "tolerance": 1.0
+      }
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final ledger status",
+        "points": 3,
+        "description": "Reports pass with the requested four phases and numeric fields.",
+        "partial_credit": "Award partial credit for the right status with one missing field or for a status that is clearly implied but not labeled."
+      },
+      {
+        "name": "Duration extraction",
+        "points": 3,
+        "description": "Reports 36.0 days within 0.2 days with units.",
+        "partial_credit": "Award partial credit for a nearby duration that is not tied to the Freddy chronology."
+      },
+      {
+        "name": "Event and final-window precipitation",
+        "points": 4,
+        "description": "Aggregates hourly precipitation to 375.2 mm for the full event period and 111.7 mm for 2023-03-12 through 2023-03-14.",
+        "partial_credit": "Award partial credit for a correct final-window sum with a missing or imprecise event total."
+      },
+      {
+        "name": "Share calculation",
+        "points": 3,
+        "description": "Computes 29.8% within 0.5 percentage points and compares it to the 25% threshold.",
+        "partial_credit": "Award partial credit for using the right numerator but a wrong denominator."
+      },
+      {
+        "name": "Lag calculation",
+        "points": 3,
+        "description": "Computes 34.0 hours within 1.0 hour from 2023-03-12T00:00:00 to 2023-03-13T10:00:00 and compares it to the 48-hour threshold.",
+        "partial_credit": "Award partial credit for the correct date order with an imprecise lag."
+      },
+      {
+        "name": "Threshold logic",
+        "points": 2,
+        "description": "Shows that all three checks pass and that one failed check would make the ledger fail.",
+        "partial_credit": "Award partial credit for checking only two thresholds."
+      },
+      {
+        "name": "Concise answer format",
+        "points": 2,
+        "description": "Uses a compact JSON object or equivalent bullet list with units and one arithmetic sentence.",
+        "partial_credit": "Award partial credit for correct values in a verbose or poorly structured answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_tropical_cyclone_event_API.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json"
+    ]
+  }
+}

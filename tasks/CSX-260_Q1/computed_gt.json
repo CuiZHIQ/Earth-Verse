@@ -1,0 +1,319 @@
+{
+  "answer_guidance": {
+    "acceptable_variants": [
+      "high priority cascading flash and river flood",
+      "compound extreme-rainfall flash and river flood",
+      "prolonged rainfall driven cascading river-corridor flood emergency"
+    ],
+    "answer": "high_priority_cascading_flash_and_river_flood",
+    "answer_type": "hybrid_structured_short_answer",
+    "canonical_answer": "high_priority_cascading_flash_and_river_flood",
+    "canonical_stance": "The July 2021 Western Europe disaster should be treated as a high-priority cascading flash-and-river flood caused by prolonged extreme rainfall over urbanized river corridors.",
+    "dominant_driver": "prolonged_extreme_rainfall_over_urban_river_corridors",
+    "forbidden_claims": [
+      "A precise death toll, formal return period, or climate-attribution fraction is proven by this task.",
+      "Point daily weather fills exactly represent the worst-hit Ahr or Meuse basin locations.",
+      "Remote-sensing change metrics directly measure flood depth, deaths, or infrastructure failure.",
+      "A precipitation layer with null event statistics confirms the rainfall signal."
+    ],
+    "impact_chain": [
+      "prolonged_extreme_rainfall",
+      "flash_and_river_flooding",
+      "fatal_urban_infrastructure_cascade"
+    ],
+    "priority_level": "high",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A limited-rainfall-anomaly reading fails because flood-alert and exposure evidence align with the extreme-rainfall flood mechanism even though point-fill rainfall is weaker.",
+      "evidence_weighting": "Decisive evidence is the flood narrative, multi-source gridded rainfall, overlapping flood alerts, and large exposure context; surface-change metrics are secondary consistency checks.",
+      "uncertainty_or_scale_caveat": "Remote-sensing change metrics should not be converted into exact flood depth, casualties, or infrastructure loss."
+    },
+    "required_claims": [
+      "Diagnoses the event as a cascading flash-and-river flood rather than heat, drought, burn, or surface-change-only stress.",
+      "Links prolonged extreme rainfall to flash flooding and routed river flooding through urbanized river corridors.",
+      "Uses overlapping flood alerts and exposed population to justify high response priority.",
+      "Treats remote-sensing surface-change metrics as contextual consistency checks, not direct flood-depth or loss measurements."
+    ],
+    "required_metrics": [
+      {
+        "expected": 6,
+        "name": "event_duration_days_inclusive",
+        "tolerance": 0,
+        "unit": "days"
+      },
+      {
+        "expected": 45.9,
+        "name": "era5_mean_precip_mm",
+        "tolerance": 0.2,
+        "unit": "mm"
+      },
+      {
+        "expected": 21.5,
+        "name": "gpm_mean_precip_mm",
+        "tolerance": 0.2,
+        "unit": "mm"
+      },
+      {
+        "expected": 2,
+        "name": "gdacs_flood_alerts",
+        "tolerance": 0,
+        "unit": "alerts"
+      },
+      {
+        "expected": 1025289,
+        "name": "population_exposed",
+        "tolerance": 1,
+        "unit": "people"
+      }
+    ]
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-260",
+  "forbidden_overclaims": [
+    "A precise death toll, formal return period, or climate-attribution fraction is proven by this task.",
+    "Point daily weather fills exactly represent the worst-hit Ahr or Meuse basin locations.",
+    "Remote-sensing change metrics directly measure flood depth, deaths, or infrastructure failure.",
+    "A precipitation layer with null event statistics confirms the rainfall signal."
+  ],
+  "key_values": {
+    "classification_rule_flags": {
+      "catalog_support": true,
+      "exposure_support": true,
+      "flood_text_support": true,
+      "multi_source_precip_support": true,
+      "requires_computation": true
+    },
+    "computed_metrics": {
+      "alphaearth_change_mean": 0.111,
+      "chirps_mean_precip_available": false,
+      "era5_max_precip_mm": 55.8,
+      "era5_mean_precip_mm": 45.9,
+      "event_duration_days_inclusive": 6,
+      "gdacs_flood_alerts": 2,
+      "gdacs_max_alertscore": 2.0,
+      "gpm_max_precip_mm": 45.4,
+      "gpm_mean_precip_mm": 21.5,
+      "nasa_power_event_precip_sum_mm": 25.0,
+      "nasa_power_peak_daily_precip_mm": 16.6,
+      "open_meteo_event_precip_sum_mm": 20.2,
+      "population_exposed": 1025289,
+      "sentinel2_dnbr_mean": 0.158
+    },
+    "daily_precipitation_metrics": {
+      "nasa_power": {
+        "days_ge_1mm": 4,
+        "days_ge_5mm": 1,
+        "max_daily_mm": 16.6,
+        "mean_daily_mm": 4.2,
+        "sum_mm": 25.0
+      },
+      "open_meteo": {
+        "days_ge_1mm": 4,
+        "days_ge_5mm": 2,
+        "max_daily_mm": 10.1,
+        "mean_daily_mm": 3.4,
+        "sum_mm": 20.2
+      }
+    },
+    "event_window": {
+      "duration_days_inclusive": 6,
+      "end_date": "2021-07-17",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2021-07-12"
+    },
+    "gdacs_relevant_flood_alerts": {
+      "alerts": [
+        {
+          "alertlevel": "Orange",
+          "alertscore": 2.0,
+          "country": "Belgium",
+          "episodealertlevel": "Orange",
+          "episodealertscore": 1.5,
+          "fromdate": "2021-07-14T01:00:00",
+          "name": "Flood in Belgium",
+          "todate": "2021-07-16T01:00:00"
+        },
+        {
+          "alertlevel": "Orange",
+          "alertscore": 2.0,
+          "country": "Germany",
+          "episodealertlevel": "Orange",
+          "episodealertscore": 1.5,
+          "fromdate": "2021-07-13T01:00:00",
+          "name": "Flood in Germany",
+          "todate": "2021-07-15T01:00:00"
+        }
+      ],
+      "count": 2,
+      "countries": [
+        "Belgium",
+        "Germany"
+      ],
+      "max_alertscore": 2.0,
+      "mean_episode_alertscore": 1.5
+    },
+    "numeric_tolerances": {
+      "era5_mean_precip_mm_abs": 0.2,
+      "gdacs_flood_alert_count_abs": 0,
+      "gpm_mean_precip_mm_abs": 0.2,
+      "population_exposed_abs": 1
+    },
+    "reasoning_depth": {
+      "counterfactual_rejection": "A limited-rainfall-anomaly reading fails because flood-alert and exposure evidence align with the extreme-rainfall flood mechanism even though point-fill rainfall is weaker.",
+      "evidence_weighting": "Decisive evidence is the flood narrative, multi-source gridded rainfall, overlapping flood alerts, and large exposure context; surface-change metrics are secondary consistency checks.",
+      "uncertainty_or_scale_caveat": "Remote-sensing change metrics should not be converted into exact flood depth, casualties, or infrastructure loss."
+    },
+    "text_claim_flags": {
+      "blocking_claim": true,
+      "extreme_rainfall_claim": true,
+      "flash_flood_claim": true,
+      "mortality_or_injury_claim": true,
+      "nighttime_surprise_claim": true,
+      "river_or_dam_cascade_claim": true,
+      "transport_infrastructure_urban_claim": true
+    }
+  },
+  "primary_gt": {
+    "answer": "high_priority_cascading_flash_and_river_flood",
+    "impact_chain": [
+      "prolonged_extreme_rainfall",
+      "flash_and_river_flooding",
+      "fatal_urban_infrastructure_cascade"
+    ],
+    "key_findings": [
+      {
+        "name": "event_window",
+        "role": "six-day episode rather than a single isolated shower",
+        "value": "2021-07-12_to_2021-07-17; 6 inclusive days"
+      },
+      {
+        "name": "precipitation_signature",
+        "role": "multi-source heavy rainfall supports flood generation",
+        "value": "ERA5 mean 45.9 mm; GPM mean 21.5 mm"
+      },
+      {
+        "name": "flood_alert_context",
+        "role": "separates the event from a moderate isolated anomaly",
+        "value": "2 relevant flood alerts; max alert score 2.0"
+      },
+      {
+        "name": "exposure_context",
+        "role": "supports high response priority when paired with the flood mechanism",
+        "value": "population_exposed 1025289"
+      },
+      {
+        "name": "surface_change_context",
+        "role": "contextual consistency check, not direct flood-depth or loss measurement",
+        "value": "dNBR mean 0.158; AlphaEarth mean 0.111"
+      }
+    ],
+    "priority_level": "high",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A limited-rainfall-anomaly reading fails because flood-alert and exposure evidence align with the extreme-rainfall flood mechanism even though point-fill rainfall is weaker.",
+      "evidence_weighting": "Decisive evidence is the flood narrative, multi-source gridded rainfall, overlapping flood alerts, and large exposure context; surface-change metrics are secondary consistency checks.",
+      "uncertainty_or_scale_caveat": "Remote-sensing change metrics should not be converted into exact flood depth, casualties, or infrastructure loss."
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_July_2021_Western_Europe_extreme_rainfall_and_flood_disaster.json",
+      "data/event_reports/event_reports_002_Package_locked_anchor.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_disaster_alert_API.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "question_audit": {
+    "absolute_path_hits": 0,
+    "issue_score": 0,
+    "numeric_anchor_count": 1,
+    "visible_forbidden_wording_hits": 0,
+    "visible_numeric_anchor_limit": 5,
+    "visible_product_name_hits": 0
+  },
+  "reasoning_requirements": [
+    "Diagnoses the event as a cascading flash-and-river flood rather than heat, drought, burn, or surface-change-only stress.",
+    "Links prolonged extreme rainfall to flash flooding and routed river flooding through urbanized river corridors.",
+    "Uses overlapping flood alerts and exposed population to justify high response priority.",
+    "Treats remote-sensing surface-change metrics as contextual consistency checks, not direct flood-depth or loss measurements."
+  ],
+  "required_findings": [
+    {
+      "expected": "2021-07-12_to_2021-07-17",
+      "name": "event_window",
+      "role": "six-day episode rather than a single isolated shower"
+    },
+    {
+      "expected": "multi_source_heavy_rainfall",
+      "name": "precipitation_signature",
+      "role": "supports rainfall-driven flood generation"
+    },
+    {
+      "expected": "two_relevant_orange_flood_alerts",
+      "name": "flood_alert_context",
+      "role": "separates the event from a moderate isolated anomaly"
+    },
+    {
+      "expected": "about_1.03_million_people_in_package_slice",
+      "name": "exposure_context",
+      "role": "supports high response priority when paired with the flood mechanism"
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives the compact answer as high_priority_cascading_flash_and_river_flood or a semantically equivalent label and assigns priority_level as high.",
+        "name": "Final diagnosis and priority",
+        "partial_credit": "Credit a generic flood answer or high priority alone, but not a non-flood or review posture.",
+        "points": 3
+      },
+      {
+        "description": "Uses the six-day 2021-07-12 to 2021-07-17 window, precipitation means near 45.9 mm and 21.5 mm, two flood alerts, and about 1.03 million exposed people.",
+        "name": "Quantitative anchors",
+        "partial_credit": "Credit partially for correct subsets, approximate values without units, or correct units with one missing anchor.",
+        "points": 4
+      },
+      {
+        "description": "Explains prolonged extreme rainfall leading to flash flooding and routed river flooding through urbanized river corridors.",
+        "name": "Physical mechanism",
+        "partial_credit": "Credit a heavy-rain flood explanation that misses either flash/river coupling or corridor routing.",
+        "points": 4
+      },
+      {
+        "description": "Integrates report narrative, precipitation statistics, flood-alert context, exposure, and remote-sensing or surface-change context without relying on one layer alone.",
+        "name": "Cross-scale synthesis",
+        "partial_credit": "Credit linkage across two or three evidence types even if the full cross-scale chain is incomplete.",
+        "points": 3
+      },
+      {
+        "description": "Connects the hazard to homes, transport, infrastructure, evacuation, injury or fatality context, and high emergency coordination priority.",
+        "name": "Impact and operational logic",
+        "partial_credit": "Credit impact listing that lacks a clear priority rationale, or priority rationale with limited impact specificity.",
+        "points": 3
+      },
+      {
+        "description": "Rejects heat/drought, rainfall-only, and surface-change-only interpretations while avoiding unsupported death-toll, return-period, climate-attribution, or flood-depth claims.",
+        "name": "Competing explanations and overclaim control",
+        "partial_credit": "Credit rejection of some distractors, but subtract for one unsupported escalation.",
+        "points": 2
+      },
+      {
+        "description": "Returns concise JSON matching the requested structure with named findings and roles. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Concise structured output",
+        "partial_credit": "Credit mostly structured output with minor formatting defects that preserve the intended fields.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "subtype": "response_priority_compound_flood",
+  "task_id": "CSX-260_Q1",
+  "task_type": "short_answer"
+}

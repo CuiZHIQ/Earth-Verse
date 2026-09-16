@@ -1,0 +1,117 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-189",
+  "key_values": {
+    "dnbr_counts": {
+      "post_count": 63,
+      "pre_count": 72
+    },
+    "era5_wind_components_mps": {
+      "u": -0.67,
+      "v": 1.22
+    },
+    "precipitation_means_mm": [
+      9.273,
+      2.884,
+      4.456
+    ],
+    "score_formula": "40*report_dry_wind + 15*smoke_transport + 20*min(wind/2,1) + 25*min(dnbr_ratio/2.5,1) - 5*min(precip_spread/10,1)"
+  },
+  "numeric_tolerances": {
+    "component_scores": {
+      "tolerance": 0.1
+    },
+    "era5_mean_wind_speed_mps": {
+      "tolerance": 0.001,
+      "value": 1.392
+    },
+    "era5_wind_bearing_to_deg": {
+      "tolerance": 0.1,
+      "value": 331.3
+    },
+    "precip_mean_spread_mm": {
+      "tolerance": 0.001,
+      "value": 6.389
+    },
+    "spread_pressure_score": {
+      "tolerance": 0.1,
+      "value": 89.1
+    }
+  },
+  "primary_gt": {
+    "component_scores": {
+      "gridded_wind_component": 13.9,
+      "heterogeneous_burn_component": 23.4,
+      "precipitation_context_penalty": 3.2,
+      "report_dry_wind_component": 40.0,
+      "smoke_transport_component": 15.0
+    },
+    "consistency_note": "The evidence-window score is driven by report dry-wind and smoke-transport flags plus a positive heterogeneous dNBR signal; precipitation spread is a context penalty, not a daily peak control.",
+    "dnbr_max_to_mean_ratio": 2.336,
+    "dnbr_mean": 0.303255,
+    "evidence_window": "2022-03-04_to_2022-03-13",
+    "gridded_context": {
+      "era5_mean_wind_speed_mps": 1.392,
+      "era5_wind_bearing_to_deg": 331.3,
+      "precip_mean_spread_mm": 6.389
+    },
+    "spread_pressure_score": 89.1
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Point-weather products are intentionally not used.",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_report_USGS_remote_sensing_image.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2022_Uljin_wildfire_near_Hanul_nuclear_plant_corridor.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON with evidence_window, spread_pressure_score, component_scores, gridded_context, dNBR fields, and consistency_note.",
+        "name": "Structured score ledger",
+        "partial_credit": "Award 2-3 points for a mostly complete structure with one missing block.",
+        "points": 4
+      },
+      {
+        "description": "Correctly scores report dry-wind and smoke-transport components from the local report text.",
+        "name": "Report components",
+        "partial_credit": "Award 2 points for each correct report component.",
+        "points": 4
+      },
+      {
+        "description": "Computes ERA5 mean wind speed, bearing, and the precipitation mean spread across ERA5, GPM, and CHIRPS.",
+        "name": "Gridded wind and precipitation",
+        "partial_credit": "Award partial credit across the three gridded calculations.",
+        "points": 4
+      },
+      {
+        "description": "Computes dNBR mean and max-to-mean ratio and applies the heterogeneous burn component.",
+        "name": "Burn-change component",
+        "partial_credit": "Award partial credit for dNBR extraction or ratio only.",
+        "points": 3
+      },
+      {
+        "description": "Combines all components and the precipitation context penalty to obtain the final score.",
+        "name": "Score arithmetic",
+        "partial_credit": "Award 1-2 points for correct setup with arithmetic or rounding mistakes.",
+        "points": 3
+      },
+      {
+        "description": "Explains that the score is event-window evidence, not a daily point-weather peak, and avoids facility-damage or exact daily-perimeter claims.",
+        "name": "Interpretation limits",
+        "partial_credit": "Award 1 point for a correct but less bounded interpretation.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "uljin_event_window_spread_pressure_score",
+  "task_id": "CSX-189_Q2",
+  "task_type": "short_answer"
+}

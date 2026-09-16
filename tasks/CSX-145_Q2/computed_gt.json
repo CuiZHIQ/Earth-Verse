@@ -1,0 +1,148 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-145",
+  "key_values": {
+    "class_thresholds": {
+      "elevated_mixed_hazard_impact_load": "7-9",
+      "extreme_compound_wind_rain_impact_load": "10-12",
+      "limited_compound_impact_signal": "4-6"
+    },
+    "component_scores": {
+      "impact_cascade": 3,
+      "public_service_exposure_load": 3,
+      "rainfall_severity": 3,
+      "wind_severity": 3
+    },
+    "event_name": "Super Typhoon Yagi severe wind and rainfall impacts",
+    "event_window": {
+      "end_date": "2024-09-07",
+      "start_date": "2024-09-01"
+    },
+    "impact_metrics": {
+      "deaths_at_least": 179.0,
+      "evacuated_people_over": 50000.0,
+      "flood_or_landslide_terms_present": true,
+      "houses_damaged_or_destroyed_over": 47500.0
+    },
+    "index_name": "Compound Impact Load Index",
+    "load_class": "extreme_compound_wind_rain_impact_load",
+    "public_service_exposure_metrics": {
+      "amenity_counts": {
+        "fire_station": 7,
+        "hospital": 25,
+        "police": 33,
+        "school": 12,
+        "shelter": 12
+      },
+      "critical_public_service_amenity_count": 89,
+      "worldpop_population_sum": 2485012.26
+    },
+    "rainfall_metrics": {
+      "noaa_report_rain_cm": 25.0,
+      "noaa_report_rain_inches": 10.0,
+      "report_rain_mm_used": 254.0
+    },
+    "total_index_score": 12,
+    "wind_metrics": {
+      "noaa_sustained_wind_mph": 125.0,
+      "un_landfall_wind_kmh": 213.0,
+      "un_landfall_wind_mph": 133.0
+    }
+  },
+  "primary_gt": {
+    "answer": "extreme_compound_wind_rain_impact_load",
+    "answer_type": "score_ledger",
+    "canonical_stance": "Yagi reaches the extreme compound wind-rain impact load class because all four tests score 3.",
+    "forbidden_claims": [
+      "Do not use the elevated or limited class.",
+      "Do not claim outage, flood depth, building-level damage, or full landslide inventory."
+    ],
+    "required_claims": [
+      "Wind scores 3: 213 km/h and 133 mph.",
+      "Rain scores 3: 254.0 mm report rain.",
+      "Impact scores 3: flood or landslide terms, 179 deaths, and 47,500 houses.",
+      "Public-service scores 3: 2,485,012.26 people and 89 amenities."
+    ],
+    "required_metrics": {
+      "amenities": 89,
+      "deaths": 179.0,
+      "houses": 47500.0,
+      "population": 2485012.26,
+      "rain_mm": 254.0,
+      "wind_kmh": 213.0,
+      "wind_mph": 133.0
+    },
+    "score_ledger": {
+      "impact": 3,
+      "public_service": 3,
+      "rainfall": 3,
+      "wind": 3
+    },
+    "total_index_score": 12
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": [
+      "Off-event gridded precipitation summaries are not required for the official rain score.",
+      "WorldPop and OpenStreetMap values are evaluated as package-relative exposure and public-service derived statistics, not as confirmed affected-population or outage counts."
+    ],
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_report_NOAA_NESDIS.html",
+      "data/event_reports/event_reports_003_event_package.json_source_plan.locked_event_anchor.evidence_url.html",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Super_Typhoon_Yagi_severe_wind_and_rainfall_impacts.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives total score 12/12 and the class extreme compound wind-rain impact load.",
+        "name": "Final score and load class",
+        "partial_credit": "Award 2-3 points for the correct top-band class with a missing or slightly misstated score; award 1 point for a correct high-load direction without the exact class.",
+        "points": 4
+      },
+      {
+        "description": "Reports wind severity 3, rainfall severity 3, impact cascade 3, and public-service exposure load 3.",
+        "name": "Component-score ledger",
+        "partial_credit": "Award 1 point for each correct component score, or up to 3 points for a correct total with one component mislabeled.",
+        "points": 4
+      },
+      {
+        "description": "Uses the relevant wind and rainfall anchors, including 213 km/h or 125+ mph winds and reported rainfall at or above 250 mm.",
+        "name": "Wind and rainfall anchors",
+        "partial_credit": "Award 1-2 points for correct threshold logic with incomplete or approximate values.",
+        "points": 3
+      },
+      {
+        "description": "Connects flooding or landslides with at least 179 deaths, over 47,500 damaged or destroyed houses, population above 1,000,000, and 89 critical/public-service amenities.",
+        "name": "Impact and exposure anchors",
+        "partial_credit": "Award 1-2 points for including only impact anchors or only exposure anchors, or for using correct thresholds without exact values.",
+        "points": 3
+      },
+      {
+        "description": "Shows that 3 + 3 + 3 + 3 = 12 and maps 12 to the 10-12 top band.",
+        "name": "Index arithmetic and class mapping",
+        "partial_credit": "Award 1-2 points for correct arithmetic without the class mapping, or correct class mapping with one arithmetic slip.",
+        "points": 3
+      },
+      {
+        "description": "Ties the top-band result to combined wind, rain, reported-loss, population, and public-service indicators without a broad disaster narrative.",
+        "name": "Concise computed interpretation",
+        "partial_credit": "Award 1 point for a generic interpretation that is only partly tied to the computed values.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the answer concise, follows the requested format, and avoids extra-data claims beyond the index values.",
+        "name": "Scope and answer discipline",
+        "partial_credit": "Award 0.5 points if the answer is mostly concise but includes minor extra-data or off-format material.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "compound_wind_rain_impact_load_index",
+  "task_id": "CSX-145_Q2",
+  "task_type": "short_answer"
+}

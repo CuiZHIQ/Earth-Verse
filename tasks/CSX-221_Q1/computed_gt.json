@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-221_Q1",
+  "event_id": "CSX-221",
+  "task_type": "structured_reasoning",
+  "evaluation_mode": "hybrid",
+  "target_family": "rainfall_loaded_slope_failure_process_diagnosis",
+  "primary_gt": {
+    "answer": "compound_rainfall_load_localized_slope_failure_with_population_context",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "diagnose whether local mass movement or obstruction evidence dominates over simple rainfall or image-change explanations",
+    "computed_evidence": {
+      "rows": [
+        {
+          "row_id": "rainfall_load_gate",
+          "formula": [
+            "event_day_mean_mm = mean(65.60, 82.08)",
+            "four_day_mean_mm = mean(389.10, 340.73)"
+          ],
+          "computed": {
+            "event_day_mean_mm": 73.84,
+            "four_day_mean_mm": 364.92,
+            "event_day_margin_mm": 23.84,
+            "four_day_margin_mm": 114.92
+          },
+          "diagnostic_test_result": "pass_compound_rainfall_load",
+          "points": 2
+        },
+        {
+          "row_id": "antecedent_load_gate",
+          "formula": [
+            "four_day_to_event_day_ratio = four_day_mean_mm / event_day_mean_mm",
+            "event_day_share = event_day_mean_mm / four_day_mean_mm"
+          ],
+          "computed": {
+            "four_day_to_event_day_ratio": 4.942,
+            "event_day_share": 0.202
+          },
+          "diagnostic_test_result": "pass_multiday_antecedent_load",
+          "points": 1
+        },
+        {
+          "row_id": "surface_extent_gate",
+          "formula": [
+            "dnbr_local_to_mean_ratio = dnbr_max / dnbr_mean",
+            "radar_abs_max_db = max(abs(radar_max_db), abs(radar_min_db))",
+            "embedding_max_to_mean_ratio = embedding_max / embedding_mean"
+          ],
+          "computed": {
+            "dnbr_max": 1.3848,
+            "dnbr_mean": 0.0271,
+            "dnbr_local_to_mean_ratio": 51.031,
+            "radar_abs_max_db": 18.835,
+            "radar_mean_db": 0.03,
+            "embedding_max_to_mean_ratio": 14.467
+          },
+          "diagnostic_test_result": "pass_localized_high_contrast_disturbance",
+          "points": 2
+        },
+        {
+          "row_id": "exposure_context_gate",
+          "formula": [
+            "population_millions = mapped_population / 1000000"
+          ],
+          "computed": {
+            "mapped_population": 6761902,
+            "population_millions": 6.762
+          },
+          "diagnostic_test_result": "pass_population_context_not_loss",
+          "points": 1
+        }
+      ],
+      "process_alignment_evidence_score": 6,
+      "evidence_score_max": 6,
+      "final_label": "compound_rainfall_load_localized_slope_failure_with_population_context",
+      "rejected_substitutions": [
+        "event_day_only_spike",
+        "broad_uniform_surface_damage",
+        "exposure_as_loss_count",
+        "image_only_diagnosis"
+      ]
+    },
+    "mechanism_chain": [
+      "mass-movement event anchor",
+      "local obstruction or slope-response signal",
+      "weather countercheck",
+      "simple-trigger rejection"
+    ],
+    "decisive_evidence": "Mass-movement and obstruction evidence should dominate; precipitation and remote-sensing fields are modifiers or checks.",
+    "rejected_simplifications": "Reject rainfall-only, exposure-only, or image-only explanations if the local slope or obstruction pathway is required.",
+    "bounded_interpretation": "Do not infer exact failure volume, runout path, geotechnical plane, or all downstream impacts."
+  },
+  "judge_anchors": {
+    "answer": "compound_rainfall_load_localized_slope_failure_with_population_context",
+    "target_family": "hazard_exposure_extent_consistency_ledger",
+    "row_ids": [
+      "rainfall_load_gate",
+      "antecedent_load_gate",
+      "surface_extent_gate",
+      "exposure_context_gate"
+    ],
+    "score": 6,
+    "score_max": 6,
+    "gates": {
+      "rainfall": "pass_compound_rainfall_load",
+      "antecedent": "pass_multiday_antecedent_load",
+      "surface": "pass_localized_high_contrast_disturbance",
+      "exposure": "pass_population_context_not_loss"
+    },
+    "tolerances": {
+      "mm": 0.05,
+      "ratio": 0.01,
+      "population": 1,
+      "score": 0
+    },
+    "reject": [
+      "event_day_only_spike",
+      "broad_uniform_surface_damage",
+      "exposure_as_loss_count",
+      "image_only_diagnosis"
+    ]
+  },
+  "event": {
+    "package_id": "CSX-221",
+    "event_name": "Atami debris flow",
+    "hazard_family": "landslide_mass_movement",
+    "hazard_label": "Landslide and mass movement",
+    "event_date_or_window": "2021-07-03",
+    "location_text": "Izusan, Atami, Shizuoka",
+    "file_count": 36,
+    "category_counts": {
+      "event_reports": 5,
+      "event_catalogs": 3,
+      "geospatial_context": 2,
+      "exposure_impact": 5,
+      "remote_sensing": 12,
+      "physical_hazard": 9
+    }
+  },
+  "decision_rule": {
+    "summary": "Score rainfall load, antecedent load, localized surface extent, and mapped population context; assign the compound consistency label only when the score is at least 5 and the rainfall and surface gates both pass.",
+    "score_max": 6,
+    "thresholds": {
+      "event_day_mean_precip_mm": 50.0,
+      "four_day_mean_precip_mm": 250.0,
+      "four_day_to_event_day_ratio": 3.0,
+      "event_day_share": 0.35,
+      "dnbr_max": 1.0,
+      "dnbr_mean_max_for_localized_extent": 0.05,
+      "dnbr_local_to_mean_ratio": 20.0,
+      "mapped_population": 1000000
+    },
+    "label_rule": {
+      "compound_label": "compound_rainfall_load_localized_slope_failure_with_population_context",
+      "compound_condition": "score >= 5 and rainfall_load_gate passes and surface_extent_gate passes",
+      "partial_condition": "3 <= score <= 4"
+    }
+  },
+  "key_values": {
+    "event_date": "2021-07-03",
+    "four_day_window": [
+      "2021-06-30",
+      "2021-07-01",
+      "2021-07-02",
+      "2021-07-03"
+    ],
+    "event_day_point_precip_mm": {
+      "open_meteo_mm": 65.6,
+      "nasa_power_mm": 82.08
+    },
+    "four_day_point_precip_totals_mm": {
+      "open_meteo_mm": 389.1,
+      "nasa_power_mm": 340.73
+    },
+    "rainfall_metrics": {
+      "event_day_mean_mm": 73.84,
+      "four_day_mean_mm": 364.92,
+      "event_day_margin_mm": 23.84,
+      "four_day_margin_mm": 114.92,
+      "four_day_to_event_day_ratio": 4.942,
+      "event_day_share": 0.202
+    },
+    "gridded_precip_context": {
+      "event_maxima_mm": {
+        "era5_land_max_mm": 65.1,
+        "gpm_max_mm": 23.06,
+        "chirps_max_mm": 74.74
+      },
+      "mean_of_product_maxima_mm": 54.3,
+      "max_to_min_product_ratio": 3.241,
+      "products_with_max_at_least_50mm": 2
+    },
+    "surface_extent_metrics": {
+      "dnbr_max": 1.3848,
+      "dnbr_mean": 0.0271,
+      "dnbr_local_to_mean_ratio": 51.031,
+      "radar_abs_max_db": 18.835,
+      "radar_mean_db": 0.03,
+      "embedding_max_to_mean_ratio": 14.467
+    },
+    "exposure_context": {
+      "mapped_population": 6761902,
+      "population_millions": 6.762
+    },
+    "rows": [
+      {
+        "row_id": "rainfall_load_gate",
+        "formula": [
+          "event_day_mean_mm = mean(65.60, 82.08)",
+          "four_day_mean_mm = mean(389.10, 340.73)"
+        ],
+        "computed": {
+          "event_day_mean_mm": 73.84,
+          "four_day_mean_mm": 364.92,
+          "event_day_margin_mm": 23.84,
+          "four_day_margin_mm": 114.92
+        },
+        "gate_result": "pass_compound_rainfall_load",
+        "points": 2
+      },
+      {
+        "row_id": "antecedent_load_gate",
+        "formula": [
+          "four_day_to_event_day_ratio = four_day_mean_mm / event_day_mean_mm",
+          "event_day_share = event_day_mean_mm / four_day_mean_mm"
+        ],
+        "computed": {
+          "four_day_to_event_day_ratio": 4.942,
+          "event_day_share": 0.202
+        },
+        "gate_result": "pass_multiday_antecedent_load",
+        "points": 1
+      },
+      {
+        "row_id": "surface_extent_gate",
+        "formula": [
+          "dnbr_local_to_mean_ratio = dnbr_max / dnbr_mean",
+          "radar_abs_max_db = max(abs(radar_max_db), abs(radar_min_db))",
+          "embedding_max_to_mean_ratio = embedding_max / embedding_mean"
+        ],
+        "computed": {
+          "dnbr_max": 1.3848,
+          "dnbr_mean": 0.0271,
+          "dnbr_local_to_mean_ratio": 51.031,
+          "radar_abs_max_db": 18.835,
+          "radar_mean_db": 0.03,
+          "embedding_max_to_mean_ratio": 14.467
+        },
+        "gate_result": "pass_localized_high_contrast_disturbance",
+        "points": 2
+      },
+      {
+        "row_id": "exposure_context_gate",
+        "formula": [
+          "population_millions = mapped_population / 1000000"
+        ],
+        "computed": {
+          "mapped_population": 6761902,
+          "population_millions": 6.762
+        },
+        "gate_result": "pass_population_context_not_loss",
+        "points": 1
+      }
+    ],
+    "consistency_score": 6,
+    "score_components": {
+      "rainfall_load_gate": 2,
+      "antecedent_load_gate": 1,
+      "surface_extent_gate": 2,
+      "exposure_context_gate": 1
+    },
+    "final_label": "compound_rainfall_load_localized_slope_failure_with_population_context",
+    "rejected_substitutions": [
+      "event_day_only_spike",
+      "broad_uniform_surface_damage",
+      "exposure_as_loss_count",
+      "image_only_diagnosis"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "question_conversion_audit": {
+    "visible_list_framing_absent": true,
+    "single_answer_letter_absent": true,
+    "listed_choices_absent": true,
+    "calculation_forward": true,
+    "prescriptive_guidance_points": 0,
+    "mechanism_prose_points": 1,
+    "conversion_note_created": false
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_Atami_debris_flow.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Atami Rainfall-Loaded Slope Failure Process Diagnosis"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "compound_rainfall_load_localized_slope_failure_with_population_context",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "diagnose whether local mass movement or obstruction evidence dominates over simple rainfall or image-change explanations",
+      "computed_evidence": {
+        "rows": [
+          {
+            "row_id": "rainfall_load_gate",
+            "formula": [
+              "event_day_mean_mm = mean(65.60, 82.08)",
+              "four_day_mean_mm = mean(389.10, 340.73)"
+            ],
+            "computed": {
+              "event_day_mean_mm": 73.84,
+              "four_day_mean_mm": 364.92,
+              "event_day_margin_mm": 23.84,
+              "four_day_margin_mm": 114.92
+            },
+            "diagnostic_test_result": "pass_compound_rainfall_load",
+            "points": 2
+          },
+          {
+            "row_id": "antecedent_load_gate",
+            "formula": [
+              "four_day_to_event_day_ratio = four_day_mean_mm / event_day_mean_mm",
+              "event_day_share = event_day_mean_mm / four_day_mean_mm"
+            ],
+            "computed": {
+              "four_day_to_event_day_ratio": 4.942,
+              "event_day_share": 0.202
+            },
+            "diagnostic_test_result": "pass_multiday_antecedent_load",
+            "points": 1
+          },
+          {
+            "row_id": "surface_extent_gate",
+            "formula": [
+              "dnbr_local_to_mean_ratio = dnbr_max / dnbr_mean",
+              "radar_abs_max_db = max(abs(radar_max_db), abs(radar_min_db))",
+              "embedding_max_to_mean_ratio = embedding_max / embedding_mean"
+            ],
+            "computed": {
+              "dnbr_max": 1.3848,
+              "dnbr_mean": 0.0271,
+              "dnbr_local_to_mean_ratio": 51.031,
+              "radar_abs_max_db": 18.835,
+              "radar_mean_db": 0.03,
+              "embedding_max_to_mean_ratio": 14.467
+            },
+            "diagnostic_test_result": "pass_localized_high_contrast_disturbance",
+            "points": 2
+          },
+          {
+            "row_id": "exposure_context_gate",
+            "formula": [
+              "population_millions = mapped_population / 1000000"
+            ],
+            "computed": {
+              "mapped_population": 6761902,
+              "population_millions": 6.762
+            },
+            "diagnostic_test_result": "pass_population_context_not_loss",
+            "points": 1
+          }
+        ],
+        "process_alignment_evidence_score": 6,
+        "evidence_score_max": 6,
+        "final_label": "compound_rainfall_load_localized_slope_failure_with_population_context",
+        "rejected_substitutions": [
+          "event_day_only_spike",
+          "broad_uniform_surface_damage",
+          "exposure_as_loss_count",
+          "image_only_diagnosis"
+        ]
+      },
+      "mechanism_chain": [
+        "mass-movement event anchor",
+        "local obstruction or slope-response signal",
+        "weather countercheck",
+        "simple-trigger rejection"
+      ],
+      "decisive_evidence": "Mass-movement and obstruction evidence should dominate; precipitation and remote-sensing fields are modifiers or checks.",
+      "rejected_simplifications": "Reject rainfall-only, exposure-only, or image-only explanations if the local slope or obstruction pathway is required.",
+      "bounded_interpretation": "Do not infer exact failure volume, runout path, geotechnical plane, or all downstream impacts."
+    },
+    "answer": "compound_rainfall_load_localized_slope_failure_with_population_context"
+  }
+}

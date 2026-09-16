@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-227_Q2",
+  "event_id": "CSX-227",
+  "target_family": "taan_fiord_mass_runup_sar_exposure_gate_ledger",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "taan_fiord_numeric_gate_pass",
+    "target_family": "taan_fiord_mass_runup_sar_exposure_gate_ledger",
+    "metrics": {
+      "mass_million_tons": 180.0,
+      "max_runup_m": 193.0,
+      "mass_per_runup_m": 0.9326,
+      "s1_pre_count": 7,
+      "s1_post_count": 5,
+      "s1_window_min_count": 5,
+      "s1_abs_peak_db": 50.4627,
+      "mapped_population": 0.088,
+      "osm_buildings": 14
+    },
+    "gates": {
+      "mass_gate": true,
+      "runup_gate": true,
+      "s1_window_gate": true,
+      "sar_change_gate": true,
+      "exposure_contrast_gate": true
+    },
+    "margins": {
+      "mass_margin": 30.0,
+      "runup_margin": 43.0,
+      "s1_window_min_margin": 0,
+      "sar_change_margin_db": 5.4627,
+      "population_headroom": 0.912,
+      "building_margin": 4
+    },
+    "ledger_status": "all_pass_post_window_at_floor"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 3,
+        "description": "Returns compact JSON with target_family, metrics, gates, margins, answer, and ledger_status.",
+        "partial_credit": "Award 1 point for target_family and answer, 1 point for metrics/gates/margins, and 1 point for valid compact JSON."
+      },
+      {
+        "name": "Report anchors",
+        "points": 3,
+        "description": "Extracts the 180 million ton mass and 193 m run-up anchors with units.",
+        "partial_credit": "Award up to 1.5 points for each report anchor with the correct unit."
+      },
+      {
+        "name": "Sentinel-1 formulas",
+        "points": 3,
+        "description": "Computes the pre/post sample counts, window minimum, and absolute VV peak change correctly.",
+        "partial_credit": "Award 1 point for the counts, 1 point for the window minimum, and 1 point for the absolute peak formula."
+      },
+      {
+        "name": "Exposure feature extraction",
+        "points": 3,
+        "description": "Reads the WorldPop population sum and counts OSM elements with a building tag.",
+        "partial_credit": "Award up to 1.5 points for the population value and up to 1.5 points for the building count."
+      },
+      {
+        "name": "Threshold gates",
+        "points": 4,
+        "description": "Applies the five stated threshold tests and reports the pass label only when all gates are true.",
+        "partial_credit": "Award partial points for each correctly evaluated gate, with the final label point earned only when the all-gates rule is applied."
+      },
+      {
+        "name": "Margins and rounding",
+        "points": 2,
+        "description": "Reports threshold margins with the requested units and rounding.",
+        "partial_credit": "Award 1 point for the report/SAR margins and 1 point for the exposure margins."
+      },
+      {
+        "name": "Metric-source separation",
+        "points": 2,
+        "description": "Keeps report, SAR, WorldPop, and OSM quantities in separate ledger fields.",
+        "partial_credit": "Award 1 point for keeping source families separate and 1 point for avoiding extra impact totals."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-227",
+    "event_name": "Taan Fiord landslide tsunami",
+    "hazard_family": "landslide_mass_movement",
+    "event_date": "2015-10-17"
+  },
+  "decision_rule": {
+    "formulas": {
+      "mass_million_tons": "first report value matching 'sent ... million tons'",
+      "max_runup_m": "first report value matching 'as high as ... m'",
+      "mass_per_runup_m": "mass_million_tons / max_runup_m",
+      "s1_window_min_count": "min(Sentinel-1 pre_count, Sentinel-1 post_count)",
+      "s1_abs_peak_db": "max(abs(vv_change_max_db), abs(vv_change_min_db))",
+      "mapped_population": "WorldPop population_sum.population",
+      "osm_buildings": "count OSM elements with a building tag"
+    },
+    "thresholds": {
+      "mass_gate": "mass_million_tons >= 150",
+      "runup_gate": "max_runup_m >= 150",
+      "s1_window_gate": "s1_pre_count >= 5 and s1_post_count >= 5",
+      "sar_change_gate": "s1_abs_peak_db >= 45",
+      "exposure_contrast_gate": "mapped_population < 1 and osm_buildings >= 10"
+    }
+  },
+  "key_values": {
+    "s1_counts": {
+      "pre_count": 7,
+      "post_count": 5
+    },
+    "s1_min_db": -40.7439,
+    "s1_max_db": 50.4627,
+    "worldpop_year": 2015
+  },
+  "numeric_tolerances": {
+    "mass_million_tons": {
+      "target": 180.0,
+      "absolute_tolerance": 0.1
+    },
+    "max_runup_m": {
+      "target": 193.0,
+      "absolute_tolerance": 0.1
+    },
+    "mass_per_runup_m": {
+      "target": 0.9326,
+      "absolute_tolerance": 0.0001
+    },
+    "s1_pre_count": {
+      "target": 7,
+      "absolute_tolerance": 0
+    },
+    "s1_post_count": {
+      "target": 5,
+      "absolute_tolerance": 0
+    },
+    "s1_window_min_count": {
+      "target": 5,
+      "absolute_tolerance": 0
+    },
+    "s1_abs_peak_db": {
+      "target": 50.4627,
+      "absolute_tolerance": 0.0001
+    },
+    "mapped_population": {
+      "target": 0.088,
+      "absolute_tolerance": 0.001
+    },
+    "osm_buildings": {
+      "target": 14,
+      "absolute_tolerance": 0
+    },
+    "mass_margin": {
+      "target": 30.0,
+      "absolute_tolerance": 0.1
+    },
+    "runup_margin": {
+      "target": 43.0,
+      "absolute_tolerance": 0.1
+    },
+    "s1_window_min_margin": {
+      "target": 0,
+      "absolute_tolerance": 0
+    },
+    "sar_change_margin_db": {
+      "target": 5.4627,
+      "absolute_tolerance": 0.0001
+    },
+    "population_headroom": {
+      "target": 0.912,
+      "absolute_tolerance": 0.001
+    },
+    "building_margin": {
+      "target": 4,
+      "absolute_tolerance": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS_publication.html",
+      "data/event_reports/event_reports_002_Locked_event_anchor_Taan_Fiord_landslide_tsunami.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_osm_overpass_exposure_slice.json.json"
+    ],
+    "notes": "Deterministic local-file calculation with fixed formulas and threshold gates."
+  }
+}

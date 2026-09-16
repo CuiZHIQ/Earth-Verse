@@ -1,0 +1,157 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "country_or_region": "United Arab Emirates",
+    "event_end_date": "2024-04-17",
+    "event_name": "April 2024 UAE and Dubai record rainfall flood",
+    "event_start_date": "2024-04-15",
+    "hazard_family": "extreme_precip_pluvial_flood",
+    "hazard_label": "Extreme precipitation and pluvial flooding",
+    "location_text": "Dubai, Abu Dhabi and Al Ain"
+  },
+  "event_id": "CSX-058",
+  "key_values": {
+    "computed_ratios": {
+      "airport_implied_annual_mm": 79.33,
+      "airport_vs_country_annual_high": 0.59,
+      "airport_vs_implied_annual": 1.5,
+      "peak_vs_annual_high": 1.25
+    },
+    "rainfall_anchors": {
+      "dubai_airport_april16_rain_mm": 119.0,
+      "dubai_airport_typical_annual_multiplier": 1.5,
+      "eastern_uae_less_than_24h_peak_mm": 250.0,
+      "uae_typical_annual_rainfall_range_mm": [
+        140.0,
+        200.0
+      ]
+    },
+    "thresholds": {
+      "classification_result": "annual_load_compression_pass",
+      "mechanism_label": "arid_urban_pluvial_runoff",
+      "required_min_ratio": 1.0
+    },
+    "uncertainty_margins": {
+      "airport_vs_implied_annual_margin_above_1": 0.5,
+      "most_sensitive_anchor": "peak_24h_mm_or_annual_high_mm",
+      "peak_vs_annual_high_margin_above_1": 0.25,
+      "robust_to_small_anchor_error": true
+    }
+  },
+  "numeric_tolerances": {
+    "airport_implied_annual_mm": {
+      "target": 79.33,
+      "tolerance": 0.5
+    },
+    "airport_mm": {
+      "target": 119.0,
+      "tolerance": 3.0
+    },
+    "airport_reported_multiplier": {
+      "target": 1.5,
+      "tolerance": 0.1
+    },
+    "airport_vs_implied_annual": {
+      "target": 1.5,
+      "tolerance": 0.05
+    },
+    "annual_high_mm": {
+      "target": 200.0,
+      "tolerance": 5.0
+    },
+    "peak_24h_mm": {
+      "target": 250.0,
+      "tolerance": 5.0
+    },
+    "peak_vs_annual_high": {
+      "target": 1.25,
+      "tolerance": 0.05
+    }
+  },
+  "primary_gt": {
+    "answer": "annual_load_compression_pass",
+    "classification_result": "annual_load_compression_pass",
+    "computed_ratios": {
+      "airport_implied_annual_mm": 79.33,
+      "airport_vs_implied_annual": 1.5,
+      "peak_vs_annual_high": 1.25
+    },
+    "decision_rule": "pass if peak_vs_annual_high >= 1.0 and airport_vs_implied_annual >= 1.0",
+    "mechanism_label": "arid_urban_pluvial_runoff",
+    "rainfall_anchors": {
+      "airport_mm": 119.0,
+      "airport_reported_multiplier": 1.5,
+      "annual_high_mm": 200.0,
+      "peak_24h_mm": 250.0
+    },
+    "rejected_alternative": "coastal_surge_or_large_river_primary_driver",
+    "target_family": "dubai_rainfall_load_uncertainty_propagation",
+    "uncertainty_margins": {
+      "airport_vs_implied_annual_margin_above_1": 0.5,
+      "most_sensitive_anchor": "peak_24h_mm_or_annual_high_mm",
+      "peak_vs_annual_high_margin_above_1": 0.25,
+      "robust_to_small_anchor_error": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Ground truth is a compact rainfall-load uncertainty propagation. Image, exposure, and operational details are intentionally outside the primary scoring target.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_April_2024_UAE_and_Dubai_record_rainfall_flood.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the uncertainty-propagation JSON target, gives the benchmark target_family, sets classification_result to annual_load_compression_pass, and uses an equivalent arid-urban-pluvial mechanism label.",
+        "name": "final_ledger_result",
+        "partial_credit": "Award 2-3 points for the correct mechanism or pass label with an incomplete JSON object; award 1 point for recognizing extreme rainfall but not the classification result.",
+        "points": 4
+      },
+      {
+        "description": "Reports 250 mm in less than 24 hours, 200 mm as the conservative annual-high denominator from the 140-200 mm range, 119 mm at Dubai International Airport, and the reported 1.5x airport multiplier.",
+        "name": "rainfall_anchor_extraction",
+        "partial_credit": "Award 1 point for each correct anchor, allowing small rounding differences.",
+        "points": 4
+      },
+      {
+        "description": "Computes peak_vs_annual_high = 1.25, airport_implied_annual_mm = 79.33, and airport_vs_implied_annual = 1.50 with units or unit-implied field names.",
+        "name": "formula_arithmetic",
+        "partial_credit": "Award 2-3 points for mostly correct ratios with one arithmetic or rounding error; award 1 point for formulas without reliable values.",
+        "points": 4
+      },
+      {
+        "description": "States and applies the rule that both annual-load ratios must be at least 1.0, and distinguishes the airport-specific 1.5x test from the non-decisive 119/200 countrywide-high comparison.",
+        "name": "decision_rule_proof",
+        "partial_credit": "Award 1-2 points for a correct pass/fail decision with incomplete threshold logic.",
+        "points": 3
+      },
+      {
+        "description": "Ties the passing ratios to rapid pluvial runoff, drainage exceedance, and ponding in an arid paved urban setting.",
+        "name": "computed_mechanism_consequence",
+        "partial_credit": "Award 1 point for a generic rainfall-runoff statement not grounded in the computed ratios.",
+        "points": 2
+      },
+      {
+        "description": "Rejects coastal-surge, dam-failure, and large-river-primary diagnoses as not demonstrated by the rainfall-load uncertainty proof.",
+        "name": "rejected_alternative",
+        "partial_credit": "Award 1 point for rejecting one inappropriate mechanism without explaining the ledger basis.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the answer focused on the requested formula proof and avoids exact unwarranted loss, damage, flood-depth, casualty, or operational-plan claims.",
+        "name": "compactness_and_no_overclaiming",
+        "partial_credit": "No credit for this item if the answer becomes a broad disaster briefing, loss inventory, or response plan.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "dubai_rainfall_load_uncertainty_propagation",
+  "task_id": "CSX-058_Q1",
+  "task_subtype": "rainfall_load_uncertainty_propagation",
+  "task_type": "short_answer"
+}

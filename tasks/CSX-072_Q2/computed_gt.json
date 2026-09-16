@@ -1,0 +1,205 @@
+{
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_date_or_window": "2024-09-27 to 2024-09-29",
+    "event_name": "September 2024 Nepal floods and landslides",
+    "hazard_family": "Extreme precipitation, flooding, and rainfall-triggered landslides",
+    "location_text": "Kathmandu Valley and 21 districts"
+  },
+  "event_id": "CSX-072",
+  "key_values": {
+    "arterial_share_among_highways": 0.161,
+    "bridge_tags_per_100_highway_ways": 0.387,
+    "compact_record_station_count": 16,
+    "compact_record_station_share": 0.64,
+    "daman_3day_mm": 517.0,
+    "daman_to_gpm_max_ratio": 8.676,
+    "event_hour_count": 72,
+    "first_two_days_share": 0.992,
+    "gauge_exceedance_share": 0.714,
+    "gauge_table_exceedance_count": 5,
+    "gauge_table_row_count": 7,
+    "gpm_event_precip_mm_max": 59.59,
+    "highway_share_of_osm_elements": 0.517,
+    "kathmandu_valley_record_share": 0.44,
+    "kathmandu_valley_record_stations": 11,
+    "ledger_expected_row_ids": [
+      "point_intensity_signature",
+      "persistence_signature",
+      "valley_record_cluster_signature",
+      "river_reinforcement_signature",
+      "access_corridor_context_signature"
+    ],
+    "longest_wet_run_fraction": 0.611,
+    "longest_wet_run_hours_ge_0p1": 44,
+    "max_gauge_observed_to_historic_ratio": 1.349,
+    "osm_arterial_way_count": 83,
+    "osm_bridge_tag_count": 2,
+    "osm_element_count": 1000,
+    "osm_highway_way_count": 517,
+    "osm_hospital_count": 10,
+    "osm_school_count": 141,
+    "peak_to_event_mean_intensity_signature": 4.388,
+    "point_daily_totals_mm": {
+      "2024-09-27": 174.2,
+      "2024-09-28": 79.8,
+      "2024-09-29": 2.0
+    },
+    "point_event_mean_hourly_intensity_mm_h": 3.556,
+    "point_event_precip_mm": 256.0,
+    "point_hours_ge_10mm": 9,
+    "point_hours_ge_5mm": 20,
+    "point_to_gpm_max_ratio": 4.296,
+    "point_wet_hours_gt_0": 51,
+    "point_wettest_hour_mm": 15.6,
+    "point_wettest_hour_time": "2024-09-27T09:00",
+    "reasoning_depth": {
+      "counterfactual_rejection": "A single-peak-hour explanation fails because wet-hour, first-two-day, and longest-wet-run shares show sustained multiday rainfall.",
+      "evidence_weighting": "Persistence metrics, record-station clustering, and river-gauge exceedances carry the diagnosis; OSM access-corridor fields provide operational context.",
+      "uncertainty_or_scale_caveat": "Coarse gridded precipitation maxima should not cap station or point rainfall records in complex terrain."
+    },
+    "record_district_count": 14,
+    "record_station_cluster_density_per_100_km2": 1.6,
+    "record_station_count": 25,
+    "stations_over_50mm": 183,
+    "wet_hours_gt_0_fraction": 0.708,
+    "wettest_day_share": 0.68,
+    "worldpop_population_sum": 1090345.739
+  },
+  "primary_gt": {
+    "answer": "valley_access_corridor_persistent_rainfall_signature_consistent",
+    "ledger_rows": [
+      {
+        "computed": {
+          "peak_to_event_mean_intensity_signature": 4.388,
+          "point_event_mean_hourly_intensity_mm_h": 3.556
+        },
+        "formula": "peak_to_event_mean = point_wettest_hour_mm / (point_event_precip_mm / event_hour_count)",
+        "pass_fail": "passes_intense_hour_but_not_single_hour_only",
+        "row_id": "point_intensity_signature"
+      },
+      {
+        "computed": {
+          "first_two_days_share": 0.992,
+          "longest_wet_run_fraction": 0.611,
+          "wet_hours_gt_0_fraction": 0.708,
+          "wettest_day_share": 0.68
+        },
+        "formula": "wet_hour_share = wet_hours / event_hours; first_two_days_share = first_two_day_total / event_total",
+        "pass_fail": "passes_persistent_multiday_rainfall",
+        "row_id": "persistence_signature"
+      },
+      {
+        "computed": {
+          "compact_record_station_share": 0.64,
+          "daman_to_gpm_max_ratio": 8.676,
+          "kathmandu_valley_record_share": 0.44,
+          "point_to_gpm_max_ratio": 4.296,
+          "record_station_cluster_density_per_100_km2": 1.6
+        },
+        "formula": "shares = station_counts / record_station_count; density = compact_count / area_km2 * 100; station_to_gpm = station_total / gpm_max",
+        "pass_fail": "passes_clustered_station_signature",
+        "row_id": "valley_record_cluster_signature"
+      },
+      {
+        "computed": {
+          "gauge_exceedance_share": 0.714,
+          "max_gauge_observed_to_historic_ratio": 1.349
+        },
+        "formula": "gauge_exceedance_share = exceeded_gauges / table_rows; max_ratio = max(observed_gauge / historic_gauge)",
+        "pass_fail": "passes_hydrologic_reinforcement_not_river_only",
+        "row_id": "river_reinforcement_signature"
+      },
+      {
+        "computed": {
+          "arterial_share_among_highways": 0.161,
+          "bridge_tags_per_100_highway_ways": 0.387,
+          "highway_share_of_osm_elements": 0.517,
+          "worldpop_population_sum": 1090345.739
+        },
+        "formula": "highway_share = highway_ways / osm_elements; arterial_share = arterial_ways / highway_ways; bridge_tags_per_100 = bridge_tags / highway_ways * 100",
+        "pass_fail": "context_only_not_observed_loss_count",
+        "row_id": "access_corridor_context_signature"
+      }
+    ],
+    "reasoning_depth": {
+      "counterfactual_rejection": "A single-peak-hour explanation fails because wet-hour, first-two-day, and longest-wet-run shares show sustained multiday rainfall.",
+      "evidence_weighting": "Persistence metrics, record-station clustering, and river-gauge exceedances carry the diagnosis; OSM access-corridor fields provide operational context.",
+      "uncertainty_or_scale_caveat": "Coarse gridded precipitation maxima should not cap station or point rainfall records in complex terrain."
+    },
+    "rejected_substitutions": [
+      "single_peak_hour_only",
+      "coarse_grid_severity_cap",
+      "river_exceedance_only",
+      "mapped_receptor_loss_normalizer"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_September_2024_Nepal_floods_and_landslides.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.pdf",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_006_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the canonical label and all five required row identifiers with formulas, computed values, pass/fail states, and rejected substitutions.",
+        "name": "Final label and ledger structure",
+        "partial_credit": "Award 2 points for the correct label with missing or mislabeled rows; award 1 point for a plausible ledger structure with an incorrect final label.",
+        "points": 4
+      },
+      {
+        "description": "Computes 256.0/72 = 3.556 mm/h, 15.6/3.556 = 4.388, 44/72 = 0.611, 51/72 = 0.708, wettest-day share 0.680, and first-two-day share 0.992.",
+        "name": "Point rainfall intensity and persistence",
+        "partial_credit": "Award 2-3 points for mostly correct formulas with one or two rounded or omitted values; award 1 point for using the right variables with a wrong aggregation window.",
+        "points": 4
+      },
+      {
+        "description": "Computes 11/25 = 0.440, 16/25 = 0.640, 16/1000*100 = 1.600 per 100 km2, Daman/GPM = 8.676, and point/GPM = 4.296.",
+        "name": "Record cluster and GPM normalization",
+        "partial_credit": "Award 2-3 points for correct shares but missing density or normalization; award 1 point for recognizing clustering without the required numeric tests.",
+        "points": 4
+      },
+      {
+        "description": "Computes 5/7 = 0.714, maximum observed/historic gauge ratio 1.349, 517/1000 = 0.517, 83/517 = 0.161, and 2/517*100 = 0.387.",
+        "name": "River and corridor ratios",
+        "partial_credit": "Award 2 points for either the river ratios or the corridor ratios; award 1 point for qualitative use of these signals without numeric support.",
+        "points": 3
+      },
+      {
+        "description": "Rejects single-peak-hour, coarse-grid cap, river-only, and mapped-receptor substitutions using the computed ledger.",
+        "name": "Rejected substitutions",
+        "partial_credit": "Award 1 point for rejecting at least two substitutions with valid numeric reasoning.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the conclusion to a persistent valley/access-corridor rainfall signature and does not convert mapped roads, facilities, bridges, or population into observed losses.",
+        "name": "Bounded computed interpretation",
+        "partial_credit": "Award 1 point for a mostly bounded interpretation with one minor overstatement.",
+        "points": 2
+      },
+      {
+        "description": "Provides valid compact JSON with numeric values, units or unit-implied field names, and clear conclusion states. Full credit also requires the `reasoning_depth` object to identify decisive evidence, reject the main tempting simplification, and state a bounded uncertainty or scale caveat.",
+        "name": "Compact answer format",
+        "partial_credit": "Award 0.5 points for minor formatting issues that do not obscure the answer.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "valley_access_corridor_intensity_persistence_ledger",
+  "task_id": "CSX-072_Q2",
+  "task_type": "short_answer",
+  "tolerances": {
+    "density_per_100_km2": 0.01,
+    "mm_values": 0.1,
+    "ratios_and_shares": 0.005
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-070",
+  "key_values": {
+    "decision_rule": {
+      "canonical_threshold_result": "reported_runoff_threshold_crossed_grid_peak_lower",
+      "grid_ratio_below_threshold_if_lt": 1.0,
+      "rainfall_threshold_mm": 100.0,
+      "runoff_coefficient": 0.15,
+      "runoff_rounding": "round_half_up_to_one_decimal",
+      "runoff_threshold_mm": 15.0
+    },
+    "event_window": {
+      "days_inclusive": 3,
+      "end_date": "2024-04-17",
+      "start_date": "2024-04-15"
+    },
+    "gridded_event_max_mm": {
+      "highest_source": "GPM_IMERG",
+      "highest_value": 56.76,
+      "values": {
+        "CHIRPS": 27.8,
+        "ERA5_Land": 30.63,
+        "GPM_IMERG": 56.76
+      }
+    },
+    "rainfall_mm": {
+      "dubai_airport_apr16": 119.0,
+      "eastern_uae_less_than_24h": 250.0,
+      "single_day_report_threshold": 100.0,
+      "typical_annual_high": 200.0,
+      "typical_annual_low": 140.0,
+      "typical_annual_mid": 170.0
+    },
+    "tolerances": {
+      "annual_share": 0.01,
+      "grid_ratio": 0.001,
+      "rainfall_mm": 1.0,
+      "runoff_mm": 0.1
+    }
+  },
+  "primary_gt": {
+    "airport_annual_share": 0.7,
+    "airport_runoff_mm": 17.9,
+    "eastern_annual_share": 1.47,
+    "eastern_runoff_mm": 37.5,
+    "grid_max_to_report_threshold": 0.568,
+    "threshold_result": "reported_runoff_threshold_crossed_grid_peak_lower"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_April_2024_UAE_and_Dubai_record_rainfall_flood.json",
+      "data/event_reports/event_reports_004_01_Locked_package_evidence_report.html.html",
+      "data/event_reports/event_reports_005_03_JAXA_GSMaP_quick_report_-_UAE_extreme_heavy_rainfall.html.html",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns all six requested JSON fields and the exact threshold label.",
+        "name": "final_json_and_label",
+        "partial_credit": "Award 2 points for an equivalent label with one numeric omission, or 1 point for a mostly correct label with an incomplete JSON object.",
+        "points": 4
+      },
+      {
+        "description": "Extracts 119 mm, 250 mm, the 140-200 mm annual range, and the 170 mm midpoint.",
+        "name": "report_rainfall_anchors",
+        "partial_credit": "Award 2-3 points for three correct anchors, or 1 point for only one or two correct anchors.",
+        "points": 4
+      },
+      {
+        "description": "Computes 17.9 mm, 37.5 mm, 0.70, and 1.47 using the stated coefficient and annual midpoint.",
+        "name": "runoff_and_annual_share_arithmetic",
+        "partial_credit": "Award 2-3 points for correct formulas with minor rounding errors, or 1 point for applying the coefficient to only one rainfall anchor.",
+        "points": 4
+      },
+      {
+        "description": "Identifies 56.76 mm as the highest gridded event maximum and computes 0.568 against the 100 mm threshold.",
+        "name": "gridded_maximum_ratio",
+        "partial_credit": "Award 2 points for the right source value with wrong rounding, or 1 point for comparing a lower gridded value to the threshold.",
+        "points": 3
+      },
+      {
+        "description": "Explains that both report rainfall anchors exceed the 100 mm / 15 mm runoff-equivalent threshold while the gridded maximum remains below 100 mm.",
+        "name": "threshold_logic",
+        "partial_credit": "Award 2 points if one side of the threshold logic is correct, or 1 point if the comparison direction is right but values are missing.",
+        "points": 3
+      },
+      {
+        "description": "Provides a concise interpretation tied to the computed diagnostic without adding extra loss or depth claims.",
+        "name": "computed_interpretation",
+        "partial_credit": "Award 1 point for a reasonable but wordy interpretation or for omitting one important numeric link.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "rainfall_runoff_diagnostic",
+  "task_id": "CSX-070_Q1",
+  "task_type": "short_answer"
+}

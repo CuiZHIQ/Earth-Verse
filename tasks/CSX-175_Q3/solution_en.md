@@ -1,0 +1,116 @@
+# Final Answer
+
+```json
+{
+  "answer": "boreal_fire_smoke_transport_health_response",
+  "source_files_used": [
+    "metadata/event.json",
+    "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+    "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+    "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+    "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+    "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+    "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+    "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+  ],
+  "source_fire_intensity": {
+    "burned_area_hectares": 478000,
+    "reported_average_multiplier_for_time_of_year": 10,
+    "reported_wildland_fires": 87,
+    "out_of_control_fire_count": 22,
+    "burned_area_per_fire_ha": 5494.253,
+    "burned_area_per_out_of_control_fire_ha": 21727.3
+  },
+  "smoke_column_transport": {
+    "clear_sky_aod_reference": 0.05,
+    "goddard_average_aod": 1.0,
+    "grand_forks_average_aod": 2.3,
+    "grand_forks_peak_aod": 3.0,
+    "grand_forks_to_goddard_average_ratio": 2.3,
+    "grand_forks_average_to_clear_sky_ratio": 46.0,
+    "grand_forks_peak_to_clear_sky_ratio": 60.0,
+    "aod_excess_load": 3.3
+  },
+  "surface_and_weather_context": {
+    "sentinel2_dnbr_mean": 0.3548,
+    "embedding_change_mean": 0.0451,
+    "dnbr_to_embedding_mean_ratio": 7.865,
+    "gpm_event_mean_precip_mm": 82.55,
+    "chirps_event_mean_precip_mm": 86.92,
+    "chirps_to_gpm_mean_ratio": 1.053
+  },
+  "exposure_and_decision_logic": {
+    "worldpop_population_sum": 58882.0,
+    "sampled_roads": 947,
+    "sampled_schools": 38,
+    "sampled_hospitals": 5,
+    "response_focus": "downwind smoke-health surveillance, visibility warnings, and respiratory-risk triage rather than only local burn-perimeter mapping"
+  },
+  "stress_scenario_hotter_drier_source": {
+    "assumption": "increase out-of-control fires by 25 percent and keep burned area per out-of-control fire unchanged",
+    "scenario_out_of_control_fire_count": 28,
+    "scenario_source_area_proxy_ha": 597500.0,
+    "scenario_message": "larger source-fire instability would raise transported smoke burden even if local satellite burn contrast alone were incomplete"
+  },
+  "recommended_reasoning_path": [
+    "Separate source-fire intensity, atmospheric-column smoke transport, and local surface-change context.",
+    "Use AOD ratios to quantify transported smoke severity at downwind receptors.",
+    "Use dNBR/embedding and precipitation ratios as supporting context, not as replacements for aerosol loading.",
+    "Use population and critical amenities to frame health communication and shelter/indoor-air priorities."
+  ]
+}
+```
+
+# Source Files Used
+
+- `metadata/event.json`
+- `data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html`
+- `data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json`
+- `data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json`
+- `data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json`
+- `data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json`
+- `data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json`
+- `data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json`
+
+# Key Computations
+
+- `source_fire_intensity.burned_area_hectares` = `478000`
+- `source_fire_intensity.reported_average_multiplier_for_time_of_year` = `10`
+- `source_fire_intensity.reported_wildland_fires` = `87`
+- `source_fire_intensity.out_of_control_fire_count` = `22`
+- `source_fire_intensity.burned_area_per_fire_ha` = `5494.253`
+- `source_fire_intensity.burned_area_per_out_of_control_fire_ha` = `21727.3`
+- `smoke_column_transport.clear_sky_aod_reference` = `0.05`
+- `smoke_column_transport.goddard_average_aod` = `1.0`
+- `smoke_column_transport.grand_forks_average_aod` = `2.3`
+- `smoke_column_transport.grand_forks_peak_aod` = `3.0`
+- `smoke_column_transport.grand_forks_to_goddard_average_ratio` = `2.3`
+- `smoke_column_transport.grand_forks_average_to_clear_sky_ratio` = `46.0`
+- `smoke_column_transport.grand_forks_peak_to_clear_sky_ratio` = `60.0`
+- `smoke_column_transport.aod_excess_load` = `3.3`
+- `surface_and_weather_context.sentinel2_dnbr_mean` = `0.3548`
+- `surface_and_weather_context.embedding_change_mean` = `0.0451`
+- `surface_and_weather_context.dnbr_to_embedding_mean_ratio` = `7.865`
+- `surface_and_weather_context.gpm_event_mean_precip_mm` = `82.55`
+- `surface_and_weather_context.chirps_event_mean_precip_mm` = `86.92`
+- `surface_and_weather_context.chirps_to_gpm_mean_ratio` = `1.053`
+- `exposure_and_decision_logic.worldpop_population_sum` = `58882.0`
+- `exposure_and_decision_logic.sampled_roads` = `947`
+
+# Reasoning Path
+
+- Separate source-fire intensity, atmospheric-column smoke transport, and local surface-change context.
+- Use AOD ratios to quantify transported smoke severity at downwind receptors.
+- Use dNBR/embedding and precipitation ratios as supporting context, not as replacements for aerosol loading.
+- Use population and critical amenities to frame health communication and shelter/indoor-air priorities.
+
+# Scoring Rubric
+
+Total: 20 points.
+
+- 3 points: json_and_source_discovery. Returns JSON and cites report, fire/smoke text, dNBR, embedding, precipitation, population, and OSM files. Partial credit: Partial credit for correct JSON but incomplete file mix.
+- 4 points: source_fire_metrics. Computes 478,000 ha burned, 87 fires, 22 out-of-control fires, 5,494.253 ha/fire, and 21,727.3 ha per out-of-control fire. Partial credit: Value-by-value credit within tolerance.
+- 5 points: aod_transport_metrics. Uses clear-sky AOD 0.05, Goddard average 1.0, Grand Forks average 2.3, peak 3.0, ratio 2.3, clear-sky ratios 46 and 60, and excess load 3.3. Partial credit: Partial credit for correct AOD extraction with one missing derived ratio.
+- 3 points: surface_weather_context. Reports dNBR/embedding ratio 7.865 and CHIRPS/GPM mean ratio 1.053 without treating them as the main smoke metric. Partial credit: Partial credit for one supporting check.
+- 3 points: health_response_reasoning. Links transported aerosols to air-quality, visibility, respiratory health, and exposure priorities using package population/amenity data. Partial credit: Partial credit for generic smoke-health reasoning.
+- 2 points: scenario_and_limits. Computes the hotter-drier source scenario and avoids exact PM2.5, admissions, or evacuation claims not in the package. Partial credit: Give 1 point for qualitative limits only.

@@ -1,0 +1,90 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-067",
+  "key_values": {
+    "checks": {
+      "compact_event_window": true,
+      "extreme_rain": true,
+      "high_lower_bound_window_mean": true,
+      "timely_aftermath_image": true
+    },
+    "country_or_region": "Brazil",
+    "event_end": "2023-02-21",
+    "event_name": "2023 Sao Sebastiao floods and landslides",
+    "event_start": "2023-02-18",
+    "location": "Sao Sebastiao, Sao Paulo state",
+    "post_image_date": "2023-02-26",
+    "pre_image_date": "2022-10-29",
+    "rain_trigger": "2023-02-19",
+    "thresholds": {
+      "extreme_rain_mm": 500,
+      "max_compact_window_days": 4,
+      "max_post_image_lag_days": 10,
+      "min_window_mean_mm_per_day": 100
+    }
+  },
+  "primary_gt": {
+    "answer": "compound_rainfall_saturation_pass",
+    "event_window_days": 4,
+    "interpretation": "The conservative ledger supports a rainfall-saturation slope-failure and flash-flood diagnosis for Sao Sebastiao.",
+    "pass_count": 4,
+    "post_image_lag_days": 7,
+    "rainfall_mm_lower_bound": 680,
+    "rainfall_threshold_multiple": 1.36,
+    "window_mean_lower_bound_mm_per_day": 170.0
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Ground truth is generated from the locked event dates and the report rainfall and image-date statements.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2023_Sao_Sebastiao_floods_and_landslides.json",
+      "data/event_reports/event_reports_005_01_Locked_package_evidence_report.html.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives compound_rainfall_saturation_pass and pass_count = 4.",
+        "name": "final_ledger_state",
+        "partial_credit": "Award 2 points for the combined rainfall-saturation outcome without the pass count, or 1 point for a vague heavy-rain label without the ledger state.",
+        "points": 4
+      },
+      {
+        "description": "Reports 680 mm, 2023-02-18 to 2023-02-21, 2023-02-19, and 2023-02-26 correctly.",
+        "name": "extracted_event_anchors",
+        "partial_credit": "Award 1 point for each correct anchor; give no credit for replacing the lower bound with unrelated gridded values.",
+        "points": 4
+      },
+      {
+        "description": "Computes 4 inclusive days, 170.0 mm/day, and 1.36 threshold multiple with correct units or field names.",
+        "name": "rainfall_formula_values",
+        "partial_credit": "Award 2 points if only one derived rainfall value is correct, or 1 point if formulas are stated but arithmetic is wrong.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 7-day post-image lag and applies the <= 10 days threshold.",
+        "name": "post_image_timing_logic",
+        "partial_credit": "Award 1.5 points for the correct lag without the threshold result, or 1 point for recognizing post-storm timing with the wrong day count.",
+        "points": 3
+      },
+      {
+        "description": "Evaluates all four ledger checks using the specified inequalities.",
+        "name": "threshold_check_application",
+        "partial_credit": "Award 0.75 point for each correctly evaluated check.",
+        "points": 3
+      },
+      {
+        "description": "Returns valid compact JSON and keeps the interpretation tied to the computed rainfall and timing ledger.",
+        "name": "compact_interpretation_and_json",
+        "partial_credit": "Award 1 point if the JSON is mostly usable but verbose, or if the interpretation is plausible but not clearly tied to the computed checks.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "threshold_ledger",
+  "task_id": "CSX-067_Q1",
+  "task_type": "short_answer"
+}

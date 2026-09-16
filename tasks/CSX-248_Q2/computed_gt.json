@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-248_Q2",
+  "event_id": "CSX-248",
+  "task_type": "numeric",
+  "target_family": "remote_sensing_scene_change_numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "remote_sensing_scene_change_numeric",
+    "brightness_delta": -64.52,
+    "green_share_delta": 0.3863,
+    "spatial_change_ratio": 12.89,
+    "contrast_index": 8.32
+  },
+  "numeric_tolerances": {
+    "brightness_delta": {
+      "value": -64.52,
+      "tolerance": 0.05
+    },
+    "green_share_delta": {
+      "value": 0.3863,
+      "tolerance": 0.0005
+    },
+    "spatial_change_ratio": {
+      "value": 12.89,
+      "tolerance": 0.05
+    },
+    "contrast_index": {
+      "value": 8.32,
+      "tolerance": 0.05
+    }
+  },
+  "key_values": {
+    "pre_image": {
+      "size": [
+        1024,
+        768
+      ],
+      "mean_rgb": [
+        158.96,
+        160.02,
+        162.23
+      ],
+      "mean_brightness": 160.4,
+      "green_dominant_share": 0.0852
+    },
+    "event_image": {
+      "size": [
+        1024,
+        768
+      ],
+      "mean_rgb": [
+        93.62,
+        98.98,
+        95.04
+      ],
+      "mean_brightness": 95.88,
+      "green_dominant_share": 0.4715
+    },
+    "annual_change_mean": 0.0529,
+    "annual_change_max": 0.6819
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Target family and JSON shape",
+        "points": 3,
+        "description": "Returns the requested numeric JSON with the expected target family."
+      },
+      {
+        "name": "Brightness delta",
+        "points": 4,
+        "description": "Computes event-period minus pre-event mean brightness within tolerance."
+      },
+      {
+        "name": "Green-share delta",
+        "points": 4,
+        "description": "Computes event-period minus pre-event green-dominant pixel share within tolerance."
+      },
+      {
+        "name": "Spatial-change ratio",
+        "points": 4,
+        "description": "Computes annual spatial-change maximum divided by mean within tolerance."
+      },
+      {
+        "name": "Contrast index",
+        "points": 3,
+        "description": "Computes the formula using the rounded brightness delta and spatial-change ratio."
+      },
+      {
+        "name": "Concision and numeric discipline",
+        "points": 2,
+        "description": "Keeps the result numeric and limited to measured image and change-stat fields."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_pre.jpg",
+      "data/remote_sensing/remote_sensing_004_event.jpg"
+    ]
+  }
+}

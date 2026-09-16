@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-297_Q2",
+  "event_id": "CSX-297",
+  "task_type": "numeric",
+  "target_family": "indonesia_haze_rain_washout_contrast_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "washout_downgrade_fails",
+    "point_total_mm": 0.8,
+    "zero_run_days": 7,
+    "dry_day_fraction": 0.867,
+    "regional_mean_mm": 74.2,
+    "min_regional_ratio": 56.7,
+    "thresholds": {
+      "point_total_lte_mm": 1.0,
+      "zero_run_gte_days": 7,
+      "min_regional_ratio_gte": 50.0
+    },
+    "tolerances": {
+      "mm": 0.1,
+      "ratio": 0.1,
+      "fraction": 0.001
+    }
+  },
+  "event": {
+    "name": "2019 Indonesian haze and smoke",
+    "hazard_family": "dust_sandstorm_extreme",
+    "window": [
+      "2019-09-01",
+      "2019-09-23"
+    ],
+    "region": "Sumatra, Kalimantan, Malaysia and Singapore"
+  },
+  "computed_values": {
+    "point_window": [
+      "2019-09-01",
+      "2019-09-15"
+    ],
+    "point_day_count": 15,
+    "point_dry_days": 13,
+    "regional_means_mm_sorted": [
+      45.3,
+      68.2,
+      109.0
+    ],
+    "rule_passes": {
+      "point_total_lte_1mm": true,
+      "zero_run_gte_7days": true,
+      "min_regional_ratio_gte_50": true
+    }
+  },
+  "decision_rule": {
+    "formulae": {
+      "point_total_mm": "sum(point daily precipitation)",
+      "zero_run_days": "longest consecutive run where point daily precipitation equals 0 mm",
+      "dry_day_fraction": "zero-rain day count / point day count",
+      "regional_mean_mm": "mean of the three regional event-window precipitation means",
+      "min_regional_ratio": "minimum regional precipitation mean / point_total_mm"
+    },
+    "conclusion": "The downgrade fails only when all three numeric thresholds are met."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "answer_schema",
+        "points": 4,
+        "description": "Returns the requested compact JSON fields with numeric units implied by field names."
+      },
+      {
+        "name": "point_rainfall_metrics",
+        "points": 5,
+        "description": "Computes 0.8 mm point precipitation, a 7-day zero-rain run, and a 13/15 = 0.867 dry-day fraction."
+      },
+      {
+        "name": "regional_contrast_metrics",
+        "points": 4,
+        "description": "Uses the three regional means 45.3, 68.2, and 109.0 mm to compute a 74.2 mm mean and 56.7 minimum regional/source ratio."
+      },
+      {
+        "name": "threshold_test",
+        "points": 4,
+        "description": "Applies all three thresholds: point_total_mm <= 1.0, zero_run_days >= 7, and min_regional_ratio >= 50."
+      },
+      {
+        "name": "computed_consequence",
+        "points": 2,
+        "description": "Concludes washout_downgrade_fails because the source point remains very dry despite wet regional summaries."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation to the computed rainfall contrast without broad event narration or unsupported impact claims."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019_Indonesian_haze_and_smoke.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

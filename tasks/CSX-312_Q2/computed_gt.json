@@ -1,0 +1,147 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-312",
+  "key_values": {
+    "coupled_score": 10,
+    "fissure_length_km": 6.8,
+    "isolated_rift_score": 1,
+    "isolated_summit_score": 1,
+    "lava_area_sq_km": 35.5,
+    "lava_flow_volume_km3": 0.8,
+    "main_earthquake_mw": 6.9,
+    "minimum_lava_rate_m3_s": 100.0,
+    "rainfall_score": 0,
+    "summit_collapse_energy_mw_range": [
+      4.7,
+      5.4
+    ],
+    "summit_collapse_to_lava_flow_volume_ratio": 1.0,
+    "summit_collapse_volume_km3": 0.8,
+    "text_flags": {
+      "largest_lerz_and_caldera_collapse_200_years": true,
+      "magma_propagated_downrift": true,
+      "near_daily_collapses": true,
+      "roughly_equivalent_volumes": true,
+      "summit_partial_drainage": true
+    }
+  },
+  "primary_gt": {
+    "answer": "coupled_summit_drainage_lerz_effusion",
+    "answer_type": "structured_json_with_physical_index",
+    "forbidden_claims": [
+      "the event is best explained as isolated lower-rift effusion only",
+      "the event is best explained as isolated summit collapse only",
+      "rainfall-triggered secondary hazards are the dominant mechanism for this diagnosis",
+      "the ratio is a complete magma budget or full petrologic accounting"
+    ],
+    "index_value": 1.0,
+    "interpretation": "roughly_equivalent_volumes",
+    "numeric_tolerances": {
+      "index_value": 0.05,
+      "lava_flow_volume_km3": 0.05,
+      "summit_collapse_volume_km3": 0.05
+    },
+    "physical_index": "summit_collapse_to_lava_flow_volume_ratio",
+    "required_claims": [
+      "summit drainage and lower East Rift Zone effusion are coupled",
+      "summit-collapse and lava-flow volumes are roughly equivalent at about 0.8 cubic kilometers each",
+      "downrift magma propagation links the summit and lower-rift components"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2018_Kilauea_eruption.json",
+      "data/event_reports/event_reports_004_USGS_Kilauea_2018_summit_collapse_and_Lower_East_Rift_Zone_eruption.html"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns coupled_summit_drainage_lerz_effusion or an equivalent coupled summit-drainage and lower-rift effusion diagnosis.",
+        "name": "Coupled diagnosis",
+        "partial_credit": "2 points for recognizing both summit and lower-rift components but not clearly diagnosing coupling.",
+        "points": 4
+      },
+      {
+        "description": "Identifies the physical index as the summit-collapse to lava-flow volume ratio.",
+        "name": "Physical index identification",
+        "partial_credit": "1-2 points for referencing volume comparison without naming the ratio clearly.",
+        "points": 3
+      },
+      {
+        "description": "Computes or reports the index value as 1.0 from roughly equal 0.8 km3 summit-collapse and lava-flow volumes.",
+        "name": "Index value",
+        "partial_credit": "1-3 points for giving the two volumes or approximate equality but not the final ratio.",
+        "points": 4
+      },
+      {
+        "description": "Uses downrift magma propagation, LERZ fissure opening, 6.8 km fissure extent, high lava rate, or 35.5 km2 lava coverage.",
+        "name": "Lower-rift evidence",
+        "partial_credit": "1-2 points for mentioning lower-rift eruption without quantitative or process anchors.",
+        "points": 3
+      },
+      {
+        "description": "Uses summit partial drainage, near-daily collapses, Mw 4.7 to 5.4 collapse-energy evidence, or Mw 6.9 earthquake context.",
+        "name": "Summit-system evidence",
+        "partial_credit": "1-2 points for mentioning summit collapse without mechanism or numeric support.",
+        "points": 3
+      },
+      {
+        "description": "Rejects isolated rift-only, isolated summit-only, and rainfall-triggered interpretations for mechanism-based reasons.",
+        "name": "Alternative rejection",
+        "partial_credit": "1 point for rejecting one or two alternatives with limited explanation.",
+        "points": 2
+      },
+      {
+        "description": "Avoids unsupported claims about casualties, evacuation totals, lava chemistry, gas concentration, ashfall thickness, or a complete magma budget.",
+        "name": "No overclaim",
+        "partial_credit": "0.5 points for one minor unsupported extrapolation while preserving the main diagnosis.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "supporting_metrics": {
+    "event": {
+      "event_name": "2018 Kilauea eruption",
+      "hazard_family": "volcano_ash_lahar",
+      "package_id": "CSX-312",
+      "temporal_window": {
+        "end_date": "2018-08-04",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2018-05-03"
+      }
+    },
+    "scores": {
+      "coupled_score": 10,
+      "isolated_rift_score": 1,
+      "isolated_summit_score": 1,
+      "rainfall_score": 0
+    },
+    "text_flags": {
+      "largest_lerz_and_caldera_collapse_200_years": true,
+      "magma_propagated_downrift": true,
+      "near_daily_collapses": true,
+      "roughly_equivalent_volumes": true,
+      "summit_partial_drainage": true
+    },
+    "values": {
+      "fissure_length_km": 6.8,
+      "lava_area_sq_km": 35.5,
+      "lava_flow_volume_km3": 0.8,
+      "main_earthquake_mw": 6.9,
+      "minimum_lava_rate_m3_s": 100.0,
+      "summit_collapse_energy_mw_range": [
+        4.7,
+        5.4
+      ],
+      "summit_collapse_volume_km3": 0.8,
+      "volume_ratio": 1.0
+    }
+  },
+  "task_id": "CSX-312_Q2",
+  "task_type": "short_answer"
+}

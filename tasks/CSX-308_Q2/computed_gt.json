@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-308_Q2",
+  "event_id": "CSX-308",
+  "task_type": "numeric",
+  "target_family": "nyiragongo_surface_impact_threshold_ledger",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "answer": "localized_surface_impact_with_rain_gate_unmet",
+    "radar_concentration": 85.599,
+    "optical_concentration": 26.68,
+    "acute_vs_annual_ratio": 3.307,
+    "rain_mean_mm": 5.164,
+    "people_per_destroyed_home": 43.91,
+    "fatalities_per_100k": 72.87,
+    "gates": {
+      "surface": true,
+      "rain": false,
+      "impact": true
+    }
+  },
+  "key_values": {
+    "event_name": "2021 Mount Nyiragongo eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "event_window": [
+      "2021-05-22",
+      "2021-05-23"
+    ],
+    "region": "Goma, Democratic Republic of the Congo",
+    "thresholds": {
+      "radar_concentration": 80.0,
+      "optical_concentration": 20.0,
+      "acute_vs_annual_ratio": 3.0,
+      "rain_mean_mm": 10.0,
+      "destroyed_homes": 1000
+    },
+    "raw_inputs": {
+      "reported_deaths": 32,
+      "destroyed_homes": 1000,
+      "population_sum": 43913.5635,
+      "radar_max_db": 15.359066359289486,
+      "radar_mean_db": 0.17943021437858844,
+      "optical_dnbr_max": 0.7242995560355171,
+      "optical_dnbr_mean": 0.027147216645607916,
+      "annual_change_max": 0.27269563875485736,
+      "annual_change_mean": 0.01053425857353231,
+      "precipitation_mean_a_mm": 5.017202305686246,
+      "precipitation_mean_b_mm": 5.310531174856407,
+      "catalog_alert_level": "Red",
+      "catalog_alert_value": 3.0
+    },
+    "formulas": {
+      "radar_concentration": "radar_pre_post_max_db / radar_pre_post_mean_db",
+      "optical_concentration": "optical_dnbr_max / optical_dnbr_mean",
+      "annual_concentration": "annual_change_max / annual_change_mean",
+      "acute_vs_annual_ratio": "radar_concentration / annual_concentration",
+      "rain_mean_mm": "mean of two regional accumulated-precipitation means",
+      "people_per_destroyed_home": "population_sum / destroyed_homes",
+      "fatalities_per_100k": "reported_deaths / population_sum * 100000"
+    },
+    "tolerances": {
+      "surface_ratios": 0.001,
+      "rain_mean_mm": 0.001,
+      "impact_rates": 0.01,
+      "gates": "exact"
+    }
+  },
+  "decision_rule": {
+    "summary": "Use the label only when acute surface concentration and impact gates pass while the rainfall gate does not pass.",
+    "label_when_met": "localized_surface_impact_with_rain_gate_unmet",
+    "label_otherwise": "threshold_not_met"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 4,
+        "description": "Returns compact JSON with the requested fields, numeric types, gate booleans, and final answer label.",
+        "partial_credit": "Award 2-3 points for minor formatting or rounding issues that leave the ledger interpretable."
+      },
+      {
+        "name": "Surface ratio arithmetic",
+        "points": 4,
+        "description": "Computes radar concentration 85.599, optical concentration 26.680, and acute-to-annual ratio 3.307.",
+        "partial_credit": "Award 1-3 points for one or two correct ratios or a correct formula with arithmetic errors."
+      },
+      {
+        "name": "Surface gate",
+        "points": 3,
+        "description": "Applies the surface gate correctly using thresholds 80, 20, and 3.",
+        "partial_credit": "Award 1-2 points for recognizing strong acute concentration but missing one threshold."
+      },
+      {
+        "name": "Rainfall gate",
+        "points": 3,
+        "description": "Computes rain_mean_mm as 5.164 and marks the rain gate false under the 10 mm threshold.",
+        "partial_credit": "Award 1-2 points for a close rainfall mean with the wrong boolean or a correct boolean with incomplete arithmetic."
+      },
+      {
+        "name": "Impact ledger",
+        "points": 3,
+        "description": "Computes people per destroyed home 43.91 and fatalities per 100,000 people 72.87 from the report and population values.",
+        "partial_credit": "Award 1-2 points for one correct impact-derived value."
+      },
+      {
+        "name": "Computed label",
+        "points": 2,
+        "description": "Derives the expected label from true surface and impact gates with a false rain gate.",
+        "partial_credit": "Award 1 point for a compatible short label with one gate error."
+      },
+      {
+        "name": "Scope control",
+        "points": 1,
+        "description": "Keeps the interpretation within the numeric ledger and avoids unsupported exact impact statements.",
+        "partial_credit": "No credit for this item if unsupported exact impact statements are introduced."
+      }
+    ]
+  },
+  "event": {
+    "event_id": "CSX-308",
+    "event_name": "2021 Mount Nyiragongo eruption",
+    "hazard_family": "volcano_ash_lahar",
+    "event_date_or_window": "2021-05-22 to 2021-05-23",
+    "region": "Goma, Democratic Republic of the Congo"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2021_Mount_Nyiragongo_eruption.json",
+      "data/event_reports/event_reports_002_Wikipedia_2021_Mount_Nyiragongo_eruption.json",
+      "data/event_catalogs/event_catalogs_005_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

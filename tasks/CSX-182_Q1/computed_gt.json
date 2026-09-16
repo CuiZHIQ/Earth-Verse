@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-182_Q1",
+  "event_id": "CSX-182",
+  "task_type": "short_answer",
+  "task_subtype": "black_summer_numeric_fingerprint_score_ledger",
+  "target_family": "candidate_explanation_score_ledger",
+  "evaluation_mode": "hybrid",
+  "event_name": "2019-2020 Australian Black Summer bushfires",
+  "hazard_family": "wildfire_burn_smoke",
+  "primary_gt": {
+    "target_family": "candidate_explanation_score_ledger",
+    "metrics": {
+      "event_duration_days": 182,
+      "weather_overlap_days": 46,
+      "dry_windy_days": 9,
+      "dry_windy_share": 0.195652,
+      "dnbr_mean": 0.155941,
+      "dnbr_min": -1.074075,
+      "dnbr_max": 0.9738,
+      "dnbr_stddev": 0.109541,
+      "annual_change_mean": 0.028207,
+      "population_rounded": 362810,
+      "smoke_transport_flag": true,
+      "air_quality_flag": true
+    },
+    "gates": {
+      "burn_mean_gate": 1,
+      "burn_peak_gate": 1,
+      "heterogeneous_gate": 1,
+      "dry_windy_gate": 1,
+      "smoke_transport_gate": 1,
+      "air_quality_gate": 1,
+      "population_gate": 1,
+      "uniform_burn_gate": 0,
+      "annual_change_high_gate": 0
+    },
+    "scores": {
+      "compound_smoke_burn_exposure": 7,
+      "burn_only_surface_change": 2,
+      "population_only_context": 1
+    },
+    "score_margin": 5,
+    "answer": "compound_smoke_burn_exposure",
+    "computed_interpretation": "The compound label wins by 5 points because the ledger has two burn gates, one heterogeneity gate, one dry-windy gate, two smoke-text gates, and one population gate; the burn-only label lacks the uniform-burn and high-annual-change gates."
+  },
+  "key_values": {
+    "metrics": {
+      "event_duration_days": 182,
+      "weather_overlap_days": 46,
+      "dry_windy_days": 9,
+      "dry_windy_share": 0.195652,
+      "dnbr_mean": 0.155941,
+      "dnbr_min": -1.074075,
+      "dnbr_max": 0.9738,
+      "dnbr_stddev": 0.109541,
+      "annual_change_mean": 0.028207,
+      "population_rounded": 362810,
+      "smoke_transport_flag": true,
+      "air_quality_flag": true
+    },
+    "gates": {
+      "burn_mean_gate": 1,
+      "burn_peak_gate": 1,
+      "heterogeneous_gate": 1,
+      "dry_windy_gate": 1,
+      "smoke_transport_gate": 1,
+      "air_quality_gate": 1,
+      "population_gate": 1,
+      "uniform_burn_gate": 0,
+      "annual_change_high_gate": 0
+    },
+    "scores": {
+      "compound_smoke_burn_exposure": 7,
+      "burn_only_surface_change": 2,
+      "population_only_context": 1
+    },
+    "score_margin": 5,
+    "answer": "compound_smoke_burn_exposure",
+    "thresholds": {
+      "dnbr_mean_minimum": 0.1,
+      "dnbr_maximum_peak": 0.66,
+      "annual_change_low": 0.05,
+      "dry_windy_count_minimum": 8,
+      "dry_windy_share_minimum": 0.15,
+      "population_minimum": 300000,
+      "uniform_stddev_maximum": 0.05,
+      "annual_change_high": 0.1
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final label and margin",
+        "points": 4,
+        "description": "Returns answer compound_smoke_burn_exposure, score_margin 5, and the three scores 7, 2, and 1.",
+        "partial_credit": "Award 2-3 points for the correct label with an incomplete or slightly wrong margin; award 1 point for recognizing the compound label without a valid score comparison."
+      },
+      {
+        "name": "event-window and weather metrics",
+        "points": 3,
+        "description": "Computes 182 event days, 46 weather-overlap days, 9 dry/windy days, and dry/windy share about 0.195652.",
+        "partial_credit": "Award 1-2 points for two or three correct values, or for correct counts with a rounded share within 0.01."
+      },
+      {
+        "name": "burn and landscape-change metrics",
+        "points": 4,
+        "description": "Reports dNBR mean about 0.155941, minimum about -1.074075, maximum about 0.9738, standard deviation about 0.109541, and annual embedding-change mean about 0.028207.",
+        "partial_credit": "Award 2-3 points if most values are correct but one statistic is omitted; award 1 point if only the mean or maximum is correct."
+      },
+      {
+        "name": "text and population flags",
+        "points": 3,
+        "description": "Reports rounded population about 362810 and sets both smoke-transport and air-quality flags to true.",
+        "partial_credit": "Award 1-2 points for correct population with one missing text flag, or correct text flags with a population value within 1000."
+      },
+      {
+        "name": "gate and formula arithmetic",
+        "points": 4,
+        "description": "Applies all nine gates with values 1,1,1,1,1,1,1,0,0 and uses the stated formulas to obtain scores 7,2,1.",
+        "partial_credit": "Award 2-3 points for one or two gate errors that do not change the final label; award 1 point for using the formulas but omitting several gates."
+      },
+      {
+        "name": "compact JSON and computed interpretation",
+        "points": 2,
+        "description": "Returns exactly the requested fields and gives a concise interpretation tied to the score ledger.",
+        "partial_credit": "Award 1 point for valid JSON with extra or missing fields, or for an interpretation that is present but not tied to the computed scores."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_bushfires.json",
+      "data/event_reports/event_reports_001_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/event_reports/event_reports_005_095_CSX-182_01_Locked_anchor_report_NASA_Earth_Observatory.html.html",
+      "data/other/other_001_WMO_Australia_fires_after_hottest_driest_year_on_record.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_004_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json"
+    ]
+  }
+}

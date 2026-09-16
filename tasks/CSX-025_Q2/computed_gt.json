@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-025_Q2",
+  "event_id": "CSX-025",
+  "task_type": "numeric",
+  "target_family": "heat_persistence_decomposition",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "total_heat_load_c_day": 11.8,
+    "peak_day_heat_share": 0.466,
+    "non_peak_heat_load_c_day": 6.3,
+    "hot_run_days": 4,
+    "warm_night_share_in_hot_run": 0.75,
+    "wet_bulb_margin_to_24c": 2.0,
+    "diagnosis": "persistence_recovery_dry_heat_signature"
+  },
+  "numeric_tolerances": {
+    "total_heat_load_c_day_abs": 0.15,
+    "peak_day_heat_share_abs": 0.005,
+    "non_peak_heat_load_c_day_abs": 0.15,
+    "hot_run_days_abs": 0,
+    "warm_night_share_in_hot_run_abs": 0.005,
+    "wet_bulb_margin_to_24c_abs": 0.2
+  },
+  "event": {
+    "name": "June 2021 Pacific Northwest heat wave",
+    "window": {
+      "start_date": "2021-06-25",
+      "end_date": "2021-07-01",
+      "days": 7
+    }
+  },
+  "supporting_values": {
+    "daily_tmax_c": [
+      27.3,
+      30.1,
+      32.2,
+      34.0,
+      35.5,
+      26.7,
+      22.3
+    ],
+    "daily_tmin_c": [
+      11.4,
+      14.4,
+      16.4,
+      19.5,
+      17.8,
+      13.8,
+      11.5
+    ],
+    "heat_load_terms_c_day": [
+      0.0,
+      0.1,
+      2.2,
+      4.0,
+      5.5,
+      0.0,
+      0.0
+    ],
+    "peak_day": "2021-06-29",
+    "peak_day_heat_load_c_day": 5.5,
+    "hot_run_start_end_dates": [
+      "2021-06-26",
+      "2021-06-29"
+    ],
+    "warm_nights_in_hot_run": 3,
+    "max_wet_bulb_c": 22.0,
+    "max_wet_bulb_time": "2021-06-29T19:00"
+  },
+  "diagnosis_rule": {
+    "non_peak_exceeds_peak_day": true,
+    "hot_run_at_least_three_days": true,
+    "warm_night_share_at_least_half": true,
+    "wet_bulb_margin_positive": true
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "cumulative_heat_load",
+        "points": 4,
+        "description": "Computes 11.8 C-days above 30 C from the daily maximum-temperature series.",
+        "partial_credit": "2-3 points for the correct exceedance formula with one daily term or rounding error; 1 point for recognizing a 30 C exceedance load but summing the wrong window."
+      },
+      {
+        "name": "peak_and_non_peak_split",
+        "points": 3,
+        "description": "Computes peak-day share near 0.466 and non-peak heat load near 6.3 C-days.",
+        "partial_credit": "2 points for one correct split metric; 1 point for identifying the 2021-06-29 peak term but using incorrect division or subtraction."
+      },
+      {
+        "name": "hot_run_length",
+        "points": 3,
+        "description": "Finds the 4-day run with Tmax at or above 30 C.",
+        "partial_credit": "2 points for the correct dates with an off-by-one count; 1 point for applying the 30 C threshold but including a non-hot day."
+      },
+      {
+        "name": "hot_run_warm_nights",
+        "points": 3,
+        "description": "Computes the warm-night share within the hot run as 0.75.",
+        "partial_credit": "2 points for the correct warm-night count with an incorrect denominator; 1 point for using Tmin and the 16 C threshold but applying it to the full event window."
+      },
+      {
+        "name": "wet_bulb_margin",
+        "points": 3,
+        "description": "Uses hourly temperature and relative humidity to compute a Stull wet-bulb maximum near 22.0 C and a 2.0 C margin to 24 C.",
+        "partial_credit": "2 points for a wet-bulb maximum within tolerance but a wrong margin sign or rounding; 1 point for using hourly temperature and humidity but not the Stull approximation."
+      },
+      {
+        "name": "diagnosis_and_explanation",
+        "points": 2,
+        "description": "Returns the persistence-recovery dry-heat diagnosis and ties it to the computed decomposition.",
+        "partial_credit": "1 point for the right label without tying it to the four rule checks, or for a correct qualitative conclusion with a slightly wrong label."
+      },
+      {
+        "name": "output_format",
+        "points": 2,
+        "description": "Returns the requested JSON fields with sensible rounding and one concise explanatory sentence.",
+        "partial_credit": "1 point for all required values in a readable structure with minor formatting omissions or an overly long explanation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    ]
+  }
+}

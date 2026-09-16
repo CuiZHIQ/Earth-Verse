@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-325_Q2",
+  "event_id": "CSX-325",
+  "target_family": "southeast_asia_2023_2024_coral_bleaching_heatstress_countermetric_gate",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "evaluation_mode_justification": "All requested fields are fixed calculations from local package text, JSON summaries, image pixels, and stated thresholds.",
+  "primary_gt": {
+    "answer": "coral_bleaching_heatstress_countermetric_gate_pass",
+    "target_family": "southeast_asia_2023_2024_coral_bleaching_heatstress_countermetric_gate",
+    "metrics": {
+      "extent_pct": 84.4,
+      "coverage_pct": 95.0,
+      "marine_text_score": 5,
+      "rainfall_ratio": 1.3052,
+      "land_temp_excess_c": 1.5556,
+      "image_nodata_delta": 0.0755,
+      "surface_mean_sum": 0.0303
+    },
+    "gates": {
+      "marine_heat_gate": true,
+      "coverage_gate": true,
+      "land_weather_context_gate": true,
+      "visual_guardrail": true,
+      "surface_guardrail": true
+    },
+    "computed_consequence": "marine_heatstress_primary_land_visual_surface_counters_contextual",
+    "tolerances": {
+      "extent_pct": 0.1,
+      "coverage_pct": 0.1,
+      "rainfall_ratio": 0.0001,
+      "land_temp_excess_c": 0.0001,
+      "image_nodata_delta": 0.0001,
+      "surface_mean_sum": 0.0001
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 4,
+        "description": "Returns compact JSON with target_family, metrics, gates, answer, and computed_consequence."
+      },
+      {
+        "name": "Marine heat-stress anchors",
+        "points": 5,
+        "description": "Computes the five-part marine_text_score, 84.4% extent, and 95.0% product coverage with the stated formulas and units."
+      },
+      {
+        "name": "Countermetric calculations",
+        "points": 4,
+        "description": "Computes rainfall_ratio, land_temp_excess_c, image_nodata_delta, and surface_mean_sum within tolerance."
+      },
+      {
+        "name": "Threshold gates",
+        "points": 3,
+        "description": "Applies all five gates with the stated inequalities and returns the pass label only when every gate is true."
+      },
+      {
+        "name": "Computed rejection",
+        "points": 2,
+        "description": "Keeps land-weather, visible-image, and broad surface-change signals as countermetrics because the marine gate passes and guardrails also pass."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 1,
+        "description": "Uses a short computed consequence tied to the gates rather than a long causal narrative."
+      },
+      {
+        "name": "No overreach",
+        "points": 1,
+        "description": "Does not infer realized reef loss, human burden, or local coral mortality from these package-level calculations."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-325",
+    "event_name": "2023-2024 global coral bleaching event",
+    "hazard_family": "marine_heatwave_coastal_ecosystem",
+    "event_date_or_window": "2023-06-01 to 2024-12-31",
+    "region": "Southeast Asia"
+  },
+  "decision_rule": {
+    "formulas": {
+      "marine_text_score": "count five text/product flags: bleaching-level heat stress, SST basis, accumulated heat stress, Alert Level language, and all five CRW product terms",
+      "rainfall_ratio": "max(GPM mean, CHIRPS mean, ERA5-Land precip mean) / min(GPM mean, CHIRPS mean, ERA5-Land precip mean)",
+      "land_temp_excess_c": "ERA5-Land max 2m temperature C - 35",
+      "image_nodata_delta": "event black/nodata fraction - pre black/nodata fraction",
+      "surface_mean_sum": "AlphaEarth mean 1-minus-cosine + abs(Sentinel-2 dNBR mean)"
+    },
+    "thresholds": {
+      "marine_heat_gate": "marine_text_score >= 5 and extent_pct >= 80",
+      "coverage_gate": "coverage_pct >= 90",
+      "land_weather_context_gate": "rainfall_ratio <= 1.5 and land_temp_excess_c >= 1",
+      "visual_guardrail": "image_nodata_delta >= 0.05",
+      "surface_guardrail": "surface_mean_sum <= 0.05"
+    }
+  },
+  "key_values": {
+    "text_flags": {
+      "bleaching_heat_stress": true,
+      "sst_monitoring_basis": true,
+      "accumulated_heat_stress": true,
+      "alert_level_language": true,
+      "full_product_suite": true
+    },
+    "product_terms_found": [
+      "SST",
+      "SST Anomaly",
+      "HotSpot",
+      "Degree Heating Week",
+      "Bleaching Alert Area"
+    ],
+    "precipitation_means_mm": {
+      "gpm": 428.0731,
+      "chirps": 332.8795,
+      "era5_land": 434.4847
+    },
+    "image_black_fractions": {
+      "pre": 0.0887,
+      "event": 0.1642
+    },
+    "surface_means": {
+      "alphaearth": 0.027637,
+      "sentinel2_dnbr": 0.002671
+    }
+  },
+  "numeric_tolerances": {
+    "extent_pct": {
+      "target": 84.4,
+      "absolute_tolerance": 0.1
+    },
+    "coverage_pct": {
+      "target": 95.0,
+      "absolute_tolerance": 0.1
+    },
+    "rainfall_ratio": {
+      "target": 1.3052,
+      "absolute_tolerance": 0.0001
+    },
+    "land_temp_excess_c": {
+      "target": 1.5556,
+      "absolute_tolerance": 0.0001
+    },
+    "image_nodata_delta": {
+      "target": 0.0755,
+      "absolute_tolerance": 0.0001
+    },
+    "surface_mean_sum": {
+      "target": 0.0303,
+      "absolute_tolerance": 0.0001
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_002_NOAA_NESDIS_fourth_global_coral_bleaching_event.html",
+      "data/event_reports/event_reports_003_NOAA_Coral_Reef_Watch_bleaching_status.html",
+      "data/other/other_001_NOAA_Coral_Reef_Watch_5km_products.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/remote_sensing/remote_sensing_003_pre.jpg",
+      "data/remote_sensing/remote_sensing_004_event.jpg"
+    ],
+    "notes": "Deterministic local-file calculation with fixed thresholds."
+  }
+}

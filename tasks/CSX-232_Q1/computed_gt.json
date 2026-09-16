@@ -1,0 +1,221 @@
+{
+  "audit": {
+    "absolute_path_hits": 0,
+    "formula_block_present": true,
+    "visible_numeric_anchor_count": 34
+  },
+  "decision_rule": {
+    "alert_points": {
+      "green": 20,
+      "missing": 0,
+      "orange": 80,
+      "red": 100,
+      "yellow": 60
+    },
+    "class_thresholds": {
+      "critical": "score >= 85",
+      "high": "70 <= score < 85",
+      "low": "score < 50",
+      "medium": "50 <= score < 70"
+    },
+    "formula": "0.30*(magnitude/8*100)+0.25*(mmi/10*100)+0.20*(sig/max_sig*100)+0.15*alert_points+0.10*(log10(felt+1)/log10(max_felt+1)*100)"
+  },
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-232",
+  "key_values": {
+    "candidate_scores": [
+      {
+        "alert": "red",
+        "components": {
+          "alert_pct": 100.0,
+          "felt_pct": 100.0,
+          "intensity_pct": 95.37,
+          "magnitude_pct": 97.5,
+          "significance_pct": 100.0
+        },
+        "event_id": "us6000jllz",
+        "felt_reports": 3182,
+        "magnitude": 7.8,
+        "maximum_modeled_intensity": 9.537,
+        "score": 98.093,
+        "severity_class": "critical",
+        "significance": 2910,
+        "time_utc": "2023-02-06T01:17:34Z",
+        "title": "M 7.8 - Pazarcik earthquake, Kahramanmaras earthquake sequence"
+      },
+      {
+        "alert": "red",
+        "components": {
+          "alert_pct": 100.0,
+          "felt_pct": 80.79,
+          "intensity_pct": 89.63,
+          "magnitude_pct": 93.75,
+          "significance_pct": 89.828
+        },
+        "event_id": "us6000jlqa",
+        "felt_reports": 675,
+        "magnitude": 7.5,
+        "maximum_modeled_intensity": 8.963,
+        "score": 91.577,
+        "severity_class": "critical",
+        "significance": 2614,
+        "time_utc": "2023-02-06T10:24:48Z",
+        "title": "M 7.5 - Elbistan earthquake, Kahramanmaras earthquake sequence"
+      },
+      {
+        "alert": "yellow",
+        "components": {
+          "alert_pct": 60.0,
+          "felt_pct": 62.124,
+          "intensity_pct": 78.34,
+          "magnitude_pct": 83.75,
+          "significance_pct": 28.385
+        },
+        "event_id": "us6000jlm1",
+        "felt_reports": 149,
+        "magnitude": 6.7,
+        "maximum_modeled_intensity": 7.834,
+        "score": 65.599,
+        "severity_class": "medium",
+        "significance": 826,
+        "time_utc": "2023-02-06T01:28:15Z",
+        "title": "M 6.7 - 14 km E of Nurda??, Turkey"
+      },
+      {
+        "alert": "yellow",
+        "components": {
+          "alert_pct": 60.0,
+          "felt_pct": 39.909,
+          "intensity_pct": 75.28,
+          "magnitude_pct": 75.0,
+          "significance_pct": 22.955
+        },
+        "event_id": "us6000jlrc",
+        "felt_reports": 24,
+        "magnitude": 6.0,
+        "maximum_modeled_intensity": 7.528,
+        "score": 58.902,
+        "severity_class": "medium",
+        "significance": 668,
+        "time_utc": "2023-02-06T12:02:11Z",
+        "title": "M 6.0 - 4 km NNE of G\u00f6ksun, Turkey"
+      },
+      {
+        "alert": "yellow",
+        "components": {
+          "alert_pct": 60.0,
+          "felt_pct": 24.126,
+          "intensity_pct": 74.06,
+          "magnitude_pct": 75.0,
+          "significance_pct": 22.509
+        },
+        "event_id": "us6000jm1y",
+        "felt_reports": 6,
+        "magnitude": 6.0,
+        "maximum_modeled_intensity": 7.406,
+        "score": 56.929,
+        "severity_class": "medium",
+        "significance": 655,
+        "time_utc": "2023-02-06T10:26:46Z",
+        "title": "M 6.0 - 12 km W of \u00c7elikhan, Turkey"
+      }
+    ],
+    "nearest_rival_title": "M 7.5 - Elbistan earthquake, Kahramanmaras earthquake sequence",
+    "normalization_maxima": {
+      "felt_reports": 3182,
+      "significance": 2910
+    },
+    "selected_event_title": "M 7.8 - Pazarcik earthquake, Kahramanmaras earthquake sequence",
+    "winning_components": {
+      "alert_pct": 100.0,
+      "felt_pct": 100.0,
+      "intensity_pct": 95.37,
+      "magnitude_pct": 97.5,
+      "significance_pct": 100.0
+    }
+  },
+  "primary_gt": {
+    "answer": "us6000jllz",
+    "decision_margin": 6.516,
+    "nearest_rival_id": "us6000jlqa",
+    "nearest_rival_score": 91.577,
+    "selected_event_id": "us6000jllz",
+    "selected_score": 98.093,
+    "severity_class": "critical",
+    "target_family": "candidate_explanation_score_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_catalogs/event_catalogs_001_USGS_ComCat_earthquake_query.json"
+    ]
+  },
+  "required_output_fields": [
+    "selected_event_id",
+    "selected_event_title",
+    "severity_class",
+    "selected_score",
+    "nearest_rival_id",
+    "nearest_rival_score",
+    "decision_margin",
+    "winning_components",
+    "interpretation"
+  ],
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Identifies us6000jllz / the M 7.8 Pazarcik earthquake as the selected event and assigns the critical severity class.",
+        "name": "Correct ledger winner and label",
+        "partial_credit": "Award 2-3 points for the correct event with incomplete title or missing class; award 1 point for identifying a major Kahramanmaras shock but not the correct winner.",
+        "points": 4
+      },
+      {
+        "description": "Uses the weighted score formula, the correct sequence maxima for significance and felt reports, and the correct alert-point mapping.",
+        "name": "Formula and normalization setup",
+        "partial_credit": "Award 1-3 points for using only some components or using the right formula with one normalization or alert error.",
+        "points": 4
+      },
+      {
+        "description": "Reports the winning components within tolerance: magnitude 97.500, intensity 95.370, significance 100.000, alert 100.000, and felt 100.000.",
+        "name": "Winning component values",
+        "partial_credit": "Award about 0.8 points per correct component, with minor rounding differences acceptable.",
+        "points": 4
+      },
+      {
+        "description": "Computes 98.093 within tolerance and applies the >=85 critical threshold.",
+        "name": "Final score and threshold comparison",
+        "partial_credit": "Award 1-2 points for a near-correct score or correct threshold class with arithmetic mistakes.",
+        "points": 3
+      },
+      {
+        "description": "Identifies us6000jlqa / the M 7.5 Elbistan earthquake as the nearest competitor, gives its score about 91.577, and gives the margin about 6.516.",
+        "name": "Nearest rival and margin",
+        "partial_credit": "Award 1 point for naming the rival without a correct score or margin.",
+        "points": 2
+      },
+      {
+        "description": "Explains in one sentence that the Pazarcik event wins through the combined ledger rather than magnitude alone, and that Elbistan remains close but lower on the scored components.",
+        "name": "Computed interpretation and rejected simplification",
+        "partial_credit": "Award 1 point for a valid but incomplete interpretation.",
+        "points": 2
+      },
+      {
+        "description": "Returns the requested compact JSON fields with rounded values and no multiple-choice structure, long action advice, or extra casualty/damage claims.",
+        "name": "Concise JSON output",
+        "partial_credit": "Award the point for minor field-name differences if all required values are clear.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-232_Q1",
+  "task_type": "short_answer",
+  "tolerances": {
+    "component_pct": 0.01,
+    "decision_margin": 0.01,
+    "nearest_rival_score": 0.01,
+    "selected_score": 0.01
+  }
+}

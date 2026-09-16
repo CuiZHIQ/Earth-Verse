@@ -1,0 +1,329 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-016_Q1",
+  "event_id": "CSX-016",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "heat_severity_anchor_hierarchy",
+  "primary_gt": {
+    "event_window_days": 46,
+    "candidate_tests": [
+      {
+        "test_id": "regional_heat_field_anchor",
+        "computed_value": {
+          "event_window_days": 46,
+          "mean_tmax_margin_over_40c": 4.65,
+          "absolute_tmax_margin_over_40c": 6.25,
+          "tmax_spatial_range_c": 4.81
+        },
+        "evidence_result": "pass",
+        "role": "primary_heat_anchor"
+      },
+      {
+        "test_id": "cool_point_scale_anchor",
+        "computed_value": {
+          "inside_regional_study_box": false,
+          "nearest_edge_distance_km": 1431.1,
+          "point_tmax_max_c": 27.9,
+          "gap_from_regional_max_c": 18.35,
+          "gap_from_regional_mean_max_c": 16.75,
+          "point_heatload_above_25c_c_days": 5.4,
+          "longest_run_tmax_ge_25c_days": 3
+        },
+        "evidence_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "precipitation_relief_anchor",
+        "computed_value": {
+          "event_totals_mm": [
+            112.73,
+            97.41,
+            110.37
+          ],
+          "mean_mm_per_day": [
+            2.45,
+            2.12,
+            2.4
+          ]
+        },
+        "evidence_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "image_surface_anchor",
+        "computed_value": {
+          "surface_change_pre_count": 0,
+          "surface_change_post_count": 0,
+          "surface_change_status": "no_sufficient_scenes",
+          "event_catalog_count": 0
+        },
+        "evidence_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "exposure_denominator_anchor",
+        "computed_value": {
+          "population_millions": 10.849,
+          "exposure_weighted_mean_margin_c_million": 50.45
+        },
+        "evidence_result": "pass",
+        "role": "supporting_context"
+      }
+    ],
+    "primary_heat_calibration": {
+      "label": "regional_heat_field_calibration",
+      "primary_anchor": "regional_heat_field_anchor",
+      "supporting_context": [
+        "exposure_denominator_anchor"
+      ],
+      "not_primary_heat_anchors": [
+        "cool_point_scale_anchor",
+        "precipitation_relief_anchor",
+        "image_surface_anchor"
+      ]
+    },
+    "one_sentence_interpretation": "The event calibrates as a severe regional heat-field episode; the cool point, precipitation means, and surface-change counts do not replace the regional Tmax field, while exposure is supporting context."
+  },
+  "key_values": {
+    "category_counts": {
+      "event_catalogs": 4,
+      "event_reports": 7,
+      "exposure_impact": 7,
+      "geospatial_context": 2,
+      "other": 3,
+      "physical_hazard": 8,
+      "remote_sensing": 3
+    },
+    "regional_study_box": {
+      "min_lon": 78.0,
+      "max_lon": 80.0,
+      "min_lat": 19.5,
+      "max_lat": 21.5
+    },
+    "regional_heat_field": {
+      "period_start": "2015-05-01",
+      "period_end": "2015-06-15",
+      "event_window_days": 46,
+      "regional_tmax_max_c": 46.25,
+      "regional_tmax_mean_c": 44.65,
+      "regional_tmax_min_c": 41.44,
+      "mean_tmax_margin_over_40c": 4.65,
+      "absolute_tmax_margin_over_40c": 6.25,
+      "tmax_spatial_range_c": 4.81
+    },
+    "point_scale_check": {
+      "latitude": 34.059753,
+      "longitude": 74.8125,
+      "elevation_m": 1606.0,
+      "inside_regional_study_box": false,
+      "nearest_edge_distance_km": 1431.1,
+      "point_tmax_max": {
+        "date": "2015-06-19",
+        "value_c": 27.9
+      },
+      "point_apparent_temperature_max": {
+        "date": "2015-06-19",
+        "value_c": 29.8
+      },
+      "point_tmin_max": {
+        "date": "2015-06-20",
+        "value_c": 17.2
+      },
+      "point_heatload_above_25c_c_days": 5.4,
+      "longest_run_tmax_ge_25c": {
+        "days": 3,
+        "start": "2015-06-18",
+        "end": "2015-06-20"
+      },
+      "gap_from_regional_max_c": 18.35,
+      "gap_from_regional_mean_max_c": 16.75
+    },
+    "precipitation_context": {
+      "event_totals_mm": [
+        112.73,
+        97.41,
+        110.37
+      ],
+      "mean_mm_per_day": [
+        2.45,
+        2.12,
+        2.4
+      ]
+    },
+    "surface_context": {
+      "surface_change_pre_count": 0,
+      "surface_change_post_count": 0,
+      "surface_change_status": "no_sufficient_scenes",
+      "event_catalog_count": 0
+    },
+    "exposure_context": {
+      "population": 10849061.098,
+      "population_millions": 10.849,
+      "exposure_weighted_mean_margin_c_million": 50.45
+    },
+    "candidate_tests": [
+      {
+        "test_id": "regional_heat_field_anchor",
+        "formula": "days=inclusive(start,end); mean_margin=mean_Tmax-40; absolute_margin=max_Tmax-40; spatial_range=max_Tmax-min_Tmax",
+        "computed_value": {
+          "event_window_days": 46,
+          "mean_tmax_margin_over_40c": 4.65,
+          "absolute_tmax_margin_over_40c": 6.25,
+          "tmax_spatial_range_c": 4.81
+        },
+        "threshold_result": "pass",
+        "role": "primary_heat_anchor"
+      },
+      {
+        "test_id": "cool_point_scale_anchor",
+        "formula": "inside study box and both regional temperature gaps <=5 C",
+        "computed_value": {
+          "inside_regional_study_box": false,
+          "nearest_edge_distance_km": 1431.1,
+          "point_tmax_max_c": 27.9,
+          "gap_from_regional_max_c": 18.35,
+          "gap_from_regional_mean_max_c": 16.75,
+          "point_heatload_above_25c_c_days": 5.4,
+          "longest_run_tmax_ge_25c_days": 3
+        },
+        "threshold_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "precipitation_relief_anchor",
+        "formula": "daily_mean_mm = event_total_mm / 46; relief_anchor = at least two products >=5.0 mm/day",
+        "computed_value": {
+          "event_totals_mm": [
+            112.73,
+            97.41,
+            110.37
+          ],
+          "mean_mm_per_day": [
+            2.45,
+            2.12,
+            2.4
+          ]
+        },
+        "threshold_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "image_surface_anchor",
+        "formula": "surface_anchor = pre_count>=1 and post_count>=1 and event_catalog_count>=1",
+        "computed_value": {
+          "surface_change_pre_count": 0,
+          "surface_change_post_count": 0,
+          "surface_change_status": "no_sufficient_scenes",
+          "event_catalog_count": 0
+        },
+        "threshold_result": "fail",
+        "role": "not_primary_heat_anchor"
+      },
+      {
+        "test_id": "exposure_denominator_anchor",
+        "formula": "population_millions=population/1e6; exposure_weighted_mean_margin=population_millions*mean_Tmax_margin_over_40C",
+        "computed_value": {
+          "population_millions": 10.849,
+          "exposure_weighted_mean_margin_c_million": 50.45
+        },
+        "threshold_result": "pass",
+        "role": "supporting_context"
+      }
+    ],
+    "primary_heat_calibration": {
+      "label": "regional_heat_field_calibration",
+      "primary_anchor": "regional_heat_field_anchor",
+      "supporting_context": [
+        "exposure_denominator_anchor"
+      ],
+      "not_primary_heat_anchors": [
+        "cool_point_scale_anchor",
+        "precipitation_relief_anchor",
+        "image_surface_anchor"
+      ]
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Anchor hierarchy JSON",
+        "points": 3,
+        "description": "Returns event_window_days, the five named tests, primary_heat_calibration, and one concise interpretation.",
+        "partial_credit": "Give partial credit for a mostly correct structure with one missing required field."
+      },
+      {
+        "name": "Regional heat-field metrics",
+        "points": 4,
+        "description": "Computes the 46-day window, 4.65 C mean margin, 6.25 C absolute margin, and 4.81 C spatial range.",
+        "partial_credit": "Award 2-3 points for correct formulas with a minor rounding error or one missing margin."
+      },
+      {
+        "name": "Scale-mismatch and relief metrics",
+        "points": 4,
+        "description": "Computes point distance, point temperature gaps, point heat load, precipitation daily means, and surface-scene counts.",
+        "partial_credit": "Award 2-3 points for most values correct but one evidence stream incomplete."
+      },
+      {
+        "name": "Evidence-role assignment",
+        "points": 3,
+        "description": "Assigns the regional heat field as primary, exposure as supporting context, and the point, precipitation, and image rows as non-primary.",
+        "partial_credit": "Award 1-2 points for one incorrect role with otherwise correct arithmetic."
+      },
+      {
+        "name": "Exposure denominator use",
+        "points": 2,
+        "description": "Computes population in millions and exposure-weighted mean margin, while treating exposure as consequence context rather than heat intensity.",
+        "partial_credit": "Award 1 point for the exposure arithmetic without the bounded role."
+      },
+      {
+        "name": "Rejected substitutes",
+        "points": 2,
+        "description": "Rejects at least two tempting substitutes using calculations, especially the cool point, weak precipitation relief, absent image pairing, or standalone exposure.",
+        "partial_credit": "Award 1 point for one correct rejection."
+      },
+      {
+        "name": "Bounded interpretation",
+        "points": 2,
+        "description": "Provides a concise event-specific interpretation without impact accounting or response advice.",
+        "partial_credit": "Award 1 point for a correct but overlong interpretation."
+      }
+    ]
+  },
+  "event": {
+    "event_id": "CSX-016",
+    "event_name": "2015 India-Pakistan heat wave",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_date_or_window": "2015-05-01 to 2015-06-15 for gridded heat calculations"
+  },
+  "decision_rule": {
+    "summary": "Compute each anchor test, apply its evidence rule, and use only a passing regional heat-field test as the primary heat-severity anchor.",
+    "requires_computation": true,
+    "primary_anchor_rule": "primary_heat_anchor must be a passing physical heat-field row",
+    "supporting_context_rows": [
+      "exposure_denominator_anchor"
+    ],
+    "failed_primary_rows": [
+      "cool_point_scale_anchor",
+      "precipitation_relief_anchor",
+      "image_surface_anchor"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/event_catalogs/event_catalogs_003_NASA_EONET_event_search.xml"
+    ],
+    "notes": "Computed from local event files only; no network access is used."
+  }
+}

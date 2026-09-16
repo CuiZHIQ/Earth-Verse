@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-140_Q2",
+  "event_id": "CSX-140",
+  "package_id": "CSX-140",
+  "task_type": "short_answer",
+  "task_subtype": "key_intermediate_variable_ranking",
+  "target_family": "atacama_rainfall_outlier_key_intermediate_variable_ranking",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "local_climatology_ratio",
+    "target_family": "atacama_rainfall_outlier_key_intermediate_variable_ranking",
+    "computed_values": {
+      "ratio_x_annual": 14.12,
+      "report_total_anchor_mm": 50,
+      "antofagasta_share_of_report_total": 0.48,
+      "largest_grid_peak_mm": 41.2,
+      "below_report_total": true,
+      "killed_plus_missing": 146,
+      "homes_impacted": 8000,
+      "destroyed_home_share": 0.25,
+      "uniform_50mm_grid_case": false
+    },
+    "variable_scores": {
+      "local_climatology_ratio": 0.98,
+      "largest_grid_peak_below_report_total": 0.91,
+      "report_total_and_station_share": 0.78,
+      "killed_missing_or_home_damage_counts": 0.55,
+      "uniform_50mm_grid_case": 0.28,
+      "loss_count_only": 0.12
+    },
+    "ranked_variables": [
+      "local_climatology_ratio",
+      "largest_grid_peak_below_report_total",
+      "report_total_and_station_share",
+      "killed_missing_or_home_damage_counts",
+      "uniform_50mm_grid_case",
+      "loss_count_only"
+    ],
+    "key_variable": "local_climatology_ratio",
+    "rejected_variable": "loss_count_only",
+    "reasoning_path": [
+      "24 mm is 14.12 times the 1.7 mm annual normal",
+      "the report total anchor is 50 mm and Antofagasta supplies 0.48 of that anchor",
+      "largest gridded/statistical peak is 41.2 mm, below the report total anchor",
+      "loss counts support severity but do not diagnose rainfall anomaly"
+    ]
+  },
+  "key_values": {
+    "event_name": "March 2015 Atacama Desert storm and flash floods",
+    "event_window": {
+      "start_date": "2015-03-24",
+      "end_date": "2015-03-26",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "source_values": {
+      "rain_total_threshold_mm": 50,
+      "antofagasta_rain_mm": 24,
+      "antofagasta_yearly_average_mm": 1.7,
+      "people_killed": 26,
+      "people_missing": 120,
+      "homes_swept_away": 2000,
+      "homes_severely_damaged": 6000
+    },
+    "peak_summaries_mm": {
+      "era5_land_mm": 41.2,
+      "gpm_imerg_mm": 34.835,
+      "chirps_mm": 9.14
+    },
+    "derived_values": {
+      "ratio_x_annual": 14.117647058823529,
+      "report_total_anchor_mm": 50,
+      "antofagasta_share_of_report_total": 0.48,
+      "largest_grid_peak_mm": 41.200408339364,
+      "largest_grid_peak_below_50mm": true,
+      "uniform_50mm_grid_case": false,
+      "killed_plus_missing": 146,
+      "homes_impacted": 8000,
+      "destroyed_home_share": 0.25
+    },
+    "tolerances": {
+      "ratio_x_annual": 0.02,
+      "report_total_anchor_mm": 0.0,
+      "antofagasta_share_of_report_total": 0.01,
+      "largest_grid_peak_mm": 0.1,
+      "destroyed_home_share": 0.01
+    }
+  },
+  "ranking_logic": {
+    "scoring_stance": "Rank intermediate variables by diagnostic leverage for the conclusion that the event is a local-climatology rainfall outlier, not a uniform extreme 50 mm precipitation-grid case.",
+    "highest_weight": "Local climatology ratio is thresholded against the arid-site annual normal and directly explains why modest absolute rain can be extraordinary in Atacama.",
+    "secondary_weight": "The largest grid peak below the report total rainfall anchor is the strongest negative check against the uniform 50 mm grid-case shortcut.",
+    "lower_weight": "Impact counts are important consequences but weaker meteorological discriminators; loss-count-only reasoning is rejected.",
+    "excluded_evidence": [
+      "OSM",
+      "AOI",
+      "population",
+      "exposure",
+      "response_priority",
+      "advice"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Returned JSON shape",
+        "points": 3,
+        "description": "Includes answer, target_family, computed_values, variable_scores, ranked_variables, key_variable, rejected_variable, and reasoning_path.",
+        "partial_credit": "Award up to 2 points for parseable compact JSON with one missing or slightly renamed required field."
+      },
+      {
+        "name": "Top-ranked diagnostic variable",
+        "points": 4,
+        "description": "Ranks local_climatology_ratio first and explains why annual-normalized rainfall has the strongest leverage for the Atacama outlier conclusion.",
+        "partial_credit": "Award 2 points if the ratio is computed but not ranked first; award 1 point for a vague outlier argument without the ranking."
+      },
+      {
+        "name": "Local climatology calculation",
+        "points": 3,
+        "description": "Computes 24 / 1.7 = 14.12 times annual average for Antofagasta.",
+        "partial_credit": "Award up to 2 points for using the correct inputs with minor rounding error, or 1 point for naming the ratio without calculation."
+      },
+      {
+        "name": "Daily and gridded rainfall calculations",
+        "points": 4,
+        "description": "Computes the 50 mm report rainfall anchor, 0.48 Antofagasta-to-report-total share, and 41.2 mm largest gridded/statistical event maximum.",
+        "partial_credit": "Award partial credit in proportion to the number of correct rainfall intermediates and formulas."
+      },
+      {
+        "name": "Ranks against the 50 mm grid-case shortcut",
+        "points": 3,
+        "description": "Uses the below-report-total largest grid peak to reject a uniform extreme 50 mm grid case while keeping it below the climatology ratio.",
+        "partial_credit": "Award up to 2 points for recognizing the grid maximum is below the report total anchor without a clear ranking."
+      },
+      {
+        "name": "Impact evidence used as support only",
+        "points": 2,
+        "description": "Computes 146 killed-plus-missing people, 8000 impacted homes, and 0.25 swept-away share without treating loss counts as the meteorological key variable.",
+        "partial_credit": "Award 1 point for correct impact counts but weak discussion of their diagnostic limits."
+      },
+      {
+        "name": "Evidence discipline and units",
+        "points": 1,
+        "description": "Uses only local rainfall, gridded/statistical summary, climatology, and original report-count evidence, with clear units and no response-priority advice.",
+        "partial_credit": "Award 0.5 point for minor unit or wording issues that do not change the answer."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "package_id": "CSX-140",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_March_2015_Atacama_Desert_storm_and_flash_floods.json",
+      "data/other/other_001_NASA_Earth_Observatory_Flooding_in_the_Chilean_Desert.html",
+      "data/physical_hazard/physical_hazard_004_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

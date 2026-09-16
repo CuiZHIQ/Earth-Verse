@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-015_Q1",
+  "event_id": "CSX-015",
+  "task_type": "short_answer",
+  "target_family": "heat_drought_lake_response_scenario_model",
+  "evaluation_mode": "hybrid",
+  "event": {
+    "name": "2022 China heat wave and drought",
+    "region": "East Asia"
+  },
+  "primary_gt": {
+    "answer_type": "poyang_heat_drought_lake_response_model",
+    "source_paths": {
+      "event_window": "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "lake_report": "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+      "heat_series": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "precipitation_products": [
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+      ],
+      "remote_change_products": [
+        "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+        "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ],
+      "aoi_geometry": "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "population": "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "road_service_exposure": "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    },
+    "process_model": {
+      "event_window": {
+        "start": "2022-06-01",
+        "end": "2022-08-31"
+      },
+      "lake_timeline": {
+        "annual_high_date": "2022-06-23",
+        "dry_season_start_date": "2022-08-06",
+        "dry_season_early_by_days": 100,
+        "level_start_m": 11.99,
+        "level_end_date": "2022-08-30",
+        "level_end_m": 8.96,
+        "drop_m": 3.03,
+        "drop_percent": 25.3,
+        "level_span_days": 24,
+        "drop_rate_m_per_day": 0.126,
+        "drop_rate_cm_per_day": 12.6,
+        "image_start_date": "2022-07-10",
+        "image_end_date": "2022-08-27",
+        "image_span_days": 48
+      },
+      "heat_stress": {
+        "window_start": "2022-08-06",
+        "window_end": "2022-08-30",
+        "temperature_adjustment_c": 0.0,
+        "longest_Tmax35_start": "2022-08-07",
+        "longest_Tmax35_end": "2022-08-23",
+        "longest_Tmax35_days": 17,
+        "Tmax35_excess_C_day": 21.3,
+        "hot_night_threshold_c": 28.0,
+        "hot_night_count": 14,
+        "hot_night_fraction": 0.824,
+        "longest_apparent40_start": "2022-08-08",
+        "longest_apparent40_end": "2022-08-23",
+        "longest_apparent40_days": 16,
+        "apparent40_excess_C_day": 27.1,
+        "peak_apparent_date": "2022-08-20",
+        "peak_apparent_c": 44.0
+      },
+      "precipitation_evidence": {
+        "shared_start": "2022-06-01",
+        "shared_end": "2022-07-16",
+        "gpm_mean_mm": 519.7,
+        "chirps_mean_mm": 387.6,
+        "era5_mean_mm": 271.1,
+        "gpm_minus_chirps_mm": 132.1,
+        "gpm_to_chirps_ratio": 1.341,
+        "gap_to_dry_season_start_days": 21,
+        "gap_to_lake_image_days": 42,
+        "gap_to_last_lake_level_days": 45,
+        "interpretation": "precipitation_summaries_end_before_late_lake_drop_stage"
+      },
+      "remote_sensing_change": {
+        "dnbr_pre_window": [
+          "2022-04-02",
+          "2022-05-25"
+        ],
+        "dnbr_post_window": [
+          "2022-06-01",
+          "2022-08-30"
+        ],
+        "dnbr_mean": 0.009274,
+        "dnbr_max": 0.538638,
+        "embedding_mean_change": 0.013761,
+        "embedding_max_change": 0.250799,
+        "dnbr_max_to_mean_ratio": 58.1,
+        "embedding_max_to_mean_ratio": 18.2,
+        "aoi_scale_signal": "weak_mean_change"
+      },
+      "spatial_exposure_context": {
+        "weather_point": {
+          "lat": 30.475,
+          "lon": 112.526
+        },
+        "aoi_centroid": {
+          "lat": 36.0,
+          "lon": 120.5
+        },
+        "weather_to_aoi_distance_km": 962.4,
+        "population": 2485012.3,
+        "hospital_count": 24,
+        "police_count": 28,
+        "fire_station_count": 7,
+        "shelter_count": 12,
+        "critical_service_count": 71,
+        "major_road_way_count": 170,
+        "bridge_way_count": 29,
+        "total_osm_elements": 1000,
+        "spatial_transfer_caution": "large_weather_to_aoi_distance_do_not_treat_aoi_population_as_direct_poyang_impact_count"
+      }
+    },
+    "computed_metrics": {
+      "heat_persistence_index": 76.8,
+      "lake_drop_index": 84.0,
+      "late_precip_gap_index": 95.6,
+      "remote_mean_change_index": 23.0,
+      "exposure_service_index": 97.5,
+      "response_priority_score": 85.9
+    },
+    "scenario_analysis": {
+      "scenario_name": "plus_2C_and_10_day_continued_drop",
+      "heat_stress": {
+        "window_start": "2022-08-06",
+        "window_end": "2022-08-30",
+        "temperature_adjustment_c": 2.0,
+        "longest_Tmax35_start": "2022-08-06",
+        "longest_Tmax35_end": "2022-08-26",
+        "longest_Tmax35_days": 21,
+        "Tmax35_excess_C_day": 59.1,
+        "hot_night_threshold_c": 28.0,
+        "hot_night_count": 19,
+        "hot_night_fraction": 0.905,
+        "longest_apparent40_start": "2022-08-06",
+        "longest_apparent40_end": "2022-08-26",
+        "longest_apparent40_days": 21,
+        "apparent40_excess_C_day": 65.3,
+        "peak_apparent_date": "2022-08-20",
+        "peak_apparent_c": 46.0
+      },
+      "lake_timeline": {
+        "annual_high_date": "2022-06-23",
+        "dry_season_start_date": "2022-08-06",
+        "dry_season_early_by_days": 100,
+        "level_start_m": 11.99,
+        "level_end_date": "2022-08-30",
+        "level_end_m": 8.96,
+        "drop_m": 4.29,
+        "drop_percent": 35.8,
+        "level_span_days": 24,
+        "drop_rate_m_per_day": 0.126,
+        "drop_rate_cm_per_day": 12.6,
+        "image_start_date": "2022-07-10",
+        "image_end_date": "2022-08-27",
+        "image_span_days": 48,
+        "continued_drop_days": 10,
+        "scenario_level_date": "2022-09-09",
+        "scenario_level_m": 7.7
+      },
+      "computed_metrics": {
+        "heat_persistence_index": 98.1,
+        "lake_drop_index": 89.5,
+        "late_precip_gap_index": 95.6,
+        "remote_mean_change_index": 23.0,
+        "exposure_service_index": 97.5,
+        "response_priority_score": 95.0
+      },
+      "deltas_from_baseline": {
+        "heat_persistence_index": 21.3,
+        "lake_drop_index": 5.5,
+        "response_priority_score": 9.1,
+        "lake_level_m": -1.26,
+        "drop_m": 1.26
+      }
+    },
+    "response_priorities": [
+      {
+        "rank": 1,
+        "priority": "protect_drinking_water_irrigation_and_shipping_access",
+        "trigger_metrics": [
+          "lake_drop_index",
+          "scenario_level_m",
+          "drop_rate_cm_per_day"
+        ],
+        "rationale": "The observed lake drop is rapid and the continued-drop scenario lowers the reported level by another 1.26 m."
+      },
+      {
+        "rank": 2,
+        "priority": "heat_health_and_power_reliability_operations",
+        "trigger_metrics": [
+          "heat_persistence_index",
+          "hot_night_fraction",
+          "peak_apparent_c"
+        ],
+        "rationale": "Persistent hot days, hot nights, and high apparent temperature coincide with the low-water stage and intensify demand and health stress."
+      },
+      {
+        "rank": 3,
+        "priority": "targeted_field_reconnaissance_before_using_aoi_exposure_as_lake_impact_load",
+        "trigger_metrics": [
+          "weather_to_aoi_distance_km",
+          "remote_mean_change_index",
+          "exposure_service_index"
+        ],
+        "rationale": "AOI service exposure is high but remote mean change is weak and the weather-to-AOI distance is large, so local deployment needs confirmation."
+      }
+    ],
+    "mechanism_chain": [
+      "Summer inflow did not produce the normal lake swelling described in the report.",
+      "The late lake-drop window contains a 17-day Tmax >= 35 C sequence with frequent hot nights and high apparent temperature.",
+      "Package precipitation products share an end date weeks before the reported late-August low-water observations.",
+      "The report-based level sequence shows a 3.03 m decline over 24 days, while AOI mean remote-sensing change remains weak.",
+      "The +2 C and 10-day continued-drop scenario raises the response score from high to very high."
+    ],
+    "final_interpretation": "Package evidence supports a high-priority heat-drought low-water response centered on water access and heat operations, with scenario conditions escalating the priority while AOI exposure must be used cautiously because spatial transfer uncertainty is large."
+  },
+  "tolerances": {
+    "heat_load_c_day": {
+      "absolute": 0.2,
+      "unit": "C-day"
+    },
+    "hot_night_fraction": {
+      "absolute": 0.005,
+      "unit": "ratio"
+    },
+    "water_level_m": {
+      "absolute": 0.02,
+      "unit": "m"
+    },
+    "drop_percent": {
+      "absolute": 0.2,
+      "unit": "percent"
+    },
+    "drop_rate": {
+      "absolute": 0.2,
+      "unit": "cm/day"
+    },
+    "precipitation_mm": {
+      "absolute": 0.2,
+      "unit": "mm"
+    },
+    "distance_km": {
+      "absolute": 0.5,
+      "unit": "km"
+    },
+    "remote_mean": {
+      "absolute": 0.0005,
+      "unit": "unitless"
+    },
+    "index_score": {
+      "absolute": 0.2,
+      "unit": "points"
+    },
+    "population": {
+      "relative": 0.001,
+      "unit": "persons"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 2,
+        "description": "Finds the relevant report, heat, precipitation, remote-sensing, AOI, population, and OSM exposure records without visible filename hints, and cites package-relative paths."
+      },
+      {
+        "name": "Lake timeline and drop dynamics",
+        "points": 3,
+        "description": "Extracts the event window, image dates, dry-season start, lake levels, 3.03 m drop, 25.3 percent decline, 24-day span, and 12.6 cm/day mean drop rate."
+      },
+      {
+        "name": "Heat-stress sequence calculations",
+        "points": 3,
+        "description": "Computes the late-window 17-day Tmax >= 35 C run, 21.3 C-day heat load, 14 hot nights, 0.824 hot-night fraction, 16-day apparent >= 40 C run, 27.1 C-day apparent load, and 44.0 C peak."
+      },
+      {
+        "name": "Precipitation evidence and timing gap",
+        "points": 3,
+        "description": "Compares GPM, CHIRPS, and ERA5 summaries, including 519.7 mm, 387.6 mm, 271.1 mm, 132.1 mm product spread, 1.341 GPM/CHIRPS ratio, and the 21/42/45 day gaps to lake dates."
+      },
+      {
+        "name": "Remote-sensing and exposure synthesis",
+        "points": 3,
+        "description": "Uses mean dNBR and mean embedding change rather than maxima, computes the weak remote-change index, summarizes AOI population and OSM service/road counts, and flags the 962.4 km spatial transfer uncertainty."
+      },
+      {
+        "name": "Indices and response-priority model",
+        "points": 3,
+        "description": "Applies the specified formulas with clipping and rounding to produce baseline indices and a response priority score near 85.9."
+      },
+      {
+        "name": "Future scenario analysis",
+        "points": 2,
+        "description": "Applies the +2 C adjustment and 10-day continued lake drop to obtain scenario heat, lake level near 7.70 m, scenario response score near 95.0, and correct deltas."
+      },
+      {
+        "name": "Mechanism chain and operational interpretation",
+        "points": 1,
+        "description": "Gives a concise process explanation and response priorities grounded in the computed metrics, without generic disaster commentary."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "baseline_priority_label": "high",
+    "scenario_priority_label": "very_high",
+    "spatial_uncertainty_label": "large_transfer_uncertainty",
+    "remote_signal_label": "weak_mean_change"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_005_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "decision_rule": "all five gates true",
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_name": "2019-2020 Australian Black Summer heat-drought-fire-smoke event",
+    "event_window": {
+      "end_date": "2020-02-29",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2019-09-01"
+    },
+    "hazard_family": "wildfire_heat_drought_smoke"
+  },
+  "event_id": "CSX-254",
+  "key_values": {
+    "hot_dry_definition": "Tmax >= 40.0 C and precipitation < 1.0 mm",
+    "hot_dry_run_window": {
+      "end": "2019-12-30",
+      "start": "2019-12-16"
+    },
+    "peak_tmax_date": "2019-12-24",
+    "sentinel2_dnbr_max": 0.974,
+    "text_gate_patterns": {
+      "pyrocb_or_firestorm_text": "pyrocumulonimbus|fire-triggered clouds|firestorms",
+      "stratospheric_smoke_text": "15 to 19 kilometers|stratosphere"
+    },
+    "very_hot_dry_windy_definition": "Tmax >= 45.0 C and precipitation < 1.0 mm and wind >= 30.0 km/h",
+    "very_hot_dry_windy_run_window": {
+      "end": "2019-12-20",
+      "start": "2019-12-19"
+    }
+  },
+  "numeric_tolerances": {
+    "integer_counts": 0,
+    "peak_tmax_c": 0.1,
+    "sentinel2_dnbr_mean": 0.005
+  },
+  "primary_gt": {
+    "answer": "compound_fire_weather_smoke_threshold_pass",
+    "computed_consequence": "The threshold ledger supports a fire-weather-to-smoke cascade rather than a heat-only, rain/flood, or slow vegetation-change diagnosis.",
+    "gates": {
+      "burn_change_mean_gt_0_10": true,
+      "hot_dry_run_ge_10": true,
+      "pyrocb_or_firestorm_text": true,
+      "stratospheric_smoke_text": true,
+      "vhdw_run_ge_2": true
+    },
+    "metrics": {
+      "longest_hot_dry_run_days": 15,
+      "longest_very_hot_dry_windy_run_days": 2,
+      "peak_tmax_c": 46.0,
+      "sentinel2_dnbr_mean": 0.156
+    },
+    "rejected_alternative": "heat_only_or_vegetation_only",
+    "target_family": "threshold_ledger"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_Black_Summer_heat-drought-fire-smoke_event.json",
+      "data/event_reports/event_reports_001_Locked_anchor_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns compact JSON with target_family, metrics, gates, answer, rejected_alternative, and one ledger-tied computed_consequence.",
+        "name": "Requested JSON shape",
+        "partial_credit": "Give partial credit for minor key-name differences that preserve the same fields.",
+        "points": 3
+      },
+      {
+        "description": "Reports longest_hot_dry_run_days = 15, longest_very_hot_dry_windy_run_days = 2, peak_tmax_c = 46.0, and sentinel2_dnbr_mean = 0.156 within tolerance.",
+        "name": "Metric extraction",
+        "partial_credit": "Give partial credit for two or three correct metrics or recognizable threshold states.",
+        "points": 5
+      },
+      {
+        "description": "Applies the hot-dry, very-hot-dry-windy, and burn-change threshold definitions exactly.",
+        "name": "Predicate and formula use",
+        "partial_credit": "Give partial credit for correct qualitative gates with one threshold or inequality error.",
+        "points": 3
+      },
+      {
+        "description": "Sets all five gates to true and returns compound_fire_weather_smoke_threshold_pass using the all-gates decision rule.",
+        "name": "Gate ledger and final label",
+        "partial_credit": "Give partial credit for the correct label with one missing gate or correct gates with a mislabeled answer.",
+        "points": 4
+      },
+      {
+        "description": "Treats pyrocumulonimbus or firestorm support and stratospheric-smoke support as narrative gates, not as values inferred from dNBR.",
+        "name": "Text-gate separation",
+        "partial_credit": "Give partial credit for finding the right flags but blurring their source.",
+        "points": 2
+      },
+      {
+        "description": "Rejects heat-only, rain/flood, or slow vegetation-change alternatives through the failed ledger logic.",
+        "name": "Rejected alternative",
+        "partial_credit": "Give partial credit for rejecting one weaker alternative without tying it to a gate.",
+        "points": 2
+      },
+      {
+        "description": "Keeps the final sentence tied to the threshold result and avoids extra loss totals, national representativeness claims, action claims, or broad disaster explanation.",
+        "name": "Bounded computed consequence",
+        "partial_credit": "No credit if the answer turns into an action note or broad disaster explanation.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "threshold_ledger",
+  "task_id": "CSX-254_Q1",
+  "task_type": "numeric"
+}

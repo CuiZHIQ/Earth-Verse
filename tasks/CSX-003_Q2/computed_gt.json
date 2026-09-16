@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-003_Q2",
+  "event_id": "CSX-003",
+  "task_type": "expert_error_attribution",
+  "evaluation_mode": "hybrid",
+  "target_family": "expert_error_attribution",
+  "primary_gt": {
+    "answer_type": "expert_error_attribution",
+    "corrected_classification": "compound_persistent_heat_with_water_stress",
+    "error_attribution": {
+      "error_class": "wrong_operation_and_overdominant_index",
+      "rejected_counterfactual": "humid_heat_only",
+      "wrong_operation": "Treating any wet-bulb >=30 C hour as sufficient to dominate the event diagnosis.",
+      "correct_operation": "Count wet-bulb >=30 C hours inside the locked window and compare that duration with persistent daily heat and water-stress evidence."
+    },
+    "evidence_basis": {
+      "event_window": {
+        "path": "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+        "start": "2022-06-01",
+        "end": "2022-08-31",
+        "daily_records": 92,
+        "hourly_records": 2208
+      },
+      "heat_source": {
+        "path": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+        "compound_run_days": 11,
+        "compound_run_start": "2022-08-12",
+        "compound_run_end": "2022-08-22",
+        "peak_apparent_temp_c": 44.0,
+        "peak_apparent_temp_date": "2022-08-20"
+      },
+      "humidity_check": {
+        "path": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+        "wet_bulb_ge_30_hours": 1,
+        "max_wet_bulb_c": 30.6,
+        "max_wet_bulb_time": "2022-08-16T18:00",
+        "humid_heat_duration_threshold_hours": 24
+      },
+      "water_stress_report": {
+        "path": "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html",
+        "role": "direct_event_context",
+        "matched_terms": [
+          "poyang lake",
+          "drought",
+          "drained",
+          "freshwater lake",
+          "water levels",
+          "irrigation",
+          "shipping",
+          "drinking water"
+        ]
+      }
+    },
+    "calculation_check": {
+      "compound_heat_rule": "Tmax >=35 C AND Tmin >=28 C AND apparent_temperature_max >=40 C",
+      "wet_bulb_formula": "Stull approximation from hourly temperature_2m and relative_humidity_2m",
+      "humid_heat_shortfall_hours": 23,
+      "apparent_minus_wet_bulb_peak_c": 13.4
+    },
+    "insufficient_alternatives": [
+      {
+        "basis": "humid_heat_only",
+        "paths": [
+          "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+        ],
+        "reason_code": "insufficient_duration",
+        "numeric_or_path_reason": "Only 1 hour has estimated wet-bulb >=30 C, 23 hours below the 24-hour duration threshold."
+      },
+      {
+        "basis": "event_anchor_only",
+        "paths": [
+          "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json"
+        ],
+        "reason_code": "weak_context",
+        "numeric_or_path_reason": "The anchor supplies the 2022-06-01 to 2022-08-31 window but not the daily heat, hourly wet-bulb, or Poyang Lake stress measurements."
+      }
+    ],
+    "minimal_required_paths": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html"
+    ],
+    "final_assessment": "The humid-heat-only diagnosis is an operation error: one high wet-bulb hour is insufficient, while the package supports persistent compound heat with Poyang Lake water stress."
+  },
+  "key_values": {
+    "thresholds": {
+      "compound_tmax_c_min": 35.0,
+      "compound_tmin_c_min": 28.0,
+      "compound_apparent_c_min": 40.0,
+      "wet_bulb_c_min": 30.0,
+      "humid_heat_duration_threshold_hours": 24
+    },
+    "intermediate_values": {
+      "daily_records_in_window": 92,
+      "hourly_records_in_window": 2208,
+      "compound_run": {
+        "days": 11,
+        "start": "2022-08-12",
+        "end": "2022-08-22"
+      },
+      "peak_apparent_temperature_c": 44.0,
+      "peak_apparent_temperature_date": "2022-08-20",
+      "wet_bulb_ge_30_hours": 1,
+      "max_wet_bulb_c": 30.6,
+      "max_wet_bulb_time": "2022-08-16T18:00",
+      "humid_heat_shortfall_hours": 23,
+      "apparent_minus_wet_bulb_peak_c": 13.4
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "schema_and_classification",
+        "points": 3,
+        "description": "Returns the required expert_error_attribution JSON and corrected_classification compound_persistent_heat_with_water_stress."
+      },
+      {
+        "name": "source_paths",
+        "points": 3,
+        "description": "Uses package-relative paths for the locked anchor, Open-Meteo archive, NASA Poyang Lake report, and rejected alternatives."
+      },
+      {
+        "name": "event_window_and_record_counts",
+        "points": 3,
+        "description": "Uses the locked 2022-06-01 to 2022-08-31 event window and reports 92 daily records and 2208 hourly records from the heat archive."
+      },
+      {
+        "name": "heat_persistence_and_peak",
+        "points": 4,
+        "description": "Computes the 11-day compound heat run from 2022-08-12 to 2022-08-22 and the 44.0 C apparent-temperature peak on 2022-08-20."
+      },
+      {
+        "name": "humid_heat_error_attribution",
+        "points": 3,
+        "description": "Computes 1 wet-bulb hour at or above 30 C, max wet bulb 30.6 C at 2022-08-16T18:00, and the 23-hour shortfall against the 24-hour humid-heat-only threshold."
+      },
+      {
+        "name": "water_stress_context",
+        "points": 2,
+        "description": "Identifies the NASA Poyang Lake report as direct event context and includes package-derived water-stress terms without inventing unreported values."
+      },
+      {
+        "name": "insufficient_alternative_rejection",
+        "points": 2,
+        "description": "Rejects at least one tempting basis such as humid_heat_only or event_anchor_only with a numeric or source-path reason."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_China_heat_wave_and_drought.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html"
+    ],
+    "event_window_source": "package_event_lock_targeted_refined_v4_repaired"
+  }
+}

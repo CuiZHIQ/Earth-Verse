@@ -1,0 +1,410 @@
+{
+  "answer_guidance": {
+    "baseline_indices": {
+      "access_response_index": 89.1,
+      "affected_norm": 0.856,
+      "compound_priority_index": 90.8,
+      "critical_service_norm": 0.954,
+      "displaced_norm": 0.838,
+      "hydro_trigger_index": 92.0,
+      "impassable_norm": 0.796,
+      "peak_concentration_norm": 0.871,
+      "priority_band": "extreme",
+      "rainfall_loading_norm": 0.88,
+      "road_bridge_norm": 0.955,
+      "terrain_process_norm": 1.0,
+      "waterway_norm": 1.0
+    },
+    "event_window": {
+      "duration_days": 13,
+      "end_date": "2024-09-18",
+      "start_date": "2024-09-06"
+    },
+    "exposure_and_impact": {
+      "affected_people": 2140000,
+      "bridge_sections_affected": 32,
+      "displaced_people": 41900,
+      "evacuation_centres": 404,
+      "implied_impassable_sections": 47.8,
+      "mapped_critical_amenities": 477,
+      "mapped_road_features": 261,
+      "mapped_waterway_features": 258,
+      "reported_passable_pct": 75,
+      "road_bridge_sections_affected": 191,
+      "road_sections_affected": 159,
+      "worldpop_population_context": 486243
+    },
+    "final_answer": {
+      "baseline_priority_band": "extreme",
+      "recommended_first_focus": "flash-flood and landslide access protection for roads, bridges, evacuation centres, and critical services",
+      "scenario_delta_index_points": 5.4,
+      "scenario_priority_band": "extreme"
+    },
+    "rainfall": {
+      "chirps_max_mm": 492.3,
+      "chirps_mean_mm": 105.5,
+      "chirps_to_imerg_mean_ratio": 0.742,
+      "ensemble_mean_mm": 106.3,
+      "era5_land_max_mm": 291.8,
+      "era5_land_mean_mm": 71.1,
+      "era5_to_imerg_mean_ratio": 0.5,
+      "imerg_daily_mean_mm_day": 10.9,
+      "imerg_max_mm": 637.7,
+      "imerg_mean_mm": 142.2,
+      "imerg_peak_to_mean_ratio": 4.484,
+      "mean_product_cv": 0.273
+    },
+    "scenario_analysis": {
+      "assumptions": {
+        "displaced_people_multiplier": 1.2,
+        "passable_share_pct": 65,
+        "precipitation_multiplier": 1.15
+      },
+      "scenario_access_response_index": 94.4,
+      "scenario_compound_priority_index": 96.2,
+      "scenario_delta_index_points": 5.4,
+      "scenario_displaced_people": 50280,
+      "scenario_hydro_trigger_index": 97.4,
+      "scenario_imerg_max_mm": 733.3,
+      "scenario_imerg_mean_mm": 163.5,
+      "scenario_impassable_sections": 66.8,
+      "scenario_priority_band": "extreme",
+      "scenario_rainfall_loading_norm": 1.0
+    },
+    "structured_answer": {
+      "baseline_indices": {
+        "access_response_index": 89.1,
+        "affected_norm": 0.856,
+        "compound_priority_index": 90.8,
+        "critical_service_norm": 0.954,
+        "displaced_norm": 0.838,
+        "hydro_trigger_index": 92.0,
+        "impassable_norm": 0.796,
+        "peak_concentration_norm": 0.871,
+        "priority_band": "extreme",
+        "rainfall_loading_norm": 0.88,
+        "road_bridge_norm": 0.955,
+        "terrain_process_norm": 1.0,
+        "waterway_norm": 1.0
+      },
+      "computed_metrics": {
+        "exposure_and_impact": {
+          "affected_people": 2140000,
+          "displaced_people": 41900,
+          "evacuation_centres": 404,
+          "implied_impassable_sections": 47.8,
+          "mapped_critical_amenities": 477,
+          "mapped_road_features": 261,
+          "mapped_waterway_features": 258,
+          "reported_passable_pct": 75,
+          "road_bridge_sections_affected": 191,
+          "worldpop_population_context": 486243
+        },
+        "rainfall": {
+          "chirps_max_mm": 492.3,
+          "chirps_mean_mm": 105.5,
+          "chirps_to_imerg_mean_ratio": 0.742,
+          "ensemble_mean_mm": 106.3,
+          "era5_land_max_mm": 291.8,
+          "era5_land_mean_mm": 71.1,
+          "era5_to_imerg_mean_ratio": 0.5,
+          "imerg_daily_mean_mm_day": 10.9,
+          "imerg_max_mm": 637.7,
+          "imerg_mean_mm": 142.2,
+          "imerg_peak_to_mean_ratio": 4.484
+        },
+        "surface_context": {
+          "annual_embedding_cosine_change_max": 0.779,
+          "annual_embedding_cosine_change_mean": 0.0202,
+          "interpretation_constraint": "The annual embedding change is useful context for land-surface change but is not direct evidence of flood depth, flood area, or storm damage."
+        }
+      },
+      "final_interpretation": "The event is an extreme compound runoff and access-response stress case: strong typhoon-monsoon rainfall loading aligns with flash-flood and landslide processes, dense road-waterway-critical-service exposure, and large reported population disruption, while a 15% wetter scenario raises the priority index by about 5.4 points.",
+      "process_model": {
+        "event_window": {
+          "duration_days": 13,
+          "end_date": "2024-09-18",
+          "start_date": "2024-09-06"
+        },
+        "mechanism_chain": [
+          "Typhoon Yagi interacted with the southwest monsoon during the event window.",
+          "Multi-product rainfall fields show widespread event accumulation with a concentrated IMERG maximum.",
+          "Narrative evidence supports flash-flood, landslide, runoff, hillside, waterway, and lowland sensitivity.",
+          "Reported affected population, displacement, evacuation-centre use, and road/bridge disruption indicate access-response stress.",
+          "Mapped waterways, roads, and critical amenities create a dense exposure context for rapid runoff impacts."
+        ]
+      },
+      "response_priorities": [
+        {
+          "focus": "Protect road and bridge access routes near waterways and lowlands.",
+          "rank": 1,
+          "reason": "191 affected road/bridge sections, about 47.8 implied impassable sections, and waterway_norm = 1.0."
+        },
+        {
+          "focus": "Prioritize evacuation-centre support and displaced-population logistics.",
+          "rank": 2,
+          "reason": "41,900 displaced people, 404 evacuation centres, and displaced_norm = 0.838."
+        },
+        {
+          "focus": "Maintain critical-service continuity for schools, hospitals, shelters, police, and fire stations.",
+          "rank": 3,
+          "reason": "477 mapped critical amenities and critical_service_norm = 0.954."
+        }
+      ],
+      "scenario_analysis": {
+        "scenario_access_response_index": 94.4,
+        "scenario_compound_priority_index": 96.2,
+        "scenario_delta_index_points": 5.4,
+        "scenario_displaced_people": 50280,
+        "scenario_hydro_trigger_index": 97.4,
+        "scenario_imerg_max_mm": 733.3,
+        "scenario_imerg_mean_mm": 163.5,
+        "scenario_impassable_sections": 66.8,
+        "scenario_priority_band": "extreme"
+      },
+      "source_paths": [
+        "metadata/event.json",
+        "metadata/files.csv",
+        "data/event_reports/event_reports_003_Locked_event_anchor_Active_monsoon_and_Typhoon_Yagi_compound_rainfall.json",
+        "data/event_reports/event_reports_004_AHA_Centre_Flash_Update_No._03_TC_Yagi_and_Southwest_Monsoon.html",
+        "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+        "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+        "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ]
+    },
+    "target_family": "compound_rainfall_runoff_response_model"
+  },
+  "evaluation_mode": "hybrid",
+  "event": {
+    "event_name": "Active monsoon and Typhoon Yagi compound rainfall",
+    "event_window": {
+      "end_date": "2024-09-18",
+      "source": "package_event_lock_targeted_refined_v4_repaired",
+      "start_date": "2024-09-06"
+    },
+    "hazard_family": "atmospheric_river_monsoon_extremes",
+    "region": "Southeast Asia"
+  },
+  "event_id": "CSX-285",
+  "judge_anchors": {
+    "expected_priority_logic": "The baseline is already extreme because rainfall loading, concentration, waterway exposure, reported access disruption, and population displacement all score high; the wetter scenario pushes the compound priority index upward by about 5.4 points.",
+    "must_not_claim": [
+      "exact flood depth",
+      "observed inundation area from the satellite embedding",
+      "precise landslide count"
+    ]
+  },
+  "key_intermediate_values": {
+    "normalization_rules": {
+      "access_response_index": "100*(0.30*road_bridge_norm+0.25*affected_norm+0.20*displaced_norm+0.15*critical_service_norm+0.10*impassable_norm)",
+      "compound_priority_index": "0.60*hydro_trigger_index+0.40*access_response_index",
+      "hydro_trigger_index": "100*(0.45*rainfall_loading_norm+0.20*peak_concentration_norm+0.20*waterway_norm+0.15*terrain_process_norm)",
+      "peak_concentration_norm": "clip((imerg_max/imerg_mean - 1)/4,0,1)",
+      "rainfall_loading_norm": "clip(0.5*(imerg_mean/150)+0.3*(chirps_mean/120)+0.2*(era5_mean/100),0,1)"
+    },
+    "osm_detail_counts": {
+      "critical_amenities": 477,
+      "fire_stations": 17,
+      "hospitals": 35,
+      "osm_bridge_features": 4,
+      "police": 44,
+      "road_features": 261,
+      "schools": 269,
+      "shelters": 112,
+      "waterway_features": 258
+    },
+    "surface_context": {
+      "annual_embedding_cosine_change_max": 0.779,
+      "annual_embedding_cosine_change_mean": 0.0202,
+      "aoi_geometry_type": "Polygon",
+      "use_constraint": "contextual_land_surface_change_signal_not_direct_damage_attribution"
+    },
+    "text_flags": {
+      "flash_floods": true,
+      "heavy_rainfall": true,
+      "landslides": true,
+      "runoff_or_hillside_waterway_lowland_sensitivity": true,
+      "typhoon_monsoon_interaction": true
+    }
+  },
+  "numeric_tolerances": {
+    "indices": 0.2,
+    "normalized_terms": 0.01,
+    "osm_counts": 3,
+    "people": 50000,
+    "rainfall_mm": 1.0,
+    "ratios": 0.02,
+    "sections": 5
+  },
+  "primary_gt": {
+    "baseline_indices": {
+      "access_response_index": 89.1,
+      "affected_norm": 0.856,
+      "compound_priority_index": 90.8,
+      "critical_service_norm": 0.954,
+      "displaced_norm": 0.838,
+      "hydro_trigger_index": 92.0,
+      "impassable_norm": 0.796,
+      "peak_concentration_norm": 0.871,
+      "priority_band": "extreme",
+      "rainfall_loading_norm": 0.88,
+      "road_bridge_norm": 0.955,
+      "terrain_process_norm": 1.0,
+      "waterway_norm": 1.0
+    },
+    "computed_metrics": {
+      "exposure_and_impact": {
+        "affected_people": 2140000,
+        "displaced_people": 41900,
+        "evacuation_centres": 404,
+        "implied_impassable_sections": 47.8,
+        "mapped_critical_amenities": 477,
+        "mapped_road_features": 261,
+        "mapped_waterway_features": 258,
+        "reported_passable_pct": 75,
+        "road_bridge_sections_affected": 191,
+        "worldpop_population_context": 486243
+      },
+      "rainfall": {
+        "chirps_max_mm": 492.3,
+        "chirps_mean_mm": 105.5,
+        "chirps_to_imerg_mean_ratio": 0.742,
+        "ensemble_mean_mm": 106.3,
+        "era5_land_max_mm": 291.8,
+        "era5_land_mean_mm": 71.1,
+        "era5_to_imerg_mean_ratio": 0.5,
+        "imerg_daily_mean_mm_day": 10.9,
+        "imerg_max_mm": 637.7,
+        "imerg_mean_mm": 142.2,
+        "imerg_peak_to_mean_ratio": 4.484
+      },
+      "surface_context": {
+        "annual_embedding_cosine_change_max": 0.779,
+        "annual_embedding_cosine_change_mean": 0.0202,
+        "interpretation_constraint": "The annual embedding change is useful context for land-surface change but is not direct evidence of flood depth, flood area, or storm damage."
+      }
+    },
+    "final_interpretation": "The event is an extreme compound runoff and access-response stress case: strong typhoon-monsoon rainfall loading aligns with flash-flood and landslide processes, dense road-waterway-critical-service exposure, and large reported population disruption, while a 15% wetter scenario raises the priority index by about 5.4 points.",
+    "process_model": {
+      "event_window": {
+        "duration_days": 13,
+        "end_date": "2024-09-18",
+        "start_date": "2024-09-06"
+      },
+      "mechanism_chain": [
+        "Typhoon Yagi interacted with the southwest monsoon during the event window.",
+        "Multi-product rainfall fields show widespread event accumulation with a concentrated IMERG maximum.",
+        "Narrative evidence supports flash-flood, landslide, runoff, hillside, waterway, and lowland sensitivity.",
+        "Reported affected population, displacement, evacuation-centre use, and road/bridge disruption indicate access-response stress.",
+        "Mapped waterways, roads, and critical amenities create a dense exposure context for rapid runoff impacts."
+      ]
+    },
+    "response_priorities": [
+      {
+        "focus": "Protect road and bridge access routes near waterways and lowlands.",
+        "rank": 1,
+        "reason": "191 affected road/bridge sections, about 47.8 implied impassable sections, and waterway_norm = 1.0."
+      },
+      {
+        "focus": "Prioritize evacuation-centre support and displaced-population logistics.",
+        "rank": 2,
+        "reason": "41,900 displaced people, 404 evacuation centres, and displaced_norm = 0.838."
+      },
+      {
+        "focus": "Maintain critical-service continuity for schools, hospitals, shelters, police, and fire stations.",
+        "rank": 3,
+        "reason": "477 mapped critical amenities and critical_service_norm = 0.954."
+      }
+    ],
+    "scenario_analysis": {
+      "scenario_access_response_index": 94.4,
+      "scenario_compound_priority_index": 96.2,
+      "scenario_delta_index_points": 5.4,
+      "scenario_displaced_people": 50280,
+      "scenario_hydro_trigger_index": 97.4,
+      "scenario_imerg_max_mm": 733.3,
+      "scenario_imerg_mean_mm": 163.5,
+      "scenario_impassable_sections": 66.8,
+      "scenario_priority_band": "extreme"
+    },
+    "source_paths": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Active_monsoon_and_Typhoon_Yagi_compound_rainfall.json",
+      "data/event_reports/event_reports_004_AHA_Centre_Flash_Update_No._03_TC_Yagi_and_Southwest_Monsoon.html",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Active_monsoon_and_Typhoon_Yagi_compound_rainfall.json",
+      "data/event_reports/event_reports_004_AHA_Centre_Flash_Update_No._03_TC_Yagi_and_Southwest_Monsoon.html",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Uses the local package only, locates event-window, report, precipitation, exposure, geospatial, and remote-sensing records without being handed exact filenames, and cites package-relative paths for all numeric values used.",
+        "name": "Self-directed package discovery and citations",
+        "partial_credit": "Give partial credit for correct values with incomplete or non-relative source paths.",
+        "points": 3
+      },
+      {
+        "description": "Extracts the 2024-09-06 to 2024-09-18 inclusive event window, computes 13 days, and reports IMERG, CHIRPS, and ERA5-Land event precipitation means and maxima with correct unit handling.",
+        "name": "Event window and physical rainfall reconstruction",
+        "partial_credit": "Give partial credit for one incorrect product value or a non-inclusive duration error.",
+        "points": 4
+      },
+      {
+        "description": "Computes rainfall_loading_norm, peak_concentration_norm, waterway_norm, and hydro_trigger_index using the stated clipping and weighting rules.",
+        "name": "Runoff-trigger calculations",
+        "partial_credit": "Give partial credit for correct formulas with small rounding mistakes.",
+        "points": 4
+      },
+      {
+        "description": "Parses affected people, displaced people, evacuation centres, affected road and bridge sections, passability, mapped roads, waterways, and critical amenities, then computes access_response_index correctly.",
+        "name": "Exposure and access-response calculations",
+        "partial_credit": "Give partial credit for using the right evidence family but missing one impact or OSM count.",
+        "points": 4
+      },
+      {
+        "description": "Applies the +15 percent precipitation, +20 percent displacement, and 65 percent passability counterfactual exactly, recomputes the indices, and reports the scenario delta and priority band.",
+        "name": "Scenario perturbation",
+        "partial_credit": "Give partial credit if the scenario direction is right but one perturbation is omitted.",
+        "points": 3
+      },
+      {
+        "description": "Explains the typhoon-monsoon rainfall, flash-flood, runoff, landslide, and access-disruption chain while treating the satellite embedding change as contextual rather than direct damage proof.",
+        "name": "Disaster-process interpretation and overclaim control",
+        "partial_credit": "Give partial credit for a correct but generic process statement.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "compound_rainfall_runoff_response_model",
+  "task_id": "CSX-285_Q1",
+  "task_subtype": "compound_rainfall_runoff_response_model",
+  "task_type": "short_answer"
+}

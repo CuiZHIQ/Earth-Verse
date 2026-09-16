@@ -1,0 +1,268 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-103",
+  "key_values": {
+    "causal_graph": {
+      "edges": [
+        {
+          "from": "coastal_water_level_wave",
+          "relationship": "dominant coastal forcing reaches exposed receptors",
+          "to": "population_receptor"
+        },
+        {
+          "from": "rainfall_context",
+          "relationship": "context exists but cannot replace coastal forcing",
+          "to": "rainfall_only"
+        },
+        {
+          "from": "local_wind_context",
+          "relationship": "local wind context exists but cannot replace water-level and wave pathway",
+          "to": "wind_only"
+        },
+        {
+          "from": "population_receptor",
+          "relationship": "receptor magnitude cannot be the physical trigger",
+          "to": "exposure_only"
+        },
+        {
+          "from": "sar_observation_constraint",
+          "relationship": "absent pre/post scenes prevent image-led diagnosis",
+          "to": "image_led"
+        }
+      ],
+      "nodes": [
+        {
+          "evidence": "six coastal report signals",
+          "id": "coastal_water_level_wave",
+          "role": "trigger"
+        },
+        {
+          "evidence": "event_precip_mm=45.4",
+          "id": "rainfall_context",
+          "role": "context"
+        },
+        {
+          "evidence": "peak_10m_wind_kmh=60.6",
+          "id": "local_wind_context",
+          "role": "context"
+        },
+        {
+          "evidence": "exposed_population_million=3.878",
+          "id": "population_receptor",
+          "role": "receptor"
+        },
+        {
+          "evidence": "sar_pre_post_counts=0/0",
+          "id": "sar_observation_constraint",
+          "role": "observation_constraint"
+        },
+        {
+          "evidence": "rain context score 1 versus coastal score 6",
+          "id": "rainfall_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "wind context score 1 versus coastal score 6",
+          "id": "wind_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "exposure is receptor context, not physical trigger",
+          "id": "exposure_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "SAR pre/post counts are 0/0",
+          "id": "image_led",
+          "role": "rejected_simplification"
+        }
+      ]
+    },
+    "coastal_tests": {
+      "altered_shorelines": true,
+      "coastal_mapping_recovery": true,
+      "storm_surge": true,
+      "submerged_debris": true,
+      "water_depth_navigation": true,
+      "waves": true
+    },
+    "event": {
+      "end_date": "2012-10-31",
+      "event_name": "Hurricane Sandy New York-New Jersey coastal flooding",
+      "hazard_family": "river_coastal_flood",
+      "inclusive_days": 10,
+      "location": "New York and New Jersey Atlantic coast",
+      "start_date": "2012-10-22"
+    },
+    "numeric_inputs": {
+      "event_precip_mm": 45.4,
+      "peak_10m_wind_kmh": 60.6,
+      "population": 3878432.523,
+      "population_million": 3.878,
+      "sar_post_count": 0,
+      "sar_pre_count": 0
+    },
+    "tolerances": {
+      "event_precip_mm": 0.2,
+      "peak_10m_wind_kmh": 0.2,
+      "population_million": 0.001
+    }
+  },
+  "primary_gt": {
+    "causal_graph": {
+      "edges": [
+        {
+          "from": "coastal_water_level_wave",
+          "relationship": "dominant coastal forcing reaches exposed receptors",
+          "to": "population_receptor"
+        },
+        {
+          "from": "rainfall_context",
+          "relationship": "context exists but cannot replace coastal forcing",
+          "to": "rainfall_only"
+        },
+        {
+          "from": "local_wind_context",
+          "relationship": "local wind context exists but cannot replace water-level and wave pathway",
+          "to": "wind_only"
+        },
+        {
+          "from": "population_receptor",
+          "relationship": "receptor magnitude cannot be the physical trigger",
+          "to": "exposure_only"
+        },
+        {
+          "from": "sar_observation_constraint",
+          "relationship": "absent pre/post scenes prevent image-led diagnosis",
+          "to": "image_led"
+        }
+      ],
+      "nodes": [
+        {
+          "evidence": "six coastal report signals",
+          "id": "coastal_water_level_wave",
+          "role": "trigger"
+        },
+        {
+          "evidence": "event_precip_mm=45.4",
+          "id": "rainfall_context",
+          "role": "context"
+        },
+        {
+          "evidence": "peak_10m_wind_kmh=60.6",
+          "id": "local_wind_context",
+          "role": "context"
+        },
+        {
+          "evidence": "exposed_population_million=3.878",
+          "id": "population_receptor",
+          "role": "receptor"
+        },
+        {
+          "evidence": "sar_pre_post_counts=0/0",
+          "id": "sar_observation_constraint",
+          "role": "observation_constraint"
+        },
+        {
+          "evidence": "rain context score 1 versus coastal score 6",
+          "id": "rainfall_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "wind context score 1 versus coastal score 6",
+          "id": "wind_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "exposure is receptor context, not physical trigger",
+          "id": "exposure_only",
+          "role": "rejected_simplification"
+        },
+        {
+          "evidence": "SAR pre/post counts are 0/0",
+          "id": "image_led",
+          "role": "rejected_simplification"
+        }
+      ]
+    },
+    "failed_simplification": "Rainfall-only, wind-only, exposure-only, and image-led explanations do not match the six-signal coastal water-level and wave pathway.",
+    "final_label": "coastal_water_level_wave",
+    "key_values": {
+      "event_days": 10,
+      "event_precip_mm": 45.4,
+      "exposed_population_million": 3.878,
+      "peak_10m_wind_kmh": 60.6,
+      "sar_pre_post_counts": "0/0"
+    },
+    "mechanism_scores": {
+      "coastal_water_level_wave": 6,
+      "exposure_only": 1,
+      "image_led": 0,
+      "rainfall_only": 1,
+      "wind_only": 1
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_Hurricane_Sandy_New_York-New_Jersey_coastal_flooding.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/exposure_impact/exposure_impact_004_WorldPop_GP_100m_population_sum.json",
+      "data/remote_sensing/remote_sensing_003_Sentinel-1_GRD_VV_pre_post_change.json"
+    ],
+    "spatial_mask_policy_note": "WorldPop derived population and SAR availability counts are used as package-declared derived statistics or observation constraints; georeferencing metadata is not used to validate event location."
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Gives coastal_water_level_wave, or an equivalent concise coastal water-level and wave-impact label, as the winning diagnosis.",
+        "name": "Final label",
+        "partial_credit": "Award 2-3 points for naming coastal flooding without the exact ledger winner; award 1 point for a vague Hurricane Sandy coastal-impact label.",
+        "points": 4
+      },
+      {
+        "description": "Finds all six official report signals and scores coastal_water_level_wave as 6.",
+        "name": "Coastal ledger computation",
+        "partial_credit": "Award 3 points for five correct signals, 2 points for four correct signals, or 1 point for two to three correct coastal signals without the full score.",
+        "points": 4
+      },
+      {
+        "description": "Reports 45.4 mm event precipitation and 60.6 km/h peak 10 m wind with appropriate units or unit-implied field names.",
+        "name": "Weather numeric anchors",
+        "partial_credit": "Award 2 points for one exact value plus one approximate value; award 1 point for only one correct weather value.",
+        "points": 3
+      },
+      {
+        "description": "Reports about 3.878 million exposed people, SAR pre/post counts of 0/0, and assigns image_led a score of 0.",
+        "name": "Exposure and SAR tests",
+        "partial_credit": "Award 2 points for both values with the wrong image score; award 1 point for only the exposure value or only the SAR-count test.",
+        "points": 3
+      },
+      {
+        "description": "Uses the ledger scores 6, 1, 1, 1, and 0 to reject rainfall-only, wind-only, exposure-only, and image-led simplifications.",
+        "name": "Score comparison",
+        "partial_credit": "Award 2 points for the right winner with one simplified score wrong; award 1 point for the right winner without explicit score comparison.",
+        "points": 3
+      },
+      {
+        "description": "Returns the requested compact JSON fields with numeric values in the expected units and no extra long-form briefing.",
+        "name": "Compact JSON structure",
+        "partial_credit": "Award 1 point for correct content with minor field-name or formatting issues.",
+        "points": 2
+      },
+      {
+        "description": "Avoids extra damage, asset-loss, or image-derived inundation assertions beyond the computed ledger.",
+        "name": "No overextension",
+        "partial_credit": "No partial credit; remove this point for any major overextension.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "hurricane_sandy_coastal_forcing_causal_graph",
+  "task_id": "CSX-103_Q1",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-025_Q1",
+  "event_id": "CSX-025",
+  "task_type": "numeric",
+  "target_family": "numeric_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "heat_load_c_day": 11.8,
+    "hottest_3day_tmax_mean_c": 33.9,
+    "night_recovery_ratio": 0.429,
+    "apparent_air_peak_delta_c": -0.2,
+    "population_heat_load_proxy_person_c_day": 2072.8,
+    "diagnosis": "sustained_heat_load_human_health_pathway",
+    "tolerances": {
+      "heat_load_c_day": 0.15,
+      "hottest_3day_tmax_mean_c": 0.15,
+      "night_recovery_ratio": 0.005,
+      "apparent_air_peak_delta_c": 0.15,
+      "population_heat_load_proxy_person_c_day": 2.0
+    }
+  },
+  "key_values": {
+    "event_name": "June 2021 Pacific Northwest heat wave",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_window": {
+      "start": "2021-06-25",
+      "end": "2021-07-01",
+      "days": 7
+    },
+    "daily_temperature_series": {
+      "dates": [
+        "2021-06-25",
+        "2021-06-26",
+        "2021-06-27",
+        "2021-06-28",
+        "2021-06-29",
+        "2021-06-30",
+        "2021-07-01"
+      ],
+      "tmax_c": [
+        27.3,
+        30.1,
+        32.2,
+        34.0,
+        35.5,
+        26.7,
+        22.3
+      ],
+      "tmin_c": [
+        11.4,
+        14.4,
+        16.4,
+        19.5,
+        17.8,
+        13.8,
+        11.5
+      ],
+      "apparent_tmax_c": [
+        28.9,
+        31.3,
+        31.4,
+        34.0,
+        35.3,
+        27.5,
+        22.4
+      ]
+    },
+    "heat_load_formula": "sum(max(Tmax - 30 C, 0))",
+    "heat_load_terms_c_day": [
+      0.0,
+      0.1,
+      2.2,
+      4.0,
+      5.5,
+      0.0,
+      0.0
+    ],
+    "hottest_3day_window": {
+      "window_days": 3,
+      "start": "2021-06-27",
+      "end": "2021-06-29",
+      "mean_c": 33.9
+    },
+    "warm_night_threshold_c": 16.0,
+    "warm_night_count": 3,
+    "longest_tmax_ge_30c_run": {
+      "threshold_c": 30.0,
+      "days": 4,
+      "start": "2021-06-26",
+      "end": "2021-06-29"
+    },
+    "max_air_temperature_c": 35.5,
+    "max_apparent_temperature_c": 35.3,
+    "worldpop_population_sum_2020": 175.659
+  },
+  "answer_contract": {
+    "format": "json_then_one_sentence",
+    "numeric_tolerances": {
+      "heat_load_c_day": 0.15,
+      "hottest_3day_tmax_mean_c": 0.15,
+      "night_recovery_ratio": 0.005,
+      "apparent_air_peak_delta_c": 0.15,
+      "population_heat_load_proxy_person_c_day": 2.0
+    },
+    "units": {
+      "heat_load_c_day": "C day",
+      "hottest_3day_tmax_mean_c": "C",
+      "night_recovery_ratio": "unitless",
+      "apparent_air_peak_delta_c": "C",
+      "population_heat_load_proxy_person_c_day": "person C day"
+    }
+  },
+  "decision_rule": {
+    "summary": "The diagnosis is sustained heat load when cumulative exceedance, rolling 3-day heat, and warm-night fraction are all material while apparent temperature does not exceed peak air temperature.",
+    "required_output_fields": [
+      "heat_load_c_day",
+      "hottest_3day_tmax_mean_c",
+      "night_recovery_ratio",
+      "apparent_air_peak_delta_c",
+      "population_heat_load_proxy_person_c_day",
+      "diagnosis"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer form and diagnosis",
+        "points": 4,
+        "description": "Returns compact JSON with the five numeric fields and identifies sustained heat load as the primary human-health pathway.",
+        "partial_credit": "Award up to 2 points for the correct diagnosis with missing fields; award up to 1 point for valid JSON that omits the diagnosis label."
+      },
+      {
+        "name": "Cumulative heat-load computation",
+        "points": 4,
+        "description": "Computes heat load above 30 C as 11.8 C-days from the daily maximum-temperature sequence.",
+        "partial_credit": "Award up to 3 points for the right formula with a small arithmetic or rounding error; award up to 2 points for counting hot days without summing degree exceedances."
+      },
+      {
+        "name": "Hottest 3-day mean computation",
+        "points": 3,
+        "description": "Computes the hottest 3-day Tmax mean as 33.9 C for 2021-06-27 through 2021-06-29.",
+        "partial_credit": "Award up to 2 points for a correct rolling-window method with minor rounding or date imprecision."
+      },
+      {
+        "name": "Night recovery ratio",
+        "points": 3,
+        "description": "Computes the warm-night ratio as 3/7 = 0.429 using Tmin >= 16 C.",
+        "partial_credit": "Award up to 2 points for the correct warm-night count with a denominator or rounding mistake."
+      },
+      {
+        "name": "Humid-heat disambiguation",
+        "points": 2,
+        "description": "Computes the peak apparent-minus-air delta as about -0.2 C and treats moisture amplification as weaker than the air-temperature heat-load pathway.",
+        "partial_credit": "Award 1 point for the correct qualitative comparison without the numeric delta."
+      },
+      {
+        "name": "Population heat-load proxy",
+        "points": 2,
+        "description": "Computes the local population heat-load proxy as about 2072.8 person-C-days and treats it as an exposure-scaled proxy.",
+        "partial_credit": "Award 1 point for multiplying the correct quantities but overstating what the proxy proves."
+      },
+      {
+        "name": "Temporal persistence",
+        "points": 1,
+        "description": "Uses the four-day Tmax >= 30 C run and limited overnight cooling to support the sustained-load interpretation.",
+        "partial_credit": "Award this point only when persistence is tied to heat-health stress."
+      },
+      {
+        "name": "Competing shortcut rejection",
+        "points": 1,
+        "description": "Keeps peak-day-only, humid-heat, drought, fire/smoke, rainfall, visible-damage, and asset-count shortcuts secondary to the heat-time profile.",
+        "partial_credit": "Award this point only when at least one tempting shortcut is rejected by a computed value."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2021_Pacific_Northwest_heat_wave.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "notes": "Computed from local event temperature and population records; no network access."
+  }
+}

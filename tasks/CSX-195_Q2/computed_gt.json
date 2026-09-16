@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-195_Q2",
+  "event_id": "CSX-195",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "pyroconvective_smoke_response_model",
+  "primary_gt": {
+    "process_model": "pyroconvective_smoke_injection_and_response_load",
+    "source_paths": {
+      "reports": [
+        "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_smoke_over_the_South_Pacific.json",
+        "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+        "data/other/other_001_NASA_Earth_Observatory_Explosive_Fire_Activity_in_Australia.html"
+      ],
+      "weather": [
+        "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+        "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+      ],
+      "burn_and_remote_sensing": [
+        "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+        "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+      ],
+      "exposure_and_geospatial": [
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+      ]
+    },
+    "event_window": {
+      "start_date": "2019-12-29",
+      "end_date": "2020-01-10",
+      "window_days": 13
+    },
+    "computed_metrics": {
+      "report_context": {
+        "firestorm_minimum": 20,
+        "smoke_altitude_km": [
+          15,
+          19
+        ],
+        "stratospheric_link": true,
+        "firestorm_rate_per_day": 1.538
+      },
+      "source_weather": {
+        "temperature_2m_max_c": 39.04,
+        "precipitation_means_mm": {
+          "era5_land": 0.061,
+          "gpm_imerg": 0.067,
+          "chirps": 0.387
+        },
+        "precipitation_consensus_mean_mm": 0.172,
+        "era5_mean_wind_components_mps": {
+          "u": -0.238,
+          "v": -0.654
+        },
+        "era5_mean_wind_speed_mps": 0.696
+      },
+      "burn_and_change": {
+        "dnbr_mean": 0.236,
+        "dnbr_max": 0.798,
+        "alphaearth_change_mean": 0.026,
+        "alphaearth_change_max": 0.607
+      },
+      "response_exposure": {
+        "aoi_area_km2": 76788.287,
+        "population": 3594289.309,
+        "population_density_per_km2": 46.808,
+        "amenity_counts": {
+          "hospital": 70,
+          "police": 76,
+          "fire_station": 5,
+          "shelter": 5,
+          "school": 844
+        },
+        "critical_facility_count": 156,
+        "sensitive_site_count": 919,
+        "shelters_per_million_people": 1.391
+      },
+      "normalizations": {
+        "heat_norm": 0.904,
+        "dryness_norm": 0.828,
+        "wind_norm": 0.116,
+        "fire_weather_norm": 0.72,
+        "burn_severity_norm": 0.882,
+        "remote_change_norm": 0.717,
+        "altitude_norm": 0.7,
+        "firestorm_norm": 1.0,
+        "plume_injection_norm": 0.865,
+        "population_density_norm": 0.468,
+        "critical_facility_norm": 0.78,
+        "sensitive_site_norm": 1.0,
+        "shelter_gap_norm": 0.722
+      },
+      "baseline_indices": {
+        "pyroconvective_smoke_potential": 79.623,
+        "local_response_load_index": 76.147
+      }
+    },
+    "scenario_analysis": {
+      "scenario_name": "hotter_windier_drier_recurrence",
+      "assumptions": {
+        "temperature_delta_c": 2.0,
+        "precipitation_multiplier": 0.5,
+        "era5_mean_wind_multiplier": 1.2,
+        "dnbr_multiplier": 1.1,
+        "firestorm_multiplier": 1.25,
+        "upper_smoke_altitude_delta_km": 1.0
+      },
+      "scenario_indices": {
+        "pyroconvective_smoke_potential": 84.029,
+        "local_response_load_index": 77.689
+      },
+      "delta_from_baseline": {
+        "pyroconvective_smoke_potential": 4.406,
+        "local_response_load_index": 1.542
+      }
+    },
+    "response_priorities": [
+      {
+        "rank": 1,
+        "action": "Maintain plume-injection monitoring and aviation/air-quality coordination",
+        "priority_score": 79.623,
+        "rationale": "The plume-injection and fire-weather terms are both high, and the narrative confirms pyrocumulonimbus smoke reaching the stratosphere."
+      },
+      {
+        "rank": 2,
+        "action": "Pre-position smoke-health support for sensitive facilities in the AOI",
+        "priority_score": 76.147,
+        "rationale": "The local response-load index combines high smoke potential with dense school and medical-site exposure in the bounded AOI slice."
+      },
+      {
+        "rank": 3,
+        "action": "Expand clean-air shelter options before a severe recurrence",
+        "priority_score": 72.178,
+        "rationale": "Only a small shelter count is present relative to the population proxy, leaving a large shelter-gap normalization."
+      }
+    ],
+    "mechanism_chain": [
+      "Hot, very dry source weather and nonzero wind support intense fire behavior and smoke transport.",
+      "Positive dNBR and annual embedding change indicate a burned and disturbed source landscape.",
+      "Multiple pyrocumulonimbus firestorms lofted smoke to 15-19 km, high enough for stratospheric injection.",
+      "The local exposure proxy shows millions of people and many sensitive sites in the AOI, so smoke response capacity matters even where the AOI is only a proxy slice."
+    ],
+    "final_interpretation": "The event is best treated as a high-potential pyroconvective smoke-injection episode with substantial local response-load implications; the severe recurrence scenario raises plume potential by about 4.406 points and response load by about 1.542 points."
+  },
+  "event": {
+    "event_name": "2019-2020 Australian smoke over the South Pacific",
+    "hazard_family": "wildfire_burn_smoke",
+    "event_date_or_window": "2019-12-29 to 2020-01-10",
+    "region_focus": "Southeastern Australia and South Pacific smoke plume"
+  },
+  "key_values": {
+    "window_days": 13,
+    "firestorm_minimum": 20,
+    "smoke_altitude_km": [
+      15,
+      19
+    ],
+    "temperature_2m_max_c": 39.04,
+    "precipitation_consensus_mean_mm": 0.172,
+    "era5_mean_wind_speed_mps": 0.696,
+    "dnbr_mean": 0.236,
+    "dnbr_max": 0.798,
+    "alphaearth_change_mean": 0.026,
+    "alphaearth_change_max": 0.607,
+    "aoi_area_km2": 76788.287,
+    "population_density_per_km2": 46.808,
+    "baseline_pyroconvective_smoke_potential": 79.623,
+    "baseline_local_response_load_index": 76.147,
+    "scenario_pyroconvective_smoke_potential": 84.029,
+    "scenario_local_response_load_index": 77.689
+  },
+  "numeric_tolerances": {
+    "window_days": 0,
+    "firestorm_rate_per_day": 0.01,
+    "temperature_2m_max_c": 0.01,
+    "precipitation_consensus_mean_mm": 0.005,
+    "era5_mean_wind_speed_mps": 0.01,
+    "dnbr_mean": 0.005,
+    "dnbr_max": 0.005,
+    "alphaearth_change_mean": 0.005,
+    "alphaearth_change_max": 0.005,
+    "aoi_area_km2": 5.0,
+    "population_density_per_km2": 0.05,
+    "normalizations": 0.01,
+    "indices": 0.05,
+    "scenario_deltas": 0.05
+  },
+  "required_metrics": [
+    "source_paths",
+    "event_window",
+    "report_context",
+    "source_weather",
+    "burn_and_change",
+    "response_exposure",
+    "normalizations",
+    "baseline_indices",
+    "scenario_analysis",
+    "response_priorities"
+  ],
+  "judge_anchors": [
+    "The answer should cite package-relative paths instead of external URLs.",
+    "The core baseline index is pyroconvective_smoke_potential near 79.623.",
+    "The local response-load index is near 76.147.",
+    "The severe recurrence scenario increases the plume potential to about 84.029 and response load to about 77.689.",
+    "The interpretation should connect fire weather, dNBR, pyrocumulonimbus injection, stratospheric smoke, and local exposure."
+  ],
+  "common_errors": [
+    "Using outside web sources instead of package files",
+    "Treating the AOI exposure proxy as a continent-wide impact total",
+    "Forgetting the inclusive 13-day event window",
+    "Using off-event point-weather winds instead of the ERA5-Land gridded mean wind vector",
+    "Using a single precipitation product instead of the required three-product consensus",
+    "Omitting the scenario recomputation"
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed package discovery and citations",
+        "points": 3,
+        "description": "Identifies and cites package-relative paths across reports, weather, burn/remote-sensing, exposure, and geospatial evidence without relying on outside sources.",
+        "partial_credit": "Award 1-2 points if most evidence families are cited but one family is missing or paths are incomplete."
+      },
+      {
+        "name": "Event window and plume-context extraction",
+        "points": 3,
+        "description": "Uses the inclusive 2019-12-29 to 2020-01-10 window, firestorm lower bound 20, smoke altitude 15-19 km, stratospheric link, and firestorm rate near 1.538 per day.",
+        "partial_credit": "Award 1-2 points for correct dates with incomplete plume-context extraction."
+      },
+      {
+        "name": "Source-weather computation",
+        "points": 3,
+        "description": "Computes maximum 2 m temperature near 39.040 C, precipitation consensus near 0.172 mm, ERA5 mean wind speed near 0.696 m/s, and the heat, dryness, wind, and fire-weather normalizations.",
+        "partial_credit": "Award 1-2 points for using the right datasets but missing one conversion, consensus, or normalization."
+      },
+      {
+        "name": "Burn, remote-change, and plume-injection model",
+        "points": 4,
+        "description": "Computes dNBR and AlphaEarth disturbance normalizations, altitude midpoint 17.000 km, plume-injection normalization near 0.865, and baseline pyroconvective smoke potential near 79.623.",
+        "partial_credit": "Award 2-3 points for correct formulas with small numeric mistakes; award 1 point for qualitative synthesis without the required indices."
+      },
+      {
+        "name": "Exposure and response-load model",
+        "points": 3,
+        "description": "Computes approximate AOI area near 76788.287 km2, population density near 46.808 per km2, OSM amenity counts, shelter gap near 0.722, and local response-load index near 76.147.",
+        "partial_credit": "Award 1-2 points if exposure data are used but the area, amenity counts, or shelter metric is incomplete."
+      },
+      {
+        "name": "Severe recurrence scenario",
+        "points": 2,
+        "description": "Applies the specified hotter, windier, drier, higher-burn, and higher-plume perturbations and reports scenario indices near 84.029 and 77.689 with deltas near 4.406 and 1.542.",
+        "partial_credit": "Award 1 point for applying only part of the scenario correctly."
+      },
+      {
+        "name": "Mechanism interpretation and response priorities",
+        "points": 2,
+        "description": "Provides exactly three ranked response actions with numeric priority scores and a concise mechanism chain tying fire weather, dNBR, pyroCb injection, stratospheric smoke, and local exposure together.",
+        "partial_credit": "Award 1 point for plausible but generic priorities that only partly use the computed results."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_smoke_over_the_South_Pacific.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/other/other_001_NASA_Earth_Observatory_Explosive_Fire_Activity_in_Australia.html",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_005_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_002_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json"
+    ]
+  }
+}

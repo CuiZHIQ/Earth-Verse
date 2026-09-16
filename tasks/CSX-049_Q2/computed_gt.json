@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-049_Q2",
+  "event_id": "CSX-049",
+  "task_type": "short_answer",
+  "target_family": "exposure_impact_score_ledger",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_label": "rainfall_disruption_exposure_response_consistent",
+    "precip_peak_support_count": 3,
+    "min_peak_to_mean_ratio": 6.8,
+    "report_flag_count": 6,
+    "population_sum": 57115,
+    "infrastructure_counts": {
+      "highway_elements": 16,
+      "amenity_elements": 1
+    },
+    "image_response": {
+      "s1_vv_range_db": 31.39,
+      "embedding_max_to_mean": 21.56
+    },
+    "score_0_to_5": 5,
+    "computed_interpretation": "The record has three-product rainfall peak support, six disruption flags, nonzero exposure and infrastructure anchors, and two image-response checks above threshold."
+  },
+  "key_values": {
+    "masked_spatial_product_contract": {
+      "applies_to": [
+        "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json"
+      ],
+      "derived_statistics_authoritative": true,
+      "absolute_coordinates_place_names_and_georeferencing_not_for_event_validity": true
+    },
+    "precip_maxima_mm": {
+      "era5": 10.82,
+      "gpm": 18.36,
+      "chirps": 18.05
+    },
+    "peak_to_mean_ratios": {
+      "era5": 6.8,
+      "gpm": 9.18,
+      "chirps": 127.19
+    },
+    "decision_tests": {
+      "rainfall_support_count_eq3": true,
+      "report_flags_ge5": true,
+      "population_ge50000": true,
+      "infrastructure_present": true,
+      "image_response_pass": true
+    },
+    "score_thresholds": {
+      "era5_peak_mm": 10,
+      "satellite_peak_mm": 18,
+      "report_flags": 5,
+      "population": 50000,
+      "highway_elements": 10,
+      "amenity_elements": 1,
+      "s1_range_db": 25,
+      "embedding_max_to_mean": 20
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final JSON and label",
+        "points": 3,
+        "description": "Returns the requested compact JSON and the rainfall-disruption-exposure response label.",
+        "partial_credit": "Partial credit for a recoverable JSON answer with a compatible but incomplete label."
+      },
+      {
+        "name": "Rainfall support",
+        "points": 4,
+        "description": "Computes the three-product rainfall support count and minimum peak-to-mean ratio correctly.",
+        "partial_credit": "Partial credit for correct method with one product error."
+      },
+      {
+        "name": "Report flags",
+        "points": 3,
+        "description": "Counts the six report disruption flags correctly.",
+        "partial_credit": "Partial credit for at least four correct flags."
+      },
+      {
+        "name": "Exposure and infrastructure",
+        "points": 3,
+        "description": "Reports the population total and OSM highway/amenity counts correctly, treating masked exposure and infrastructure statistics as package-authoritative and not judging them by internal coordinates or place names.",
+        "partial_credit": "Partial credit for one correct exposure component."
+      },
+      {
+        "name": "Image-response values",
+        "points": 3,
+        "description": "Computes the Sentinel-1 VV range and embedding max-to-mean ratio correctly.",
+        "partial_credit": "Partial credit for one correct image-response metric."
+      },
+      {
+        "name": "Score ledger",
+        "points": 3,
+        "description": "Applies all five score tests and reports score_0_to_5 = 5.",
+        "partial_credit": "Partial credit for one test error with the same broad conclusion."
+      },
+      {
+        "name": "Computed interpretation",
+        "points": 1,
+        "description": "Keeps the interpretation tied to the computed ledger.",
+        "partial_credit": "Partial credit for a longer but still numeric interpretation."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_002_Wikipedia_Northeast_Ida_effects.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/remote_sensing/remote_sensing_005_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ],
+    "notes": "WorldPop and OSM exposure files are treated as spatially masked products; derived statistics are authoritative, while absolute coordinates/place names/georeferencing are not event-location validity checks."
+  }
+}

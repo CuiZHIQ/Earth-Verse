@@ -1,0 +1,242 @@
+{
+  "computed_answer": {
+    "answer": "cooling_health_first_low_water_second",
+    "candidate_priority_scores": {
+      "cooling_health_and_night_recovery": 98.2,
+      "evaporative_demand_drought_monitoring": 85.0,
+      "lake_low_water_and_water_supply": 95.0,
+      "rainfall_only_or_loss_accounting_first": 15.0
+    },
+    "computed_values": {
+      "bridges": 32,
+      "early_shift_days": 100,
+      "heat_run_days": 17,
+      "highway_features": 211,
+      "hospitals": 25,
+      "peak_apparent_c": 44.0,
+      "population_exposed": 11395560,
+      "shelters": 12,
+      "three_product_mean_precip_mm": 383.575,
+      "vpd_hours_gt_2p5": 84,
+      "warm_nights_tmin_ge_28c": 25
+    },
+    "ranked_priorities": [
+      {
+        "priority": "cooling_health_and_night_recovery",
+        "rank": 1,
+        "reason": "Persistent Tmax >= 35 C, 44.0 C apparent heat, 25 warm nights, large exposed population, 25 hospitals, and only 12 shelters make immediate heat-health and night-recovery triage the strongest priority."
+      },
+      {
+        "priority": "lake_low_water_and_water_supply",
+        "rank": 2,
+        "reason": "The Poyang/Yangtze low-water marker is about 100 days early, and elevated VPD plus 32 bridges and road context support water-level and access management."
+      },
+      {
+        "priority": "evaporative_demand_drought_monitoring",
+        "rank": 3,
+        "reason": "VPD and persistent heat strongly justify drought monitoring, but this surveillance priority follows the direct heat-health and low-water response priorities."
+      },
+      {
+        "priority": "rainfall_only_or_loss_accounting_first",
+        "rank": 4,
+        "reason": "Precipitation summaries alone do not explain the heat, VPD, warm-night, and early-low-water chain, and the package does not compute casualty, crop-loss, or economic-loss totals."
+      }
+    ],
+    "reasoning_path": [
+      "Use the Open-Meteo daily and hourly file to compute persistent heat, apparent heat, warm nights, and VPD.",
+      "Use the NASA Poyang Lake report to recover the about 100-day early dry-season marker.",
+      "Use WorldPop and OSM files to add population, hospital, shelter, and bridge/access context.",
+      "Score all four candidate priorities with the normalized formula and rank by candidate priority score.",
+      "Reject rainfall-only or loss-accounting-first because it misses the heat-VPD-low-water mechanism and would overclaim losses not computed in the package."
+    ],
+    "rejected_top_priority": "rainfall_only_or_loss_accounting_first",
+    "score_formula": {
+      "cooling_health_and_night_recovery": "30*heat + 25*apparent + 20*warm_nights + 15*population + 10*hospitals - 3*shelters",
+      "evaporative_demand_drought_monitoring": "35*vpd + 20*heat + 15*apparent + 15*low_water + 10*population - 10*precip_context",
+      "lake_low_water_and_water_supply": "35*low_water + 25*vpd + 10*heat + 10*population + 10*bridges + 5*roads",
+      "normalization": "Each named strength is min(value/threshold, 1.0).",
+      "rainfall_only_or_loss_accounting_first": "15*precip_context + 10*(1-heat) + 10*(1-apparent) + 10*(1-vpd) + 10*(1-low_water)"
+    },
+    "source_files_used": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html.html",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "target_family": "heat_drought_response_priority_ranking",
+    "top_priority": "cooling_health_and_night_recovery"
+  },
+  "evaluation_mode": "hybrid_llm_judge_with_numeric_anchors",
+  "event_id": "CSX-027",
+  "key_values": {
+    "event_name": "2022 China heat wave and drought",
+    "exposure_context": {
+      "bridges": 32,
+      "highway_features": 211,
+      "hospitals": 25,
+      "population_exposed": 11395560,
+      "shelters": 12
+    },
+    "heat_run_end": "2022-08-23",
+    "heat_run_start": "2022-08-07",
+    "max_vpd_kpa": 3.552,
+    "peak_apparent_date": "2022-08-20",
+    "precipitation_context": {
+      "product_means_mm": {
+        "chirps": 371.964,
+        "era5_land": 321.266,
+        "gpm_imerg": 457.495
+      },
+      "three_product_mean_mm": 383.575
+    },
+    "region": "Yangtze River basin and southern China",
+    "score_formula": {
+      "cooling_health_and_night_recovery": "30*heat + 25*apparent + 20*warm_nights + 15*population + 10*hospitals - 3*shelters",
+      "evaporative_demand_drought_monitoring": "35*vpd + 20*heat + 15*apparent + 15*low_water + 10*population - 10*precip_context",
+      "lake_low_water_and_water_supply": "35*low_water + 25*vpd + 10*heat + 10*population + 10*bridges + 5*roads",
+      "normalization": "Each named strength is min(value/threshold, 1.0).",
+      "rainfall_only_or_loss_accounting_first": "15*precip_context + 10*(1-heat) + 10*(1-apparent) + 10*(1-vpd) + 10*(1-low_water)"
+    }
+  },
+  "numeric_tolerances": {
+    "amenity_counts": 0,
+    "candidate_priority_scores": 1.0,
+    "early_shift_days": 5,
+    "heat_run_days": 0,
+    "peak_apparent_c": 0.5,
+    "population_exposed": 1000,
+    "vpd_hours_gt_2p5": 3,
+    "warm_nights_tmin_ge_28c": 1
+  },
+  "primary_gt": {
+    "answer": "cooling_health_first_low_water_second",
+    "candidate_priority_scores": {
+      "cooling_health_and_night_recovery": 98.2,
+      "evaporative_demand_drought_monitoring": 85.0,
+      "lake_low_water_and_water_supply": 95.0,
+      "rainfall_only_or_loss_accounting_first": 15.0
+    },
+    "computed_values": {
+      "bridges": 32,
+      "early_shift_days": 100,
+      "heat_run_days": 17,
+      "highway_features": 211,
+      "hospitals": 25,
+      "peak_apparent_c": 44.0,
+      "population_exposed": 11395560,
+      "shelters": 12,
+      "three_product_mean_precip_mm": 383.575,
+      "vpd_hours_gt_2p5": 84,
+      "warm_nights_tmin_ge_28c": 25
+    },
+    "ranked_priorities": [
+      {
+        "priority": "cooling_health_and_night_recovery",
+        "rank": 1,
+        "reason": "Persistent Tmax >= 35 C, 44.0 C apparent heat, 25 warm nights, large exposed population, 25 hospitals, and only 12 shelters make immediate heat-health and night-recovery triage the strongest priority."
+      },
+      {
+        "priority": "lake_low_water_and_water_supply",
+        "rank": 2,
+        "reason": "The Poyang/Yangtze low-water marker is about 100 days early, and elevated VPD plus 32 bridges and road context support water-level and access management."
+      },
+      {
+        "priority": "evaporative_demand_drought_monitoring",
+        "rank": 3,
+        "reason": "VPD and persistent heat strongly justify drought monitoring, but this surveillance priority follows the direct heat-health and low-water response priorities."
+      },
+      {
+        "priority": "rainfall_only_or_loss_accounting_first",
+        "rank": 4,
+        "reason": "Precipitation summaries alone do not explain the heat, VPD, warm-night, and early-low-water chain, and the package does not compute casualty, crop-loss, or economic-loss totals."
+      }
+    ],
+    "reasoning_path": [
+      "Use the Open-Meteo daily and hourly file to compute persistent heat, apparent heat, warm nights, and VPD.",
+      "Use the NASA Poyang Lake report to recover the about 100-day early dry-season marker.",
+      "Use WorldPop and OSM files to add population, hospital, shelter, and bridge/access context.",
+      "Score all four candidate priorities with the normalized formula and rank by candidate priority score.",
+      "Reject rainfall-only or loss-accounting-first because it misses the heat-VPD-low-water mechanism and would overclaim losses not computed in the package."
+    ],
+    "rejected_top_priority": "rainfall_only_or_loss_accounting_first",
+    "score_formula": {
+      "cooling_health_and_night_recovery": "30*heat + 25*apparent + 20*warm_nights + 15*population + 10*hospitals - 3*shelters",
+      "evaporative_demand_drought_monitoring": "35*vpd + 20*heat + 15*apparent + 15*low_water + 10*population - 10*precip_context",
+      "lake_low_water_and_water_supply": "35*low_water + 25*vpd + 10*heat + 10*population + 10*bridges + 5*roads",
+      "normalization": "Each named strength is min(value/threshold, 1.0).",
+      "rainfall_only_or_loss_accounting_first": "15*precip_context + 10*(1-heat) + 10*(1-apparent) + 10*(1-vpd) + 10*(1-low_water)"
+    },
+    "source_files_used": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html.html",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ],
+    "target_family": "heat_drought_response_priority_ranking",
+    "top_priority": "cooling_health_and_night_recovery"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/other/other_003_01_NASA_Earth_Observatory_-_Parched_Poyang_Lake.html.html",
+      "data/exposure_impact/exposure_impact_002_Overpass_small_roads_and_critical_amenities.json",
+      "data/exposure_impact/exposure_impact_003_WorldPop_GP_100m_population_sum.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON with target_family, package-relative source_files_used, computed values, score_formula, candidate priority scores, ranked priorities, top_priority cooling_health_and_night_recovery, and rejected_top_priority rainfall_only_or_loss_accounting_first.",
+        "name": "ranking_schema_and_top_priority",
+        "partial_credit": "Give partial credit for a clear ranking object with minor schema drift or for the right top priority with incomplete secondary fields.",
+        "points": 4
+      },
+      {
+        "description": "Computes the 17-day Tmax >= 35 C run, 44.0 C peak apparent heat, and 25 nights with Tmin >= 28 C, then uses them to support heat-health and night-recovery priority.",
+        "name": "heat_health_calculation",
+        "partial_credit": "Give partial credit for two of the three values or for values within tolerance but weakly connected to the ranking.",
+        "points": 4
+      },
+      {
+        "description": "Computes 84 July-August VPD hours above 2.5 kPa, recovers the about 100-day early Poyang/Yangtze low-water timing, and uses these to rank water management and drought monitoring.",
+        "name": "hydrologic_and_vpd_calculation",
+        "partial_credit": "Give partial credit for one correct value plus a plausible hydrologic ranking argument.",
+        "points": 4
+      },
+      {
+        "description": "Uses package exposure context: about 11,395,560 people, 25 hospitals, 12 shelters, and 32 bridges from local WorldPop/OSM files without turning them into confirmed casualties or outages.",
+        "name": "exposure_and_access_context",
+        "partial_credit": "Give partial credit for using population plus either amenity or access context.",
+        "points": 3
+      },
+      {
+        "description": "Produces the candidate scores 98.2, 95.0, 85.0, and 15.0, and ranks them in the correct order.",
+        "name": "candidate_score_arithmetic_and_order",
+        "partial_credit": "Give partial credit for the correct order with small score drift, or for a correct top-two order with incomplete lower candidates.",
+        "points": 3
+      },
+      {
+        "description": "Explains why rainfall-only or loss-accounting-first is not the top priority and avoids adding exact casualty, crop-loss, or economic-loss totals not computed from the package.",
+        "name": "counterpriority_discipline",
+        "partial_credit": "Give partial credit for rejecting the counterpriority but adding minor unsupported narrative.",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "heat_drought_response_priority_ranking",
+  "task_id": "CSX-027_Q2",
+  "task_subtype": "response_priority_ranking",
+  "task_type": "short_answer"
+}

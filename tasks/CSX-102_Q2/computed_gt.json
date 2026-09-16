@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-102_Q2",
+  "event_id": "CSX-102",
+  "target_family": "pakistan_indus_2010_rainfall_routing_storage_process_chain",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "all_five_tests_pass",
+    "answer_type": "five_stage_process_chain",
+    "required_row_ids": [
+      "event_window_rainfall_load",
+      "peak_window_persistence_test",
+      "multi_product_precipitation_consensus",
+      "routing_storage_sequence_flags",
+      "reported_impact_normalization"
+    ],
+    "threshold_states": {
+      "event_window_rainfall_load": "pass",
+      "peak_window_persistence_test": "pass",
+      "multi_product_precipitation_consensus": "pass",
+      "routing_storage_sequence_flags": "pass",
+      "reported_impact_normalization": "pass"
+    },
+    "required_output_fields": [
+      "target_family",
+      "process_chain",
+      "process_tests",
+      "row_id",
+      "computed_values",
+      "threshold_state",
+      "rejected_alternative",
+      "proof_conclusion"
+    ],
+    "proof_conclusion": "All five tests pass: persistent monsoon rainfall was routed southward through the Indus system and remained amplified by downstream storage.",
+    "tolerances": {
+      "mm": 0.1,
+      "ratios": 0.005,
+      "pct": 0.1,
+      "counts_dates_flags": "exact"
+    }
+  },
+  "key_values": {
+    "event_name": "2010 Pakistan Indus River floods",
+    "hazard_family": "river_coastal_flood",
+    "event_window": "2010-07-27 to 2010-08-31",
+    "event_duration_days": 36,
+    "event_precipitation_total_mm": 347.8,
+    "event_daily_mean_mm_per_day": 9.661,
+    "wet_days_ge_1mm": 15,
+    "longest_wet_spell_days_ge_1mm": 9,
+    "max_7day_precipitation_mm": 219.9,
+    "max_7day_start": "2010-08-02T06:00",
+    "max_7day_fraction_of_total": 0.632,
+    "grid_mean_precip_consensus_mm": 215.4,
+    "grid_mean_spread_fraction": 0.149,
+    "grid_max_to_mean_ratio": 1.84,
+    "july_rain_above_normal_pct": 70,
+    "august_rain_above_normal_pct": 102,
+    "august_to_july_anomaly_ratio": 1.457,
+    "mean_monthly_anomaly_pct": 86.0,
+    "routing_storage_flags": {
+      "southward_surge": true,
+      "sindh_diversion": true,
+      "manchhar_lake": true,
+      "slow_retreat": true,
+      "storage_or_low_drainage": true,
+      "all_sequence_flags_true": true
+    },
+    "reported_flood_extent_sq_km": 37280,
+    "reported_extent_window_days": 51,
+    "reported_affected_people_million_lower_bound": 18.0,
+    "reported_deaths": 1985,
+    "reported_damaged_houses_million": 1.7,
+    "extent_per_million_affected_sq_km": 2071.1,
+    "deaths_per_million_affected": 110.278,
+    "houses_per_affected_person": 0.0944,
+    "cotton_crop_flooded_pct": 10,
+    "rice_crop_flooded_pct": 20,
+    "threshold_rules": {
+      "event_window_rainfall_load": "duration = 36, total > 300 mm, wet_days >= 10, wet_spell >= 7",
+      "peak_window_persistence_test": "the wettest 7-day fraction is computed, but longer wet persistence prevents a wettest-week-only diagnosis",
+      "multi_product_precipitation_consensus": "grid spread < 0.20 and both monthly anomalies > 50%",
+      "routing_storage_sequence_flags": "all five routing and storage flags are true",
+      "reported_impact_normalization": "reported extent, affected population, deaths, houses, and crop fractions are normalized"
+    },
+    "rejected_alternatives": [
+      "one-day burst",
+      "wettest-week-only diagnosis",
+      "single-product rainfall proof",
+      "downstream-storage-only trigger",
+      "unnormalized impact count comparison"
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Process proof structure",
+        "points": 3,
+        "description": "Returns target family, five process-chain stages, five process_tests, rejected alternatives, and proof conclusion.",
+        "partial_credit": "Award 1-2 points for a complete structure missing one row."
+      },
+      {
+        "name": "Rainfall-window reconstruction",
+        "points": 4,
+        "description": "Computes 36 days, 347.8 mm, 9.661 mm/day, 15 wet days, and 9-day wet spell.",
+        "partial_credit": "Award 2-3 points for mostly correct rainfall values with one missing metric."
+      },
+      {
+        "name": "Peak-window persistence",
+        "points": 3,
+        "description": "Computes 219.9 mm, 2010-08-02T06:00, 0.632, and rejects wettest-week-only reasoning.",
+        "partial_credit": "Award 1-2 points for the peak total without timestamp or fraction."
+      },
+      {
+        "name": "Multi-product consensus",
+        "points": 4,
+        "description": "Computes 215.4 mm, 0.149, 1.84, 70%, 102%, 1.457, and 86.0%.",
+        "partial_credit": "Award 2-3 points for correct consensus with one missing anomaly metric."
+      },
+      {
+        "name": "Routing and storage sequence",
+        "points": 3,
+        "description": "Identifies all five routing/storage flags and the all-true conjunction.",
+        "partial_credit": "Award 1-2 points for at least three correct flags."
+      },
+      {
+        "name": "Impact normalization context",
+        "points": 2,
+        "description": "Normalizes extent, affected people, deaths, houses, and crop percentages correctly.",
+        "partial_credit": "Award 1 point for raw counts without normalization."
+      },
+      {
+        "name": "Concise conclusion",
+        "points": 1,
+        "description": "Links persistent monsoon rainfall, routed movement, and storage amplification in one computed conclusion.",
+        "partial_credit": "No credit for broad event history or planning advice."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "Values are computed or extracted from local CSX-102 package data.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2010_Pakistan_Indus_River_floods.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Pakistan_floods_2010.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

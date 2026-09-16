@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-298_Q2",
+  "event_id": "CSX-298",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "target_family": "godzilla_2020_truecolor_dust_veil_surface_rainfall_index",
+  "primary_gt": {
+    "answer": "dust_veil_not_surface_or_rainfall",
+    "brightness_delta": 10.86,
+    "blue_water_drop_pp": 6.04,
+    "tan_dust_gain_pp": 3.78,
+    "dust_veil_index": 4.49,
+    "surface_change_ratio": 0.41,
+    "point_rainfall_max_mm": 2.37,
+    "pass_count": 6,
+    "conclusion": "dust_veil_not_surface_or_rainfall",
+    "expected_json": {
+      "brightness_delta": 10.86,
+      "blue_water_drop_pp": 6.04,
+      "tan_dust_gain_pp": 3.78,
+      "dust_veil_index": 4.49,
+      "surface_change_ratio": 0.41,
+      "point_rainfall_max_mm": 2.37,
+      "pass_count": 6,
+      "conclusion": "dust_veil_not_surface_or_rainfall"
+    },
+    "thresholds": {
+      "brightness_delta_min": 8,
+      "blue_water_drop_pp_min": 4,
+      "tan_dust_gain_pp_min": 2,
+      "dust_veil_index_min": 4,
+      "surface_change_ratio_max": 1,
+      "point_rainfall_max_mm_max": 5
+    },
+    "tolerances": {
+      "image_delta_or_rainfall": 0.05,
+      "index_or_ratio": 0.02,
+      "pass_count": 0
+    },
+    "label": "godzilla_2020_dust_veil_pass"
+  },
+  "event": {
+    "event_name": "June 2020 Saharan dust 'Godzilla' outbreak",
+    "hazard_family": "dust_sandstorm_extreme",
+    "event_window": {
+      "start": "2020-06-14",
+      "end": "2020-06-28"
+    },
+    "region": "Sahara, Atlantic, and Caribbean"
+  },
+  "key_values": {
+    "pre_image": {
+      "width": 1024,
+      "height": 768,
+      "brightness": 93.4253,
+      "blue_water_fraction": 0.120547,
+      "tan_dust_fraction": 0.014174
+    },
+    "event_image": {
+      "width": 1024,
+      "height": 768,
+      "brightness": 104.2857,
+      "blue_water_fraction": 0.060176,
+      "tan_dust_fraction": 0.052006
+    },
+    "unrounded": {
+      "brightness_delta": 10.860400000000013,
+      "blue_water_drop_pp": 6.0371,
+      "tan_dust_gain_pp": 3.7832,
+      "dust_veil_index": 4.4869150000000015,
+      "surface_change_ratio": 0.4083847675962061,
+      "power_precip_total_mm": 2.37,
+      "open_meteo_precip_total_mm": 1.6
+    },
+    "surface_change": {
+      "mean": 0.008167695351924123,
+      "stddev": 0.0070244433035306884,
+      "cutoff": 0.02
+    },
+    "gates": {
+      "brightness_delta_ge_8": true,
+      "blue_water_drop_pp_ge_4": true,
+      "tan_dust_gain_pp_ge_2": true,
+      "dust_veil_index_ge_4": true,
+      "surface_change_ratio_lt_1": true,
+      "point_rainfall_max_mm_lt_5": true
+    },
+    "formulas": {
+      "brightness": "mean((R+G+B)/3)",
+      "blue_water_fraction": "count(B>R+15 and B>G+5 and B>80)/pixels",
+      "tan_dust_fraction": "count(R>G>B and R>=95 and G>=85 and R-B>=15 and G-B>=5)/pixels",
+      "dust_veil_index": "brightness_delta/10 + blue_water_drop_pp/4 + tan_dust_gain_pp/2",
+      "surface_change_ratio": "max(surface_mean,surface_stddev)/0.02",
+      "point_rainfall_max_mm": "max(POWER_total,Open-Meteo_total)"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer schema",
+        "points": 3,
+        "description": "Returns the requested JSON fields with numeric values, an integer pass count, and the expected conclusion label.",
+        "partial_credit": "Award 1-2 points for recoverable values with minor field-name or rounding mistakes."
+      },
+      {
+        "name": "Image statistics",
+        "points": 5,
+        "description": "Computes RGB brightness, blue-water fraction, tan-dust fraction over all RGB pixels in each package scene as delivered, and the three event-minus-pre-event deltas with correct units.",
+        "partial_credit": "Award partial credit for correct formulas with one image class or percentage-point arithmetic error."
+      },
+      {
+        "name": "Dust-veil index",
+        "points": 4,
+        "description": "Applies the stated dust-veil index formula and reports 4.49 with the correct threshold pass state.",
+        "partial_credit": "Award 2 points for the correct formula with one arithmetic or rounding error."
+      },
+      {
+        "name": "Confounder gates",
+        "points": 4,
+        "description": "Computes surface_change_ratio near 0.41 and point_rainfall_max_mm near 2.37, then applies both gates correctly.",
+        "partial_credit": "Award 2 points if only one of the two confounder gates is correct."
+      },
+      {
+        "name": "Gate count and label",
+        "points": 3,
+        "description": "Reports six passing gates and the label dust_veil_not_surface_or_rainfall.",
+        "partial_credit": "Award 1-2 points for a correct pass count with an imprecise but consistent label, or the reverse."
+      },
+      {
+        "name": "Scope control",
+        "points": 1,
+        "description": "Keeps the interpretation to the computed consequence and does not add durable-damage, loss, or rainfall-causation statements.",
+        "partial_credit": "Award 0.5 points for a correct numeric result with a minor harmless overstatement."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_June_2020_Saharan_dust_Godzilla_outbreak.json",
+      "data/remote_sensing/remote_sensing_008_pre_2020-05-15_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_007_event_2020-06-21_modis_truecolor.jpg.jpg",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_001_NASA_POWER_daily_point_sample.json",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_archive_point_sample.json"
+    ],
+    "notes": "All numeric anchors are regenerated from local CSX-298 package files."
+  },
+  "supporting_metrics": {
+    "image_method": {
+      "pixel_scope": "all RGB pixels in each package true-color scene as delivered",
+      "no_data_handling": "no separate no-data mask is applied"
+    },
+    "confounder_scope": {
+      "surface_change_ratio": "durable-surface-change confounder gate only",
+      "point_rainfall_max_mm": "package point-rainfall confounder gate only"
+    }
+  }
+}

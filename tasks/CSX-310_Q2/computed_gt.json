@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-310_Q2",
+  "event_id": "CSX-310",
+  "target_family": "hunga_tonga_surface_change_weather_null_consistency",
+  "task_type": "numeric",
+  "evaluation_mode": "deterministic",
+  "primary_gt": {
+    "target_family": "hunga_tonga_surface_change_weather_null_consistency",
+    "metrics": {
+      "s1_abs_change_db": 13.2633,
+      "s1_signal_to_std": 16.243,
+      "optical_peak_to_mean": 21.1138,
+      "event_precip_max_mm": 0.005,
+      "coverage_balance": 0.8889,
+      "event_anchor_score": 2
+    },
+    "gates": {
+      "all_weather_gate": true,
+      "optical_support_gate": true,
+      "weather_null_gate": true,
+      "event_anchor_gate": true
+    },
+    "final_label": "event_window_surface_change_weather_null_pass",
+    "computed_consequence": "weather_variability_rejected_by_precip_gate",
+    "tolerances": {
+      "s1_abs_change_db": 0.0001,
+      "s1_signal_to_std": 0.001,
+      "optical_peak_to_mean": 0.001,
+      "event_precip_max_mm": 0.0001,
+      "coverage_balance": 0.0001,
+      "event_anchor_score": 0
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Requested JSON form",
+        "points": 4,
+        "description": "Returns compact JSON with target_family, metrics, gates, final_label, and computed_consequence."
+      },
+      {
+        "name": "Numeric anchors and formulas",
+        "points": 5,
+        "description": "Computes the maximum absolute all-weather VV change, the VV change-to-std ratio, the optical peak-to-mean ratio, event precipitation maximum, coverage balance, and event anchor score with correct units or unit-implied names."
+      },
+      {
+        "name": "Threshold gates",
+        "points": 4,
+        "description": "Applies the all-weather, optical-support, weather-null, and event-anchor gates using the stated inequalities and reaches the correct final label."
+      },
+      {
+        "name": "Component reasoning",
+        "points": 3,
+        "description": "Shows how the max, ratio, balance, and indicator calculations were derived from the package values rather than listing raw numbers only."
+      },
+      {
+        "name": "Computed rejection",
+        "points": 2,
+        "description": "Rejects weather variability as the main numeric explanation because precipitation is below the 1 mm guardrail while surface-change gates pass."
+      },
+      {
+        "name": "Concise consequence",
+        "points": 1,
+        "description": "Keeps the event-process label short and tied to the computed gates."
+      },
+      {
+        "name": "No overreach",
+        "points": 1,
+        "description": "Avoids treating exposure context, plume height alone, or any single image layer as confirmed loss accounting."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-310",
+    "event_name": "2022 Hunga Tonga-Hunga Ha'apai eruption and tsunami",
+    "hazard_family": "volcano_ash_lahar",
+    "event_date_or_window": "2021-12-20 to 2022-01-18; main eruption-tsunami date 2022-01-15"
+  },
+  "decision_rule": {
+    "summary": "All four gates must pass: strong event-window all-weather change, optical support, near-zero event-day precipitation, and a two-part event anchor.",
+    "formulas": {
+      "s1_abs_change_db": "max(abs(vv_change_min), abs(vv_change_max))",
+      "s1_signal_to_std": "s1_abs_change_db / vv_change_stdDev",
+      "optical_peak_to_mean": "optical_change_max / optical_change_mean",
+      "event_precip_max_mm": "max(gridded_precip_max, reanalysis_precip_sum_max)",
+      "coverage_balance": "min(pre_count, post_count) / max(pre_count, post_count)",
+      "event_anchor_score": "I(alert_score >= 3.0) + I(plume_height_km >= 40.0)"
+    },
+    "thresholds": {
+      "all_weather_gate": "s1_abs_change_db >= 10, s1_signal_to_std >= 10, pre_count >= 10, post_count >= 10, coverage_balance >= 0.8",
+      "optical_support_gate": "optical_change_max >= 0.5 and optical_peak_to_mean >= 10",
+      "weather_null_gate": "event_precip_max_mm < 1.0",
+      "event_anchor_gate": "event_anchor_score == 2"
+    }
+  },
+  "key_values": {
+    "s1_counts": {
+      "pre_count": 18,
+      "post_count": 16
+    },
+    "s1_change_db": {
+      "min": -11.0084,
+      "max": 13.2633,
+      "stdDev": 0.8166
+    },
+    "optical_change": {
+      "max": 0.7742,
+      "mean": 0.0367
+    },
+    "precipitation_mm": {
+      "gridded_max": 0.005,
+      "reanalysis_sum_max": 0.0
+    },
+    "event_anchor_inputs": {
+      "alert_level": "Red",
+      "alert_score": 3.0,
+      "plume_height_km": 50.0
+    }
+  },
+  "numeric_tolerances": {
+    "s1_abs_change_db": {
+      "target": 13.2633,
+      "absolute_tolerance": 0.0001
+    },
+    "s1_signal_to_std": {
+      "target": 16.243,
+      "absolute_tolerance": 0.001
+    },
+    "optical_peak_to_mean": {
+      "target": 21.1138,
+      "absolute_tolerance": 0.001
+    },
+    "event_precip_max_mm": {
+      "target": 0.005,
+      "absolute_tolerance": 0.0001
+    },
+    "coverage_balance": {
+      "target": 0.8889,
+      "absolute_tolerance": 0.0001
+    },
+    "event_anchor_score": {
+      "target": 2,
+      "absolute_tolerance": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_catalogs/event_catalogs_005_04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json.json",
+      "data/remote_sensing/remote_sensing_004_Sentinel-1_GRD_VV_pre_post_change.json",
+      "data/physical_hazard/physical_hazard_006_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_003_ERA5-Land_hourly_aggregate_stats.json"
+    ],
+    "notes": "Deterministic local-file calculation with fixed formulas and numeric tolerances."
+  }
+}

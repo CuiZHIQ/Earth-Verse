@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-159_Q2",
+  "event_id": "CSX-159",
+  "target_family": "numeric_diagnosis",
+  "task_type": "numeric",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "target_family": "numeric_diagnosis",
+    "rainfall": {
+      "observed_in": 8.0,
+      "below_average_in": 22.0,
+      "implied_normal_in": 30.0,
+      "deficit_share": 0.733
+    },
+    "triggers": {
+      "dam_dried_up": true,
+      "river_very_low": true,
+      "rationing_begun": true,
+      "count": 3
+    },
+    "wspi": {
+      "uncapped": 1.033,
+      "capped": 1.0
+    },
+    "threshold_state": "capped_maximum",
+    "final_label": "acute_freshwater_drought_health_stress"
+  },
+  "key_values": {
+    "event_window": {
+      "start_date": "2016-01-01",
+      "end_date": "2016-04-30",
+      "source": "package_event_lock_targeted_refined_v4_repaired"
+    },
+    "location_text": "Koror, Palau; Marshall Islands; Federated States of Micronesia",
+    "observed_rainfall_inches": 8.0,
+    "rainfall_below_average_inches": 22.0,
+    "implied_normal_rainfall_inches": 30.0,
+    "deficit_share_exact": 0.7333333333333333,
+    "stated_fraction_of_normal_since_march_1": 0.3333333333333333,
+    "acute_water_supply_triggers": {
+      "dam_dried_up": true,
+      "river_very_low": true,
+      "rationing_begun": true
+    },
+    "acute_water_supply_trigger_count": 3,
+    "uncapped_wspi": 1.0333333333333332,
+    "water_stress_priority_index": 1.0,
+    "threshold_state": "capped_maximum",
+    "final_label": "acute_freshwater_drought_health_stress",
+    "tolerances": {
+      "rainfall_in": 0.1,
+      "deficit_share": 0.001,
+      "wspi": 0.001
+    },
+    "formula": "WSPI = min(1.0, deficit_share + 0.10 * trigger_count)",
+    "threshold_state_rule": "capped_maximum iff uncapped_WSPI >= 1.0 and capped WSPI rounds to 1.000",
+    "final_label_rule": "acute_freshwater_drought_health_stress iff threshold_state is capped_maximum and all three acute water-supply triggers are true",
+    "mechanism_flags": {
+      "el_nino_shifted_walker_circulation": true,
+      "rainfall_shifted_east": true,
+      "western_pacific_left_drier": true
+    },
+    "impact_flags": {
+      "food_security_public_health_economy": true,
+      "reduced_water_supplies": true
+    },
+    "who_guidance_flags": {
+      "potable_water_scarcity_health": true,
+      "drinking_water_quantity_quality": true,
+      "emergency_water_conservation": true,
+      "hospitals_safe_drinking_water": true
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_001_Locked_anchor_report_NOAA_Climate.gov.html",
+      "data/other/other_001_WHO_Western_Pacific_El_Nino_and_health_in_the_Pacific.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2015-2016_El_Nino_drought_in_western_Pacific_island_capitals.json"
+    ],
+    "notes": "Deterministically extracts rainfall and water-supply triggers for a hybrid numeric threshold-ledger task."
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Required JSON answer and final diagnosis",
+        "points": 3,
+        "description": "Returns the six requested top-level fields with threshold_state = capped_maximum and final_label = acute_freshwater_drought_health_stress.",
+        "partial_credit": "Award 1-2 points for the right label with missing, extra, or poorly named fields."
+      },
+      {
+        "name": "Rainfall deficit ledger",
+        "points": 4,
+        "description": "Uses 8.0 inches observed rainfall, 22.0 inches below average, 30.0 inches implied normal rainfall, and computes deficit_share = 22/30 = 0.733.",
+        "partial_credit": "Award 2-3 points for the correct formula with one missing or slightly misrounded intermediate value; award 1 point for recognizing a major rainfall deficit without a valid calculation."
+      },
+      {
+        "name": "Acute trigger ledger",
+        "points": 4,
+        "description": "Marks the dam dried up, river very low, and rationing begun as true and counts three acute water-supply triggers.",
+        "partial_credit": "Award 1 point for one correct trigger, 2 points for two correct triggers, or 3 points for a correct count without naming the supported conditions."
+      },
+      {
+        "name": "WSPI formula and cap",
+        "points": 4,
+        "description": "Computes uncapped_WSPI = 0.733 + 0.10 * 3 = 1.033, applies min(1.0, uncapped_WSPI), and reports capped WSPI = 1.000.",
+        "partial_credit": "Award 2-3 points for the correct uncapped value without the cap or for a correct cap with a minor arithmetic error."
+      },
+      {
+        "name": "Threshold proof",
+        "points": 3,
+        "description": "Compares the uncapped value with the 1.0 cap, reports threshold_state = capped_maximum, and ties all three true triggers to the final label.",
+        "partial_credit": "Award 1-2 points for stating maximum stress without showing both the cap test and the trigger test."
+      },
+      {
+        "name": "Concision and overclaim control",
+        "points": 2,
+        "description": "Keeps the answer compact and avoids claims that WSPI is official, exact population affected is known, or anthropogenic climate change is proven as the direct cause of this specific drought.",
+        "partial_credit": "Award 1 point for a mostly correct answer with one minor overstatement."
+      }
+    ]
+  }
+}

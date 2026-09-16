@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-092_Q2",
+  "event_id": "CSX-092",
+  "task_type": "structured_reasoning",
+  "target_family": "persistent_monsoon_mountain_hazard_chain_diagnosis",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer": "persistent_monsoon_wetting_mountain_flood_landslide_chain_supported",
+    "task_mode": "deep_mechanism_diagnosis",
+    "mechanism_question": "diagnose whether persistent rainfall over steep terrain supports a flood, debris, or landslide hazard chain rather than a short shower",
+    "computed_evidence": {
+      "required_tests": [
+        "rainfall_window",
+        "peak_burst_test",
+        "grid_report_test",
+        "terrain_report_test"
+      ],
+      "key_metrics": {
+        "wettest_72h_share": 0.818,
+        "wet_hour_fraction": 0.8125,
+        "heavy_hour_share": 0.244,
+        "wettest_24h_to_72h_ratio": 0.541,
+        "outside_24h_share": 0.557,
+        "max_daily_to_mean_daily": 1.272,
+        "gpm_to_report_marker": 0.226,
+        "chirps_to_report_marker": 0.166,
+        "terrain_flag_count": 3
+      },
+      "tolerances": {
+        "ratio": 0.005,
+        "rate": 0.005,
+        "rainfall_mm": 0.1
+      }
+    },
+    "mechanism_chain": [
+      "persistent mountain rainfall",
+      "terrain-enhanced runoff or slope response",
+      "flood-landslide pathway",
+      "short-burst simplification rejection"
+    ],
+    "decisive_evidence": "Duration and mountain-process context should dominate over a single local precipitation value.",
+    "rejected_simplifications": "Reject a short convective shower or flat-basin explanation if terrain and persistence are required by the evidence.",
+    "bounded_interpretation": "The answer should not infer complete landslide inventories, exact valley hydraulics, or all losses."
+  },
+  "key_values": {
+    "event_precip_mm": 133.3,
+    "event_window_hours": 96,
+    "wettest_72h_mm": 109.0,
+    "wettest_24h_mm": 59.0,
+    "wet_hours": 78,
+    "heavy_hours_ge_3mm": 19,
+    "daily_precip_mm": [
+      33.0,
+      42.4,
+      33.6,
+      24.3
+    ],
+    "gpm_grid_max_mm": 67.895,
+    "chirps_grid_max_mm": 49.763,
+    "report_rainfall_marker_mm": 300.0,
+    "report_rainfall_marker_extraction": "greater than 300 millimeters",
+    "gpm_cells_gt_50mm": 25,
+    "chirps_cells_gt_30mm": 892,
+    "terrain_flags": {
+      "landslide_or_debris_flow_reported": true,
+      "rugged_or_inaccessible_terrain_reported": true,
+      "roads_or_houses_undermined_reported": true
+    }
+  },
+  "derived_metrics": {
+    "wettest_72h_share": 0.818,
+    "wet_hour_fraction": 0.8125,
+    "heavy_hour_share_of_wet_hours": 0.244,
+    "event_mean_rate_mm_per_hour": 1.389,
+    "wet_hour_mean_rate_mm_per_wet_hour": 1.709,
+    "wettest_24h_to_72h_ratio": 0.541,
+    "outside_24h_share": 0.557,
+    "daily_mean_mm": 33.325,
+    "max_daily_to_mean_daily": 1.272,
+    "gpm_to_report_marker": 0.226,
+    "chirps_to_report_marker": 0.166,
+    "gpm_to_chirps_max_ratio": 1.364,
+    "terrain_flag_count": 3,
+    "terrain_flag_fraction": 1.0
+  },
+  "decision_rule": {
+    "final_label_if_all_tests_pass": "persistent_monsoon_wetting_mountain_flood_landslide_chain_supported",
+    "persistence_pass": "wettest_72h_share >= 0.75 and wet_hour_fraction >= 0.75 and 0.15 <= heavy_hour_share_of_wet_hours <= 0.35",
+    "burst_rejected": "outside_24h_share > 0.5 and wettest_24h_to_72h_ratio < 0.6 and max_daily_to_mean_daily < 1.5",
+    "grid_report_pass": "gpm_to_report_marker < 0.25 and chirps_to_report_marker < 0.25 and heavy-cell counts are nonzero",
+    "terrain_pass": "terrain_flag_count == 3"
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "mechanism_diagnosis",
+        "points": 4,
+        "description": "Identifies the dominant physical process and gives the correct compact answer label or an equivalent diagnosis."
+      },
+      {
+        "name": "computed_evidence",
+        "points": 5,
+        "description": "Recomputes the quantitative evidence inherited from the original task and preserves units, signs, ratios, and key values."
+      },
+      {
+        "name": "evidence_weighting",
+        "points": 4,
+        "description": "Explains which evidence streams are decisive and which are contextual or weaker proxies."
+      },
+      {
+        "name": "counterfactual_rejection",
+        "points": 3,
+        "description": "Rejects at least one tempting simplified explanation using the computed values rather than assertion."
+      },
+      {
+        "name": "bounded_interpretation",
+        "points": 2,
+        "description": "States scale, timing, proxy, or uncertainty limits without adding unsupported losses or impacts."
+      },
+      {
+        "name": "json_contract",
+        "points": 2,
+        "description": "Returns the requested structured mechanism-diagnosis JSON without reducing the answer to a row-only table or same-scale checklist."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Severe_flooding_in_Northern_India_and_Nepal.html",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_009_chirps_event_precip.tif",
+      "data/physical_hazard/physical_hazard_011_gpm_imerg_event_precip.tif"
+    ]
+  },
+  "subtype": "deep_mechanism_diagnosis",
+  "deepened_reframe": {
+    "group": "deepened_remaining_39",
+    "replaces_table_only_task": true,
+    "new_title": "Uttarakhand Persistent Monsoon Mountain Hazard Chain"
+  },
+  "answer_guidance": {
+    "structured_answer": {
+      "answer": "persistent_monsoon_wetting_mountain_flood_landslide_chain_supported",
+      "task_mode": "deep_mechanism_diagnosis",
+      "mechanism_question": "diagnose whether persistent rainfall over steep terrain supports a flood, debris, or landslide hazard chain rather than a short shower",
+      "computed_evidence": {
+        "required_tests": [
+          "rainfall_window",
+          "peak_burst_test",
+          "grid_report_test",
+          "terrain_report_test"
+        ],
+        "key_metrics": {
+          "wettest_72h_share": 0.818,
+          "wet_hour_fraction": 0.8125,
+          "heavy_hour_share": 0.244,
+          "wettest_24h_to_72h_ratio": 0.541,
+          "outside_24h_share": 0.557,
+          "max_daily_to_mean_daily": 1.272,
+          "gpm_to_report_marker": 0.226,
+          "chirps_to_report_marker": 0.166,
+          "terrain_flag_count": 3
+        },
+        "tolerances": {
+          "ratio": 0.005,
+          "rate": 0.005,
+          "rainfall_mm": 0.1
+        }
+      },
+      "mechanism_chain": [
+        "persistent mountain rainfall",
+        "terrain-enhanced runoff or slope response",
+        "flood-landslide pathway",
+        "short-burst simplification rejection"
+      ],
+      "decisive_evidence": "Duration and mountain-process context should dominate over a single local precipitation value.",
+      "rejected_simplifications": "Reject a short convective shower or flat-basin explanation if terrain and persistence are required by the evidence.",
+      "bounded_interpretation": "The answer should not infer complete landslide inventories, exact valley hydraulics, or all losses."
+    },
+    "answer": "persistent_monsoon_wetting_mountain_flood_landslide_chain_supported"
+  }
+}

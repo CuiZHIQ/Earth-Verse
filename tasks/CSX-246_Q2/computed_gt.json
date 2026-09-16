@@ -1,0 +1,106 @@
+{
+  "evaluation_mode": "deterministic",
+  "event_id": "CSX-246",
+  "key_values": {
+    "catalog_days_with_eq": [
+      "2004-12-26",
+      "2004-12-27",
+      "2004-12-28",
+      "2004-12-29"
+    ],
+    "catalog_window_hours": 92.24,
+    "event_name": "2004 Sumatra-Andaman earthquake and Indian Ocean tsunami",
+    "gates": {
+      "has_gdacs_eq_entries": true,
+      "has_nonempty_post_main_72h_window": true,
+      "has_positive_mag_gap": true,
+      "has_single_red_eq_mainshock": true,
+      "has_usgs_mainshock_crosscheck": true
+    },
+    "hazard_family": "earthquake_tsunami_geophysical",
+    "post_main_cutoff_utc": "2004-12-29T00:58:50"
+  },
+  "primary_gt": {
+    "conclusion": "passes_cross_source_catalog_ledger",
+    "feature_counts": {
+      "eq": 11,
+      "fl": 0,
+      "orange_eq": 10,
+      "red_eq": 1,
+      "total": 11
+    },
+    "first_post_main_lag_min": 77.12,
+    "mag_deltas": {
+      "gdacs_main_minus_max_post": 2.2,
+      "usgs_minus_gdacs_main": 0.6
+    },
+    "mainshock": {
+      "gdacs_eventid": 9059,
+      "gdacs_mag": 8.5,
+      "time_utc": "2004-12-26T00:58:50",
+      "usgs_mag": 9.1
+    },
+    "max_post_main_mag": 6.3,
+    "threshold_counts": {
+      "eq_mag_ge_6": 4,
+      "post_main_eq_72h": 9,
+      "post_main_mag_ge_6_72h": 3
+    },
+    "window_utc": "2004-12-26T00:58:50/2004-12-29T21:12:59"
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_catalogs/event_catalogs_003_GDACS_earthquake_alert_API.json",
+      "data/event_reports/event_reports_001_Locked_anchor_USGS.html",
+      "metadata/event.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Includes exactly the requested ledger fields with compact scalar or nested numeric values.",
+        "name": "Returned JSON shape",
+        "points": 2
+      },
+      {
+        "description": "Uses the GDACS event-list catalog for counts and timing, filters earthquake entries by eventtype, and uses the USGS anchor only for the 9.1 magnitude cross-check.",
+        "name": "Source filtering",
+        "points": 3
+      },
+      {
+        "description": "Reports sequence total=11, eq=11, fl=0, red_eq=1, orange_eq=10, eq_mag_ge_6=4, post_main_eq_72h=9, and post_main_mag_ge_6_72h=3.",
+        "name": "Feature and threshold counts",
+        "points": 5
+      },
+      {
+        "description": "Reports the correct earthquake timestamp window, mainshock timestamp, and 77.12 minute first-later-event lag.",
+        "name": "Time-window reconstruction",
+        "points": 4
+      },
+      {
+        "description": "Reports GDACS mainshock 8.5, USGS mainshock 9.1, max later GDACS severity 6.3, and deltas 0.6 and 2.2.",
+        "name": "Magnitude consistency checks",
+        "points": 4
+      },
+      {
+        "description": "Keeps the answer limited to catalog arithmetic and cross-source consistency fields.",
+        "name": "Bounded answer discipline",
+        "points": 2
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "earthquake_tsunami_catalog_sequence_ledger",
+  "task_id": "CSX-246_Q2",
+  "task_type": "numeric",
+  "tolerances": {
+    "conclusion": "exact",
+    "count_abs": 0,
+    "lag_minutes_abs": 0.01,
+    "magnitude_abs": 0.05,
+    "magnitude_delta_abs": 0.05,
+    "timestamp": "exact"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-008_Q1",
+  "event_id": "CSX-008",
+  "target_family": "remote_sensing_change_attribution",
+  "task_type": "expert_source_arbitration",
+  "evaluation_mode": "hybrid",
+  "primary_gt": {
+    "answer_type": "remote_sensing_change_attribution",
+    "claim": "direct_package_evidence_of_localized_burn_scar_change",
+    "ruling": "direct_dnbr_supports_localized_burn_change_but_not_exact_area_or_impact",
+    "selected_evidence": {
+      "path": "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "modality": "COPERNICUS/S2_SR_HARMONIZED dNBR",
+      "pre_window": [
+        "2019-10-02",
+        "2019-11-24"
+      ],
+      "post_window": [
+        "2019-12-01",
+        "2020-02-29"
+      ],
+      "post_window_overlap_with_event_days": 62,
+      "post_window_extra_days_after_event": 29,
+      "stats": {
+        "dnbr_max": 0.952729,
+        "dnbr_mean": 0.048872,
+        "dnbr_min": -1.536823,
+        "dnbr_stdDev": 0.081789
+      }
+    },
+    "calculation_check": {
+      "event_window_days": 62,
+      "dnbr_max_minus_mean": 0.903857,
+      "dnbr_max_over_mean": 19.494223,
+      "dnbr_max_z_like_above_mean": 11.051036
+    },
+    "rejected_or_insufficient_alternatives": {
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json": {
+        "role_error": "generic annual embedding change for 2018-to-2019, not a dNBR burn-index product and not isolated to the official event/post-fire window",
+        "numeric_consequence_if_swapped": {
+          "wrong_metric_max": 0.493836,
+          "wrong_metric_mean": 0.028207,
+          "wrong_max_minus_selected_dnbr_max": -0.458894,
+          "wrong_mean_minus_selected_dnbr_mean": -0.020666
+        }
+      },
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json": {
+        "role_error": "local heat and humidity can support fire-weather context but cannot measure burn scar or surface change",
+        "numeric_consequence_if_swapped": {
+          "hourly_max_temperature_c": 42.2,
+          "relative_humidity_at_hourly_tmax_percent": 8
+        }
+      }
+    },
+    "source_paths": {
+      "event_window": "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+      "direct_burn_change": "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "rejected_embedding_change": "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "fire_weather_context_only": "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    },
+    "reference_trace": [
+      "Read the locked event anchor and take the official window as 2019-12-01 through 2020-01-31, inclusive.",
+      "Inspect the Sentinel-2 dNBR file and verify that its post window 2019-12-01 through 2020-02-29 overlaps all 62 official event days.",
+      "Compute dNBR contrast from the Sentinel-2 stats: max minus mean = 0.903857, max over mean = 19.494223, and z-like contrast = 11.051036.",
+      "Reject the annual embedding change as a generic 2018-to-2019 cosine-change product and reject Open-Meteo as fire-weather context only."
+    ]
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer form",
+        "points": 3,
+        "description": "Returns the requested JSON schema with answer type, claim, ruling, selected evidence, calculation check, rejected alternatives, source paths, and reference trace.",
+        "full_credit": "All required fields are present and the answer is compact structured JSON.",
+        "partial_credit": "Minor naming or formatting errors, but the evidence ruling is recoverable.",
+        "no_credit": "Does not return the required structured arbitration answer."
+      },
+      {
+        "name": "Direct burn-change source",
+        "points": 4,
+        "description": "Selects the Sentinel-2 dNBR file as the direct burn-change source and reports its product role.",
+        "full_credit": "Selects data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json with correct dNBR modality and pre/post windows.",
+        "partial_credit": "Selects a remote-sensing file but misses product role or one window detail.",
+        "no_credit": "Selects annual embedding, heat, report, or exposure files as the direct burn-change source."
+      },
+      {
+        "name": "Temporal alignment",
+        "points": 3,
+        "description": "Uses the official event window and computes overlap with the dNBR post window.",
+        "full_credit": "Reports 62 event days, 62 overlapping dNBR post-window days, and 29 extra post-event days.",
+        "partial_credit": "Gets the overlap direction right with a small inclusive-day counting error.",
+        "no_credit": "Ignores event-window alignment or uses the wrong window."
+      },
+      {
+        "name": "dNBR calculations",
+        "points": 4,
+        "description": "Reports dNBR statistics and compact contrast calculations.",
+        "full_credit": "Reports dNBR max, mean, min, stdDev and the 0.903857 max-minus-mean, 19.494223 max-over-mean, and 11.051036 z-like contrast values.",
+        "partial_credit": "Most dNBR values are correct with minor rounding or one calculation error.",
+        "no_credit": "Does not compute from the dNBR stats."
+      },
+      {
+        "name": "Embedding rejection",
+        "points": 3,
+        "description": "Rejects the annual satellite-embedding cosine-change file for role and temporal mismatch.",
+        "full_credit": "Explains that the embedding file is a generic 2018-to-2019 cosine-change product, not dNBR or event-window burn severity, and reports the numeric source-swap consequence.",
+        "partial_credit": "Rejects the embedding file but gives incomplete numeric or temporal support.",
+        "no_credit": "Treats the embedding metric as interchangeable with dNBR."
+      },
+      {
+        "name": "Fire-weather context boundary",
+        "points": 2,
+        "description": "Keeps Open-Meteo heat and humidity evidence in a context-only role.",
+        "full_credit": "Reports 42.2 C and 8 percent RH as context but not as burn-scar measurement.",
+        "partial_credit": "Mentions heat context without the numeric anchor.",
+        "no_credit": "Uses weather data as direct remote-sensing change evidence."
+      },
+      {
+        "name": "Scope and provenance",
+        "points": 1,
+        "description": "Uses package-relative paths only and avoids external evidence, hidden answers, broad disaster prose, and outside burn-severity thresholds.",
+        "full_credit": "All provenance and scope constraints are followed.",
+        "partial_credit": "Minor prose overreach without changing the answer.",
+        "no_credit": "Uses web evidence, hidden answers, absolute answer paths, or external severity thresholds."
+      }
+    ]
+  },
+  "event": {
+    "package_id": "CSX-008",
+    "event_name": "2019-2020 Australian extreme heat during Black Summer",
+    "hazard_family": "heat_wave_urban_heat",
+    "event_date_or_window": "2019-12-01 to 2020-01-31"
+  },
+  "decision_rule": {
+    "summary": "Select the direct package-local burn-change product, compute its event-window alignment and dNBR contrast, and reject wrong-role source swaps.",
+    "requires_computation": true,
+    "required_reasoning_axes": [
+      "event_window_overlap",
+      "remote_sensing_product_role",
+      "dnbr_stats_and_contrast",
+      "source_swap_consequence",
+      "context_only_weather_boundary"
+    ],
+    "forbidden_shortcuts": [
+      "treating annual embedding cosine change as dNBR",
+      "using heat or humidity as burn-scar measurement",
+      "using external burn severity thresholds",
+      "claiming exact burn area or impact not present in the package",
+      "web search or hidden-answer lookup"
+    ]
+  },
+  "key_values": {
+    "official_event_window": {
+      "start_date": "2019-12-01",
+      "end_date": "2020-01-31",
+      "inclusive_days": 62,
+      "source_path": "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json"
+    },
+    "selected_dnbr_product": {
+      "source_path": "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "dataset": "COPERNICUS/S2_SR_HARMONIZED",
+      "pre_count": 56,
+      "post_count": 94,
+      "post_window_overlap_with_event_days": 62,
+      "post_window_extra_days_after_event": 29
+    },
+    "dnbr_stats_raw": {
+      "sentinel2_dnbr_max": 0.952729437828137,
+      "sentinel2_dnbr_mean": 0.04887239978486732,
+      "sentinel2_dnbr_min": -1.5368227226185045,
+      "sentinel2_dnbr_stdDev": 0.0817893456398192
+    },
+    "embedding_stats_raw": {
+      "alphaearth_1_minus_cosine_max": 0.49383584706500205,
+      "alphaearth_1_minus_cosine_mean": 0.02820651202978197,
+      "alphaearth_1_minus_cosine_min": -0.0017706422026482205,
+      "alphaearth_1_minus_cosine_stdDev": 0.018331809518034932
+    },
+    "openmeteo_context_values": {
+      "hourly_max_temperature_c": 42.2,
+      "relative_humidity_at_hourly_tmax_percent": 8
+    }
+  },
+  "numeric_tolerances": {
+    "dnbr_max": {
+      "target": 0.952729,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_mean": {
+      "target": 0.048872,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_min": {
+      "target": -1.536823,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_stdDev": {
+      "target": 0.081789,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_max_minus_mean": {
+      "target": 0.903857,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_max_over_mean": {
+      "target": 19.494223,
+      "absolute_tolerance": 1e-06
+    },
+    "dnbr_max_z_like_above_mean": {
+      "target": 11.051036,
+      "absolute_tolerance": 1e-06
+    }
+  },
+  "severity_interpretation": {
+    "supports": [
+      "direct package-local dNBR evidence of localized burn-scar change",
+      "event-window/post-fire temporal overlap for the dNBR product",
+      "fire-weather context from local heat and low humidity"
+    ],
+    "do_not_overclaim": [
+      "exact burn area",
+      "population or infrastructure impact",
+      "burn-severity class based on external thresholds",
+      "annual embedding change as a burn-index substitute",
+      "heat values as direct burn-scar measurement"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2019-2020_Australian_extreme_heat_during_Black_Summer.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_historical_archive.json"
+    ]
+  }
+}

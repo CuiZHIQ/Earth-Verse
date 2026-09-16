@@ -1,0 +1,161 @@
+{
+  "evaluation_mode": "hybrid",
+  "event_id": "CSX-191",
+  "key_values": {
+    "candidate_scores": {
+      "burn_scar": 0,
+      "peat_smoke": 6,
+      "rainfall_only": 1
+    },
+    "daily_weather_windows": {
+      "nasa_power": {
+        "days": 46,
+        "dry_day_share": 0.326,
+        "dry_days_lt_1mm": 15,
+        "end": "2015-09-15",
+        "mean_mm": 3.941,
+        "start": "2015-08-01",
+        "sum_mm": 181.28
+      },
+      "open_meteo": {
+        "days": 46,
+        "dry_day_share": 0.391,
+        "dry_days_lt_1mm": 18,
+        "end": "2015-09-15",
+        "mean_mm": 3.715,
+        "start": "2015-08-01",
+        "sum_mm": 170.9
+      }
+    },
+    "event_metadata": {
+      "event_name": "2015 Southeast Asia haze from Indonesian fires",
+      "hazard_family": "wildfire_burn_smoke",
+      "hazard_label": "Wildfire, burn scar, and smoke",
+      "location_text": "Indonesia, Singapore and Malaysia",
+      "temporal_window": {
+        "end_date": "2015-11-30",
+        "source": "package_event_lock_targeted_refined_v4_repaired",
+        "start_date": "2015-08-01"
+      }
+    },
+    "formula_inputs": {
+      "dnbr_pre_post_counts": [
+        0,
+        0
+      ],
+      "particle_factor": 6,
+      "peak_co_ppb_nearly": 1300,
+      "peat_co_multiplier": 3,
+      "peat_methane_multiplier": 10,
+      "psi_floor": 2000,
+      "psi_hazardous_threshold": 350,
+      "typical_co_ppb": 100,
+      "vertical_signal_km_values": [
+        2,
+        5,
+        9
+      ]
+    },
+    "pass_tests": {
+      "aerosol_factor_ge_5": true,
+      "dry_day_shares_ge_0_30": true,
+      "peat_multipliers_ge_3_and_10": true,
+      "psi_ratio_ge_5": true,
+      "surface_co_ratio_ge_10": true,
+      "vertical_signal_ge_5km": true
+    }
+  },
+  "primary_gt": {
+    "answer": "peat_smoke_haze_pass",
+    "answer_type": "compact_json_ledger",
+    "expected_json": {
+      "aerosol_factor": 6,
+      "candidate_scores": {
+        "burn_scar": 0,
+        "peat_smoke": 6,
+        "rainfall_only": 1
+      },
+      "dnbr_pre_post_counts": [
+        0,
+        0
+      ],
+      "dry_day_shares": {
+        "nasa_power": 0.326,
+        "open_meteo": 0.391
+      },
+      "final_label": "peat_smoke_haze_pass",
+      "max_vertical_signal_km": 9,
+      "psi_ratio_min": 5.714,
+      "surface_co_ratio": 13.0
+    },
+    "score_rule": "six peat-smoke tests; rainfall-only gets only the dry-day point; burn-scar gets one point only when both dNBR counts are positive",
+    "tolerances": {
+      "integer_fields": 0,
+      "ratios_and_shares": 0.005
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "manifest_success_file_count": 29,
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2015_Southeast_Asia_haze_from_Indonesian_fires.json",
+      "data/event_reports/event_reports_004_Locked_anchor_report_NASA_Earth_Observatory.html",
+      "data/physical_hazard/physical_hazard_001_Open-Meteo_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_002_NASA_POWER_daily_weather_fill.json",
+      "data/physical_hazard/physical_hazard_009_Sentinel-2_SR_Harmonized_dNBR.json"
+    ]
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "description": "Returns the requested JSON with final_label peat_smoke_haze_pass and candidate scores of 6, 1, and 0.",
+        "name": "Final compact ledger and label",
+        "partial_credit": "Award 1-2 points for a correct label with incomplete scores or correct scores with a missing label.",
+        "points": 3
+      },
+      {
+        "description": "Computes 2000 / 350 = 5.714 and 1300 / 100 = 13.0 with correct rounding and field meanings.",
+        "name": "PSI and near-surface carbon-monoxide ratios",
+        "partial_credit": "Award 1-3 points for one correct ratio, small rounding errors, or values listed without the division logic.",
+        "points": 4
+      },
+      {
+        "description": "Reports the 6-fold particle factor and uses the maximum of 2, 5, and 9 km as max_vertical_signal_km = 9.",
+        "name": "Aerosol and vertical-signal values",
+        "partial_credit": "Award 1-2 points for one correct value or for using a lower listed height while showing the right source values.",
+        "points": 3
+      },
+      {
+        "description": "Computes 18 / 46 = 0.391, 15 / 46 = 0.326, and applies peat carbon-monoxide and methane multiplier thresholds of 3 and 10.",
+        "name": "Dry-window and peat-emission tests",
+        "partial_credit": "Award 1-3 points for correct dry-day counts but wrong shares, one weather product only, or multiplier values without the pass test.",
+        "points": 4
+      },
+      {
+        "description": "Assigns six peat-smoke points, one rainfall-only point, and zero burn-scar points according to the stated rules.",
+        "name": "Candidate-score arithmetic",
+        "partial_credit": "Award 1-2 points for applying most tests but miscounting one candidate score.",
+        "points": 3
+      },
+      {
+        "description": "Reports [0, 0] and uses those counts to give the burn-scar candidate zero points.",
+        "name": "dNBR count handling",
+        "partial_credit": "Award 1 point for listing the counts without applying the burn-scar scoring rule.",
+        "points": 2
+      },
+      {
+        "description": "Returns only the compact JSON object and avoids adding legal culpability, exact ignition-site claims, casualty estimates, or other quantities not produced by the ledger.",
+        "name": "Answer discipline",
+        "partial_credit": "Award 0.5 points for minor extra wording without changing the computed answer.",
+        "points": 1
+      }
+    ],
+    "total_points": 20
+  },
+  "schema_version": "1.0",
+  "target_family": "candidate_explanation_score_ledger",
+  "task_id": "CSX-191_Q2",
+  "task_type": "short_answer"
+}

@@ -1,0 +1,283 @@
+{
+  "schema_version": "crossscale_extreme_event_bench_v1",
+  "task_id": "CSX-284_Q1",
+  "event_id": "CSX-284",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "subtype": "compound_impact_chain_response_priority",
+  "primary_gt": {
+    "mechanism_label": "monsoon_rainfall_plus_meltwater_indus_flood",
+    "impact_chain": "Seasonal monsoon rainfall and meltwater overloaded the Indus river and irrigation system, so exposed communities and service receptors make corridor access and continuity checks the response focus.",
+    "response_posture": "very_high_priority_for_river_corridor_access_and_service_continuity",
+    "evidence_windows": {
+      "event_window": {
+        "start": "2022-06-14",
+        "end": "2022-10-01"
+      },
+      "precipitation_evidence_window": {
+        "start": "2022-06-14",
+        "end": "2022-07-29"
+      }
+    },
+    "key_anchors": {
+      "duration_days": 110,
+      "rainfall_signature_mm": 374.2,
+      "exposed_population_millions": 14.34,
+      "critical_receptor_count": 1000
+    }
+  },
+  "answer_guidance": {
+    "answer_type": "structured_json_with_deterministic_anchors_and_judged_reasoning",
+    "answer": "monsoon_indus_flood_response_priority",
+    "canonical_stance": "The 2022 Pakistan flood diagnosis should identify prolonged extreme monsoon rainfall as the dominant driver, meltwater as a compounding runoff factor, and river-corridor access plus critical-service continuity as the early coordination priority.",
+    "mechanism_label": "monsoon_rainfall_plus_meltwater_indus_flood",
+    "impact_chain": "Seasonal monsoon rainfall and meltwater overloaded the Indus river and irrigation system, so exposed communities and service receptors make corridor access and continuity checks the response focus.",
+    "response_posture": "very_high_priority_for_river_corridor_access_and_service_continuity",
+    "key_anchors": {
+      "duration_days": 110,
+      "rainfall_signature_mm": 374.2,
+      "exposed_population_millions": 14.34,
+      "critical_receptor_count": 1000
+    },
+    "required_claims": [
+      "Monsoon rainfall is the dominant flood-generating mechanism.",
+      "Meltwater is retained as a compounding contributor rather than the sole mechanism.",
+      "The physical pathway runs through Indus river and irrigation-system overload.",
+      "The response posture prioritizes river-corridor access and critical-service continuity."
+    ],
+    "required_metrics": [
+      {
+        "name": "duration_days",
+        "target": 110,
+        "tolerance": 0
+      },
+      {
+        "name": "rainfall_signature_mm",
+        "target": 374.2,
+        "tolerance": 0.2
+      },
+      {
+        "name": "exposed_population_millions",
+        "target": 14.34,
+        "tolerance": 0.02
+      },
+      {
+        "name": "critical_receptor_count",
+        "target": 1000,
+        "tolerance": 0
+      }
+    ],
+    "forbidden_claims": [
+      "Do not assert exact national death tolls, exact national loss totals, or exact flooded area as computed outputs of this task.",
+      "Do not treat bounded facility counts as a complete national infrastructure inventory.",
+      "Do not claim that imagery or embedding-change context alone proves building damage, hospital disruption, or road closure.",
+      "Do not frame the answer as package-quality, source-validation, or data-inventory commentary."
+    ],
+    "acceptable_variants": [
+      "Mechanism labels may use equivalent wording such as monsoon-driven Indus flood with meltwater compounding.",
+      "Response posture wording may vary if it clearly prioritizes corridor access and continuity of critical services."
+    ],
+    "structured_answer": {
+      "mechanism_label": "monsoon_rainfall_plus_meltwater_indus_flood",
+      "impact_chain": "Seasonal monsoon rainfall and meltwater overloaded the Indus river and irrigation system, so exposed communities and service receptors make corridor access and continuity checks the response focus.",
+      "response_posture": "very_high_priority_for_river_corridor_access_and_service_continuity",
+      "evidence_windows": {
+        "event_window": {
+          "start": "2022-06-14",
+          "end": "2022-10-01"
+        },
+        "precipitation_evidence_window": {
+          "start": "2022-06-14",
+          "end": "2022-07-29"
+        }
+      },
+      "key_anchors": {
+        "duration_days": 110,
+        "rainfall_signature_mm": 374.2,
+        "exposed_population_millions": 14.34,
+        "critical_receptor_count": 1000
+      }
+    }
+  },
+  "required_findings": [
+    {
+      "id": "dominant_mechanism",
+      "finding": "Diagnose monsoon rainfall as the dominant driver, with meltwater as a compounding contributor rather than the sole mechanism."
+    },
+    {
+      "id": "impact_chain",
+      "finding": "Connect river and irrigation-system overload to downstream access, service continuity, and exposed communities."
+    },
+    {
+      "id": "response_priority",
+      "finding": "Prioritize river-corridor access and critical-service continuity checks over generic national preparedness or image-led screening."
+    },
+    {
+      "id": "anchor_use",
+      "finding": "Use the four numeric anchors as support rather than as a standalone table-filling answer."
+    }
+  ],
+  "numeric_tolerances": {
+    "duration_days": {
+      "target": 110,
+      "tolerance": 0
+    },
+    "rainfall_signature_mm": {
+      "target": 374.2,
+      "tolerance": 0.2
+    },
+    "exposed_population_millions": {
+      "target": 14.34,
+      "tolerance": 0.02
+    },
+    "critical_receptor_count": {
+      "target": 1000,
+      "tolerance": 0
+    }
+  },
+  "key_values": {
+    "event_name": "2022 Pakistan extreme monsoon rainfall",
+    "hazard_label": "Atmospheric river and monsoon extreme",
+    "region": "South Asia",
+    "event_window": {
+      "start_date": "2022-06-14",
+      "end_date": "2022-10-01",
+      "duration_days": 110
+    },
+    "precipitation_evidence_window": {
+      "start": "2022-06-14",
+      "end": "2022-07-29"
+    },
+    "report_claims": {
+      "worst_flooding_provinces": "Punjab, Khyber Pakhtunkhwa, Balochistan, and Sindh",
+      "balochistan_sindh_rainfall_anomaly": "five to six times",
+      "destroyed_bridges": 150,
+      "destroyed_roads_km": 3500,
+      "lost_livestock_min": 700000,
+      "lost_crops_orchards_million_acres": 2,
+      "meltwater_compounding": true
+    },
+    "precipitation": {
+      "mean_mm": {
+        "chirps": 296.607,
+        "gpm_imerg": 503.804,
+        "era5_land": 322.178
+      },
+      "max_mm": {
+        "chirps": 371.604,
+        "gpm_imerg": 855.217,
+        "era5_land": 546.355
+      },
+      "consensus_mean_mm": 374.2,
+      "imerg_to_chirps_mean_ratio": 1.699
+    },
+    "exposure": {
+      "population_sum": 14336658.681,
+      "population_millions": 14.34,
+      "critical_receptors": {
+        "hospitals": 350,
+        "schools": 561,
+        "police": 79,
+        "fire_stations": 5,
+        "shelters": 5,
+        "total": 1000
+      }
+    },
+    "remote_sensing_context": {
+      "annual_change_mean": 0.0414,
+      "annual_change_max": 0.651
+    },
+    "priority_score_hidden": 13.31,
+    "category_counts": {
+      "event_reports": 4,
+      "event_catalogs": 2,
+      "geospatial_context": 3,
+      "physical_hazard": 10,
+      "remote_sensing": 6,
+      "exposure_impact": 4,
+      "other": 3
+    }
+  },
+  "reasoning_requirements": [
+    "The answer must weight monsoon rainfall above meltwater while retaining meltwater as a compound runoff factor.",
+    "The response posture must follow from hazard persistence, receptor exposure, and service/access consequences.",
+    "The answer must not treat annual visual-change context as direct proof of specific losses."
+  ],
+  "forbidden_overclaims": [
+    "Do not assert exact national death tolls, exact national loss totals, or exact flooded area as computed outputs of this task.",
+    "Do not treat bounded facility counts as a complete national infrastructure inventory.",
+    "Do not claim that the imagery or embedding-change metric alone proves building damage, hospital disruption, or road closure.",
+    "Do not turn the diagnosis into package-quality or source-validation commentary."
+  ],
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "final_structured_diagnosis",
+        "points": 4,
+        "description": "Gives a mechanism label that identifies monsoon rainfall as dominant, keeps meltwater as a compounding factor, and assigns a very high river-corridor/service-continuity posture."
+      },
+      {
+        "name": "quantitative_anchors",
+        "points": 5,
+        "description": "Reports duration_days=110, precipitation evidence-window rainfall_signature_mm=374.2 within 0.2 mm, exposed_population_millions=14.34 within 0.02 million, and critical_receptor_count=1000."
+      },
+      {
+        "name": "physical_mechanism_reasoning",
+        "points": 4,
+        "description": "Explains how prolonged monsoon rainfall and added meltwater load the Indus river and irrigation system rather than treating the event as a brief storm, meltwater-only flood, or remote-sensing anomaly."
+      },
+      {
+        "name": "impact_chain_and_operational_logic",
+        "points": 3,
+        "description": "Links river-system overload to exposed communities, transport/access constraints, critical-service continuity, and early coordination priorities."
+      },
+      {
+        "name": "overclaim_and_distractor_control",
+        "points": 2,
+        "description": "Avoids unsupported exact national losses, exact flooded area, complete national facility counts, and imagery-only claims of damage or disruption."
+      },
+      {
+        "name": "format_and_clarity",
+        "points": 2,
+        "description": "Returns compact valid JSON with the requested fields and concise strings rather than a long narrative or unrelated event summary."
+      }
+    ]
+  },
+  "question_leakage_audit": {
+    "lists_specific_files": false,
+    "names_concrete_data_products": false,
+    "names_specific_data_products_or_apis": false,
+    "reveals_hidden_workflow": false,
+    "reveals_all_key_metrics": false,
+    "summarizes_package_inventory": false,
+    "uses_generic_best_supported_wording": false,
+    "uses_source_validation_or_data_qa_framing": false,
+    "has_existence_hint": false,
+    "visible_question_audit": {
+      "visible_package_directive_hits": 0,
+      "absolute_path_hits": 0,
+      "product_hits": 0,
+      "workflow_hits": 0,
+      "stem_caution_cue_hits": 0,
+      "existence_hint_hits": 0,
+      "lists_specific_files": false,
+      "issue_score": 0
+    }
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_001_Locked_package_evidence_report.html",
+      "data/event_reports/event_reports_003_Locked_event_anchor_2022_Pakistan_extreme_monsoon_rainfall.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_007_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_009_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_004_OpenStreetMap_Overpass_bounded_AOI_slice.json",
+      "data/remote_sensing/remote_sensing_003_Google_Satellite_Embedding_annual_cosine-change_stats.json"
+    ]
+  }
+}

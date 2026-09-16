@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-102_Q1",
+  "event_id": "CSX-102",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "indus_2010_persistent_monsoon_flood_consistency_proof",
+  "primary_gt": {
+    "answer": "persistent_monsoon_basin_flood_signal_consistent",
+    "event_window_days": 36,
+    "event_window_hours": 864,
+    "core_metrics": {
+      "monthly_anomaly": {
+        "july_percent_above_normal": 70,
+        "august_percent_above_normal": 102,
+        "august_to_july_ratio": 1.457,
+        "mean_percent_above_normal": 86.0
+      },
+      "precipitation_products": {
+        "gpm_mean_event_precip_mm": 218.227,
+        "chirps_mean_event_precip_mm": 230.084,
+        "chirps_minus_gpm_mm": 11.858,
+        "chirps_to_gpm_ratio": 1.054
+      },
+      "hourly_point_timing_evidence": {
+        "hour_count": 864,
+        "precipitation_sum_mm": 347.8,
+        "event_daily_mean_mm_per_day": 9.661,
+        "event_hourly_mean_mm_per_hour": 0.403,
+        "wet_hours": 204,
+        "wet_hour_share": 0.236,
+        "wet_hour_mean_mm": 1.705,
+        "max_hour_mm": 13.9,
+        "max_hour_share_of_sum": 0.04
+      },
+      "impact_normalization": {
+        "scope": "national lower-bound report context, not an exact point-window impact total",
+        "minimum_flooded_extent_sq_km": 37280,
+        "affected_people_lower_bound": 18000000,
+        "affected_people_per_flooded_sq_km": 482.833,
+        "deaths": 1985,
+        "deaths_per_1000_affected": 0.11,
+        "damaged_or_destroyed_houses": 1700000,
+        "houses_per_affected_person": 0.0944
+      },
+      "catalog": {
+        "country": "Pakistan",
+        "start_date": "2010-07-27",
+        "alert_level": "RED",
+        "severity": 7.46
+      }
+    },
+    "passing_tests": [
+      "monthly_anomaly_persistence",
+      "precipitation_product_agreement",
+      "wet_hour_persistence",
+      "basin_scale_impact_magnitude",
+      "catalog_severity_alignment"
+    ],
+    "test_count": "5/5"
+  },
+  "key_values": {
+    "impact_scope_note": "Reported flood extent and impact values are national lower-bound context from the event report; hourly wet-hour persistence is point-series timing evidence.",
+    "monthly_anomaly": {
+      "july_percent_above_normal": 70,
+      "august_percent_above_normal": 102,
+      "august_to_july_ratio": 1.457,
+      "mean_percent_above_normal": 86.0
+    },
+    "precipitation_products": {
+      "gpm_mean_event_precip_mm": 218.227,
+      "chirps_mean_event_precip_mm": 230.084,
+      "chirps_minus_gpm_mm": 11.858,
+      "chirps_to_gpm_ratio": 1.054
+    },
+    "hourly_precipitation": {
+      "hour_count": 864,
+      "precipitation_sum_mm": 347.8,
+      "event_daily_mean_mm_per_day": 9.661,
+      "event_hourly_mean_mm_per_hour": 0.403,
+      "wet_hours": 204,
+      "wet_hour_share": 0.236,
+      "wet_hour_mean_mm": 1.705,
+      "max_hour_mm": 13.9,
+      "max_hour_share_of_sum": 0.04
+    },
+    "impact_normalization": {
+      "minimum_flooded_extent_sq_km": 37280,
+      "affected_people_lower_bound": 18000000,
+      "affected_people_per_flooded_sq_km": 482.833,
+      "deaths": 1985,
+      "deaths_per_1000_affected": 0.11,
+      "damaged_or_destroyed_houses": 1700000,
+      "houses_per_affected_person": 0.0944
+    },
+    "catalog": {
+      "country": "Pakistan",
+      "start_date": "2010-07-27",
+      "alert_level": "RED",
+      "severity": 7.46
+    },
+    "tests": {
+      "monthly_anomaly_persistence": "pass",
+      "precipitation_product_agreement": "pass",
+      "wet_hour_persistence": "pass",
+      "basin_scale_impact_magnitude": "pass",
+      "catalog_severity_alignment": "pass"
+    },
+    "tolerances": {
+      "ratio": 0.005,
+      "precip_mm": 0.01,
+      "daily_or_hourly_mean": 0.005,
+      "people_per_sq_km": 0.01,
+      "deaths_per_1000": 0.001,
+      "houses_per_person": 0.0001
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Final label and JSON fields",
+        "points": 3,
+        "description": "Returns the requested compact JSON with the final label, event window, core metrics, five test states, and a basis sentence.",
+        "partial_credit": "Award 1-2 points if the label is correct but fields are missing, or if the structure is complete with one mislabeled test."
+      },
+      {
+        "name": "Window and anomaly calculations",
+        "points": 4,
+        "description": "Computes 36 days, 864 hours, 70 percent July anomaly, 102 percent August anomaly, 1.457 anomaly ratio, and 86.0 percent mean anomaly.",
+        "partial_credit": "Award 2-3 points for correct anomalies with an inclusive-window error, or correct window values with one anomaly derivative outside tolerance."
+      },
+      {
+        "name": "Precipitation product and hourly metrics",
+        "points": 4,
+        "description": "Computes GPM 218.227 mm, CHIRPS 230.084 mm, 11.858 mm difference, 1.054 ratio, 347.8 mm sum, 204 wet hours, 0.236 wet-hour share, 1.705 mm wet-hour mean, and 0.040 maximum-hour share.",
+        "partial_credit": "Award 2-3 points if the product comparison is correct but one or two hourly derivatives are missing or rounded outside tolerance."
+      },
+      {
+        "name": "Impact normalization",
+        "points": 3,
+        "description": "Computes 37,280 square kilometers, 18,000,000 affected people, 482.833 affected people per flooded square kilometer, 0.110 deaths per 1,000 affected, and 0.0944 houses per affected person.",
+        "partial_credit": "Award 1-2 points for the right formulas with one denominator or unit mistake."
+      },
+      {
+        "name": "Threshold decisions",
+        "points": 3,
+        "description": "Marks monthly anomaly persistence, precipitation product agreement, wet-hour persistence, basin-scale impact magnitude, and catalog severity alignment as pass under the stated rules.",
+        "partial_credit": "Award 1-2 points if the final label is right but one threshold is omitted or one pass/fail state is wrong."
+      },
+      {
+        "name": "Short-burst rejection",
+        "points": 2,
+        "description": "Explains that the short isolated burst hypothesis is weaker because of persistent monthly anomalies, 204 wet hours, and the 4.0 percent maximum-hour share.",
+        "partial_credit": "Award 1 point for naming persistence without at least two numeric anchors."
+      },
+      {
+        "name": "Concise calculation-first response",
+        "points": 1,
+        "description": "Keeps the answer focused on the computed proof and avoids broad narrative beyond the values.",
+        "partial_credit": "Award 0.5 points for a verbose response when the numeric proof remains easy to identify."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "data/event_reports/event_reports_003_Locked_event_anchor_2010_Pakistan_Indus_River_floods.json",
+      "data/event_reports/event_reports_004_NASA_Earth_Observatory_-_Pakistan_floods_2010.html",
+      "data/event_catalogs/event_catalogs_001_GDACS_event_list_GeoJSON_API.json",
+      "data/physical_hazard/physical_hazard_003_Open-Meteo_historical_weather_point_API.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ],
+    "notes": "Values are regenerated from the local CSX-102 package files."
+  }
+}

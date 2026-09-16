@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CSX-126_Q2",
+  "event_id": "CSX-126",
+  "task_type": "short_answer",
+  "evaluation_mode": "hybrid",
+  "target_family": "cyclone_gonu_muscat_landfall_day_rain_wind_concentration_test",
+  "primary_gt": {
+    "answer_label": "landfall_day_rain_wind_concentration_pass",
+    "ledger": [
+      {
+        "row": "official_landfall_anchor",
+        "formula_or_test": "77 kt * 1.852 = 142.6 km/h; 77 kt >= 64 kt; 970 hPa <= 980 hPa",
+        "key_values": {
+          "near_oman_landfall_wind_kt": 77,
+          "near_oman_landfall_wind_kmh": 142.6,
+          "near_oman_landfall_pressure_hpa": 970,
+          "official_coastal_rainfall_max_mm": 610,
+          "official_muscat_wind_kmh": 100,
+          "lifetime_peak_wind_kt_context": 127,
+          "lifetime_min_pressure_hpa_context": 920
+        },
+        "state": "pass"
+      },
+      {
+        "row": "subdaily_rain_concentration",
+        "formula_or_test": "rolling_window_share = rolling_window_mm / 170.2 mm",
+        "key_values": {
+          "event_precip_mm": 170.2,
+          "rolling_window_shares_3_6_12_24_48_72h": [
+            0.237,
+            0.427,
+            0.669,
+            0.897,
+            0.999,
+            1.0
+          ],
+          "longest_wet_spell_h": 41
+        },
+        "state": "pass"
+      },
+      {
+        "row": "wind_pressure_coupling",
+        "formula_or_test": "109.1 / 53.0 = 2.06; pressure fall = 14.6 hPa",
+        "key_values": {
+          "peak_gust_kmh": 109.1,
+          "peak_wind_kmh": 53.0,
+          "gust_to_wind_ratio": 2.06,
+          "min_pressure_hpa": 991.8,
+          "pressure_fall_hpa": 14.6,
+          "gust_hours_ge_75kmh": 17,
+          "gust_hours_ge_100kmh": 4
+        },
+        "state": "pass"
+      },
+      {
+        "row": "daily_peak_alignment",
+        "formula_or_test": "NASA daily precipitation and wind peaks occur on 20070606; Open-Meteo 148.6/170.2 = 0.873",
+        "key_values": {
+          "nasa_event_precip_mm": 69.54,
+          "nasa_peak_daily_precip_date": "20070606",
+          "nasa_peak_daily_wind_ms": 13.07,
+          "nasa_peak_daily_wind_date": "20070606",
+          "openmeteo_landfall_day_precip_share": 0.873
+        },
+        "state": "pass"
+      },
+      {
+        "row": "area_rain_contrast",
+        "formula_or_test": "gridded_event_precip_max_mm / gridded_event_precip_mean_mm",
+        "key_values": {
+          "era5_max_to_mean_ratio": 4.19,
+          "gpm_max_to_mean_ratio": 4.7,
+          "chirps_max_to_mean_ratio": 2.81
+        },
+        "state": "pass"
+      }
+    ],
+    "rejected_alternatives": [
+      "offshore_only",
+      "multi_day_rain_only",
+      "daily_downgrade"
+    ],
+    "conclusion": "The Muscat-area land record supports a concentrated landfall-day rain-and-wind episode rather than an offshore-only, broad multi-day, or daily-weather-downgrade summary."
+  },
+  "event": {
+    "package_id": "CSX-126",
+    "event_name": "Cyclone Gonu Oman and Arabian Sea",
+    "hazard_family": "tropical_cyclone",
+    "event_date_or_window": "2007-06-01 to 2007-06-07"
+  },
+  "key_values": {
+    "official_report": {
+      "official_lifetime_peak_wind_kt_context": 127,
+      "official_lifetime_min_pressure_hpa_context": 920,
+      "near_oman_landfall_wind_kt": 77,
+      "near_oman_landfall_wind_kmh": 142.6,
+      "near_oman_landfall_pressure_hpa": 970,
+      "official_coastal_rainfall_max_mm": 610,
+      "official_muscat_wind_kmh": 100
+    },
+    "openmeteo_hourly": {
+      "point_latitude": 23.585236,
+      "point_longitude": 58.419388,
+      "event_precip_mm": 170.2,
+      "peak_hourly_precip_mm": 15.7,
+      "peak_hourly_precip_time_utc": "2007-06-06T09:00",
+      "longest_wet_spell_h": 41,
+      "longest_wet_spell_start_utc": "2007-06-05T08:00",
+      "longest_wet_spell_end_utc": "2007-06-07T00:00",
+      "peak_gust_kmh": 109.1,
+      "peak_gust_time_utc": "2007-06-06T08:00",
+      "peak_wind_kmh": 53.0,
+      "gust_to_wind_ratio": 2.06,
+      "min_pressure_hpa": 991.8,
+      "min_pressure_time_utc": "2007-06-06T12:00",
+      "pressure_fall_hpa": 14.6,
+      "gust_hours_ge_75kmh": 17,
+      "gust_hours_ge_100kmh": 4,
+      "landfall_day_utc": "2007-06-06",
+      "landfall_day_precip_mm": 148.6,
+      "landfall_day_precip_share": 0.873,
+      "3h_mm": 40.4,
+      "3h_share": 0.237,
+      "3h_start_utc": "2007-06-06T08:00",
+      "3h_end_utc": "2007-06-06T10:00",
+      "6h_mm": 72.7,
+      "6h_share": 0.427,
+      "6h_start_utc": "2007-06-06T07:00",
+      "6h_end_utc": "2007-06-06T12:00",
+      "12h_mm": 113.9,
+      "12h_share": 0.669,
+      "12h_start_utc": "2007-06-06T04:00",
+      "12h_end_utc": "2007-06-06T15:00",
+      "24h_mm": 152.6,
+      "24h_share": 0.897,
+      "24h_start_utc": "2007-06-05T18:00",
+      "24h_end_utc": "2007-06-06T17:00",
+      "48h_mm": 170.0,
+      "48h_share": 0.999,
+      "48h_start_utc": "2007-06-05T08:00",
+      "48h_end_utc": "2007-06-07T07:00",
+      "72h_mm": 170.2,
+      "72h_share": 1.0,
+      "72h_start_utc": "2007-06-04T09:00",
+      "72h_end_utc": "2007-06-07T08:00"
+    },
+    "nasa_power_daily": {
+      "event_precip_mm": 69.54,
+      "peak_daily_precip_mm": 50.68,
+      "peak_daily_precip_date": "20070606",
+      "peak_daily_wind_ms": 13.07,
+      "peak_daily_wind_date": "20070606",
+      "same_day_peak_precip_and_wind": true
+    },
+    "area_precipitation": {
+      "era5_precip_sum_mm_max": 174.24,
+      "era5_precip_sum_mm_mean": 41.55,
+      "gpm_event_precip_mm_max": 258.8,
+      "gpm_event_precip_mm_mean": 55.04,
+      "chirps_event_precip_mm_max": 171.78,
+      "chirps_event_precip_mm_mean": 61.15,
+      "era5_max_to_mean_ratio": 4.19,
+      "gpm_max_to_mean_ratio": 4.7,
+      "chirps_max_to_mean_ratio": 2.81
+    },
+    "expected_ledger_rows": {
+      "official_landfall_anchor": {
+        "values": {
+          "official_lifetime_peak_wind_kt_context": 127,
+          "official_lifetime_min_pressure_hpa_context": 920,
+          "near_oman_landfall_wind_kt": 77,
+          "near_oman_landfall_wind_kmh": 142.6,
+          "near_oman_landfall_pressure_hpa": 970,
+          "official_coastal_rainfall_max_mm": 610,
+          "official_muscat_wind_kmh": 100
+        },
+        "test": "near-Oman-landfall 77 kt >= 64 kt, 970 hPa <= 980 hPa, 610 mm >= 600 mm, and Muscat wind 100 km/h >= 100 km/h.",
+        "state": "pass"
+      },
+      "subdaily_rain_concentration": {
+        "values": {
+          "event_precip_mm": 170.2,
+          "peak_hourly_precip_mm": 15.7,
+          "wettest_3h_mm": 40.4,
+          "wettest_3h_share": 0.237,
+          "wettest_6h_mm": 72.7,
+          "wettest_6h_share": 0.427,
+          "wettest_12h_mm": 113.9,
+          "wettest_12h_share": 0.669,
+          "wettest_24h_mm": 152.6,
+          "wettest_24h_share": 0.897,
+          "wettest_48h_mm": 170.0,
+          "wettest_48h_share": 0.999,
+          "wettest_72h_mm": 170.2,
+          "wettest_72h_share": 1.0,
+          "longest_wet_spell_h": 41
+        },
+        "test": "rolling_window_share = rolling_window_mm / 170.2 mm, with 24 h share >= 0.85 and 48 h share >= 0.98.",
+        "state": "pass"
+      },
+      "wind_pressure_coupling": {
+        "values": {
+          "peak_gust_kmh": 109.1,
+          "peak_wind_kmh": 53.0,
+          "gust_to_wind_ratio": 2.06,
+          "min_pressure_hpa": 991.8,
+          "pressure_fall_hpa": 14.6,
+          "gust_hours_ge_75kmh": 17,
+          "gust_hours_ge_100kmh": 4
+        },
+        "test": "gust_to_wind_ratio = 109.1 / 53.0 = 2.06, pressure fall >= 10 hPa, and gust duration counts exceed zero.",
+        "state": "pass"
+      },
+      "daily_peak_alignment": {
+        "values": {
+          "nasa_event_precip_mm": 69.54,
+          "nasa_peak_daily_precip_date": "20070606",
+          "nasa_peak_daily_wind_ms": 13.07,
+          "nasa_peak_daily_wind_date": "20070606",
+          "openmeteo_landfall_day_precip_mm": 148.6,
+          "openmeteo_landfall_day_precip_share": 0.873
+        },
+        "test": "NASA daily wind and rain peaks both occur on 20070606, and Open-Meteo landfall-day rain share is 0.873.",
+        "state": "pass"
+      },
+      "area_rain_contrast": {
+        "values": {
+          "era5_precip_sum_mm_max": 174.24,
+          "era5_precip_sum_mm_mean": 41.55,
+          "gpm_event_precip_mm_max": 258.8,
+          "gpm_event_precip_mm_mean": 55.04,
+          "chirps_event_precip_mm_max": 171.78,
+          "chirps_event_precip_mm_mean": 61.15,
+          "era5_max_to_mean_ratio": 4.19,
+          "gpm_max_to_mean_ratio": 4.7,
+          "chirps_max_to_mean_ratio": 2.81
+        },
+        "test": "area_contrast = gridded_event_precip_max_mm / gridded_event_precip_mean_mm; all three ratios exceed 2.5.",
+        "state": "pass"
+      }
+    },
+    "formulas": {
+      "rainfall_window_fraction": "wettest_window_mm / local_event_precip_mm",
+      "gust_to_wind_ratio": "peak_gust_kmh / peak_wind_kmh",
+      "landfall_day_precip_share": "openmeteo_2007_06_06_precip_mm / local_event_precip_mm",
+      "area_precip_ratio": "gridded_event_precip_max_mm / gridded_event_precip_mean_mm"
+    }
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Answer label and ledger form",
+        "points": 3,
+        "description": "Gives the exact answer label and a five-row ledger with all required row names, formulas or tests, values, units, and pass/fail states.",
+        "partial_credit": "Up to 2 points for the correct label with incomplete row formatting; up to 1 point for a recognizable conclusion without the requested ledger."
+      },
+      {
+        "name": "Official landfall anchors",
+        "points": 3,
+        "description": "Reports near-Oman-landfall 77 kt, 142.6 km/h, 970 hPa, 610 mm, and 100 km/h with threshold tests that all pass; treats 127 kt and 920 hPa only as lifetime-peak context.",
+        "partial_credit": "Award 1-2 points for most values but missing conversions or thresholds."
+      },
+      {
+        "name": "Rainfall-window cascade",
+        "points": 4,
+        "description": "Computes all six precipitation fractions from 170.2 mm and includes the 41 h wet spell.",
+        "partial_credit": "Award 2-3 points for correct event total and most windows; 1 point for recognizing concentration without correct fractions."
+      },
+      {
+        "name": "Wind-pressure calculation",
+        "points": 3,
+        "description": "Computes 109.1/53.0 = 2.06, reports 991.8 hPa, 14.6 hPa fall, and the 17 h and 4 h gust-threshold counts.",
+        "partial_credit": "Award 1-2 points for correct gust or pressure values but incomplete threshold counts."
+      },
+      {
+        "name": "Daily alignment cross-check",
+        "points": 3,
+        "description": "Uses NASA POWER 69.54 mm and 13.07 m/s with both peaks on 20070606, plus Open-Meteo 148.6/170.2 = 0.873.",
+        "partial_credit": "Award 1-2 points for correct date alignment but missing one dataset value or the landfall-day share."
+      },
+      {
+        "name": "Area-rain contrast arithmetic",
+        "points": 2,
+        "description": "Computes ERA5 4.19, GPM 4.70, and CHIRPS 2.81 max/mean ratios.",
+        "partial_credit": "Award 1 point for two correct ratios or correct qualitative contrast with incomplete arithmetic."
+      },
+      {
+        "name": "Rejected alternatives and concise conclusion",
+        "points": 2,
+        "description": "Rejects offshore-only, multi-day-rain-only, and daily-downgrade alternatives using the row results, and keeps the conclusion concise.",
+        "partial_credit": "Award 1 point for rejecting only one or two alternatives, or for a correct conclusion with extra unscored claims."
+      }
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "notes": "All values are computed or extracted from local CSX-126 package files; no network access is used.",
+    "source_files": [
+      "metadata/event.json",
+      "data/event_reports/event_reports_006_IMD_RSMC_New_Delhi_Cyclone_Gonu_PDF.pdf",
+      "data/physical_hazard/physical_hazard_002_Open-Meteo_historical_wind_rain_point_API.json",
+      "data/physical_hazard/physical_hazard_004_NASA_POWER_daily_point_weather_API.json",
+      "data/physical_hazard/physical_hazard_005_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_006_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_007_CHIRPS_daily_event_accumulated_precipitation.json"
+    ]
+  }
+}

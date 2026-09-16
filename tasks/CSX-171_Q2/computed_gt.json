@@ -1,0 +1,308 @@
+{
+  "schema_version": "2.0",
+  "task_id": "CSX-171_Q2",
+  "event_id": "CSX-171",
+  "task_type": "structured_json",
+  "evaluation_mode": "hybrid",
+  "target_family": "drought_process_response_pressure_model",
+  "primary_gt": {
+    "source_paths": {
+      "event_window": [
+        "data/event_reports/event_reports_004_Locked_event_anchor_2015-2016_El_Nino_drought_impacts_across_the_tropical_Pacific_and_glob.json"
+      ],
+      "process_narrative": [
+        "data/other/other_002_NOAA_Climate.gov_Pacific_ENSO_drought_summary.html",
+        "data/event_reports/event_reports_005_Locked_anchor_report_WHO.html",
+        "data/event_catalogs/event_catalogs_001_NASA_EONET_v3_events_categories_search.json"
+      ],
+      "physical_hazard": [
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+      ],
+      "exposure_and_facilities": [
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+      ],
+      "remote_sensing": [
+        "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+      ]
+    },
+    "process_model": {
+      "event_window_days": 366,
+      "mechanism_markers": {
+        "shifted_walker_circulation": true,
+        "rainfall_displaced_farther_east": true,
+        "western_pacific_drying": true,
+        "positive_olr_clearer_skies": true
+      },
+      "true_marker_count": 4,
+      "mechanism_support_score": 100.0,
+      "process_label": "el_nino_walker_shifted_western_pacific_drought"
+    },
+    "computed_metrics": {
+      "koror_normal_inches": 30.0,
+      "observed_fraction_normal": 0.267,
+      "deficit_fraction_normal": 0.733,
+      "record_years": 65,
+      "record_depth_norm": 0.867,
+      "dam_storage_failure_flag": 1,
+      "rationing_flag": 1,
+      "local_freshwater_stress_score": 84.0,
+      "wet_slice_window": "2015-06-01 to 2015-07-16",
+      "wet_slice_days": 46,
+      "wet_slice_pct_window": 12.6,
+      "daily_precip_mm": {
+        "gpm": 5.98,
+        "chirps": 4.84,
+        "era5_land": 4.12,
+        "multisensor_mean": 4.98
+      },
+      "wet_pulse_relief_credit": 10.4,
+      "catalog_people_at_risk": 4100000,
+      "gridded_population": 4229508,
+      "exposure_ratio": 0.969,
+      "exposure_norm": 0.969,
+      "school_count": 7,
+      "hospital_count": 1,
+      "critical_facility_norm": 0.8,
+      "affected_people_global_min": 60000000,
+      "supported_countries": 30,
+      "health_sector_need_musd": 460.0,
+      "who_requirement_musd": 51.0,
+      "health_gap_musd": 409.0,
+      "health_gap_fraction": 0.889,
+      "who_requirement_share_pct": 11.1,
+      "health_share_of_humanitarian_pct": 12.8
+    },
+    "scenario_analysis": {
+      "duration_persistence_norm": 0.859,
+      "operational_response_pressure_index": 79.2,
+      "scenario_duration_norm": 1.0,
+      "delayed_recovery_pressure_index": 91.7,
+      "scenario_delta": 12.5,
+      "scenario_assumption": "drought-related health impacts persist 60 additional days and the short precipitation-slice moisture offset is not operationally effective"
+    },
+    "remote_sensing_constraint": {
+      "pre_count": 0,
+      "post_count": 0,
+      "paired_optical_scenes": 0,
+      "paired_change_supported": false,
+      "interpretation": "paired optical surface-change magnitude should not be inferred from this package"
+    },
+    "final_interpretation": "A high response-pressure index is supported by severe Koror rainfall deficit, year-scale persistence, Walker-circulation displacement evidence, same-order population exposure, local critical facilities, and a large health-sector gap; the short early precipitation slice provides a limited moisture offset and cannot replace the drought-process diagnosis."
+  },
+  "answer_summary": {
+    "answer": "el_nino_walker_shifted_western_pacific_drought_response_pressure",
+    "operational_response_pressure_index": 79.2,
+    "delayed_recovery_pressure_index": 91.7,
+    "scenario_delta": 12.5,
+    "local_freshwater_stress_score": 84.0,
+    "mechanism_support_score": 100.0,
+    "paired_change_supported": false
+  },
+  "event": {
+    "package_id": "CSX-171",
+    "event_name": "2015-2016 El Nino drought impacts across the tropical Pacific and global tropics",
+    "hazard_family": "drought_agricultural_stress",
+    "event_date_or_window": "2015-06-01 to 2016-05-31",
+    "location": "Pacific Island Countries, Papua New Guinea, eastern and southern Africa, Latin America and the Caribbean"
+  },
+  "expected_output": {
+    "source_paths": {
+      "event_window": [
+        "data/event_reports/event_reports_004_Locked_event_anchor_2015-2016_El_Nino_drought_impacts_across_the_tropical_Pacific_and_glob.json"
+      ],
+      "process_narrative": [
+        "data/other/other_002_NOAA_Climate.gov_Pacific_ENSO_drought_summary.html",
+        "data/event_reports/event_reports_005_Locked_anchor_report_WHO.html",
+        "data/event_catalogs/event_catalogs_001_NASA_EONET_v3_events_categories_search.json"
+      ],
+      "physical_hazard": [
+        "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+        "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json"
+      ],
+      "exposure_and_facilities": [
+        "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+        "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+        "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+      ],
+      "remote_sensing": [
+        "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json"
+      ]
+    },
+    "process_model": {
+      "event_window_days": 366,
+      "mechanism_markers": {
+        "shifted_walker_circulation": true,
+        "rainfall_displaced_farther_east": true,
+        "western_pacific_drying": true,
+        "positive_olr_clearer_skies": true
+      },
+      "true_marker_count": 4,
+      "mechanism_support_score": 100.0,
+      "process_label": "el_nino_walker_shifted_western_pacific_drought"
+    },
+    "computed_metrics": {
+      "koror_normal_inches": 30.0,
+      "observed_fraction_normal": 0.267,
+      "deficit_fraction_normal": 0.733,
+      "record_years": 65,
+      "record_depth_norm": 0.867,
+      "dam_storage_failure_flag": 1,
+      "rationing_flag": 1,
+      "local_freshwater_stress_score": 84.0,
+      "wet_slice_window": "2015-06-01 to 2015-07-16",
+      "wet_slice_days": 46,
+      "wet_slice_pct_window": 12.6,
+      "daily_precip_mm": {
+        "gpm": 5.98,
+        "chirps": 4.84,
+        "era5_land": 4.12,
+        "multisensor_mean": 4.98
+      },
+      "wet_pulse_relief_credit": 10.4,
+      "catalog_people_at_risk": 4100000,
+      "gridded_population": 4229508,
+      "exposure_ratio": 0.969,
+      "exposure_norm": 0.969,
+      "school_count": 7,
+      "hospital_count": 1,
+      "critical_facility_norm": 0.8,
+      "affected_people_global_min": 60000000,
+      "supported_countries": 30,
+      "health_sector_need_musd": 460.0,
+      "who_requirement_musd": 51.0,
+      "health_gap_musd": 409.0,
+      "health_gap_fraction": 0.889,
+      "who_requirement_share_pct": 11.1,
+      "health_share_of_humanitarian_pct": 12.8
+    },
+    "scenario_analysis": {
+      "duration_persistence_norm": 0.859,
+      "operational_response_pressure_index": 79.2,
+      "scenario_duration_norm": 1.0,
+      "delayed_recovery_pressure_index": 91.7,
+      "scenario_delta": 12.5,
+      "scenario_assumption": "drought-related health impacts persist 60 additional days and the short precipitation-slice moisture offset is not operationally effective"
+    },
+    "remote_sensing_constraint": {
+      "pre_count": 0,
+      "post_count": 0,
+      "paired_optical_scenes": 0,
+      "paired_change_supported": false,
+      "interpretation": "paired optical surface-change magnitude should not be inferred from this package"
+    },
+    "final_interpretation": "A high response-pressure index is supported by severe Koror rainfall deficit, year-scale persistence, Walker-circulation displacement evidence, same-order population exposure, local critical facilities, and a large health-sector gap; the short early precipitation slice provides a limited moisture offset and cannot replace the drought-process diagnosis."
+  },
+  "key_values": {
+    "file_count": 30,
+    "category_counts": {
+      "event_reports": 6,
+      "event_catalogs": 3,
+      "geospatial_context": 2,
+      "physical_hazard": 9,
+      "other": 4,
+      "exposure_impact": 4,
+      "remote_sensing": 2
+    },
+    "aoi_geometry_type": "Polygon",
+    "formula_components": {
+      "baseline_component_sum_before_relief": 0.8961,
+      "scenario_component_sum": 0.9172,
+      "wet_relief_credit_unrounded": 10.429760696363672,
+      "pressure_index_unrounded": 79.18211740425718,
+      "scenario_index_unrounded": 91.72455415695889
+    }
+  },
+  "tolerances": {
+    "index_values": 0.15,
+    "percent_values": 0.15,
+    "rainfall_rates_mm_day": 0.03,
+    "ratios_and_fractions": 0.002,
+    "money_musd": 0.2,
+    "integer_counts": 0
+  },
+  "rubric": {
+    "total_points": 20,
+    "criteria": [
+      {
+        "name": "Self-directed evidence discovery and citations",
+        "points": 3,
+        "description": "Finds relevant files without being given exact names and cites package-relative paths for event reports, physical hazard summaries, exposure/impact data, geospatial or facility context, and remote-sensing constraints.",
+        "partial_credit": "Award up to 2 points for incomplete but usable package-relative citations."
+      },
+      {
+        "name": "ENSO drought process reconstruction",
+        "points": 3,
+        "description": "Identifies the Walker-circulation displacement mechanism and all four process markers, yielding a 100.0 mechanism-support score.",
+        "partial_credit": "Award 0.75 point for each correct mechanism marker."
+      },
+      {
+        "name": "Koror freshwater deficit computation",
+        "points": 3,
+        "description": "Extracts 8.0 inches observed, 22.0 inches deficit, 65-year record context, computes 30.0 inches normal, 0.267 observed fraction, 0.733 deficit fraction, and 84.0 local freshwater stress.",
+        "partial_credit": "Award partial credit for correct extraction, formulas, and threshold flags."
+      },
+      {
+        "name": "Short precipitation slice handling",
+        "points": 3,
+        "description": "Computes 366 event days, 46 wet-slice days, 12.6% coverage, daily rates near 5.98, 4.84, 4.12 mm/day, 4.98 mm/day multi-product mean, and 10.4 moisture-offset credit.",
+        "partial_credit": "Award credit for each correct time, rate, and offset component."
+      },
+      {
+        "name": "Exposure, facilities, and health-response pressure",
+        "points": 4,
+        "description": "Computes 4.1 million catalog at-risk people, 4,229,508 gridded population, 0.969 exposure ratio, 7 schools, 1 hospital, 409.0 million USD health gap, 0.889 gap fraction, and 11.1% WHO share.",
+        "partial_credit": "Award partial credit across population, facility, and health-financing components."
+      },
+      {
+        "name": "Index and scenario arithmetic",
+        "points": 3,
+        "description": "Applies the full pressure-index formula, reporting 79.2 baseline pressure, 91.7 delayed-recovery pressure, and 12.5 scenario delta within tolerance.",
+        "partial_credit": "Award partial credit for correct component setup with arithmetic or rounding errors."
+      },
+      {
+        "name": "Remote-sensing constraint and interpretation",
+        "points": 1,
+        "description": "Correctly states that zero paired optical scenes means no paired optical surface-change magnitude should be inferred, while still using the package's remote-sensing evidence as a constraint.",
+        "partial_credit": "No partial credit."
+      }
+    ]
+  },
+  "judge_anchors": {
+    "must_not_reward": [
+      "generic El Nino explanation without package-derived calculations",
+      "answers that omit package-relative source paths",
+      "surface-change magnitude inferred from unavailable paired optical scenes",
+      "treating the short precipitation slice as an event-scale wet-hazard replacement"
+    ],
+    "strong_answer_features": [
+      "ties Walker circulation displacement to western Pacific drying",
+      "separates short-slice rainfall rates from year-scale drought persistence",
+      "connects water shortage, food insecurity, disease, critical facilities, and health financing",
+      "reports a valid JSON object with scoreable numeric fields"
+    ]
+  },
+  "provenance": {
+    "computed_by": "compute_gt.py",
+    "source_files": [
+      "metadata/event.json",
+      "metadata/files.csv",
+      "data/event_reports/event_reports_004_Locked_event_anchor_2015-2016_El_Nino_drought_impacts_across_the_tropical_Pacific_and_glob.json",
+      "data/event_reports/event_reports_005_Locked_anchor_report_WHO.html",
+      "data/other/other_002_NOAA_Climate.gov_Pacific_ENSO_drought_summary.html",
+      "data/event_catalogs/event_catalogs_001_NASA_EONET_v3_events_categories_search.json",
+      "data/physical_hazard/physical_hazard_002_ERA5-Land_hourly_aggregate_stats.json",
+      "data/physical_hazard/physical_hazard_004_GPM_IMERG_V07_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_006_CHIRPS_daily_event_accumulated_precipitation.json",
+      "data/physical_hazard/physical_hazard_008_Sentinel-2_SR_Harmonized_dNBR.json",
+      "data/exposure_impact/exposure_impact_002_WorldPop_GP_100m_population_sum.json",
+      "data/exposure_impact/exposure_impact_001_Overpass_small_roads_and_critical_amenities.json",
+      "data/geospatial_context/geospatial_context_002_compact_per-event_AOI_derived_from_event_bbox.json"
+    ],
+    "notes": "All values are computed or extracted from local CSX-171 package files; no network access is used."
+  }
+}
