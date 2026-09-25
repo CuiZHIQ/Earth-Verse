@@ -1,0 +1,687 @@
+{
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_20222",
+			"title": "Wildfire in Australia 1028722",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20222",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028722"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 8927.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-20T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 127.08583841737595, -14.079938543695741 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20223",
+			"title": "Wildfire in Australia 1028723",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20223",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028723"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 6426.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-20T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.85516217326855, -13.432791549240818 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20230",
+			"title": "DeSoto BB 8374 S RX Prescribed Fire, Harrison, Mississippi",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20230",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/0aa79001-67d5-4ffb-aa44-82feeb972f29"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1535.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-20T11:12:00Z",
+					"type": "Point", 
+							"coordinates": [ -89.035278, 30.673333 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20229",
+			"title": "Chickasawhay CPT 451 452 RX Prescribed Fire, Greene, Mississippi",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20229",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/29128400-a817-4d78-a1a7-3a5bb5b597fd"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 2129.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-20T09:22:00Z",
+					"type": "Point", 
+							"coordinates": [ -88.6597, 31.4154 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20231",
+			"title": "CADDUGGEN Wildfire, Carteret, North Carolina",
+            "description": "10 Miles W from Cedar Island, NC",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20231",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/7dafe704-220a-4c5e-a9e6-d883cb9a7c35"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 670.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-20T07:59:00Z",
+					"type": "Point", 
+							"coordinates": [ -76.385286, 34.926008 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20236",
+			"title": "Rifle Range Rd Wildfire, Collier, Florida",
+            "description": "7 Miles E from NAPLES, FL",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20236",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/66bfa6ae-29e9-4cde-b0e0-27aa4ec8cee0"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 650.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T22:10:00Z",
+					"type": "Point", 
+							"coordinates": [ -81.6369444, 26.1155556 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20232",
+			"title": "Foothill Wildfire, Santa Barbara, California",
+            "description": "5 Miles SE from New Cuyama, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20232",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/fe13eac3-abc4-49be-87bf-1cc7b095ec74"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 904.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T19:16:00Z",
+					"type": "Point", 
+							"coordinates": [ -119.6036111, 34.8297222 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20238",
+			"title": "MTZ/SDU/TUSIL Wildfire, San Diego, California",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20238",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/86678603-6464-406f-bd21-065bbb15a368"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 550.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T16:17:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.362754, 32.732894 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20235",
+			"title": "TUSIL Wildfire, San Diego, California",
+            "description": "5 Miles NE from campo, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20235",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/1839e996-cb85-4d68-845a-fa8367df7dd8"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 820.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T16:01:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.338245, 32.707868 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20234",
+			"title": "VERONA Wildfire, Riverside, California",
+            "description": "1 Miles NW from Hemet, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20234",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/5fa51a06-a7d8-4926-84cb-c4a1f2bbb6a8"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 600.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T15:21:00Z",
+					"type": "Point", 
+							"coordinates": [ -117.08441, 33.76272 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20233",
+			"title": "BAIN Wildfire, Riverside, California",
+            "description": "1 Miles S from Jurupa Valley, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20233",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/a7c6f956-f17f-4a90-9fe7-011addde290c"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1379.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T15:16:00Z",
+					"type": "Point", 
+							"coordinates": [ -117.505889, 33.975363 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20241",
+			"title": "DeSoto BB 7310 S RX Prescribed Fire, Perry, Mississippi",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20241",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/5eb5f2f6-8d24-41e3-a185-60f921e3fad4"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 2840.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T10:02:00Z",
+					"type": "Point", 
+							"coordinates": [ -88.857778, 31.024444 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20240",
+			"title": "Chickasawhay CPT 366 RX Prescribed Fire, Wayne, Mississippi",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20240",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/44e802a8-6362-4483-911b-0e60f6a2824c"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1772.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T09:35:00Z",
+					"type": "Point", 
+							"coordinates": [ -88.9338, 31.4618 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20242",
+			"title": "RX WINN BU  24 Prescribed Fire, Winn, Louisiana",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20242",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/fa5d7760-1c86-47cc-a58b-469caf22ed53"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 2610.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-19T08:51:00Z",
+					"type": "Point", 
+							"coordinates": [ -92.841389, 32.056667 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20218",
+			"title": "Flood in United States 1103888",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20218",
+			"closed": "2026-05-19T00:00:00Z",
+				"categories": [
+					{
+					"id": "floods",
+					"title": "Floods"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103888"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2026-05-18T20:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -85.387185, 39.0750538 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20219",
+			"title": "Flood in Russia 1103889",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20219",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "floods",
+					"title": "Floods"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103889"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2026-05-18T20:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 41.0263622, 44.8930113 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20153",
+			"title": "Kress Wildfire, Swisher, Texas",
+            "description": "13 Miles N from Plainview, TX",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20153",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/9b17d10e-20c4-4177-9b18-236dfae9d57d"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1500.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T19:06:00Z",
+					"type": "Point", 
+							"coordinates": [ -101.7812159, 34.38652018 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20208",
+			"title": "Wildfire in Australia 1028712",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20208",
+			"closed": "2026-05-19T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028712"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 5468.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-18T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.44587190269715, -13.344203293002213 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20224",
+			"title": "Wildfire in Russian Federation 1028720",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20224",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028720"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 7005.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-18T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.29075617711356, 51.1427156261384 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20158",
+			"title": "Sailor Cap Wildfire, Owyhee, Idaho",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20158",
+			"closed": "2026-05-19T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/73708b7d-cc4d-42d2-b139-74bfd89018f3"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 8292.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T17:49:00Z",
+					"type": "Point", 
+							"coordinates": [ -115.531217, 42.734486 ]
+							}
+
+						
+			]
+		}
+
+		]
+}

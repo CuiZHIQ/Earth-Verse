@@ -1,0 +1,42 @@
+{
+  "package_id": "CSX-249",
+  "event_name": "2022 China heat wave and Yangtze drought",
+  "canonical_event_key": "2022 china heatwave drought",
+  "hazard_family": "compound_cascading_events",
+  "hazard_label": "Compound and cascading event",
+  "scale": "national_admin",
+  "region": "East Asia",
+  "primary_evidence_url": "https://wmo.int/media/news/extreme-weather-china-highlights-climate-change-impacts-and-need-early-warnings",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "94",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "23",
+    "image_files_checked": "2",
+    "valid_images": "2",
+    "formal_slice_files_checked": "9",
+    "hard_error_count": "0",
+    "metadata_warning_count": "0",
+    "final_data_score": "94",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 35,
+    "categories": {
+      "event_catalogs": 5,
+      "event_reports": 7,
+      "exposure_impact": 4,
+      "geospatial_context": 2,
+      "other": 1,
+      "physical_hazard": 10,
+      "remote_sensing": 6
+    }
+  }
+}

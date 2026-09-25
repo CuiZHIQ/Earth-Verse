@@ -1,0 +1,23 @@
+{
+  "dataset": "ECMWF/ERA5_LAND/HOURLY",
+  "start": "2022-01-15",
+  "end": "2022-01-15",
+  "stats": {
+    "precipitation_sum_mm_max": 5.718618467653869e-06,
+    "precipitation_sum_mm_mean": 5.718618467653869e-06,
+    "precipitation_sum_mm_min": 5.718618467653869e-06,
+    "precipitation_sum_mm_stdDev": 0,
+    "temperature_2m_max_c_max": 33.47632751464846,
+    "temperature_2m_max_c_mean": 32.6798364833924,
+    "temperature_2m_max_c_min": 32.02906188964846,
+    "temperature_2m_max_c_stdDev": 0.3677650095200242,
+    "u_component_of_wind_10m_max": -2.5388189951578775,
+    "u_component_of_wind_10m_mean": -2.8738267180975776,
+    "u_component_of_wind_10m_min": -3.1918951670328775,
+    "u_component_of_wind_10m_stdDev": 0.1905043610769295,
+    "v_component_of_wind_10m_max": -2.0219599405924478,
+    "v_component_of_wind_10m_mean": -2.3474149545855414,
+    "v_component_of_wind_10m_min": -2.5799026489257812,
+    "v_component_of_wind_10m_stdDev": 0.13377334997066861
+  }
+}

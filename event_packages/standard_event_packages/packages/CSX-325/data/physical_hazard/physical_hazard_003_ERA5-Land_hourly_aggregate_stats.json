@@ -1,0 +1,23 @@
+{
+  "dataset": "ECMWF/ERA5_LAND/HOURLY",
+  "start": "2023-06-01",
+  "end": "2023-07-16",
+  "stats": {
+    "precipitation_sum_mm_max": 688.8239632187165,
+    "precipitation_sum_mm_mean": 434.4846507836061,
+    "precipitation_sum_mm_min": 261.5437458095826,
+    "precipitation_sum_mm_stdDev": 85.09516734745934,
+    "temperature_2m_max_c_max": 36.55555114746096,
+    "temperature_2m_max_c_mean": 31.71696689568622,
+    "temperature_2m_max_c_min": 28.781030273437523,
+    "temperature_2m_max_c_stdDev": 1.1419489260835372,
+    "u_component_of_wind_10m_max": 0.6033248262128968,
+    "u_component_of_wind_10m_mean": 0.25438027912703437,
+    "u_component_of_wind_10m_min": 0.018468709959500076,
+    "u_component_of_wind_10m_stdDev": 0.1037096646180882,
+    "v_component_of_wind_10m_max": 2.327736550483151,
+    "v_component_of_wind_10m_mean": 0.7720101117159691,
+    "v_component_of_wind_10m_min": 0.29236933113872143,
+    "v_component_of_wind_10m_stdDev": 0.4140141736763548
+  }
+}

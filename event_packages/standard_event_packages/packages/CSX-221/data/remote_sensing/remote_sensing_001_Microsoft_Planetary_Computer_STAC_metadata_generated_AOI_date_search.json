@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","links":[{"rel":"root","type":"application/json","href":"https://planetarycomputer.microsoft.com/api/stac/v1/"},{"rel":"self","type":"application/geo+json","href":"https://planetarycomputer.microsoft.com/api/stac/v1/search"}],"features":[],"numberReturned":0}

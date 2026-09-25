@@ -1,0 +1,2577 @@
+<HTML>
+<HEAD>
+<title>NOAA Coral Reef Watch Daily 5km Satellite Coral Bleaching Heat Stress Monitoring Products (Version 3.1)</title>
+
+<!--// START OF HEADER TEXT FROM INCLUDE STATEMENT  //-->
+<!--// DO NOT MODIFY THIS SECTION  //-->
+<link rel="icon" href="/favicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/crw-style_wide.css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Keywords" Content="Oceanography, Marine, Satellite,Remote Sensing,Coral Reef,Coral Bleaching,Marine Biology,Marine Ecology, Physical Oceanography, Environment, Publication,in situ, observation, CREWS, CRW,  NOAA, Government">
+<meta name="Author" Content="NOAA Coral Reef Watch">
+<title>NOAA Coral Reef Watch Program</title>
+<!--// ****** for GSA federal Google Analytics ***** //-->
+<script async id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NOAA"></script>
+<!--// GA4 Google tag (gtag.js) - code updated 6/13/2023; main STAR tag created 3/1/2023 //-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J8W8XXDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6J8W8XXDSC');
+</script>
+<script async src='https://siteimproveanalytics.com/js/siteanalyze_6294131.js'></script>
+<!--// ***************************** //-->
+<script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!--// Add fancyBox 2.1.7 //-->
+<link rel="stylesheet" href="https://www.star.nesdis.noaa.gov/star/global/js/fancyapps/source/jquery.fancybox.css?v=2.1.7" media="screen">
+<script src="https://www.star.nesdis.noaa.gov/star/global/js/fancybox/jquery.fancybox.pack.js?v=2.1.7"></script>
+<script>
+$(document).ready(function() {
+	$(".fancybox").fancybox({
+		beforeShow: function(){
+			var fancyAlt = $(this.element).find('img').attr('alt');
+			$(".fancybox-inner").find("img").attr("alt",fancyAlt);
+		}
+	});
+});
+
+$(document).ready(function(){
+	$("#Map area").fancybox({
+		beforeShow: function(){
+			var fancyAlt = $(this.element).find('img').attr('alt');
+			$(".fancybox-inner").find("img").attr("alt",fancyAlt);
+		}
+	}); 
+});
+</script>
+<!--// **** Defining Regional Virtual Stations Number Variable **** //-->
+</head>
+<body>
+<div align="center">
+<div id="header">
+<!--//  <a href="/index.php"><img class="header-right" src="/satellite/icons1/crw_banner_small2_20years_a.png"></a>  //-->
+<a href="/index.php"><img class="header-right" alt="CoralReefWatch banner" src="/satellite/icons1/crw_banner_small2.png"></a>
+<a href="https://www.nesdis.noaa.gov"><img class="header-left" src="/satellite/icons1/banner_nesdis_small_4.png" alt="NOAA NESDIS banner" height='50'></a>
+    <div id="header-links-NOAA">
+		<a href="https://www.commerce.gov/">DOC</a> > <a 
+		href="https://www.noaa.gov/">NOAA</a> > <a 
+		href="https://www.nesdis.noaa.gov/">NESDIS</a> > <a 
+		href="https://www.star.nesdis.noaa.gov/star/index.php">STAR</a> > <a href="/index.php">CRW</a></div>
+	<div id="header-links-CRTF">
+		<a href="https://www.coralreef.gov/">USCRTF</a> | <a 
+		href="https://coralreef.noaa.gov/">CRCP</a> | <!--// <a href="/creios.php">CREIOS</a> | //--> <a 
+		href="https://www.coris.noaa.gov/monitoring">NCRMP</a> | <a 
+		href="https://coris.noaa.gov/">CoRIS</a></div>
+	<img class="header-bottom" alt="CoralReefWatch banner" src="/satellite/icons1/banner_coral_0202.jpg">
+</div>
+
+<!--   Add side-wide announcement below if any; otherwise comment it out    -->
+<!--
+<table width='960'><tr><td>
+  <p>
+  <font size='-1' color="red"><b>
+  USER ALERT: Notice goes here. If ..., please contact us at
+  <a href=
+  "mailto:coralreefwatch@noaa.gov?subject=[Question ... for Coral Reef Watch]">
+  coralreefwatch@noaa.gov</a>.
+  </b></font>
+  </td></tr>
+</table>
+-->
+
+<!--// END OF HEADER TEXT FROM INCLUDE STATEMENT  //-->
+
+
+<div id="content">
+
+
+<!-------START OF NAVBAR TEXT FROM INCLUDE STATEMENT-------------------------------------->
+<!-------DO NOT MODIFY THIS SECTION------------------------------------------------------->
+
+<div id="navbar">
+
+  <div class="navbar-section">
+    <img class="navbar-icon" src="/satellite/icons1/reef_icon.gif"><br>
+    <h1><a href="/index.php">Coral Reef Watch Home</a></h1>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/about_us.php">About Us</a></h1>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/product/index.php">Products List</a></h1>
+  </div>
+
+  <div class="navbar-section">
+    <h1>Near-Real-Time Data</h1><br>
+    <a class="link-level-one" href="/product/5km">5km Resolution</a><br>
+  <!--<a class="link-level-one" href="/satellite/index_50.php">50-km Resolution</a><br> -->
+  </div>
+
+  <div class="navbar-section">
+    <h1>Next-Generation Experimental Products</h1><br>
+    <a class="link-level-one" href="/product/vs/map.php">5km Regional Virtual Stations</a><br>
+    <a class="link-level-one" href="/product/marine_heatwave/">Marine Heatwave</a><br>
+    <a class="link-level-one" href="/product/disease/index.php">Disease Outbreak Risk</a><br>
+    <a class="link-level-one" href="/product/disease_multifactor/index.php">Multi-Factor Disease Risk</a><br>
+    <!--<a class="link-level-one" href="/product/lsd/index.php">Light Stress Damage</a><br>-->
+    <!--  <a class="link-level-one" href="/satellite/ssttrend_st.php">Short-Term SST Trends</a><br>  -->
+    <!--<a class="link-level-one" href="/satellite/doldrums_v2/index.php">Doldrums</a><br> -->
+    <a class="link-level-one" href="/product/oc/index.php">Ocean Color</a><br>
+    <a class="link-level-one" href="/satellite/bleachingoutlook_cfs/outlook_cfs.php">Bleaching Outlook (CFS)</a><br>
+    <a class="link-level-one" href="/product/thermal_history/index.php">Thermal History</a><br>
+    <a class="link-level-one" href="/product/larval_connectivity/index.php">Larval Connectivity</a><br>
+    <!--<a class="link-level-one" href="/satellite/oa/index.php">Ocean Acidification</a><br> -->
+       <!--        <a class="link-level-two" href="/satellite/e50/e50_baa.html">  -->
+       <!--          E50 Alert Area</a><br>  -->
+       <!--        <a class="link-level-two" href="/satellite/e50/e50_dhw.html">  -->
+       <!--          E50 DHW</a><br>  -->
+       <!--        <a class="link-level-two" href="/satellite/e50/e50_hotspot.html">  -->
+       <!--          E50 HotSpots</a><br>  -->
+       <!--        <a class="link-level-two" href="/satellite/e50/e50_sst.html">  -->
+       <!--          E50 SST</a><br>  -->
+       <!--        <a class="link-level-two" href="/satellite/e50/e50_sstanom.html">  -->
+       <!--          E50 SST Anomaly</a><br>  -->
+    <a class="link-level-one" href="/crtr/data_resources.php">Add'l Free Online Data</a><br>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/satellite/publications.php">Publications</a></h1><br>
+    <a class="link-level-one" href="/satellite/docs/recommendations_crw_citation.php">Cite CRW Data &amp; Products</a><br>
+    <a class="link-level-one" href="/product/5km/methodology.php">5km Products Methodology</a>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/satellite/research/index.php">Research Activities</a></h1><br>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/product/50km">Retired Heritage Products (50km)</a></h1><br>
+  </div>
+
+  <div class="navbar-section">
+    <h1><a href="/satellite/education/index.php">Outreach/Education</a></h1><br>
+    <a class="link-level-one" href="/product/5km/tutorial/welcome.php">5km Products Tutorial</a><br>
+  </div>
+
+  <!--<div class="navbar-section"><h1><a href="/satellite/collaborations.php">Research Partnerships</a></h1><br></div>-->
+
+  <div class="navbar-section">
+    <h1><a href="/satellite/research/coral_bleaching_report.php">Report Bleaching</a></h1>
+  </div>
+
+  <!--<div class="navbar-section"><h1><a href="/about_us.php">About Us</a></h1></div>-->
+
+</div>
+
+<!-------END OF NAVBAR TEXT FROM INCLUDE STATEMENT-------------------------------------->
+
+<div id="main-content">
+
+
+
+<div class="title-section">
+<nobr>Daily Global 5km Satellite Coral Bleaching Heat Stress Monitoring</nobr>
+<br>
+<font size="-1">(Version 3.1, 1985-present, released August 1, 2018)</font>
+<!--
+<br>
+<font color="red" size='-1'>Featuring New, Enhanced Image Style</font>
+<font color="blue" size='-1'> (Click <a href="/product/5km_v3.1/index.php">here</a> to switch to the original image style)</font>
+-->
+</div>
+
+<!--
+<div class="title-section">
+<font color="blue" size='-1'>
+Any announcement goes here.
+</font>
+</div>
+-->
+
+<p>
+<div class="centered-section"><i>Click on buttons below image to change parameter; click on image to view larger, tiled images.</i></div>
+
+<!----------CURRENT IMAGE AND BUTTONS --------------->
+<script type="text/javascript">
+      function changeBAAmax7d()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_tropics_nogrid_current_cropped.png";
+      document.getElementById("mainImage").alt="Global Bleaching Alert Area 7-Day Maximum image";
+      document.getElementById("mainImageLink").href="./index_5km_baa-max-7d.php";
+      }
+      function changeHotSpot()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_tropics_nogrid_current.png";
+      document.getElementById("mainImage").alt="Global Coral Bleaching HotSpot image";
+      document.getElementById("mainImageLink").href="./index_5km_hs.php";
+      }
+      function changeDHW()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_tropics_nogrid_current.png";
+      document.getElementById("mainImage").alt="Global Coral Bleaching Degree Heating Week image";
+      document.getElementById("mainImageLink").href="./index_5km_dhw.php"
+      }
+      function changeAnomaly()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_tropics_nogrid_current.png";
+      document.getElementById("mainImage").alt="Global Sea Surface Temperature Anomaly image";
+      document.getElementById("mainImageLink").href="./index_5km_ssta.php"
+      }
+      function changeSST()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_tropics_nogrid_current.png";
+      document.getElementById("mainImage").alt="Global Sea Surface Temperature image";
+      document.getElementById("mainImageLink").href="./index_5km_sst.php"
+      }
+      function changeSSTTrend7d()
+      {
+      document.getElementById("mainImage").src="/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_tropics_nogrid_current.png";
+      document.getElementById("mainImage").alt="Global Sea Surface Temperature Trend over the past 7 Days image";
+      document.getElementById("mainImageLink").href="./index_5km_sst-trend-7d.php"
+      }
+      function changeOutlook()
+      {
+      document.getElementById("mainImage").src="/satellite/bleachingoutlook_cfs/current_image/cur_web_cfsv2_outlook-4mon_v5_60pct_45ns.gif";
+      document.getElementById("mainImage").alt="Global Bleaching Outlook image";
+      document.getElementById("mainImageLink").href="/satellite/bleachingoutlook_cfs/outlook_cfs.php"
+      }
+</script>
+
+<div class="centered-section">
+<table>
+<tr>
+<td align="center" width="18%">
+<button type="button" style="background-color: #DDA0DD" onClick="location='/product/5km/methodology.php'">5km Methodology</button>
+<br><br>
+<button type="button" style="background-color: #DDA0DD" onClick="location='/product/5km/tutorial/welcome.php'">5km Tutorial</button>
+</td>
+
+<td align="center" width="64%">
+  <a id="mainImageLink" href="index_5km_baa-max-7d.php">
+  <img id="mainImage" src="/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_tropics_nogrid_current_cropped.png" width="450"></a>
+</td>
+<td align="center" width="18%">
+  <a href="/product/vs/map.php">
+  <img src="/icon_product/icon_bleaching_heat_stress_gauge.png" width="100" border="1"></a>
+  <br>
+  <a href="/product/vs/map.php"><nobr>Virtual Stations/</br>Gauges</a>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="3"> 
+  <input name="colorButton" type="button" value="Alerts (7-day max)" onclick="changeBAAmax7d()"/>
+  <input name="colorButton" type="button" value="DHW" onclick="changeDHW()"/>
+  <input name="colorButton" type="button" value="HotSpot" onclick="changeHotSpot()"/>
+  <input name="colorButton" type="button" value="SST" onclick="changeSST()"/>
+  <input name="colorButton" type="button" value="Anomaly" onclick="changeAnomaly()"/>
+  <input name="colorButton" type="button" value="SST Trend" onclick="changeSSTTrend7d()"/> 
+  <input name="colorButton" type="button" value="Outlook" onclick="changeOutlook()"/>
+</td>
+</tr>
+</table>
+</div>
+<!-------END OF CURRENT IMAGE AND BUTTONS ------------>
+<br>
+
+<p>
+
+<!------------------------------------------------------>
+
+<p>
+
+<div align="center">
+
+<b><nobr>Current Regional Images</nobr></b>
+
+<table border='0'>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>Alert Area (7-day max):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_triangle_current.png'>Coral Triangle</a> 
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_caribbean_current.png'>Caribbean</a> 
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-7d_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>DHW:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_dhw_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>HotSpot:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_hs_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+ 
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/coraltemp_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Anomaly:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_ssta_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Trend (over 7 days):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_sst-trend-7d_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>&nbsp;</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr><a href="index_5km_baa-max-365d.php">365d Max Alert Area</a>:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_tropics_current.png'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_global_current.png'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_east_current.png'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_west_current.png'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_pacific_current.png'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_indian_current.png'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_satlantic_current.png'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_triangle_current.png'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_caribbean_current.png'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_florida_current.png'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_hawaii_current.png'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/daily/png/ct5km_baa5-max-365d_v3.1_gbr_current.png'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr><a href="index_5km_bse-365d.php">365d Bleaching Stress Ext:</a>&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+Time Series Graphs:&nbsp;&nbsp;
+<a href='index_5km_bse-365d.php#recent_years'>2020-present,</a>
+<a href='index_5km_bse-365d.php#all_years'>1986-present</a>
+&nbsp;|&nbsp;
+Data:&nbsp;&nbsp;
+<a href='/data_current/5km/v3.1_op/daily/txt/5km-v3.1_stats-alert01_baa5-max-365d_dailyupdate.txt'>txt</a>, 
+<a href='/data_current/5km/v3.1_op/daily/csv/5km-v3.1_stats-alert01_baa5-max-365d_dailyupdate.csv'>csv</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>&nbsp;</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr><a href="/satellite/bleachingoutlook_cfs/outlook_cfs.php">4-Month Outlook (60%)</a>:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_45ns.gif'>Tropics</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_large.gif'>Global</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_east.gif'>East</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_west.gif'>West</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_pacific_930x580.gif'>Pac</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_indian_930x580.gif'>Ind</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_ctr_2790x1740.gif'>Coral Triangle</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_crb_2790x1740.gif'>Caribbean</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_fl_930x580.gif'>Florida</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/satellite/bleachingoutlook_cfs/current_image/cur_cfsv2_outlook-4mon_v5_60pct_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+</table>
+</div>
+
+<p>
+<div align='center'>
+<button type="button" onClick="location='/product/vs/map.php';"><font color="blue"><b>Google Maps Interface - Current Data</b></font></button>
+<button type="button" onClick="location='/product/ge/index.php';"><font color="blue"><b>Google Earth Interface - Current Data</b></font></button>
+
+<p>
+<hr width='50%'>
+</p>
+
+<b><nobr>Other NOAA Portals Serving CRW Data (Current Data and Interactive Map Servers) </nobr></b>
+<p>
+<button title='This link opens a NOAA website in a new tab' type="button"
+onClick="window.open('https://coastwatch.noaa.gov/cw_html/cwViewer.html','_blank')"><font color="blue"><b>CoastWatch Data Portal</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a NOAA website in a new tab' type="button"
+onClick="window.open('https://www.nnvl.noaa.gov/view/globaldata.html','_blank')"><font color="blue"><b>NOAA View Global Data Explorer</b></font>
+<img src="/icons_gen/popup.gif"></button>
+
+<p>
+<hr width='50%'>
+</p>
+
+<b><nobr>External Partners Serving CRW Data (Current Data and Interactive Map Servers) </nobr></b>
+<p>
+<button title='This link opens a non-government website in a new tab' type="button"
+onClick="window.open('https://sdgstoday.org/dataset/bleaching-of-coral-reef-areas-1612647640849x669605527441168500','_blank')"><font color="blue"><b>SDGs Today</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a non-government website in a new tab' type="button" 
+onClick="window.open('https://www.pacioos.hawaii.edu/voyager/','_blank')"><font color="blue"><b>PacIOOS Voyager</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a non-government website in a new tab' type="button"
+onClick="window.open('https://aqualink.org/map','_blank')"><font color="blue"><b>Aqualink</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a non-government website in a new tab' type="button"
+onClick="window.open('https://www.caricoos.org/ecosystem-and-water-quality','_blank')"><font color="blue"><b>CARICOOS</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<p>
+<button title='This link opens a non-government website in a new tab' type="button"
+onClick="window.open('https://resourcewatch.org/data/explore','_blank')"><font color="blue"><b>WRI ResourceWatch</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a non-government website in a new tab' type="button" 
+onClick="window.open('https://allencoralatlas.org/atlas/#1.00/0.0000/-145.0000','_blank')"><font color="blue"><b>Allen Coral Atlas</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<button title='This link opens a non-government website in a new tab' type="button"
+onClick="window.open('https://recifs.epfl.ch/','_blank')"><font color="blue"><b>RECIFS</b></font>
+<img src="/icons_gen/popup.gif"></button>
+<p>
+
+<p>
+
+<div align="left">
+<font size="1" color="darkblue" face="verdana,arial">
+**Disclaimer: While NOAA Coral Reef Watch data are included in the above platforms as part of ongoing scientific collaboration, NOAA and Coral Reef Watch 
+do not endorse any of these platforms or other datasets contained within them.**
+</font></div>
+
+<hr>
+<p>
+<button type="button" onClick="location='index_5km_composite.php';"><b>Composites: Year-to-date Maximum, Minimum, and Mean</b></button>
+</div>
+
+<!-------------End of Links to Current Regional Images------------------------------>
+
+
+<!-------------Beginning of Links to Current 30-day Animations------------------------------>
+
+<hr>
+<p>
+
+<div align="center">
+
+<b><nobr>Most Recent 30-day Animations</nobr></b>
+
+<table border='0'>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>Alert Area (7-day max):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>DHW:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>HotSpot:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Anomaly:&nbsp;</nobr>
+</b>
+</font>
+</td>
+
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Trend (over 7 days):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_30day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+</table>
+</div>
+
+<!- ------------------- Beginning of 90-day animations ---------------- -->
+<p>
+
+<div align="center">
+
+<b><nobr>Most Recent 90-day Animations</nobr></b>
+
+<table border='0'>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>Alert Area (7-day max):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/baa5-max_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>DHW:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/dhw_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>HotSpot:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/hs_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Anomaly:&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/ssta_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+<tr>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>SST Trend (over 7 days):&nbsp;</nobr>
+</b>
+</font>
+</td>
+<td align='left'>
+<font size="1" color="darkblue" face="verdana,arial">
+<b>
+<nobr>
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_45ns.gif'>Tropics</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_large.gif'>Global</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_east.gif'>East</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_west.gif'>West</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_pacific_930x580.gif'>Pac</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_indian_930x580.gif'>Ind</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_satlantic_930x580.gif'>S.Atl</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_coraltriangle.gif'>Coral Triangle</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_crb_930x580.gif'>Caribbean</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_fl_930x580.gif'>Florida</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_hi_930x580.gif'>Hawaii</a>
+|
+<a href='/data_current/5km/v3.1_op/animation/gif/sst-trend_animation_90day_gbr_930x580.gif'>GBR</a>
+</nobr>
+</b>
+</font>
+</td>
+</tr>
+
+</table>
+</div>
+
+<!-------------End of Links to Current Animations----------------------------- -->
+
+<a name="data_access"></a> <!-- Anchor -->
+
+<!-- Beginning of Archive Section---------------------------------   -->
+<hr>
+<hr>
+
+<p>
+
+<div align='center'>
+<b><nobr>Archived Data and Images</nobr><br></b>
+<font size='-2'>
+<nobr><i>(Degree Heating Week, Alert Area, & others available since 25 Mar, 31 Mar, & 1 Jan 1985, respectively)</i></nobr>
+</font>
+
+<p>
+<div align="left" style="padding-left:5px; padding-right:5px"><b><nobr>Sea Surface Temperature (<i>CoralTemp</i>) Images:</nobr><br></b></div>
+<table align='center' border='0' width='540'>
+<tr align='center'>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_region">
+<select name="region">
+<option value="tropics">Tropics (45S-45N)</option>
+<option value="global">Global</option>
+<option value="east">Eastern Hemisphere</option>
+<option value="west">Western Hemisphere</option>
+<option value="pacific">Pacific Ocean</option>
+<option value="indian">Indian Ocean</option>
+<option value="satlantic">South Atlantic Ocean</option>
+<option value="triangle">Coral Triangle</option>
+<option value="caribbean">Caribbean</option>
+<option value="florida">Florida</option>
+<option value="hawaii">Hawaiian Islands</option>
+<option value="gbr">Great Barrier Reef</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_year">
+<select name="year">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_month">
+<select name="month">
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_day">
+<select name="day">
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<input type="button"
+onClick="location='/data/5km/v3.1_op/image/daily/sst/png/'+
+document.menu_sst_year.year.options[document.menu_sst_year.year.selectedIndex].value+'/'+
+document.menu_sst_month.month.options[document.menu_sst_month.month.selectedIndex].value+'/'+
+'coraltemp_v3.1_'+
+document.menu_sst_region.region.options[document.menu_sst_region.region.selectedIndex].value+'_'+
+document.menu_sst_year.year.options[document.menu_sst_year.year.selectedIndex].value+
+document.menu_sst_month.month.options[document.menu_sst_month.month.selectedIndex].value+
+document.menu_sst_day.day.options[document.menu_sst_day.day.selectedIndex].value+
+'.png';" value="View">
+</input>
+</font>
+</td>
+</tr>
+</table>
+
+<b>60x40-degree tiled images</b> (see <a href='description_tile_60x40degree.php'>description</a> of tiles)
+<table align='center' border='0' width='540'>
+<tr align='center'>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_region_tile">
+<select name="region">
+<option value="newl">Low Latitudes: N. Hemi./E. Hemi. - West</option>
+<option value="necl">Low Latitudes: N. Hemi./E. Hemi. - Center</option>
+<option value="neel">Low Latitudes: N. Hemi./E. Hemi. - East</option>
+<option value="nwwl">Low Latitudes: N. Hemi./W. Hemi. - West</option>
+<option value="nwcl">Low Latitudes: N. Hemi./W. Hemi. - Center</option>
+<option value="nwel">Low Latitudes: N. Hemi./W. Hemi. - East</option>
+<option value="sewl">Low Latitudes: S. Hemi./E. Hemi. - West</option>
+<option value="secl">Low Latitudes: S. Hemi./E. Hemi. - Center</option>
+<option value="seel">Low Latitudes: S. Hemi./E. Hemi. - East</option>
+<option value="swwl">Low Latitudes: S. Hemi./W. Hemi. - West</option>
+<option value="swcl">Low Latitudes: S. Hemi./W. Hemi. - Center</option>
+<option value="swel">Low Latitudes: S. Hemi./W. Hemi. - East</option>
+<option value="newh">High Latitudes: N. Hemi./E. Hemi. - West</option>
+<option value="nech">High Latitudes: N. Hemi./E. Hemi. - Center</option>
+<option value="neeh">High Latitudes: N. Hemi./E. Hemi. - East</option>
+<option value="nwwh">High Latitudes: N. Hemi./W. Hemi. - West</option>
+<option value="nwch">High Latitudes: N. Hemi./W. Hemi. - Center</option>
+<option value="nweh">High Latitudes: N. Hemi./W. Hemi. - East</option>
+<option value="sewh">High Latitudes: S. Hemi./E. Hemi. - West</option>
+<option value="sech">High Latitudes: S. Hemi./E. Hemi. - Center</option>
+<option value="seeh">High Latitudes: S. Hemi./E. Hemi. - East</option>
+<option value="swwh">High Latitudes: S. Hemi./W. Hemi. - West</option>
+<option value="swch">High Latitudes: S. Hemi./W. Hemi. - Center</option>
+<option value="sweh">High Latitudes: S. Hemi./W. Hemi. - East</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_year_tile">
+<select name="year">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_month_tile">
+<select name="month">
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_sst_day_tile">
+<select name="day">
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<input type="button"
+onClick="location='/data/5km/v3.1_op/image/daily/sst/png/'+
+document.menu_sst_year_tile.year.options[document.menu_sst_year_tile.year.selectedIndex].value+'/'+
+document.menu_sst_month_tile.month.options[document.menu_sst_month_tile.month.selectedIndex].value+'/'+
+'/coraltemp_v3.1_'+
+document.menu_sst_region_tile.region.options[document.menu_sst_region_tile.region.selectedIndex].value+'_'+
+document.menu_sst_year_tile.year.options[document.menu_sst_year_tile.year.selectedIndex].value+
+document.menu_sst_month_tile.month.options[document.menu_sst_month_tile.month.selectedIndex].value+
+document.menu_sst_day_tile.day.options[document.menu_sst_day_tile.day.selectedIndex].value+
+'.png';" value="View">
+</input>
+</font>
+</td>
+</tr>
+</table>
+
+<p>
+<div align="left" style="padding-left:5px; padding-right:5px"><b><nobr><i>CoralTemp</i>-derived Coral Bleaching Heat Stress Product Images:</nobr><br></b></div>
+
+<table align='center' border='0' width='540'>
+<tr align='center'>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_parameter">
+<select name="parameter">
+<option value="baa5-max-7d">Alert Area (7-day maximum)</option>
+<option value="baa5">Alert Area (single-day)</option> -->
+<option value="hs">Hotspot</option>
+<option value="dhw">Degree Heating Week</option>
+<option value="ssta">SST Anomaly</option>
+<option value="sst-trend-7d">SST Trend (7-day trend)</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_region">
+<select name="region">
+<option value="tropics">Tropics (45S-45N)</option>
+<option value="global">Global</option>
+<option value="east">Eastern Hemisphere</option>
+<option value="west">Western Hemisphere</option>
+<option value="pacific">Pacific Ocean</option>
+<option value="indian">Indian Ocean</option>
+<option value="satlantic">South Atlantic Ocean</option>
+<option value="triangle">Coral Triangle</option>
+<option value="caribbean">Caribbean</option>
+<option value="florida">Florida</option>
+<option value="hawaii">Hawaiian Islands</option>
+<option value="gbr">Great Barrier Reef</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_year">
+<select name="year">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_month">
+<select name="month">
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_day">
+<select name="day">
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<input type="button"
+onClick="location='/data/5km/v3.1_op/image/daily/'+
+document.menu_parameter.parameter.options[document.menu_parameter.parameter.selectedIndex].value+'/png/'+
+document.menu_year.year.options[document.menu_year.year.selectedIndex].value+'/'+
+document.menu_month.month.options[document.menu_month.month.selectedIndex].value+'/ct5km_'+
+document.menu_parameter.parameter.options[document.menu_parameter.parameter.selectedIndex].value+'_v3.1_'+
+document.menu_region.region.options[document.menu_region.region.selectedIndex].value+'_'+
+document.menu_year.year.options[document.menu_year.year.selectedIndex].value+
+document.menu_month.month.options[document.menu_month.month.selectedIndex].value+
+document.menu_day.day.options[document.menu_day.day.selectedIndex].value+
+'.png';" value="View">
+</input>
+</font>
+</td>
+</tr>
+</table>
+
+<b>60x40-degree tiled images</b> (see <a href='description_tile_60x40degree.php'>description</a> of tiles)
+<table align='center' border='0' width='540'>
+<tr align='center'>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_parameter_tile">
+<select name="parameter">
+<option value="baa5-max-7d">Alert Area (7-day maximum)</option>
+<option value="baa5">Alert Area (single-day)</option>
+<option value="hs">Hotspot</option>
+<option value="dhw">Degree Heating Week</option>
+<option value="ssta">SST Anomaly</option>
+<option value="sst-trend-7d">SST Trend (7-day trend)</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_region_tile">
+<select name="region">
+<option value="newl">Low Latitudes: N. Hemi./E. Hemi. - West</option>
+<option value="necl">Low Latitudes: N. Hemi./E. Hemi. - Center</option>
+<option value="neel">Low Latitudes: N. Hemi./E. Hemi. - East</option>
+<option value="nwwl">Low Latitudes: N. Hemi./W. Hemi. - West</option>
+<option value="nwcl">Low Latitudes: N. Hemi./W. Hemi. - Center</option>
+<option value="nwel">Low Latitudes: N. Hemi./W. Hemi. - East</option>
+<option value="sewl">Low Latitudes: S. Hemi./E. Hemi. - West</option>
+<option value="secl">Low Latitudes: S. Hemi./E. Hemi. - Center</option>
+<option value="seel">Low Latitudes: S. Hemi./E. Hemi. - East</option>
+<option value="swwl">Low Latitudes: S. Hemi./W. Hemi. - West</option>
+<option value="swcl">Low Latitudes: S. Hemi./W. Hemi. - Center</option>
+<option value="swel">Low Latitudes: S. Hemi./W. Hemi. - East</option>
+<option value="newh">High Latitudes: N. Hemi./E. Hemi. - West</option>
+<option value="nech">High Latitudes: N. Hemi./E. Hemi. - Center</option>
+<option value="neeh">High Latitudes: N. Hemi./E. Hemi. - East</option>
+<option value="nwwh">High Latitudes: N. Hemi./W. Hemi. - West</option>
+<option value="nwch">High Latitudes: N. Hemi./W. Hemi. - Center</option>
+<option value="nweh">High Latitudes: N. Hemi./W. Hemi. - East</option>
+<option value="sewh">High Latitudes: S. Hemi./E. Hemi. - West</option>
+<option value="sech">High Latitudes: S. Hemi./E. Hemi. - Center</option>
+<option value="seeh">High Latitudes: S. Hemi./E. Hemi. - East</option>
+<option value="swwh">High Latitudes: S. Hemi./W. Hemi. - West</option>
+<option value="swch">High Latitudes: S. Hemi./W. Hemi. - Center</option>
+<option value="sweh">High Latitudes: S. Hemi./W. Hemi. - East</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_year_tile">
+<select name="year">
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_month_tile">
+<select name="month">
+<option value="01">Jan</option>
+<option value="02">Feb</option>
+<option value="03">Mar</option>
+<option value="04">Apr</option>
+<option value="05">May</option>
+<option value="06">Jun</option>
+<option value="07">Jul</option>
+<option value="08">Aug</option>
+<option value="09">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<form name="menu_day_tile">
+<select name="day">
+<option value="01">1</option>
+<option value="02">2</option>
+<option value="03">3</option>
+<option value="04">4</option>
+<option value="05">5</option>
+<option value="06">6</option>
+<option value="07">7</option>
+<option value="08">8</option>
+<option value="09">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</form>
+</font>
+</td>
+<td valign='top'>
+<font size="1" color="black" face="verdana,arial">
+<input type="button"
+onClick="location='/data/5km/v3.1_op/image/daily/'+
+document.menu_parameter_tile.parameter.options[document.menu_parameter_tile.parameter.selectedIndex].value+'/png/'+
+document.menu_year_tile.year.options[document.menu_year_tile.year.selectedIndex].value+'/'+
+document.menu_month_tile.month.options[document.menu_month_tile.month.selectedIndex].value+'/ct5km_'+
+document.menu_parameter_tile.parameter.options[document.menu_parameter_tile.parameter.selectedIndex].value+'_v3.1_'+
+document.menu_region_tile.region.options[document.menu_region_tile.region.selectedIndex].value+'_'+
+document.menu_year_tile.year.options[document.menu_year_tile.year.selectedIndex].value+
+document.menu_month_tile.month.options[document.menu_month_tile.month.selectedIndex].value+
+document.menu_day_tile.day.options[document.menu_day_tile.day.selectedIndex].value+
+'.png';" value="View">
+</input>
+</font>
+</td>
+</tr>
+</table>
+
+</div>
+
+<!-- ---------------End of Dropdown Menus for Archive Images--------------- -->
+
+<p>
+<hr width='50%'>
+</p>
+
+<!-- *******************************  Data access section *******************************  -->
+
+<p>
+
+<!-- *********************************** Web access *********************************** -->
+
+
+<div align='left' style="padding-left:5px; padding-right:5px">
+<b>Data Access via HTTP Server:</b> 
+</div>
+
+<table align='center' width='90%'>
+<tr>
+<td><nobr><b>NetCDF4 Data<sup>+</sup></b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/baa5-max-7d/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/baa5/'>BAA (single-day)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/hs/'>HotSpot</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/dhw/'>DHW</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/ssta/'>SSTA</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/sst/'>SST</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/sst-trend-7d/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (pixels)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/baa5-max-7d/png/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/baa5/png/'>BAA (single-day)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/hs/png/'>HotSpot</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/dhw/png/'>DHW</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/ssta/png/'>SSTA</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/sst/png/'>SST</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/sst-trend-7d/png/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (browse)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/baa5-max-7d/png/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/baa5/png/'>BAA (single-day)</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/hs/png/'>HotSpot</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/dhw/png/'>DHW</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/ssta/png/'>SSTA</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/sst/png/'>SST</a>
+|
+<a href='http://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/sst-trend-7d/png/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+</table>
+
+<!-- *********************************** FTP *********************************** -->
+
+<p>
+
+<div align='left' style="padding-left:5px; padding-right:5px">
+<b>Data Access via FTP Server:</b>
+</div>
+
+<table align='center' width='90%'>
+<tr>
+<td><nobr><b>NetCDF4 Data<sup>+</sup></b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/baa5-max-7d/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/baa5/'>BAA (single-day)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/hs/'>HotSpot</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/dhw/'>DHW</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/ssta/'>SSTA</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/sst/'>SST</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/sst-trend-7d/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (pixels)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/baa5-max-7d/png/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/baa5/png/'>BAA (single-day)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/hs/png/'>HotSpot</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/dhw/png/'>DHW</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/ssta/png/'>SSTA</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/sst/png/'>SST</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_plain/daily/sst-trend-7d/png/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (browse)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/baa5-max-7d/png/'>BAA<sup>*</sup> (7-d max)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/baa5/png/'>BAA (single-day)</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/hs/png/'>HotSpot</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/dhw/png/'>DHW</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/ssta/png/'>SSTA</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/sst/png/'>SST</a>
+|
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/image_browse/daily/sst-trend-7d/png/'>SST Trend (7-day)</a>
+</font></b>
+</nobr>
+</td>
+</tr>
+</table>
+
+
+<!-- *********************************** NCEI*********************************** -->
+
+<p>
+
+<div align='left' style="padding-left:5px; padding-right:5px">
+<b>Data Access via NOAA/NCEI Data Portal:</b>
+</div>
+
+<table align='center' width='90%'>
+<tr>
+<td><nobr><b>NetCDF4 Data<sup>+</sup></b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+Click <a href='https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:CRW-5km-HeatStressProducts'>here</a> to access the data portal and download data via HTTP, FTP, or THREDDS
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (pixels)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+Click <a href='https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:CRW-5km-HeatStressProducts'>here</a> to access the data portal and download data via HTTP, FTP, or THREDDS
+</font></b>
+</nobr>
+</td>
+</tr>
+<tr>
+<td><nobr><b>Images (browse)</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+Click <a href='https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:CRW-5km-HeatStressProducts'>here</a> to access the data portal and download data via HTTP, FTP, or THREDDS
+</font></b>
+</nobr>
+</td>
+</tr>
+</table>
+
+
+<!-- ************************************ PacIOOS ****************************************** -->
+
+<p>
+
+<div align='left' style="padding-left:5px; padding-right:5px">
+<b>Data Access via Data Servers at PacIOOS<sup>#</sup>:</b>
+<a href='/instructions/Accessing_Coral_Reef_Watch_Data_via_Data_Servers_at_CoastWatch_20240403.pdf' target='_blank'>(time-series guide)</a>
+</div>
+
+<table align='left' width='100%'>
+<tr>
+<td><nobr><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.html' 
+title='This link opens a non-government website in a new tab'
+target= "_blank">ERDDAP (data page)<img src="/icons_gen/popup.gif"></a>
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href='https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.graph' 
+title='This link opens a non-government website in a new tab'
+target= "_blank">ERDDAP (graph page)<img src="/icons_gen/popup.gif"></a>
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href='https://pae-paha.pacioos.hawaii.edu/thredds/satellite.html?dataset=dhw_5km' 
+title='This link opens a non-government website in a new tab'
+target= "_blank">THREDDS Data Server<img src="/icons_gen/popup.gif"></a>
+</font></b>
+</nobr>
+</td>
+</tr>
+</table>
+
+<!-- NOAA CoastWatch West Coast Regional Node -->
+<p>
+
+<div align='left' style="padding-left:5px; padding-right:5px">
+<b>Data Access via Data Servers at NOAA CoastWatch West Coast Regional Node:</b>
+<a href='/instructions/Accessing_Coral_Reef_Watch_Data_via_Data_Servers_at_CoastWatch_20240403.pdf' target='_blank'>(time-series guide)</a>
+</div>
+
+<table align='left' width='100%'>
+<tr>
+<td><nobr><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></nobr></td>
+<td>&nbsp;</td>
+<td>
+<nobr>
+<b><font size="1.5" color="darkblue" face="verdana,arial">
+<a href='https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.html' 
+title='This link opens a non-government website in a new tab' 
+target= "_blank">ERDDAP (data page)<img src="/icons_gen/popup.gif"></a>
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href='https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.graph' 
+title='This link opens a non-government website in a new tab'
+target= "_blank">ERDDAP (graph page)<img src="/icons_gen/popup.gif"></a>
+</font></b>
+</nobr>
+</td>
+</tr>
+</table>
+
+<p>
+<table align='left' width='100%'>
+<tr>
+<td width='2%'><sup>+</sup></td>
+<td><font size='1'><a href="https://coastwatch.noaa.gov/cw/user-resources/coastwatch-utilities.html">CDAT software</a> to view CRW NetCDF data files.</font></td>
+</tr>
+<tr>
+<td width='2%'><sup>*</sup></td>
+<td><font size='1'>BAA: Bleaching Alert Area; DHW: Degree Heating Week; SSTA: SST Anomaly; SST: Sea Surface Temperature.</font></td>
+</tr>
+<tr>
+<td width='2%'><sup>#</sup></td>
+<td><font size='1'>PacIOOS: Pacific Islands Ocean Observing System.</font></td>
+</tr>
+</table>
+
+<!-- ---------------- Composite Data access section -------------------------  -->
+
+<div align='center'>
+<br>&nbsp;&nbsp;<br>
+<button type="button" onClick="location='./index_5km_composite.php';"><b>Composites: Monthly and Annual Maximum, Minimum, and Mean</b></button>
+</div>
+
+<!-- ------------------------------------------------------------------------ -->
+
+<p>
+<hr>
+<hr>
+<p>
+<div align='left'>
+<table width='100%'>
+<tr>
+<td width='20%' align='left'><b>Climatology<sup>**</sup>:</b></td>
+<td width='80%'>
+<b><font size="2" color="darkblue" face="verdana,arial">NetCDF4 file:&nbsp;&nbsp;
+<a href='https://www.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1_op/climatology/nc/'>HTTPS</a>&nbsp;&nbsp;
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1_op/climatology/nc/'>FTP</a>
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+Pixel Images:&nbsp;&nbsp;
+<a href='https://www.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1_op/climatology/image_plain/png/'>HTTPS</a>&nbsp;&nbsp;
+<a href='ftp://ftp.star.nesdis.noaa.gov/pub/sod/mecb/crw/data/5km/v3.1_op/climatology/image_plain/png/'>FTP</a>
+</font></b>
+</td>
+</tr>
+</table>
+</div>
+
+<div align='left'>
+<font size="1.5">
+** Click <a href="description_climatology.php">here</a> for climatology description.
+<br>
+** Contains 12 monthly mean SST climatologies for deriving CRW's daily global 5km SST Anomaly product. The maximum pixel-based 
+values from among the 12 monthly mean SST climatologies form the Maximum Monthly Mean (MMM) SST climatology, which is then used to 
+derive CRW's daily global 5km coral bleaching heat stress products. 
+</font>
+</div>
+
+<!-- ***************************************** CDAT ************************************** -->
+
+<p>
+<hr>
+<hr>
+<p>
+<div align='left'>
+<table width='100%'>
+<tr>
+<td width='20%' align='left'><b>Product Metadata:</b></td>
+<td width='80%'>
+<b><font size="2" color="darkblue" face="verdana,arial">
+<a href='http://www.coris.noaa.gov/metadata/records/html/crw_v3.1_5km_suite_xml_20180813.html'>Web-format Metadata</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href='http://www.coris.noaa.gov/metadata/records/xml/crw_v3.1_5km_suite_xml_20180813.xml'>XML Metadata</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href='http://www.coris.noaa.gov/metadata/records/txt/crw_v3.1_5km_suite_xml_20180813.txt'>Plain Text Metadata</a>
+</font></b>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ************************************** Metadata *********************************** -->
+
+<p>
+<hr>
+<hr>
+<p>
+<div align='left'>
+<table width='100%'>
+<tr>
+<td width='20%' align='left'><b>CDAT software:</b></td>
+<td width='80%'>
+<font size="2" color="darkblue" face="verdana,arial">
+<b>
+A NOAA 
+<a href="https://coastwatch.noaa.gov/cwn/index.html">CoastWatch</a> software package to view 
+NetCDF data files. Access it 
+<a href="https://coastwatch.noaa.gov/cwn/data-access-tools/coastwatch-utilities.html">here</a>.
+</b>
+</font>
+</td>
+</tr>
+<tr>
+<td width='20%'>
+&nbsp;
+</td>
+<td width='80%'>
+<font size="2" color="darkblue" face="verdana,arial">
+&nbsp;
+<br>
+Watch a <a href="https://www.youtube.com/watch?v=puItYnL_UZk" 
+target="_blank">tutorial video (YouTube)<img src="/icons_gen/popup.gif"></a> 
+on how to use CDAT for Coral Reef Watch data.
+</font>
+</td>
+</tr>
+</table>
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ---------------------------- Product decription ----------------------------  -->
+
+<p>
+<div align='justify' style="padding-left:5px; padding-right:5px">
+
+<center><hr width="100%"></center>
+<center><hr width="100%"></center>
+
+<br>&nbsp;<br>
+
+<font size="2" color="black" face="verdana,arial">
+
+<a name="description">
+
+<p>
+<div align='center'>
+<font size='2'>
+<b>Product Suite Description</b>
+</font>
+</div>
+
+<p>
+The NOAA <a href="/satellite/index.php">Coral Reef Watch (CRW)</a> daily global 
+5km (0.05 degree exactly) satellite coral bleaching heat stress monitoring product suite 
+presented here is Version 3.1 (v3.1). It spans January 1, 1985 to present and is based on CRW's v3.1 daily 
+global 5km satellite sea surface temperature (SST) data product known as <a href="/product/5km/index_5km_sst.php"><i>CoralTemp</i></a>. 
+</p>
+
+<p>
+This v3.1 5km product suite was 
+developed based on user requests and to address errors identified in the source SST data for 
+CRW's v3.0 products for some coral reef regions during 2013-2016. It now comprises 
+the core of CRW's decision support system for coral reef management, providing service 
+at or near reef-scales, allowing direct monitoring of 95% of global coral reefs and 
+significantly reducing data gaps caused by cloud cover. 
+</p>
+
+<!--
+<div align='center'>
+<p>
+<hr width='70%'>
+</p>
+<b><a href='/satellite/coraltemp.php'>CoralTemp Version 1.0</a></b>
+<p>
+<hr width='70%'>
+</p>
+</div>
+-->
+
+<p>
+CRW's current v3.1 daily global 5km satellite products include: SST (a.k.a. <i>CoralTemp</i>), SST Anomaly, Coral Bleaching 
+HotSpot, coral bleaching Degree Heating Week (DHW), a single-day Bleaching Alert Area, a 7-day maximum Bleaching Alert Area, 
+and a 7-day SST Trend. CRW produces year-to-date (for the current year), monthly, and annual composites of the SST, 
+SST Anomaly, Coral Bleaching HotSpot, DHW, and Bleaching Alert Area products. We also provide the most 
+recent 30-day and 90-day animations of the SST, SST Anomaly, Coral Bleaching HotSpot, DHW, Bleaching Alert Area (7-day maximum), 
+and SST Trend products. In addition, we offer daily 5km <a href="/product/vs/map.php">Regional Virtual 
+Stations/Bleaching Heat Stress Gauges</a> and a free, automated 5km 
+<a href='/subscriptions/vs.php'>Satellite Bleaching Alert Email System</a> that are 
+based on the global products presented here.
+</p>
+
+<p>
+Note that SST variability is often considerably higher at the much finer 5km spatial and 
+daily temporal resolutions, when compared with CRW's heritage twice-weekly global 
+50km (0.5-degree) monitoring products. Due to resulting day-to-day fluctuations between stress levels in 
+highly-variable locations, the single-day 5km Bleaching Alert Area product does not 
+consistently and adequately identify potentially harmful heat stress levels, especially with 
+regard to accumulated heat stress impacts. Rather than requiring users to examine the 
+single-day 5km Bleaching Alert Area product over several days, a 7-day maximum Bleaching 
+Alert Area composite product, updated daily, was introduced in the v2 product suite 
+and is maintained here in v3.1. (Evolution of CRW's daily global 5km product suites 
+can be found <a href='./history_5km_products.php'>here</a>.) This 7-day composite product 
+shows the maximum stress level that a satellite pixel has experienced during 
+the most recent seven (7) consecutive days. Data and images are dated on the last day of 
+the 7-day period. Notably, it is compatible with CRW's heritage twice-weekly global 50km 
+Bleaching Alert Area product</a>, as the 50km Bleaching Alert Area is 
+based on a half-week (3 or 4 days) composite of 50km SSTs (but with much less SST variability 
+due to its much coarser spatial resolution). 
+</p>
+
+<p>
+For the 5km 7-day SST Trend product, which is updated daily, CRW provides information on 
+the pace and direction of the SST variation and thus coral bleaching heat stress, if present, 
+over the past seven days. Introduced in CRW's v2 product suite, and maintained here in 
+v3.1, the composite SST Trend product includes seven daily global SSTs in its 
+calculation. Pixels colored in green have insignificant trends, due either to small SST trends 
+(<a href="/product/5km/methodology.php#ssta">within the range -0.2 to 0.2 &deg;C</a>) or trends that failed the two-tailed Student's-t test 
+for the 20% significance level with five degrees of freedom. 
+</p>
+
+<p>
+All other v3.1 5km products presented here (excluding the monthly and annual composites) 
+are single-day products, which are updated daily. Normally, processing of the current day's products, which occurs midday 
+U.S. Eastern Time, produces the data for yesterday's date. For example, data processed on a Wednesday afternoon will 
+include all observations made on Tuesday (independent of time zone) and will produce images that carry Tuesday's date. 
+</p>
+
+<div align='center'>
+<p>
+<hr width='70%'>
+</p>
+<p>
+More information on the NOAA CRW 5km satellite product algorithm and v3.1 product updates can be found in
+<br><b><a href="http://www.mdpi.com/2072-4292/6/11/11579" title='This link opens a non-government website in a new tab'
+target= "_blank">Liu <i>et al.</i> 2014<img src="/icons_gen/popup.gif"></a></b> and 
+<b><a href="https://doi.org/10.3390/rs12233856" title='This link opens a non-government website in a new tab'
+target= "_blank">Skirving <i>et al.</i> 2020<img src="/icons_gen/popup.gif"></a></b>, respectively.
+</p>
+<p>
+<hr width='50%'>
+</p>
+<p>
+Click <a href="/product/5km/methodology.php">here</a> for CRW's methodology web page, detailing our v3.1 daily global 5km 
+products, climatologies, composites, animations, and data.
+<hr width='50%'>
+<p>
+Click <a href="/product/5km/tutorial/welcome.php">here</a> for CRW's tutorial about coral reefs, coral bleaching, satellite 
+remote sensing of the marine environment, and our daily global and regional 5km satellite products.
+<hr width='70%'>
+</p>
+</div>
+
+<p>
+CRW developed the v3.1 5km coral bleaching heat stress products with funding support from the NOAA Coral Reef 
+Conservation Program. The first phase of the product release was completed April 11, 2018, with
+products spanning 1985-2017; the full release was completed August 1, 2018, with the addition of 
+2018-present data.
+</p>
+
+<div align='center'>
+<p>
+<hr width='50%'>
+</p>
+<p>
+<b><a href='history_5km_products.php'>Evolution of CRW's daily global 5km product suites</a></b>
+</p>
+<p>
+<hr width='50%'>
+</p>
+</div>
+
+</div>
+
+<p>
+&nbsp;
+<p>
+
+<!---------------------------------------------------------------->
+<center><hr width="100%"></center>
+<center><hr width="100%"></center>
+
+<div align='center'>
+<font size='2'>
+<b>
+CRW Twice-weekly Global 50km Product Suite
+</b>
+</font>
+</div>
+
+<div align='justify'>
+<p>
+CRW's first-generation (heritage) near real-time <a href="/product/50km/">twice-weekly global 50km satellite coral bleaching 
+heat stress monitoring products</a> were operational at NOAA until April 30, 2020, when they were offically retired, 
+and succeeded by CRW's next-generation operational daily global 5km coral bleaching heat stress monitoring products (presented on this page). 
+The heritage 50km products served the U.S. and international coral reef communities for more than 20 years (1997-2020). While the 50km products 
+no longer update in near real-time, due to their retirement, since they served as vital tools for our users for so many years, 
+<a href="/product/50km/">archived 50km data and images</a> are still available on the CRW website. 
+<p>There are some differences between the 5km and 50km product suites in certain 
+areas of the globe, and user discretion is advised. We have found the 5km product suite is 
+more accurate due to our use of a next-generation, higher quality SST analysis; a 
+next-generation SST algorithm based on multiple satellites/sensors; and an improved climatology.
+</p>
+</div>
+
+<center><hr width="100%"></center>
+<center><hr width="100%"></center>
+
+<p>
+
+<!---------------------------------------------------------------->
+
+</div>
+
+</p>
+
+</font>
+
+
+
+
+<!-------START OF FOOTER TEXT FROM INCLUDE STATEMENT-------------------------------------->
+<!-------DO NOT MODIFY THIS SECTION------------------------------------------------------->
+
+
+<div id="footer">
+  <a href="http://www.noaa.gov">
+     <img class="footer-left" src="/satellite/icons1/noaalogo.gif"
+     alt="NOAA logo" border="0" height='60'></a>
+  <a href="http://www.doc.gov">
+     <img class="footer-right" src="/satellite/icons1/commerce.gif"
+    alt="commerce logo" border="0"></a>
+  <p>
+<!--  <a href="http://search.usa.gov/search?affiliate=orbit.nesdis.noaa.gov_star" title='Click to access Search'>Search</a> | -->
+  <a href="http://search.usa.gov/search?affiliate=noaa.gov" title='Click to access Search'>Search</a> | 
+
+  <a href="/satellite/docs/recommendations_crw_citation.php">How to cite these products and methods</a>
+  </p>
+  <p>
+<!--  <a href="http://www.star.nesdis.noaa.gov/star/productdisclaimer.php#heartbleed">Heartbleed Notice</a> | -->
+  <a href="http://www.star.nesdis.noaa.gov/star/productdisclaimer.php">Disclaimer</a> |
+  <a href="http://www.cio.noaa.gov/services_programs/info_quality.html">Information Quality</a> |
+  <a href="http://www.star.nesdis.noaa.gov/star/accessibility.php">Accessibility Policy</a> |
+  <a href="http://www.star.nesdis.noaa.gov/star/privacy.php">Privacy Policy</a> 
+ </p>
+  <p>
+
+<!--        Last modified:  -->
+<!-- #config timefmt="%e %b %Y" --> 
+<!-- #echo var="LAST_MODIFIED" --> 
+<!--   | -->
+
+   <a href="https://www.star.nesdis.noaa.gov/star/survey.php">Customer Survey</a>
+   |
+   <a href=
+   "mailto:coralreefwatch@noaa.gov?subject=[Question for Coral Reef Watch]">
+   Contact Us</a>
+   | 
+  Owner: <a href=
+   "http://coralreefwatch.noaa.gov/satellite/">
+   NOAA Coral Reef Watch</a>
+   </p>
+</div>
+</div>
+
+<!-------END OF FOOTER TEXT FROM INCLUDE STATEMENT-------------------------------------->
+
+
+
+
+</div>
+
+</BODY>
+</HTML>

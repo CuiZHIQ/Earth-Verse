@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-249",
+  "event_name": "2022 China heat wave and Yangtze drought",
+  "hazard_family": "compound_cascading_events",
+  "temporal_window": {
+    "start_date": "2022-06-01",
+    "end_date": "2022-08-31",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Yangtze River basin, China",
+    "country_or_region": "China",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "2022 China heat wave and Yangtze drought",
+    "event_start_date": "2022-06-01",
+    "event_end_date": "2022-08-31",
+    "event_location": "Yangtze River basin, China",
+    "event_country_or_region": "China",
+    "event_scope": "compound/regional",
+    "evidence_type": "WMO topic page",
+    "evidence_url": "https://wmo.int/topics/heatwave",
+    "evidence_final_url": "https://wmo.int/topics/heatwave",
+    "http_status": "200",
+    "lock_status": "event_locked_web_source_reachable",
+    "lock_confidence": "high",
+    "match_rule": "exact_family_region",
+    "web_search_query_used": "compound_cascading_events East Asia extreme event 2022 China heat wave and Yangtze drought 2022",
+    "event_lock_notes": "Compound heat and drought.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": false
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "weak_or_missing_report_claim",
+    "recommendation": "replace_or_backlog",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": true,
+    "claim_like_source_type": false,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.417908+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "2022 China heat wave and Yangtze drought",
+      "source_type": "WMO topic page",
+      "url": "https://wmo.int/topics/heatwave",
+      "original_url": "https://wmo.int/topics/heatwave",
+      "http_status": "200",
+      "lock_status": "event_locked_web_source_reachable",
+      "confidence": "high",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "weak_or_missing_report_claim",
+      "release_recommendation": "replace_or_backlog",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-249_compound_cascading_events_east_asia_national_admin/event_package.json"
+}

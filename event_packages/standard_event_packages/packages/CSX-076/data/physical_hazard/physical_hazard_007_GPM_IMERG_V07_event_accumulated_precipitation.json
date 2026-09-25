@@ -1,0 +1,11 @@
+{
+  "dataset": "NASA/GPM_L3/IMERG_V07",
+  "start": "2022-06-14",
+  "end": "2022-07-29",
+  "stats": {
+    "gpm_event_precip_mm_max": 981.7779777012765,
+    "gpm_event_precip_mm_mean": 792.4920514645561,
+    "gpm_event_precip_mm_min": 603.4669864671305,
+    "gpm_event_precip_mm_stdDev": 78.81667997720822
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-221",
+  "event_name": "Atami debris flow",
+  "hazard_family": "landslide_mass_movement",
+  "temporal_window": {
+    "start_date": "2021-07-03",
+    "end_date": "2021-07-03",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Izusan, Atami, Shizuoka",
+    "country_or_region": "Japan",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "Atami debris flow",
+    "event_start_date": "2021-07-03",
+    "event_end_date": "2021-07-03",
+    "event_location": "Izusan, Atami, Shizuoka",
+    "event_country_or_region": "Japan",
+    "event_scope": "subagent_region_locked",
+    "evidence_type": "International Consortium on Landslides",
+    "evidence_url": "https://www.landslides.org/report/atami-debris-flow/",
+    "evidence_final_url": "https://www.landslides.org/report/atami-debris-flow/",
+    "http_status": "",
+    "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+    "lock_confidence": "medium",
+    "match_rule": "subagent_exact_family_region_replacement",
+    "web_search_query_used": "Atami debris flow July 2021 report",
+    "event_lock_notes": "Rainfall-triggered debris flow in volcanic terrain.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": true
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "weak_or_missing_report_claim",
+    "recommendation": "replace_or_backlog",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": false,
+    "claim_like_source_type": false,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.260031+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "Atami debris flow",
+      "source_type": "International Consortium on Landslides",
+      "url": "https://www.landslides.org/report/atami-debris-flow/",
+      "original_url": "https://www.landslides.org/report/atami-debris-flow/",
+      "http_status": "",
+      "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+      "confidence": "medium",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "weak_or_missing_report_claim",
+      "release_recommendation": "replace_or_backlog",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-221_landslide_mass_movement_east_asia_national_admin/event_package.json"
+}

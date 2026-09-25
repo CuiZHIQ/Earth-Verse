@@ -1,0 +1,42 @@
+{
+  "package_id": "CSX-325",
+  "event_name": "2023-2024 global coral bleaching event",
+  "canonical_event_key": "2023 2024 global coral bleaching",
+  "hazard_family": "marine_heatwave_coastal_ecosystem",
+  "hazard_label": "Marine heatwave and coastal ecosystem impact",
+  "scale": "national_admin",
+  "region": "Southeast Asia",
+  "primary_evidence_url": "https://www.nesdis.noaa.gov/news/noaa-confirms-fourth-global-coral-bleaching-event",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "98",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "33",
+    "image_files_checked": "2",
+    "valid_images": "2",
+    "formal_slice_files_checked": "18",
+    "hard_error_count": "0",
+    "metadata_warning_count": "2",
+    "final_data_score": "93",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 40,
+    "categories": {
+      "event_catalogs": 5,
+      "event_reports": 6,
+      "exposure_impact": 5,
+      "geospatial_context": 2,
+      "other": 4,
+      "physical_hazard": 9,
+      "remote_sensing": 9
+    }
+  }
+}

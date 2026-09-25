@@ -1,0 +1,42 @@
+{
+  "package_id": "CSX-232",
+  "event_name": "2023 Turkiye-Syria earthquake sequence",
+  "canonical_event_key": "2023 turkiye syria earthquake",
+  "hazard_family": "earthquake_tsunami_geophysical",
+  "hazard_label": "Earthquake, tsunami, and geophysical hazard",
+  "scale": "regional_basin",
+  "region": "Europe",
+  "primary_evidence_url": "https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "98",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "28",
+    "image_files_checked": "3",
+    "valid_images": "3",
+    "formal_slice_files_checked": "9",
+    "hard_error_count": "0",
+    "metadata_warning_count": "1",
+    "final_data_score": "95",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 44,
+    "categories": {
+      "event_catalogs": 9,
+      "event_reports": 3,
+      "exposure_impact": 7,
+      "geospatial_context": 3,
+      "other": 2,
+      "physical_hazard": 10,
+      "remote_sensing": 10
+    }
+  }
+}

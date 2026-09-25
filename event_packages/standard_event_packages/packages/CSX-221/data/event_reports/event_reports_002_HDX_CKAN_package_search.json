@@ -1,0 +1,1 @@
+{"help": "https://data.humdata.org/api/3/action/help_show?name=package_search", "success": true, "result": {"count": 0, "facets": {}, "expanded": {}, "results": [], "sort": "score desc, last_modified desc", "search_facets": {"pivot": {}, "queries": []}, "facet_pivot": {}, "facet_queries": {}}}

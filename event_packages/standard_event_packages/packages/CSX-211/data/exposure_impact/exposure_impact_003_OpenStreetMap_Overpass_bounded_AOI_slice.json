@@ -1,0 +1,10142 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-22T08:11:50Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 637482034,
+  "lat": 6.9176697,
+  "lon": 0.6344607,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 637492980,
+  "lat": 6.9076763,
+  "lon": 0.6319307,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 936388610,
+  "lat": 6.9487185,
+  "lon": 0.5786269,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 1293965184,
+  "lat": 6.4744591,
+  "lon": -0.6526891,
+  "tags": {
+    "amenity": "police",
+    "name": "New Jejeti Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 1293965187,
+  "lat": 6.3840266,
+  "lon": -0.5508761,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2025-06-04",
+    "name": "Ghana Police Service MTTU Anyinam"
+  }
+},
+{
+  "type": "node",
+  "id": 1790568993,
+  "lat": 7.2372788,
+  "lon": 0.6992713,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 1872554612,
+  "lat": 6.6344832,
+  "lon": 0.4477518,
+  "tags": {
+    "amenity": "school",
+    "name": "Ziavi Dzogbe Methodist Primaly School"
+  }
+},
+{
+  "type": "node",
+  "id": 2051953127,
+  "lat": 7.3129938,
+  "lon": 0.8157087,
+  "tags": {
+    "amenity": "school",
+    "description": "Berufsschule/école professionnelle",
+    "isced:level": "3B",
+    "school:DE": "Berufsschule",
+    "school:TG": "école professionnelle"
+  }
+},
+{
+  "type": "node",
+  "id": 2161442865,
+  "lat": 6.3223062,
+  "lon": -0.5886318,
+  "tags": {
+    "amenity": "school",
+    "name": "Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 2162646534,
+  "lat": 6.5927345,
+  "lon": 0.4780736,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-02",
+    "name": "Dora Memorial School"
+  }
+},
+{
+  "type": "node",
+  "id": 2163283236,
+  "lat": 6.5479748,
+  "lon": 0.6963423,
+  "tags": {
+    "amenity": "school",
+    "name": "EP Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319247459,
+  "lat": 6.6106087,
+  "lon": 0.4676759,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-12-06",
+    "name": "Municipal Prisons"
+  }
+},
+{
+  "type": "node",
+  "id": 2319479418,
+  "lat": 7.1540745,
+  "lon": 0.4717070,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-28",
+    "name": "St. Joseph's JHS School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319479996,
+  "lat": 7.1522967,
+  "lon": 0.4722220,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-29",
+    "name": "St. joseph's Primary School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319482816,
+  "lat": 7.1551525,
+  "lon": 0.4700335,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "Holy Rosary Primary And Junior High School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319490170,
+  "lat": 7.1516209,
+  "lon": 0.4736811,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2026-03-28",
+    "name": "Ghana Police Station Hohoe"
+  }
+},
+{
+  "type": "node",
+  "id": 2319511745,
+  "lat": 7.1560650,
+  "lon": 0.4744725,
+  "tags": {
+    "amenity": "school",
+    "name": "E.P. Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319518099,
+  "lat": 7.1564376,
+  "lon": 0.4761782,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "E.P. Primary School (A)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319518770,
+  "lat": 7.1571487,
+  "lon": 0.4760124,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "E.P. Primary School (B)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319538046,
+  "lat": 7.1697175,
+  "lon": 0.4778195,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "Ghana National Fire Service Office Hohoe"
+  }
+},
+{
+  "type": "node",
+  "id": 2319562072,
+  "lat": 7.1544579,
+  "lon": 0.4812989,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbi Primary And JHS(Boys School)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319565027,
+  "lat": 7.1568291,
+  "lon": 0.4863091,
+  "tags": {
+    "amenity": "police",
+    "name": "Gbi-Bla Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 2319566155,
+  "lat": 7.1571832,
+  "lon": 0.4886400,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Francis Demonstration"
+  }
+},
+{
+  "type": "node",
+  "id": 2319571112,
+  "lat": 7.1468065,
+  "lon": 0.4775088,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-11-23",
+    "name": "Musama School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319589305,
+  "lat": 7.1491405,
+  "lon": 0.4700871,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-26",
+    "name": "M/A Experimental schools(Primary And JHS)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319595221,
+  "lat": 7.1478018,
+  "lon": 0.4660021,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Agatha's Commercial School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319599188,
+  "lat": 7.1570476,
+  "lon": 0.4668819,
+  "tags": {
+    "amenity": "school",
+    "name": "A.M.E. Zion Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 2319605646,
+  "lat": 7.1587559,
+  "lon": 0.4576229,
+  "tags": {
+    "amenity": "school",
+    "name": "Orphanage School"
+  }
+},
+{
+  "type": "node",
+  "id": 2407209028,
+  "lat": 7.0109047,
+  "lon": 0.6769506,
+  "tags": {
+    "amenity": "hospital",
+    "health_facility:type": "laboratory",
+    "healthcare": "hospital",
+    "name": "Laboratoire d'Analyses Médicales",
+    "operator": "ONG Chance de Vivre; SILD Togo",
+    "operator:type": "ngo",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2407614116,
+  "lat": 7.0162546,
+  "lon": 0.6993426,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique de Lavié-agoviefe",
+    "operator:type": "government",
+    "school:HT": "kindergarten;primaire",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2407918549,
+  "lat": 7.0132889,
+  "lon": 0.6756882,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Evengelique",
+    "school:HT": "primaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2407924322,
+  "lat": 7.0109601,
+  "lon": 0.6779591,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Lavié",
+    "operator:type": "public",
+    "school:HT": "secondaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2407925760,
+  "lat": 7.0113224,
+  "lon": 0.6774470,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique Centrale",
+    "operator:type": "public",
+    "school:HT": "primaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2407948830,
+  "lat": 6.9053068,
+  "lon": 0.6318628,
+  "tags": {
+    "addr:postcode": "98",
+    "amenity": "school",
+    "name": "Internat des Soeurs de Notre Dame de l'Eglise",
+    "phone": "+2284410136",
+    "school:HT": "primaire;secondaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2414416548,
+  "lat": 7.0106726,
+  "lon": 0.6715819,
+  "tags": {
+    "amenity": "school",
+    "contact:phone": "+22823356201",
+    "name": "Ecole Primaire Catholique Mater Caritatis",
+    "operator:type": "public",
+    "source": "bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 2420196712,
+  "lat": 7.0077263,
+  "lon": 0.6733174,
+  "tags": {
+    "amenity": "school",
+    "name": "ECole GUNTER KOSSI HERRMAN - LAVIE",
+    "note": "EPP Groupe D",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 2505412762,
+  "lat": 8.1683750,
+  "lon": 1.0392486,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Yeloum Lekohan Group A"
+  }
+},
+{
+  "type": "node",
+  "id": 2505412763,
+  "lat": 8.1787581,
+  "lon": 0.9861199,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycee Pagala Gare"
+  }
+},
+{
+  "type": "node",
+  "id": 2505412764,
+  "lat": 8.1622016,
+  "lon": 1.0519306,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Yeloum Lekohan Group B"
+  }
+},
+{
+  "type": "node",
+  "id": 2505413288,
+  "lat": 8.1641700,
+  "lon": 1.0373603,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Yeloum Lekohan"
+  }
+},
+{
+  "type": "node",
+  "id": 2515050557,
+  "lat": 8.4695646,
+  "lon": 0.3313123,
+  "tags": {
+    "amenity": "school",
+    "description": "primary",
+    "isced:level": "1",
+    "name": "Jumbo Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 2581068690,
+  "lat": 6.2783268,
+  "lon": 0.0522497,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "Fire Brigade"
+  }
+},
+{
+  "type": "node",
+  "id": 2581068691,
+  "lat": 6.2851258,
+  "lon": 0.0534253,
+  "tags": {
+    "amenity": "school",
+    "name": "Akosombo Internationa School"
+  }
+},
+{
+  "type": "node",
+  "id": 2749455899,
+  "lat": 7.5172307,
+  "lon": 1.1746760,
+  "tags": {
+    "amenity": "school",
+    "name": "École Du Foyer (Propriété de la Communauté Appui AGAIB-Plateaux",
+    "operator": "Communauté Appui Agaib",
+    "source": "Survey;Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 2880403526,
+  "lat": 6.2788933,
+  "lon": 0.0520813,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 3120400660,
+  "lat": 6.9095354,
+  "lon": 0.6311316,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique Centrale",
+    "short_name": "EPT"
+  }
+},
+{
+  "type": "node",
+  "id": 3120496439,
+  "lat": 6.9235619,
+  "lon": 0.6156294,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique ST JOSEPH (IEPP KLOTO OUEST)",
+    "school:HT": "primaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3124785549,
+  "lat": 6.8934784,
+  "lon": 0.6402396,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Kpeta- Ecole 30 Aout",
+    "note": "Ecole Mixte Secondaire et Primaire",
+    "school:HT": "secondaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3124785552,
+  "lat": 6.8961128,
+  "lon": 0.6397088,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire Science- Conscience",
+    "postal_code": "639 Kpalime Togo",
+    "source": "survey;local knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 3124785553,
+  "lat": 6.8950324,
+  "lon": 0.6389409,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Islamique AN-NSR",
+    "note": "Enseignement Franco-Arabe",
+    "operator:type": "private",
+    "school:HT": "primaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3124785556,
+  "lat": 6.8918411,
+  "lon": 0.6411928,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut Technique et Professionnel",
+    "operator:type": "private",
+    "phone": "+22891311220",
+    "school:HT": "secondaire",
+    "source": "survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3128878809,
+  "lat": 6.9706150,
+  "lon": 0.6529466,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG de Kpimé- Tomégbé"
+  }
+},
+{
+  "type": "node",
+  "id": 3133006706,
+  "lat": 6.9127558,
+  "lon": 0.6287533,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendamerie"
+  }
+},
+{
+  "type": "node",
+  "id": 3143939538,
+  "lat": 6.9250663,
+  "lon": 0.6348989,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kpodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 3143947376,
+  "lat": 6.9282465,
+  "lon": 0.6344578,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP de Kpodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 3376793537,
+  "lat": 6.4229748,
+  "lon": 1.2127021,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de Tsévié",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3376800720,
+  "lat": 6.4233393,
+  "lon": 1.2124694,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie de Tsévié",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3376812251,
+  "lat": 6.4251268,
+  "lon": 1.2130218,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique",
+    "source": "Bing;survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3496565025,
+  "lat": 6.3686334,
+  "lon": -0.5080366,
+  "tags": {
+    "amenity": "police",
+    "name": "Ghana Police Service Anyinam"
+  }
+},
+{
+  "type": "node",
+  "id": 3496565027,
+  "lat": 6.3430967,
+  "lon": -0.4816039,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2025-06-04",
+    "name": "Osino Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 3500174721,
+  "lat": 7.1566231,
+  "lon": 0.4712751,
+  "tags": {
+    "amenity": "school",
+    "name": "Christ Shalom Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 3590787355,
+  "lat": 8.0513313,
+  "lon": 1.0200957,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Tcharè-Baou",
+    "operator:type": "public",
+    "school:HT": "secondaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3590787356,
+  "lat": 8.0559463,
+  "lon": 1.0221235,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Catholique de Tcharè-Baou",
+    "operator:type": "Confectionnelle",
+    "school:HT": "primaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3590859116,
+  "lat": 8.5607948,
+  "lon": 0.9795295,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Catholique de Sotouboua",
+    "operator:type": "public",
+    "school:HT": "primaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3591029152,
+  "lat": 8.5548757,
+  "lon": 0.9824641,
+  "tags": {
+    "amenity": "school",
+    "name": "Plateau centre",
+    "operator:type": "public",
+    "school:HT": "primaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3591587569,
+  "lat": 8.5647680,
+  "lon": 0.9741648,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Centrale de Sotouboua",
+    "operator:type": "public",
+    "school:HT": "primaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3591587570,
+  "lat": 8.5661569,
+  "lon": 0.9712297,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de SOTOUBOUA",
+    "operator:type": "public",
+    "school:HT": "secondaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3592181888,
+  "lat": 8.5643617,
+  "lon": 0.9582882,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée scientifique de SOTOUBOUA",
+    "operator:type": "private",
+    "school:HT": "secondaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3594269810,
+  "lat": 8.5771348,
+  "lon": 0.9820186,
+  "tags": {
+    "amenity": "school",
+    "name": "C.E.G ville 1 de SOTOUBOUA",
+    "operator:type": "public",
+    "school:HT": "secondaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3634755839,
+  "lat": 8.5558395,
+  "lon": 0.9976164,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG de la Paix",
+    "operator": "Soeur Religieuse",
+    "operator:type": "private",
+    "school:HT": "secondaire",
+    "source": "Bing; Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 3719287458,
+  "lat": 7.5170954,
+  "lon": 1.2056111,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Akpaka"
+  }
+},
+{
+  "type": "node",
+  "id": 3731304736,
+  "lat": 6.3696593,
+  "lon": -0.5314456,
+  "tags": {
+    "amenity": "school",
+    "name": "S.D.A. Presparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 3731304784,
+  "lat": 6.3401451,
+  "lon": -1.0267444,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 3731304785,
+  "lat": 6.3408916,
+  "lon": -0.9976464,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 3759373526,
+  "lat": 6.8610782,
+  "lon": 1.1844380,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP KPELE"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455576,
+  "lat": 6.6011334,
+  "lon": 0.3152886,
+  "tags": {
+    "amenity": "school",
+    "name": "Avenui Methodist Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455578,
+  "lat": 6.6032404,
+  "lon": 0.3156041,
+  "tags": {
+    "amenity": "school",
+    "name": "Awudome Vocational Training Institute"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455579,
+  "lat": 6.6489124,
+  "lon": 0.3389014,
+  "tags": {
+    "amenity": "school",
+    "name": "E.P. Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455580,
+  "lat": 6.7319670,
+  "lon": 0.3851299,
+  "tags": {
+    "amenity": "school",
+    "name": "E.P. Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455582,
+  "lat": 6.7204232,
+  "lon": 0.3766576,
+  "tags": {
+    "amenity": "police",
+    "name": "Hlefi Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455586,
+  "lat": 6.7740075,
+  "lon": 0.4162444,
+  "tags": {
+    "amenity": "school",
+    "name": "Saviefe Deme Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 3793455587,
+  "lat": 6.5399436,
+  "lon": 0.2871392,
+  "tags": {
+    "amenity": "police",
+    "name": "Tsito Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 3801131057,
+  "lat": 6.9971550,
+  "lon": 0.4394812,
+  "tags": {
+    "amenity": "school",
+    "name": "Local Authority Junior Secondary"
+  }
+},
+{
+  "type": "node",
+  "id": 3802640770,
+  "lat": 6.9035091,
+  "lon": 0.4370054,
+  "tags": {
+    "amenity": "school",
+    "name": "Modern Brains Academy Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 3802641881,
+  "lat": 6.9636443,
+  "lon": 0.4586446,
+  "tags": {
+    "amenity": "school",
+    "name": "Ve Gbodome Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 3802654043,
+  "lat": 7.0707919,
+  "lon": 0.5096832,
+  "tags": {
+    "amenity": "police",
+    "name": "Ghana Police Service Fadome Helu"
+  }
+},
+{
+  "type": "node",
+  "id": 3802723681,
+  "lat": 6.7553349,
+  "lon": 0.3586056,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-12-25",
+    "name": "Have Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 3802723683,
+  "lat": 6.6794517,
+  "lon": 0.3184086,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-12-25",
+    "name": "Kpeve Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 3802723684,
+  "lat": 6.7981792,
+  "lon": 0.3713242,
+  "tags": {
+    "amenity": "school",
+    "name": "Nyagbo Odumase Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 3802723685,
+  "lat": 6.8491360,
+  "lon": 0.3932550,
+  "tags": {
+    "amenity": "school",
+    "name": "Tafi Agome Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 3915241838,
+  "lat": 6.4614251,
+  "lon": 0.9135529,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG NOURRY"
+  }
+},
+{
+  "type": "node",
+  "id": 3915305274,
+  "lat": 6.4612394,
+  "lon": 0.9070754,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée moderne d'Assahoun",
+    "operator": "Ecole"
+  }
+},
+{
+  "type": "node",
+  "id": 3915323552,
+  "lat": 6.4568893,
+  "lon": 0.9071075,
+  "tags": {
+    "amenity": "shelter",
+    "name": "ASSOCIATION PIVEC-TOGO (pour les orphelins)"
+  }
+},
+{
+  "type": "node",
+  "id": 3915323553,
+  "lat": 6.4556021,
+  "lon": 0.9090755,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 3915390655,
+  "lat": 6.4520371,
+  "lon": 0.9092636,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole publique d'Assahoun",
+    "note": "Cette école a été créée en 1965"
+  }
+},
+{
+  "type": "node",
+  "id": 3915414023,
+  "lat": 6.4589759,
+  "lon": 0.9164168,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Assahoun B2"
+  }
+},
+{
+  "type": "node",
+  "id": 3915431718,
+  "lat": 6.4398367,
+  "lon": 0.9202238,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie Nationale"
+  }
+},
+{
+  "type": "node",
+  "id": 3915458071,
+  "lat": 6.4456111,
+  "lon": 0.8989610,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP APEDOKOE"
+  }
+},
+{
+  "type": "node",
+  "id": 3915474798,
+  "lat": 6.4597620,
+  "lon": 0.9132496,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ASSAHOUN G/F",
+    "operator": "Ecole"
+  }
+},
+{
+  "type": "node",
+  "id": 3915479806,
+  "lat": 6.4409838,
+  "lon": 0.9216557,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP APEYEME"
+  }
+},
+{
+  "type": "node",
+  "id": 3915479807,
+  "lat": 6.4392652,
+  "lon": 0.9209180,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kévé"
+  }
+},
+{
+  "type": "node",
+  "id": 3915488358,
+  "lat": 6.4599028,
+  "lon": 0.9132948,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Assahoun D/G"
+  }
+},
+{
+  "type": "node",
+  "id": 3915488359,
+  "lat": 6.4591895,
+  "lon": 0.9162166,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Dounassé"
+  }
+},
+{
+  "type": "node",
+  "id": 3915536333,
+  "lat": 6.4481210,
+  "lon": 0.9179360,
+  "tags": {
+    "amenity": "school",
+    "name": "Primaire privée Millénium"
+  }
+},
+{
+  "type": "node",
+  "id": 3915610990,
+  "lat": 6.4535720,
+  "lon": 0.9119613,
+  "tags": {
+    "amenity": "school",
+    "name": "EPC ASSAHOUN"
+  }
+},
+{
+  "type": "node",
+  "id": 3915611011,
+  "lat": 6.4569834,
+  "lon": 0.9070924,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 3917746968,
+  "lat": 6.4606059,
+  "lon": 0.9045052,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire publique d'Assahoun B"
+  }
+},
+{
+  "type": "node",
+  "id": 3935743479,
+  "lat": 6.2514177,
+  "lon": 1.0467410,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Noepe-Akepe"
+  }
+},
+{
+  "type": "node",
+  "id": 3935743483,
+  "lat": 6.3725787,
+  "lon": 0.9863236,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Badja"
+  }
+},
+{
+  "type": "node",
+  "id": 3935743485,
+  "lat": 6.4335116,
+  "lon": 0.9264788,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie Nationale"
+  }
+},
+{
+  "type": "node",
+  "id": 4007144983,
+  "lat": 6.2693745,
+  "lon": 1.1509374,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Evangélique",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4148666865,
+  "lat": 6.6077963,
+  "lon": -0.7732530,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4149635364,
+  "lat": 6.6007681,
+  "lon": -0.7771253,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Paul's Anglican Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 4160139089,
+  "lat": 6.4319204,
+  "lon": 0.9275299,
+  "tags": {
+    "amenity": "hospital",
+    "disused": "no",
+    "name": "Centre Médico-Social de K2vé",
+    "operator:type": "public",
+    "source": "Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 4164130703,
+  "lat": 6.4827500,
+  "lon": 0.8255146,
+  "tags": {
+    "abandoned": "no",
+    "amenity": "school",
+    "disused": "no",
+    "name": "Ecole Primaire d'AGBADZANAKIN",
+    "operator:type": "public",
+    "school:HT": "primaire",
+    "source": "Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 4167732823,
+  "lat": 6.2916576,
+  "lon": -0.4745095,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2025-03-06",
+    "name": "Linda Dor Police"
+  }
+},
+{
+  "type": "node",
+  "id": 4182850464,
+  "lat": 6.9347933,
+  "lon": 0.4890548,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4211076264,
+  "lat": 6.6863159,
+  "lon": 1.1666700,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée d'Agbelouve"
+  }
+},
+{
+  "type": "node",
+  "id": 4211078273,
+  "lat": 7.0609265,
+  "lon": 1.1521568,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agbatitoe"
+  }
+},
+{
+  "type": "node",
+  "id": 4211078476,
+  "lat": 7.7611584,
+  "lon": 1.1927917,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 4215466583,
+  "lat": 7.0528246,
+  "lon": 0.0290780,
+  "tags": {
+    "amenity": "school",
+    "name": "Amankwah R/C Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 4215466585,
+  "lat": 7.0525850,
+  "lon": 0.0301885,
+  "tags": {
+    "amenity": "school",
+    "name": "Amankwah R/C JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 4243968701,
+  "lat": 6.6733314,
+  "lon": -0.4097161,
+  "tags": {
+    "addr:street": "Areeba pole street",
+    "amenity": "school",
+    "name": "Universal Preparatory School",
+    "opening_hours": "Mo-Fr 06:00-15:00",
+    "operator": "Sir Nat",
+    "phone": "0242009999"
+  }
+},
+{
+  "type": "node",
+  "id": 4268473213,
+  "lat": 6.5901996,
+  "lon": 0.4735730,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-11-27",
+    "name": "Victoria Memorial School"
+  }
+},
+{
+  "type": "node",
+  "id": 4339632645,
+  "lat": 6.9686131,
+  "lon": 0.5215931,
+  "tags": {
+    "amenity": "police",
+    "building": "public",
+    "name": "Zoll"
+  }
+},
+{
+  "type": "node",
+  "id": 4343617414,
+  "lat": 6.7804530,
+  "lon": 1.1801410,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AMAKPAPE"
+  }
+},
+{
+  "type": "node",
+  "id": 4351615282,
+  "lat": 6.5507303,
+  "lon": 0.8686804,
+  "tags": {
+    "amenity": "hospital",
+    "name": "usp Atti Tovou"
+  }
+},
+{
+  "type": "node",
+  "id": 4351625842,
+  "lat": 6.5515913,
+  "lon": 0.8626517,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Atti Tovou"
+  }
+},
+{
+  "type": "node",
+  "id": 4384694189,
+  "lat": 6.9296791,
+  "lon": 0.6063721,
+  "tags": {
+    "amenity": "school",
+    "name": "Village la Lumière",
+    "name:en": "Village of Light",
+    "name:fr": "Village Lumiere"
+  }
+},
+{
+  "type": "node",
+  "id": 4516053190,
+  "lat": 7.1407936,
+  "lon": 0.6780104,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique Sainte-Thérèse"
+  }
+},
+{
+  "type": "node",
+  "id": 4529202939,
+  "lat": 6.6822333,
+  "lon": 1.1677275,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie d'Agbelouve"
+  }
+},
+{
+  "type": "node",
+  "id": 4529202941,
+  "lat": 6.6706158,
+  "lon": 1.1767257,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agbelouve"
+  }
+},
+{
+  "type": "node",
+  "id": 4549281118,
+  "lat": 7.5317589,
+  "lon": 1.1225708,
+  "tags": {
+    "amenity": "police",
+    "name": "Poste de Police du Grand Marché"
+  }
+},
+{
+  "type": "node",
+  "id": 4563535584,
+  "lat": 6.8746458,
+  "lon": 0.6631847,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563535695,
+  "lat": 7.3307858,
+  "lon": 0.8407295,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563541224,
+  "lat": 7.3904141,
+  "lon": 0.8699100,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Amou-oblo A/B"
+  }
+},
+{
+  "type": "node",
+  "id": 4563542012,
+  "lat": 7.3490228,
+  "lon": 0.8496633,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563542020,
+  "lat": 7.2222438,
+  "lon": 0.7903610,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563542066,
+  "lat": 6.8411653,
+  "lon": 0.7461294,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563542068,
+  "lat": 6.7938391,
+  "lon": 0.7967207,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563543592,
+  "lat": 7.2309289,
+  "lon": 0.7905990,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563543889,
+  "lat": 7.2824629,
+  "lon": 0.8048051,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563543913,
+  "lat": 7.2617628,
+  "lon": 0.7980589,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563543921,
+  "lat": 7.0306602,
+  "lon": 0.7018052,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 4563543923,
+  "lat": 6.9940880,
+  "lon": 0.6565433,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4563544174,
+  "lat": 6.8752156,
+  "lon": 0.6515757,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4578346593,
+  "lat": 8.5586993,
+  "lon": 0.9801632,
+  "tags": {
+    "addr:street": "Sotouboua",
+    "amenity": "police",
+    "name": "Gendarmerie",
+    "name:fr": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 4582705589,
+  "lat": 6.8903914,
+  "lon": 0.6247960,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Zomayi",
+    "name:fr": "Lycée de Zomayi"
+  }
+},
+{
+  "type": "node",
+  "id": 4587623590,
+  "lat": 6.8377994,
+  "lon": 0.7141511,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agou Gare",
+    "name:fr": "CEG Agou Gare"
+  }
+},
+{
+  "type": "node",
+  "id": 4596649596,
+  "lat": 6.8437593,
+  "lon": 0.7159767,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie",
+    "name:fr": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 4596779593,
+  "lat": 6.8379506,
+  "lon": 0.7131367,
+  "tags": {
+    "amenity": "school",
+    "name": "Terrain de Foot",
+    "name:de": "Sportplatz",
+    "name:fr": "Terrain de Foot"
+  }
+},
+{
+  "type": "node",
+  "id": 4598746789,
+  "lat": 6.8426305,
+  "lon": 0.7133092,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Centrale",
+    "name:fr": "Ecole Primaire"
+  }
+},
+{
+  "type": "node",
+  "id": 4598746790,
+  "lat": 6.8274916,
+  "lon": 0.7697185,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Gadjagan",
+    "name:fr": "CEG Gadjagan"
+  }
+},
+{
+  "type": "node",
+  "id": 4674436489,
+  "lat": 6.6088487,
+  "lon": 0.4596698,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-02-15",
+    "name": "School of Hygiene, Ho"
+  }
+},
+{
+  "type": "node",
+  "id": 4697440823,
+  "lat": 6.2595670,
+  "lon": 1.1649063,
+  "tags": {
+    "amenity": "school",
+    "name": "INSTITUT SUPÉRIEUR AGATA CARELLI",
+    "name:fr": "INSTITUT SUPÉRIEUR AGATA CARELLI"
+  }
+},
+{
+  "type": "node",
+  "id": 4710729537,
+  "lat": 6.5917130,
+  "lon": 0.4323432,
+  "tags": {
+    "addr:city": "Ho",
+    "addr:street": "Accra Road",
+    "amenity": "school",
+    "name": "Lady Volta Vocational Center - Electricity and Solar",
+    "operator": "Village Exchange Ghana"
+  }
+},
+{
+  "type": "node",
+  "id": 4726687886,
+  "lat": 6.8823272,
+  "lon": 0.6466082,
+  "tags": {
+    "amenity": "shelter",
+    "name": "Abri Météorologique",
+    "shelter_type": "Observation"
+  }
+},
+{
+  "type": "node",
+  "id": 4740602031,
+  "lat": 6.4222740,
+  "lon": 1.2033225,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Boloumondji",
+    "name:fr": "EPP Boloumondji"
+  }
+},
+{
+  "type": "node",
+  "id": 4781686560,
+  "lat": 8.0881048,
+  "lon": 1.1386132,
+  "tags": {
+    "abandoned": "no",
+    "amenity": "school",
+    "disused": "no",
+    "name": "E P P ATIKPAÏ",
+    "operator:type": "public",
+    "school:HT": "primaire"
+  }
+},
+{
+  "type": "node",
+  "id": 4792463509,
+  "lat": 6.7471401,
+  "lon": 0.3535327,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-12-25",
+    "name": "Have R. C Basic Schools",
+    "operator": "GES"
+  }
+},
+{
+  "type": "node",
+  "id": 4853590822,
+  "lat": 6.2734663,
+  "lon": 1.1633328,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AHONKPE",
+    "name:fr": "EPP AHONKPE"
+  }
+},
+{
+  "type": "node",
+  "id": 4929095995,
+  "lat": 8.5534110,
+  "lon": 0.9830248,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG KPANDIYO (VILLE 3)",
+    "operator": "publique"
+  }
+},
+{
+  "type": "node",
+  "id": 4929095996,
+  "lat": 8.5648518,
+  "lon": 0.9658871,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG VILLE 2",
+    "operator": "PUBLIQUE"
+  }
+},
+{
+  "type": "node",
+  "id": 4929095997,
+  "lat": 8.5645936,
+  "lon": 0.9744988,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP CENTRALE C",
+    "operator": "PUBLIQUE",
+    "source": "Bing, survey, knowledge",
+    "type": "collège"
+  }
+},
+{
+  "type": "node",
+  "id": 4930469531,
+  "lat": 8.5607793,
+  "lon": 0.9756412,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de Police de Sotouboua",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4936168323,
+  "lat": 6.2670272,
+  "lon": 1.1592498,
+  "tags": {
+    "amenity": "police",
+    "name": "POSTE DE POLICE DE LEGBASITO",
+    "name:fr": "POSTE DE POLICE DE LEGBASITO"
+  }
+},
+{
+  "type": "node",
+  "id": 4940377770,
+  "lat": 8.5656886,
+  "lon": 0.9833622,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Public du Grand Marché de Sotouboua",
+    "source": "Bing;Survey",
+    "type": "primary"
+  }
+},
+{
+  "type": "node",
+  "id": 5126938522,
+  "lat": 6.9262982,
+  "lon": 0.6273973,
+  "tags": {
+    "amenity": "school",
+    "email": "aklalabatik.togo@gmail.com",
+    "name": "Centre de formation \"Aklala Batik\"",
+    "name:de": "Ausbildungszentrum \"Aklala Batik\" für benachteiligte junge Frauen",
+    "name:en": "Education center \"Aklala Batik\" for disadvantaged girls",
+    "opening_hours": "Mo-Fr 09:00-16:00",
+    "operator": "Chantal Donvide",
+    "phone": "+22891741885",
+    "website": "http://www.aklalabatiktogo.wordpress.com"
+  }
+},
+{
+  "type": "node",
+  "id": 5170743421,
+  "lat": 7.7564862,
+  "lon": 1.1966501,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Hospital d'Anié",
+    "name:en": "Anié Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 5216956553,
+  "lat": 6.4250566,
+  "lon": 1.1978973,
+  "tags": {
+    "amenity": "school",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 5463786827,
+  "lat": 7.7643631,
+  "lon": 1.1981129,
+  "tags": {
+    "addr:postcode": "228",
+    "amenity": "school",
+    "name": "CEG Anie ville"
+  }
+},
+{
+  "type": "node",
+  "id": 5475959001,
+  "lat": 6.9079231,
+  "lon": 0.6337324,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique la Gare"
+  }
+},
+{
+  "type": "node",
+  "id": 5526564046,
+  "lat": 6.9012989,
+  "lon": -0.2744249,
+  "tags": {
+    "amenity": "school",
+    "fixme": "ground knowlegde required"
+  }
+},
+{
+  "type": "node",
+  "id": 5597817133,
+  "lat": 6.3239481,
+  "lon": -0.5890064,
+  "tags": {
+    "amenity": "school",
+    "name": "Anglican JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 5605930781,
+  "lat": 7.7932659,
+  "lon": -0.0519437,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5642515217,
+  "lat": 6.6209013,
+  "lon": -1.1940765,
+  "tags": {
+    "amenity": "school",
+    "name": "Serwah Boateng Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 5661725016,
+  "lat": 6.3763368,
+  "lon": -0.9974170,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5692514121,
+  "lat": 6.2514417,
+  "lon": 1.2264483,
+  "tags": {
+    "amenity": "school",
+    "name": "École Même Famille"
+  }
+},
+{
+  "type": "node",
+  "id": 5701677823,
+  "lat": 6.8305365,
+  "lon": 0.6786761,
+  "tags": {
+    "amenity": "school",
+    "name": "Agou klonou"
+  }
+},
+{
+  "type": "node",
+  "id": 5709143123,
+  "lat": 6.6092012,
+  "lon": 0.4703801,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-03-20",
+    "email": "info@epuc.edu.gh",
+    "name": "EP University College",
+    "phone": "+233362026591",
+    "website": "https://www.epuc.edu.gh"
+  }
+},
+{
+  "type": "node",
+  "id": 5713165223,
+  "lat": 6.6197130,
+  "lon": -1.1909115,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5717944005,
+  "lat": 6.6233552,
+  "lon": -1.2134206,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5717946525,
+  "lat": 6.6196837,
+  "lon": -1.2176049,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5717946526,
+  "lat": 6.6151703,
+  "lon": -1.2229264,
+  "tags": {
+    "amenity": "school",
+    "name": "Osei Kuffor",
+    "opening_hours": "Mo-Fr 08:30-16:00",
+    "operator": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 5717946531,
+  "lat": 6.6201580,
+  "lon": -1.2257910,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5717946558,
+  "lat": 6.6228649,
+  "lon": -1.2036896,
+  "tags": {
+    "amenity": "school",
+    "name": "Oxford International School",
+    "opening_hours": "Mo-Fr 08:30-16:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5753625383,
+  "lat": 6.4305632,
+  "lon": 1.2132061,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique Evangelique de Tsévié",
+    "source": "Bing;knowledge",
+    "source:date": "2018-07-11"
+  }
+},
+{
+  "type": "node",
+  "id": 5756243966,
+  "lat": 6.4287748,
+  "lon": 0.9304744,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique Centrale de KEVE"
+  }
+},
+{
+  "type": "node",
+  "id": 5756243968,
+  "lat": 6.4368240,
+  "lon": 0.9233236,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG de KEVE"
+  }
+},
+{
+  "type": "node",
+  "id": 5793967715,
+  "lat": 6.6354766,
+  "lon": -0.6854667,
+  "tags": {
+    "amenity": "school",
+    "name": "The New Church Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 5793967885,
+  "lat": 6.6296414,
+  "lon": -0.6968441,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 5797150176,
+  "lat": 6.6275329,
+  "lon": -0.6878416,
+  "tags": {
+    "amenity": "school",
+    "name": "First Step Preparatory Shhool"
+  }
+},
+{
+  "type": "node",
+  "id": 5797150758,
+  "lat": 6.6313303,
+  "lon": -0.6837781,
+  "tags": {
+    "amenity": "school",
+    "name": "Asakraka Intergrated Community For Employable Skills"
+  }
+},
+{
+  "type": "node",
+  "id": 5797150846,
+  "lat": 6.6307343,
+  "lon": -0.6860727,
+  "tags": {
+    "amenity": "school",
+    "name": "LA/B J.H.S."
+  }
+},
+{
+  "type": "node",
+  "id": 5797150867,
+  "lat": 6.6309515,
+  "lon": -0.6872492,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 5797163742,
+  "lat": 6.6317067,
+  "lon": -0.6853742,
+  "tags": {
+    "amenity": "school",
+    "name": "LA/A J.H.S."
+  }
+},
+{
+  "type": "node",
+  "id": 5797905284,
+  "lat": 6.6299093,
+  "lon": -0.6890533,
+  "tags": {
+    "amenity": "school",
+    "name": "Presby Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 5797905310,
+  "lat": 6.6289852,
+  "lon": -0.6968016,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic J.H.S."
+  }
+},
+{
+  "type": "node",
+  "id": 5805888242,
+  "lat": 6.5354550,
+  "lon": -0.7616502,
+  "tags": {
+    "amenity": "school",
+    "name": "S.D.A. Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 5806003935,
+  "lat": 6.5546860,
+  "lon": -0.7600096,
+  "tags": {
+    "amenity": "police",
+    "name": "MTTU Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 5817219852,
+  "lat": 6.4346092,
+  "lon": 1.2134485,
+  "tags": {
+    "amenity": "school",
+    "building": "lycée",
+    "building:levels": "1",
+    "name": "CEFORIP"
+  }
+},
+{
+  "type": "node",
+  "id": 5817627988,
+  "lat": 6.4327133,
+  "lon": 1.2246131,
+  "tags": {
+    "amenity": "police",
+    "name": "Groupement Région Maritime"
+  }
+},
+{
+  "type": "node",
+  "id": 5817674465,
+  "lat": 6.4316579,
+  "lon": 1.2181799,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Tsevié"
+  }
+},
+{
+  "type": "node",
+  "id": 5820170065,
+  "lat": 6.4238166,
+  "lon": 1.2192826,
+  "tags": {
+    "amenity": "police",
+    "name": "Région De Police N 1"
+  }
+},
+{
+  "type": "node",
+  "id": 5820819399,
+  "lat": 6.5824080,
+  "lon": -0.7336509,
+  "tags": {
+    "amenity": "school",
+    "name": "Atibie Nursing Training School"
+  }
+},
+{
+  "type": "node",
+  "id": 5836999254,
+  "lat": 6.4154692,
+  "lon": 1.2131256,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut Technique Le Potentiel"
+  }
+},
+{
+  "type": "node",
+  "id": 5837058827,
+  "lat": 6.4205352,
+  "lon": 1.2118962,
+  "tags": {
+    "amenity": "hospital",
+    "name": "polyclinique de tsevie"
+  }
+},
+{
+  "type": "node",
+  "id": 5837091896,
+  "lat": 6.4153182,
+  "lon": 1.2130577,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycee le potentiel"
+  }
+},
+{
+  "type": "node",
+  "id": 5837091903,
+  "lat": 6.4109255,
+  "lon": 1.2117505,
+  "tags": {
+    "amenity": "school",
+    "name": "GROUPE SCOLAIRE SAINTE FATIMA"
+  }
+},
+{
+  "type": "node",
+  "id": 5837127966,
+  "lat": 6.4148584,
+  "lon": 1.2179716,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Dalavémodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 5837196367,
+  "lat": 6.4408733,
+  "lon": 1.2097893,
+  "tags": {
+    "amenity": "school",
+    "name": "KPALI"
+  }
+},
+{
+  "type": "node",
+  "id": 5837196383,
+  "lat": 6.4367019,
+  "lon": 1.2051585,
+  "tags": {
+    "amenity": "school",
+    "name": "John Wesley",
+    "phone": "+22893907054"
+  }
+},
+{
+  "type": "node",
+  "id": 5837196612,
+  "lat": 6.4349634,
+  "lon": 1.2068964,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Adiakpo"
+  }
+},
+{
+  "type": "node",
+  "id": 5837258759,
+  "lat": 6.4320625,
+  "lon": 1.2156026,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'Enfants Temple des Vainqueurs"
+  }
+},
+{
+  "type": "node",
+  "id": 5837258800,
+  "lat": 6.4474345,
+  "lon": 1.2100746,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Baptiste"
+  }
+},
+{
+  "type": "node",
+  "id": 5837266116,
+  "lat": 6.4299917,
+  "lon": 1.2044651,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Tsévié 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5837272336,
+  "lat": 6.4136601,
+  "lon": 1.2074005,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP DAVIEMODZI 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5837291980,
+  "lat": 6.4162422,
+  "lon": 1.2098993,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole CPL Diderot"
+  }
+},
+{
+  "type": "node",
+  "id": 5837303793,
+  "lat": 6.4182958,
+  "lon": 1.2090894,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole des personnes handicapees mentales"
+  }
+},
+{
+  "type": "node",
+  "id": 5837318543,
+  "lat": 6.4196493,
+  "lon": 1.2027894,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire Privee Laic ST christophe"
+  }
+},
+{
+  "type": "node",
+  "id": 5837318551,
+  "lat": 6.4183100,
+  "lon": 1.2058914,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 5837318555,
+  "lat": 6.4089423,
+  "lon": 1.2074482,
+  "tags": {
+    "amenity": "school",
+    "name": "Institions Scientifiques superieur & D'enseignement Technique"
+  }
+},
+{
+  "type": "node",
+  "id": 5837318565,
+  "lat": 6.4074264,
+  "lon": 1.2011915,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Ville 4"
+  }
+},
+{
+  "type": "node",
+  "id": 5838274717,
+  "lat": 6.4183745,
+  "lon": 1.2145337,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire La Lumière"
+  }
+},
+{
+  "type": "node",
+  "id": 5838547932,
+  "lat": 6.4388617,
+  "lon": 1.2077223,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire Le Baobab"
+  }
+},
+{
+  "type": "node",
+  "id": 5838547940,
+  "lat": 6.4393854,
+  "lon": 1.2105694,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 5838554652,
+  "lat": 6.4294658,
+  "lon": 1.2062658,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Superieur De Communication et de Gestion",
+    "short_name": "ESCG-iPADEV"
+  }
+},
+{
+  "type": "node",
+  "id": 5852155614,
+  "lat": 6.5952705,
+  "lon": -0.5582853,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 5871234663,
+  "lat": 6.4338442,
+  "lon": 1.2073414,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Privée Laïque Ste RITA"
+  }
+},
+{
+  "type": "node",
+  "id": 5871234665,
+  "lat": 6.4351999,
+  "lon": 1.2056469,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Centre Médico-social TSO NAKLE"
+  }
+},
+{
+  "type": "node",
+  "id": 5871272533,
+  "lat": 6.4071544,
+  "lon": 1.2057240,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 5871272542,
+  "lat": 6.4055145,
+  "lon": 1.2018962,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Daviémodji D"
+  }
+},
+{
+  "type": "node",
+  "id": 5943234684,
+  "lat": 7.2139955,
+  "lon": 0.6590280,
+  "tags": {
+    "amenity": "school",
+    "name": "EPE Akayo 1"
+  }
+},
+{
+  "type": "node",
+  "id": 5953729387,
+  "lat": 6.9068961,
+  "lon": 0.6073702,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'enfant hanyiga duga"
+  }
+},
+{
+  "type": "node",
+  "id": 5954068657,
+  "lat": 7.2137363,
+  "lon": 0.6594525,
+  "tags": {
+    "amenity": "school",
+    "description": "École public évangélique.",
+    "name": "EPE Akayo 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5962203414,
+  "lat": 7.2138333,
+  "lon": 0.6590724,
+  "tags": {
+    "amenity": "school",
+    "name": "EPE Akayo 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5969128380,
+  "lat": 6.9190897,
+  "lon": 0.6265421,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut Polytechnique Dalloz"
+  }
+},
+{
+  "type": "node",
+  "id": 5969225724,
+  "lat": 6.9242632,
+  "lon": 0.6330666,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut Martin Luther King"
+  }
+},
+{
+  "type": "node",
+  "id": 5971516958,
+  "lat": 6.9287382,
+  "lon": 0.6336825,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'enfant publique"
+  }
+},
+{
+  "type": "node",
+  "id": 5972243774,
+  "lat": 6.9038433,
+  "lon": 0.6395569,
+  "tags": {
+    "amenity": "school",
+    "name": "INSTITUT DE LA CULTURE ISLAMIQUE"
+  }
+},
+{
+  "type": "node",
+  "id": 5972243779,
+  "lat": 6.9015709,
+  "lon": 0.6443126,
+  "tags": {
+    "amenity": "school",
+    "name": "COMPLEXE EDUCATION ELLE ISLAMIQUE"
+  }
+},
+{
+  "type": "node",
+  "id": 5972714808,
+  "lat": 7.2138333,
+  "lon": 0.6590724,
+  "tags": {
+    "amenity": "school",
+    "name": "Epe Akayo 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5978889214,
+  "lat": 6.9038801,
+  "lon": 0.6463159,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP KPALIME ZONGO"
+  }
+},
+{
+  "type": "node",
+  "id": 5978957295,
+  "lat": 6.9022539,
+  "lon": 0.6383849,
+  "tags": {
+    "amenity": "school",
+    "name": "COMPLEXE SCOLAIRE BEAU SOLEIL"
+  }
+},
+{
+  "type": "node",
+  "id": 5978957296,
+  "lat": 6.9007604,
+  "lon": 0.6402447,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AGOEKONDZI"
+  }
+},
+{
+  "type": "node",
+  "id": 5979059718,
+  "lat": 6.8985144,
+  "lon": 0.6422375,
+  "tags": {
+    "amenity": "school",
+    "name": "EPL LE MONDE"
+  }
+},
+{
+  "type": "node",
+  "id": 5979120899,
+  "lat": 6.9065557,
+  "lon": 0.6421433,
+  "tags": {
+    "amenity": "school",
+    "name": "EPC TSHINU"
+  }
+},
+{
+  "type": "node",
+  "id": 5979208429,
+  "lat": 6.9057873,
+  "lon": 0.6374205,
+  "tags": {
+    "amenity": "hospital",
+    "name": "MATERNITE BETHEL"
+  }
+},
+{
+  "type": "node",
+  "id": 5981561314,
+  "lat": 6.9289948,
+  "lon": 0.6404396,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Publique TSIVE"
+  }
+},
+{
+  "type": "node",
+  "id": 5983483702,
+  "lat": 6.2634673,
+  "lon": 1.1445680,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Légbassito-Madjikpéto"
+  }
+},
+{
+  "type": "node",
+  "id": 5988813292,
+  "lat": 6.9104422,
+  "lon": 0.6380221,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole islamique"
+  }
+},
+{
+  "type": "node",
+  "id": 5988813293,
+  "lat": 6.9100551,
+  "lon": 0.6368363,
+  "tags": {
+    "amenity": "school",
+    "name": "EPPL La vie utile"
+  }
+},
+{
+  "type": "node",
+  "id": 5988992469,
+  "lat": 6.9124145,
+  "lon": 0.6428569,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut la sorbonne"
+  }
+},
+{
+  "type": "node",
+  "id": 5993895346,
+  "lat": 6.9082486,
+  "lon": 0.6231790,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kliguekondzi"
+  }
+},
+{
+  "type": "node",
+  "id": 5993895364,
+  "lat": 6.9056439,
+  "lon": 0.6205066,
+  "tags": {
+    "amenity": "school",
+    "name": "epp kliguekondzi 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5993968672,
+  "lat": 6.9072420,
+  "lon": 0.6296216,
+  "tags": {
+    "amenity": "school",
+    "denomination": "roman_catholic",
+    "name": "ecole primaire catholique saint esprit",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 5994008608,
+  "lat": 6.9105700,
+  "lon": 0.6573212,
+  "tags": {
+    "amenity": "school",
+    "name": "epp novissi - madjatom"
+  }
+},
+{
+  "type": "node",
+  "id": 5994032458,
+  "lat": 6.9011113,
+  "lon": 0.6580619,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée 30 août"
+  }
+},
+{
+  "type": "node",
+  "id": 5994085641,
+  "lat": 6.9284134,
+  "lon": 0.6532836,
+  "tags": {
+    "amenity": "school",
+    "name": "complexe scolaire le savoir"
+  }
+},
+{
+  "type": "node",
+  "id": 5994085642,
+  "lat": 6.9281152,
+  "lon": 0.6540484,
+  "tags": {
+    "amenity": "school",
+    "name": "epc mere carolina"
+  }
+},
+{
+  "type": "node",
+  "id": 5994085646,
+  "lat": 6.9277028,
+  "lon": 0.6553090,
+  "tags": {
+    "amenity": "school",
+    "name": "ecole mere c. beltrami"
+  }
+},
+{
+  "type": "node",
+  "id": 5994085652,
+  "lat": 6.9239797,
+  "lon": 0.6538265,
+  "tags": {
+    "amenity": "school",
+    "name": "epp danyiniu"
+  }
+},
+{
+  "type": "node",
+  "id": 5994085658,
+  "lat": 6.9241569,
+  "lon": 0.6499536,
+  "tags": {
+    "amenity": "school",
+    "name": "ecole change nation academic"
+  }
+},
+{
+  "type": "node",
+  "id": 5994224266,
+  "lat": 6.9059855,
+  "lon": 0.6457567,
+  "tags": {
+    "amenity": "school",
+    "name": "centre lumiere de l'islam pour le developpement de la femme musulmane"
+  }
+},
+{
+  "type": "node",
+  "id": 5994224277,
+  "lat": 6.9079287,
+  "lon": 0.6451419,
+  "tags": {
+    "amenity": "school",
+    "name": "Institut Dar Es-Salam franco arabe"
+  }
+},
+{
+  "type": "node",
+  "id": 5994262642,
+  "lat": 6.9146720,
+  "lon": 0.6430648,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP gare c"
+  }
+},
+{
+  "type": "node",
+  "id": 5994262654,
+  "lat": 6.9186684,
+  "lon": 0.6346259,
+  "tags": {
+    "amenity": "police",
+    "name": "gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 5994276092,
+  "lat": 6.9181625,
+  "lon": 0.6342431,
+  "tags": {
+    "amenity": "school",
+    "name": "complexe scolaire Dr Gustav Nachtigal"
+  }
+},
+{
+  "type": "node",
+  "id": 5994315529,
+  "lat": 6.8932416,
+  "lon": 0.6327777,
+  "tags": {
+    "amenity": "school",
+    "denomination": "roman_catholic",
+    "name": "ecole primaire catholique sacre coeur de dzouzekodzi",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 5994315556,
+  "lat": 6.8828900,
+  "lon": 0.6452636,
+  "tags": {
+    "amenity": "school",
+    "name": "INFA DE TOVE"
+  }
+},
+{
+  "type": "node",
+  "id": 5994325419,
+  "lat": 6.8674256,
+  "lon": 0.6017770,
+  "tags": {
+    "amenity": "school",
+    "name": "epp kloto centre"
+  }
+},
+{
+  "type": "node",
+  "id": 5994325425,
+  "lat": 6.8451004,
+  "lon": 0.5798625,
+  "tags": {
+    "amenity": "school",
+    "name": "lycee de wome"
+  }
+},
+{
+  "type": "node",
+  "id": 5994325427,
+  "lat": 6.8479859,
+  "lon": 0.5755649,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP WOME"
+  }
+},
+{
+  "type": "node",
+  "id": 5994343025,
+  "lat": 6.9029287,
+  "lon": 0.6461647,
+  "tags": {
+    "amenity": "school",
+    "name": "epp alhamdou zongo 2"
+  }
+},
+{
+  "type": "node",
+  "id": 5994347194,
+  "lat": 6.8910695,
+  "lon": 0.6265456,
+  "tags": {
+    "amenity": "police",
+    "name": "corps des gardiens de prefecture"
+  }
+},
+{
+  "type": "node",
+  "id": 5994363016,
+  "lat": 6.8860439,
+  "lon": 0.6296879,
+  "tags": {
+    "amenity": "school",
+    "name": "epp agogome kloto ouest"
+  }
+},
+{
+  "type": "node",
+  "id": 5994363050,
+  "lat": 6.8960861,
+  "lon": 0.6245562,
+  "tags": {
+    "amenity": "hospital",
+    "name": "centre medico social siloe"
+  }
+},
+{
+  "type": "node",
+  "id": 6014989936,
+  "lat": 7.1222057,
+  "lon": 0.7323732,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Adeta 1"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716206,
+  "lat": 6.5729812,
+  "lon": 0.3646420,
+  "tags": {
+    "addr:city": "Sokode Ando",
+    "addr:street": "Accra Road",
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "Sokode Ando M/A Primary School.",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "religion": "none"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716311,
+  "lat": 6.3706026,
+  "lon": 0.1856748,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716870,
+  "lat": 6.5655988,
+  "lon": 0.3009596,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716874,
+  "lat": 6.4047598,
+  "lon": 0.1753149,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716875,
+  "lat": 6.3198712,
+  "lon": 0.1613190,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6019716877,
+  "lat": 6.2868496,
+  "lon": 0.1312936,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6019717385,
+  "lat": 6.3386700,
+  "lon": 0.1700078,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6021525762,
+  "lat": 7.5158072,
+  "lon": 1.0394005,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6021525824,
+  "lat": 7.5116441,
+  "lon": 1.0202098,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Adiva"
+  }
+},
+{
+  "type": "node",
+  "id": 6037787237,
+  "lat": 6.3035151,
+  "lon": -0.4721555,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6079831586,
+  "lat": 7.1260873,
+  "lon": 0.7238251,
+  "tags": {
+    "amenity": "school",
+    "name": "École Baptiste Biblique de la Lumière",
+    "name:en": "Bible Baptist School of The Light"
+  }
+},
+{
+  "type": "node",
+  "id": 6079843886,
+  "lat": 7.5197509,
+  "lon": 1.1277633,
+  "tags": {
+    "amenity": "school",
+    "name": "École Baptiste Biblique d'Atakpamé",
+    "name:en": "Bible Baptist School of Atakpame"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188313,
+  "lat": 6.3258400,
+  "lon": 1.2348789,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Adéticopé"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188511,
+  "lat": 6.3161757,
+  "lon": 1.2300103,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Astuse"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188731,
+  "lat": 6.3244463,
+  "lon": 1.2115187,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Adéticopé"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188732,
+  "lat": 6.3151152,
+  "lon": 1.2318544,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole privée Laïque Bernard Dadié 2"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188733,
+  "lat": 6.3250876,
+  "lon": 1.2333423,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Shammah"
+  }
+},
+{
+  "type": "node",
+  "id": 6137188830,
+  "lat": 6.3132222,
+  "lon": 1.2356907,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Alpha Référence"
+  }
+},
+{
+  "type": "node",
+  "id": 6137919955,
+  "lat": 6.3179611,
+  "lon": 1.2216202,
+  "tags": {
+    "amenity": "school",
+    "name": "Cib Inta"
+  }
+},
+{
+  "type": "node",
+  "id": 6137919956,
+  "lat": 6.3319518,
+  "lon": 1.2244805,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Polytechnique d'informatique d'électronique et de gestion",
+    "website": "+22822275828"
+  }
+},
+{
+  "type": "node",
+  "id": 6137920145,
+  "lat": 6.3268649,
+  "lon": 1.2263506,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycee Lavoisier"
+  }
+},
+{
+  "type": "node",
+  "id": 6160971647,
+  "lat": 8.3272492,
+  "lon": 0.9822533,
+  "tags": {
+    "amenity": "school",
+    "name": "École Primaire Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 6166451199,
+  "lat": 8.3262012,
+  "lon": 0.9865097,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG de Blitta-Gare"
+  }
+},
+{
+  "type": "node",
+  "id": 6166452460,
+  "lat": 8.3311595,
+  "lon": 0.9857947,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de Police de Blitta"
+  }
+},
+{
+  "type": "node",
+  "id": 6166455024,
+  "lat": 8.3285667,
+  "lon": 0.9843419,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie Nationale"
+  }
+},
+{
+  "type": "node",
+  "id": 6166455931,
+  "lat": 8.3327786,
+  "lon": 0.9961109,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Lama Kaza Groupe A"
+  }
+},
+{
+  "type": "node",
+  "id": 6265986766,
+  "lat": 8.1740497,
+  "lon": 0.9640938,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie Nationale"
+  }
+},
+{
+  "type": "node",
+  "id": 6267413602,
+  "lat": 8.0639303,
+  "lon": 1.0193040,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de Police"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442271,
+  "lat": 7.6471019,
+  "lon": 1.1818635,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442700,
+  "lat": 7.9522990,
+  "lon": 1.0529441,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG d'Akaba"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442704,
+  "lat": 7.4366468,
+  "lon": 1.1615016,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442706,
+  "lat": 7.4245218,
+  "lon": 1.1616516,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442707,
+  "lat": 7.2432399,
+  "lon": 1.1648489,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6279442967,
+  "lat": 6.6370172,
+  "lon": 1.1789190,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6279443313,
+  "lat": 6.9289263,
+  "lon": 1.1753850,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Notsè"
+  }
+},
+{
+  "type": "node",
+  "id": 6281429035,
+  "lat": 8.0690530,
+  "lon": 1.0222247,
+  "tags": {
+    "amenity": "school",
+    "min_age": "6",
+    "name": "EPP Tcharè-Baou Plateau",
+    "operator": "Public",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6281429036,
+  "lat": 8.0644561,
+  "lon": 1.0210177,
+  "tags": {
+    "amenity": "school",
+    "min_age": "6",
+    "name": "École Primaire Publique Centrale de Tcharè-Baou",
+    "operator": "Public",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 6311346157,
+  "lat": 6.4470523,
+  "lon": 0.6274393,
+  "tags": {
+    "amenity": "police",
+    "description": "Not far from the roundabout",
+    "name": "Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 6312656985,
+  "lat": 6.4453970,
+  "lon": 0.6314589,
+  "tags": {
+    "amenity": "school",
+    "description": "not far from the E.P. Church",
+    "name": "E.P. Primary & JHS. Adaklu Waya"
+  }
+},
+{
+  "type": "node",
+  "id": 6360160017,
+  "lat": 8.0835918,
+  "lon": 1.0491678,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kadanga"
+  }
+},
+{
+  "type": "node",
+  "id": 6360160018,
+  "lat": 8.0856266,
+  "lon": 1.1287169,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp atikpaï akata"
+  }
+},
+{
+  "type": "node",
+  "id": 6360161185,
+  "lat": 8.1220838,
+  "lon": 0.9735683,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Agodeka"
+  }
+},
+{
+  "type": "node",
+  "id": 6362712785,
+  "lat": 8.0272296,
+  "lon": 1.0344020,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6484412288,
+  "lat": 6.9567788,
+  "lon": 1.1736015,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Camp Notse"
+  }
+},
+{
+  "type": "node",
+  "id": 6502418455,
+  "lat": 6.9270866,
+  "lon": 0.6257960,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Nyivémé"
+  }
+},
+{
+  "type": "node",
+  "id": 6547556380,
+  "lat": 8.6558200,
+  "lon": 0.2082703,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpanja D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 6547859878,
+  "lat": 7.6598093,
+  "lon": 0.5191240,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548912666,
+  "lat": 8.4333349,
+  "lon": 0.3702767,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548930493,
+  "lat": 7.9309980,
+  "lon": 0.5367651,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548940581,
+  "lat": 7.9045666,
+  "lon": 0.5375217,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6548944641,
+  "lat": 8.6889292,
+  "lon": 0.1800773,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6548951869,
+  "lat": 8.3251481,
+  "lon": 0.4729601,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548952079,
+  "lat": 8.6046808,
+  "lon": 0.2356791,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548957721,
+  "lat": 8.2004726,
+  "lon": 0.5387491,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6548961833,
+  "lat": 8.3974548,
+  "lon": 0.4093312,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548968477,
+  "lat": 8.3533375,
+  "lon": 0.4489712,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548971676,
+  "lat": 8.3931203,
+  "lon": 0.4139328,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548974059,
+  "lat": 8.4304341,
+  "lon": 0.3791291,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548974060,
+  "lat": 7.9980174,
+  "lon": 0.5596507,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548974114,
+  "lat": 8.4702843,
+  "lon": 0.3305905,
+  "tags": {
+    "amenity": "school",
+    "name": "Jumbo No. 1 Basic school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548974705,
+  "lat": 8.3773081,
+  "lon": 0.4244612,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548975751,
+  "lat": 8.2916776,
+  "lon": 0.4907534,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548981972,
+  "lat": 8.4884115,
+  "lon": 0.3100494,
+  "tags": {
+    "amenity": "police",
+    "name": "Kpasa Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 6548984432,
+  "lat": 8.4128940,
+  "lon": 0.3918213,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548985930,
+  "lat": 7.9470998,
+  "lon": 0.5542641,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548990505,
+  "lat": 8.7081718,
+  "lon": 0.1529482,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548992095,
+  "lat": 8.4398665,
+  "lon": 0.3583730,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548997725,
+  "lat": 8.2749012,
+  "lon": 0.5110088,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548998265,
+  "lat": 8.7358515,
+  "lon": 0.0860396,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548998266,
+  "lat": 8.4522732,
+  "lon": 0.3465398,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548998712,
+  "lat": 8.1159296,
+  "lon": 0.5452035,
+  "tags": {
+    "amenity": "school",
+    "name": "Ahondwo L/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 6549661498,
+  "lat": 6.7855466,
+  "lon": 0.4424817,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6553272649,
+  "lat": 6.7850408,
+  "lon": 0.4415687,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6553293617,
+  "lat": 6.8208025,
+  "lon": 0.4235615,
+  "tags": {
+    "amenity": "school",
+    "isced:level": "1",
+    "name": "Vane Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 6553299245,
+  "lat": 6.6079735,
+  "lon": 0.4565090,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2026-03-13",
+    "name": "Volta Regional Police Headquarters"
+  }
+},
+{
+  "type": "node",
+  "id": 6553303090,
+  "lat": 6.6791357,
+  "lon": 0.3193787,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6553304230,
+  "lat": 6.7657774,
+  "lon": 0.4795922,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Anthony Catholic Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 6553307055,
+  "lat": 6.7720895,
+  "lon": 0.4784834,
+  "tags": {
+    "amenity": "school",
+    "name": "E.P Primary and Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 6554658584,
+  "lat": 6.9158703,
+  "lon": 0.4570652,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554705850,
+  "lat": 6.9007963,
+  "lon": 0.4341092,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554705977,
+  "lat": 7.1246398,
+  "lon": 0.4603326,
+  "tags": {
+    "amenity": "school",
+    "name": "EP Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6554709326,
+  "lat": 6.7987975,
+  "lon": 0.3720848,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554714027,
+  "lat": 7.0030430,
+  "lon": 0.4337866,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554716577,
+  "lat": 6.8657482,
+  "lon": 0.4003348,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554722917,
+  "lat": 6.8762111,
+  "lon": 0.4210910,
+  "tags": {
+    "amenity": "school",
+    "name": "Fume Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 6554723419,
+  "lat": 7.0035331,
+  "lon": 0.4342423,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554729752,
+  "lat": 6.8920142,
+  "lon": 0.4285967,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554731303,
+  "lat": 6.9158410,
+  "lon": 0.4558820,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554735880,
+  "lat": 6.6923082,
+  "lon": 0.4830823,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-12-11",
+    "name": "Mantse"
+  }
+},
+{
+  "type": "node",
+  "id": 6554735881,
+  "lat": 6.8815135,
+  "lon": 0.4212465,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554736906,
+  "lat": 7.0222742,
+  "lon": 0.4272788,
+  "tags": {
+    "amenity": "school",
+    "name": "Peggy Good School of Faith"
+  }
+},
+{
+  "type": "node",
+  "id": 6554737786,
+  "lat": 6.9644009,
+  "lon": 0.4585641,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554742718,
+  "lat": 6.7118094,
+  "lon": 0.3368921,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554743099,
+  "lat": 6.8180552,
+  "lon": 0.3750899,
+  "tags": {
+    "amenity": "school",
+    "name": "Nyagbo Gagbefe D/A Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 6554744953,
+  "lat": 6.9378605,
+  "lon": 0.4636863,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554751071,
+  "lat": 6.7273654,
+  "lon": 0.3450549,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-12-25",
+    "name": "Woadze Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6554751209,
+  "lat": 6.7445588,
+  "lon": 0.3518807,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-12-25",
+    "name": "Rijnbeek Catholic School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 6554756065,
+  "lat": 6.5318713,
+  "lon": 0.2277860,
+  "tags": {
+    "amenity": "school",
+    "name": "Peki Tsheme EP School"
+  }
+},
+{
+  "type": "node",
+  "id": 6562714115,
+  "lat": 6.7743979,
+  "lon": 0.4763271,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6564868158,
+  "lat": 6.4167835,
+  "lon": 0.7545751,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6564882281,
+  "lat": 6.3598068,
+  "lon": 0.8651065,
+  "tags": {
+    "amenity": "school",
+    "name": "Ave-Dakpa Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 6564887708,
+  "lat": 6.3287833,
+  "lon": 0.8814693,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6564905699,
+  "lat": 6.3944174,
+  "lon": 0.7945996,
+  "tags": {
+    "amenity": "school",
+    "name": "Damule Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6564906115,
+  "lat": 6.4047495,
+  "lon": 0.7766997,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6564911420,
+  "lat": 6.2834424,
+  "lon": 0.9294165,
+  "tags": {
+    "amenity": "school",
+    "name": "Metsrikasa DA Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6564919325,
+  "lat": 6.3034699,
+  "lon": 0.9029986,
+  "tags": {
+    "amenity": "school",
+    "name": "Ave Xevi Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 6581281171,
+  "lat": 6.6139314,
+  "lon": 0.4756877,
+  "tags": {
+    "amenity": "school",
+    "name": "Housing LA Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6597485486,
+  "lat": 6.9477822,
+  "lon": 1.1741265,
+  "tags": {
+    "amenity": "school",
+    "name": "Epc"
+  }
+},
+{
+  "type": "node",
+  "id": 6609195122,
+  "lat": 6.5381913,
+  "lon": 0.7024892,
+  "tags": {
+    "amenity": "school",
+    "name": "CEPS Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 6611740536,
+  "lat": 6.7935656,
+  "lon": 0.5687898,
+  "tags": {
+    "addr:street": "Shia",
+    "amenity": "police",
+    "name": "Ghana Immigration Service",
+    "name:de": "Ghana Einwanderungsbehörde",
+    "name:lt": "Ganos migracijos tarnyba"
+  }
+},
+{
+  "type": "node",
+  "id": 6701023157,
+  "lat": 6.5012040,
+  "lon": 0.9698565,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6701023283,
+  "lat": 6.4878091,
+  "lon": 0.9498820,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6715216592,
+  "lat": 7.4117243,
+  "lon": 0.4672409,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6806689136,
+  "lat": 8.4312470,
+  "lon": 1.0007133,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Tchébébé"
+  }
+},
+{
+  "type": "node",
+  "id": 6806701547,
+  "lat": 8.4322912,
+  "lon": 0.9997968,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Tchébébé"
+  }
+},
+{
+  "type": "node",
+  "id": 6918043786,
+  "lat": 6.8428033,
+  "lon": 0.8230045,
+  "tags": {
+    "addr:street": "Agou-Gare",
+    "amenity": "school",
+    "email": "stotionavetonou@yahoo.fr",
+    "name": "ITRA",
+    "name:fr": "ITRA - CRAF Centre de Recherche Agronomique zone Forestière",
+    "operator": "BP:27"
+  }
+},
+{
+  "type": "node",
+  "id": 6918543886,
+  "lat": 6.6742747,
+  "lon": 0.9791340,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG GAPÉ KPODZI FELL BACK"
+  }
+},
+{
+  "type": "node",
+  "id": 6972218985,
+  "lat": 8.2262307,
+  "lon": -0.6556239,
+  "tags": {
+    "amenity": "school",
+    "name": "Yeji Midwifery Training School"
+  }
+},
+{
+  "type": "node",
+  "id": 7053630338,
+  "lat": 6.9062330,
+  "lon": 0.6290343,
+  "tags": {
+    "amenity": "school",
+    "name": "École Polyvalente Saint Esprit de Kpalimé",
+    "operator": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 7053630364,
+  "lat": 6.9119259,
+  "lon": 0.6279024,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Centre Hospitalier Préfectoral de Kpalimé",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 7055667173,
+  "lat": 6.9196746,
+  "lon": 0.6298778,
+  "tags": {
+    "amenity": "school",
+    "name": "École maternelle primaire privée laïque"
+  }
+},
+{
+  "type": "node",
+  "id": 7055670581,
+  "lat": 6.9070093,
+  "lon": 0.6299991,
+  "tags": {
+    "amenity": "school",
+    "description": "primaire",
+    "name": "Institut Médico Psycho- pédagogique l'Envol"
+  }
+},
+{
+  "type": "node",
+  "id": 7056557095,
+  "lat": 6.9074286,
+  "lon": 0.6429630,
+  "tags": {
+    "amenity": "school",
+    "name": "La Sorbonne"
+  }
+},
+{
+  "type": "node",
+  "id": 7056564844,
+  "lat": 6.9098535,
+  "lon": 0.6443595,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Évangélique La Restauration"
+  }
+},
+{
+  "type": "node",
+  "id": 7056565261,
+  "lat": 6.8777563,
+  "lon": 0.6487897,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole privée Catholique Tové-Ahoundjo"
+  }
+},
+{
+  "type": "node",
+  "id": 7056568816,
+  "lat": 6.8778884,
+  "lon": 0.6495176,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Évangélique De Tove"
+  }
+},
+{
+  "type": "node",
+  "id": 7056573016,
+  "lat": 6.8933420,
+  "lon": 0.6271690,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe scolaire la bonne semence"
+  }
+},
+{
+  "type": "node",
+  "id": 7056585347,
+  "lat": 6.8793278,
+  "lon": 0.6478404,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Tové B"
+  }
+},
+{
+  "type": "node",
+  "id": 7056663887,
+  "lat": 6.8969523,
+  "lon": 0.6290799,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Baptiste Jésus Sauve"
+  }
+},
+{
+  "type": "node",
+  "id": 7057416784,
+  "lat": 6.9159247,
+  "lon": 0.6220029,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kpégolonou"
+  }
+},
+{
+  "type": "node",
+  "id": 7057456985,
+  "lat": 6.9006399,
+  "lon": 0.6509198,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Lumière de la Nation"
+  }
+},
+{
+  "type": "node",
+  "id": 7057456992,
+  "lat": 6.9143197,
+  "lon": 0.6468952,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire catolique de Nogo"
+  }
+},
+{
+  "type": "node",
+  "id": 7057475787,
+  "lat": 6.9076909,
+  "lon": 0.6524178,
+  "tags": {
+    "amenity": "school",
+    "name": "École Coranique"
+  }
+},
+{
+  "type": "node",
+  "id": 7057633995,
+  "lat": 6.9144448,
+  "lon": 0.6382873,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Centre de Santé Thérapie Alternative"
+  }
+},
+{
+  "type": "node",
+  "id": 7057793117,
+  "lat": 6.9113726,
+  "lon": 0.6415358,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique Presbyterienne de Numetukodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 7057862081,
+  "lat": 6.8930512,
+  "lon": 0.6326194,
+  "tags": {
+    "amenity": "school",
+    "name": "College St François de Sales"
+  }
+},
+{
+  "type": "node",
+  "id": 7057919601,
+  "lat": 6.9191671,
+  "lon": 0.6269972,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire Epanoui"
+  }
+},
+{
+  "type": "node",
+  "id": 7081976006,
+  "lat": 6.9020971,
+  "lon": 0.6290270,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Centre Médico-humanitaire Santé Solidaire"
+  }
+},
+{
+  "type": "node",
+  "id": 7081976008,
+  "lat": 6.9038718,
+  "lon": 0.6300838,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Clinique Celidem"
+  }
+},
+{
+  "type": "node",
+  "id": 7085492593,
+  "lat": 6.9283087,
+  "lon": 0.6384953,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 7087901217,
+  "lat": 6.9201691,
+  "lon": 0.6369819,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire La Promotion"
+  }
+},
+{
+  "type": "node",
+  "id": 7087913704,
+  "lat": 6.9159231,
+  "lon": 0.6366912,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ATAKPAMEKODZI"
+  }
+},
+{
+  "type": "node",
+  "id": 7087939300,
+  "lat": 6.9167081,
+  "lon": 0.6374323,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique d'Atakpamékodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 7125627086,
+  "lat": 6.2628584,
+  "lon": 1.0495506,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7141309167,
+  "lat": 6.8645628,
+  "lon": 1.1832044,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kpélé"
+  }
+},
+{
+  "type": "node",
+  "id": 7141339039,
+  "lat": 6.7914815,
+  "lon": 1.1776421,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Amakpapé"
+  }
+},
+{
+  "type": "node",
+  "id": 7146524291,
+  "lat": 7.3334116,
+  "lon": 1.0461297,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kpategan"
+  }
+},
+{
+  "type": "node",
+  "id": 7146960840,
+  "lat": 7.3564331,
+  "lon": 1.0859520,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agbotanawlou"
+  }
+},
+{
+  "type": "node",
+  "id": 7148361629,
+  "lat": 7.3761071,
+  "lon": 0.8932685,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kpalongo"
+  }
+},
+{
+  "type": "node",
+  "id": 7148678770,
+  "lat": 7.4341383,
+  "lon": 0.9654717,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Bena Amoutchi"
+  }
+},
+{
+  "type": "node",
+  "id": 7151418311,
+  "lat": 7.8371267,
+  "lon": 1.0951717,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire Palakoko"
+  }
+},
+{
+  "type": "node",
+  "id": 7178720486,
+  "lat": 6.2502001,
+  "lon": 1.1764444,
+  "tags": {
+    "addr:street": "Voix Express de la CEDEAO",
+    "amenity": "school",
+    "name": "CS LE SAUVEUR",
+    "phone": "+22890732688"
+  }
+},
+{
+  "type": "node",
+  "id": 7180623085,
+  "lat": 7.8561080,
+  "lon": -0.9554386,
+  "tags": {
+    "amenity": "school",
+    "name": "Prapraboho RC Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7182097787,
+  "lat": 8.2983103,
+  "lon": -0.8576497,
+  "tags": {
+    "amenity": "school",
+    "name": "Buma Basic school"
+  }
+},
+{
+  "type": "node",
+  "id": 7182112385,
+  "lat": 8.2837210,
+  "lon": -0.9283367,
+  "tags": {
+    "amenity": "school",
+    "name": "Karinya kura DA Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 7182112486,
+  "lat": 8.2830494,
+  "lon": -0.7912817,
+  "tags": {
+    "amenity": "school",
+    "name": "Chokolombo Nkwanta DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7182148785,
+  "lat": 8.2315883,
+  "lon": -0.6741402,
+  "tags": {
+    "amenity": "police",
+    "name": "Yeji Camp Prison"
+  }
+},
+{
+  "type": "node",
+  "id": 7182211285,
+  "lat": 8.1732334,
+  "lon": -0.6293586,
+  "tags": {
+    "amenity": "school",
+    "name": "Koran ha DA School"
+  }
+},
+{
+  "type": "node",
+  "id": 7182394685,
+  "lat": 8.0470409,
+  "lon": -0.8556640,
+  "tags": {
+    "amenity": "school",
+    "name": "Labon Quaters DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7183493985,
+  "lat": 8.0223518,
+  "lon": -0.9987193,
+  "tags": {
+    "amenity": "school",
+    "name": "Baya DA Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 7183538485,
+  "lat": 7.9579552,
+  "lon": -1.1800381,
+  "tags": {
+    "amenity": "school",
+    "name": "À ease Presbyterian Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7184010385,
+  "lat": 8.0233700,
+  "lon": -0.9818041,
+  "tags": {
+    "amenity": "school",
+    "name": "Asunbende DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7184158186,
+  "lat": 8.0387769,
+  "lon": -0.8151903,
+  "tags": {
+    "amenity": "school",
+    "name": "Nakpan Beposo DA Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 7184907886,
+  "lat": 7.9223597,
+  "lon": -0.9180512,
+  "tags": {
+    "amenity": "school",
+    "name": "Bolga Nkwanta MA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7187323588,
+  "lat": 7.4812452,
+  "lon": -1.1003761,
+  "tags": {
+    "amenity": "school",
+    "name": "Yaw Tuffour RC Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7187441086,
+  "lat": 7.6142733,
+  "lon": -1.1730932,
+  "tags": {
+    "amenity": "school",
+    "name": "Fanfour MA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7188025085,
+  "lat": 7.6078960,
+  "lon": -1.1214077,
+  "tags": {
+    "amenity": "school",
+    "name": "Abour RC"
+  }
+},
+{
+  "type": "node",
+  "id": 7188315685,
+  "lat": 7.5786733,
+  "lon": -1.0177112,
+  "tags": {
+    "amenity": "school",
+    "name": "Brofoyedru MA school"
+  }
+},
+{
+  "type": "node",
+  "id": 7189335586,
+  "lat": 7.6278688,
+  "lon": -0.9707859,
+  "tags": {
+    "amenity": "school",
+    "name": "Watro MA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7189814788,
+  "lat": 7.7532715,
+  "lon": -1.1277255,
+  "tags": {
+    "amenity": "school",
+    "name": "Adensi MA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7189908485,
+  "lat": 7.7691658,
+  "lon": -1.1564941,
+  "tags": {
+    "amenity": "school",
+    "name": "Sabidi MA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7189965985,
+  "lat": 7.7816573,
+  "lon": -1.2296976,
+  "tags": {
+    "amenity": "school",
+    "name": "Kumfia MA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7190537786,
+  "lat": 7.7198083,
+  "lon": -0.8793105,
+  "tags": {
+    "amenity": "school",
+    "name": "Kokofu RC Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7191135386,
+  "lat": 7.7319644,
+  "lon": -0.7049264,
+  "tags": {
+    "amenity": "school",
+    "name": "Wiase DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7191409085,
+  "lat": 7.8255702,
+  "lon": -0.5315770,
+  "tags": {
+    "amenity": "school",
+    "name": "Kakraka Akura DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7191634585,
+  "lat": 7.6766462,
+  "lon": -0.6682883,
+  "tags": {
+    "amenity": "school",
+    "name": "Lassi DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7191657485,
+  "lat": 7.6760485,
+  "lon": -0.6351048,
+  "tags": {
+    "amenity": "school",
+    "name": "Menko DA Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 7192547485,
+  "lat": 7.7890552,
+  "lon": -0.3914130,
+  "tags": {
+    "amenity": "school",
+    "name": "Bodinko DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7192724485,
+  "lat": 7.6653624,
+  "lon": -0.3864728,
+  "tags": {
+    "amenity": "school",
+    "name": "Quarters DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7192724585,
+  "lat": 7.7912400,
+  "lon": -0.3510111,
+  "tags": {
+    "amenity": "school",
+    "name": "Nyankwatre DA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7193178686,
+  "lat": 7.6838048,
+  "lon": -0.2827707,
+  "tags": {
+    "amenity": "school",
+    "name": "Baba DA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7193647985,
+  "lat": 7.6503459,
+  "lon": -0.7145360,
+  "tags": {
+    "amenity": "school",
+    "name": "Mframa DA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7294379023,
+  "lat": 6.4386165,
+  "lon": -0.7700749,
+  "tags": {
+    "addr:city": "Nkawkaw- Awuronsua",
+    "amenity": "school",
+    "name": "Awuronsua Presby Primary A/B school",
+    "operator": "Government",
+    "operator:type": "government",
+    "religion": "none"
+  }
+},
+{
+  "type": "node",
+  "id": 7330176585,
+  "lat": 6.4017208,
+  "lon": -0.1466310,
+  "tags": {
+    "addr:full": "Asesewa",
+    "amenity": "hospital",
+    "dispensing": "yes",
+    "electricity": "grid",
+    "emergency": "yes",
+    "health_amenity:type": "intensive_care_unit;laboratory;x_ray",
+    "healthcare": "birthing_center;blood_donation;doctor;hospital;laboratory;pharmacy",
+    "healthcare:speciality": "blood_check;emergency",
+    "insurance:health": "public",
+    "name": "Asesewa Government Hospital",
+    "opening_hours": "24/7",
+    "operational_status": "operational",
+    "operator": "Government",
+    "water_source": "water_works",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 7395651751,
+  "lat": 6.3815666,
+  "lon": -0.1460513,
+  "tags": {
+    "amenity": "police",
+    "name": "Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 7395783979,
+  "lat": 6.3993990,
+  "lon": -0.1381440,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 7395792695,
+  "lat": 6.3974923,
+  "lon": -0.1458862,
+  "tags": {
+    "amenity": "school",
+    "name": "Anglican School"
+  }
+},
+{
+  "type": "node",
+  "id": 7395840646,
+  "lat": 8.0030360,
+  "lon": 1.0390985,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG DAKROKOSSOU"
+  }
+},
+{
+  "type": "node",
+  "id": 7395840668,
+  "lat": 8.0043428,
+  "lon": 1.0385916,
+  "tags": {
+    "amenity": "school",
+    "min_age": "6",
+    "name": "EPC DAKROKOSSOU"
+  }
+},
+{
+  "type": "node",
+  "id": 7401443153,
+  "lat": 8.1237266,
+  "lon": 1.1360201,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7416976876,
+  "lat": 6.2563345,
+  "lon": 1.1448741,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 7416980010,
+  "lat": 6.2591417,
+  "lon": 1.1414867,
+  "tags": {
+    "amenity": "school",
+    "description": "lycée",
+    "name": "La Fabienne -M"
+  }
+},
+{
+  "type": "node",
+  "id": 7416983584,
+  "lat": 6.2588477,
+  "lon": 1.1417465,
+  "tags": {
+    "amenity": "school",
+    "description": "college et primaire",
+    "name": "La Fabienne M"
+  }
+},
+{
+  "type": "node",
+  "id": 7537551937,
+  "lat": 6.6229140,
+  "lon": -1.2154726,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7545541185,
+  "lat": 6.6305126,
+  "lon": -1.0584641,
+  "tags": {
+    "amenity": "police",
+    "name": "Bompa ta Police station"
+  }
+},
+{
+  "type": "node",
+  "id": 7566452086,
+  "lat": 6.2867452,
+  "lon": 0.5443232,
+  "tags": {
+    "amenity": "school",
+    "name": "Adaklu Ahunda Boso Roman Catholic School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 7566452087,
+  "lat": 6.2961591,
+  "lon": 0.5465166,
+  "tags": {
+    "amenity": "police",
+    "name": "Adaklu Police station"
+  }
+},
+{
+  "type": "node",
+  "id": 7566452088,
+  "lat": 6.3016324,
+  "lon": 0.5475916,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7566452185,
+  "lat": 6.3592374,
+  "lon": 0.5366723,
+  "tags": {
+    "amenity": "school",
+    "name": "Pencil of Promise"
+  }
+},
+{
+  "type": "node",
+  "id": 7566863785,
+  "lat": 6.4270348,
+  "lon": 0.5153758,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7574692591,
+  "lat": 6.5178085,
+  "lon": 0.4976908,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 7574713486,
+  "lat": 6.6127023,
+  "lon": 0.4696030,
+  "tags": {
+    "amenity": "school",
+    "name": "Philip akpo school"
+  }
+},
+{
+  "type": "node",
+  "id": 7694958570,
+  "lat": 6.8437102,
+  "lon": 0.4924938,
+  "tags": {
+    "amenity": "school",
+    "name": "Presby School"
+  }
+},
+{
+  "type": "node",
+  "id": 7694958649,
+  "lat": 6.8451350,
+  "lon": 0.4972547,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Anthony Catholic School - JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 7694958661,
+  "lat": 6.8442429,
+  "lon": 0.4977804,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Anthony Catholic School - Primary B"
+  }
+},
+{
+  "type": "node",
+  "id": 7694958662,
+  "lat": 6.8434652,
+  "lon": 0.4984108,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Anthony Catholic School - Primary A"
+  }
+},
+{
+  "type": "node",
+  "id": 7700505565,
+  "lat": 6.4457569,
+  "lon": 1.2089781,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kpali"
+  }
+},
+{
+  "type": "node",
+  "id": 7700532010,
+  "lat": 7.9798489,
+  "lon": 1.1915403,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Nyamassila",
+    "short_name": "LYNYA"
+  }
+},
+{
+  "type": "node",
+  "id": 7736407897,
+  "lat": 7.7618512,
+  "lon": 1.1978745,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7736407898,
+  "lat": 7.7638391,
+  "lon": 1.1991513,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7736408087,
+  "lat": 7.7542184,
+  "lon": 1.1917256,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de Police d'Anié"
+  }
+},
+{
+  "type": "node",
+  "id": 7736408111,
+  "lat": 7.7533839,
+  "lon": 1.1924069,
+  "tags": {
+    "amenity": "school",
+    "source": "Maxar Standard"
+  }
+},
+{
+  "type": "node",
+  "id": 7737199785,
+  "lat": 6.6307030,
+  "lon": 0.4728272,
+  "tags": {
+    "amenity": "school",
+    "name": "Treasures Christian School"
+  }
+},
+{
+  "type": "node",
+  "id": 7737213485,
+  "lat": 6.6319058,
+  "lon": 0.4744965,
+  "tags": {
+    "amenity": "school",
+    "name": "Alpha Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 7737567434,
+  "lat": 7.7456766,
+  "lon": 1.2019730,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7746713085,
+  "lat": 6.5739328,
+  "lon": 0.3741494,
+  "tags": {
+    "amenity": "police",
+    "name": "Sokode Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 7781261486,
+  "lat": 6.6544992,
+  "lon": 0.3431017,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Wegbe Kpalime Health Centre"
+  }
+},
+{
+  "type": "node",
+  "id": 7842446597,
+  "lat": 8.5522977,
+  "lon": -0.0034928,
+  "tags": {
+    "amenity": "school",
+    "source": "Bing"
+  }
+},
+{
+  "type": "node",
+  "id": 7885406513,
+  "lat": 6.6828448,
+  "lon": 1.1656866,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7931271385,
+  "lat": 6.5785123,
+  "lon": 0.2786247,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Tsibu Health Center"
+  }
+},
+{
+  "type": "node",
+  "id": 7931280512,
+  "lat": 6.5345472,
+  "lon": 0.2306607,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "Ghana Fire Service"
+  }
+},
+{
+  "type": "node",
+  "id": 7947923060,
+  "lat": 6.9008167,
+  "lon": 0.7361516,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agou-Nyogbon"
+  }
+},
+{
+  "type": "node",
+  "id": 7952182812,
+  "lat": 6.7948472,
+  "lon": 0.7043717,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Adjahoun-Fiagbé"
+  }
+},
+{
+  "type": "node",
+  "id": 7956424217,
+  "lat": 6.8198669,
+  "lon": 0.7069368,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Atigbé-Abayémé"
+  }
+},
+{
+  "type": "node",
+  "id": 7956476261,
+  "lat": 6.8041394,
+  "lon": 0.7066128,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Assahoun-Fiagbé"
+  }
+},
+{
+  "type": "node",
+  "id": 7960661801,
+  "lat": 7.9809873,
+  "lon": 0.2882221,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7960819190,
+  "lat": 8.0104996,
+  "lon": 0.2777669,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7975612459,
+  "lat": 6.6937104,
+  "lon": 0.4834830,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-12-11",
+    "name": "EP Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 7975618526,
+  "lat": 6.7556689,
+  "lon": 0.4805230,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7975691075,
+  "lat": 6.5781174,
+  "lon": 0.5855558,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7975742295,
+  "lat": 6.5473949,
+  "lon": 0.6850462,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 7975782432,
+  "lat": 6.5048487,
+  "lon": 0.7181187,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8147251651,
+  "lat": 8.6378144,
+  "lon": 0.4507092,
+  "tags": {
+    "amenity": "school",
+    "name": "EEP Tindjassi Kadabini Groupe B"
+  }
+},
+{
+  "type": "node",
+  "id": 8147262573,
+  "lat": 8.6476896,
+  "lon": 0.4585969,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Tindjassi"
+  }
+},
+{
+  "type": "node",
+  "id": 8147264210,
+  "lat": 8.6473246,
+  "lon": 0.4539785,
+  "tags": {
+    "amenity": "hospital",
+    "fixme": "no building at this location, please confirm",
+    "healthcare": "hospital",
+    "name": "USP de Tindjassi"
+  }
+},
+{
+  "type": "node",
+  "id": 8147270517,
+  "lat": 8.6486371,
+  "lon": 0.4584123,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8150106818,
+  "lat": 6.8253907,
+  "lon": 0.4738652,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8173659717,
+  "lat": 7.6629469,
+  "lon": -0.9910713,
+  "tags": {
+    "amenity": "school",
+    "name": "Old konkonpe DA"
+  }
+},
+{
+  "type": "node",
+  "id": 8201474217,
+  "lat": 6.3911431,
+  "lon": 0.8344889,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8201474319,
+  "lat": 6.4419476,
+  "lon": 0.7260612,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8201474320,
+  "lat": 6.4823292,
+  "lon": 0.7249800,
+  "tags": {
+    "amenity": "school",
+    "name": "Apkokofe Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8201474517,
+  "lat": 6.4186822,
+  "lon": 0.7394433,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8202570617,
+  "lat": 8.3645953,
+  "lon": 0.9384536,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kpawa A",
+    "operator:type": "public",
+    "religion": "multifaith",
+    "school:FR": "primaire",
+    "survey:date": "2020-12-07",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8212934704,
+  "lat": 8.2752902,
+  "lon": 1.0343510,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Waragni Powai"
+  }
+},
+{
+  "type": "node",
+  "id": 8212963439,
+  "lat": 8.3080476,
+  "lon": 0.9327479,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Doufouli"
+  }
+},
+{
+  "type": "node",
+  "id": 8213045665,
+  "lat": 8.2712442,
+  "lon": 1.0274457,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Waragni"
+  }
+},
+{
+  "type": "node",
+  "id": 8213051046,
+  "lat": 8.2709380,
+  "lon": 1.0293629,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Waragni"
+  }
+},
+{
+  "type": "node",
+  "id": 8213061789,
+  "lat": 8.3100316,
+  "lon": 0.9236961,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Doufouli"
+  }
+},
+{
+  "type": "node",
+  "id": 8213082831,
+  "lat": 8.3081852,
+  "lon": 0.9308115,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire de Doufouli"
+  }
+},
+{
+  "type": "node",
+  "id": 8226297037,
+  "lat": 8.3278026,
+  "lon": 0.9884450,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Blitta-Gare"
+  }
+},
+{
+  "type": "node",
+  "id": 8241156206,
+  "lat": 7.5357117,
+  "lon": 1.1049709,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire Les Élites"
+  }
+},
+{
+  "type": "node",
+  "id": 8241170220,
+  "lat": 7.5375337,
+  "lon": 1.1044085,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Hiheatro"
+  }
+},
+{
+  "type": "node",
+  "id": 8241397773,
+  "lat": 6.2543791,
+  "lon": 1.1460391,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire La Rusée II",
+    "phone": "+22890257375"
+  }
+},
+{
+  "type": "node",
+  "id": 8244717424,
+  "lat": 6.2516804,
+  "lon": 1.1715547,
+  "tags": {
+    "addr:city": "Agoè-Sogbossito / Lomé",
+    "amenity": "school",
+    "description": "Ecole primaire publique: maternelle et primaire.",
+    "grades": "1-10",
+    "name": "EPP AGOE-SOGBOSSITO",
+    "polling_station": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 8252109950,
+  "lat": 7.5381133,
+  "lon": 1.1111438,
+  "tags": {
+    "amenity": "school",
+    "name": "CPL \"La main de dieu\""
+  }
+},
+{
+  "type": "node",
+  "id": 8252128571,
+  "lat": 7.5466869,
+  "lon": 1.1020594,
+  "tags": {
+    "amenity": "school",
+    "name": "CPL BANYAN"
+  }
+},
+{
+  "type": "node",
+  "id": 8252128572,
+  "lat": 7.6366541,
+  "lon": 0.9101483,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Oga"
+  }
+},
+{
+  "type": "node",
+  "id": 8252133481,
+  "lat": 7.6259105,
+  "lon": 0.9660897,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Idifou"
+  }
+},
+{
+  "type": "node",
+  "id": 8252139357,
+  "lat": 7.6235589,
+  "lon": 0.9751672,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP IWA"
+  }
+},
+{
+  "type": "node",
+  "id": 8252140378,
+  "lat": 7.5405025,
+  "lon": 1.0999939,
+  "tags": {
+    "amenity": "school",
+    "name": "Collège Saint Paul Apôtre"
+  }
+},
+{
+  "type": "node",
+  "id": 8252140849,
+  "lat": 7.6325589,
+  "lon": 0.9325087,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Mouna"
+  }
+},
+{
+  "type": "node",
+  "id": 8252145455,
+  "lat": 7.5601471,
+  "lon": 1.0791378,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Lom Nava"
+  }
+},
+{
+  "type": "node",
+  "id": 8307580300,
+  "lat": 6.2681120,
+  "lon": 1.1442203,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe scolaire les Enarques",
+    "source": "Survey"
+  }
+},
+{
+  "type": "node",
+  "id": 8316933700,
+  "lat": 8.0819566,
+  "lon": 1.0027291,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Tcharè - Gnama"
+  }
+},
+{
+  "type": "node",
+  "id": 8316972842,
+  "lat": 7.9641876,
+  "lon": 1.0450577,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Pakouté"
+  }
+},
+{
+  "type": "node",
+  "id": 8317044574,
+  "lat": 8.0638864,
+  "lon": 1.0143082,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Unité de Soins Périphérique de Tcharè-Baou",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 8340143414,
+  "lat": 7.6350604,
+  "lon": 0.5180325,
+  "tags": {
+    "addr:street": "P. O BOX 90",
+    "amenity": "school",
+    "name": "Dodi-Mempeasem, Evangelical Presbyterian School",
+    "operator": "Inhabitants",
+    "operator:type": "government",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 8355047237,
+  "lat": 7.0486365,
+  "lon": -0.0767851,
+  "tags": {
+    "addr:full": "P.O. BOX 19",
+    "amenity": "hospital",
+    "beds": "74",
+    "contact:phone": "0848-22037",
+    "fixme": "Could use improvement: precise position /attaching to buildings.",
+    "healthcare": "hospital",
+    "name": "Donkorkrom Presbyterian Hospital",
+    "phone": "0848-22037",
+    "wikidata": "Q65067984",
+    "wikipedia": "en:Donkorkrom Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8375147532,
+  "lat": 8.6457555,
+  "lon": 1.0378325,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Adjengré"
+  }
+},
+{
+  "type": "node",
+  "id": 8375147533,
+  "lat": 8.6425363,
+  "lon": 1.0472175,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Hôpital de l'amitié"
+  }
+},
+{
+  "type": "node",
+  "id": 8380323280,
+  "lat": 8.6604206,
+  "lon": 1.0224245,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Awyo"
+  }
+},
+{
+  "type": "node",
+  "id": 8380323285,
+  "lat": 8.6595565,
+  "lon": 1.0192086,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendamerie de Adjengré"
+  }
+},
+{
+  "type": "node",
+  "id": 8380338808,
+  "lat": 8.6529529,
+  "lon": 1.0186634,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8380348024,
+  "lat": 8.6468321,
+  "lon": 1.0305047,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Adjengré Kaou"
+  }
+},
+{
+  "type": "node",
+  "id": 8380380195,
+  "lat": 8.6777502,
+  "lon": 1.0254454,
+  "tags": {
+    "amenity": "police",
+    "name": "Agence Nationale de la Protection Civile"
+  }
+},
+{
+  "type": "node",
+  "id": 8380395826,
+  "lat": 8.6642880,
+  "lon": 1.0188666,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Centrale"
+  }
+},
+{
+  "type": "node",
+  "id": 8401394645,
+  "lat": 6.9434713,
+  "lon": 1.1884151,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Fida",
+    "opening_hours": "Mo-Fr 07:30-23:30, 02:30-17:30"
+  }
+},
+{
+  "type": "node",
+  "id": 8427564199,
+  "lat": 6.8487714,
+  "lon": 0.5692506,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire catholique de Womé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427564200,
+  "lat": 6.8480391,
+  "lon": 0.5702101,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'enfant catholique de Womé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427564210,
+  "lat": 6.8476010,
+  "lon": 0.5748349,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique de Womé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427564214,
+  "lat": 6.8413268,
+  "lon": 0.5902858,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendamerie de Kpadapé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427564215,
+  "lat": 6.8412109,
+  "lon": 0.5916269,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS de Kpadapé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427574817,
+  "lat": 6.8420085,
+  "lon": 0.5921727,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP et Jardin de Kpadapé"
+  }
+},
+{
+  "type": "node",
+  "id": 8427574837,
+  "lat": 6.8634753,
+  "lon": 0.6001282,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8427574840,
+  "lat": 6.8643994,
+  "lon": 0.6012708,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire de GBALAVE"
+  }
+},
+{
+  "type": "node",
+  "id": 8427574841,
+  "lat": 6.8674445,
+  "lon": 0.6023946,
+  "tags": {
+    "amenity": "school",
+    "name": "Centre Diocesain de Formation Professionnelle"
+  }
+},
+{
+  "type": "node",
+  "id": 8427574850,
+  "lat": 6.8812797,
+  "lon": 0.6189452,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP VOLOVE"
+  }
+},
+{
+  "type": "node",
+  "id": 8430049309,
+  "lat": 6.3397459,
+  "lon": 1.1074828,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS Kovié"
+  }
+},
+{
+  "type": "node",
+  "id": 8430049313,
+  "lat": 6.3391448,
+  "lon": 1.1061913,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Évangelique Apédokoè"
+  }
+},
+{
+  "type": "node",
+  "id": 8430102328,
+  "lat": 6.3405256,
+  "lon": 1.1115450,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kovié"
+  }
+},
+{
+  "type": "node",
+  "id": 8437248063,
+  "lat": 6.2801753,
+  "lon": 0.0761205,
+  "tags": {
+    "amenity": "school",
+    "name": "Akwamufie Prespy School"
+  }
+},
+{
+  "type": "node",
+  "id": 8437900235,
+  "lat": 6.5538165,
+  "lon": 0.1408096,
+  "tags": {
+    "amenity": "school",
+    "name": "Agyebui School"
+  }
+},
+{
+  "type": "node",
+  "id": 8438796891,
+  "lat": 6.2746219,
+  "lon": 0.0609080,
+  "tags": {
+    "amenity": "school",
+    "name": "Abume LA School"
+  }
+},
+{
+  "type": "node",
+  "id": 8440513208,
+  "lat": 6.4030871,
+  "lon": 0.0646949,
+  "tags": {
+    "amenity": "school",
+    "name": "Gyakiti Presbyterian Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8499154369,
+  "lat": 7.0470736,
+  "lon": -0.0846019,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Kwahu Afram Plains North District Helalth Directorate",
+    "operator": "Ghana Health Service",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 8499239350,
+  "lat": 7.0493041,
+  "lon": -0.0774028,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Presbyterian Eye Clinic"
+  }
+},
+{
+  "type": "node",
+  "id": 8500247841,
+  "lat": 7.0388473,
+  "lon": -0.0833374,
+  "tags": {
+    "amenity": "school",
+    "name": "Kofi Yeboah Memorial D/A School"
+  }
+},
+{
+  "type": "node",
+  "id": 8503396279,
+  "lat": 6.9176400,
+  "lon": 0.0848218,
+  "tags": {
+    "amenity": "school",
+    "name": "Anidzi D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8504127191,
+  "lat": 6.9799801,
+  "lon": -0.0432733,
+  "tags": {
+    "amenity": "school",
+    "name": "Kayera E/P Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8506828538,
+  "lat": 7.1678167,
+  "lon": 0.0348374,
+  "tags": {
+    "amenity": "school",
+    "name": "MafiKope D/A Primary and JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8506860026,
+  "lat": 7.1213095,
+  "lon": -0.0112629,
+  "tags": {
+    "amenity": "school",
+    "name": "Abomasarefo Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8507537785,
+  "lat": 7.0360404,
+  "lon": -0.0910584,
+  "tags": {
+    "amenity": "school",
+    "name": "Holy Rosary R/C School"
+  }
+},
+{
+  "type": "node",
+  "id": 8507644365,
+  "lat": 7.0582148,
+  "lon": -0.1123817,
+  "tags": {
+    "amenity": "school",
+    "name": "Kwaekesse R/C Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8509920839,
+  "lat": 7.0940290,
+  "lon": -0.1919478,
+  "tags": {
+    "amenity": "school",
+    "name": "Kubesu D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8509960765,
+  "lat": 7.0576169,
+  "lon": -0.1676305,
+  "tags": {
+    "amenity": "school",
+    "name": "Koranteng D/A School"
+  }
+},
+{
+  "type": "node",
+  "id": 8510347314,
+  "lat": 7.0582766,
+  "lon": 0.1200208,
+  "tags": {
+    "amenity": "school",
+    "name": "Agordeke Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8510747353,
+  "lat": 7.0456327,
+  "lon": 0.0597727,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8515455227,
+  "lat": 7.0202311,
+  "lon": -0.2167752,
+  "tags": {
+    "amenity": "school",
+    "name": "Mmradan Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8515506720,
+  "lat": 6.9974406,
+  "lon": -0.1672761,
+  "tags": {
+    "amenity": "school",
+    "name": "Presbyterian Primary School, Somanyia"
+  }
+},
+{
+  "type": "node",
+  "id": 8515506736,
+  "lat": 7.0193188,
+  "lon": -0.2158462,
+  "tags": {
+    "amenity": "school",
+    "name": "Mmradan JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8520745425,
+  "lat": 6.7596153,
+  "lon": -0.2307753,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8521346786,
+  "lat": 6.7595834,
+  "lon": -0.2315271,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8521361519,
+  "lat": 6.7566785,
+  "lon": -0.2202405,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8521365672,
+  "lat": 6.7573612,
+  "lon": -0.1975979,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8521365674,
+  "lat": 6.7516239,
+  "lon": -0.1824840,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8521394633,
+  "lat": 6.7187739,
+  "lon": -0.1554080,
+  "tags": {
+    "amenity": "school",
+    "name": "Gborkpoe D/A Kindergarten and Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8521414653,
+  "lat": 6.9290024,
+  "lon": -0.2568839,
+  "tags": {
+    "amenity": "school",
+    "name": "Bright School of Diploma and Computer School"
+  }
+},
+{
+  "type": "node",
+  "id": 8521552600,
+  "lat": 6.9331173,
+  "lon": -0.2549323,
+  "tags": {
+    "amenity": "school",
+    "name": "St Fidelis Senior High Technical School"
+  }
+},
+{
+  "type": "node",
+  "id": 8527679004,
+  "lat": 6.7377490,
+  "lon": -0.3488697,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8536013081,
+  "lat": 6.8802509,
+  "lon": -0.3709437,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8536017546,
+  "lat": 6.9657054,
+  "lon": 0.0276696,
+  "tags": {
+    "amenity": "school",
+    "name": "Atiwulame D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8536874084,
+  "lat": 6.6470908,
+  "lon": -0.6684530,
+  "tags": {
+    "amenity": "school",
+    "name": "Podass Royal School"
+  }
+},
+{
+  "type": "node",
+  "id": 8541546221,
+  "lat": 6.5726427,
+  "lon": 0.3833269,
+  "tags": {
+    "amenity": "school",
+    "name": "EP Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8561084480,
+  "lat": 6.5276203,
+  "lon": 0.4381021,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Kindergarten and Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8563331569,
+  "lat": 6.4728809,
+  "lon": 0.6380354,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8563332161,
+  "lat": 6.4564160,
+  "lon": 0.6333520,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8563338681,
+  "lat": 6.4044193,
+  "lon": 0.6423875,
+  "tags": {
+    "amenity": "school",
+    "fixme": "location"
+  }
+},
+{
+  "type": "node",
+  "id": 8563349849,
+  "lat": 6.4625438,
+  "lon": 0.6397997,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564382256,
+  "lat": 6.7862157,
+  "lon": 0.5232545,
+  "tags": {
+    "amenity": "school",
+    "name": "Hoe M/A JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8564382257,
+  "lat": 6.7167549,
+  "lon": 0.5537482,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8564385693,
+  "lat": 6.3846735,
+  "lon": 0.6437027,
+  "tags": {
+    "amenity": "school",
+    "name": "Adaklu Sofa D/A Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8564393294,
+  "lat": 6.7593708,
+  "lon": 0.5789196,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564401100,
+  "lat": 6.3493417,
+  "lon": 0.6367784,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564403468,
+  "lat": 6.5551421,
+  "lon": 0.6291186,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564403469,
+  "lat": 6.7694431,
+  "lon": 0.5397376,
+  "tags": {
+    "amenity": "school",
+    "name": "Avee Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8564405848,
+  "lat": 6.7121989,
+  "lon": 0.5167368,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter's Roman Catholic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8564405862,
+  "lat": 6.7538128,
+  "lon": 0.5771776,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564406204,
+  "lat": 6.6830655,
+  "lon": 0.5776532,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8564406928,
+  "lat": 6.6694834,
+  "lon": 0.5769343,
+  "tags": {
+    "amenity": "school",
+    "name": "Hodzoka M/A Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8567008707,
+  "lat": 6.9353319,
+  "lon": 0.6598140,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP YOKELE"
+  }
+},
+{
+  "type": "node",
+  "id": 8567008708,
+  "lat": 6.9348008,
+  "lon": 0.6590027,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Yokele"
+  }
+},
+{
+  "type": "node",
+  "id": 8567008712,
+  "lat": 6.9319724,
+  "lon": 0.6582858,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Yokolé"
+  }
+},
+{
+  "type": "node",
+  "id": 8567008713,
+  "lat": 6.9315670,
+  "lon": 0.6580927,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Yokele"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246802,
+  "lat": 6.4453423,
+  "lon": 0.8995217,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP D'Atti Apédokoè"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246804,
+  "lat": 6.4333778,
+  "lon": 0.8847897,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246805,
+  "lat": 6.4325875,
+  "lon": 0.8837838,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Ando centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246807,
+  "lat": 6.4286548,
+  "lon": 0.8801266,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246809,
+  "lat": 6.3879481,
+  "lon": 0.8702910,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS D'EDZI"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246813,
+  "lat": 6.3838484,
+  "lon": 0.8715945,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP EDZI"
+  }
+},
+{
+  "type": "node",
+  "id": 8570246815,
+  "lat": 6.3781147,
+  "lon": 0.8804432,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Alawogbé"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257219,
+  "lat": 6.3748814,
+  "lon": 0.8873123,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Dzolo"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257220,
+  "lat": 6.3754238,
+  "lon": 0.8879399,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257224,
+  "lat": 6.3750046,
+  "lon": 0.8902929,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Dzololo A"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257227,
+  "lat": 6.3795462,
+  "lon": 0.8939749,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Dzololo B"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257231,
+  "lat": 6.4108527,
+  "lon": 0.9178278,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257235,
+  "lat": 6.4152693,
+  "lon": 0.9203705,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Yope"
+  }
+},
+{
+  "type": "node",
+  "id": 8570257247,
+  "lat": 6.4428636,
+  "lon": 0.8972526,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS Apedokoe"
+  }
+},
+{
+  "type": "node",
+  "id": 8570314307,
+  "lat": 6.4325169,
+  "lon": 0.9232539,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8570314309,
+  "lat": 6.4329567,
+  "lon": 0.9234135,
+  "tags": {
+    "amenity": "school",
+    "name": "Eglise Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8570314310,
+  "lat": 6.4337303,
+  "lon": 0.9236716,
+  "tags": {
+    "amenity": "school",
+    "name": "Ollège Technique"
+  }
+},
+{
+  "type": "node",
+  "id": 8570331518,
+  "lat": 6.4333085,
+  "lon": 0.9265839,
+  "tags": {
+    "amenity": "police",
+    "name": "Comminsariat de KEVE"
+  }
+},
+{
+  "type": "node",
+  "id": 8570331520,
+  "lat": 6.4322770,
+  "lon": 0.9266348,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendamerie"
+  }
+},
+{
+  "type": "node",
+  "id": 8570331523,
+  "lat": 6.4350529,
+  "lon": 0.9384620,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8570340981,
+  "lat": 6.4443854,
+  "lon": 0.9185982,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe scolaire technique Caplan"
+  }
+},
+{
+  "type": "node",
+  "id": 8570340988,
+  "lat": 6.4427903,
+  "lon": 0.9200124,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Christ roi"
+  }
+},
+{
+  "type": "node",
+  "id": 8573170630,
+  "lat": 6.6032470,
+  "lon": 0.3163838,
+  "tags": {
+    "amenity": "school",
+    "name": "Avenui Methodist Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8573174502,
+  "lat": 6.6547293,
+  "lon": 0.3436974,
+  "tags": {
+    "amenity": "school",
+    "name": "Wegbe Kpalime D/ A Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8573185612,
+  "lat": 6.5093458,
+  "lon": 0.3693747,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8573187581,
+  "lat": 6.7038988,
+  "lon": 0.3629515,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8574328629,
+  "lat": 6.5955332,
+  "lon": 0.4301379,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8574349337,
+  "lat": 6.6127123,
+  "lon": 0.4350649,
+  "tags": {
+    "amenity": "school",
+    "name": "Klee Technical Institute"
+  }
+},
+{
+  "type": "node",
+  "id": 8574375495,
+  "lat": 6.6485525,
+  "lon": 0.4418690,
+  "tags": {
+    "amenity": "school",
+    "name": "Ziave Lume Primary School and ICT Library"
+  }
+},
+{
+  "type": "node",
+  "id": 8574377733,
+  "lat": 6.6232523,
+  "lon": 0.4429451,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8575005465,
+  "lat": 6.8463296,
+  "lon": 0.5182091,
+  "tags": {
+    "amenity": "school",
+    "name": "Holata Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583247672,
+  "lat": 6.7931440,
+  "lon": 0.4900687,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8583247685,
+  "lat": 6.8059300,
+  "lon": 0.5053786,
+  "tags": {
+    "amenity": "school",
+    "name": "Dodome Teleafenu Evangelical Presbyterian Kindergarten and Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583247810,
+  "lat": 6.9113950,
+  "lon": 0.5417367,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Ashianti Roman Catholic Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583250036,
+  "lat": 6.8429821,
+  "lon": 0.4373008,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Demonstration Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583265989,
+  "lat": 6.8432811,
+  "lon": 0.4377661,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian College of Education Demonstration School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583271261,
+  "lat": 6.7808703,
+  "lon": 0.4128764,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Unity Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583271266,
+  "lat": 6.7893958,
+  "lon": 0.4438866,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8583271905,
+  "lat": 6.7803479,
+  "lon": 0.4136892,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583278163,
+  "lat": 6.7388933,
+  "lon": 0.3921462,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8583278165,
+  "lat": 6.8779822,
+  "lon": 0.5271151,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8583291386,
+  "lat": 6.7276410,
+  "lon": 0.4059411,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8583301022,
+  "lat": 6.9093631,
+  "lon": 0.5449358,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Kpedzi Evangelical Presbyterian Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8583304717,
+  "lat": 6.9115304,
+  "lon": 0.5423130,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Ashianti Roman Catholic Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8589420710,
+  "lat": 6.8901817,
+  "lon": -1.2489599,
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Sekyere Kumawu",
+    "addr:place": "Bodomase",
+    "addr:region": "Ashanti",
+    "amenity": "school",
+    "description": "Established during the implementation of the 2012 Educational reforms as Secondary school.",
+    "email": "bodomaseshst@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Bodomase Senior High School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 24 412 2667",
+    "start_date": "2012"
+  }
+},
+{
+  "type": "node",
+  "id": 8605682523,
+  "lat": 7.1808597,
+  "lon": 0.3366294,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 8605791534,
+  "lat": 7.2952244,
+  "lon": 0.3275959,
+  "tags": {
+    "amenity": "school",
+    "name": "Modern Brains Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 8605880688,
+  "lat": 7.2973844,
+  "lon": 0.3287773,
+  "tags": {
+    "amenity": "school",
+    "name": "Abraham Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 8606855372,
+  "lat": 6.3867354,
+  "lon": 0.9414890,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Yoti"
+  }
+},
+{
+  "type": "node",
+  "id": 8607355531,
+  "lat": 6.6809248,
+  "lon": -1.1073406,
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Asante-Akim South Municipal",
+    "addr:place": "Kurofa",
+    "addr:region": "Ashanti",
+    "amenity": "school",
+    "denomination": "methodist",
+    "description": "The School was established in November 2012 by the RT. Rev. Prof. Osei Sarfo Kantanka the then Bishop of the Kumasi Diocese.",
+    "email": "kurofamethodistshs@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Kurofa Methodist Senior High/Technical School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 26 160 1736; +233 24 854 3174",
+    "religion": "christian",
+    "start_date": "2012"
+  }
+},
+{
+  "type": "node",
+  "id": 8614117402,
+  "lat": 7.3033257,
+  "lon": 0.5086619,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8614141931,
+  "lat": 7.4016712,
+  "lon": 0.4638923,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Jasikan District Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8614150235,
+  "lat": 7.4761466,
+  "lon": 0.4453399,
+  "tags": {
+    "amenity": "school",
+    "name": "Attakrom Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8614155663,
+  "lat": 7.3773937,
+  "lon": 0.6101846,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian School"
+  }
+},
+{
+  "type": "node",
+  "id": 8620710692,
+  "lat": 7.2921739,
+  "lon": 0.3210729,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620724974,
+  "lat": 7.4143935,
+  "lon": 0.4729172,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver R.C Primary School, Jasikan"
+  }
+},
+{
+  "type": "node",
+  "id": 8620725753,
+  "lat": 7.2947667,
+  "lon": 0.3311690,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620730756,
+  "lat": 7.4142745,
+  "lon": 0.4731059,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver Cluster of Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8620730757,
+  "lat": 7.4156321,
+  "lon": 0.4711725,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Junior High"
+  }
+},
+{
+  "type": "node",
+  "id": 8620736566,
+  "lat": 7.4157493,
+  "lon": 0.4715769,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 8620736823,
+  "lat": 8.0436153,
+  "lon": 0.2421315,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620746750,
+  "lat": 7.4159615,
+  "lon": 0.4711868,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8620747517,
+  "lat": 7.4140967,
+  "lon": 0.4725345,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver R.C JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8620754024,
+  "lat": 7.7382140,
+  "lon": 0.3636048,
+  "tags": {
+    "amenity": "school",
+    "name": "Okanease M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8625027005,
+  "lat": 6.3337411,
+  "lon": 1.1147958,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Mission - Tové"
+  }
+},
+{
+  "type": "node",
+  "id": 8625027007,
+  "lat": 6.3299636,
+  "lon": 1.1157158,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire La Gloire"
+  }
+},
+{
+  "type": "node",
+  "id": 8629967589,
+  "lat": 6.5984832,
+  "lon": 0.4487792,
+  "tags": {
+    "amenity": "school",
+    "name": "Springs Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441823,
+  "lat": 6.8650185,
+  "lon": 0.7794285,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agou Avédzé"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441824,
+  "lat": 6.8654273,
+  "lon": 0.7798228,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441827,
+  "lat": 6.8657149,
+  "lon": 0.7837951,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agou Avédzé"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441837,
+  "lat": 6.8789494,
+  "lon": 0.8148378,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Agou Ananivikondji"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441841,
+  "lat": 6.8788885,
+  "lon": 0.8268941,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Zionou"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441843,
+  "lat": 6.8840718,
+  "lon": 0.8389789,
+  "tags": {
+    "amenity": "school",
+    "name": "EPC St Raphaël"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441844,
+  "lat": 6.8842069,
+  "lon": 0.8391284,
+  "tags": {
+    "amenity": "school",
+    "name": "EPC St Thomas"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441848,
+  "lat": 6.8888436,
+  "lon": 0.8443058,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Dispensaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441852,
+  "lat": 6.8907316,
+  "lon": 0.8503193,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Centrale de Kati"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441853,
+  "lat": 6.8911456,
+  "lon": 0.8517395,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8631441868,
+  "lat": 6.8902882,
+  "lon": 0.8556381,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kati"
+  }
+},
+{
+  "type": "node",
+  "id": 8634381982,
+  "lat": 8.1795530,
+  "lon": 0.5130074,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8635751773,
+  "lat": 7.7496935,
+  "lon": 0.4517956,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpongka L/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8639889130,
+  "lat": 7.9937660,
+  "lon": -0.3260210,
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Sene East",
+    "addr:place": "Bodinka",
+    "addr:region": "Bono East",
+    "amenity": "school",
+    "description": "The School is located on the main road from Kwame Danso towards Kajaji in the Sene East district.",
+    "email": "bassacommunityshs@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Bassa Community Senior High School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 24 697 7853",
+    "start_date": "2019"
+  }
+},
+{
+  "type": "node",
+  "id": 8645192316,
+  "lat": 7.5406454,
+  "lon": 0.4392344,
+  "tags": {
+    "amenity": "school",
+    "name": "St Paul's Roman Catholic Cluster of Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8645196980,
+  "lat": 8.5072041,
+  "lon": 0.2920800,
+  "tags": {
+    "amenity": "school",
+    "name": "St Francis Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 8645209344,
+  "lat": 8.5751008,
+  "lon": 0.1671488,
+  "tags": {
+    "amenity": "school",
+    "name": "Ubunja Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8645210343,
+  "lat": 8.2330723,
+  "lon": 0.5450994,
+  "tags": {
+    "amenity": "school",
+    "name": "Dadiase D/A Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212238,
+  "lat": 7.7268709,
+  "lon": 0.5452346,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212239,
+  "lat": 8.3370008,
+  "lon": 0.4634168,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212391,
+  "lat": 8.5094706,
+  "lon": 0.4342924,
+  "tags": {
+    "amenity": "school",
+    "fixme": "check node location",
+    "name": "Jumbo no 2 D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212394,
+  "lat": 8.5947157,
+  "lon": 0.2160077,
+  "tags": {
+    "amenity": "school",
+    "name": "Sibi Lancha Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212475,
+  "lat": 8.0882825,
+  "lon": 0.4969359,
+  "tags": {
+    "amenity": "school",
+    "name": "Bontibor Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212882,
+  "lat": 7.7662541,
+  "lon": 0.5601097,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212883,
+  "lat": 8.2507738,
+  "lon": 0.5252089,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645213647,
+  "lat": 8.4641602,
+  "lon": 0.3360356,
+  "tags": {
+    "amenity": "police",
+    "name": "Police Barrier"
+  }
+},
+{
+  "type": "node",
+  "id": 8645224488,
+  "lat": 7.7097236,
+  "lon": 0.5544255,
+  "tags": {
+    "amenity": "school",
+    "name": "Yadzo Primary/JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8645224725,
+  "lat": 7.6520703,
+  "lon": 0.5196994,
+  "tags": {
+    "amenity": "school",
+    "name": "Poase L/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8653341649,
+  "lat": 8.1539772,
+  "lon": 0.1126903,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8653749000,
+  "lat": 7.7427959,
+  "lon": 0.5294173,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8653758969,
+  "lat": 6.3448099,
+  "lon": 0.1762511,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8654069323,
+  "lat": 6.8521029,
+  "lon": 0.7498746,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Kebo Toé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654069328,
+  "lat": 6.8516768,
+  "lon": 0.7531355,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kebo Dalave"
+  }
+},
+{
+  "type": "node",
+  "id": 8654069329,
+  "lat": 6.8516395,
+  "lon": 0.7527304,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Case de Santé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654069334,
+  "lat": 6.8684817,
+  "lon": 0.7497874,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Dzigbé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654069335,
+  "lat": 6.8687580,
+  "lon": 0.7481338,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Kebo Dzigbé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654100462,
+  "lat": 6.8548625,
+  "lon": 0.7472034,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kebo Toé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654100463,
+  "lat": 6.8548840,
+  "lon": 0.7470321,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire Agou Kebo Toé"
+  }
+},
+{
+  "type": "node",
+  "id": 8654492280,
+  "lat": 6.8701021,
+  "lon": 0.7336204,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8654492281,
+  "lat": 6.8691501,
+  "lon": 0.7336787,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP"
+  }
+},
+{
+  "type": "node",
+  "id": 8654492283,
+  "lat": 6.8675657,
+  "lon": 0.7372849,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique sainte Anne d'Agou"
+  }
+},
+{
+  "type": "node",
+  "id": 8654492285,
+  "lat": 6.8662595,
+  "lon": 0.7380192,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP KEBO KPETA"
+  }
+},
+{
+  "type": "node",
+  "id": 8791862013,
+  "lat": 8.3191082,
+  "lon": 0.9275065,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AMadè"
+  }
+},
+{
+  "type": "node",
+  "id": 8791863130,
+  "lat": 8.3165790,
+  "lon": 0.9685564,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Blitta Gare 2"
+  }
+},
+{
+  "type": "node",
+  "id": 8791863133,
+  "lat": 8.2702666,
+  "lon": 1.0455801,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8791863137,
+  "lat": 8.2696667,
+  "lon": 1.0335705,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8791863138,
+  "lat": 8.2695340,
+  "lon": 1.0331520,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Waragni"
+  }
+},
+{
+  "type": "node",
+  "id": 8791863140,
+  "lat": 8.3165040,
+  "lon": 0.9800463,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Campement"
+  }
+},
+{
+  "type": "node",
+  "id": 8810020079,
+  "lat": 7.7470639,
+  "lon": -0.9868839,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8828063080,
+  "lat": 6.8994595,
+  "lon": 0.5659115,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8828063081,
+  "lat": 6.9020743,
+  "lon": 0.5665445,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG HANYIGBA TODZI"
+  }
+},
+{
+  "type": "node",
+  "id": 8854640104,
+  "lat": 8.3473217,
+  "lon": 1.0091865,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8854640109,
+  "lat": 8.3605427,
+  "lon": 1.0111741,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Blitta Losso"
+  }
+},
+{
+  "type": "node",
+  "id": 8854640111,
+  "lat": 8.3528018,
+  "lon": 1.0148594,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Blitta Groupe C"
+  }
+},
+{
+  "type": "node",
+  "id": 8854640114,
+  "lat": 8.3546753,
+  "lon": 1.0197383,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée et CEG Blitta Carrefour"
+  }
+},
+{
+  "type": "node",
+  "id": 8854640115,
+  "lat": 8.3473934,
+  "lon": 1.0125849,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644932,
+  "lat": 8.3328424,
+  "lon": 1.0423225,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644933,
+  "lat": 8.3205255,
+  "lon": 1.0610121,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Yaloumbe-Losso"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644934,
+  "lat": 8.3129934,
+  "lon": 1.0766119,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644936,
+  "lat": 8.3082533,
+  "lon": 1.0739136,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Yolumbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644940,
+  "lat": 8.3052834,
+  "lon": 1.0809369,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Centrale"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644941,
+  "lat": 8.3037082,
+  "lon": 1.0758273,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Yaloumbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644948,
+  "lat": 8.2974697,
+  "lon": 1.0753861,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644950,
+  "lat": 8.2892763,
+  "lon": 1.0986516,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644951,
+  "lat": 8.2852393,
+  "lon": 1.1037371,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644952,
+  "lat": 8.2743436,
+  "lon": 1.1109656,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644953,
+  "lat": 8.2615205,
+  "lon": 1.1145008,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Tchaloude"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644954,
+  "lat": 8.2610055,
+  "lon": 1.1159599,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Tchaloudè"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644955,
+  "lat": 8.2572363,
+  "lon": 1.1189291,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Tchaloudè"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644957,
+  "lat": 8.3435599,
+  "lon": 1.0130825,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644958,
+  "lat": 8.3410162,
+  "lon": 1.0135948,
+  "tags": {
+    "amenity": "police",
+    "name": "DSR Blitta"
+  }
+},
+{
+  "type": "node",
+  "id": 8854644959,
+  "lat": 8.3322479,
+  "lon": 1.0067618,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Lama Kaza 2"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298739,
+  "lat": 6.8479259,
+  "lon": 0.6477615,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'enfants Atchave"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298740,
+  "lat": 6.8469193,
+  "lon": 0.6424427,
+  "tags": {
+    "amenity": "school",
+    "name": "Champ Ecole Paysan de Banu"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298741,
+  "lat": 6.8362748,
+  "lon": 0.6450632,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Atchave"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298742,
+  "lat": 6.8334386,
+  "lon": 0.6445321,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Atchave"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298744,
+  "lat": 6.8294025,
+  "lon": 0.6427713,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Atchave"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298745,
+  "lat": 6.8126122,
+  "lon": 0.6621623,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG d'initiative Local"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298749,
+  "lat": 6.8108012,
+  "lon": 0.6654668,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Tome"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298750,
+  "lat": 6.8119730,
+  "lon": 0.6641847,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Tome"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298752,
+  "lat": 6.8088863,
+  "lon": 0.6320062,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispansaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298753,
+  "lat": 6.8079262,
+  "lon": 0.6326620,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agrippa Todzi"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298755,
+  "lat": 6.8016128,
+  "lon": 0.6366062,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agrippa Kodzi"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298757,
+  "lat": 6.8758075,
+  "lon": 0.6594479,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Tove Rail"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298762,
+  "lat": 6.8724948,
+  "lon": 0.6531541,
+  "tags": {
+    "amenity": "school",
+    "name": "Eglise Catholique Christ Roi"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298765,
+  "lat": 6.9053942,
+  "lon": 0.6127694,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Hanyigban Duga"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298766,
+  "lat": 6.9061425,
+  "lon": 0.6096178,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Hanyigba Duga groupe B"
+  }
+},
+{
+  "type": "node",
+  "id": 8855298767,
+  "lat": 6.9052318,
+  "lon": 0.6084430,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Hanyigban duga"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015392,
+  "lat": 6.4018301,
+  "lon": 1.1151123,
+  "tags": {
+    "amenity": "school",
+    "name": "École Privée de wli - Mivakpo"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015393,
+  "lat": 6.4033229,
+  "lon": 1.1126767,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015404,
+  "lat": 6.4034534,
+  "lon": 1.1588699,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Wli centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015407,
+  "lat": 6.4109300,
+  "lon": 1.1604014,
+  "tags": {
+    "amenity": "school",
+    "name": "École primaire catholique de Wli centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015408,
+  "lat": 6.4091974,
+  "lon": 1.1628368,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire saint Savin de wli centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015409,
+  "lat": 6.4104502,
+  "lon": 1.1648887,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire Évangélique"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015410,
+  "lat": 6.4114524,
+  "lon": 1.1635825,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015413,
+  "lat": 6.4309124,
+  "lon": 1.1788765,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Bolou centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8872015414,
+  "lat": 6.4310856,
+  "lon": 1.1806655,
+  "tags": {
+    "amenity": "school",
+    "name": "EEP Bolou centre"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050217,
+  "lat": 6.4374904,
+  "lon": 1.1798662,
+  "tags": {
+    "amenity": "school",
+    "name": "EEP Bolou Kpeme"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050219,
+  "lat": 6.4526877,
+  "lon": 1.1284938,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Ayivi Kope"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050221,
+  "lat": 6.4297023,
+  "lon": 1.1087555,
+  "tags": {
+    "amenity": "school",
+    "name": "EEP Bolou Ativime"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050232,
+  "lat": 6.4359698,
+  "lon": 1.0848127,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agbadome"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050238,
+  "lat": 6.4418561,
+  "lon": 1.0865039,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat d'Alokoegbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050240,
+  "lat": 6.4430008,
+  "lon": 1.0873085,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire catholique d'Alokoegbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050241,
+  "lat": 6.4429129,
+  "lon": 1.0864858,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Dispensaire d'Alokoegbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050245,
+  "lat": 6.4396666,
+  "lon": 1.0922613,
+  "tags": {
+    "amenity": "school",
+    "name": "EEP Alokoegbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050247,
+  "lat": 6.4383539,
+  "lon": 1.0937566,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycee et CEG Alokoegbe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050248,
+  "lat": 6.4475944,
+  "lon": 1.0938625,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050254,
+  "lat": 6.4102370,
+  "lon": 1.0937351,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Case de Santé de meduimé"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050257,
+  "lat": 6.4113458,
+  "lon": 1.0917154,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Mediumé"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050258,
+  "lat": 6.4188170,
+  "lon": 1.0782078,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Gatigble"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050264,
+  "lat": 6.4589855,
+  "lon": 1.0770732,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Bolou Dekpo"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050269,
+  "lat": 6.4703311,
+  "lon": 1.0933167,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050271,
+  "lat": 6.4757599,
+  "lon": 1.0721406,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050272,
+  "lat": 6.4758425,
+  "lon": 1.0715479,
+  "tags": {
+    "amenity": "school",
+    "name": "Jardin d'Enfants Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050273,
+  "lat": 6.4757013,
+  "lon": 1.0705796,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Klokpoe"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050275,
+  "lat": 6.4780352,
+  "lon": 1.0683500,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Case de Santé"
+  }
+},
+{
+  "type": "node",
+  "id": 8872050277,
+  "lat": 6.4801293,
+  "lon": 1.0680583,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Klokpoe"
+  }
+},
+{
+  "type": "node",
+  "id": 8873696594,
+  "lat": 8.3207802,
+  "lon": 0.9844136,
+  "tags": {
+    "amenity": "school",
+    "description": "cours primaire",
+    "name": "EPP Néré",
+    "source": "Bing",
+    "source:date": "2021"
+  }
+},
+{
+  "type": "node",
+  "id": 8901913484,
+  "lat": 6.9990801,
+  "lon": 0.2869253,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8901935412,
+  "lat": 6.9986394,
+  "lon": 0.2870534,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "St Patrick Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8901941291,
+  "lat": 7.0019071,
+  "lon": 0.2598156,
+  "tags": {
+    "amenity": "school",
+    "name": "Sacred Heart Creche"
+  }
+},
+{
+  "type": "node",
+  "id": 8901941292,
+  "lat": 7.0413635,
+  "lon": 0.2461328,
+  "tags": {
+    "amenity": "school",
+    "name": "Avetikope Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8901944277,
+  "lat": 7.0035430,
+  "lon": 0.2701912,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8901947754,
+  "lat": 7.0230540,
+  "lon": 0.2750011,
+  "tags": {
+    "amenity": "school",
+    "name": "Avetikope Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8901955103,
+  "lat": 6.9994833,
+  "lon": 0.3015783,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-11-08",
+    "name": "Kpando Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 8907817657,
+  "lat": 6.9994897,
+  "lon": 0.3815599,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter's Junior High"
+  }
+},
+{
+  "type": "node",
+  "id": 8907820780,
+  "lat": 6.9362898,
+  "lon": 0.2896797,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907820781,
+  "lat": 7.0028591,
+  "lon": 0.3121442,
+  "tags": {
+    "amenity": "school",
+    "name": "Donum Dei International"
+  }
+},
+{
+  "type": "node",
+  "id": 8907832923,
+  "lat": 6.9360810,
+  "lon": 0.2909450,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu JHS, Old Structure"
+  }
+},
+{
+  "type": "node",
+  "id": 8907834455,
+  "lat": 6.9358980,
+  "lon": 0.2857427,
+  "tags": {
+    "amenity": "school",
+    "name": "St Benedict Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8907837135,
+  "lat": 6.8896588,
+  "lon": 0.2936055,
+  "tags": {
+    "amenity": "school",
+    "name": "Wadamaxe District Assembly Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 8907837426,
+  "lat": 7.0164305,
+  "lon": 0.3187077,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-01-02",
+    "name": "Kpando Gadza Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907840741,
+  "lat": 7.0424631,
+  "lon": 0.2997879,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8907840742,
+  "lat": 6.9182287,
+  "lon": 0.2640811,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8907840964,
+  "lat": 6.8894980,
+  "lon": 0.2764929,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8907843885,
+  "lat": 6.9367812,
+  "lon": 0.2906526,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8907843886,
+  "lat": 7.0009124,
+  "lon": 0.3816590,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbefi United Roman Catholic Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8907848916,
+  "lat": 6.8881816,
+  "lon": 0.2936300,
+  "tags": {
+    "amenity": "school",
+    "name": "Wadamaxe District Assembly Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849016,
+  "lat": 6.9186282,
+  "lon": 0.2645890,
+  "tags": {
+    "amenity": "school",
+    "name": "Aveme Beme Evangelical Presbyterian School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849128,
+  "lat": 6.9366634,
+  "lon": 0.2908499,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849129,
+  "lat": 6.8883247,
+  "lon": 0.2924825,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic Junior High"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849130,
+  "lat": 6.9062862,
+  "lon": 0.2509399,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsyome Sabadu District Assembly Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849788,
+  "lat": 7.0378347,
+  "lon": 0.3016650,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpando Bame M/A Primary/JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8911984696,
+  "lat": 6.6710667,
+  "lon": 1.1611519,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agbodjekpoe"
+  }
+},
+{
+  "type": "node",
+  "id": 8912040242,
+  "lat": 6.6709469,
+  "lon": 1.1618243,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Centre Médico-social D'Agbélouvé"
+  }
+},
+{
+  "type": "node",
+  "id": 8912040243,
+  "lat": 6.6753054,
+  "lon": 1.1663471,
+  "tags": {
+    "amenity": "school",
+    "name": "CS la Sagesse"
+  }
+},
+{
+  "type": "node",
+  "id": 8914690154,
+  "lat": 7.9576899,
+  "lon": 1.2073983,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917473784,
+  "lat": 6.8167555,
+  "lon": 0.2785125,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917473786,
+  "lat": 7.1140255,
+  "lon": 0.4575208,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917473787,
+  "lat": 7.1177629,
+  "lon": 0.3504804,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917476275,
+  "lat": 7.0089156,
+  "lon": 0.3139939,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917477773,
+  "lat": 6.7021569,
+  "lon": 0.2583309,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsorxor District Assembly School"
+  }
+},
+{
+  "type": "node",
+  "id": 8917478108,
+  "lat": 7.1192055,
+  "lon": 0.3597759,
+  "tags": {
+    "amenity": "school",
+    "name": "Alavanyo Wudidi Local Assembly Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8917491170,
+  "lat": 7.0709386,
+  "lon": 0.5164285,
+  "tags": {
+    "amenity": "school",
+    "name": "Fodome Woe/Agbetsido Municipal Assembly Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8917491171,
+  "lat": 7.0723665,
+  "lon": 0.5074898,
+  "tags": {
+    "amenity": "school",
+    "name": "Fodome Helu Roman Catholic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8917503029,
+  "lat": 7.0861903,
+  "lon": 0.3535525,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917515364,
+  "lat": 6.9880940,
+  "lon": 0.3000620,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917516454,
+  "lat": 7.0538252,
+  "lon": 0.4268626,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Dr Grace Momfi Eye Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8920613682,
+  "lat": 7.0759609,
+  "lon": 0.3502127,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8920690468,
+  "lat": 6.8813526,
+  "lon": 0.2770134,
+  "tags": {
+    "amenity": "police",
+    "name": "Anfoega Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704348,
+  "lat": 7.1203418,
+  "lon": 0.3779129,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704350,
+  "lat": 7.2132511,
+  "lon": 0.5276706,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic cluster of schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704351,
+  "lat": 7.2386176,
+  "lon": 0.5303568,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927726435,
+  "lat": 7.1981473,
+  "lon": 0.5652458,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927728780,
+  "lat": 7.2019255,
+  "lon": 0.5448034,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927740903,
+  "lat": 7.2265094,
+  "lon": 0.5332025,
+  "tags": {
+    "amenity": "school",
+    "name": "New Baika Catholic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8939683225,
+  "lat": 8.2539259,
+  "lon": 0.4950924,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8939683698,
+  "lat": 6.8956050,
+  "lon": 0.4158212,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8944670756,
+  "lat": 6.7220789,
+  "lon": 1.1738494,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP VIVO"
+  }
+},
+{
+  "type": "node",
+  "id": 8944677405,
+  "lat": 6.7339068,
+  "lon": 1.1738117,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire la Fourmi"
+  }
+},
+{
+  "type": "node",
+  "id": 8944679068,
+  "lat": 6.7327267,
+  "lon": 1.1735999,
+  "tags": {
+    "amenity": "school",
+    "name": "Centre de Formation Technique et Professionnelle (CFPT) Gamé"
+  }
+},
+{
+  "type": "node",
+  "id": 8944705924,
+  "lat": 6.7329454,
+  "lon": 1.1730507,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Gamé-Séva"
+  }
+},
+{
+  "type": "node",
+  "id": 8946637242,
+  "lat": 7.2148966,
+  "lon": 0.5271328,
+  "tags": {
+    "amenity": "school",
+    "name": "Lolobi Kumasj Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8946646866,
+  "lat": 7.2129939,
+  "lon": 0.5277950,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8946663682,
+  "lat": 7.2842558,
+  "lon": 0.5833524,
+  "tags": {
+    "amenity": "school",
+    "name": "DA Junior High School B"
+  }
+},
+{
+  "type": "node",
+  "id": 8946677794,
+  "lat": 7.1649799,
+  "lon": 0.4742439,
+  "tags": {
+    "amenity": "school",
+    "name": "Hohoe Adabraka English/Arabic"
+  }
+},
+{
+  "type": "node",
+  "id": 8946848866,
+  "lat": 7.0098404,
+  "lon": 0.5124595,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8946856578,
+  "lat": 7.0731678,
+  "lon": 0.5251702,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8946872399,
+  "lat": 7.1627998,
+  "lon": 0.5824888,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Likpe Bakua Polyclinic"
+  }
+},
+{
+  "type": "node",
+  "id": 8946875493,
+  "lat": 7.3043349,
+  "lon": 0.6370998,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8952049510,
+  "lat": 6.9691529,
+  "lon": 0.5004487,
+  "tags": {
+    "amenity": "school",
+    "name": "Leklebi Dafor D/A Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8952074820,
+  "lat": 7.0299893,
+  "lon": 0.5124777,
+  "tags": {
+    "amenity": "school",
+    "name": "Liate Dafonu M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8952083198,
+  "lat": 7.0195705,
+  "lon": 0.5131118,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8952083219,
+  "lat": 7.1515919,
+  "lon": 0.5196399,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbi Kodzofe M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8955274512,
+  "lat": 6.7304826,
+  "lon": 1.1724617,
+  "tags": {
+    "amenity": "police",
+    "name": "Poste de Police de Gamé"
+  }
+},
+{
+  "type": "node",
+  "id": 8955316947,
+  "lat": 6.7327365,
+  "lon": 0.3479564,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8955331019,
+  "lat": 6.6898196,
+  "lon": 0.3414943,
+  "tags": {
+    "amenity": "school",
+    "name": "Goviefe Todzi Evangelical Presbyterian Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8960802896,
+  "lat": 6.4980845,
+  "lon": 0.5122449,
+  "tags": {
+    "amenity": "school",
+    "name": "Adaklu Abuadi Salvation Army Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8960823148,
+  "lat": 6.4261439,
+  "lon": 0.5147312,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8960831166,
+  "lat": 6.3949828,
+  "lon": 0.5261618,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8960864224,
+  "lat": 6.4901930,
+  "lon": 0.4888755,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8960865725,
+  "lat": 6.5135884,
+  "lon": 0.4989295,
+  "tags": {
+    "amenity": "school",
+    "name": "Adaklu Goefe D/A Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8960872724,
+  "lat": 6.4984329,
+  "lon": 0.5136472,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8960877717,
+  "lat": 6.4911870,
+  "lon": 0.5030908,
+  "tags": {
+    "amenity": "school",
+    "name": "Kodiabe Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8968991867,
+  "lat": 6.3066225,
+  "lon": 0.6476531,
+  "tags": {
+    "amenity": "school",
+    "name": "Mafi Gidikpoe D/A Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8969010740,
+  "lat": 6.2601241,
+  "lon": 0.5817389,
+  "tags": {
+    "amenity": "school",
+    "name": "Mafi Tsati Area D/A Primary school"
+  }
+},
+{
+  "type": "node",
+  "id": 8972075306,
+  "lat": 6.3326610,
+  "lon": 1.0246293,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Gbavé"
+  }
+},
+{
+  "type": "node",
+  "id": 8985312164,
+  "lat": 6.3201750,
+  "lon": 1.0521120,
+  "tags": {
+    "amenity": "school",
+    "description": "lycée et collège",
+    "name": "Lycée Dzimeke"
+  }
+},
+{
+  "type": "node",
+  "id": 9010449875,
+  "lat": 6.3336535,
+  "lon": 1.0436548,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Alagbadja - Bamé"
+  }
+},
+{
+  "type": "node",
+  "id": 9010638287,
+  "lat": 6.3166115,
+  "lon": 1.0551048,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP koepedo"
+  }
+},
+{
+  "type": "node",
+  "id": 9033524114,
+  "lat": 6.3026703,
+  "lon": 1.0814021,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Sevagbleta"
+  }
+},
+{
+  "type": "node",
+  "id": 9033534831,
+  "lat": 6.3089200,
+  "lon": 1.0798281,
+  "tags": {
+    "amenity": "school",
+    "name": "École internationale Nelson Mandela"
+  }
+},
+{
+  "type": "node",
+  "id": 9033535414,
+  "lat": 6.3340018,
+  "lon": 1.1017483,
+  "tags": {
+    "amenity": "school",
+    "name": "École primaire saint esprit de sevagbleta"
+  }
+},
+{
+  "type": "node",
+  "id": 9051879093,
+  "lat": 6.2980446,
+  "lon": 1.0693654,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Case de santé d' Atidè"
+  }
+},
+{
+  "type": "node",
+  "id": 9051901248,
+  "lat": 6.2984344,
+  "lon": 1.0679566,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Atidè"
+  }
+},
+{
+  "type": "node",
+  "id": 9053186905,
+  "lat": 6.5021437,
+  "lon": 1.0277273,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AVEVOIN"
+  }
+},
+{
+  "type": "node",
+  "id": 9053186909,
+  "lat": 6.4857180,
+  "lon": 1.0137060,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP WOMETCHIN GB"
+  }
+},
+{
+  "type": "node",
+  "id": 9053186914,
+  "lat": 6.4819509,
+  "lon": 1.0076295,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP WOMETCHIN GA"
+  }
+},
+{
+  "type": "node",
+  "id": 9053186915,
+  "lat": 6.4814312,
+  "lon": 1.0072607,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP WOMETCHIN"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199517,
+  "lat": 6.4563523,
+  "lon": 0.9648979,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AWATOME"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199519,
+  "lat": 6.4650754,
+  "lon": 0.9802669,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Case de santé"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199521,
+  "lat": 6.4640200,
+  "lon": 0.9807336,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP APEDOME"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199523,
+  "lat": 6.4503103,
+  "lon": 0.9784470,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ZOGBEPIME GB"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199527,
+  "lat": 6.4463191,
+  "lon": 0.9810823,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP ZOGBEPIME"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199528,
+  "lat": 6.4462005,
+  "lon": 0.9804064,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ZOGBEPIME GA"
+  }
+},
+{
+  "type": "node",
+  "id": 9053199533,
+  "lat": 6.4421986,
+  "lon": 0.9744197,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG ZOGBEPIME"
+  }
+},
+{
+  "type": "node",
+  "id": 9053227988,
+  "lat": 6.4463211,
+  "lon": 1.0408265,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 9053227990,
+  "lat": 6.4503449,
+  "lon": 1.0004801,
+  "tags": {
+    "amenity": "school",
+    "name": "ECOLE DE VETERINAIRE"
+  }
+},
+{
+  "type": "node",
+  "id": 9053227991,
+  "lat": 6.4482127,
+  "lon": 0.9838235,
+  "tags": {
+    "amenity": "school",
+    "name": "EPC"
+  }
+},
+{
+  "type": "node",
+  "id": 9053230418,
+  "lat": 6.4796163,
+  "lon": 1.0044202,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG WOMETCHIN"
+  }
+},
+{
+  "type": "node",
+  "id": 9053230419,
+  "lat": 6.4702511,
+  "lon": 0.9954402,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP AGBOZOME"
+  }
+},
+{
+  "type": "node",
+  "id": 9053230421,
+  "lat": 6.4670850,
+  "lon": 0.9897217,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG ATCHAVE"
+  }
+},
+{
+  "type": "node",
+  "id": 9053230422,
+  "lat": 6.4668025,
+  "lon": 0.9893006,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ATCHAVE"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455695,
+  "lat": 6.9000048,
+  "lon": 0.7364112,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agou Gnogbo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455696,
+  "lat": 6.8971476,
+  "lon": 0.7329860,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole privée Laïc"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455697,
+  "lat": 6.8954581,
+  "lon": 0.7311594,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Centrale Nyigbogan"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455699,
+  "lat": 6.8907875,
+  "lon": 0.7274875,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455700,
+  "lat": 6.8888902,
+  "lon": 0.7277463,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Agou Gnogbo nord"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455705,
+  "lat": 6.8806220,
+  "lon": 0.7250769,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455706,
+  "lat": 6.8799230,
+  "lon": 0.7248697,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455708,
+  "lat": 6.8818283,
+  "lon": 0.7183117,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Agou Gnogbo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455710,
+  "lat": 6.8794710,
+  "lon": 0.7245015,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agou GBNO"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455712,
+  "lat": 6.8746318,
+  "lon": 0.7224396,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Catholique GNOGBO"
+  }
+},
+{
+  "type": "node",
+  "id": 9053455716,
+  "lat": 6.8498273,
+  "lon": 0.7132664,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP CHINE Togo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053465021,
+  "lat": 6.8410711,
+  "lon": 0.7052708,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée Gadjépé"
+  }
+},
+{
+  "type": "node",
+  "id": 9053465022,
+  "lat": 6.8351004,
+  "lon": 0.6886089,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Kouloumou"
+  }
+},
+{
+  "type": "node",
+  "id": 9053465024,
+  "lat": 6.8354945,
+  "lon": 0.6799293,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053465031,
+  "lat": 6.8336236,
+  "lon": 0.6774556,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482633,
+  "lat": 6.8241271,
+  "lon": 0.7688602,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482634,
+  "lat": 6.8225448,
+  "lon": 0.7681343,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Gadjagan"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482635,
+  "lat": 6.8236886,
+  "lon": 0.7673545,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482638,
+  "lat": 6.8286422,
+  "lon": 0.7648869,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482640,
+  "lat": 6.8259790,
+  "lon": 0.7513243,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Gagja Wukpe"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482641,
+  "lat": 6.8288020,
+  "lon": 0.7513350,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482642,
+  "lat": 6.8764665,
+  "lon": 0.7878198,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482643,
+  "lat": 6.8905918,
+  "lon": 0.7794124,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482644,
+  "lat": 6.8901963,
+  "lon": 0.7780123,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Agou Akpolo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482646,
+  "lat": 6.8885720,
+  "lon": 0.7693675,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique Agglu Kpolo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053482650,
+  "lat": 6.8898062,
+  "lon": 0.7712612,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique Agglu Kpolo"
+  }
+},
+{
+  "type": "node",
+  "id": 9053536605,
+  "lat": 6.8404879,
+  "lon": 0.7149991,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053536608,
+  "lat": 6.8383201,
+  "lon": 0.7119159,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053536613,
+  "lat": 6.8050458,
+  "lon": 0.7060486,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559723,
+  "lat": 6.7398209,
+  "lon": 0.7377912,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Dolohoé"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559724,
+  "lat": 6.7487201,
+  "lon": 0.7575376,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559728,
+  "lat": 6.7506685,
+  "lon": 0.7590759,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Agbave"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559729,
+  "lat": 6.7704082,
+  "lon": 0.7656822,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Sofie"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559731,
+  "lat": 6.7716101,
+  "lon": 0.7675517,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559732,
+  "lat": 6.7849001,
+  "lon": 0.7782818,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Afankopé"
+  }
+},
+{
+  "type": "node",
+  "id": 9053559735,
+  "lat": 6.7931407,
+  "lon": 0.7967066,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole Primaire Evangelique Avétonou"
+  }
+},
+{
+  "type": "node",
+  "id": 9053603053,
+  "lat": 6.8238657,
+  "lon": 0.7229921,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp"
+  }
+},
+{
+  "type": "node",
+  "id": 9053635811,
+  "lat": 8.6636118,
+  "lon": 1.0144785,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Puyoba"
+  }
+},
+{
+  "type": "node",
+  "id": 9053635815,
+  "lat": 8.6594276,
+  "lon": 1.0163004,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Limzemouda"
+  }
+},
+{
+  "type": "node",
+  "id": 9053706207,
+  "lat": 8.6686140,
+  "lon": 1.0196109,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe Scolaire le succès"
+  }
+},
+{
+  "type": "node",
+  "id": 9053706208,
+  "lat": 8.6719378,
+  "lon": 1.0135585,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Adjingré Ville II"
+  }
+},
+{
+  "type": "node",
+  "id": 9053706211,
+  "lat": 8.6962145,
+  "lon": 1.0236061,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Babade"
+  }
+},
+{
+  "type": "node",
+  "id": 9053706212,
+  "lat": 8.6795688,
+  "lon": 1.0235631,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Akonta B"
+  }
+},
+{
+  "type": "node",
+  "id": 9053732018,
+  "lat": 8.6524312,
+  "lon": 1.0099550,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Adjengré Lawouwayi"
+  }
+},
+{
+  "type": "node",
+  "id": 9053732022,
+  "lat": 8.6566646,
+  "lon": 1.0174665,
+  "tags": {
+    "amenity": "school",
+    "name": "Collège saint Joseph"
+  }
+},
+{
+  "type": "node",
+  "id": 9053732024,
+  "lat": 8.6555051,
+  "lon": 1.0159839,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS Association un jour nouveau"
+  }
+},
+{
+  "type": "node",
+  "id": 9053732030,
+  "lat": 8.6540606,
+  "lon": 1.0135371,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Adjingré Ville I"
+  }
+},
+{
+  "type": "node",
+  "id": 9053760417,
+  "lat": 8.6744382,
+  "lon": 1.0184770,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Akonta"
+  }
+},
+{
+  "type": "node",
+  "id": 9053760422,
+  "lat": 8.6695142,
+  "lon": 1.0062736,
+  "tags": {
+    "amenity": "school",
+    "name": "Epp Idawoe"
+  }
+},
+{
+  "type": "node",
+  "id": 9071291757,
+  "lat": 6.3308380,
+  "lon": 1.0811733,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Tsivé"
+  }
+},
+{
+  "type": "node",
+  "id": 9085126746,
+  "lat": 6.3405988,
+  "lon": 1.1059905,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie de kovié"
+  }
+},
+{
+  "type": "node",
+  "id": 9089284307,
+  "lat": 6.3335266,
+  "lon": 1.0830264,
+  "tags": {
+    "amenity": "school",
+    "name": "École privé laïque bonne espérance de Tsivé"
+  }
+},
+{
+  "type": "node",
+  "id": 9089292472,
+  "lat": 6.3340964,
+  "lon": 1.0849403,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe scolaire islamique de Tsivé"
+  }
+},
+{
+  "type": "node",
+  "id": 9115284977,
+  "lat": 6.3347087,
+  "lon": 1.1011761,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG kovié"
+  }
+},
+{
+  "type": "node",
+  "id": 9120931112,
+  "lat": 6.9541083,
+  "lon": 1.1769288,
+  "tags": {
+    "amenity": "school",
+    "name": "Collège NDA"
+  }
+},
+{
+  "type": "node",
+  "id": 9129968273,
+  "lat": 6.9763914,
+  "lon": 1.1658512,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kpédomé"
+  }
+},
+{
+  "type": "node",
+  "id": 9165481517,
+  "lat": 6.6884611,
+  "lon": 0.9041412,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP BANIKOPE"
+  }
+},
+{
+  "type": "node",
+  "id": 9231316202,
+  "lat": 6.4191208,
+  "lon": 1.2226367,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 9258068317,
+  "lat": 8.1715950,
+  "lon": 0.9730291,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG Pagala Gare 2"
+  }
+},
+{
+  "type": "node",
+  "id": 9258068319,
+  "lat": 8.1724510,
+  "lon": 0.9631859,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP PAGALA RAILS A"
+  }
+},
+{
+  "type": "node",
+  "id": 9258068320,
+  "lat": 8.1740064,
+  "lon": 0.9623141,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP PAGALA RAILS A"
+  }
+},
+{
+  "type": "node",
+  "id": 9258069017,
+  "lat": 8.1715277,
+  "lon": 0.9794055,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP PAGALA GROUPE C"
+  }
+},
+{
+  "type": "node",
+  "id": 9258069219,
+  "lat": 8.1745053,
+  "lon": 0.9656367,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP PAGALA RAILS B"
+  }
+},
+{
+  "type": "node",
+  "id": 9258069317,
+  "lat": 8.1716557,
+  "lon": 0.9676199,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP RAILS C"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196817,
+  "lat": 8.3308291,
+  "lon": 0.9864000,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Blitta"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196820,
+  "lat": 8.1781657,
+  "lon": 0.9790927,
+  "tags": {
+    "amenity": "school",
+    "name": "Complexe scolaire Deo Gratias"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196917,
+  "lat": 8.1795216,
+  "lon": 0.9701621,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP PAGALA GARE GROUPE A & B"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196918,
+  "lat": 8.1898584,
+  "lon": 0.9681023,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196921,
+  "lat": 8.2394630,
+  "lon": 1.1298315,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée AGBANDI"
+  }
+},
+{
+  "type": "node",
+  "id": 9263196922,
+  "lat": 8.2292243,
+  "lon": 1.1305224,
+  "tags": {
+    "amenity": "school",
+    "name": "EPL AVALES"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197120,
+  "lat": 8.1830895,
+  "lon": 0.9800095,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP FLANDI"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197122,
+  "lat": 8.2202441,
+  "lon": 1.1384393,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG AGBANDI"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197123,
+  "lat": 8.2281604,
+  "lon": 1.1340566,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197125,
+  "lat": 8.2214366,
+  "lon": 1.1288519,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197217,
+  "lat": 8.1776730,
+  "lon": 0.9774468,
+  "tags": {
+    "amenity": "school",
+    "name": "École Privée Laïque"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197218,
+  "lat": 8.2225723,
+  "lon": 1.1373700,
+  "tags": {
+    "amenity": "school",
+    "name": "École Catholique"
+  }
+},
+{
+  "type": "node",
+  "id": 9263197219,
+  "lat": 8.2270676,
+  "lon": 1.1358769,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP CENTRALE"
+  }
+},
+{
+  "type": "node",
+  "id": 9263198617,
+  "lat": 8.1784279,
+  "lon": 0.9897224,
+  "tags": {
+    "amenity": "police",
+    "name": "Commissariat de PAGALA GARE"
+  }
+},
+{
+  "type": "node",
+  "id": 9263438670,
+  "lat": 8.4328534,
+  "lon": 1.0844160,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Pitiyo KAZABOUA"
+  }
+},
+{
+  "type": "node",
+  "id": 9263438672,
+  "lat": 8.4320666,
+  "lon": 1.0469067,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP BODJONDE"
+  }
+},
+{
+  "type": "node",
+  "id": 9263438675,
+  "lat": 8.4301901,
+  "lon": 1.0381125,
+  "tags": {
+    "amenity": "school",
+    "name": "École Catholique de BODJONDE"
+  }
+},
+{
+  "type": "node",
+  "id": 9263461431,
+  "lat": 8.4283050,
+  "lon": 1.0707860,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS KAZABOUA"
+  }
+},
+{
+  "type": "node",
+  "id": 9263461432,
+  "lat": 8.4201827,
+  "lon": 1.0746523,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG KAZABOUA"
+  }
+},
+{
+  "type": "node",
+  "id": 9263461433,
+  "lat": 8.4277564,
+  "lon": 1.0825339,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP KAZABOUA"
+  }
+},
+{
+  "type": "node",
+  "id": 9263462821,
+  "lat": 8.4273506,
+  "lon": 1.0899462,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie de KAZABOUA"
+  }
+},
+{
+  "type": "node",
+  "id": 9270106717,
+  "lat": 8.6723650,
+  "lon": 1.0140860,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG ADJENGRÉ 2"
+  }
+},
+{
+  "type": "node",
+  "id": 9275288719,
+  "lat": 8.6669098,
+  "lon": 1.0048328,
+  "tags": {
+    "amenity": "hospital",
+    "name": "CMS ADJENGRÉ"
+  }
+},
+{
+  "type": "node",
+  "id": 9275289017,
+  "lat": 8.6637528,
+  "lon": 1.0144328,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP"
+  }
+},
+{
+  "type": "node",
+  "id": 9275289717,
+  "lat": 8.6590461,
+  "lon": 1.0153559,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP ADJENGRÉ LIMZEMOUDA"
+  }
+}
+
+  ]
+}

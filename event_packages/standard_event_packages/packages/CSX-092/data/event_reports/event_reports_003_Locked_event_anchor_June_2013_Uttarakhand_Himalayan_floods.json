@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-092",
+  "event_name": "June 2013 Uttarakhand Himalayan floods",
+  "hazard_family": "river_coastal_flood",
+  "temporal_window": {
+    "start_date": "2013-06-15",
+    "end_date": "2013-06-18",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Uttarakhand and western Nepal Himalayan basins",
+    "country_or_region": "India / Nepal",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "June 2013 Uttarakhand Himalayan floods",
+    "event_start_date": "2013-06-15",
+    "event_end_date": "2013-06-18",
+    "event_location": "Uttarakhand and western Nepal Himalayan basins",
+    "event_country_or_region": "India / Nepal",
+    "event_scope": "package_specific_real_event",
+    "evidence_type": "NASA Earth Observatory event article",
+    "evidence_url": "https://earthobservatory.nasa.gov/images/81450/severe-flooding-in-northern-india-nepal",
+    "evidence_final_url": "https://earthobservatory.nasa.gov/images/81450/severe-flooding-in-northern-india-nepal",
+    "http_status": "200",
+    "lock_status": "event_locked_second_round_url_reachable",
+    "lock_confidence": "high",
+    "match_rule": "second_round_targeted_package_replacement",
+    "web_search_query_used": "NASA Earth Observatory severe flooding northern India Nepal 2013",
+    "event_lock_notes": "Mountain-basin flood and landslide disaster with heavy precipitation and steep terrain.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": false
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "core_report_claim_confirmed",
+    "recommendation": "keep_for_v0_or_v1",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": true,
+    "claim_like_source_type": true,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:14.615545+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "June 2013 Uttarakhand Himalayan floods",
+      "source_type": "NASA Earth Observatory event article",
+      "url": "https://earthobservatory.nasa.gov/images/81450/severe-flooding-in-northern-india-nepal",
+      "original_url": "https://earthobservatory.nasa.gov/images/81450/severe-flooding-in-northern-india-nepal",
+      "http_status": "200",
+      "lock_status": "event_locked_second_round_url_reachable",
+      "confidence": "high",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "core_report_claim_confirmed",
+      "release_recommendation": "keep_for_v0_or_v1",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-092_river_coastal_flood_mountain_regions_regional_basin/event_package.json"
+}

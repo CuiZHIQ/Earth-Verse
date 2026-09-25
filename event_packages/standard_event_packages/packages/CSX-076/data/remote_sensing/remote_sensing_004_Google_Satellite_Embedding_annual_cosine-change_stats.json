@@ -1,0 +1,11 @@
+{
+  "dataset": "GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL",
+  "pre_year": 2021,
+  "post_year": 2022,
+  "stats": {
+    "alphaearth_1_minus_cosine_max": 0.6169664630511348,
+    "alphaearth_1_minus_cosine_mean": 0.022096431378338062,
+    "alphaearth_1_minus_cosine_min": -0.004512466429305029,
+    "alphaearth_1_minus_cosine_stdDev": 0.012478716671303151
+  }
+}

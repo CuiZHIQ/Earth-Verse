@@ -1,0 +1,347 @@
+{
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_9731",
+			"title": "Element Wildfire, Mohave, Arizona",
+            "description": "12 miles north of Kingman, west of Stockton Hill Road",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9731",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 4556.00,
+					"magnitudeUnit": "acres",
+					"date": "2024-08-06T23:17:00Z",
+					"type": "Point", 
+							"coordinates": [ -114.09145, 35.457633 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9540",
+			"title": "Wildfire in Tanzania 1020800",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9540",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020800"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 34.837992701020966, -3.1190166958623138 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9541",
+			"title": "Wildfire in United States 1020801",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9541",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020801"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.39962506823476, 44.182812176371229 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9542",
+			"title": "Wildfire in United States 1020794",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9542",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020794"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.43130702581267, 44.155382987421355 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9543",
+			"title": "Wildfire in The Democratic Republic of Congo 1020844",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9543",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020844"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 25.696567669232344, -7.88079376547864 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9682",
+			"title": "Wildfire in Brazil 1020965",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9682",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020965"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -51.771229826233608, -14.285901793051575 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9683",
+			"title": "Wildfire in The Democratic Republic of Congo 1020954",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9683",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020954"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 25.749156276991631, -8.1928095900448614 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9684",
+			"title": "Wildfire in Angola 1020953",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9684",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020953"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 19.834502970737685, -10.50317903672992 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9745",
+			"title": "Wildfire in Mozambique 1020983",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9745",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020983"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 37.513853267615524, -11.998446758636121 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_9746",
+			"title": "Wildfire in The Democratic Republic of Congo 1020986",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_9746",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1020986"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2024-08-06T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 25.181316119880741, -8.27949543572431 ]
+							}
+
+						
+			]
+		}
+
+		]
+}

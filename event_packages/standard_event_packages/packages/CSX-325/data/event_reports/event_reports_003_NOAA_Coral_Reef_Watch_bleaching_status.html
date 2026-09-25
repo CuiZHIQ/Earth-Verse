@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>NOAA Coral Reef Watch Current Global Bleaching: Status Update & Data Submission</title>
+
+        <link rel="stylesheet" href="/css/root_body_header_dropdowntaskbar_style.css">
+        <link rel="stylesheet" href="/css/root_body_footer_dropdowntaskbar_style.css">
+        <link rel="stylesheet" href="/css/root_top_message_board_style.css">
+
+        <!--START OF HTML/HEAD TEXT FROM INCLUDE FILE root_html_head_wide.php-->
+
+        <link rel="icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta name="Keywords" Content="Oceanography, Marine, Satellite,
+            Remote Sensing, Coral Reef, Coral Bleaching, Marine Biology,
+            Marine Ecology, Physical Oceanography, Environment, Publication,
+            in situ, observation, CREWS, CRW, NOAA, Government">
+        <meta name="Author" Content="NOAA Coral Reef Watch">
+
+        <!-- **************** for GSA federal Google Analytics ********************   -->
+        <script async id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NOAA"></script>
+<!--// GA4 Google tag (gtag.js) - code updated 6/13/2023; main STAR tag created 3/1/2023 //-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6J8W8XXDSC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6J8W8XXDSC');
+</script>
+<script async src='https://siteimproveanalytics.com/js/siteanalyze_6294131.js'></script>
+	<!-- **********************************************************************   -->
+        <script rel="preload" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<!--// Add fancyBox 2.1.7 //-->
+<link rel="stylesheet" href="https://www.star.nesdis.noaa.gov/star/global/js/fancyapps/source/jquery.fancybox.css?v=2.1.7" media="screen">
+<script src="https://www.star.nesdis.noaa.gov/star/global/js/fancybox/jquery.fancybox.pack.js?v=2.1.7"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox({
+                    beforeShow: function(){
+                        var fancyAlt = $(this.element).find('img').attr('alt');
+                        $(".fancybox-inner").find("img").attr("alt",fancyAlt);
+                    }
+                });
+            });
+            $(document).ready(function(){
+                $("#Map area").fancybox({
+                    beforeShow: function(){
+                        var fancyAlt = $(this.element).find('img').attr('alt');
+                        $(".fancybox-inner").find("img").attr("alt",fancyAlt);
+                    }
+                }); 
+            });
+        </script>
+
+        <!-- **** Defining Regional Virtual Stations Number Variable **** -->
+        
+        <!--END OF HTML/HEAD TEXT FROM INCLUDE FILE-->
+
+
+        <!--CSS FOR BODY-->
+        <link rel="stylesheet" href="/crw-style_wide.css">
+
+        <style>
+            body{
+                max-width: 960px;
+                margin: 0 auto;
+                border: 1px solid lightslategrey;
+                background-color: white;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!--HEADER-->
+
+        
+        <div class="root-header">
+
+            <div class="root-header-banners">
+
+                <a class="root-header-banner-left" href="/index.php">
+                    <img class = 'root-header-crw-banner' src="/icons_gen/crw_banner_small2.png">
+                </a>
+
+                <a class="root-header-banner-right"  href="http://www.nesdis.noaa.gov">
+                    <img class = 'root-header-nesdis-banner' src="/icons_gen/banner_nesdis_small_4.png" height='50'>
+                </a>
+
+            </div>
+
+            <!--Blank ROW-->
+ 
+            <div class="blank-row-10px"></div>
+
+            <!--SPLITER-->
+
+            <div class = 'root-header-split-banner'></div>
+
+            <!--NAVIGATION-->
+
+            <div class="root-header-hyperlinks">
+
+                <div class="root-header-hyperlinks-left">
+                    
+                    <a class="root-header-link-pointer" href='/index.php'>Home</a>  
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Key Products&#x25BC;</span>
+                        <div class="root-header-dropdown-content">
+                            <div>
+                                <div class = 'root-header-dropdown-header'>5km Satellite Products</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index.php'>Main 5km Products</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index.php#data_access'>Data / Images</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/index_5km_composite.php'>Composites</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/ge/index.php'>Google Earth Display</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/methodology.php'>Methodology</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/5km/tutorial/welcome.php'>Tutorial</a>
+                                </div>
+                            </div>
+			    <div>
+                                <div class = 'root-header-dropdown-header-blank'>&nbsp;</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/vs/map.php'>Virtual Stations</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' href='/subscriptions/vs.php'>Bleaching Alert Emails</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/marine_heatwave/'>Marine Heatwaves</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/thermal_history/'>Thermal History</a>
+                                </div>
+                                <div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/disease/'>Coral Disease (SST-based)</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/disease_multifactor/'>Coral Disease (Multi-Factor)</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class = 'root-header-dropdown-header'>Other Products</div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/bleachingoutlook_cfs/index.php'>4-Month Outlook</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/oc/'>Ocean Color</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='https://storymaps.arcgis.com/stories/26f67fa930ae4594b88512ee0a65b841'>3rd Global Bleaching</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='https://sos.noaa.gov/catalog/datasets/?fullText=Coral%20Reef%20watch'>Science On a Sphere</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/research/index.php'>Research Activities</a>
+                                </div>
+				<div class = 'root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/product/50km/'>Retired 50km Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Condition Updates&#x25BC;</span>
+                        <div class="root-header-dropdown-content-single-column">
+                            <div>
+                                <div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/analyses_guidance/enso_current_conditions.php'>ENSO Conditions</a>
+                                </div>
+                                <div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/research/coral_bleaching_report.php'>Heat Stress Updates and Summaries</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="root-header-link-pointer" href='/product/index.php'>Products List</a>
+
+                </div>
+
+                <div class="root-header-hyperlinks-right">
+
+		    <a class="root-header-link-pointer" href='/satellite/research/coral_bleaching_report.php'>Report Bleaching</a>
+
+                    <div class="root-header-dropdown">
+                        <span class="root-header-link-arrow">Exploration&#x25BC;</span>
+                        <div class="root-header-dropdown-content-single-column">
+			    <div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/about_us.php'>About Us</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/publications.php'>Publications</a>
+                                </div>
+				<div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='/satellite/docs/recommendations_crw_citation.php'>How to Cite CRW Products</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/satellite/education/index.php'>Outreach & Education</a>
+                                </div>
+				<div class='root-header-dropdown-link'>
+                                    <a class='root-header-dropdown-link-text' href='/crtr/data_resources.php'>Online Data Resources</a>
+                                </div>
+				<div class='root-header-dropdown-link-blank'>
+                                    <div class='root-header-dropdown-link-text'>&nbsp;</div>
+                                </div>
+				<div class='root-header-dropdown-link'>
+				    <a class='root-header-dropdown-link-text' 
+                                        href='mailto:coralreefwatch@noaa.gov?subject=[Question for Coral Reef Watch]'>Contact Us</a>
+                                </div>
+			    </div>
+			</div>
+                    </div>
+
+                    <a class="root-header-link-pointer" href='/messages/announcements.php'>Announcements</a>
+
+                </div>
+            </div>
+
+            <!--SPLITER-->
+
+            <div class = 'root-header-split-banner'></div>
+
+        </div>
+
+        <script>
+            var dropdown = document.querySelector('.root-header-dropdown');
+            var dropdownContent = document.querySelector('.root-header-dropdown-content');
+
+            dropdown.addEventListener('mouseenter', function() {
+                dropdownContent.style.display = 'grid';
+            });
+    
+            dropdown.addEventListener('mouseleave', function() {
+                dropdownContent.style.display = 'none';
+            });
+        </script>
+
+
+                <!--TOP SPECIAL MESSAGE SECTION-->
+
+        <!--
+	<div class="root_top_message_board_container">
+            <p class="root_top_message_board_text">
+  USER ALERT: Notice goes here. If ..., please contact us at
+  <a href=
+  "mailto:coralreefwatch@noaa.gov?subject=[Question ... for Coral Reef Watch]">
+  coralreefwatch@noaa.gov</a>.
+            </p>
+        </div>
+        <div class="divider_navy_5px"></div>
+        -->
+
+        <!--END OF TOP SPECIAL MESSAGE SECTION-->
+
+
+        <!--TITLE SECTION-->
+
+<div class="title-section">
+<!-- Reporting Coral Bleaching Data and Observations to NOAA Coral Reef Watch -->
+Current Global Bleaching: Status Update & Data Submission
+</div>
+
+<div align="center">
+(Updated: December 4, 2025)
+</div>
+
+<div align="justify" style="padding-left:10px; padding-right:10px">
+
+<!--  ------------------------  main body  ------------------------  -->
+
+<p>
+
+On April 15, 2024, NOAA (in partnership with the International Coral Reef Initiative) 
+<a href="https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event" 
+target="_blank">confirmed</a> the world is in the midst of its 4th global coral 
+bleaching event. 
+
+From 1 January 2023 to 30 September 2025, bleaching-level heat stress has impacted 
+~84.4% of the world’s coral reef area and mass coral bleaching has been documented 
+in at least 83 countries and territories. The percentage has remained the same as 
+of the latest update.  
+
+<p>
+
+The ongoing global coral bleaching event is the biggest to date. The previous 
+record was during the 3rd global coral bleaching event, which occurred from 
+2014-2017, when 68.2% of the world's reef area experienced bleaching-level heat 
+stress. The 1st and 2nd global coral bleaching events occurred in 1998 and 2010, 
+respectively. 
+
+<br>
+
+<div align="center">
+<a href="figures/ct5km_baa5-max_v3.1_tropics_nogrid_20230101to20250930.png">
+<img src="figures/ct5km_baa5-max_v3.1_tropics_nogrid_20230101to20250930.png" width='900'>
+</a>
+</div>
+<div align="justify" style="padding-left:30px; padding-right:30px">
+<font size="-1">
+<i>NOAA CRW's 5km Bleaching Alert Area Maximum product, for the period January 
+1, 2023 - Septemebr 30, 2025. This map displays the maximum accumulated heat stress 
+experienced by coral reefs around the world since January 1, 2023. The dark 
+red/brown areas show the accumulated heat stress capable of causing reef-wide 
+bleaching with mortality of heat-sensitive corals. The light brown (Alert Level 
+3), pink (Alert Level 4), and dark purple (Alert Level 5) areas on the map 
+indicate locations where the magnitude of extreme heat stress exceeds the 
+Bleaching Alert Level 2 threshold, and can lead to multi-species or near complete 
+mortality on a coral reef.</i>
+</font>
+</div>
+
+<div align="center">
+<a href="animation/animation_ct5km_baa5-max-7d_v3.1_tropics_20230101to20251130_daily_t10.gif">
+<img src="animation/animation_ct5km_baa5-max-7d_v3.1_tropics_20230101to20251130_daily_t10.gif" width='900'>
+</a>
+</div>
+<div align="center" style="padding-left:30px; padding-right:30px">
+<font size="-1">
+<i>
+An animation of NOAA CRW's Daily 5km Bleaching Alert Area Maximum product,
+for the period January 1, 2023 - November 30, 2025. 
+(For an animation covering the period of January 1, 2023 - September 30, 2025, click 
+<a href="animation/animation_ct5km_baa5-max-7d_v3.1_tropics_20230101to20250930_daily_t10.gif">here</a>.)
+</i>
+</font>
+</div>
+
+<br><br>
+
+As NOAA and its partners work to document the extent and severity of mass 
+bleaching on coral reefs around the world, the GCBE4 also provides an 
+opportunity for NOAA CRW to compare field data of coral bleaching and mortality 
+with its <a href="/product/5km/index.php" target=_blank">operational daily 
+global 5km-resolution satellite coral bleaching heat stress data products</a>, 
+to help improve product performance, where possible, for all coral reef 
+ecosystem stakeholders. To do this, we need your help!
+</p>
+
+<br>
+
+<center>
+<font size="2">
+<b>
+<a href="https://coralreefwatch.noaa.gov/satellite/analyses_guidance/index_ag.php">
+Other Coral Bleaching Heat Stress Updates, Reports & Analyses (Regional and Global)
+</a>
+</b>
+</font>
+</center>
+
+<br><br><br>
+
+<a name="reporting"></a> <!-- Anchor -->
+
+<div align="center">
+<hr width=100% size='3'>
+<font size="4">
+<b>Reporting Coral Bleaching Data and Observations</b>
+</font>
+<hr width=100% size='3'>
+</div>
+
+<br><br>
+
+<b>**To contribute coral bleaching data and observations (including reports of 
+<u>NO</u> bleaching) to our ongoing effort, please do the following:**</b> 
+<br><br>
+1. E-mail your data files (in Excel, Word, etc.) directly to 
+<a href="mailto:coralreefwatch@noaa.gov?subject=[Coral Bleaching Observations and Data]">coralreefwatch@noaa.gov</a>, 
+OR
+</p>
+<p>
+2. Enter your data into 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScLEVdX7-m6k2wV8_T1AnnGuSxWVTfXjNrGdKZ90CgUUDe4kg/viewform" 
+target="_blank">Coral Reef Watch's Google Form</a>, 
+OR 
+</p>
+<p>
+3. Download Coral Reef Watch's quantitative observations questionnaire (below), 
+enter your data, and e-mail the completed questionnaire to 
+<a href="mailto:coralreefwatch@noaa.gov?subject=[2014-2017 Global Bleaching Event Observations]">coralreefwatch@noaa.gov</a>.
+</p>
+
+<br>
+
+<hr width='50%' size='1'>
+<p class="centered-paragraph">
+<b><a href="noaa_crw_bleaching_data_template_april2025.xlsx">
+NOAA Coral Reef Watch Bleaching Observations Data Entry Template</a></b>
+<br>
+<i>(Excel spreadsheet, 35KB, Revised April, 2025)</i>
+</p>
+<hr width='50%' size='1'>
+
+<br>
+
+<!--
+<p>
+To learn more about the 2014-2017 global coral bleaching event, click 
+<a href="/satellite/analyses_guidance/global_coral_bleaching_2014-17_status.php">here</a>.
+<p>
+To view an animation of the progression (June 2014-May 2017) of this global 
+coral bleaching event, click 
+<a href="/satellite/analyses_guidance/global_coral_bleaching_2014-17_images/anim_satellite_baa_max_monthly_201406to201705_5kmv3.1.gif">here</a>. 
+<i>(You may need to double-click on the image to begin the animation.)</i>
+-->
+
+<u>What Can We All Do?</u>
+<p>
+Predictions pose a daunting future, where even the most conservative estimates suggest 
+mass coral bleaching could occur annually on the majority of coral reefs worldwide by 
+<a href="https://www.nature.com/articles/srep38402" 
+target="_blank">2050<img src="/icons_gen/popup.gif"></a>. Increased 
+<a href="https://www.coris.noaa.gov/activities/projects/bleach_events/" 
+target="_blank">collaboration</a> among coral reef stakeholders is vital given the 
+critical state of reefs all over the world, and their ecological, economic and societal 
+benefits. In addition to 
+<a href="https://oceanservice.noaa.gov/facts/thingsyoucando.html" 
+target="_blank">reducing local threats to coral reefs</a>, galvanizing global urgency 
+and action to reduce atmospheric carbon dioxide (i.e., the root cause of rapid 
+anthropogenic climate change) is critical to strengthen conservation and restoration 
+efforts.
+</p>
+
+<!--
+NOAA Coral Reef Watch co-authored a 
+<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0175490" 
+target=_blank>high-resolution global mass coral bleaching database<img src="/icons_gen/popup.gif"></a>, published in 
+<i>PLoS ONE</i> on April 26, 2017. Databases described in the paper can be accessed 
+<a href="https://figshare.com/projects/Coral_Bleaching_Database_V1/19753" 
+target=_blank>here<img src="/icons_gen/popup.gif"></a>.
+-->
+
+<br>
+
+</div>
+
+        <!--FOOTER-->
+
+        
+        <div class = 'root-footer-split-banner'></div>
+
+        <div class="root-footer-taskbar">
+
+            <div class="root-footer-taskbar-left">
+                <a href="https://www.commerce.gov" class="root-footer-taskbar-link-left">DOC</a>
+                <a class="root-footer-taskbar-arrow">></a>  
+                <a href="https://www.noaa.gov" class="root-footer-taskbar-link-left">NOAA</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://www.nesdis.noaa.gov" class="root-footer-taskbar-link-left">NESDIS</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://www.star.nesdis.noaa.gov/star" class="root-footer-taskbar-link-left">STAR</a>
+                <a class="root-footer-taskbar-arrow">></a>
+                <a href="https://coralreefwatch.noaa.gov" class="root-footer-taskbar-link-left">CORAL REEF WATCH</a>
+            </div>
+
+            <div class="root-footer-taskbar-right">
+                <a href="https://www.coralreef.gov" class="root-footer-taskbar-link-right">USCRTF</a>
+                <a href="https://coralreef.noaa.gov" class="root-footer-taskbar-link-right">CRCP</a>
+                <a href="https://www.coris.noaa.gov/monitoring" class="root-footer-taskbar-link-right">NCRMP</a>
+                <a href="https://www.coris.noaa.gov" class="root-footer-taskbar-link-right">CoRIS</a>
+            </div>
+
+        </div>
+
+        <div class="root-footer">
+
+            <a class="root-footer-noaa-logo" href="http://www.noaa.gov">
+               <img class="root-footer-left" src="/icons_gen/noaalogo.gif" alt="NOAA logo" height='70px' width='70px' border="0">
+            </a>
+
+            <div class="root-footer-info-links">
+		<p>
+                    <a href="http://search.usa.gov/search?affiliate=noaa.gov" title='Click to access Search'>Search</a>
+                    |
+                    <a href="/satellite/docs/recommendations_crw_citation.php">How to cite Coral Reef Watch products and methods</a>
+                </p>
+
+                <p>
+                    <a href="http://www.star.nesdis.noaa.gov/star/productdisclaimer.php">Disclaimer</a>
+                    | 
+                    <a href="http://www.cio.noaa.gov/services_programs/info_quality.html">Information Quality</a>
+                    |
+                    <a href="http://www.star.nesdis.noaa.gov/star/accessibility.php">Accessibility Policy</a>
+		    | 
+                    <a href="http://www.star.nesdis.noaa.gov/star/privacy.php">Privacy Policy</a>
+                </p>
+
+                <p>
+                    <a href="https://www.star.nesdis.noaa.gov/star/survey.php">Customer Survey</a>
+                    |
+                    <a href="mailto:coralreefwatch@noaa.gov?subject=[Question for Coral Reef Watch]">Contact Us</a>
+                    |
+                    Owner: <a href="/index.php">NOAA Coral Reef Watch</a>
+                </p>
+            </div>
+
+            <a class="root-footer-dept-logo" href="http://www.doc.gov">
+               <img class="root-footer-right" src="/icons_gen/commerce.gif" alt="commerce logo" height='70px' width='70px' border="-1">
+            </a>
+
+        </div>
+
+
+    </body>
+</html>
+
+
+
+

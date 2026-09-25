@@ -1,0 +1,36 @@
+source_id,source_name,source_type,url,status
+S001,Locked anchor: WMO topic page,resource_registry,https://wmo.int/topics/heatwave,success
+S002,OpenStreetMap Nominatim geocoding,resource_registry,https://nominatim.openstreetmap.org/search?q=Yangtze%20River%20basin%2C%20China&format=json&limit=5,success
+S003,GDACS disaster alert API,resource_registry,https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?fromDate=2022-05-29&toDate=2022-09-03,success
+S004,Copernicus EMS Rapid Mapping / GFM flood products,resource_registry,https://global-flood.emergency.copernicus.eu/,success
+S005,NASA EONET v3 events,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?q=2022+China+heat+wave+and+Yangtze+drought&status=all&limit=20,success
+S006,HDX CKAN package_search,resource_registry,https://data.humdata.org/api/3/action/package_search?q=2022+China+heat+wave+and+Yangtze+drought+China&rows=10,success
+S007,Package locked anchor,resource_registry,https://wmo.int/topics/heatwave,success
+S008,Open-Meteo daily weather fill,resource_registry,https://archive-api.open-meteo.com/v1/archive?latitude=36.0000&longitude=120.5000&start_date=2022-05-18&end_date=2022-07-16&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC,success
+S009,NASA POWER daily weather fill,resource_registry,https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CT2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CWS10M&community=RE&longitude=120.5000&latitude=36.0000&start=20220518&end=20220716&format=JSON,success
+S010,NASA EONET event search,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?start=2022-06-01&end=2022-07-16&keyword=2022%20China%20heat%20wave%20and%20Yangtze%20drought,success
+S011,compact per-event AOI derived from event bbox,resource_registry,,success
+S012,ERA5-Land hourly aggregate stats,resource_registry,,success
+S013,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S014,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S015,WorldPop GP 100m population sum,resource_registry,,success
+S016,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S017,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S018,Sentinel-2 SR Harmonized dNBR,resource_registry,,success
+S019,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S020,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2022-05-02&BBOX=18.5%2C103.0%2C53.5%2C138.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S021,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2022-07-16&BBOX=18.5%2C103.0%2C53.5%2C138.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S022,Locked event anchor: 2022 China heat wave and Yangtze drought,event_specific_sources,https://wmo.int/topics/heatwave,remote_verified
+S023,WMO China extreme weather heat and drought,event_specific_sources,https://wmo.int/media/news/extreme-weather-china-highlights-climate-change-impacts-and-need-early-warnings,downloaded
+S024,CSX-249_01_text_reports_ReliefWeb_Reports_API_event_country_date_search.error.txt,auxiliary_local_files,,local_file_found
+S025,CSX-249_03_event_catalog_api_GDACS_disaster_alert_API.json,auxiliary_local_files,,local_file_found
+S026,CSX-249_04_specialized_hazard_source_River_discharge_drought_indicators_for_Yangtze_b.html,auxiliary_local_files,,local_file_found
+S027,CSX-249_05_event_anchor_report_Locked_anchor_WMO_topic_page.html,auxiliary_local_files,,local_file_found
+S028,001_event_anchor_report_Locked_anchor_WMO_topic_page_72f8696c.html,auxiliary_local_files,,local_file_found
+S029,015_event_catalog_api_NASA_EONET_v3_events.error.txt,auxiliary_local_files,,local_file_found
+S030,017_event_anchor_report_Package_locked_anchor_72f8696c.html,auxiliary_local_files,,local_file_found
+S031,alphaearth_change_1km.zip,auxiliary_local_files,,local_file_found
+S032,chirps_event_precip.zip,auxiliary_local_files,,local_file_found
+S033,era5_land_event_stack.zip,auxiliary_local_files,,local_file_found
+S034,gpm_imerg_event_precip.zip,auxiliary_local_files,,local_file_found
+S035,worldpop_population_1km.zip,auxiliary_local_files,,local_file_found

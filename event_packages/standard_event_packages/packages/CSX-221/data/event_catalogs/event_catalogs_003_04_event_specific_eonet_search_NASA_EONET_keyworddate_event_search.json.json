@@ -1,0 +1,396 @@
+{
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_5479",
+			"title": "Beckwourth Complex Fire, Plumas County, California, United States",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_5479",
+			"closed": "2023-09-29T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "InciWeb",
+					"url": "http://inciweb.nwcg.gov/incident/7601/"
+				},
+
+							{
+					"id": "PDC",
+					"url": "http://emops.pdc.org/emops/?hazard_id=125966"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2021-07-03T10:30:00Z",
+					"type": "Point", 
+							"coordinates": [ -120.36799999999999, 39.875 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_5452",
+			"title": "Tropical Storm Elsa",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_5452",
+			"closed": "2021-07-14T00:00:00Z",
+				"categories": [
+					{
+					"id": "severeStorms",
+					"title": "Severe Storms"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/Cyclones/report.aspx?eventid=1000795&eventtype=TC"
+				},
+
+							{
+					"id": "NOAA_NHC",
+					"url": "https://www.nhc.noaa.gov/archive/2021/ELSA.shtml"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 35.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-01T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -48.8, 9.4 ]
+							},
+
+							{
+							"magnitudeValue": 40.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-01T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -51.4, 10.1 ]
+							},
+
+							{
+							"magnitudeValue": 40.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-01T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.8, 11.2 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-02T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -55.9, 11.8 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-02T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -58.6, 12.7 ]
+							},
+
+							{
+							"magnitudeValue": 65.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-02T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -61.2, 13.4 ]
+							},
+
+							{
+							"magnitudeValue": 75.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-02T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -63.7, 14.2 ]
+							},
+
+							{
+							"magnitudeValue": 70.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-03T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -66.3, 14.8 ]
+							},
+
+							{
+							"magnitudeValue": 65.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-03T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -69.0, 16.2 ]
+							},
+
+							{
+							"magnitudeValue": 60.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-03T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -71.6, 17.0 ]
+							},
+
+							{
+							"magnitudeValue": 60.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-03T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -73.9, 17.5 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-04T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -75.3, 17.9 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-04T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -75.5, 18.1 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-04T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -76.8, 18.7 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-04T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -77.9, 19.8 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-05T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -79.2, 20.6 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-05T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -79.9, 21.0 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-05T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -81.2, 21.5 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-05T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -81.9, 22.7 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-06T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.3, 23.5 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-06T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.4, 24.1 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-06T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.8, 24.9 ]
+							},
+
+							{
+							"magnitudeValue": 60.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-06T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.0, 25.8 ]
+							},
+
+							{
+							"magnitudeValue": 65.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-07T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.2, 27.3 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-07T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.5, 28.5 ]
+							},
+
+							{
+							"magnitudeValue": 55.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-07T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.6, 29.9 ]
+							},
+
+							{
+							"magnitudeValue": 40.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-07T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.4, 30.8 ]
+							},
+
+							{
+							"magnitudeValue": 40.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-08T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.3, 32.1 ]
+							},
+
+							{
+							"magnitudeValue": 35.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-08T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -81.3, 33.4 ]
+							},
+
+							{
+							"magnitudeValue": 40.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-08T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -79.7, 35.0 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-08T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -78.3, 36.3 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-09T03:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -76.5, 37.6 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-09T09:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -74.3, 39.4 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-09T15:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -72.1, 41.0 ]
+							},
+
+							{
+							"magnitudeValue": 45.00,
+					"magnitudeUnit": "kts",
+					"date": "2021-07-09T21:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -69.5, 43.0 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_5555",
+			"title": "Hotnarko Creek Fire, British Columbia, Canada",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_5555",
+			"closed": "2021-07-28T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "BCWILDFIRE",
+					"url": "http://bcfireinfo.for.gov.bc.ca/hprScripts/WildfireNews/OneFire.asp?ID=841"
+				},
+
+							{
+					"id": "PDC",
+					"url": "http://emops.pdc.org/emops/?hazard_id=126393"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2021-07-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -125.67675, 52.486367 ]
+							}
+
+						
+			]
+		}
+
+		]
+}

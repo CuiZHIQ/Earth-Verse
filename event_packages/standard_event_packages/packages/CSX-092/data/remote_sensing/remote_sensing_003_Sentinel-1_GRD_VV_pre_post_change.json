@@ -1,0 +1,8 @@
+{
+  "dataset": "COPERNICUS/S1_GRD",
+  "counts": {
+    "pre_count": 0,
+    "post_count": 0
+  },
+  "status": "no_sufficient_scenes"
+}

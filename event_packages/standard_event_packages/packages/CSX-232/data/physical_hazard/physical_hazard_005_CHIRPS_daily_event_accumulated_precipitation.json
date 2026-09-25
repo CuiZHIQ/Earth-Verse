@@ -1,0 +1,11 @@
+{
+  "dataset": "UCSB-CHG/CHIRPS/DAILY",
+  "start": "2023-02-06",
+  "end": "2023-02-20",
+  "stats": {
+    "chirps_event_precip_mm_max": null,
+    "chirps_event_precip_mm_mean": null,
+    "chirps_event_precip_mm_min": null,
+    "chirps_event_precip_mm_stdDev": null
+  }
+}

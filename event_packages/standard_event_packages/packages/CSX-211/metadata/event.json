@@ -1,0 +1,41 @@
+{
+  "package_id": "CSX-211",
+  "event_name": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+  "canonical_event_key": "june 2023 canadian wildfire smoke over new york city and the u s northeast",
+  "hazard_family": "air_pollution_smoke_heat",
+  "hazard_label": "Air pollution, smoke, and heat exposure",
+  "scale": "global_synoptic",
+  "region": "Coastal megacities",
+  "primary_evidence_url": "https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/",
+  "existence_verdict": "confirmed",
+  "temporal_match": "yes",
+  "spatial_match": "yes",
+  "hazard_match": "yes",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "95",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "25",
+    "image_files_checked": "4",
+    "valid_images": "4",
+    "formal_slice_files_checked": "9",
+    "hard_error_count": "0",
+    "metadata_warning_count": "1",
+    "final_data_score": "94",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 36,
+    "categories": {
+      "event_catalogs": 4,
+      "event_reports": 6,
+      "exposure_impact": 5,
+      "geospatial_context": 2,
+      "physical_hazard": 10,
+      "remote_sensing": 9
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_20222",
+			"title": "Wildfire in Australia 1028722",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20222",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028722"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 8927.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-20T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 127.08583841737595, -14.079938543695741 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20223",
+			"title": "Wildfire in Australia 1028723",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20223",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028723"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 6426.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-20T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.85516217326855, -13.432791549240818 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20218",
+			"title": "Flood in United States 1103888",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20218",
+			"closed": "2026-05-19T00:00:00Z",
+				"categories": [
+					{
+					"id": "floods",
+					"title": "Floods"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103888"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2026-05-18T20:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -85.387185, 39.0750538 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20219",
+			"title": "Flood in Russia 1103889",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20219",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "floods",
+					"title": "Floods"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103889"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2026-05-18T20:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 41.0263622, 44.8930113 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20153",
+			"title": "Kress Wildfire, Swisher, Texas",
+            "description": "13 Miles N from Plainview, TX",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20153",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/9b17d10e-20c4-4177-9b18-236dfae9d57d"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1500.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T19:06:00Z",
+					"type": "Point", 
+							"coordinates": [ -101.7812159, 34.38652018 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20208",
+			"title": "Wildfire in Australia 1028712",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20208",
+			"closed": "2026-05-19T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028712"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 5468.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-18T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.44587190269715, -13.344203293002213 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20224",
+			"title": "Wildfire in Russian Federation 1028720",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20224",
+			"closed": "2026-05-20T00:00:00Z",
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "GDACS",
+					"url": "https://www.gdacs.org/report.aspx?eventtype=WF&eventid=1028720"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 7005.00,
+					"magnitudeUnit": "hectare",
+					"date": "2026-05-18T19:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.29075617711356, 51.1427156261384 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20158",
+			"title": "Sailor Cap Wildfire, Owyhee, Idaho",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20158",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/73708b7d-cc4d-42d2-b139-74bfd89018f3"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 8000.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T17:49:00Z",
+					"type": "Point", 
+							"coordinates": [ -115.439608, 42.727608 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20157",
+			"title": "SANDY Wildfire, Ventura, California",
+            "description": "1 Miles S from Simi Valley, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20157",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/a4eb258a-f5d1-46c3-9560-8fbc8042d9c3"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 1385.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T13:21:00Z",
+					"type": "Point", 
+							"coordinates": [ -118.743684, 34.250088 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_20159",
+			"title": "RIVER Wildfire, Kern, California",
+            "description": "15 Miles NE from BAKERSFIED, CA",
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_20159",
+			"closed": null,
+				"categories": [
+					{
+					"id": "wildfires",
+					"title": "Wildfires"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "IRWIN",
+					"url": "https://irwin.doi.gov/observer/incidents/91c7775a-98f7-45b3-a8c1-3433796360ca"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": 2535.00,
+					"magnitudeUnit": "acres",
+					"date": "2026-05-18T12:05:00Z",
+					"type": "Point", 
+							"coordinates": [ -118.7891667, 35.4458333 ]
+							}
+
+						
+			]
+		}
+
+		]
+}

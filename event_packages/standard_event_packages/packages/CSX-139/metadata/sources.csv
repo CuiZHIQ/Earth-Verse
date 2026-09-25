@@ -1,0 +1,39 @@
+source_id,source_name,source_type,url,status
+S001,Locked anchor report,resource_registry,https://www.copernicus.eu/pt-pt/node/35970,success
+S002,GDACS RSS feed,resource_registry,https://www.gdacs.org/xml/rss.xml,success
+S003,Open-Meteo daily weather,resource_registry,"https://archive-api.open-meteo.com/v1/archive?latitude=50.0&longitude=-5.0&start_date=2023-10-15&end_date=2023-10-31&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max&timezone=UTC",success
+S004,NASA POWER daily,resource_registry,"https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M,PRECTOTCORR,WS10M&community=RE&longitude=-5.0&latitude=50.0&start=20231015&end=20231031&format=JSON",success
+S005,OSM Nominatim,resource_registry,https://nominatim.openstreetmap.org/search?q=Storm%20Ciaran%20North%20Atlantic%20Europe%20November%202023&format=jsonv2&limit=1,success
+S006,Worldview pre-event thumbnail,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-10-15&BBOX=45.0%2C-15.0%2C55.0%2C5.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S007,Worldview in-event thumbnail,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-10-31&BBOX=45.0%2C-15.0%2C55.0%2C5.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S008,Overpass small roads and critical amenities,resource_registry,https://overpass-api.de/api/interpreter,success
+S009,NASA EONET event search,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?start=2023-10-29&end=2023-11-03&keyword=Storm%20Ciaran%20North%20Atlantic%20explosive%20cyclogenesis,success
+S010,compact per-event AOI derived from event bbox,resource_registry,,success
+S011,ERA5-Land hourly aggregate stats,resource_registry,,success
+S012,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S013,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S014,WorldPop GP 100m population sum,resource_registry,,success
+S015,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S016,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S017,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S018,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-09-29&BBOX=-10.0%2C-17.5%2C25.0%2C17.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S019,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-10-31&BBOX=-10.0%2C-17.5%2C25.0%2C17.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S020,Locked event anchor: Storm Ciaran North Atlantic explosive cyclogenesis,event_specific_sources,https://www.copernicus.eu/pt-pt/node/35970,remote_verified
+S021,Met Office names Storm Ciaran,event_specific_sources,https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2023/met-office-names-storm-ciaran,downloaded
+S022,03_event_catalog_api_GDACS_Copernicus_EMS_event_search.json,auxiliary_local_files,,local_file_found
+S023,04_physical_hazard_api_Open-Meteo_historical_wind_rain_point_API.json,auxiliary_local_files,,local_file_found
+S024,05_text_reports_HDX_CKAN_package_search.json,auxiliary_local_files,,local_file_found
+S025,04_exposure_or_impact_WorldPop_population_grids.html,auxiliary_local_files,,local_file_found
+S026,05_exposure_or_impact_GHSL_built-up_and_settlement_layers.php,auxiliary_local_files,,local_file_found
+S027,06_exposure_or_impact_OpenStreetMap_Geofabrik_extracts.json,auxiliary_local_files,,local_file_found
+S028,07_city_feedback_or_air_quality_Open-Meteo_Air_Quality_API.json,auxiliary_local_files,,local_file_found
+S029,09_geocoding_or_aoi_Natural_Earth_Admin-0_physical_basemap.zip,auxiliary_local_files,,local_file_found
+S030,14_physical_hazard_api_Open-Meteo_historical_wind_rain_point_API.json,auxiliary_local_files,,local_file_found
+S031,16_remote_sensing_preview_or_product_Copernicus_EMS_Rapid_Mapping.html,auxiliary_local_files,,local_file_found
+S032,17_specialized_hazard_source_NOAA_Ocean_Prediction_Center_storm_analyses.php,auxiliary_local_files,,local_file_found
+S033,20_physical_hazard_api_NASA_POWER_daily_point_weather_API.json,auxiliary_local_files,,local_file_found
+S034,21_remote_sensing_preview_or_product_NASA_Worldview_GIBS_MODIS_thumbnail.jpg,auxiliary_local_files,,local_file_found
+S035,02_event_catalog_api_NASA_EONET_search.json,auxiliary_local_files,,local_file_found
+S036,01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found
+S037,02_event_specific_wikidata_search_Wikidata_entity_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found
+S038,05_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json,auxiliary_local_files,,local_file_found

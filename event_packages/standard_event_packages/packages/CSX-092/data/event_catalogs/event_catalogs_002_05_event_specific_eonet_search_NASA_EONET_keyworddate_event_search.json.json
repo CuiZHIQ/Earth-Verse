@@ -1,0 +1,3560 @@
+{
+	"title": "EONET Events",
+	"description": "Natural events from EONET.",
+	"link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+	"events": [
+		{
+			"id": "EONET_1227",
+			"title": "Tropical Storm Leepi",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_1227",
+			"closed": "2013-06-25T00:00:00Z",
+				"categories": [
+					{
+					"id": "severeStorms",
+					"title": "Severe Storms"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "UNISYS",
+					"url": "http://weather.unisys.com/hurricane/w_pacific/2013/LEEPI/track.dat"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.60, 15.50 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.50, 17.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.30, 18.40 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.30, 19.50 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.50, 19.80 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.60, 21.40 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.30, 22.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.30, 23.70 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.20, 24.70 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.40, 27.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.50, 28.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.90, 29.70 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.20, 31.10 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_1179",
+			"title": "Tropical Storm Barry",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_1179",
+			"closed": "2013-06-26T00:00:00Z",
+				"categories": [
+					{
+					"id": "severeStorms",
+					"title": "Severe Storms"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "UNISYS",
+					"url": "http://weather.unisys.com/hurricane/atlantic/2013/BARRY/track.dat"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -81.50, 12.40 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-16T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.00, 13.40 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-16T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -82.80, 14.20 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-16T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -83.80, 14.80 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -84.80, 15.30 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -85.90, 15.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -87.00, 16.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -87.90, 16.30 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-17T22:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -88.40, 16.50 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -88.60, 16.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -89.30, 17.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -90.30, 17.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-18T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -91.30, 18.20 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -92.20, 18.80 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -93.10, 19.20 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -94.00, 19.50 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-19T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -94.80, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -95.40, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T06:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -95.90, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T11:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -96.40, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T12:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -96.50, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T18:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -97.00, 19.60 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -97.50, 19.60 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_2733",
+			"title": "Iceberg B30",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_2733",
+			"closed": "2019-06-21T00:00:00Z",
+				"categories": [
+					{
+					"id": "seaLakeIce",
+					"title": "Sea and Lake Ice"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "BYU_ICE",
+					"url": "http://www.scp.byu.edu/data/iceberg/ascat/b30.ascat"
+				},
+
+							{
+					"id": "NATICE",
+					"url": "http://www.natice.noaa.gov/pub/icebergs/Iceberg_Tabular.csv"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-05-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -107.3557, -74.7689 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-10-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -106.7162, -74.3355 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-11-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -107.0365, -73.8453 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-11-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -108.0672, -73.5001 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-01-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -108.7895, -73.0702 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-02-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -109.6452, -72.6737 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -111.2063, -72.6074 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -112.4172, -72.3424 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -113.6115, -72.0783 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -115.0393, -71.9558 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.0482, -71.5938 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-09-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -114.7150, -71.4398 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -116.0143, -71.6885 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -117.5406, -71.7384 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-31T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -118.9931, -71.7668 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-11-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -119.2371, -71.3109 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-12-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -120.2106, -71.6422 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-12-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -118.7133, -71.5518 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -120.0084, -71.3578 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -121.0632, -71.6632 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -121.7731, -71.2728 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -122.9542, -71.5677 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -124.1402, -71.2444 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -123.1212, -70.8998 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-08-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -122.3184, -71.2933 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -122.7816, -71.7461 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -124.6076, -72.0334 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -126.4474, -72.0512 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -127.6874, -72.3684 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -128.7903, -72.8659 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-10-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -129.4619, -73.2982 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-11-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -128.3376, -73.6552 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-02-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -129.7700, -73.9098 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-03-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -131.3582, -74.0653 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-01-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -132.4219, -73.6683 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-02-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -134.2615, -73.7783 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-02-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -135.7905, -74.0435 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-03-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -137.5636, -74.0181 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-03-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -139.2004, -73.9489 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-04-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -140.9370, -74.0345 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-01-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -154.75, -73.63 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-04-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -156.81, -73.50 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -158.52, -73.64 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-06-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -162.22, -73.02 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-07-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -161.53, -72.48 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-08-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -161.74, -72.02 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-08-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -160.29, -71.31 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -158.53, -70.37 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -157.43, -70.04 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-10-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -156.03, -69.29 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-12-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -155.59, -68.84 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-01-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -155.23, -68.34 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -154.25, -67.82 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -152.71, -67.54 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-04-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -152.12, -67.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-05-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -151.03, -66.73 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-06-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -150.39, -66.61 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-06-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -150.20, -66.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-07-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -150.63, -65.53 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-07-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -149.37, -64.91 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-08-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -149.27, -64.34 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-08-31T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -148.34, -63.68 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-09-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -147.13, -63.20 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-09-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -146.17, -62.57 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-10-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -143.13, -63.04 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-10-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -142.11, -63.48 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-11-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -141.18, -62.95 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-12-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -141.26, -63.55 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-12-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -139.80, -63.98 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-01-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -138.14, -64.85 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-02-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -137.89, -65.58 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-04-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -137.27, -65.08 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-04-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -135.71, -64.46 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-05-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -134.83, -64.78 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-05-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -133.84, -65.12 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2019-06-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -132.29, -65.38 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_2872",
+			"title": "Iceberg C28B",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_2872",
+			"closed": "2018-08-10T00:00:00Z",
+				"categories": [
+					{
+					"id": "seaLakeIce",
+					"title": "Sea and Lake Ice"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "BYU_ICE",
+					"url": "http://www.scp.byu.edu/data/iceberg/ascat/c28b.ascat"
+				},
+
+							{
+					"id": "NATICE",
+					"url": "http://www.natice.noaa.gov/pub/icebergs/Iceberg_Tabular.csv"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2011-08-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 115.9522, -65.9238 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-08-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 116.6996, -65.5742 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 115.5430, -65.1101 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 114.4061, -65.2147 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 113.2264, -65.2829 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 111.9580, -65.2908 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 110.5255, -65.3027 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 109.2490, -65.2143 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 108.1019, -65.0874 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 106.5779, -65.0621 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 105.5459, -64.9227 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 104.5092, -64.8177 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 103.2013, -64.8238 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 102.1856, -64.6505 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 101.3895, -64.3023 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 100.1526, -64.2453 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 98.8452, -64.2313 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 97.7364, -64.1340 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-31T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 96.6301, -64.2343 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 95.3739, -64.3704 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 94.3507, -64.5356 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 93.4701, -64.8659 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 92.1969, -65.1380 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 90.9674, -65.3486 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 90.1544, -65.7156 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 89.0310, -65.7909 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 87.6106, -65.7244 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 86.3913, -65.6689 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 85.0353, -65.6758 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 83.6504, -65.6588 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 82.3270, -65.6113 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 81.2003, -65.7429 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 80.3082, -66.0123 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 79.4975, -66.3542 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 78.5064, -66.5784 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 77.6267, -66.8680 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-12-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 77.2909, -67.3148 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 77.5994, -67.8436 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-03-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 76.6967, -68.2108 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 75.4386, -68.3939 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 74.2262, -68.5196 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 72.9903, -68.2408 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 71.5544, -67.8240 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 71.3254, -67.3246 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 70.6531, -66.8586 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 69.3450, -66.7869 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 68.1974, -66.8015 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 66.5964, -66.6883 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 65.3615, -66.7727 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 63.7947, -66.6858 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 62.6798, -66.5618 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 61.4189, -66.6647 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 60.1940, -66.5733 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 59.0874, -66.3829 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-07-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 58.1818, -66.0910 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-08-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 56.9655, -65.7873 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-08-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 55.6224, -65.8338 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-09-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 54.2347, -65.4019 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-10-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 52.8620, -65.4999 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-10-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 51.7702, -65.6281 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-11-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 50.5392, -65.8497 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-12-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 49.5573, -66.0962 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-12-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 48.2362, -66.3789 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-12-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 47.0275, -66.5855 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-12-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 46.0460, -66.8358 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-01-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 45.6740, -66.2589 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-01-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 44.5478, -67.0907 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-01-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 43.6682, -66.7964 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-03-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 42.5294, -66.7689 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 43.2399, -67.1966 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 42.2283, -67.5184 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 40.3140, -67.8687 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 39.1113, -68.2657 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 37.6936, -68.3302 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 36.2235, -68.2301 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 34.0952, -68.1340 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 32.8785, -67.9555 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 31.8940, -68.3402 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 30.8396, -68.7560 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 29.4733, -68.9964 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-04-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 28.0428, -69.3716 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 26.4759, -69.7187 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 24.5821, -69.8543 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 22.6913, -69.8684 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 21.3331, -69.7187 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 19.8363, -69.6355 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 17.7389, -69.5245 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 16.2936, -69.3517 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 14.8827, -69.1334 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 13.5855, -69.2640 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 12.4445, -69.5161 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 10.8945, -69.6008 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 9.1061, -69.6834 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 7.5161, -69.7685 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 5.4748, -69.8353 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 3.8651, -69.8941 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 2.4654, -69.8409 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 1.0700, -69.7006 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -0.1626, -69.4780 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -3.4605, -69.9669 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -4.9289, -69.9151 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -6.2317, -70.1655 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -7.7009, -70.3597 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -9.0651, -70.3275 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -10.6778, -70.6307 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -11.7536, -70.9770 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -13.3907, -71.1544 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -14.9670, -71.5182 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-31T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -16.2533, -71.7420 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -17.3206, -72.1451 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -18.6852, -72.4792 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -19.8757, -72.7665 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -21.0339, -73.1659 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -22.4711, -73.4805 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -23.9836, -73.6696 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -25.7288, -73.8098 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.0229, -74.0938 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-10-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.5964, -74.5352 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-11-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -29.1372, -74.3348 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-03-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -30.8015, -74.2851 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-01-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -47.68, -68.47 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-04-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -51.48, -66.59 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -51.19, -64.84 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-06-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -51.59, -63.04 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-06-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.11, -62.69 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-07-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.11, -61.71 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-08-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -54.31, -62.10 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -54.08, -61.66 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-12-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -54.38, -61.94 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-12-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.01, -61.75 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-12-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -52.24, -61.26 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-01-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.55, -61.29 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-01-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -53.13, -60.88 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-02-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -49.84, -60.31 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -50.29, -59.86 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -49.95, -59.02 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -48.74, -58.38 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-04-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -47.77, -58.19 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-04-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -46.97, -59.15 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-05-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -45.51, -59.52 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-05-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -43.64, -58.81 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-06-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -44.64, -58.73 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-06-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -44.62, -58.19 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-07-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -42.68, -57.90 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-08-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -40.86, -57.80 ]
+							}
+
+						
+			]
+		},
+
+			{
+			"id": "EONET_2877",
+			"title": "Iceberg B09D",
+            "description": null,
+			"link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_2877",
+			"closed": "2018-05-04T00:00:00Z",
+				"categories": [
+					{
+					"id": "seaLakeIce",
+					"title": "Sea and Lake Ice"
+				}
+
+	    				],
+    			"sources": [
+					{
+					"id": "BYU_ICE",
+					"url": "http://www.scp.byu.edu/data/iceberg/ascat/b09d.ascat"
+				},
+
+							{
+					"id": "NATICE",
+					"url": "http://www.natice.noaa.gov/pub/icebergs/Iceberg_Tabular.csv"
+				}
+
+						
+			],
+					"geometry": [
+					{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-02-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 143.4317, -66.1465 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-03-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 142.5204, -65.7731 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-03-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 141.1709, -65.6058 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-03-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 139.9198, -65.4019 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-03-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 138.9012, -65.6089 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-04-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 137.7313, -65.2983 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-04-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 136.7053, -65.0866 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-04-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 135.6858, -64.7287 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-04-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 134.3052, -64.7642 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-04-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 133.2338, -64.7554 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-05-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 133.5894, -65.1934 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-06-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 132.8361, -65.5960 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-07-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 131.7160, -65.6713 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-07-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 130.6192, -65.4805 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-07-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 129.2558, -65.2016 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-08-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 126.6877, -65.1345 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-08-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 125.4941, -65.1620 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-08-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 124.4408, -65.4224 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-09-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 123.3587, -65.4646 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-09-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 122.2148, -65.4440 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-09-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 121.1129, -65.4955 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-10-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 119.9834, -65.3510 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-10-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 118.8137, -65.3331 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-10-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 117.7714, -65.1561 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-10-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 116.4694, -65.0512 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-11-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 115.2892, -65.0317 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 114.0827, -65.0715 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 113.1390, -65.3412 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 111.4851, -65.2532 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 110.2502, -65.3492 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 109.2153, -65.2145 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2012-12-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 107.9653, -65.2923 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-01-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 106.9239, -65.1516 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-01-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 105.9983, -64.8887 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-01-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 104.9461, -64.9919 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-02-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 103.7978, -64.8638 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-02-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 103.0004, -64.4916 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-02-24T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 101.9354, -64.5633 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 101.1101, -64.2268 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 100.0417, -64.0851 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-03-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 98.7988, -64.0565 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 97.5508, -64.1350 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 96.4566, -64.2231 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 95.3129, -64.4123 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 94.3159, -64.7134 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-04-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 93.2657, -64.8314 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 92.2858, -65.0874 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-07T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 91.2106, -65.4055 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 90.2121, -65.6071 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 88.7769, -65.7691 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 87.6480, -65.7251 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 86.1900, -65.7322 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-05-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 84.9643, -65.7621 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 83.8034, -65.7249 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 82.6148, -65.5280 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-11T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 81.4337, -65.6183 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 80.7508, -66.0226 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 79.8032, -66.3767 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-06-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 78.5495, -66.5922 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 77.4466, -66.9335 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 76.2957, -66.8989 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-07-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 74.9700, -66.8980 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 73.9739, -66.6347 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 72.7194, -66.5063 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 71.3406, -66.5458 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 70.1468, -66.6623 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-08-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 68.8248, -66.9525 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-09-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 67.4539, -67.1203 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-09-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 66.3531, -66.8936 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-09-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 65.1470, -66.7990 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-09-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 63.8602, -66.6985 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 62.6977, -66.6434 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 61.5533, -66.7046 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-10-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 60.4537, -66.5868 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-11-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 59.2989, -66.2960 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-11-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 58.3328, -65.9669 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-12-05T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 57.2409, -65.6850 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2013-12-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 56.2232, -65.4791 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-01-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 55.0061, -65.6574 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-01-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 53.6461, -65.5315 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-01-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 52.8770, -65.1873 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 51.7804, -65.5228 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 50.6652, -65.8916 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 49.5143, -66.1686 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-02-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 48.6141, -66.4446 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-03-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 47.4907, -66.4791 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-03-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 46.5504, -66.7323 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-03-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 45.4586, -67.0000 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 44.3734, -67.1736 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 42.4019, -67.5296 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 41.1090, -67.8733 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 39.6111, -68.1307 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 38.4128, -68.2421 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 36.8663, -68.2782 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-04-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 35.3930, -68.2022 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 34.0955, -68.1935 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 32.6034, -68.3467 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-03T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 31.3611, -68.6469 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2014-06-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 30.1519, -68.8821 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 28.5303, -69.1882 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 27.1560, -69.6587 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 25.7756, -69.8573 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-08T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 24.3252, -69.9481 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 22.8596, -69.9165 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 21.3935, -69.6205 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 19.3533, -69.5638 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 17.8515, -69.4372 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 16.4416, -69.3088 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 14.8670, -69.1987 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 13.5537, -69.3032 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-05-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 12.3456, -69.4965 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 11.0662, -69.5440 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 9.7171, -69.6842 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 8.3560, -69.6921 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 6.9962, -69.6932 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 5.6555, -69.8515 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 2.9693, -69.9570 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-26T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 1.4222, -69.8130 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-06-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ 0.3217, -69.5223 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -1.1290, -69.5235 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -2.8915, -69.8923 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -4.5117, -69.9980 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -6.0351, -70.0078 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-14T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -7.3898, -70.2527 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -8.8096, -70.3591 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -10.3395, -70.6829 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-07-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -12.3006, -70.9481 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -14.0848, -71.1869 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-06T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -15.3554, -71.4383 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -16.1694, -71.9028 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-18T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -17.1218, -72.3248 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-20T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -18.8259, -72.5273 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -20.2418, -72.8455 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-08-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -21.3896, -73.2367 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -22.6585, -73.5348 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -24.1664, -73.7682 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-09-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -26.0118, -73.8727 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-10-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.1162, -74.2616 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-10-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -28.9086, -73.9310 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-10-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.1739, -74.2780 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-11-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -29.0738, -73.9400 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2015-11-28T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -30.6817, -74.1066 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-02-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -32.3778, -74.2113 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2016-04-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -34.0833, -74.0750 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-01-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -45.33, -64.82 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-04-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -40.60, -63.61 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-05-19T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -38.27, -62.51 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-06-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -34.88, -61.01 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-06-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -34.17, -60.68 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-07-21T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -33.56, -59.79 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-08-04T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -34.26, -59.51 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-08-25T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -33.85, -58.86 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-01T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -32.14, -58.66 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-15T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -29.91, -58.42 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-22T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -28.98, -57.76 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-09-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -29.05, -57.00 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-10-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -28.50, -56.48 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-10-27T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.83, -55.91 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-11-10T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.39, -55.45 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-11-17T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -27.85, -54.99 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2017-12-29T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -26.47, -54.92 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-01-12T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -24.03, -55.67 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-02-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -22.23, -54.15 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-02T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -20.78, -54.22 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-09T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -19.63, -54.83 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-16T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -18.27, -54.20 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-23T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -16.31, -54.10 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-03-30T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -15.47, -53.36 ]
+							},
+
+							{
+							"magnitudeValue": null,
+					"magnitudeUnit": null,
+					"date": "2018-04-13T00:00:00Z",
+					"type": "Point", 
+							"coordinates": [ -14.52, -52.72 ]
+							}
+
+						
+			]
+		}
+
+		]
+}

@@ -1,0 +1,43 @@
+{
+  "package_id": "CSX-139",
+  "event_name": "Storm Ciaran North Atlantic explosive cyclogenesis",
+  "canonical_event_key": "2023 storm ciaran",
+  "hazard_family": "extratropical_storm_severe_convection",
+  "hazard_label": "Extratropical storm and severe convection",
+  "scale": "metro_urban",
+  "region": "Global oceans",
+  "primary_evidence_url": "https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2023/met-office-names-storm-ciaran",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "92",
+  "release_decision": "keep_with_minor_fix",
+  "benchmark_readiness": "ready_for_task_synthesis",
+  "benchmark_readiness_label": "ready for task synthesis",
+  "data_integrity": {
+    "local_files_checked": "22",
+    "image_files_checked": "4",
+    "valid_images": "4",
+    "formal_slice_files_checked": "8",
+    "hard_error_count": "0",
+    "metadata_warning_count": "0",
+    "final_data_score": "99",
+    "final_data_decision": "ready",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 38,
+    "categories": {
+      "air_quality": 1,
+      "event_catalogs": 5,
+      "event_reports": 3,
+      "exposure_impact": 7,
+      "geospatial_context": 2,
+      "other": 4,
+      "physical_hazard": 8,
+      "remote_sensing": 8
+    }
+  }
+}

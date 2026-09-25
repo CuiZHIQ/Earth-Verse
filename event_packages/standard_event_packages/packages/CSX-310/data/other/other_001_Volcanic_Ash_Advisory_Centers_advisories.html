@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Volcanic Ash Products, Washington VAAC | OSPO</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index" />
+    <meta http-equiv="last-modified" content="Thursday, 21-May-2026 20:35:05 UTC" />
+    <meta http-equiv="expires" content="0" />
+
+    <meta content="https://ospo.noaa.gov/assets/img/ospo_default_og.jpg" property="og:image"/>
+    <meta content="1920" property="og:image:width"/>
+    <meta content="1080" property="og:image:height"/>
+    <meta content="website" property="og:type"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="NOAA Office of Satellite and Product Operations (OSPO)">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ospo.noaa.gov/">
+    <meta property="og:image" content="https://ospo.noaa.gov/assets/img/ospo_default_og.jpg">
+    <meta property="og:site_name" content="NOAA OSPO">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NOAA Office of Satellite and Product Operations (OSPO)">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://ospo.noaa.gov/assets/img/ospo_default_og.jpg">
+    <meta name="twitter:site" content="@NOAASatellites">
+
+	<link rel="preload" href="/assets/fonts/source-sans-pro/sourcesanspro-regular-webfont.woff2" as="font" type="font/woff2"  crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/source-sans-pro/sourcesanspro-bold-webfont.woff" as="font" type="font/woff2"  crossorigin="anonymous">
+    <link rel="shortcut icon" href="/graphics/favicon.ico" />
+    <link href="/assets/css/main.css?v=164439989197111" rel="stylesheet" type="text/css" />
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"></noscript>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></noscript>
+    <style>#loader{display: none !important;}</style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+  <script src="../../js/togeojson.js"></script>
+
+  <style type="text/css">
+    #tableDiv {
+        height: 500px;
+        width: 100%;
+    }
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 600px;
+      width: 100%;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+.esri-feature {
+           letter-spacing: 0em;
+           line-height: 1.3rem;
+           font-feature-settings: "liga" 1, "calt" 0;
+           font-size: 14px;
+           background: #fff;
+           padding: 0.25em;
+}
+
+.esri-feature-content {
+    font-size: 14px;
+}
+
+.esri-feature__text {
+    line-height: 1.3;
+}
+
+.esri-widget {
+    --esri-widget-padding-x: 10px;
+    --esri-widget-padding-y: 7px;
+    --esri-widget-padding: var(--esri-widget-padding-y) var(--esri-widget-padding-x);
+    box-sizing: border-box;
+    color: #323232;
+    background-color: #fff;
+    font-family: Avenir Next, Helvetica Neue, helvetica, arial, sans-serif;
+}
+     @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+</style>
+
+
+</head>
+
+
+<body>
+  
+<div class="left-0 nav-wrap position-relative right-0 z-500 " id="nav-top">
+	<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+	<section class="usa-banner" aria-label="Official website of the United States government">
+		<div class="usa-accordion">
+			<header class="usa-banner__header">
+				<div class="usa-banner__inner">
+					<div class="grid-col-auto">
+						<img aria-hidden="true" class="usa-banner__header-flag" src="/assets/img/us_flag_small.png"
+							alt="" width="16" height="11" />
+					</div>
+					<div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
+						<p class="usa-banner__header-text">
+							An official website of the United States government
+						</p>
+						<p class="usa-banner__header-action">Here’s how you know</p>
+					</div>
+					<button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false"
+						aria-controls="gov-banner-default">
+						<span class="usa-banner__button-text">Here’s how you know</span>
+					</button>
+				</div>
+			</header>
+			<div class="usa-banner__content usa-accordion__content" id="gov-banner-default" hidden>
+				<div class="grid-row grid-gap-lg">
+					<div class="usa-banner__guidance tablet:grid-col-6">
+						<img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" role="img"
+							alt="" aria-hidden="true" />
+						<div class="usa-media-block__body">
+							<p>
+								<strong>Official websites use .gov</strong><br />A
+								<strong>.gov</strong> website belongs to an official government
+								organization in the United States.
+							</p>
+						</div>
+					</div>
+					<div class="usa-banner__guidance tablet:grid-col-6">
+						<img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" role="img"
+							alt="" aria-hidden="true" />
+						<div class="usa-media-block__body">
+							<p>
+								<strong>Secure .gov websites use HTTPS</strong><br />A
+								<strong>lock</strong> (
+								<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64"
+										viewBox="0 0 52 64" class="usa-banner__lock-image" role="img"
+										aria-labelledby="banner-lock-description" focusable="false">
+										<title id="banner-lock-title">Lock</title>
+										<desc id="banner-lock-description">
+											Locked padlock icon
+										</desc>
+										<path fill="#000000" fill-rule="evenodd"
+											d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+									</svg> </span>) or <strong>https://</strong> means you’ve safely connected to
+								the .gov website. Share sensitive information only on official,
+								secure websites.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<header
+		class="usa-header usa-header--basic usa-header--megamenu grid-container-widescreen desktop:padding-x-10 padding-x-0">
+		<div class="desktop:padding-0 grid-container-widescreen margin-top-0 padding-y-1 usa-nav-container">
+			<div class="border-0 flex-justify usa-navbar z-500">
+				<div class="usa-logo" id="ospo-logo-desktop">
+					<a href="/">
+						<img src="/assets/img/ospo_logo.svg" id="logo-svg" alt="Home" />
+					</a>
+				</div>
+				<div class="usa-logo" id="ospo-logo-mobile">
+					<a href="/">
+						<img src="/assets/img/ospo_mobile_blk.svg"
+							alt="Home" />
+					</a>
+				</div>
+
+                <button class="usa-menu-btn">
+                    <span class="menu-icon menu-icon--blue"></span>Menu
+                </button>
+
+			</div>
+			<nav aria-label="Primary navigation" class="margin-bottom-2 usa-nav" style="z-index: 9999;">
+				<button class="usa-nav__close" type="button"><img alt="" role="img"
+						src="/assets/img/usa-icons/close.svg"></button>
+				<ul class="usa-nav__primary usa-accordion">
+					<li class="usa-nav__primary-item">
+						<button aria-controls="extended-nav-section-products" aria-expanded="false"
+							class="usa-accordion__button usa-nav__link" type="button">
+							<span>Products</span>
+						</button>
+						<ul class="usa-nav__submenu" hidden="" id="extended-nav-section-products">
+							<li class="usa-nav__submenu-item">
+								<a href="/products/"><span>All Products</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/atmosphere/"><span>Atmosphere</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/land/"><span>Land</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/ocean/"><span>Ocean</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/suites/"><span>Product Suites</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/imagery/"><span>Imagery</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/retirements.html"><span>Legacy Product Retirements</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="usa-nav__primary-item">
+						<button aria-controls="extended-nav-section-one" aria-expanded="false"
+							class="usa-accordion__button usa-nav__link" type="button">
+							<span>Hazard Analysis</span>
+						</button>
+						<ul class="usa-nav__submenu" hidden="" id="extended-nav-section-one">
+							<li class="usa-nav__submenu-item">
+								<a href="/products/land/hms.html"><span>Hazard Mapping
+										System</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/ocean/tropical/"><span>Tropical Cyclones</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/atmosphere/vaac/"><span>Washington VAAC</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/ocean/marinepollution/"><span>Marine Pollution</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="usa-nav__primary-item">
+						<button aria-controls="extended-nav-section-satellites" aria-expanded="false"
+							class="usa-accordion__button usa-nav__link" type="button">
+							<span>Operational Satellites</span>
+						</button>
+						<ul class="usa-nav__submenu" hidden="" id="extended-nav-section-satellites">
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/operational-satellites/"><span>Satellite Operations</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/goes/"><span>GOES</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/poes/"><span>POES</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/jpss/status.html"><span>JPSS</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/metop/status.html"><span>MetOp</span></a>
+							</li>
+							<!--<li class="usa-nav__submenu-item">
+								<a href="/operations/snpp/status.html"><span>SNPP</span></a>
+							</li>-->
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/current-satellite-missions/currently-flying/jason-3"
+									target="_blank"><span>Jason</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/current-satellite-missions/currently-flying/defense-meteorological-satellite-program"
+									target="_blank"><span>DMSP</span></a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="usa-nav__primary-item">
+						<button aria-controls="extended-nav-section-resources" aria-expanded="false"
+							class="usa-accordion__button usa-nav__link" type="button">
+							<span>Resources</span>
+						</button>
+						<ul class="usa-nav__submenu" hidden="" id="extended-nav-section-resources">
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/messages.html"><span>Satellite Alerts</span></a>
+							</li>
+							<!--<li class="usa-nav__submenu-item">
+								<a href="/operations/cob.html"><span>Ingest Logs</span></a>
+							</li>-->
+							<li class="usa-nav__submenu-item">
+								<a href="/resources/documents/"><span>Documents &amp; Reports</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/resources/data-access/"><span>Data Access</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/resources/data-access/policy-on-access.html"><span>Policy on Access</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/operations/goes/inrstats.html"><span>INR Statistics</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/products/ppp/index.html"><span>Pre Product Processing</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.ospo.noaa.gov/resources/cemscs/goeswkly.txt"><span>Weekly
+										Operations Plan</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.ospo.noaa.gov/resources/cemscs/navsum.txt"><span>Navigation
+										Summary</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="usa-nav__primary-item">
+						<button aria-controls="extended-nav-section-about" aria-expanded="false"
+							class="usa-accordion__button usa-nav__link" type="button"><span>About</span></button>
+						<ul class="usa-nav__submenu" hidden="" id="extended-nav-section-about">
+							<li class="usa-nav__submenu-item">
+								<a href="/about/mission/"><span>Mission</span></a>
+							</li>
+
+							<li class="usa-nav__submenu-item">
+								<a href="/about/leadership/"><span>Leadership</span> </a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/about/organization/"><span>Organization Chart</span> </a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/our-satellites/related-information/history-of-noaa-satellites"
+									target="_blank"><span>History</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/wallops-command-and-data-acquisition-station"
+									target="_blank"><span>Wallops CDA</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/about/our-offices/office-of-satellite-and-product-operations-ospo/fairbanks-command-and-data-acquisition-station-fcdas"
+									target="_blank"><span>Fairbanks CDA</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="https://www.nesdis.noaa.gov/data-research-services/services"
+									target="_blank"><span>Services</span></a>
+							</li>
+							<li class="usa-nav__submenu-item">
+								<a href="/about/contact/"><span>Contact Us</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<section aria-label="Search component" class="display">
+					<form class="usa-search usa-search--small margin-0" role="search" id="search-form" method="get"
+						action="https://search.usa.gov/search">
+						<input id="affiliate" name="affiliate" type="hidden" value="www.ospo.noaa.gov" />
+						<label class="usa-sr-only" for="query">Search</label>
+						<input class="margin-left-3 search-input bg-transparent border-0  border-white text-white" id="query" name="query" type="search" placeholder="Search" autocomplete="off">
+						<button class="usa-button" type="submit"><img alt="Search" class="usa-search__submit-icon"
+								src="/assets/img/usa-icons-bg/search--white.svg">
+						</button>
+					</form>					
+					
+					<script type="text/javascript">
+						//<![CDATA[
+							var usasearch_config = { siteHandle:"www.ospo.noaa.gov" };
+						//]]>
+					</script>
+				</section>
+			</nav>
+		</div>
+	</header>
+</div>
+<div class="usa-overlay z-100"></div>
+
+
+
+<div class="hero myallery position-relative z-bottom h-220">
+    <div class="swiper-wrapper position-relative">
+        <div class="hero-overlay z-100"></div>
+        <div class="paragraph swiper-slide swiper-image text-center" style="background-image: url('/_assets/img/heros/volcanic_ash_hero.jpg')">
+            <div class="grid-container-widescreen desktop:padding-x-10">
+                <div class="grid-row grid-gap-none">
+                    <h1 class="desktop:font-heading-xl desktop:padding-top-5 hp-heading line-height-heading-1 margin-top-9 padding-top-8 tablet:text-center text-white z-400">
+Washington Volcanic Ash Advisory Center
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+      <div id="tableDiv"></div>
+</div>
+<div id="viewDiv"></div>
+  <fieldset
+            class="flex-align-center font-body-3xs margin-left-2 margin-y-1 tablet:display-flex usa-fieldset">
+            <legend class="usa-sr-only">Map controls</legend>
+            <span class="text-bold margin-right-2">Map controls:</span>
+
+            <label class="display-flex flex-align-center margin-right-2">
+                <input type="checkbox" id="mouse_wheel">
+                <span class="margin-left-05">Mouse wheel zoom</span>
+            </label>
+
+            <label class="display-flex flex-align-center margin-right-2">
+                <input type="checkbox" id="hide_legend">
+                <span class="margin-left-05">Hide Legend</span>
+            </label>
+
+            <label class="display-flex flex-align-center margin-right-2">
+                <input type="checkbox" id="show_gallery">
+                <span class="margin-left-05">More basemaps</span>
+            </label>
+
+            <label class="display-flex flex-align-center">
+                <input type="checkbox" id="expand_map">
+                <span class="margin-left-05">Expand map</span>
+            </label>
+            <label class="display-flex flex-align-center">
+                <span class="margin-left-05"><a target="_new" href="washington-vaac-all-volcanoes.html">All Volcanoes Map</a></span>
+            </label>
+        </fieldset>
+
+<p class="font-sans-3xs line-height-sans-4 padding-bottom-1">
+* Where polygon colors overlap, the resulting color will not precisely match what is presented in the legend. It will generally be a combination of the colors (eg. Red + Yellow = Orange, which would mean OBS and OBS + 6 Hours overlap).
+</p>
+
+    <div class="grid-container-widescreen padding-x-2 margin-y-3 desktop:padding-x-10">
+
+      <h2 class="hp-heading margin-y-2 text-primary">Volcanic Ash Products</h2>
+
+      <div class="padding-bottom-0">
+        <ul class="featured-cards grid-gap-3 grid-row usa-card-group">
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2 ">
+                <div class="title">
+                  ICAO Volcanic Ash Advisories
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="/products/atmosphere/vaac/messages.html">
+                  <div class="usa-card__img">
+                    <img src="https://www.ospo.noaa.gov/VAAC/ARCH20/GFX/FUEG0411.jpg" class="add-aspect-16x9"
+                      alt="Volcanic Ash Advisories">
+                  </div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>International Civil Aviation Organization (ICAO) Products include Volcanic Ash Advisories (VAA) and
+                  associated Volcanic Ash Graphic (VAG) - VAA are issued every 6 hours or sooner for ash active
+                  volcanoes with VAG when ash is detected.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="/products/atmosphere/vaac/messages.html">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  Satellite Imagery
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="/products/atmosphere/vaac/satellite_imagery.html">
+                  <div class="usa-card__img">
+                    <img src="/img/satImg-vaac.jpg" class="add-aspect-16x9" alt="Volcanic Ash Satellite Imagery">
+                  </div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>Imagery from the GOES-16/GOES-19/Himiwari satellites featuring sectors within the Washington VAAC
+                  airspace.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="/products/atmosphere/vaac/satellite_imagery.html">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+          <!-- <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  SO2 Imagery
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://satepsanone.nesdis.noaa.gov/pub/OMI/OMISO2/index.html">
+                  <div class="usa-card__img">
+                    <img src="/img/vaac/SO2.gif" class="add-aspect-16x9" alt="Ozone Monitoring">
+                  </div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>Latest Ozone Monitoring Instrument (OMI) imagery measuring SO2 - Includes 24-Hour Composite images
+                  and volcano specific images.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://satepsanone.nesdis.noaa.gov/pub/OMI/OMISO2/index.html">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li> -->
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  OMPS SO2
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="/products/atmosphere/ompsso2/index.html#NOAA20">
+                  <div class="usa-card__img">
+                    <img src="/data/atmosphere/ompsso2/NH/gif/OMPS_NH_SO2_FRONT_N20.GIF" class="add-aspect-16x9"
+                      alt="Ozone Mapping Suite">
+                  </div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>The Ozone Mapping and Profiler Suite (OMPS) is a hyperspectral instrument which consists of three
+                  spectrometers designed to measure the concentration of ozone in the Earth's atmosphere.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="/products/atmosphere/ompsso2/index.html#NOAA20">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-container-widescreen padding-x-2 margin-y-3 desktop:padding-x-10">
+
+      <h2 class="hp-heading margin-y-2 text-primary">Outside OSPO Links</h2>
+      <div class="padding-bottom-0">
+        <ul class="featured-cards grid-gap-3 grid-row usa-card-group">
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  Volcanic Ash Advisory Centers (VAAC)
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="other-vaacs.html">
+                  <div class="usa-card__img"><img alt="Map of VAAC worldwide" class="add-aspect-16x9"
+                      src="/img/vccmap.png"></div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>In an effort to keep the aviation community informed of volcanic hazards, nine VAAC are
+                  tasked with monitoring the movement of volcanic ash within their assigned airspace.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="http://www.weather.gov/vaac/" target="_blank">Anchorage</a> &nbsp; <a class="link"
+                  href="https://ssl.smn.gob.ar/vaac/buenosaires/productos.php?lang=en"
+                  target="_blank">Buenos&nbsp;Aires</a> &nbsp; <a class="link"
+                  href="http://www.bom.gov.au/aviation/volcanic-ash/darwin-va-advisory.shtml" target="_blank">Darwin</a> &nbsp; <a class="link"
+                  href="https://www.metoffice.gov.uk/services/transport/aviation/regulated/international-aviation/vaac/va-advisories"
+                  target="_blank">London</a> &nbsp; <a class="link"
+                  href="https://weather.gc.ca/eer/vaac/index_e.html"
+                  target="_blank">Montreal</a> &nbsp; <a class="link"
+                  href="https://ds.data.jma.go.jp/svd/vaac/data/vaac_list.html" target="_blank">Tokyo</a> &nbsp;
+                <a class="link" href="http://vaac.meteo.fr/advisory/" target="_blank">Toulouse</a> &nbsp;
+                <a class="link" href="/products/atmosphere/vaac/messages.html">Washington</a> &nbsp;
+                <a class="link" href="http://vaac.metservice.com/" target="_blank">Wellington</a>
+              </div>
+            </div>
+          </li>
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  United States Geological Survey (USGS)
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://www.usgs.gov/programs/VHP" target="_blank">
+                  <div class="usa-card__img"><img alt="USGS Volcano Hazards" class="add-aspect-16x9"
+                      src="/img/vaac/USGS_logo.svg"></div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>The objectives of the USGS Volcano Hazards Program are to advance the scientific
+                  understanding of volcanic processes and to lessen the harmful impacts of volcanic activity.
+                </p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://www.usgs.gov/observatories/yvo" target="_blank">Yellowstone
+                  Observatory</a> &nbsp; <a class="link" href="https://www.usgs.gov/observatories/calvo"
+                  target="_blank">California Observatory</a> &nbsp; <a class="link"
+                  href="https://www.usgs.gov/observatories/cvo" target="_blank">Cascades Observatory</a> &nbsp; <a class="link"
+                  href="https://www.usgs.gov/observatories/hvo" target="_blank">Hawaiian Observatory</a>  &nbsp; <a class="link"
+                  href="https://www.usgs.gov/observatories/avo" target="_blank">Alaska Observatory</a>
+              </div>
+            </div>
+          </li>
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  Air Resources Laboratory (ARL) HYSPLIT Model
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://www.ready.noaa.gov/READYVolcAsh.php">
+                  <div class="usa-card__img"><img alt="ARL Hybrid Single Particle Lagrangian Integrated Trajectory"
+                      class="add-aspect-16x9" src="/img/vaac/HYSPLIT.png"></div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>The ARL Hybrid Single Particle Lagrangian Integrated Trajectory (HYSPLIT) model is a complete
+                  system for computing simple air parcel trajectories to complex dispersion and deposition
+                  simulations.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://www.arl.noaa.gov/hysplit/" target="_blank">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-container-widescreen padding-x-2 margin-y-3 desktop:padding-x-10">
+
+      <div class="padding-bottom-0">
+        <ul class="featured-cards grid-gap-3 grid-row usa-card-group">
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  NOAA Environmental Visualization Laboratory
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://www.nesdis.noaa.gov/our-environment/dust-ash-fire/ash" target="_blank">
+                  <div class="usa-card__img"><img alt="NESDIS Ash Producs" class="add-aspect-16x9"
+                      src="/img/vaac/OSEI_volc.gif"></div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>High-resolution, detailed imagery of hazardous weather events as detected in remotely sensed
+                  data.</p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://www.nesdis.noaa.gov/our-environment/dust-ash-fire/ash"
+                  target="_blank">View Product <i class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  International Civil Aviation Organization (ICAO)
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://www.icao.int/" target="_blank">
+                  <div class="usa-card__img"><img alt="ICAO" class="add-aspect-16x9" src="/img/vaac/ICAO.gif">
+                  </div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>The International Civil Aviation Organization was created in 1944 to promote the safe and
+                  orderly development of international civil aviation throughout the world.
+                </p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://www.icao.int/" target="_blank">View
+                  Product <i class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+          <li class="usa-card tablet:grid-col-4">
+            <div class="usa-card__container">
+              <div class="padding-0 margin-0 line-height-ui-2">
+                <div class="title">
+                  Smithsonian Global Volcanism Program
+                </div>
+              </div>
+              <div class="usa-card__media">
+                <a href="https://volcano.si.edu/" target="_blank">
+                  <div class="usa-card__img"><img alt="Smithsonian Global Volcanism Program" class="add-aspect-16x9"
+                      src="/img/vaac/smithsonian.GIF"></div>
+                </a>
+              </div>
+              <div class="usa-card__body">
+                <p>The Smithsonian's Global Volcanism Program seeks better understanding of all volcanoes
+                  through documenting their eruptions - small as well as large - during the past 10,000 years.
+                </p>
+              </div>
+              <div class="usa-card__footer">
+                <a class="link" href="https://volcano.si.edu/" target="_blank">View Product <i
+                    class="fa-solid fa-arrow-right"></i> </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <script src="https://js.arcgis.com/4.30/"></script>
+  <script src="main_map2.js"></script>
+
+  <footer class="usa-footer usa-footer--big" role="contentinfo">
+    <div class="">
+        <a id="return-to-top" class="scrollToTopBtn"><i class="fa-solid fa-angle-up"></i></a>
+    </div>
+
+    <div class="usa-footer__primary-section">
+
+        <div class="usa-footer__primary-content">
+            <div class="grid-container-widescreen desktop:padding-x-10">
+                <div class="grid-row grid-gap">
+
+                    <nav role="navigation" aria-labelledby="block-nesdis-footer-menu" id="block-nesdis-footer">
+
+                        <h2 class="usa-sr-only" id="block-nesdis-footer-menu">Footer menu</h2>
+                        <ul class="menu menu--footer nav">
+                            <li class="expanded dropdown first">
+                                <a href="/" class="expanded dropdown first dropdown-toggle"
+                                    data-toggle="dropdown">OSPO <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="https://www.commerce.gov/" target="_blank">Department of Commerce</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.noaa.gov/" target="_blank">NOAA</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nesdis.noaa.gov/" target="_blank">NESDIS</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/mission/">Our Mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="/site-map.html">Site Map</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="expanded dropdown">
+                                <a href="/products/" class="expanded dropdown dropdown-toggle"
+                                    data-toggle="dropdown" aria-label="Products">Products <span
+                                        class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="first">
+                                        <a href="/products/atmosphere/" class="first">Atmosphere</a>
+                                    </li>
+                                    <li>
+                                        <a href="/products/land/">Land</a>
+                                    </li>
+                                    <li>
+                                        <a href="/products/ocean/">Ocean</a>
+                                    </li>
+                                    <li>
+                                        <a href="/products/suites/">Product Suites</a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="/products/imagery/" class="last">Imagery</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="expanded dropdown">
+                                <a href="/operations/operational-satellites/" class="expanded dropdown dropdown-toggle">Satellites <span
+                                        class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="first">
+                                        <a href="/operations/goes/">GOES</a>
+                                    </li>
+                                    <li>
+                                        <a href="/operations/poes/">POES</a>
+                                    </li>
+                                    <li>
+                                        <a href="/operations/jpss/status.html">JPSS</a>
+                                    </li>
+                                    <li>
+                                        <a href="/operations/metop/status.html">MetOp</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="expanded dropdown">
+                                <a href="/about/contact/"
+                                    class="expanded dropdown dropdown-toggle" data-toggle="dropdown"
+                                    aria-label="Contact">Contact <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="mailto:OSPOWebmaster@noaa.gov">OSPO Webmaster</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about/contact/">Contact
+                                            Information</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://touchpoints.app.cloud.gov/touchpoints/df7e5897/submit" target="_blank">Customer
+                                            Survey</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:ESPCoperations@noaa.gov">ESPC
+                                            Helpdesk</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://touchpoints.app.cloud.gov/touchpoints/fe076ca9/submit" target="_blank">User Services</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    <div class="bg-gray-10">
+        <div class="grid-container-widescreen desktop:padding-x-10">
+            <div class="grid-row grid-gap">
+                <div class="grid-col-fill">
+                    <div class="grid-container-widescreen nesdis-footer__second">
+                        <div class="grid-row grid-gap">
+                            <div class="grid-col-2">
+                                <a href="https://noaa.gov/" aria-label="footer noaa logo"
+                                    class="footer-logo"></a>
+                            </div>
+                            <div class="grid-col-fill horizontal-list">
+
+                                <nav aria-labelledby="block-footersecond-2-menu" id="block-footersecond-2">
+                                    <h2 class="usa-sr-only" id="block-footersecond-2-menu">Footer Second</h2>
+
+                                    <ul class="menu menu--footer-second nav">
+                                        <li class="first">
+                                            <a target="_blank" href="http://www.noaa.gov/accessibility" class="first">Accessibility</a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.noaa.gov/disclaimer">Disclaimer</a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.noaa.gov/information-technology/foia" title="FOIA">FOIA</a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank"  href="https://www.noaa.gov/office-of-chief-information-officer/it-policy-oversight/information-quality">Information Quality</a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://www.noaa.gov/protecting-your-privacy">Privacy Policy</a>
+                                        </li>
+                                        <li class="last">
+                                            <a target="_blank" href="https://www.usa.gov/" class="last">USA.gov</a>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="/assets/js/uswds.min.js" defer></script>
+<script type="text/javascript" src="/assets/js/uswds-init.min.js"></script>
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+<script src="/assets/js/animation-controls.js"></script>
+
+<script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        // Load the gtag.js script
+        var gaScript = document.createElement('script');
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WFK3K5ECCC';
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+  
+        // Once loaded, initialize gtag
+        gaScript.onload = function () {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-WFK3K5ECCC');
+        };
+      }, 3000); // Delay GA4 load by 3 seconds
+    });
+
+    function loadScriptWithFadeIn(src, timeout) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+  
+    var timeoutId = setTimeout(function() {
+      console.log('Script load timed out: ' + src);
+    }, timeout);
+  
+    script.onload = function() {
+      clearTimeout(timeoutId);
+  
+      // Fade in the button (if it exists)
+      var button = document.getElementById('fba-button');
+      if (button) {
+        button.style.display = 'inline-block';
+        setTimeout(function() {
+          button.classList.add('show');
+        }, 50);
+      }
+  
+      // Update aria-label on skip nav (if element exists)
+      const skipNavLink = document.querySelector('.usa-skipnav.touchpoints-skipnav');
+      if (skipNavLink) {
+        skipNavLink.setAttribute('aria-label', 'Skip to feedback');
+      }
+    };
+  
+    document.body.appendChild(script);
+  }
+  
+  
+  // Usage: Load the scripts and fade in the button
+  loadScriptWithFadeIn('https://touchpoints.app.cloud.gov/touchpoints/df7e5897.js', 5000);  // 5 seconds timeout
+  loadScriptWithFadeIn('https://siteimproveanalytics.com/js/siteanalyze_6294131.js', 5000);  // 5 seconds timeout
+
+  </script>
+  
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOC&subagency=NOAA"></script>
+
+
+
+  </body>
+</html>

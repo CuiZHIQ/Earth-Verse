@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="/static/images/favicon.ico" />
+        <title>
+            
+            Activations
+            
+            
+            
+            | Copernicus EMS On Demand Mapping
+            
+        </title>
+       
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        
+
+
+
+        
+        
+
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+        
+        
+        
+
+        <script nonce="rmInline">
+            IS_USER_AUTHENTICATED =  false ;
+        </script>
+        <!-- NOTIFICATIONS -->
+        <script src="/static/js/notifications.js"></script>
+
+        <!-- Analytics and CCK -->
+        <script nonce="rmInline">
+            window.isFirstLoad = true
+        </script>
+        <script type="application/json">{"utility":"analytics","siteID":"c46b72c6-9fe9-4f0a-8b43-7d87875b474a"}</script>
+        <script defer="defer" src="https://webtools.europa.eu/load.js" type="text/javascript"></script>
+    </head>
+
+    <body class="activations" id="activations">
+        <script nonce="rmInline">
+            var url = window.location.href;
+            var script = document.createElement('script');
+            script.type = 'application/json';
+            var json = {
+                "utility" : "cck",
+                "url": "https://ec.europa.eu/info/cookies_en"
+            };
+            script.innerHTML = JSON.stringify(json);
+            document.body.appendChild(script);
+        </script>
+        <script type="module" src="/static/js/analytics.js"></script>
+        <input type="hidden" name="csrfmiddlewaretoken" value="WQgpCvJvNQqQL9WTzIKzyDVW9eFjlx5liM1GnFp3tpPFswYWI84pRUWcKPbjRlRY">
+        
+
+        
+
+<div class="container-fluid top-menu d-flex flex-wrap d-none d-lg-block">
+  <div class="container-xxl d-flex flex-wrap">
+    <ul class="nav me-auto">
+      <li class="nav-item slogan d-none d-lg-block">#EUSpace</li>
+    </ul>
+    <ul class="nav">
+      <li class="nav-item d-none d-lg-block"><a href="/resources/" class="nav-link px-3">Resources</a></li>
+      <li class="nav-item d-none d-lg-block"><a href="https://www.copernicus.eu/en/network/get-touch" target="_blank" class="nav-link px-3">Contact</a></li>
+      
+        <li class="nav-item">
+          <a class="btn btn-sm rounded-pill" href="/accounts/login/" role="button">
+            <i class="bi bi-person-circle me-2"></i>Login 
+          </a>
+        </li >
+      
+    </ul>
+  </div>
+</div>
+
+<header>
+  <nav class="navbar navbar-dark navbar-expand-lg" aria-label="navbar">
+    <div class="container-xxl">
+        <a class="d-flex align-items-center mb-lg-0 me-lg-auto text-decoration-none" href="/">
+          <img class="copernicus-full-logo d-none d-lg-block" src="/static/assets/ccl/images/copernicus_eu_logo_full.svg" />
+          <img class="cems-logo d-none d-lg-block" src="/static/images/cems-logo-ext.png" />
+          <img class="copernicus-logo d-lg-none" src="/static/assets/ccl/images/copernicus_eu_logo_white.svg" />
+          <img class="cems-logo d-lg-none" src="/static/images/cems-logo-white-ext.png" />
+        </a>
+        <div class="col-xs-6">
+          <a href="/search/" class="d-lg-none"><i class="bi bi-search me-2"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-controls="navbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbar">
+        <div class="offcanvas-header p-4">
+          <button type="button" class="fs-4 btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1">
+            
+            <li class="nav-item"><a href="/" id="home" class="nav-link px-2">Home</a></li>
+            
+            
+
+
+  <li class="nav-item about">
+    <a href="/about/" class="nav-link px-2">About</a>
+  </li>
+
+  <li class="nav-item activations">
+    <a href="/activations/" class="nav-link px-2 active">Activations</a>
+  </li>
+
+  <li class="nav-item stats">
+    <a href="/stats/" class="nav-link px-2">Stats</a>
+  </li>
+
+  <li class="nav-item news">
+    <a href="/news/" class="nav-link px-2">News</a>
+  </li>
+
+            
+            
+            <li class="nav-item d-lg-none"><a href="/accounts/login/" class="nav-link px-2">Login</a></li>
+            
+            <li class="nav-item d-none d-lg-block"><a href="/search/" class="nav-link px-2 search-active"><i class="bi bi-search me-2"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+        
+  
+    
+    
+
+
+<nav class="breadcrumb-container" aria-label="Breadcrumb">
+  <div class="container-xxl">
+    <div class="row">
+      <div class="col-lg-12">
+        <ol class="breadcrumb">
+          
+            
+              <li class="p-1 mr-1">
+                <a href="/">Home</a>
+                <i class="bi bi-chevron-right"></i>
+              </li>
+            
+          
+            
+              <li class="p-1 mr-1" aria-current="page">Activations</li>
+            
+          
+        </ol>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <main class="container">
+    <div class="row">
+      <article class="col-md-6">
+        <h2 class="my-3">Activations</h2>
+        
+      </article>
+    </div>
+  </main>
+  <div id="datastats"></div>
+
+
+        
+
+<footer>
+  <div class="container-fluid container-cems p-3 p-sm-3">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 mb-3">
+          <div class="col d-flex align-items-start">
+            <div
+              class="d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3"
+            >
+              <img
+                class="img-fluid"
+                style="min-width: 80px"
+                src="/static/assets/ccl/images/ccl-icon-emergency.svg"
+              />
+            </div>
+            <div>
+              <p class="mt-3 mb-2" style="color: #faa73e; font-size: 1rem">
+                Emergency Management<br />Service
+              </p>
+              <p>A service in support<br />of European emergency response</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h6>EMS Mapping Service</h6>
+          <ul class="list-unstyled">
+            <li>
+              <a href="/about/mapping-service-timeline/"
+                >Mapping Service Timeline</a
+              >
+            </li>
+            <li>
+              <a href="/about/who-can-request-the-service/"
+                >Who can request the service</a
+              >
+            </li>
+            <li>
+              <a href="/about/how-to-request-the-service/"
+                >How to request the service</a
+              >
+            </li>
+            <li><a href="/resources/">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h6>News &amp; Media</h6>
+          <ul class="list-unstyled">
+            <li><a href="/news/">News</a></li>
+            <li>
+              <a href="/news/category/meeting-workshop/"
+                >Meetings &amp; Workshops</a
+              >
+            </li>
+            <li><a href="/news/category/situational-reporting/">Situational Reporting</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <h6>Follow us</h6>
+          <div class="d-flex justify-content-between">
+            <div>
+              <a href="https://x.com/CopernicusEMS">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-twitter-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.youtube.com/playlist?list=PLNxdHvTE74JxrHSiSJLuYQW8zkphx7pTT"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  fill="currentColor"
+                  class="bi bi-youtube"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/showcase/eu-in-emergencies/">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-linkedin"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a href="/latest/feed/">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-rss-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid container-copernicus">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 copernicus-logo">
+          <img
+            class="img-fluid"
+            src="/static/assets/ccl/images/copernicus_eu_logo_white.svg"
+          />
+        </div>
+        <div class="col-md-6 offset-md-3 services">
+          <div class="row">
+            <div class="col-md-2 col-4 text-center service">
+              <a href="https://atmosphere.copernicus.eu/" target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-atmosphere-white.svg"
+                /><span>Atmosphere</span></a
+              >
+            </div>
+            <div class="col-md-2 col-4 text-center service">
+              <a href="https://climate.copernicus.eu/" target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-climate-white.svg"
+                /><span>Climate Change</span></a
+              >
+            </div>
+            <div class="col-md-2 col-4 text-center service">
+              <a href="https://emergency.copernicus.eu/" target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-emergency-white.svg"
+                /><span>Emergency</span></a
+              >
+            </div>
+            <div class="col-md-2 col-4 text-center service">
+              <a
+                href="https://www.copernicus.eu/en/copernicus-services/security"
+                target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-security-white.svg"
+                /><span>Security</span></a
+              >
+            </div>
+            <div class="col-md-2 col-4 text-center service">
+              <a href="https://land.copernicus.eu/" target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-land-white.svg"
+                /><span>Land</span></a
+              >
+            </div>
+            <div class="col-md-2 col-4 text-center service">
+              <a href="https://marine.copernicus.eu/" target="_blank"
+                ><img
+                  class="img-fluid"
+                  src="/static/assets/ccl/images/ccl-icon-marine-white.svg"
+                /><span>Marine</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid container-copyright">
+    <div class="container-xxl">
+      <div class="row">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            © European Union, 1995 - 2026
+          </li>
+          <li class="list-inline-item"><i class="bi bi-dot"></i></li>
+          <li class="list-inline-item">
+            <a href="https://commission.europa.eu/cookies-policy_en"
+              >EC cookies policy</a
+            >
+          </li>
+          <li class="list-inline-item"><i class="bi bi-dot"></i></li>
+          <li class="list-inline-item"><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+          <li class="list-inline-item"><i class="bi bi-dot"></i></li>
+          <li class="list-inline-item">
+            <a
+              href="https://mapping.emergency.copernicus.eu/documents/161/Privacy_Statement_CEMS_16Jan2026.pdf"
+              >Privacy statement</a
+            >
+          </li>
+          <li class="list-inline-item"><i class="bi bi-dot"></i></li>
+          <li class="list-inline-item"><a href="/accessibility-statement/">Accessibility Statement</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+        <script src="/static/js/jquery/jquery.min.js"></script>
+        <script src="/static/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        
+
+
+  
+  <!-- Production: use built file from manifest/S3 -->
+  <script type="module" src="https://cems-mapping-website.s3.amazonaws.com/static/datastats/assets/main-B5eNSZgW.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cems-mapping-website.s3.amazonaws.com/static/datastats/assets/main-DTWjS8Lk.css">
+
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+source_id,source_name,source_type,url,status
+S001,Locked package evidence report,resource_registry,https://science.nasa.gov/earth/earth-observatory/devastating-floods-in-pakistan-150279/,success
+S002,HDX CKAN package search,resource_registry,https://data.humdata.org/api/3/action/package_search?q=2022%20Pakistan%20monsoon%20floods&rows=10,success
+S003,WorldPop population grids,resource_registry,https://hub.worldpop.org/geodata/listing?id=29&iso3=Pakistan,success
+S004,GHSL built-up and settlement layers,resource_registry,https://ghsl.jrc.ec.europa.eu/download.php,success
+S005,OpenStreetMap Geofabrik extracts,resource_registry,https://download.geofabrik.de/index-v1-nogeom.json,success
+S006,Open-Meteo Air Quality API,resource_registry,"https://air-quality-api.open-meteo.com/v1/air-quality?latitude=27.7000&longitude=68.8500&start_date=2022-06-14&end_date=2022-10-01&hourly=pm10,pm2_5,ozone,nitrogen_dioxide",success
+S007,Natural Earth Admin-0/physical basemap,resource_registry,https://naturalearth.s3.amazonaws.com/110m_cultural/ne_110m_admin_0_countries.zip,success
+S008,GDACS event list GeoJSON API,resource_registry,https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventtype=FL&fromDate=2022-06-14&toDate=2022-10-01,success
+S009,NASA GPM IMERG precipitation via CMR/Earthdata,resource_registry,https://cmr.earthdata.nasa.gov/search/collections.json?keyword=GPM%20IMERG&page_size=5,success
+S010,CHIRPS daily precipitation,resource_registry,https://data.chc.ucsb.edu/products/CHIRPS-2.0/,success
+S011,Open-Meteo historical weather point API,resource_registry,"https://archive-api.open-meteo.com/v1/archive?latitude=27.7000&longitude=68.8500&start_date=2022-06-14&end_date=2022-10-01&hourly=precipitation,wind_speed_10m&timezone=UTC",success
+S012,Copernicus EMS Rapid Mapping / EMSR archive,resource_registry,https://rapidmapping.emergency.copernicus.eu/,success
+S013,Nominatim event location search,resource_registry,https://nominatim.openstreetmap.org/search?q=Indus+basin+and+Pakistan+Pakistan&format=jsonv2&limit=5,success
+S014,NASA POWER daily point weather API,resource_registry,https://power.larc.nasa.gov/api/temporal/daily/point?parameters=PRECTOTCORR%2CT2M%2CWS10M&community=AG&longitude=68.8500&latitude=27.7000&start=20220614&end=20221001&format=JSON,success
+S015,NASA Worldview/GIBS MODIS thumbnail,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2022-06-14&BBOX=25.2000%2C66.3500%2C30.2000%2C71.3500&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S016,compact per-event AOI derived from event bbox,resource_registry,,success
+S017,ERA5-Land hourly aggregate stats,resource_registry,,success
+S018,ERA5-Land temperature precipitation wind stack,resource_registry,,success
+S019,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S020,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S021,WorldPop GP 100m population sum,resource_registry,,success
+S022,WorldPop GP 100m population resampled 1km AOI,resource_registry,,success
+S023,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S024,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S025,Google Satellite Embedding annual cosine-change raster,resource_registry,,success
+S026,Sentinel-1 GRD VV pre/post change,resource_registry,,success
+S027,Sentinel-1 GRD VV pre/post change raster,resource_registry,,success
+S028,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S029,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2022-05-15&BBOX=5.0%2C61.5%2C36.0%2C96.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S030,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2022-08-07&BBOX=5.0%2C61.5%2C36.0%2C96.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S031,Locked event anchor: 2022 Pakistan monsoon floods,event_specific_sources,https://science.nasa.gov/earth/earth-observatory/devastating-floods-in-pakistan-150279/,remote_verified
+S032,NASA Earth Observatory - Devastating floods in Pakistan,event_specific_sources,https://science.nasa.gov/earth/earth-observatory/devastating-floods-in-pakistan-150279/,downloaded
+S033,04_physical_hazard_api_Open-Meteo_historical_weather_point_API.json,auxiliary_local_files,,local_file_found
+S034,osm_overpass_exposure_slice.json,auxiliary_local_files,,local_file_found
+S035,sentinel1_vv_change_250m.zip,auxiliary_local_files,,local_file_found
+S036,sentinel1_vv_change_stats.json,auxiliary_local_files,,local_file_found
+S037,01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found
+S038,02_event_specific_wikidata_search_Wikidata_entity_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found
+S039,04_event_specific_disaster_catalog_GDACS_event_list_for_package_time_window.json,auxiliary_local_files,,local_file_found

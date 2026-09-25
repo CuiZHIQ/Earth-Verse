@@ -1,0 +1,45 @@
+source_id,source_name,source_type,url,status
+S001,Locked anchor: NASA disaster activation,resource_registry,https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023,success
+S002,OpenStreetMap Nominatim geocoding,resource_registry,https://nominatim.openstreetmap.org/search?q=Kahramanmaras%20%2F%20Gaziantep%20region&format=json&limit=5,success
+S003,USGS ComCat earthquake query,resource_registry,https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-02-06&endtime=2023-02-20&orderby=magnitude&limit=20,success
+S004,USGS event products: ShakeMap / PAGER,resource_registry,https://earthquake.usgs.gov/data/shakemap/,success
+S005,GDACS earthquake alert API,resource_registry,https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?fromDate=2023-02-03&toDate=2023-02-23&eventtype=EQ,success
+S006,NOAA NCEI/WDS Global Historical Tsunami Database,resource_registry,https://www.ngdc.noaa.gov/hazel/view/hazards/tsunami/event-search,success
+S007,USGS Did You Feel It? community intensity,resource_registry,https://earthquake.usgs.gov/data/dyfi/,success
+S008,NASA EONET v3 events,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?q=2023+Turkiye-Syria+earthquake+sequence&status=all&limit=20,success
+S009,HDX CKAN package_search,resource_registry,https://data.humdata.org/api/3/action/package_search?q=2023+Turkiye-Syria+earthquake+sequence+Turkiye+%2F+Syria&rows=10,success
+S010,Open-Meteo historical daily point sample,resource_registry,https://archive-api.open-meteo.com/v1/archive?latitude=37.18606&longitude=37.27246&start_date=2023-02-06&end_date=2023-02-20&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC,success
+S011,NASA POWER daily point sample,resource_registry,https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CWS10M&community=AG&longitude=37.27246&latitude=37.18606&start=20230206&end=20230220&format=JSON,success
+S012,NASA Worldview/GIBS JPEG thumbnail,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-02-06&BBOX=37.15903%2C37.25894%2C37.21246%2C37.28428&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=768&HEIGHT=512,success
+S013,OpenStreetMap Overpass small AOI sample,resource_registry,https://overpass-api.de/api/interpreter,success
+S014,compact per-event AOI derived from event bbox,resource_registry,,success
+S015,ERA5-Land hourly aggregate stats,resource_registry,,success
+S016,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S017,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S018,WorldPop GP 100m population sum,resource_registry,,success
+S019,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S020,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S021,Sentinel-1 GRD VV pre/post change,resource_registry,,success
+S022,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S023,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-01-07&BBOX=35.5%2C-0.5%2C70.5%2C34.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S024,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-02-13&BBOX=35.5%2C-0.5%2C70.5%2C34.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S025,Locked event anchor: 2023 Turkiye-Syria earthquake sequence,event_specific_sources,https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023,remote_verified
+S026,NASA Disasters Turkiye-Syria earthquakes activation,event_specific_sources,https://disasters.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023,downloaded
+S027,USGS event GeoJSON us6000jllz,event_specific_sources,https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=us6000jllz,downloaded
+S028,CSX-232_01_text_reports_ReliefWeb_Reports_API_event_country_date_search.error.txt,auxiliary_local_files,,local_file_found
+S029,CSX-232_02_geocoding_or_aoi_OpenStreetMap_Nominatim_geocoding.json,auxiliary_local_files,,local_file_found
+S030,CSX-232_03_event_catalog_api_GDACS_earthquake_alert_API.json,auxiliary_local_files,,local_file_found
+S031,event_2023-02-13_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S032,pre_2023-01-07_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S033,007_event_catalog_api_USGS_ComCat_earthquake_query_6f9754aa.json,auxiliary_local_files,,local_file_found
+S034,017_physical_hazard_api_Open-Meteo_historical_daily_point_sample_f3a0434a.json,auxiliary_local_files,,local_file_found
+S035,018_physical_hazard_api_NASA_POWER_daily_point_sample_447c4efb.json,auxiliary_local_files,,local_file_found
+S036,020_exposure_or_impact_OpenStreetMap_Overpass_small_AOI_sample_af92053c.json,auxiliary_local_files,,local_file_found
+S037,alphaearth_change_1km.zip,auxiliary_local_files,,local_file_found
+S038,chirps_event_precip.zip,auxiliary_local_files,,local_file_found
+S039,era5_land_event_stack.zip,auxiliary_local_files,,local_file_found
+S040,gpm_imerg_event_precip.zip,auxiliary_local_files,,local_file_found
+S041,osm_overpass_exposure_slice.json,auxiliary_local_files,,local_file_found
+S042,sentinel1_vv_change_250m.zip,auxiliary_local_files,,local_file_found
+S043,worldpop_population_1km.zip,auxiliary_local_files,,local_file_found
+S044,05_event_specific_usgs_comcat_USGS_ComCat_earthquake_search_for_package_dates.json,auxiliary_local_files,,local_file_found

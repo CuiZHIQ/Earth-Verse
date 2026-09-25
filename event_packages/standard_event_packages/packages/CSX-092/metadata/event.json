@@ -1,0 +1,43 @@
+{
+  "package_id": "CSX-092",
+  "event_name": "June 2013 Uttarakhand Himalayan floods",
+  "canonical_event_key": "june 2013 uttarakhand himalayan floods",
+  "hazard_family": "river_coastal_flood",
+  "hazard_label": "River and coastal flooding",
+  "scale": "regional_basin",
+  "region": "Mountain regions",
+  "primary_evidence_url": "https://earthobservatory.nasa.gov/images/81450/severe-flooding-in-northern-india-nepal",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "93",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_for_task_synthesis",
+  "benchmark_readiness_label": "ready for task synthesis",
+  "data_integrity": {
+    "local_files_checked": "26",
+    "image_files_checked": "3",
+    "valid_images": "3",
+    "formal_slice_files_checked": "6",
+    "hard_error_count": "0",
+    "metadata_warning_count": "0",
+    "final_data_score": "95",
+    "final_data_decision": "ready",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 36,
+    "categories": {
+      "air_quality": 1,
+      "event_catalogs": 2,
+      "event_reports": 6,
+      "exposure_impact": 6,
+      "geospatial_context": 3,
+      "other": 2,
+      "physical_hazard": 11,
+      "remote_sensing": 5
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "UCSB-CHG/CHIRPS/DAILY",
+  "start": "2022-06-01",
+  "end": "2022-07-16",
+  "stats": {
+    "chirps_event_precip_mm_max": 704.4831286873668,
+    "chirps_event_precip_mm_mean": 348.5107482291053,
+    "chirps_event_precip_mm_min": 142.6518493965268,
+    "chirps_event_precip_mm_stdDev": 99.71521900872573
+  }
+}

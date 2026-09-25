@@ -1,0 +1,23 @@
+{
+  "dataset": "COPERNICUS/S1_GRD",
+  "windows": {
+    "pre": [
+      "2021-05-04",
+      "2021-06-26"
+    ],
+    "post": [
+      "2021-07-03",
+      "2021-08-17"
+    ]
+  },
+  "counts": {
+    "pre_count": 28,
+    "post_count": 27
+  },
+  "stats": {
+    "s1_vv_post_minus_pre_db_max": 18.83490073359596,
+    "s1_vv_post_minus_pre_db_mean": 0.030189275349273993,
+    "s1_vv_post_minus_pre_db_min": -18.28148553234033,
+    "s1_vv_post_minus_pre_db_stdDev": 1.7975700429320702
+  }
+}

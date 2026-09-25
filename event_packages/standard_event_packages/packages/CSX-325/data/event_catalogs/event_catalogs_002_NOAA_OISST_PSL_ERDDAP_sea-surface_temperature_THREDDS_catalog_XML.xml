@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2">
+  <service name="all" serviceType="Compound" base="">
+    <service name="odap" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="http" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="ncssGrid" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
+  </service>
+  <dataset name="noaa.oisst.v2.highres/">
+    <property name="DatasetScan" value="true" />
+    <metadata inherited="true">
+      <serviceName>all</serviceName>
+      <dataType>Grid</dataType>
+    </metadata>
+    <dataset name="icec.day.mean.1981.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1981.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1981.nc">
+      <dataSize units="Mbytes">26.10</dataSize>
+      <date type="modified">2023-01-03T22:24:58.008Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1982.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1982.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1982.nc">
+      <dataSize units="Mbytes">73.59</dataSize>
+      <date type="modified">2023-01-03T22:25:04.601Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1983.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1983.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1983.nc">
+      <dataSize units="Mbytes">73.79</dataSize>
+      <date type="modified">2023-01-03T22:25:18.812Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1984.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1984.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1984.nc">
+      <dataSize units="Mbytes">73.13</dataSize>
+      <date type="modified">2023-01-03T22:25:30.372Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1985.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1985.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1985.nc">
+      <dataSize units="Mbytes">73.51</dataSize>
+      <date type="modified">2023-01-03T22:25:45.778Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1986.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1986.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1986.nc">
+      <dataSize units="Mbytes">74.01</dataSize>
+      <date type="modified">2023-01-03T22:26:01.276Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1987.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1987.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1987.nc">
+      <dataSize units="Mbytes">67.41</dataSize>
+      <date type="modified">2023-01-03T22:26:14.270Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1988.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1988.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1988.nc">
+      <dataSize units="Mbytes">67.56</dataSize>
+      <date type="modified">2023-01-03T22:26:29.323Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1989.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1989.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1989.nc">
+      <dataSize units="Mbytes">69.88</dataSize>
+      <date type="modified">2023-01-03T22:26:40.659Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1990.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1990.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1990.nc">
+      <dataSize units="Mbytes">70.77</dataSize>
+      <date type="modified">2023-01-03T22:26:56.831Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1991.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1991.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1991.nc">
+      <dataSize units="Mbytes">71.35</dataSize>
+      <date type="modified">2023-01-03T22:27:08.189Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1992.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1992.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1992.nc">
+      <dataSize units="Mbytes">69.99</dataSize>
+      <date type="modified">2023-01-03T22:27:18.215Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1993.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1993.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1993.nc">
+      <dataSize units="Mbytes">70.47</dataSize>
+      <date type="modified">2023-01-03T22:27:30.164Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1994.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1994.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1994.nc">
+      <dataSize units="Mbytes">69.97</dataSize>
+      <date type="modified">2023-01-03T22:27:41.129Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1995.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1995.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1995.nc">
+      <dataSize units="Mbytes">70.32</dataSize>
+      <date type="modified">2023-01-03T22:27:54.848Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1996.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1996.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1996.nc">
+      <dataSize units="Mbytes">72.07</dataSize>
+      <date type="modified">2023-01-03T22:28:15.490Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1997.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1997.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1997.nc">
+      <dataSize units="Mbytes">68.98</dataSize>
+      <date type="modified">2023-01-03T22:28:29.534Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1998.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1998.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1998.nc">
+      <dataSize units="Mbytes">70.77</dataSize>
+      <date type="modified">2023-01-03T22:28:46.934Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.1999.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.1999.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.1999.nc">
+      <dataSize units="Mbytes">68.69</dataSize>
+      <date type="modified">2023-01-03T22:29:03.217Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2000.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2000.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2000.nc">
+      <dataSize units="Mbytes">69.38</dataSize>
+      <date type="modified">2023-01-03T22:29:14.562Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2001.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2001.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2001.nc">
+      <dataSize units="Mbytes">70.24</dataSize>
+      <date type="modified">2023-01-03T22:29:31.294Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2002.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2002.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2002.nc">
+      <dataSize units="Mbytes">69.48</dataSize>
+      <date type="modified">2023-01-03T22:29:49.385Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2003.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2003.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2003.nc">
+      <dataSize units="Mbytes">71.33</dataSize>
+      <date type="modified">2023-01-03T22:30:06.060Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2004.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2004.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2004.nc">
+      <dataSize units="Mbytes">67.57</dataSize>
+      <date type="modified">2023-01-03T22:30:22.806Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2005.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2005.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2005.nc">
+      <dataSize units="Mbytes">71.17</dataSize>
+      <date type="modified">2023-01-03T22:30:33.795Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2006.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2006.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2006.nc">
+      <dataSize units="Mbytes">70.10</dataSize>
+      <date type="modified">2023-01-03T22:30:49.070Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2007.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2007.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2007.nc">
+      <dataSize units="Mbytes">66.27</dataSize>
+      <date type="modified">2023-01-03T22:31:09.025Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2008.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2008.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2008.nc">
+      <dataSize units="Mbytes">69.47</dataSize>
+      <date type="modified">2023-01-03T22:31:21.278Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2009.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2009.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2009.nc">
+      <dataSize units="Mbytes">65.24</dataSize>
+      <date type="modified">2023-01-03T22:31:43.903Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2010.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2010.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2010.nc">
+      <dataSize units="Mbytes">62.88</dataSize>
+      <date type="modified">2023-01-03T22:31:54.216Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2011.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2011.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2011.nc">
+      <dataSize units="Mbytes">63.34</dataSize>
+      <date type="modified">2023-01-03T22:32:06.513Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2012.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2012.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2012.nc">
+      <dataSize units="Mbytes">72.15</dataSize>
+      <date type="modified">2023-01-03T22:32:25.466Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2013.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2013.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2013.nc">
+      <dataSize units="Mbytes">73.01</dataSize>
+      <date type="modified">2023-01-03T22:32:39.878Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2014.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2014.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2014.nc">
+      <dataSize units="Mbytes">73.34</dataSize>
+      <date type="modified">2023-01-03T22:32:55.969Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2015.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2015.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2015.nc">
+      <dataSize units="Mbytes">73.12</dataSize>
+      <date type="modified">2023-01-03T22:33:07.994Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2016.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2016.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2016.nc">
+      <dataSize units="Mbytes">72.21</dataSize>
+      <date type="modified">2023-01-03T20:19:54.576Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2017.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2017.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2017.nc">
+      <dataSize units="Mbytes">68.93</dataSize>
+      <date type="modified">2023-01-03T20:20:07.258Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2018.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2018.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2018.nc">
+      <dataSize units="Mbytes">63.41</dataSize>
+      <date type="modified">2023-01-03T20:20:16.877Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2019.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2019.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2019.nc">
+      <dataSize units="Mbytes">64.00</dataSize>
+      <date type="modified">2023-01-03T20:20:28.246Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2020.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2020.nc">
+      <dataSize units="Mbytes">66.45</dataSize>
+      <date type="modified">2023-01-03T20:20:41.273Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2021.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2021.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2021.nc">
+      <dataSize units="Mbytes">65.86</dataSize>
+      <date type="modified">2023-01-03T20:20:57.727Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2022.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2022.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2022.nc">
+      <dataSize units="Mbytes">64.89</dataSize>
+      <date type="modified">2023-01-30T17:31:07.709Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2023.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2023.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2023.nc">
+      <dataSize units="Mbytes">65.53</dataSize>
+      <date type="modified">2024-01-30T17:32:23.282Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2024.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2024.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2024.nc">
+      <dataSize units="Mbytes">65.12</dataSize>
+      <date type="modified">2025-01-30T17:32:05.537Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2025.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2025.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2025.nc">
+      <dataSize units="Mbytes">64.53</dataSize>
+      <date type="modified">2026-01-30T17:32:13.122Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.2026.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.2026.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.2026.nc">
+      <dataSize units="Mbytes">22.51</dataSize>
+      <date type="modified">2026-05-21T16:31:30.830Z</date>
+    </dataset>
+    <dataset name="icec.day.mean.ltm.1991-2020.nc" ID="Datasets/noaa.oisst.v2.highres/icec.day.mean.ltm.1991-2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.day.mean.ltm.1991-2020.nc">
+      <dataSize units="Mbytes">915.1</dataSize>
+      <date type="modified">2021-05-27T20:13:14.468Z</date>
+    </dataset>
+    <dataset name="icec.mon.ltm.1991-2020.nc" ID="Datasets/noaa.oisst.v2.highres/icec.mon.ltm.1991-2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.mon.ltm.1991-2020.nc">
+      <dataSize units="Mbytes">31.00</dataSize>
+      <date type="modified">2024-05-01T20:02:30.253Z</date>
+    </dataset>
+    <dataset name="icec.mon.mean.nc" ID="Datasets/noaa.oisst.v2.highres/icec.mon.mean.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.mon.mean.nc">
+      <dataSize units="Gbytes">2.222</dataSize>
+      <date type="modified">2026-05-15T17:09:52.657Z</date>
+    </dataset>
+    <dataset name="icec.week.mean.nc" ID="Datasets/noaa.oisst.v2.highres/icec.week.mean.nc" urlPath="Datasets/noaa.oisst.v2.highres/icec.week.mean.nc">
+      <dataSize units="Gbytes">9.671</dataSize>
+      <date type="modified">2026-05-17T16:31:07.316Z</date>
+    </dataset>
+    <dataset name="lsmask.oisst.nc" ID="Datasets/noaa.oisst.v2.highres/lsmask.oisst.nc" urlPath="Datasets/noaa.oisst.v2.highres/lsmask.oisst.nc">
+      <dataSize units="Mbytes">4.157</dataSize>
+      <date type="modified">2016-04-26T21:33:04Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1981.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1981.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1981.nc">
+      <dataSize units="Mbytes">191.2</dataSize>
+      <date type="modified">2023-01-03T22:24:59.033Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1982.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1982.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1982.nc">
+      <dataSize units="Mbytes">574.2</dataSize>
+      <date type="modified">2023-01-03T22:25:10.930Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1983.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1983.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1983.nc">
+      <dataSize units="Mbytes">574.7</dataSize>
+      <date type="modified">2023-01-03T22:25:21.566Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1984.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1984.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1984.nc">
+      <dataSize units="Mbytes">576.1</dataSize>
+      <date type="modified">2023-01-03T22:25:37.874Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1985.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1985.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1985.nc">
+      <dataSize units="Mbytes">571.8</dataSize>
+      <date type="modified">2023-01-03T22:25:49.651Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1986.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1986.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1986.nc">
+      <dataSize units="Mbytes">572.2</dataSize>
+      <date type="modified">2023-01-03T22:26:06.169Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1987.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1987.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1987.nc">
+      <dataSize units="Mbytes">570.1</dataSize>
+      <date type="modified">2023-01-03T22:26:18.943Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1988.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1988.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1988.nc">
+      <dataSize units="Mbytes">568.9</dataSize>
+      <date type="modified">2023-01-03T22:26:32.753Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1989.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1989.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1989.nc">
+      <dataSize units="Mbytes">568.6</dataSize>
+      <date type="modified">2023-01-03T22:26:44.155Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1990.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1990.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1990.nc">
+      <dataSize units="Mbytes">570.2</dataSize>
+      <date type="modified">2023-01-03T22:27:00.881Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1991.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1991.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1991.nc">
+      <dataSize units="Mbytes">569.3</dataSize>
+      <date type="modified">2023-01-03T22:27:11.387Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1992.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1992.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1992.nc">
+      <dataSize units="Mbytes">569.3</dataSize>
+      <date type="modified">2023-01-03T22:27:20.844Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1993.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1993.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1993.nc">
+      <dataSize units="Mbytes">567.5</dataSize>
+      <date type="modified">2023-01-03T22:27:33.617Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1994.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1994.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1994.nc">
+      <dataSize units="Mbytes">566.6</dataSize>
+      <date type="modified">2023-01-03T22:27:45.697Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1995.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1995.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1995.nc">
+      <dataSize units="Mbytes">551.2</dataSize>
+      <date type="modified">2023-01-03T22:28:01.507Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1996.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1996.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1996.nc">
+      <dataSize units="Mbytes">570.3</dataSize>
+      <date type="modified">2023-01-03T22:28:20.110Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1997.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1997.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1997.nc">
+      <dataSize units="Mbytes">568.6</dataSize>
+      <date type="modified">2023-01-03T22:28:33.924Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1998.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1998.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1998.nc">
+      <dataSize units="Mbytes">569.8</dataSize>
+      <date type="modified">2023-01-03T22:28:50.100Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.1999.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.1999.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.1999.nc">
+      <dataSize units="Mbytes">566.5</dataSize>
+      <date type="modified">2023-01-03T22:29:06.607Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2000.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2000.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2000.nc">
+      <dataSize units="Mbytes">570.7</dataSize>
+      <date type="modified">2023-01-03T22:29:19.615Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2001.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2001.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2001.nc">
+      <dataSize units="Mbytes">566.1</dataSize>
+      <date type="modified">2023-01-03T22:29:35.090Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2002.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2002.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2002.nc">
+      <dataSize units="Mbytes">568.1</dataSize>
+      <date type="modified">2023-01-03T22:29:58.935Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2003.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2003.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2003.nc">
+      <dataSize units="Mbytes">565.9</dataSize>
+      <date type="modified">2023-01-03T22:30:09.570Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2004.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2004.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2004.nc">
+      <dataSize units="Mbytes">569.3</dataSize>
+      <date type="modified">2023-01-03T22:30:25.495Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2005.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2005.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2005.nc">
+      <dataSize units="Mbytes">573.5</dataSize>
+      <date type="modified">2023-01-03T22:30:37.544Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2006.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2006.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2006.nc">
+      <dataSize units="Mbytes">573.3</dataSize>
+      <date type="modified">2023-01-03T22:30:58.691Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2007.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2007.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2007.nc">
+      <dataSize units="Mbytes">567.3</dataSize>
+      <date type="modified">2023-01-03T22:31:12.523Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2008.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2008.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2008.nc">
+      <dataSize units="Mbytes">567.4</dataSize>
+      <date type="modified">2023-01-03T22:31:24.622Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2009.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2009.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2009.nc">
+      <dataSize units="Mbytes">563.4</dataSize>
+      <date type="modified">2023-01-03T22:31:47.556Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2010.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2010.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2010.nc">
+      <dataSize units="Mbytes">561.4</dataSize>
+      <date type="modified">2023-01-03T22:31:57.185Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2011.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2011.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2011.nc">
+      <dataSize units="Mbytes">561.8</dataSize>
+      <date type="modified">2023-01-03T22:32:11.083Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2012.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2012.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2012.nc">
+      <dataSize units="Mbytes">568.4</dataSize>
+      <date type="modified">2023-01-03T22:32:32.645Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2013.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2013.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2013.nc">
+      <dataSize units="Mbytes">566.3</dataSize>
+      <date type="modified">2023-01-03T22:32:43.579Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2014.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2014.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2014.nc">
+      <dataSize units="Mbytes">567.2</dataSize>
+      <date type="modified">2023-01-03T22:32:59.671Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2015.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2015.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2015.nc">
+      <dataSize units="Mbytes">569.0</dataSize>
+      <date type="modified">2023-01-03T22:33:13.334Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2016.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2016.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2016.nc">
+      <dataSize units="Mbytes">579.5</dataSize>
+      <date type="modified">2023-01-03T20:19:59.949Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2017.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2017.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2017.nc">
+      <dataSize units="Mbytes">576.0</dataSize>
+      <date type="modified">2023-01-03T20:20:10.621Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2018.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2018.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2018.nc">
+      <dataSize units="Mbytes">577.1</dataSize>
+      <date type="modified">2023-01-03T20:20:21.633Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2019.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2019.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2019.nc">
+      <dataSize units="Mbytes">577.9</dataSize>
+      <date type="modified">2023-01-03T20:20:33.576Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2020.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2020.nc">
+      <dataSize units="Mbytes">580.8</dataSize>
+      <date type="modified">2023-01-03T20:20:44.459Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2021.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2021.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2021.nc">
+      <dataSize units="Mbytes">590.3</dataSize>
+      <date type="modified">2023-01-03T20:21:10.466Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2022.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2022.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2022.nc">
+      <dataSize units="Mbytes">572.6</dataSize>
+      <date type="modified">2023-01-30T17:30:56.192Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2023.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2023.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2023.nc">
+      <dataSize units="Mbytes">573.7</dataSize>
+      <date type="modified">2024-01-30T17:32:17.337Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2024.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2024.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2024.nc">
+      <dataSize units="Mbytes">574.7</dataSize>
+      <date type="modified">2025-01-30T17:31:52.766Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2025.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2025.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2025.nc">
+      <dataSize units="Mbytes">571.5</dataSize>
+      <date type="modified">2026-01-30T17:32:01.911Z</date>
+    </dataset>
+    <dataset name="sst.day.anom.2026.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.anom.2026.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.anom.2026.nc">
+      <dataSize units="Mbytes">220.7</dataSize>
+      <date type="modified">2026-05-21T16:31:20.959Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1981.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1981.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1981.nc">
+      <dataSize units="Mbytes">88.81</dataSize>
+      <date type="modified">2023-01-03T22:24:59.853Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1982.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1982.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1982.nc">
+      <dataSize units="Mbytes">264.6</dataSize>
+      <date type="modified">2023-01-03T22:25:14.037Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1983.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1983.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1983.nc">
+      <dataSize units="Mbytes">264.9</dataSize>
+      <date type="modified">2023-01-03T22:25:26.342Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1984.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1984.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1984.nc">
+      <dataSize units="Mbytes">266.0</dataSize>
+      <date type="modified">2023-01-03T22:25:40.353Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1985.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1985.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1985.nc">
+      <dataSize units="Mbytes">266.9</dataSize>
+      <date type="modified">2023-01-03T22:25:53.066Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1986.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1986.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1986.nc">
+      <dataSize units="Mbytes">266.1</dataSize>
+      <date type="modified">2023-01-03T22:26:08.924Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1987.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1987.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1987.nc">
+      <dataSize units="Mbytes">266.1</dataSize>
+      <date type="modified">2023-01-03T22:26:24.618Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1988.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1988.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1988.nc">
+      <dataSize units="Mbytes">266.4</dataSize>
+      <date type="modified">2023-01-03T22:26:35.438Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1989.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1989.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1989.nc">
+      <dataSize units="Mbytes">266.7</dataSize>
+      <date type="modified">2023-01-03T22:26:50.013Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1990.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1990.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1990.nc">
+      <dataSize units="Mbytes">267.8</dataSize>
+      <date type="modified">2023-01-03T22:27:03.893Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1991.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1991.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1991.nc">
+      <dataSize units="Mbytes">268.3</dataSize>
+      <date type="modified">2023-01-03T22:27:13.682Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1992.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1992.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1992.nc">
+      <dataSize units="Mbytes">268.7</dataSize>
+      <date type="modified">2023-01-03T22:27:24.527Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1993.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1993.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1993.nc">
+      <dataSize units="Mbytes">266.7</dataSize>
+      <date type="modified">2023-01-03T22:27:36.782Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1994.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1994.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1994.nc">
+      <dataSize units="Mbytes">265.5</dataSize>
+      <date type="modified">2023-01-03T22:27:49.909Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1995.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1995.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1995.nc">
+      <dataSize units="Mbytes">263.9</dataSize>
+      <date type="modified">2023-01-03T22:28:06.443Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1996.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1996.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1996.nc">
+      <dataSize units="Mbytes">268.4</dataSize>
+      <date type="modified">2023-01-03T22:28:24.644Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1997.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1997.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1997.nc">
+      <dataSize units="Mbytes">267.4</dataSize>
+      <date type="modified">2023-01-03T22:28:35.838Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1998.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1998.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1998.nc">
+      <dataSize units="Mbytes">267.7</dataSize>
+      <date type="modified">2023-01-03T22:28:53.678Z</date>
+    </dataset>
+    <dataset name="sst.day.err.1999.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.1999.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.1999.nc">
+      <dataSize units="Mbytes">267.8</dataSize>
+      <date type="modified">2023-01-03T22:29:09.916Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2000.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2000.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2000.nc">
+      <dataSize units="Mbytes">266.4</dataSize>
+      <date type="modified">2023-01-03T22:29:22.021Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2001.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2001.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2001.nc">
+      <dataSize units="Mbytes">267.0</dataSize>
+      <date type="modified">2023-01-03T22:29:39.849Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2002.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2002.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2002.nc">
+      <dataSize units="Mbytes">267.1</dataSize>
+      <date type="modified">2023-01-03T22:30:00.961Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2003.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2003.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2003.nc">
+      <dataSize units="Mbytes">263.3</dataSize>
+      <date type="modified">2023-01-03T22:30:16.132Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2004.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2004.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2004.nc">
+      <dataSize units="Mbytes">259.9</dataSize>
+      <date type="modified">2023-01-03T22:30:28.335Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2005.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2005.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2005.nc">
+      <dataSize units="Mbytes">257.1</dataSize>
+      <date type="modified">2023-01-03T22:30:43.994Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2006.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2006.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2006.nc">
+      <dataSize units="Mbytes">258.1</dataSize>
+      <date type="modified">2023-01-03T22:31:01.246Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2007.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2007.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2007.nc">
+      <dataSize units="Mbytes">247.6</dataSize>
+      <date type="modified">2023-01-03T22:31:16.315Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2008.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2008.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2008.nc">
+      <dataSize units="Mbytes">246.8</dataSize>
+      <date type="modified">2023-01-03T22:31:32.415Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2009.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2009.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2009.nc">
+      <dataSize units="Mbytes">247.5</dataSize>
+      <date type="modified">2023-01-03T22:31:50.394Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2010.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2010.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2010.nc">
+      <dataSize units="Mbytes">247.4</dataSize>
+      <date type="modified">2023-01-03T22:32:00.755Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2011.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2011.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2011.nc">
+      <dataSize units="Mbytes">246.4</dataSize>
+      <date type="modified">2023-01-03T22:32:17.583Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2012.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2012.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2012.nc">
+      <dataSize units="Mbytes">249.2</dataSize>
+      <date type="modified">2023-01-03T22:32:35.065Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2013.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2013.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2013.nc">
+      <dataSize units="Mbytes">249.1</dataSize>
+      <date type="modified">2023-01-03T22:32:49.254Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2014.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2014.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2014.nc">
+      <dataSize units="Mbytes">256.7</dataSize>
+      <date type="modified">2023-01-03T22:33:01.578Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2015.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2015.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2015.nc">
+      <dataSize units="Mbytes">269.3</dataSize>
+      <date type="modified">2023-01-03T22:33:18.454Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2016.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2016.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2016.nc">
+      <dataSize units="Mbytes">248.3</dataSize>
+      <date type="modified">2023-01-03T20:20:01.794Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2017.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2017.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2017.nc">
+      <dataSize units="Mbytes">246.5</dataSize>
+      <date type="modified">2023-01-03T20:20:12.814Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2018.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2018.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2018.nc">
+      <dataSize units="Mbytes">243.9</dataSize>
+      <date type="modified">2023-01-03T20:20:23.724Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2019.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2019.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2019.nc">
+      <dataSize units="Mbytes">243.6</dataSize>
+      <date type="modified">2023-01-03T20:20:35.615Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2020.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2020.nc">
+      <dataSize units="Mbytes">264.2</dataSize>
+      <date type="modified">2023-01-03T20:20:46.983Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2021.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2021.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2021.nc">
+      <dataSize units="Mbytes">252.6</dataSize>
+      <date type="modified">2023-01-03T20:21:15.498Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2022.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2022.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2022.nc">
+      <dataSize units="Mbytes">141.5</dataSize>
+      <date type="modified">2023-01-30T17:31:04.009Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2023.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2023.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2023.nc">
+      <dataSize units="Mbytes">140.4</dataSize>
+      <date type="modified">2024-01-30T17:32:21.299Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2024.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2024.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2024.nc">
+      <dataSize units="Mbytes">142.5</dataSize>
+      <date type="modified">2025-01-30T17:32:01.858Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2025.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2025.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2025.nc">
+      <dataSize units="Mbytes">141.3</dataSize>
+      <date type="modified">2026-01-30T17:32:08.933Z</date>
+    </dataset>
+    <dataset name="sst.day.err.2026.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.err.2026.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.err.2026.nc">
+      <dataSize units="Mbytes">53.18</dataSize>
+      <date type="modified">2026-05-21T16:31:26.480Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1981.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1981.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1981.nc">
+      <dataSize units="Mbytes">160.5</dataSize>
+      <date type="modified">2023-01-03T22:24:57.438Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1982.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1982.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1982.nc">
+      <dataSize units="Mbytes">482.1</dataSize>
+      <date type="modified">2023-01-03T22:25:03.432Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1983.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1983.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1983.nc">
+      <dataSize units="Mbytes">482.4</dataSize>
+      <date type="modified">2023-01-03T22:25:16.860Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1984.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1984.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1984.nc">
+      <dataSize units="Mbytes">484.6</dataSize>
+      <date type="modified">2023-01-03T22:25:29.313Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1985.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1985.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1985.nc">
+      <dataSize units="Mbytes">482.1</dataSize>
+      <date type="modified">2023-01-03T22:25:44.644Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1986.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1986.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1986.nc">
+      <dataSize units="Mbytes">481.9</dataSize>
+      <date type="modified">2023-01-03T22:25:59.900Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1987.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1987.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1987.nc">
+      <dataSize units="Mbytes">478.9</dataSize>
+      <date type="modified">2023-01-03T22:26:13.074Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1988.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1988.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1988.nc">
+      <dataSize units="Mbytes">477.8</dataSize>
+      <date type="modified">2023-01-03T22:26:27.870Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1989.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1989.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1989.nc">
+      <dataSize units="Mbytes">477.4</dataSize>
+      <date type="modified">2023-01-03T22:26:39.150Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1990.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1990.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1990.nc">
+      <dataSize units="Mbytes">479.3</dataSize>
+      <date type="modified">2023-01-03T22:26:55.256Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1991.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1991.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1991.nc">
+      <dataSize units="Mbytes">478.7</dataSize>
+      <date type="modified">2023-01-03T22:27:06.298Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1992.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1992.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1992.nc">
+      <dataSize units="Mbytes">478.2</dataSize>
+      <date type="modified">2023-01-03T22:27:16.956Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1993.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1993.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1993.nc">
+      <dataSize units="Mbytes">477.3</dataSize>
+      <date type="modified">2023-01-03T22:27:28.699Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1994.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1994.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1994.nc">
+      <dataSize units="Mbytes">475.6</dataSize>
+      <date type="modified">2023-01-03T22:27:39.379Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1995.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1995.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1995.nc">
+      <dataSize units="Mbytes">462.1</dataSize>
+      <date type="modified">2023-01-03T22:27:52.992Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1996.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1996.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1996.nc">
+      <dataSize units="Mbytes">477.7</dataSize>
+      <date type="modified">2023-01-03T22:28:11.877Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1997.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1997.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1997.nc">
+      <dataSize units="Mbytes">474.7</dataSize>
+      <date type="modified">2023-01-03T22:28:28.103Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1998.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1998.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1998.nc">
+      <dataSize units="Mbytes">476.8</dataSize>
+      <date type="modified">2023-01-03T22:28:44.786Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.1999.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.1999.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.1999.nc">
+      <dataSize units="Mbytes">474.8</dataSize>
+      <date type="modified">2023-01-03T22:29:01.894Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2000.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2000.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2000.nc">
+      <dataSize units="Mbytes">479.6</dataSize>
+      <date type="modified">2023-01-03T22:29:13.385Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2001.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2001.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2001.nc">
+      <dataSize units="Mbytes">475.2</dataSize>
+      <date type="modified">2023-01-03T22:29:30.177Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2002.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2002.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2002.nc">
+      <dataSize units="Mbytes">476.5</dataSize>
+      <date type="modified">2023-01-03T22:29:47.406Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2003.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2003.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2003.nc">
+      <dataSize units="Mbytes">474.3</dataSize>
+      <date type="modified">2023-01-03T22:30:04.738Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2004.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2004.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2004.nc">
+      <dataSize units="Mbytes">477.4</dataSize>
+      <date type="modified">2023-01-03T22:30:20.179Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2005.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2005.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2005.nc">
+      <dataSize units="Mbytes">482.8</dataSize>
+      <date type="modified">2023-01-03T22:30:31.418Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2006.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2006.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2006.nc">
+      <dataSize units="Mbytes">482.5</dataSize>
+      <date type="modified">2023-01-03T22:30:47.158Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2007.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2007.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2007.nc">
+      <dataSize units="Mbytes">475.5</dataSize>
+      <date type="modified">2023-01-03T22:31:06.478Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2008.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2008.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2008.nc">
+      <dataSize units="Mbytes">474.7</dataSize>
+      <date type="modified">2023-01-03T22:31:19.622Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2009.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2009.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2009.nc">
+      <dataSize units="Mbytes">467.8</dataSize>
+      <date type="modified">2023-01-03T22:31:41.698Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2010.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2010.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2010.nc">
+      <dataSize units="Mbytes">464.7</dataSize>
+      <date type="modified">2023-01-03T22:31:52.930Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2011.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2011.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2011.nc">
+      <dataSize units="Mbytes">466.0</dataSize>
+      <date type="modified">2023-01-03T22:32:05.382Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2012.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2012.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2012.nc">
+      <dataSize units="Mbytes">476.0</dataSize>
+      <date type="modified">2023-01-03T22:32:22.384Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2013.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2013.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2013.nc">
+      <dataSize units="Mbytes">474.2</dataSize>
+      <date type="modified">2023-01-03T22:32:38.435Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2014.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2014.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2014.nc">
+      <dataSize units="Mbytes">474.3</dataSize>
+      <date type="modified">2023-01-03T22:32:54.498Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2015.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2015.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2015.nc">
+      <dataSize units="Mbytes">475.7</dataSize>
+      <date type="modified">2023-01-03T22:33:06.755Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2016.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2016.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2016.nc">
+      <dataSize units="Mbytes">483.0</dataSize>
+      <date type="modified">2023-01-03T20:19:53.124Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2017.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2017.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2017.nc">
+      <dataSize units="Mbytes">480.7</dataSize>
+      <date type="modified">2023-01-03T20:20:05.672Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2018.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2018.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2018.nc">
+      <dataSize units="Mbytes">477.8</dataSize>
+      <date type="modified">2023-01-03T20:20:15.377Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2019.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2019.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2019.nc">
+      <dataSize units="Mbytes">476.6</dataSize>
+      <date type="modified">2023-01-03T20:20:26.644Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2020.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2020.nc">
+      <dataSize units="Mbytes">483.2</dataSize>
+      <date type="modified">2023-01-03T20:20:39.141Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2021.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2021.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2021.nc">
+      <dataSize units="Mbytes">481.8</dataSize>
+      <date type="modified">2023-01-03T20:20:55.407Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2022.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2022.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2022.nc">
+      <dataSize units="Mbytes">471.5</dataSize>
+      <date type="modified">2023-01-30T17:30:29.335Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2023.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2023.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2023.nc">
+      <dataSize units="Mbytes">472.1</dataSize>
+      <date type="modified">2024-01-30T17:32:08.305Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2024.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2024.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2024.nc">
+      <dataSize units="Mbytes">470.6</dataSize>
+      <date type="modified">2025-01-30T17:31:38.511Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2025.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2025.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2025.nc">
+      <dataSize units="Mbytes">474.9</dataSize>
+      <date type="modified">2026-01-30T17:31:47.442Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.2026.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.2026.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.2026.nc">
+      <dataSize units="Mbytes">184.2</dataSize>
+      <date type="modified">2026-05-21T16:31:08.641Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.ltm.1971-2000.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1971-2000.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1971-2000.nc">
+      <dataSize units="Mbytes">378.3</dataSize>
+      <date type="modified">2018-05-31T18:56:33.518Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.ltm.1982-2010.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1982-2010.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1982-2010.nc">
+      <dataSize units="Gbytes">2.270</dataSize>
+      <date type="modified">2017-08-25T19:58:22.550Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.ltm.1991-2020.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1991-2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.1991-2020.nc">
+      <dataSize units="Gbytes">1.397</dataSize>
+      <date type="modified">2021-05-27T20:13:18.459Z</date>
+    </dataset>
+    <dataset name="sst.day.mean.ltm.nc" ID="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.day.mean.ltm.nc">
+      <dataSize units="Mbytes">378.3</dataSize>
+      <date type="modified">2018-05-31T18:56:33.518Z</date>
+    </dataset>
+    <dataset name="sst.mon.ltm.1991-2020.nc" ID="Datasets/noaa.oisst.v2.highres/sst.mon.ltm.1991-2020.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.mon.ltm.1991-2020.nc">
+      <dataSize units="Mbytes">45.94</dataSize>
+      <date type="modified">2023-01-17T22:54:05.778Z</date>
+    </dataset>
+    <dataset name="sst.mon.mean.nc" ID="Datasets/noaa.oisst.v2.highres/sst.mon.mean.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.mon.mean.nc">
+      <dataSize units="Gbytes">2.222</dataSize>
+      <date type="modified">2026-05-15T17:09:19.763Z</date>
+    </dataset>
+    <dataset name="sst.week.mean.nc" ID="Datasets/noaa.oisst.v2.highres/sst.week.mean.nc" urlPath="Datasets/noaa.oisst.v2.highres/sst.week.mean.nc">
+      <dataSize units="Gbytes">9.671</dataSize>
+      <date type="modified">2026-05-17T16:30:35.685Z</date>
+    </dataset>
+  </dataset>
+</catalog>

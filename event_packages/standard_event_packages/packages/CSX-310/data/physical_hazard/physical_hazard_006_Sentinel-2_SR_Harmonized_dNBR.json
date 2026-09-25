@@ -1,0 +1,23 @@
+{
+  "dataset": "COPERNICUS/S2_SR_HARMONIZED",
+  "windows": {
+    "pre": [
+      "2021-11-16",
+      "2022-01-08"
+    ],
+    "post": [
+      "2022-01-15",
+      "2022-03-01"
+    ]
+  },
+  "counts": {
+    "pre_count": 61,
+    "post_count": 51
+  },
+  "stats": {
+    "sentinel2_dnbr_max": 0.7742263040502715,
+    "sentinel2_dnbr_mean": 0.03666917795487705,
+    "sentinel2_dnbr_min": -0.2977455574874273,
+    "sentinel2_dnbr_stdDev": 0.04570057088601246
+  }
+}

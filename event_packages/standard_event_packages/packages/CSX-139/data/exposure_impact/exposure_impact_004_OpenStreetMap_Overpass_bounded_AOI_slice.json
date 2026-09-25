@@ -1,0 +1,11278 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-22T08:10:49Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 936388610,
+  "lat": 6.9487185,
+  "lon": 0.5786269,
+  "tags": {
+    "amenity": "police",
+    "name": "Gendarmerie"
+  }
+},
+{
+  "type": "node",
+  "id": 2319479418,
+  "lat": 7.1540745,
+  "lon": 0.4717070,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-28",
+    "name": "St. Joseph's JHS School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319479996,
+  "lat": 7.1522967,
+  "lon": 0.4722220,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-29",
+    "name": "St. joseph's Primary School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319482816,
+  "lat": 7.1551525,
+  "lon": 0.4700335,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "Holy Rosary Primary And Junior High School Complex"
+  }
+},
+{
+  "type": "node",
+  "id": 2319490170,
+  "lat": 7.1516209,
+  "lon": 0.4736811,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2026-03-28",
+    "name": "Ghana Police Station Hohoe"
+  }
+},
+{
+  "type": "node",
+  "id": 2319511745,
+  "lat": 7.1560650,
+  "lon": 0.4744725,
+  "tags": {
+    "amenity": "school",
+    "name": "E.P. Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319518099,
+  "lat": 7.1564376,
+  "lon": 0.4761782,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "E.P. Primary School (A)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319518770,
+  "lat": 7.1571487,
+  "lon": 0.4760124,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-27",
+    "name": "E.P. Primary School (B)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319538046,
+  "lat": 7.1697175,
+  "lon": 0.4778195,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "Ghana National Fire Service Office Hohoe"
+  }
+},
+{
+  "type": "node",
+  "id": 2319562072,
+  "lat": 7.1544579,
+  "lon": 0.4812989,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbi Primary And JHS(Boys School)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319565027,
+  "lat": 7.1568291,
+  "lon": 0.4863091,
+  "tags": {
+    "amenity": "police",
+    "name": "Gbi-Bla Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 2319566155,
+  "lat": 7.1571832,
+  "lon": 0.4886400,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Francis Demonstration"
+  }
+},
+{
+  "type": "node",
+  "id": 2319571112,
+  "lat": 7.1468065,
+  "lon": 0.4775088,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2024-11-23",
+    "name": "Musama School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319589305,
+  "lat": 7.1491405,
+  "lon": 0.4700871,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2026-03-26",
+    "name": "M/A Experimental schools(Primary And JHS)"
+  }
+},
+{
+  "type": "node",
+  "id": 2319595221,
+  "lat": 7.1478018,
+  "lon": 0.4660021,
+  "tags": {
+    "amenity": "school",
+    "name": "St. Agatha's Commercial School"
+  }
+},
+{
+  "type": "node",
+  "id": 2319599188,
+  "lat": 7.1570476,
+  "lon": 0.4668819,
+  "tags": {
+    "amenity": "school",
+    "name": "A.M.E. Zion Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 2319605646,
+  "lat": 7.1587559,
+  "lon": 0.4576229,
+  "tags": {
+    "amenity": "school",
+    "name": "Orphanage School"
+  }
+},
+{
+  "type": "node",
+  "id": 3500174721,
+  "lat": 7.1566231,
+  "lon": 0.4712751,
+  "tags": {
+    "amenity": "school",
+    "name": "Christ Shalom Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 3801131057,
+  "lat": 6.9971550,
+  "lon": 0.4394812,
+  "tags": {
+    "amenity": "school",
+    "name": "Local Authority Junior Secondary"
+  }
+},
+{
+  "type": "node",
+  "id": 3802640770,
+  "lat": 6.9035091,
+  "lon": 0.4370054,
+  "tags": {
+    "amenity": "school",
+    "name": "Modern Brains Academy Preparatory School"
+  }
+},
+{
+  "type": "node",
+  "id": 3802641881,
+  "lat": 6.9636443,
+  "lon": 0.4586446,
+  "tags": {
+    "amenity": "school",
+    "name": "Ve Gbodome Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 3802654043,
+  "lat": 7.0707919,
+  "lon": 0.5096832,
+  "tags": {
+    "amenity": "police",
+    "name": "Ghana Police Service Fadome Helu"
+  }
+},
+{
+  "type": "node",
+  "id": 4182850464,
+  "lat": 6.9347933,
+  "lon": 0.4890548,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4215466583,
+  "lat": 7.0528246,
+  "lon": 0.0290780,
+  "tags": {
+    "amenity": "school",
+    "name": "Amankwah R/C Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 4215466585,
+  "lat": 7.0525850,
+  "lon": 0.0301885,
+  "tags": {
+    "amenity": "school",
+    "name": "Amankwah R/C JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 4339632645,
+  "lat": 6.9686131,
+  "lon": 0.5215931,
+  "tags": {
+    "amenity": "police",
+    "building": "public",
+    "name": "Zoll"
+  }
+},
+{
+  "type": "node",
+  "id": 5526564046,
+  "lat": 6.9012989,
+  "lon": -0.2744249,
+  "tags": {
+    "amenity": "school",
+    "fixme": "ground knowlegde required"
+  }
+},
+{
+  "type": "node",
+  "id": 5605930781,
+  "lat": 7.7932659,
+  "lon": -0.0519437,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6547859878,
+  "lat": 7.6598093,
+  "lon": 0.5191240,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548930493,
+  "lat": 7.9309980,
+  "lon": 0.5367651,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548940581,
+  "lat": 7.9045666,
+  "lon": 0.5375217,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 6548974060,
+  "lat": 7.9980174,
+  "lon": 0.5596507,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6548985930,
+  "lat": 7.9470998,
+  "lon": 0.5542641,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554658584,
+  "lat": 6.9158703,
+  "lon": 0.4570652,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554705850,
+  "lat": 6.9007963,
+  "lon": 0.4341092,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554705977,
+  "lat": 7.1246398,
+  "lon": 0.4603326,
+  "tags": {
+    "amenity": "school",
+    "name": "EP Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 6554714027,
+  "lat": 7.0030430,
+  "lon": 0.4337866,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554723419,
+  "lat": 7.0035331,
+  "lon": 0.4342423,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554731303,
+  "lat": 6.9158410,
+  "lon": 0.4558820,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554736906,
+  "lat": 7.0222742,
+  "lon": 0.4272788,
+  "tags": {
+    "amenity": "school",
+    "name": "Peggy Good School of Faith"
+  }
+},
+{
+  "type": "node",
+  "id": 6554737786,
+  "lat": 6.9644009,
+  "lon": 0.4585641,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6554744953,
+  "lat": 6.9378605,
+  "lon": 0.4636863,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 6715216592,
+  "lat": 7.4117243,
+  "lon": 0.4672409,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7191409085,
+  "lat": 7.8255702,
+  "lon": -0.5315770,
+  "tags": {
+    "amenity": "school",
+    "name": "Kakraka Akura DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7192547485,
+  "lat": 7.7890552,
+  "lon": -0.3914130,
+  "tags": {
+    "amenity": "school",
+    "name": "Bodinko DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7192724485,
+  "lat": 7.6653624,
+  "lon": -0.3864728,
+  "tags": {
+    "amenity": "school",
+    "name": "Quarters DA Basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7192724585,
+  "lat": 7.7912400,
+  "lon": -0.3510111,
+  "tags": {
+    "amenity": "school",
+    "name": "Nyankwatre DA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7193178686,
+  "lat": 7.6838048,
+  "lon": -0.2827707,
+  "tags": {
+    "amenity": "school",
+    "name": "Baba DA basic"
+  }
+},
+{
+  "type": "node",
+  "id": 7960661801,
+  "lat": 7.9809873,
+  "lon": 0.2882221,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7960819190,
+  "lat": 8.0104996,
+  "lon": 0.2777669,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8340143414,
+  "lat": 7.6350604,
+  "lon": 0.5180325,
+  "tags": {
+    "addr:street": "P. O BOX 90",
+    "amenity": "school",
+    "name": "Dodi-Mempeasem, Evangelical Presbyterian School",
+    "operator": "Inhabitants",
+    "operator:type": "government",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "node",
+  "id": 8355047237,
+  "lat": 7.0486365,
+  "lon": -0.0767851,
+  "tags": {
+    "addr:full": "P.O. BOX 19",
+    "amenity": "hospital",
+    "beds": "74",
+    "contact:phone": "0848-22037",
+    "fixme": "Could use improvement: precise position /attaching to buildings.",
+    "healthcare": "hospital",
+    "name": "Donkorkrom Presbyterian Hospital",
+    "phone": "0848-22037",
+    "wikidata": "Q65067984",
+    "wikipedia": "en:Donkorkrom Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8499154369,
+  "lat": 7.0470736,
+  "lon": -0.0846019,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Kwahu Afram Plains North District Helalth Directorate",
+    "operator": "Ghana Health Service",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 8499239350,
+  "lat": 7.0493041,
+  "lon": -0.0774028,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Presbyterian Eye Clinic"
+  }
+},
+{
+  "type": "node",
+  "id": 8500247841,
+  "lat": 7.0388473,
+  "lon": -0.0833374,
+  "tags": {
+    "amenity": "school",
+    "name": "Kofi Yeboah Memorial D/A School"
+  }
+},
+{
+  "type": "node",
+  "id": 8503396279,
+  "lat": 6.9176400,
+  "lon": 0.0848218,
+  "tags": {
+    "amenity": "school",
+    "name": "Anidzi D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8504127191,
+  "lat": 6.9799801,
+  "lon": -0.0432733,
+  "tags": {
+    "amenity": "school",
+    "name": "Kayera E/P Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8506828538,
+  "lat": 7.1678167,
+  "lon": 0.0348374,
+  "tags": {
+    "amenity": "school",
+    "name": "MafiKope D/A Primary and JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8506860026,
+  "lat": 7.1213095,
+  "lon": -0.0112629,
+  "tags": {
+    "amenity": "school",
+    "name": "Abomasarefo Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8507537785,
+  "lat": 7.0360404,
+  "lon": -0.0910584,
+  "tags": {
+    "amenity": "school",
+    "name": "Holy Rosary R/C School"
+  }
+},
+{
+  "type": "node",
+  "id": 8507644365,
+  "lat": 7.0582148,
+  "lon": -0.1123817,
+  "tags": {
+    "amenity": "school",
+    "name": "Kwaekesse R/C Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8509920839,
+  "lat": 7.0940290,
+  "lon": -0.1919478,
+  "tags": {
+    "amenity": "school",
+    "name": "Kubesu D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8509960765,
+  "lat": 7.0576169,
+  "lon": -0.1676305,
+  "tags": {
+    "amenity": "school",
+    "name": "Koranteng D/A School"
+  }
+},
+{
+  "type": "node",
+  "id": 8510347314,
+  "lat": 7.0582766,
+  "lon": 0.1200208,
+  "tags": {
+    "amenity": "school",
+    "name": "Agordeke Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8510747353,
+  "lat": 7.0456327,
+  "lon": 0.0597727,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8515455227,
+  "lat": 7.0202311,
+  "lon": -0.2167752,
+  "tags": {
+    "amenity": "school",
+    "name": "Mmradan Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8515506720,
+  "lat": 6.9974406,
+  "lon": -0.1672761,
+  "tags": {
+    "amenity": "school",
+    "name": "Presbyterian Primary School, Somanyia"
+  }
+},
+{
+  "type": "node",
+  "id": 8515506736,
+  "lat": 7.0193188,
+  "lon": -0.2158462,
+  "tags": {
+    "amenity": "school",
+    "name": "Mmradan JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8521414653,
+  "lat": 6.9290024,
+  "lon": -0.2568839,
+  "tags": {
+    "amenity": "school",
+    "name": "Bright School of Diploma and Computer School"
+  }
+},
+{
+  "type": "node",
+  "id": 8521552600,
+  "lat": 6.9331173,
+  "lon": -0.2549323,
+  "tags": {
+    "amenity": "school",
+    "name": "St Fidelis Senior High Technical School"
+  }
+},
+{
+  "type": "node",
+  "id": 8536017546,
+  "lat": 6.9657054,
+  "lon": 0.0276696,
+  "tags": {
+    "amenity": "school",
+    "name": "Atiwulame D/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583247810,
+  "lat": 6.9113950,
+  "lon": 0.5417367,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Ashianti Roman Catholic Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8583301022,
+  "lat": 6.9093631,
+  "lon": 0.5449358,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Kpedzi Evangelical Presbyterian Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8583304717,
+  "lat": 6.9115304,
+  "lon": 0.5423130,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpoeta Ashianti Roman Catholic Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8605682523,
+  "lat": 7.1808597,
+  "lon": 0.3366294,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 8605791534,
+  "lat": 7.2952244,
+  "lon": 0.3275959,
+  "tags": {
+    "amenity": "school",
+    "name": "Modern Brains Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 8605880688,
+  "lat": 7.2973844,
+  "lon": 0.3287773,
+  "tags": {
+    "amenity": "school",
+    "name": "Abraham Academy"
+  }
+},
+{
+  "type": "node",
+  "id": 8614117402,
+  "lat": 7.3033257,
+  "lon": 0.5086619,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8614141931,
+  "lat": 7.4016712,
+  "lon": 0.4638923,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Jasikan District Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8614150235,
+  "lat": 7.4761466,
+  "lon": 0.4453399,
+  "tags": {
+    "amenity": "school",
+    "name": "Attakrom Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8620710692,
+  "lat": 7.2921739,
+  "lon": 0.3210729,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620724974,
+  "lat": 7.4143935,
+  "lon": 0.4729172,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver R.C Primary School, Jasikan"
+  }
+},
+{
+  "type": "node",
+  "id": 8620725753,
+  "lat": 7.2947667,
+  "lon": 0.3311690,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620730756,
+  "lat": 7.4142745,
+  "lon": 0.4731059,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver Cluster of Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8620730757,
+  "lat": 7.4156321,
+  "lon": 0.4711725,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Junior High"
+  }
+},
+{
+  "type": "node",
+  "id": 8620736566,
+  "lat": 7.4157493,
+  "lon": 0.4715769,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 8620736823,
+  "lat": 8.0436153,
+  "lon": 0.2421315,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8620746750,
+  "lat": 7.4159615,
+  "lon": 0.4711868,
+  "tags": {
+    "amenity": "school",
+    "name": "Jasikan Evangelical Presbyterian Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8620747517,
+  "lat": 7.4140967,
+  "lon": 0.4725345,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter Claver R.C JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8620754024,
+  "lat": 7.7382140,
+  "lon": 0.3636048,
+  "tags": {
+    "amenity": "school",
+    "name": "Okanease M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8635751773,
+  "lat": 7.7496935,
+  "lon": 0.4517956,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpongka L/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8639889130,
+  "lat": 7.9937660,
+  "lon": -0.3260210,
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Sene East",
+    "addr:place": "Bodinka",
+    "addr:region": "Bono East",
+    "amenity": "school",
+    "description": "The School is located on the main road from Kwame Danso towards Kajaji in the Sene East district.",
+    "email": "bassacommunityshs@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Bassa Community Senior High School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 24 697 7853",
+    "start_date": "2019"
+  }
+},
+{
+  "type": "node",
+  "id": 8645192316,
+  "lat": 7.5406454,
+  "lon": 0.4392344,
+  "tags": {
+    "amenity": "school",
+    "name": "St Paul's Roman Catholic Cluster of Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212238,
+  "lat": 7.7268709,
+  "lon": 0.5452346,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212475,
+  "lat": 8.0882825,
+  "lon": 0.4969359,
+  "tags": {
+    "amenity": "school",
+    "name": "Bontibor Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8645212882,
+  "lat": 7.7662541,
+  "lon": 0.5601097,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8645224488,
+  "lat": 7.7097236,
+  "lon": 0.5544255,
+  "tags": {
+    "amenity": "school",
+    "name": "Yadzo Primary/JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8645224725,
+  "lat": 7.6520703,
+  "lon": 0.5196994,
+  "tags": {
+    "amenity": "school",
+    "name": "Poase L/A Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8653749000,
+  "lat": 7.7427959,
+  "lon": 0.5294173,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8828063081,
+  "lat": 6.9020743,
+  "lon": 0.5665445,
+  "tags": {
+    "amenity": "school",
+    "name": "CEG HANYIGBA TODZI"
+  }
+},
+{
+  "type": "node",
+  "id": 8901913484,
+  "lat": 6.9990801,
+  "lon": 0.2869253,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8901935412,
+  "lat": 6.9986394,
+  "lon": 0.2870534,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "St Patrick Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8901941291,
+  "lat": 7.0019071,
+  "lon": 0.2598156,
+  "tags": {
+    "amenity": "school",
+    "name": "Sacred Heart Creche"
+  }
+},
+{
+  "type": "node",
+  "id": 8901941292,
+  "lat": 7.0413635,
+  "lon": 0.2461328,
+  "tags": {
+    "amenity": "school",
+    "name": "Avetikope Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8901944277,
+  "lat": 7.0035430,
+  "lon": 0.2701912,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8901947754,
+  "lat": 7.0230540,
+  "lon": 0.2750011,
+  "tags": {
+    "amenity": "school",
+    "name": "Avetikope Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8901955103,
+  "lat": 6.9994833,
+  "lon": 0.3015783,
+  "tags": {
+    "amenity": "police",
+    "check_date": "2024-11-08",
+    "name": "Kpando Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 8907817657,
+  "lat": 6.9994897,
+  "lon": 0.3815599,
+  "tags": {
+    "amenity": "school",
+    "name": "St Peter's Junior High"
+  }
+},
+{
+  "type": "node",
+  "id": 8907820780,
+  "lat": 6.9362898,
+  "lon": 0.2896797,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu Primary School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907820781,
+  "lat": 7.0028591,
+  "lon": 0.3121442,
+  "tags": {
+    "amenity": "school",
+    "name": "Donum Dei International"
+  }
+},
+{
+  "type": "node",
+  "id": 8907832923,
+  "lat": 6.9360810,
+  "lon": 0.2909450,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu JHS, Old Structure"
+  }
+},
+{
+  "type": "node",
+  "id": 8907834455,
+  "lat": 6.9358980,
+  "lon": 0.2857427,
+  "tags": {
+    "amenity": "school",
+    "name": "St Benedict Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8907837426,
+  "lat": 7.0164305,
+  "lon": 0.3187077,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-01-02",
+    "name": "Kpando Gadza Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907840741,
+  "lat": 7.0424631,
+  "lon": 0.2997879,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8907840742,
+  "lat": 6.9182287,
+  "lon": 0.2640811,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8907843885,
+  "lat": 6.9367812,
+  "lon": 0.2906526,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8907843886,
+  "lat": 7.0009124,
+  "lon": 0.3816590,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbefi United Roman Catholic Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849016,
+  "lat": 6.9186282,
+  "lon": 0.2645890,
+  "tags": {
+    "amenity": "school",
+    "name": "Aveme Beme Evangelical Presbyterian School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849128,
+  "lat": 6.9366634,
+  "lon": 0.2908499,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsedatsu Kindergarten"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849130,
+  "lat": 6.9062862,
+  "lon": 0.2509399,
+  "tags": {
+    "amenity": "school",
+    "name": "Tsyome Sabadu District Assembly Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8907849788,
+  "lat": 7.0378347,
+  "lon": 0.3016650,
+  "tags": {
+    "amenity": "school",
+    "name": "Kpando Bame M/A Primary/JHS"
+  }
+},
+{
+  "type": "node",
+  "id": 8917473786,
+  "lat": 7.1140255,
+  "lon": 0.4575208,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917473787,
+  "lat": 7.1177629,
+  "lon": 0.3504804,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917476275,
+  "lat": 7.0089156,
+  "lon": 0.3139939,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917478108,
+  "lat": 7.1192055,
+  "lon": 0.3597759,
+  "tags": {
+    "amenity": "school",
+    "name": "Alavanyo Wudidi Local Assembly Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8917491170,
+  "lat": 7.0709386,
+  "lon": 0.5164285,
+  "tags": {
+    "amenity": "school",
+    "name": "Fodome Woe/Agbetsido Municipal Assembly Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8917491171,
+  "lat": 7.0723665,
+  "lon": 0.5074898,
+  "tags": {
+    "amenity": "school",
+    "name": "Fodome Helu Roman Catholic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8917503029,
+  "lat": 7.0861903,
+  "lon": 0.3535525,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917515364,
+  "lat": 6.9880940,
+  "lon": 0.3000620,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8917516454,
+  "lat": 7.0538252,
+  "lon": 0.4268626,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Dr Grace Momfi Eye Hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 8920613682,
+  "lat": 7.0759609,
+  "lon": 0.3502127,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704348,
+  "lat": 7.1203418,
+  "lon": 0.3779129,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704350,
+  "lat": 7.2132511,
+  "lon": 0.5276706,
+  "tags": {
+    "amenity": "school",
+    "name": "Roman Catholic cluster of schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8927704351,
+  "lat": 7.2386176,
+  "lon": 0.5303568,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927726435,
+  "lat": 7.1981473,
+  "lon": 0.5652458,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927728780,
+  "lat": 7.2019255,
+  "lon": 0.5448034,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8927740903,
+  "lat": 7.2265094,
+  "lon": 0.5332025,
+  "tags": {
+    "amenity": "school",
+    "name": "New Baika Catholic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8946637242,
+  "lat": 7.2148966,
+  "lon": 0.5271328,
+  "tags": {
+    "amenity": "school",
+    "name": "Lolobi Kumasj Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 8946646866,
+  "lat": 7.2129939,
+  "lon": 0.5277950,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8946663682,
+  "lat": 7.2842558,
+  "lon": 0.5833524,
+  "tags": {
+    "amenity": "school",
+    "name": "DA Junior High School B"
+  }
+},
+{
+  "type": "node",
+  "id": 8946677794,
+  "lat": 7.1649799,
+  "lon": 0.4742439,
+  "tags": {
+    "amenity": "school",
+    "name": "Hohoe Adabraka English/Arabic"
+  }
+},
+{
+  "type": "node",
+  "id": 8946848866,
+  "lat": 7.0098404,
+  "lon": 0.5124595,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8946856578,
+  "lat": 7.0731678,
+  "lon": 0.5251702,
+  "tags": {
+    "amenity": "school",
+    "name": "Evangelical Presbyterian Basic School"
+  }
+},
+{
+  "type": "node",
+  "id": 8946872399,
+  "lat": 7.1627998,
+  "lon": 0.5824888,
+  "tags": {
+    "amenity": "hospital",
+    "name": "Likpe Bakua Polyclinic"
+  }
+},
+{
+  "type": "node",
+  "id": 8952049510,
+  "lat": 6.9691529,
+  "lon": 0.5004487,
+  "tags": {
+    "amenity": "school",
+    "name": "Leklebi Dafor D/A Basic Schools"
+  }
+},
+{
+  "type": "node",
+  "id": 8952074820,
+  "lat": 7.0299893,
+  "lon": 0.5124777,
+  "tags": {
+    "amenity": "school",
+    "name": "Liate Dafonu M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 8952083198,
+  "lat": 7.0195705,
+  "lon": 0.5131118,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 8952083219,
+  "lat": 7.1515919,
+  "lon": 0.5196399,
+  "tags": {
+    "amenity": "school",
+    "name": "Gbi Kodzofe M/A Primary"
+  }
+},
+{
+  "type": "node",
+  "id": 9275917827,
+  "lat": 6.9778235,
+  "lon": 0.5613434,
+  "tags": {
+    "amenity": "school",
+    "name": "Lycée de Kouma-Apéyémé",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 9275917829,
+  "lat": 6.9771526,
+  "lon": 0.5579504,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Hôpital de Kouma-Apéyémé"
+  }
+},
+{
+  "type": "node",
+  "id": 9465232043,
+  "lat": 7.1646927,
+  "lon": 0.5911462,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 9497246765,
+  "lat": 7.1901680,
+  "lon": 0.3379690,
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Biakoye",
+    "addr:place": "Wurupong",
+    "addr:region": "Oti",
+    "amenity": "school",
+    "description": "The school was established in November 2018 as a day school for girls by the Chiefs and people of Nkonya Wurupong Traditional Area. 2018 With the assistance of GETFUND and the communal spirit of the people.",
+    "email": "biakoyegirls@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Biakoye Girls Senior High School",
+    "note": "It's a new school (est. 2018) and the buildings are not available on existing imagery as at February 2022",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 24 313 1823",
+    "start_date": "2018-11"
+  }
+},
+{
+  "type": "node",
+  "id": 10559653814,
+  "lat": 6.9889059,
+  "lon": 0.5645708,
+  "tags": {
+    "amenity": "school",
+    "name": "EPP Kuma-bala"
+  }
+},
+{
+  "type": "node",
+  "id": 10562957623,
+  "lat": 6.9859248,
+  "lon": 0.5981092,
+  "tags": {
+    "amenity": "hospital",
+    "name": "USP Kuma dunyo"
+  }
+},
+{
+  "type": "node",
+  "id": 10702745890,
+  "lat": 8.0035334,
+  "lon": 0.5568350,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 10727892605,
+  "lat": 6.9694197,
+  "lon": 0.5754980,
+  "tags": {
+    "amenity": "school",
+    "name": "Ecole primaire publique (EPP) Kuma-Tokpli",
+    "name:en": "Primary public school Kuma-Tokpli"
+  }
+},
+{
+  "type": "node",
+  "id": 11178563035,
+  "lat": 8.0539235,
+  "lon": 0.1861614,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "Dambai Fire Station",
+    "operator": "Ghana Fire Service"
+  }
+},
+{
+  "type": "node",
+  "id": 11263743071,
+  "lat": 7.0468292,
+  "lon": -0.0914016,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "District Fire Station"
+  }
+},
+{
+  "type": "node",
+  "id": 12468076809,
+  "lat": 7.0162316,
+  "lon": 0.3191373,
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-01-02",
+    "name": "Kpando Gadza Junior High School"
+  }
+},
+{
+  "type": "node",
+  "id": 12593963833,
+  "lat": 8.0517843,
+  "lon": 0.1771777,
+  "tags": {
+    "amenity": "school",
+    "name": "charis accadamy"
+  }
+},
+{
+  "type": "way",
+  "id": 29675603,
+  "center": {
+    "lat": 7.8918961,
+    "lon": -0.0291536
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Krete Krachi - Bimbila",
+    "ref": "R202"
+  }
+},
+{
+  "type": "way",
+  "id": 30025414,
+  "center": {
+    "lat": 7.2852504,
+    "lon": 0.4660781
+  },
+  "tags": {
+    "highway": "trunk",
+    "lanes": "2",
+    "note": "Very bad road (Jasikan - HoHoe)",
+    "ref": "N2",
+    "smoothness": "very_bad",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30025423,
+  "center": {
+    "lat": 7.1428054,
+    "lon": 0.5862591
+  },
+  "tags": {
+    "highway": "secondary"
+  }
+},
+{
+  "type": "way",
+  "id": 30025668,
+  "center": {
+    "lat": 7.1575858,
+    "lon": 0.5381192
+  },
+  "tags": {
+    "highway": "secondary"
+  }
+},
+{
+  "type": "way",
+  "id": 30025669,
+  "center": {
+    "lat": 7.3327060,
+    "lon": 0.5950408
+  },
+  "tags": {
+    "embankment": "both",
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "jasop",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30025670,
+  "center": {
+    "lat": 7.2844310,
+    "lon": 0.5526114
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30666963,
+  "center": {
+    "lat": 7.2047006,
+    "lon": 0.3306911
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R26"
+  }
+},
+{
+  "type": "way",
+  "id": 30667042,
+  "center": {
+    "lat": 7.1299094,
+    "lon": 0.3366767
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30667056,
+  "center": {
+    "lat": 7.0702445,
+    "lon": 0.3376386
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30667067,
+  "center": {
+    "lat": 6.9441037,
+    "lon": 0.4820889
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "Leklebi Road",
+    "source": "landsat;Perry-Castañeda LibraryMap Collection",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30667305,
+  "center": {
+    "lat": 7.2197648,
+    "lon": 0.6053276
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30670014,
+  "center": {
+    "lat": 7.2961854,
+    "lon": 0.2635191
+  },
+  "tags": {
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 30699161,
+  "center": {
+    "lat": 6.9524214,
+    "lon": 0.4736108
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30699211,
+  "center": {
+    "lat": 6.9983234,
+    "lon": 0.4442503
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Dodome Road",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30699312,
+  "center": {
+    "lat": 7.4079011,
+    "lon": 0.3024870
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 30699335,
+  "center": {
+    "lat": 7.5346414,
+    "lon": 0.4577619
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30699344,
+  "center": {
+    "lat": 7.5284362,
+    "lon": 0.4785086
+  },
+  "tags": {
+    "highway": "trunk",
+    "lanes": "2",
+    "ref": "N2",
+    "source": "Bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 30699365,
+  "center": {
+    "lat": 7.6022771,
+    "lon": 0.4449276
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 30952330,
+  "center": {
+    "lat": 8.1389567,
+    "lon": -0.0485747
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Krete Krachi - Bimbila",
+    "ref": "R202",
+    "source": "landsat"
+  }
+},
+{
+  "type": "way",
+  "id": 33632475,
+  "center": {
+    "lat": 7.0107066,
+    "lon": 0.3130270
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 33821205,
+  "center": {
+    "lat": 7.0226798,
+    "lon": 0.2971217
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 33821255,
+  "center": {
+    "lat": 7.5807852,
+    "lon": 0.5209299
+  },
+  "tags": {
+    "highway": "secondary"
+  }
+},
+{
+  "type": "way",
+  "id": 37285679,
+  "center": {
+    "lat": 8.1449243,
+    "lon": 0.0756880
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Bimbila - Dumbai",
+    "ref": "R26",
+    "source": "landsat"
+  }
+},
+{
+  "type": "way",
+  "id": 37285840,
+  "center": {
+    "lat": 7.8974785,
+    "lon": 0.2981590
+  },
+  "tags": {
+    "alt_name": "Dumbai - Kpandu",
+    "highway": "secondary",
+    "name": "Dambai - Kpandu",
+    "ref": "R26",
+    "source": "landsat"
+  }
+},
+{
+  "type": "way",
+  "id": 37285943,
+  "center": {
+    "lat": 7.7621740,
+    "lon": 0.3432211
+  },
+  "tags": {
+    "highway": "tertiary",
+    "note": "classification estimate only",
+    "source": "landsat"
+  }
+},
+{
+  "type": "way",
+  "id": 37286077,
+  "center": {
+    "lat": 7.5854817,
+    "lon": 0.5708004
+  },
+  "tags": {
+    "highway": "secondary",
+    "source": "Mapbox"
+  }
+},
+{
+  "type": "way",
+  "id": 37286082,
+  "center": {
+    "lat": 7.5536459,
+    "lon": 0.5430256
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "landsat",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 37289550,
+  "center": {
+    "lat": 7.7569636,
+    "lon": -0.5719616
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Atebubu - Kwadjokrom",
+    "ref": "R47",
+    "source": "interpolation;Perry-Castañeda LibraryMap Collection"
+  }
+},
+{
+  "type": "way",
+  "id": 37289595,
+  "center": {
+    "lat": 7.7752795,
+    "lon": -0.3133626
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Atebubu - Kwadjokrom",
+    "ref": "R47",
+    "source": "landsat;Perry-Castañeda LibraryMap Collection"
+  }
+},
+{
+  "type": "way",
+  "id": 37290381,
+  "center": {
+    "lat": 7.5473631,
+    "lon": 0.2972105
+  },
+  "tags": {
+    "source": "landsat",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 37290489,
+  "center": {
+    "lat": 7.4191341,
+    "lon": 0.5773065
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Mapbox;Bing;Maxar",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 37705240,
+  "center": {
+    "lat": 7.6607895,
+    "lon": -0.5913280
+  },
+  "tags": {
+    "source": "landsat",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 37705326,
+  "center": {
+    "lat": 7.6123062,
+    "lon": -0.5444509
+  },
+  "tags": {
+    "source": "landsat",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 42567204,
+  "center": {
+    "lat": 7.1523151,
+    "lon": 0.4739773
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Tema-Jasikan Road",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 42568033,
+  "center": {
+    "lat": 7.1559053,
+    "lon": 0.4787105
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Barclays Street"
+  }
+},
+{
+  "type": "way",
+  "id": 42568034,
+  "center": {
+    "lat": 7.1540096,
+    "lon": 0.4736683
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 42568035,
+  "center": {
+    "lat": 7.1535747,
+    "lon": 0.4753241
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Kutor Street",
+    "sidewalk": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 42568038,
+  "center": {
+    "lat": 7.1476287,
+    "lon": 0.4738082
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "name": "Dr. F. K. Morny Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 42569464,
+  "center": {
+    "lat": 7.1534282,
+    "lon": 0.4770782
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 42570297,
+  "center": {
+    "lat": 6.9091955,
+    "lon": 0.3764238
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "lit": "no",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 42575545,
+  "center": {
+    "lat": 7.1551619,
+    "lon": 0.4767663
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Bremen Mission Street"
+  }
+},
+{
+  "type": "way",
+  "id": 42682788,
+  "center": {
+    "lat": 7.1510490,
+    "lon": 0.4692092
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Central Market Road"
+  }
+},
+{
+  "type": "way",
+  "id": 55467282,
+  "center": {
+    "lat": 8.1351904,
+    "lon": 0.1777339
+  },
+  "tags": {
+    "name": "Oti",
+    "source": "landsat",
+    "source:name": "Perry-Castañeda LibraryMap Collection",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 55467286,
+  "center": {
+    "lat": 7.6849017,
+    "lon": -0.2886914
+  },
+  "tags": {
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 55467289,
+  "center": {
+    "lat": 7.8709161,
+    "lon": -0.0612502
+  },
+  "tags": {
+    "name": "Volta",
+    "name:br": "Ar Volta",
+    "name:fr": "La Volta",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 63016576,
+  "center": {
+    "lat": 7.5188220,
+    "lon": 0.4755377
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Dabo Street",
+    "source": "bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 63016597,
+  "center": {
+    "lat": 7.4423597,
+    "lon": 0.4465653
+  },
+  "tags": {
+    "highway": "trunk",
+    "ref": "N2",
+    "surface": "paved",
+    "width": "4"
+  }
+},
+{
+  "type": "way",
+  "id": 63093802,
+  "center": {
+    "lat": 7.1168439,
+    "lon": 0.5889008
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "sand",
+    "width": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 75570956,
+  "center": {
+    "lat": 6.9474123,
+    "lon": 0.5906110
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "N13"
+  }
+},
+{
+  "type": "way",
+  "id": 75570976,
+  "center": {
+    "lat": 6.9698674,
+    "lon": 0.5175183
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "IR7",
+    "source": "bing",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 75570985,
+  "center": {
+    "lat": 6.9687338,
+    "lon": 0.5576713
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Route de Kuma",
+    "ref": "N13",
+    "source": "bing;survey",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 75571017,
+  "center": {
+    "lat": 6.9713792,
+    "lon": 0.5096374
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "IR7",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 75571024,
+  "center": {
+    "lat": 6.9957826,
+    "lon": 0.4418533
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Wudome Road",
+    "ref": "IR7",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 80234477,
+  "center": {
+    "lat": 6.9303323,
+    "lon": 0.6114080
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Route de Missahoe",
+    "ref": "N13"
+  }
+},
+{
+  "type": "way",
+  "id": 80249454,
+  "center": {
+    "lat": 7.1179085,
+    "lon": 0.5900207
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Waterfall Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 80256799,
+  "center": {
+    "lat": 7.5047682,
+    "lon": 0.1306712
+  },
+  "tags": {
+    "name": "Volta",
+    "name:br": "Ar Volta",
+    "name:fr": "La Volta",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 129579908,
+  "center": {
+    "lat": 7.0056429,
+    "lon": 0.2954976
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Konda Road",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 129581944,
+  "center": {
+    "lat": 6.9917108,
+    "lon": 0.2919484
+  },
+  "tags": {
+    "highway": "secondary",
+    "lane_markings": "no",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 129702792,
+  "center": {
+    "lat": 7.0029897,
+    "lon": 0.2915072
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 129702802,
+  "center": {
+    "lat": 6.9957161,
+    "lon": 0.2932553
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Konda Road",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 132500586,
+  "center": {
+    "lat": 6.9533340,
+    "lon": 0.2882074
+  },
+  "tags": {
+    "building": "yes",
+    "fixme": "local knowledge required, moved to this nearest building",
+    "government": "education",
+    "name": "Ghana Education Service",
+    "office": "government",
+    "opening_hours": "Mo-Fr 08:00-16:00"
+  }
+},
+{
+  "type": "way",
+  "id": 164446049,
+  "center": {
+    "lat": 6.8728914,
+    "lon": -0.3770904
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R72",
+    "smoothness": "horrible"
+  }
+},
+{
+  "type": "way",
+  "id": 166303679,
+  "center": {
+    "lat": 7.1217959,
+    "lon": -0.0236184
+  },
+  "tags": {
+    "highway": "tertiary",
+    "ref": "R72",
+    "smoothness": "very_bad"
+  }
+},
+{
+  "type": "way",
+  "id": 166303683,
+  "center": {
+    "lat": 6.9313432,
+    "lon": -0.2356214
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R72",
+    "smoothness": "very_bad"
+  }
+},
+{
+  "type": "way",
+  "id": 168135133,
+  "center": {
+    "lat": 6.9121835,
+    "lon": 0.2819632
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 169122107,
+  "center": {
+    "lat": 6.9439323,
+    "lon": 0.5975939
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 169124056,
+  "center": {
+    "lat": 6.9454787,
+    "lon": 0.5974609
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 169124058,
+  "center": {
+    "lat": 6.9455203,
+    "lon": 0.5982137
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 169124062,
+  "center": {
+    "lat": 6.9438965,
+    "lon": 0.5977033
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 169124063,
+  "center": {
+    "lat": 6.9453065,
+    "lon": 0.5978043
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 169124067,
+  "center": {
+    "lat": 6.9443799,
+    "lon": 0.5990735
+  },
+  "tags": {
+    "building": "construction"
+  }
+},
+{
+  "type": "way",
+  "id": 170259851,
+  "center": {
+    "lat": 6.9464500,
+    "lon": -0.0481939
+  },
+  "tags": {
+    "highway": "tertiary",
+    "smoothness": "very_bad"
+  }
+},
+{
+  "type": "way",
+  "id": 170432339,
+  "center": {
+    "lat": 7.7827168,
+    "lon": -0.2232328
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432340,
+  "center": {
+    "lat": 7.7851479,
+    "lon": -0.2300929
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432341,
+  "center": {
+    "lat": 7.7868311,
+    "lon": -0.2308920
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432353,
+  "center": {
+    "lat": 7.7887720,
+    "lon": -0.2315804
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432354,
+  "center": {
+    "lat": 7.7843213,
+    "lon": -0.2247857
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432374,
+  "center": {
+    "lat": 7.7879066,
+    "lon": -0.2299448
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432375,
+  "center": {
+    "lat": 7.7830022,
+    "lon": -0.2292145
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432379,
+  "center": {
+    "lat": 7.7839994,
+    "lon": -0.2279240
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing Maps"
+  }
+},
+{
+  "type": "way",
+  "id": 170432425,
+  "center": {
+    "lat": 7.7886066,
+    "lon": -0.2320305
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 175396587,
+  "center": {
+    "lat": 7.1546433,
+    "lon": 0.4775725
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Folikorkor Link",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 177390632,
+  "center": {
+    "lat": 7.5901253,
+    "lon": -0.3308125
+  },
+  "tags": {
+    "waterway": "stream"
+  }
+},
+{
+  "type": "way",
+  "id": 193100886,
+  "center": {
+    "lat": 6.9973255,
+    "lon": 0.5032269
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 193100887,
+  "center": {
+    "lat": 7.1057215,
+    "lon": 0.4937373
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 193775876,
+  "center": {
+    "lat": 6.9457671,
+    "lon": 0.5951140
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 195592848,
+  "center": {
+    "lat": 7.0008922,
+    "lon": 0.3038843
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "IR7",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 195592849,
+  "center": {
+    "lat": 6.9946539,
+    "lon": 0.2942124
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lane_markings": "no",
+    "name": "Amega Ebudza Street",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 195592851,
+  "center": {
+    "lat": 7.0037700,
+    "lon": 0.3402651
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "IR7",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 195592852,
+  "center": {
+    "lat": 6.9947501,
+    "lon": 0.2959690
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Agbeteti Link",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 195600059,
+  "center": {
+    "lat": 7.4032660,
+    "lon": 0.3112236
+  },
+  "tags": {
+    "highway": "secondary",
+    "junction": "roundabout",
+    "ref": "R26"
+  }
+},
+{
+  "type": "way",
+  "id": 195600063,
+  "center": {
+    "lat": 7.4010038,
+    "lon": 0.3031728
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 195600065,
+  "center": {
+    "lat": 7.2965866,
+    "lon": 0.3212364
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "name": "Kwamekrom Jasikan Road",
+    "ref": "R26"
+  }
+},
+{
+  "type": "way",
+  "id": 195600069,
+  "center": {
+    "lat": 7.4049902,
+    "lon": 0.3072018
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 195600070,
+  "center": {
+    "lat": 7.4145591,
+    "lon": 0.3693239
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 195600071,
+  "center": {
+    "lat": 7.3499987,
+    "lon": 0.3106066
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Kwamekrom Jasikan Road",
+    "ref": "R26"
+  }
+},
+{
+  "type": "way",
+  "id": 196098462,
+  "center": {
+    "lat": 8.0672412,
+    "lon": 0.1655574
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "DC residential road",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 196098465,
+  "center": {
+    "lat": 8.0706360,
+    "lon": 0.1749087
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 201414414,
+  "center": {
+    "lat": 6.9579264,
+    "lon": -0.5052169
+  },
+  "tags": {
+    "highway": "tertiary",
+    "smoothness": "very_bad"
+  }
+},
+{
+  "type": "way",
+  "id": 206321575,
+  "center": {
+    "lat": 6.9933620,
+    "lon": 0.3013787
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321576,
+  "center": {
+    "lat": 7.0011221,
+    "lon": 0.2877787
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321578,
+  "center": {
+    "lat": 7.0045983,
+    "lon": 0.2884918
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321579,
+  "center": {
+    "lat": 6.9971272,
+    "lon": 0.2908943
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbui Tatse Kwaku Street",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 206321580,
+  "center": {
+    "lat": 7.7309221,
+    "lon": 0.3359768
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R26",
+    "source": "Bing",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 206321581,
+  "center": {
+    "lat": 7.0019151,
+    "lon": 0.2918057
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321583,
+  "center": {
+    "lat": 7.0027469,
+    "lon": 0.2970316
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321584,
+  "center": {
+    "lat": 7.0052155,
+    "lon": 0.3019684
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321585,
+  "center": {
+    "lat": 7.0030891,
+    "lon": 0.3003122
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321586,
+  "center": {
+    "lat": 6.9999465,
+    "lon": 0.2900504
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321591,
+  "center": {
+    "lat": 6.9999384,
+    "lon": 0.2952076
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321592,
+  "center": {
+    "lat": 7.6821925,
+    "lon": 0.3711363
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "layer": "1",
+    "ref": "R26",
+    "source": "Bing",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 206321595,
+  "center": {
+    "lat": 7.6207527,
+    "lon": 0.3862397
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R26",
+    "source": "Bing",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 206321596,
+  "center": {
+    "lat": 7.0021936,
+    "lon": 0.2835954
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321597,
+  "center": {
+    "lat": 7.0032312,
+    "lon": 0.2961027
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321598,
+  "center": {
+    "lat": 6.9945654,
+    "lon": 0.3016674
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321599,
+  "center": {
+    "lat": 7.0008453,
+    "lon": 0.2981993
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321602,
+  "center": {
+    "lat": 7.0027192,
+    "lon": 0.2901768
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321603,
+  "center": {
+    "lat": 7.0004795,
+    "lon": 0.2987787
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321606,
+  "center": {
+    "lat": 7.0077952,
+    "lon": 0.2883288
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321607,
+  "center": {
+    "lat": 6.9993799,
+    "lon": 0.2967068
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321609,
+  "center": {
+    "lat": 6.9930527,
+    "lon": 0.3033742
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321612,
+  "center": {
+    "lat": 6.9969664,
+    "lon": 0.2966534
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321613,
+  "center": {
+    "lat": 7.0048132,
+    "lon": 0.3073111
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "dirt"
+  }
+},
+{
+  "type": "way",
+  "id": 206321615,
+  "center": {
+    "lat": 6.9933077,
+    "lon": 0.3037608
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321618,
+  "center": {
+    "lat": 7.0029488,
+    "lon": 0.2982120
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321619,
+  "center": {
+    "lat": 7.0339803,
+    "lon": 0.2985565
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321620,
+  "center": {
+    "lat": 6.9990829,
+    "lon": 0.2916317
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 206321621,
+  "center": {
+    "lat": 7.0034731,
+    "lon": 0.2976326
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321622,
+  "center": {
+    "lat": 7.0047510,
+    "lon": 0.2991069
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321625,
+  "center": {
+    "lat": 6.9993001,
+    "lon": 0.2905289
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "fine_gravel"
+  }
+},
+{
+  "type": "way",
+  "id": 206321626,
+  "center": {
+    "lat": 6.9936306,
+    "lon": 0.2989129
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 206321628,
+  "center": {
+    "lat": 6.9997797,
+    "lon": 0.2935241
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321630,
+  "center": {
+    "lat": 7.0028309,
+    "lon": 0.2974858
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321631,
+  "center": {
+    "lat": 7.0064039,
+    "lon": 0.2858437
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 206321632,
+  "center": {
+    "lat": 7.0315904,
+    "lon": 0.2981567
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321633,
+  "center": {
+    "lat": 7.0041840,
+    "lon": 0.2999937
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321636,
+  "center": {
+    "lat": 6.9992882,
+    "lon": 0.2959840
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206321638,
+  "center": {
+    "lat": 7.6826828,
+    "lon": 0.3684477
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R26",
+    "source": "Bing",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 206380284,
+  "center": {
+    "lat": 7.9609879,
+    "lon": 0.2320863
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 206380290,
+  "center": {
+    "lat": 8.0913147,
+    "lon": 0.3286384
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "R27",
+    "source": "landsat"
+  }
+},
+{
+  "type": "way",
+  "id": 206380294,
+  "center": {
+    "lat": 7.9583527,
+    "lon": -0.0108996
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 206380295,
+  "center": {
+    "lat": 7.9575998,
+    "lon": -0.0068648
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210263284,
+  "center": {
+    "lat": 7.7652726,
+    "lon": -0.3231141
+  },
+  "tags": {
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 210263416,
+  "center": {
+    "lat": 7.6567184,
+    "lon": 0.5488302
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 210274807,
+  "center": {
+    "lat": 7.5117169,
+    "lon": 0.4669946
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 210274808,
+  "center": {
+    "lat": 7.7727565,
+    "lon": 0.5169173
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "dirt"
+  }
+},
+{
+  "type": "way",
+  "id": 210274810,
+  "center": {
+    "lat": 7.7143346,
+    "lon": 0.5766401
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Mapbox",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 210274823,
+  "center": {
+    "lat": 7.2959217,
+    "lon": 0.5098380
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 210274824,
+  "center": {
+    "lat": 7.4997713,
+    "lon": 0.4936049
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 210274825,
+  "center": {
+    "lat": 7.7769047,
+    "lon": 0.5499255
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 210285205,
+  "center": {
+    "lat": 7.2762362,
+    "lon": 0.4739077
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285206,
+  "center": {
+    "lat": 7.3542098,
+    "lon": 0.4605648
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285207,
+  "center": {
+    "lat": 7.3685195,
+    "lon": 0.5469965
+  },
+  "tags": {
+    "highway": "secondary"
+  }
+},
+{
+  "type": "way",
+  "id": 210285209,
+  "center": {
+    "lat": 7.0858176,
+    "lon": 0.5624963
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 210285213,
+  "center": {
+    "lat": 7.2752934,
+    "lon": 0.4768161
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285216,
+  "center": {
+    "lat": 7.2761376,
+    "lon": 0.4791057
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285223,
+  "center": {
+    "lat": 7.1376668,
+    "lon": 0.3372980
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285224,
+  "center": {
+    "lat": 7.2770424,
+    "lon": 0.4772610
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285226,
+  "center": {
+    "lat": 7.2766552,
+    "lon": 0.4776096
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285227,
+  "center": {
+    "lat": 7.2778283,
+    "lon": 0.4788284
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 210285229,
+  "center": {
+    "lat": 7.1172379,
+    "lon": 0.4003705
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 210285230,
+  "center": {
+    "lat": 7.3307773,
+    "lon": 0.4571054
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 210285231,
+  "center": {
+    "lat": 7.3735529,
+    "lon": 0.4620317
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "maxar",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 213203454,
+  "center": {
+    "lat": 6.9934423,
+    "lon": 0.3012537
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203455,
+  "center": {
+    "lat": 6.9863646,
+    "lon": 0.2977553
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203456,
+  "center": {
+    "lat": 6.9964464,
+    "lon": 0.2943549
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203457,
+  "center": {
+    "lat": 6.9952588,
+    "lon": 0.2902337
+  },
+  "tags": {
+    "highway": "residential",
+    "lane_markings": "no",
+    "name": "Eko Road",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213203458,
+  "center": {
+    "lat": 6.9942171,
+    "lon": 0.2825041
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203459,
+  "center": {
+    "lat": 6.9897554,
+    "lon": 0.2961040
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203460,
+  "center": {
+    "lat": 6.9965695,
+    "lon": 0.2946213
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203461,
+  "center": {
+    "lat": 6.9946606,
+    "lon": 0.2828310
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203462,
+  "center": {
+    "lat": 7.0003383,
+    "lon": 0.2816876
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203465,
+  "center": {
+    "lat": 6.9927132,
+    "lon": 0.2909258
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Clinic Close",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213203466,
+  "center": {
+    "lat": 6.9584782,
+    "lon": 0.3219313
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "2",
+    "surface": "paved"
+  }
+},
+{
+  "type": "way",
+  "id": 213203468,
+  "center": {
+    "lat": 7.0029071,
+    "lon": 0.2857704
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213203469,
+  "center": {
+    "lat": 6.9917797,
+    "lon": 0.2903156
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Sonli Street"
+  }
+},
+{
+  "type": "way",
+  "id": 213203470,
+  "center": {
+    "lat": 7.0005426,
+    "lon": 0.2830881
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205443,
+  "center": {
+    "lat": 6.9759805,
+    "lon": 0.2907876
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205445,
+  "center": {
+    "lat": 6.9560676,
+    "lon": 0.2883414
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213205446,
+  "center": {
+    "lat": 6.9847963,
+    "lon": 0.3010054
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205447,
+  "center": {
+    "lat": 6.9955764,
+    "lon": 0.2990737
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "compacted"
+  }
+},
+{
+  "type": "way",
+  "id": 213205448,
+  "center": {
+    "lat": 6.9835424,
+    "lon": 0.2991919
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205450,
+  "center": {
+    "lat": 6.9978943,
+    "lon": 0.2983160
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Asianu Street",
+    "ref": "IR7",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213205451,
+  "center": {
+    "lat": 6.9821142,
+    "lon": 0.2904518
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213205452,
+  "center": {
+    "lat": 6.9728953,
+    "lon": 0.2910765
+  },
+  "tags": {
+    "highway": "residential",
+    "route": "foot"
+  }
+},
+{
+  "type": "way",
+  "id": 213205456,
+  "center": {
+    "lat": 6.9827709,
+    "lon": 0.3001332
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205458,
+  "center": {
+    "lat": 6.9833658,
+    "lon": 0.2983984
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205459,
+  "center": {
+    "lat": 6.9864152,
+    "lon": 0.2967994
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213205461,
+  "center": {
+    "lat": 6.9851117,
+    "lon": 0.2981359
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213207403,
+  "center": {
+    "lat": 6.9990419,
+    "lon": 0.2942548
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Konda Road",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213207405,
+  "center": {
+    "lat": 7.0014439,
+    "lon": 0.2949266
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "Konda Road",
+    "ref": "R26",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 213207406,
+  "center": {
+    "lat": 7.0008778,
+    "lon": 0.3016774
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 213212229,
+  "center": {
+    "lat": 6.9993371,
+    "lon": 0.3034363
+  },
+  "tags": {
+    "amenity": "hospital",
+    "contact:email": "info.mmch1960@gmail.com",
+    "contact:website": "http://mmcatholichospital.com/",
+    "healthcare": "hospital",
+    "name": "Margret Marquart Catholic Hospital",
+    "opening_hours": "24/7"
+  }
+},
+{
+  "type": "way",
+  "id": 213212230,
+  "center": {
+    "lat": 6.9971431,
+    "lon": 0.2934602
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 213212231,
+  "center": {
+    "lat": 7.0005937,
+    "lon": 0.3013407
+  },
+  "tags": {
+    "amenity": "school",
+    "building": "yes",
+    "name": "Unifying Neighbours Through Education & Development (UNiTED)"
+  }
+},
+{
+  "type": "way",
+  "id": 213212232,
+  "center": {
+    "lat": 6.9971276,
+    "lon": 0.2994873
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 213212235,
+  "center": {
+    "lat": 6.9968256,
+    "lon": 0.2939720
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 213212237,
+  "center": {
+    "lat": 6.9957676,
+    "lon": 0.2996238
+  },
+  "tags": {
+    "amenity": "school",
+    "check_date": "2025-02-09",
+    "name": "HardtHaven Children's Home"
+  }
+},
+{
+  "type": "way",
+  "id": 223002402,
+  "center": {
+    "lat": 7.1529328,
+    "lon": 0.4760331
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "Fodome Street"
+  }
+},
+{
+  "type": "way",
+  "id": 236507182,
+  "center": {
+    "lat": 7.0057029,
+    "lon": -0.0563874
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507702,
+  "center": {
+    "lat": 7.0482502,
+    "lon": -0.0767878
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507703,
+  "center": {
+    "lat": 7.0565357,
+    "lon": -0.0741978
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507704,
+  "center": {
+    "lat": 7.0490825,
+    "lon": -0.0777212
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507705,
+  "center": {
+    "lat": 7.0480369,
+    "lon": -0.0773080
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507706,
+  "center": {
+    "lat": 7.0486081,
+    "lon": -0.0772355
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507707,
+  "center": {
+    "lat": 7.0563736,
+    "lon": -0.0743252
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507708,
+  "center": {
+    "lat": 7.0492435,
+    "lon": -0.0773314
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507709,
+  "center": {
+    "lat": 7.0482912,
+    "lon": -0.0773944
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507710,
+  "center": {
+    "lat": 7.0556918,
+    "lon": -0.0728015
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507711,
+  "center": {
+    "lat": 7.0489008,
+    "lon": -0.0771427
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507712,
+  "center": {
+    "lat": 7.0550529,
+    "lon": -0.0728825
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 236507715,
+  "center": {
+    "lat": 7.0485501,
+    "lon": -0.0766924
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 236507843,
+  "center": {
+    "lat": 7.0384689,
+    "lon": -0.0828929
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507844,
+  "center": {
+    "lat": 7.0122480,
+    "lon": -0.0924660
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507845,
+  "center": {
+    "lat": 7.0387348,
+    "lon": -0.0830324
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507846,
+  "center": {
+    "lat": 7.0378443,
+    "lon": -0.0826387
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507847,
+  "center": {
+    "lat": 7.0125973,
+    "lon": -0.0928225
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507848,
+  "center": {
+    "lat": 7.0386206,
+    "lon": -0.0824606
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507849,
+  "center": {
+    "lat": 7.0381984,
+    "lon": -0.0831589
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507969,
+  "center": {
+    "lat": 8.0034417,
+    "lon": 0.5503265
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507970,
+  "center": {
+    "lat": 8.0028303,
+    "lon": 0.5522689
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507971,
+  "center": {
+    "lat": 8.0035042,
+    "lon": 0.5501338
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507972,
+  "center": {
+    "lat": 8.0027482,
+    "lon": 0.5530202
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507973,
+  "center": {
+    "lat": 8.0029050,
+    "lon": 0.5504773
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507974,
+  "center": {
+    "lat": 8.0029152,
+    "lon": 0.5501323
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507975,
+  "center": {
+    "lat": 8.0034269,
+    "lon": 0.5510252
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507976,
+  "center": {
+    "lat": 8.0028510,
+    "lon": 0.5519286
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507977,
+  "center": {
+    "lat": 8.0031913,
+    "lon": 0.5502524
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507978,
+  "center": {
+    "lat": 8.0028781,
+    "lon": 0.5512480
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507979,
+  "center": {
+    "lat": 8.0022909,
+    "lon": 0.5523620
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507980,
+  "center": {
+    "lat": 8.0034064,
+    "lon": 0.5515203
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507981,
+  "center": {
+    "lat": 8.0015404,
+    "lon": 0.5514832
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507982,
+  "center": {
+    "lat": 8.0032874,
+    "lon": 0.5507467
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 236507983,
+  "center": {
+    "lat": 8.0028623,
+    "lon": 0.5516204
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 239641258,
+  "center": {
+    "lat": 7.1628726,
+    "lon": 0.4747600
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Azogba Street",
+    "surface": "soil",
+    "tracktype": "grade4"
+  }
+},
+{
+  "type": "way",
+  "id": 239648544,
+  "center": {
+    "lat": 7.1362005,
+    "lon": 0.4522101
+  },
+  "tags": {
+    "name": "River Dayi",
+    "name:fr": "Dayi",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 243106178,
+  "center": {
+    "lat": 7.1513574,
+    "lon": 0.4711367
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243106179,
+  "center": {
+    "lat": 7.1517869,
+    "lon": 0.4712281
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106438,
+  "center": {
+    "lat": 7.1523280,
+    "lon": 0.4793614
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Mamaga Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243106522,
+  "center": {
+    "lat": 7.1524669,
+    "lon": 0.4778851
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbega Gabusu Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243106524,
+  "center": {
+    "lat": 7.1520509,
+    "lon": 0.4816300
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106525,
+  "center": {
+    "lat": 7.1505457,
+    "lon": 0.4829886
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106645,
+  "center": {
+    "lat": 7.1541552,
+    "lon": 0.4818312
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106646,
+  "center": {
+    "lat": 7.1536668,
+    "lon": 0.4836417
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106647,
+  "center": {
+    "lat": 7.1557918,
+    "lon": 0.4849874
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106649,
+  "center": {
+    "lat": 7.1546777,
+    "lon": 0.4866902
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106650,
+  "center": {
+    "lat": 7.1556723,
+    "lon": 0.4866046
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106651,
+  "center": {
+    "lat": 7.1555722,
+    "lon": 0.4873816
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106652,
+  "center": {
+    "lat": 7.1535287,
+    "lon": 0.4881807
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106653,
+  "center": {
+    "lat": 7.1532240,
+    "lon": 0.4892835
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106654,
+  "center": {
+    "lat": 7.1540419,
+    "lon": 0.4896593
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106655,
+  "center": {
+    "lat": 7.1525948,
+    "lon": 0.4897261
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106711,
+  "center": {
+    "lat": 7.1517922,
+    "lon": 0.4906078
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106712,
+  "center": {
+    "lat": 7.1517810,
+    "lon": 0.4914732
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106713,
+  "center": {
+    "lat": 7.1515097,
+    "lon": 0.4913193
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243106714,
+  "center": {
+    "lat": 7.1547197,
+    "lon": 0.4915563
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106722,
+  "center": {
+    "lat": 7.1535861,
+    "lon": 0.4922947
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106723,
+  "center": {
+    "lat": 7.1530972,
+    "lon": 0.4940566
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106724,
+  "center": {
+    "lat": 7.1543445,
+    "lon": 0.4929107
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106785,
+  "center": {
+    "lat": 7.1552541,
+    "lon": 0.4936163
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106786,
+  "center": {
+    "lat": 7.1609348,
+    "lon": 0.4950487
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106787,
+  "center": {
+    "lat": 7.1590194,
+    "lon": 0.4949881
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106788,
+  "center": {
+    "lat": 7.1588070,
+    "lon": 0.4954403
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106789,
+  "center": {
+    "lat": 7.1576533,
+    "lon": 0.4942794
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106790,
+  "center": {
+    "lat": 7.1571458,
+    "lon": 0.4948622
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106955,
+  "center": {
+    "lat": 7.1588763,
+    "lon": 0.4960228
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106956,
+  "center": {
+    "lat": 7.1575291,
+    "lon": 0.4970362
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106958,
+  "center": {
+    "lat": 7.1570264,
+    "lon": 0.4989921
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106962,
+  "center": {
+    "lat": 7.1602372,
+    "lon": 0.4949290
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243106964,
+  "center": {
+    "lat": 7.1575161,
+    "lon": 0.4907196
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243106965,
+  "center": {
+    "lat": 7.1570700,
+    "lon": 0.4905261
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243106967,
+  "center": {
+    "lat": 7.1572311,
+    "lon": 0.4882324
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243106968,
+  "center": {
+    "lat": 7.1527524,
+    "lon": 0.4907223
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107021,
+  "center": {
+    "lat": 7.1536268,
+    "lon": 0.4716697
+  },
+  "tags": {
+    "highway": "residential",
+    "noname": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243107022,
+  "center": {
+    "lat": 7.1524487,
+    "lon": 0.4696060
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107023,
+  "center": {
+    "lat": 7.1559754,
+    "lon": 0.4723027
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107024,
+  "center": {
+    "lat": 7.1554592,
+    "lon": 0.4713687
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107025,
+  "center": {
+    "lat": 7.1538830,
+    "lon": 0.4704413
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107026,
+  "center": {
+    "lat": 7.1526308,
+    "lon": 0.4680562
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107027,
+  "center": {
+    "lat": 7.1547532,
+    "lon": 0.4676378
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107028,
+  "center": {
+    "lat": 7.1555464,
+    "lon": 0.4700819
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Kutor Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107029,
+  "center": {
+    "lat": 7.1547244,
+    "lon": 0.4729110
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Kutor Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107030,
+  "center": {
+    "lat": 7.1550046,
+    "lon": 0.4734112
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107031,
+  "center": {
+    "lat": 7.1574511,
+    "lon": 0.4651888
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Kutor Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107032,
+  "center": {
+    "lat": 7.1593651,
+    "lon": 0.4605057
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Kutor Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107033,
+  "center": {
+    "lat": 7.1593173,
+    "lon": 0.4583493
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107034,
+  "center": {
+    "lat": 7.1578250,
+    "lon": 0.4555249
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107037,
+  "center": {
+    "lat": 7.1583120,
+    "lon": 0.4652345
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107040,
+  "center": {
+    "lat": 7.1595004,
+    "lon": 0.4708992
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107041,
+  "center": {
+    "lat": 7.1576401,
+    "lon": 0.4718387
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107042,
+  "center": {
+    "lat": 7.1559177,
+    "lon": 0.4731818
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107043,
+  "center": {
+    "lat": 7.1561705,
+    "lon": 0.4735659
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107044,
+  "center": {
+    "lat": 7.1570313,
+    "lon": 0.4725603
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107045,
+  "center": {
+    "lat": 7.1572738,
+    "lon": 0.4733200
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107046,
+  "center": {
+    "lat": 7.1550770,
+    "lon": 0.4756703
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107047,
+  "center": {
+    "lat": 7.1546539,
+    "lon": 0.4762329
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Amega Martin Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107334,
+  "center": {
+    "lat": 7.1502760,
+    "lon": 0.4896734
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107335,
+  "center": {
+    "lat": 7.1501731,
+    "lon": 0.4881509
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107336,
+  "center": {
+    "lat": 7.1500573,
+    "lon": 0.4827493
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Mamaga Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107337,
+  "center": {
+    "lat": 7.1494046,
+    "lon": 0.4825438
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107338,
+  "center": {
+    "lat": 7.1460135,
+    "lon": 0.4853122
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107528,
+  "center": {
+    "lat": 7.1484453,
+    "lon": 0.4827056
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107529,
+  "center": {
+    "lat": 7.1483137,
+    "lon": 0.4816170
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107530,
+  "center": {
+    "lat": 7.1548814,
+    "lon": 0.4654675
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107531,
+  "center": {
+    "lat": 7.1540860,
+    "lon": 0.4663441
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107532,
+  "center": {
+    "lat": 7.1541670,
+    "lon": 0.4644205
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107533,
+  "center": {
+    "lat": 7.1531628,
+    "lon": 0.4649159
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107534,
+  "center": {
+    "lat": 7.1521187,
+    "lon": 0.4665801
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107535,
+  "center": {
+    "lat": 7.1498669,
+    "lon": 0.4672061
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107536,
+  "center": {
+    "lat": 7.1509201,
+    "lon": 0.4659464
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107537,
+  "center": {
+    "lat": 7.1517664,
+    "lon": 0.4641407
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243107620,
+  "center": {
+    "lat": 7.1564776,
+    "lon": 0.4747778
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107621,
+  "center": {
+    "lat": 7.1564653,
+    "lon": 0.4764957
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107622,
+  "center": {
+    "lat": 7.1574030,
+    "lon": 0.4771539
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Volta Cinema Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107623,
+  "center": {
+    "lat": 7.1580911,
+    "lon": 0.4755160
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Volta Cinema Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243107624,
+  "center": {
+    "lat": 7.1588560,
+    "lon": 0.4846131
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107626,
+  "center": {
+    "lat": 7.1622360,
+    "lon": 0.4822813
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107628,
+  "center": {
+    "lat": 7.1626878,
+    "lon": 0.4796407
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Picnic Road"
+  }
+},
+{
+  "type": "way",
+  "id": 243107629,
+  "center": {
+    "lat": 7.1639771,
+    "lon": 0.4830819
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Picnic Road"
+  }
+},
+{
+  "type": "way",
+  "id": 243107633,
+  "center": {
+    "lat": 7.1646524,
+    "lon": 0.4850507
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Picnic Road"
+  }
+},
+{
+  "type": "way",
+  "id": 243107634,
+  "center": {
+    "lat": 7.1648373,
+    "lon": 0.4847502
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107636,
+  "center": {
+    "lat": 7.1653063,
+    "lon": 0.4848930
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107641,
+  "center": {
+    "lat": 7.1645367,
+    "lon": 0.4837679
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107643,
+  "center": {
+    "lat": 7.1636537,
+    "lon": 0.4837578
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107644,
+  "center": {
+    "lat": 7.1625177,
+    "lon": 0.4848324
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107646,
+  "center": {
+    "lat": 7.1579864,
+    "lon": 0.4850197
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243107678,
+  "center": {
+    "lat": 7.1578881,
+    "lon": 0.4819527
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243108412,
+  "center": {
+    "lat": 7.1530022,
+    "lon": 0.4613479
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108413,
+  "center": {
+    "lat": 7.1526190,
+    "lon": 0.4628503
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108414,
+  "center": {
+    "lat": 7.1514006,
+    "lon": 0.4627231
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108425,
+  "center": {
+    "lat": 7.1588953,
+    "lon": 0.4821085
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243108426,
+  "center": {
+    "lat": 7.1610250,
+    "lon": 0.4817964
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243108427,
+  "center": {
+    "lat": 7.1620277,
+    "lon": 0.4820775
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108428,
+  "center": {
+    "lat": 7.1568128,
+    "lon": 0.4848267
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108429,
+  "center": {
+    "lat": 7.1574248,
+    "lon": 0.4863889
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108430,
+  "center": {
+    "lat": 7.1584527,
+    "lon": 0.4860933
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Vule Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243108431,
+  "center": {
+    "lat": 7.1600036,
+    "lon": 0.4847757
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108432,
+  "center": {
+    "lat": 7.1599303,
+    "lon": 0.4857192
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108433,
+  "center": {
+    "lat": 7.1593936,
+    "lon": 0.4854140
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108434,
+  "center": {
+    "lat": 7.1597132,
+    "lon": 0.4888817
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108435,
+  "center": {
+    "lat": 7.1606677,
+    "lon": 0.4889479
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108436,
+  "center": {
+    "lat": 7.1612025,
+    "lon": 0.4896292
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108439,
+  "center": {
+    "lat": 7.1601947,
+    "lon": 0.4896841
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108440,
+  "center": {
+    "lat": 7.1608008,
+    "lon": 0.4902648
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108441,
+  "center": {
+    "lat": 7.1604852,
+    "lon": 0.4911521
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108442,
+  "center": {
+    "lat": 7.1598455,
+    "lon": 0.4921461
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108443,
+  "center": {
+    "lat": 7.1545092,
+    "lon": 0.4589080
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108444,
+  "center": {
+    "lat": 7.1541880,
+    "lon": 0.4580432
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243108445,
+  "center": {
+    "lat": 7.1534872,
+    "lon": 0.4575630
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108446,
+  "center": {
+    "lat": 7.1535050,
+    "lon": 0.4557810
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243108447,
+  "center": {
+    "lat": 7.1531753,
+    "lon": 0.4557137
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 243109122,
+  "center": {
+    "lat": 7.1629750,
+    "lon": 0.4899396
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109123,
+  "center": {
+    "lat": 7.1631877,
+    "lon": 0.4893979
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109124,
+  "center": {
+    "lat": 7.1646649,
+    "lon": 0.4900294
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109125,
+  "center": {
+    "lat": 7.1653641,
+    "lon": 0.4895527
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109126,
+  "center": {
+    "lat": 7.1631297,
+    "lon": 0.4918520
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109127,
+  "center": {
+    "lat": 7.1644786,
+    "lon": 0.4913002
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109128,
+  "center": {
+    "lat": 7.1660452,
+    "lon": 0.4912329
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109129,
+  "center": {
+    "lat": 7.1646515,
+    "lon": 0.4921823
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109130,
+  "center": {
+    "lat": 7.1665163,
+    "lon": 0.4740864
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "HEPSS Road"
+  }
+},
+{
+  "type": "way",
+  "id": 243109131,
+  "center": {
+    "lat": 7.1686708,
+    "lon": 0.4677893
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243109132,
+  "center": {
+    "lat": 7.1675649,
+    "lon": 0.4679848
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243109133,
+  "center": {
+    "lat": 7.1655092,
+    "lon": 0.4673487
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109134,
+  "center": {
+    "lat": 7.1646450,
+    "lon": 0.4738129
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109135,
+  "center": {
+    "lat": 7.1646287,
+    "lon": 0.4711176
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109136,
+  "center": {
+    "lat": 7.1646361,
+    "lon": 0.4764639
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243109137,
+  "center": {
+    "lat": 7.1657861,
+    "lon": 0.4751808
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110950,
+  "center": {
+    "lat": 7.1650295,
+    "lon": 0.4797499
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Akpedonu Street"
+  }
+},
+{
+  "type": "way",
+  "id": 243110951,
+  "center": {
+    "lat": 7.1650666,
+    "lon": 0.4795129
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110952,
+  "center": {
+    "lat": 7.1653587,
+    "lon": 0.4798251
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110953,
+  "center": {
+    "lat": 7.1742593,
+    "lon": 0.4797592
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110954,
+  "center": {
+    "lat": 7.1750049,
+    "lon": 0.4805390
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110955,
+  "center": {
+    "lat": 7.1761063,
+    "lon": 0.4841283
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110956,
+  "center": {
+    "lat": 7.1768854,
+    "lon": 0.4835409
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110957,
+  "center": {
+    "lat": 7.1748160,
+    "lon": 0.4805100
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110958,
+  "center": {
+    "lat": 7.1734053,
+    "lon": 0.4801240
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "School for the Deaf Drive"
+  }
+},
+{
+  "type": "way",
+  "id": 243110968,
+  "center": {
+    "lat": 7.1717765,
+    "lon": 0.4845082
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110969,
+  "center": {
+    "lat": 7.1722749,
+    "lon": 0.4841186
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110970,
+  "center": {
+    "lat": 7.1733597,
+    "lon": 0.4834091
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110971,
+  "center": {
+    "lat": 7.1748766,
+    "lon": 0.4823242
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110972,
+  "center": {
+    "lat": 7.1738196,
+    "lon": 0.4837659
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110973,
+  "center": {
+    "lat": 7.1724445,
+    "lon": 0.4833341
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110974,
+  "center": {
+    "lat": 7.1732878,
+    "lon": 0.4770716
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Ozogbedzi Lane"
+  }
+},
+{
+  "type": "way",
+  "id": 243110975,
+  "center": {
+    "lat": 7.1716876,
+    "lon": 0.4769359
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110976,
+  "center": {
+    "lat": 7.1726319,
+    "lon": 0.4744928
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110977,
+  "center": {
+    "lat": 7.1730883,
+    "lon": 0.4759743
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110978,
+  "center": {
+    "lat": 7.1724702,
+    "lon": 0.4769201
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243110979,
+  "center": {
+    "lat": 7.1718968,
+    "lon": 0.4790235
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111516,
+  "center": {
+    "lat": 7.1618557,
+    "lon": 0.4743380
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111517,
+  "center": {
+    "lat": 7.1617210,
+    "lon": 0.4745071
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111518,
+  "center": {
+    "lat": 7.1614656,
+    "lon": 0.4744080
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111519,
+  "center": {
+    "lat": 7.1622592,
+    "lon": 0.4741011
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111520,
+  "center": {
+    "lat": 7.1582161,
+    "lon": 0.4736881
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111521,
+  "center": {
+    "lat": 7.1591140,
+    "lon": 0.4736946
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111522,
+  "center": {
+    "lat": 7.1578788,
+    "lon": 0.4713261
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111523,
+  "center": {
+    "lat": 7.1582691,
+    "lon": 0.4714491
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111524,
+  "center": {
+    "lat": 7.1587202,
+    "lon": 0.4717430
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111525,
+  "center": {
+    "lat": 7.1585510,
+    "lon": 0.4688119
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111526,
+  "center": {
+    "lat": 7.1573015,
+    "lon": 0.4678730
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111527,
+  "center": {
+    "lat": 7.1583098,
+    "lon": 0.4682962
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111528,
+  "center": {
+    "lat": 7.1586040,
+    "lon": 0.4707223
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111529,
+  "center": {
+    "lat": 7.1585650,
+    "lon": 0.4702764
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111530,
+  "center": {
+    "lat": 7.1587066,
+    "lon": 0.4696995
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111531,
+  "center": {
+    "lat": 7.1589071,
+    "lon": 0.4698492
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111532,
+  "center": {
+    "lat": 7.1581512,
+    "lon": 0.4700466
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111533,
+  "center": {
+    "lat": 7.1555485,
+    "lon": 0.4669362
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111534,
+  "center": {
+    "lat": 7.1593776,
+    "lon": 0.4694850
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111535,
+  "center": {
+    "lat": 7.1602447,
+    "lon": 0.4697661
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111536,
+  "center": {
+    "lat": 7.1608368,
+    "lon": 0.4699368
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111537,
+  "center": {
+    "lat": 7.1604120,
+    "lon": 0.4589498
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111538,
+  "center": {
+    "lat": 7.1604702,
+    "lon": 0.4587690
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111539,
+  "center": {
+    "lat": 7.1615346,
+    "lon": 0.4590614
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111540,
+  "center": {
+    "lat": 7.1625558,
+    "lon": 0.4594771
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111541,
+  "center": {
+    "lat": 7.1635258,
+    "lon": 0.4601208
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111543,
+  "center": {
+    "lat": 7.1640489,
+    "lon": 0.4596522
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111544,
+  "center": {
+    "lat": 7.1646903,
+    "lon": 0.4592485
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111545,
+  "center": {
+    "lat": 7.1643436,
+    "lon": 0.4602536
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111546,
+  "center": {
+    "lat": 7.1625961,
+    "lon": 0.4584859
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111547,
+  "center": {
+    "lat": 7.1634568,
+    "lon": 0.4577826
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111548,
+  "center": {
+    "lat": 7.1602838,
+    "lon": 0.4567124
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111549,
+  "center": {
+    "lat": 7.1607435,
+    "lon": 0.4525322
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111550,
+  "center": {
+    "lat": 7.1602485,
+    "lon": 0.4485792
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111907,
+  "center": {
+    "lat": 7.1618021,
+    "lon": 0.4514092
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111908,
+  "center": {
+    "lat": 7.1693515,
+    "lon": 0.4788280
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111909,
+  "center": {
+    "lat": 7.1696129,
+    "lon": 0.4786801
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111910,
+  "center": {
+    "lat": 7.1696552,
+    "lon": 0.4780689
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243111911,
+  "center": {
+    "lat": 7.1688087,
+    "lon": 0.4796784
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111912,
+  "center": {
+    "lat": 7.1669255,
+    "lon": 0.4788203
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111913,
+  "center": {
+    "lat": 7.1665692,
+    "lon": 0.4778946
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243111914,
+  "center": {
+    "lat": 7.1657678,
+    "lon": 0.4781996
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111915,
+  "center": {
+    "lat": 7.1682700,
+    "lon": 0.4778534
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243111917,
+  "center": {
+    "lat": 7.1678476,
+    "lon": 0.4784719
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243111918,
+  "center": {
+    "lat": 7.1591416,
+    "lon": 0.4909535
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243111919,
+  "center": {
+    "lat": 7.1584921,
+    "lon": 0.4916858
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 243730571,
+  "center": {
+    "lat": 7.1498394,
+    "lon": 0.4792484
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243730572,
+  "center": {
+    "lat": 7.1476396,
+    "lon": 0.4806644
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243730682,
+  "center": {
+    "lat": 7.1536475,
+    "lon": 0.4767288
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730683,
+  "center": {
+    "lat": 7.1538685,
+    "lon": 0.4768391
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730684,
+  "center": {
+    "lat": 7.1534975,
+    "lon": 0.4766868
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730685,
+  "center": {
+    "lat": 7.1539832,
+    "lon": 0.4769823
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730686,
+  "center": {
+    "lat": 7.1537646,
+    "lon": 0.4769997
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730687,
+  "center": {
+    "lat": 7.2199686,
+    "lon": 0.5343066
+  },
+  "tags": {
+    "highway": "secondary"
+  }
+},
+{
+  "type": "way",
+  "id": 243730737,
+  "center": {
+    "lat": 7.1549137,
+    "lon": 0.4784027
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730738,
+  "center": {
+    "lat": 7.1546902,
+    "lon": 0.4784586
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730739,
+  "center": {
+    "lat": 7.1550500,
+    "lon": 0.4781547
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730740,
+  "center": {
+    "lat": 7.1552235,
+    "lon": 0.4781935
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243730741,
+  "center": {
+    "lat": 7.1560722,
+    "lon": 0.4779213
+  },
+  "tags": {
+    "brand": "Melcom",
+    "brand:wikidata": "Q6812065",
+    "building": "yes",
+    "name": "Melcom",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "way",
+  "id": 243731144,
+  "center": {
+    "lat": 7.1411998,
+    "lon": 0.4707406
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731145,
+  "center": {
+    "lat": 7.1443016,
+    "lon": 0.4710513
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731146,
+  "center": {
+    "lat": 7.1465179,
+    "lon": 0.4716630
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731147,
+  "center": {
+    "lat": 7.1463158,
+    "lon": 0.4700522
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731148,
+  "center": {
+    "lat": 7.1442917,
+    "lon": 0.4741928
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731149,
+  "center": {
+    "lat": 7.1437388,
+    "lon": 0.4759828
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731150,
+  "center": {
+    "lat": 7.1436977,
+    "lon": 0.4740222
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731151,
+  "center": {
+    "lat": 7.1432876,
+    "lon": 0.4732294
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731152,
+  "center": {
+    "lat": 7.1422644,
+    "lon": 0.4752474
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731153,
+  "center": {
+    "lat": 7.1421479,
+    "lon": 0.4746509
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731154,
+  "center": {
+    "lat": 7.1409426,
+    "lon": 0.4731374
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731256,
+  "center": {
+    "lat": 7.1410714,
+    "lon": 0.4729120
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731257,
+  "center": {
+    "lat": 7.1393581,
+    "lon": 0.4732628
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731258,
+  "center": {
+    "lat": 7.1387114,
+    "lon": 0.4722622
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731259,
+  "center": {
+    "lat": 7.1378704,
+    "lon": 0.4706986
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243731260,
+  "center": {
+    "lat": 7.1397554,
+    "lon": 0.4746936
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243998460,
+  "center": {
+    "lat": 7.1517599,
+    "lon": 0.4888921
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998461,
+  "center": {
+    "lat": 7.1515870,
+    "lon": 0.4889366
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998462,
+  "center": {
+    "lat": 7.1516282,
+    "lon": 0.4892753
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998463,
+  "center": {
+    "lat": 7.1514817,
+    "lon": 0.4894751
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998464,
+  "center": {
+    "lat": 7.1513273,
+    "lon": 0.4891834
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998465,
+  "center": {
+    "lat": 7.1513872,
+    "lon": 0.4889729
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998466,
+  "center": {
+    "lat": 7.1513233,
+    "lon": 0.4890286
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998467,
+  "center": {
+    "lat": 7.1512448,
+    "lon": 0.4896265
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998468,
+  "center": {
+    "lat": 7.1514058,
+    "lon": 0.4897206
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998469,
+  "center": {
+    "lat": 7.1512512,
+    "lon": 0.4897811
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998470,
+  "center": {
+    "lat": 7.1511919,
+    "lon": 0.4899228
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998471,
+  "center": {
+    "lat": 7.1511177,
+    "lon": 0.4898339
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998472,
+  "center": {
+    "lat": 7.1510277,
+    "lon": 0.4898662
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998473,
+  "center": {
+    "lat": 7.1510941,
+    "lon": 0.4899354
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998474,
+  "center": {
+    "lat": 7.1510680,
+    "lon": 0.4900494
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998475,
+  "center": {
+    "lat": 7.1509984,
+    "lon": 0.4902814
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998476,
+  "center": {
+    "lat": 7.1511093,
+    "lon": 0.4902773
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998477,
+  "center": {
+    "lat": 7.1513261,
+    "lon": 0.4901232
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998478,
+  "center": {
+    "lat": 7.1512616,
+    "lon": 0.4902367
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998479,
+  "center": {
+    "lat": 7.1515895,
+    "lon": 0.4899596
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998480,
+  "center": {
+    "lat": 7.1515552,
+    "lon": 0.4901395
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998481,
+  "center": {
+    "lat": 7.1517754,
+    "lon": 0.4897894
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998482,
+  "center": {
+    "lat": 7.1520122,
+    "lon": 0.4899410
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998483,
+  "center": {
+    "lat": 7.1522869,
+    "lon": 0.4900179
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998484,
+  "center": {
+    "lat": 7.1519650,
+    "lon": 0.4903574
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998485,
+  "center": {
+    "lat": 7.1521746,
+    "lon": 0.4904436
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998486,
+  "center": {
+    "lat": 7.1525358,
+    "lon": 0.4899745
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998487,
+  "center": {
+    "lat": 7.1526342,
+    "lon": 0.4895951
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998488,
+  "center": {
+    "lat": 7.1527559,
+    "lon": 0.4894433
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998489,
+  "center": {
+    "lat": 7.1532744,
+    "lon": 0.4894354
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998490,
+  "center": {
+    "lat": 7.1534793,
+    "lon": 0.4899395
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998491,
+  "center": {
+    "lat": 7.1533388,
+    "lon": 0.4900540
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998492,
+  "center": {
+    "lat": 7.1533728,
+    "lon": 0.4906050
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998493,
+  "center": {
+    "lat": 7.1534101,
+    "lon": 0.4908503
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998494,
+  "center": {
+    "lat": 7.1535173,
+    "lon": 0.4911507
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 243998682,
+  "center": {
+    "lat": 7.1499380,
+    "lon": 0.4937196
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243998684,
+  "center": {
+    "lat": 7.1513859,
+    "lon": 0.4962969
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243999087,
+  "center": {
+    "lat": 7.1539916,
+    "lon": 0.4963720
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243999088,
+  "center": {
+    "lat": 7.1544839,
+    "lon": 0.4976181
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243999089,
+  "center": {
+    "lat": 7.1543349,
+    "lon": 0.4987226
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 243999097,
+  "center": {
+    "lat": 7.1547886,
+    "lon": 0.4991669
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115771,
+  "center": {
+    "lat": 7.1474704,
+    "lon": 0.4787670
+  },
+  "tags": {
+    "highway": "residential",
+    "lane_markings": "no",
+    "name": "Emil Anku Link",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 244115772,
+  "center": {
+    "lat": 7.1458424,
+    "lon": 0.4786040
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244115773,
+  "center": {
+    "lat": 7.1438844,
+    "lon": 0.4782954
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244115774,
+  "center": {
+    "lat": 7.1495907,
+    "lon": 0.4773587
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244115775,
+  "center": {
+    "lat": 7.1498808,
+    "lon": 0.4767122
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115776,
+  "center": {
+    "lat": 7.1496971,
+    "lon": 0.4770314
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115777,
+  "center": {
+    "lat": 7.1558720,
+    "lon": 0.4760981
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "church",
+    "denomination": "presbyterian",
+    "name": "Evangelical Presbyterian Church, Hohoe",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 244115778,
+  "center": {
+    "lat": 7.1563018,
+    "lon": 0.4761566
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115779,
+  "center": {
+    "lat": 7.1565503,
+    "lon": 0.4762785
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115780,
+  "center": {
+    "lat": 7.1566051,
+    "lon": 0.4755296
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115781,
+  "center": {
+    "lat": 7.1571392,
+    "lon": 0.4764867
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115782,
+  "center": {
+    "lat": 7.1573145,
+    "lon": 0.4759411
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115783,
+  "center": {
+    "lat": 7.1574809,
+    "lon": 0.4763447
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115784,
+  "center": {
+    "lat": 7.1568103,
+    "lon": 0.4764532
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115785,
+  "center": {
+    "lat": 7.1603263,
+    "lon": 0.4813833
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115786,
+  "center": {
+    "lat": 7.1601184,
+    "lon": 0.4813617
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115787,
+  "center": {
+    "lat": 7.1599375,
+    "lon": 0.4813353
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115788,
+  "center": {
+    "lat": 7.1598399,
+    "lon": 0.4815192
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115789,
+  "center": {
+    "lat": 7.1594725,
+    "lon": 0.4816657
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115790,
+  "center": {
+    "lat": 7.1596597,
+    "lon": 0.4814204
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115792,
+  "center": {
+    "lat": 7.1595676,
+    "lon": 0.4814506
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244115793,
+  "center": {
+    "lat": 7.1597214,
+    "lon": 0.4809908
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116302,
+  "center": {
+    "lat": 7.1592759,
+    "lon": 0.4810219
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116303,
+  "center": {
+    "lat": 7.1588642,
+    "lon": 0.4811570
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116304,
+  "center": {
+    "lat": 7.1588523,
+    "lon": 0.4809558
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116305,
+  "center": {
+    "lat": 7.1588638,
+    "lon": 0.4806979
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116306,
+  "center": {
+    "lat": 7.1585471,
+    "lon": 0.4810859
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116307,
+  "center": {
+    "lat": 7.1586504,
+    "lon": 0.4818261
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116308,
+  "center": {
+    "lat": 7.1588942,
+    "lon": 0.4820340
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116309,
+  "center": {
+    "lat": 7.1587766,
+    "lon": 0.4824576
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116310,
+  "center": {
+    "lat": 7.1584284,
+    "lon": 0.4825205
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116311,
+  "center": {
+    "lat": 7.1588401,
+    "lon": 0.4827953
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116312,
+  "center": {
+    "lat": 7.1586492,
+    "lon": 0.4832262
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116313,
+  "center": {
+    "lat": 7.1583797,
+    "lon": 0.4834241
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116314,
+  "center": {
+    "lat": 7.1586184,
+    "lon": 0.4837282
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116315,
+  "center": {
+    "lat": 7.1588008,
+    "lon": 0.4837918
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116316,
+  "center": {
+    "lat": 7.1589685,
+    "lon": 0.4836988
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116317,
+  "center": {
+    "lat": 7.1588181,
+    "lon": 0.4839595
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116318,
+  "center": {
+    "lat": 7.1587398,
+    "lon": 0.4843399
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116319,
+  "center": {
+    "lat": 7.1585547,
+    "lon": 0.4843224
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116320,
+  "center": {
+    "lat": 7.1582546,
+    "lon": 0.4843399
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116321,
+  "center": {
+    "lat": 7.1581158,
+    "lon": 0.4847893
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116322,
+  "center": {
+    "lat": 7.1580023,
+    "lon": 0.4840874
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116323,
+  "center": {
+    "lat": 7.1579306,
+    "lon": 0.4838931
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116324,
+  "center": {
+    "lat": 7.1577485,
+    "lon": 0.4840368
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116325,
+  "center": {
+    "lat": 7.1578295,
+    "lon": 0.4838385
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116326,
+  "center": {
+    "lat": 7.1580664,
+    "lon": 0.4835964
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116327,
+  "center": {
+    "lat": 7.1583074,
+    "lon": 0.4839463
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116328,
+  "center": {
+    "lat": 7.1583756,
+    "lon": 0.4839836
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116329,
+  "center": {
+    "lat": 7.1581542,
+    "lon": 0.4839701
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116330,
+  "center": {
+    "lat": 7.1583847,
+    "lon": 0.4839034
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116331,
+  "center": {
+    "lat": 7.1584809,
+    "lon": 0.4840650
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244116332,
+  "center": {
+    "lat": 7.1595144,
+    "lon": 0.4838060
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117563,
+  "center": {
+    "lat": 7.1595602,
+    "lon": 0.4842047
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117564,
+  "center": {
+    "lat": 7.1594294,
+    "lon": 0.4842818
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117565,
+  "center": {
+    "lat": 7.1592547,
+    "lon": 0.4843478
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117566,
+  "center": {
+    "lat": 7.1596164,
+    "lon": 0.4846804
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117567,
+  "center": {
+    "lat": 7.1597904,
+    "lon": 0.4845748
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117568,
+  "center": {
+    "lat": 7.1597482,
+    "lon": 0.4840848
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117569,
+  "center": {
+    "lat": 7.1601228,
+    "lon": 0.4838835
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117570,
+  "center": {
+    "lat": 7.1603530,
+    "lon": 0.4842557
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117571,
+  "center": {
+    "lat": 7.1603996,
+    "lon": 0.4843998
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117572,
+  "center": {
+    "lat": 7.1604794,
+    "lon": 0.4846128
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117573,
+  "center": {
+    "lat": 7.1602235,
+    "lon": 0.4849113
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117574,
+  "center": {
+    "lat": 7.1597897,
+    "lon": 0.4843886
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117575,
+  "center": {
+    "lat": 7.1601246,
+    "lon": 0.4843806
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117576,
+  "center": {
+    "lat": 7.1597243,
+    "lon": 0.4856151
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117577,
+  "center": {
+    "lat": 7.1596925,
+    "lon": 0.4854857
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117578,
+  "center": {
+    "lat": 7.1599491,
+    "lon": 0.4854664
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117579,
+  "center": {
+    "lat": 7.1602951,
+    "lon": 0.4854278
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117580,
+  "center": {
+    "lat": 7.1611553,
+    "lon": 0.4835308
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117581,
+  "center": {
+    "lat": 7.1612681,
+    "lon": 0.4835164
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117582,
+  "center": {
+    "lat": 7.1614655,
+    "lon": 0.4833854
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117583,
+  "center": {
+    "lat": 7.1612765,
+    "lon": 0.4836782
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117584,
+  "center": {
+    "lat": 7.1612642,
+    "lon": 0.4838218
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117585,
+  "center": {
+    "lat": 7.1613349,
+    "lon": 0.4839079
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117586,
+  "center": {
+    "lat": 7.1615816,
+    "lon": 0.4838160
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117587,
+  "center": {
+    "lat": 7.1615014,
+    "lon": 0.4839951
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117588,
+  "center": {
+    "lat": 7.1617088,
+    "lon": 0.4837803
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117589,
+  "center": {
+    "lat": 7.1618171,
+    "lon": 0.4836788
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117590,
+  "center": {
+    "lat": 7.1616977,
+    "lon": 0.4834647
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117591,
+  "center": {
+    "lat": 7.1619053,
+    "lon": 0.4831609
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117592,
+  "center": {
+    "lat": 7.1619709,
+    "lon": 0.4830288
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117593,
+  "center": {
+    "lat": 7.1621406,
+    "lon": 0.4833179
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117594,
+  "center": {
+    "lat": 7.1622675,
+    "lon": 0.4831672
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117595,
+  "center": {
+    "lat": 7.1622562,
+    "lon": 0.4829271
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117596,
+  "center": {
+    "lat": 7.1621972,
+    "lon": 0.4827772
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117597,
+  "center": {
+    "lat": 7.1625244,
+    "lon": 0.4828597
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117598,
+  "center": {
+    "lat": 7.1624562,
+    "lon": 0.4826122
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117599,
+  "center": {
+    "lat": 7.1627305,
+    "lon": 0.4829605
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117600,
+  "center": {
+    "lat": 7.1630129,
+    "lon": 0.4831929
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117601,
+  "center": {
+    "lat": 7.1630247,
+    "lon": 0.4830308
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244117602,
+  "center": {
+    "lat": 7.1631725,
+    "lon": 0.4833259
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245985,
+  "center": {
+    "lat": 7.1628098,
+    "lon": 0.4831377
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245986,
+  "center": {
+    "lat": 7.1628243,
+    "lon": 0.4832890
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245987,
+  "center": {
+    "lat": 7.1628709,
+    "lon": 0.4834356
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245988,
+  "center": {
+    "lat": 7.1626751,
+    "lon": 0.4834854
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245989,
+  "center": {
+    "lat": 7.1625830,
+    "lon": 0.4832987
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245990,
+  "center": {
+    "lat": 7.1625973,
+    "lon": 0.4833879
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245991,
+  "center": {
+    "lat": 7.1623883,
+    "lon": 0.4835230
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245992,
+  "center": {
+    "lat": 7.1624927,
+    "lon": 0.4838160
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245993,
+  "center": {
+    "lat": 7.1626116,
+    "lon": 0.4838955
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245994,
+  "center": {
+    "lat": 7.1623831,
+    "lon": 0.4838382
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245995,
+  "center": {
+    "lat": 7.1622276,
+    "lon": 0.4838091
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245996,
+  "center": {
+    "lat": 7.1622752,
+    "lon": 0.4839645
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245997,
+  "center": {
+    "lat": 7.1621325,
+    "lon": 0.4840214
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245998,
+  "center": {
+    "lat": 7.1620154,
+    "lon": 0.4839010
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244245999,
+  "center": {
+    "lat": 7.1615043,
+    "lon": 0.4845718
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246000,
+  "center": {
+    "lat": 7.1612857,
+    "lon": 0.4843699
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246001,
+  "center": {
+    "lat": 7.1611879,
+    "lon": 0.4846400
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246002,
+  "center": {
+    "lat": 7.1609191,
+    "lon": 0.4845782
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246003,
+  "center": {
+    "lat": 7.1609530,
+    "lon": 0.4847257
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246004,
+  "center": {
+    "lat": 7.1609365,
+    "lon": 0.4839427
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246005,
+  "center": {
+    "lat": 7.1610914,
+    "lon": 0.4839964
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246006,
+  "center": {
+    "lat": 7.1612460,
+    "lon": 0.4840527
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246007,
+  "center": {
+    "lat": 7.1606473,
+    "lon": 0.4839453
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246008,
+  "center": {
+    "lat": 7.1605242,
+    "lon": 0.4837814
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246009,
+  "center": {
+    "lat": 7.1593552,
+    "lon": 0.4850148
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246010,
+  "center": {
+    "lat": 7.1592420,
+    "lon": 0.4851172
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246011,
+  "center": {
+    "lat": 7.1589037,
+    "lon": 0.4850109
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246012,
+  "center": {
+    "lat": 7.1589314,
+    "lon": 0.4857821
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246013,
+  "center": {
+    "lat": 7.1593081,
+    "lon": 0.4857398
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246433,
+  "center": {
+    "lat": 7.1592853,
+    "lon": 0.4903306
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246434,
+  "center": {
+    "lat": 7.1591042,
+    "lon": 0.4903329
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246435,
+  "center": {
+    "lat": 7.1590219,
+    "lon": 0.4907669
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246436,
+  "center": {
+    "lat": 7.1588123,
+    "lon": 0.4908083
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246437,
+  "center": {
+    "lat": 7.1587247,
+    "lon": 0.4910422
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246438,
+  "center": {
+    "lat": 7.1583855,
+    "lon": 0.4912074
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246439,
+  "center": {
+    "lat": 7.1583403,
+    "lon": 0.4908612
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246440,
+  "center": {
+    "lat": 7.1583655,
+    "lon": 0.4906976
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246441,
+  "center": {
+    "lat": 7.1583185,
+    "lon": 0.4905222
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246442,
+  "center": {
+    "lat": 7.1585070,
+    "lon": 0.4904238
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246443,
+  "center": {
+    "lat": 7.1587656,
+    "lon": 0.4903908
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246444,
+  "center": {
+    "lat": 7.1588906,
+    "lon": 0.4901475
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246445,
+  "center": {
+    "lat": 7.1588215,
+    "lon": 0.4900210
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246446,
+  "center": {
+    "lat": 7.1592065,
+    "lon": 0.4899874
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246447,
+  "center": {
+    "lat": 7.1589326,
+    "lon": 0.4896407
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246448,
+  "center": {
+    "lat": 7.1584360,
+    "lon": 0.4898212
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246449,
+  "center": {
+    "lat": 7.1580848,
+    "lon": 0.4899330
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246450,
+  "center": {
+    "lat": 7.1581184,
+    "lon": 0.4902111
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246451,
+  "center": {
+    "lat": 7.1578876,
+    "lon": 0.4906269
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246452,
+  "center": {
+    "lat": 7.1574774,
+    "lon": 0.4907052
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246453,
+  "center": {
+    "lat": 7.1576130,
+    "lon": 0.4910567
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246454,
+  "center": {
+    "lat": 7.1576653,
+    "lon": 0.4911319
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246455,
+  "center": {
+    "lat": 7.1577518,
+    "lon": 0.4913739
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246456,
+  "center": {
+    "lat": 7.1578006,
+    "lon": 0.4914491
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246457,
+  "center": {
+    "lat": 7.1575099,
+    "lon": 0.4916569
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246458,
+  "center": {
+    "lat": 7.1575736,
+    "lon": 0.4917281
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246459,
+  "center": {
+    "lat": 7.1574271,
+    "lon": 0.4919561
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246460,
+  "center": {
+    "lat": 7.1572030,
+    "lon": 0.4916620
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246461,
+  "center": {
+    "lat": 7.1572777,
+    "lon": 0.4917238
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246462,
+  "center": {
+    "lat": 7.1573193,
+    "lon": 0.4913824
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246463,
+  "center": {
+    "lat": 7.1573846,
+    "lon": 0.4914455
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246464,
+  "center": {
+    "lat": 7.1563297,
+    "lon": 0.4918016
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 244246465,
+  "center": {
+    "lat": 7.1568430,
+    "lon": 0.4912457
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246466,
+  "center": {
+    "lat": 7.1569104,
+    "lon": 0.4911692
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246467,
+  "center": {
+    "lat": 7.1568625,
+    "lon": 0.4907954
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246468,
+  "center": {
+    "lat": 7.1569395,
+    "lon": 0.4907488
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246469,
+  "center": {
+    "lat": 7.1571215,
+    "lon": 0.4904692
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246470,
+  "center": {
+    "lat": 7.1569558,
+    "lon": 0.4903136
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246471,
+  "center": {
+    "lat": 7.1579356,
+    "lon": 0.4895536
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246472,
+  "center": {
+    "lat": 7.1586024,
+    "lon": 0.4893355
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246473,
+  "center": {
+    "lat": 7.1576113,
+    "lon": 0.4885814
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246474,
+  "center": {
+    "lat": 7.1579007,
+    "lon": 0.4886012
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246475,
+  "center": {
+    "lat": 7.1580619,
+    "lon": 0.4884143
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246476,
+  "center": {
+    "lat": 7.1582856,
+    "lon": 0.4883270
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246477,
+  "center": {
+    "lat": 7.1576018,
+    "lon": 0.4882010
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246478,
+  "center": {
+    "lat": 7.1568211,
+    "lon": 0.4885121
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244246479,
+  "center": {
+    "lat": 7.1570767,
+    "lon": 0.4887499
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499444,
+  "center": {
+    "lat": 7.1562258,
+    "lon": 0.4924740
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499542,
+  "center": {
+    "lat": 7.1555292,
+    "lon": 0.4922460
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499543,
+  "center": {
+    "lat": 7.1555424,
+    "lon": 0.4925488
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499544,
+  "center": {
+    "lat": 7.1554063,
+    "lon": 0.4924538
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499545,
+  "center": {
+    "lat": 7.1557276,
+    "lon": 0.4926165
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499546,
+  "center": {
+    "lat": 7.1556648,
+    "lon": 0.4930470
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499547,
+  "center": {
+    "lat": 7.1557091,
+    "lon": 0.4934529
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499548,
+  "center": {
+    "lat": 7.1557041,
+    "lon": 0.4940132
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499549,
+  "center": {
+    "lat": 7.1556727,
+    "lon": 0.4960001
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499550,
+  "center": {
+    "lat": 7.1556603,
+    "lon": 0.4961913
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499551,
+  "center": {
+    "lat": 7.1552540,
+    "lon": 0.4968181
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499552,
+  "center": {
+    "lat": 7.1554331,
+    "lon": 0.4975575
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499553,
+  "center": {
+    "lat": 7.1554082,
+    "lon": 0.4978023
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499554,
+  "center": {
+    "lat": 7.1553288,
+    "lon": 0.4980736
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499555,
+  "center": {
+    "lat": 7.1549308,
+    "lon": 0.4991939
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499556,
+  "center": {
+    "lat": 7.1550676,
+    "lon": 0.4992221
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499557,
+  "center": {
+    "lat": 7.1550351,
+    "lon": 0.4993899
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499558,
+  "center": {
+    "lat": 7.1548909,
+    "lon": 0.4993605
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499559,
+  "center": {
+    "lat": 7.1547493,
+    "lon": 0.4993333
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244499560,
+  "center": {
+    "lat": 7.1547353,
+    "lon": 0.4996249
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244500024,
+  "center": {
+    "lat": 7.1477465,
+    "lon": 0.4916375
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244500028,
+  "center": {
+    "lat": 7.1415783,
+    "lon": 0.5037299
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244500029,
+  "center": {
+    "lat": 7.1415711,
+    "lon": 0.5038287
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244500032,
+  "center": {
+    "lat": 7.1516506,
+    "lon": 0.5196861
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244500033,
+  "center": {
+    "lat": 7.1515026,
+    "lon": 0.5194105
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244500034,
+  "center": {
+    "lat": 7.1520034,
+    "lon": 0.5183353
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893858,
+  "center": {
+    "lat": 7.1530464,
+    "lon": 0.4818421
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893859,
+  "center": {
+    "lat": 7.1527704,
+    "lon": 0.4821564
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893860,
+  "center": {
+    "lat": 7.1530439,
+    "lon": 0.4814227
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893861,
+  "center": {
+    "lat": 7.1530996,
+    "lon": 0.4828427
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893862,
+  "center": {
+    "lat": 7.1531250,
+    "lon": 0.4820844
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893863,
+  "center": {
+    "lat": 7.1529698,
+    "lon": 0.4822564
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893864,
+  "center": {
+    "lat": 7.1529061,
+    "lon": 0.4817075
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893865,
+  "center": {
+    "lat": 7.1527112,
+    "lon": 0.4818537
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893866,
+  "center": {
+    "lat": 7.1526712,
+    "lon": 0.4816153
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893867,
+  "center": {
+    "lat": 7.1528319,
+    "lon": 0.4815810
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893936,
+  "center": {
+    "lat": 7.1543202,
+    "lon": 0.4809828
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893937,
+  "center": {
+    "lat": 7.1544489,
+    "lon": 0.4816336
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 244893938,
+  "center": {
+    "lat": 7.1561462,
+    "lon": 0.4818336
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "landsat;Perry-Castañeda LibraryMap Collection, vmap0"
+  }
+},
+{
+  "type": "way",
+  "id": 244893939,
+  "center": {
+    "lat": 7.1507665,
+    "lon": 0.4813658
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244893940,
+  "center": {
+    "lat": 7.1526826,
+    "lon": 0.4883205
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244893941,
+  "center": {
+    "lat": 7.1529278,
+    "lon": 0.4874916
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894140,
+  "center": {
+    "lat": 7.1540846,
+    "lon": 0.4836774
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894141,
+  "center": {
+    "lat": 7.1540773,
+    "lon": 0.4843610
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894142,
+  "center": {
+    "lat": 7.1570323,
+    "lon": 0.4786108
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894143,
+  "center": {
+    "lat": 7.1580259,
+    "lon": 0.4799940
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894144,
+  "center": {
+    "lat": 7.1572107,
+    "lon": 0.4782243
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894207,
+  "center": {
+    "lat": 7.1500491,
+    "lon": 0.4656267
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894208,
+  "center": {
+    "lat": 7.1497502,
+    "lon": 0.4634147
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894209,
+  "center": {
+    "lat": 7.1488795,
+    "lon": 0.4623696
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894210,
+  "center": {
+    "lat": 7.1464304,
+    "lon": 0.4614191
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894211,
+  "center": {
+    "lat": 7.1448465,
+    "lon": 0.4624284
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894212,
+  "center": {
+    "lat": 7.1437643,
+    "lon": 0.4636821
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894213,
+  "center": {
+    "lat": 7.1409399,
+    "lon": 0.4644895
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Torgbe Adom Dake Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894214,
+  "center": {
+    "lat": 7.1423047,
+    "lon": 0.4630333
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Aye Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894215,
+  "center": {
+    "lat": 7.1421142,
+    "lon": 0.4617295
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Agbotamua Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894216,
+  "center": {
+    "lat": 7.1427911,
+    "lon": 0.4617869
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894218,
+  "center": {
+    "lat": 7.1419050,
+    "lon": 0.4606868
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894219,
+  "center": {
+    "lat": 7.1427604,
+    "lon": 0.4598486
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Agbotamua Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894305,
+  "center": {
+    "lat": 7.1470747,
+    "lon": 0.4620125
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894306,
+  "center": {
+    "lat": 7.1504886,
+    "lon": 0.4609706
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244894307,
+  "center": {
+    "lat": 7.1502411,
+    "lon": 0.4612973
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244894308,
+  "center": {
+    "lat": 7.1522184,
+    "lon": 0.4605674
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894309,
+  "center": {
+    "lat": 7.1523157,
+    "lon": 0.4602049
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894310,
+  "center": {
+    "lat": 7.1514987,
+    "lon": 0.4589899
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894311,
+  "center": {
+    "lat": 7.1532185,
+    "lon": 0.4566785
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894314,
+  "center": {
+    "lat": 7.1556553,
+    "lon": 0.4556312
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894356,
+  "center": {
+    "lat": 7.1522161,
+    "lon": 0.4547237
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894357,
+  "center": {
+    "lat": 7.1496014,
+    "lon": 0.4567909
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894358,
+  "center": {
+    "lat": 7.1482813,
+    "lon": 0.4549978
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894389,
+  "center": {
+    "lat": 7.1445690,
+    "lon": 0.4563960
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894390,
+  "center": {
+    "lat": 7.1420121,
+    "lon": 0.4554213
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894391,
+  "center": {
+    "lat": 7.1410401,
+    "lon": 0.4617655
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Aye Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894552,
+  "center": {
+    "lat": 7.1375486,
+    "lon": 0.4619039
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894553,
+  "center": {
+    "lat": 7.1356696,
+    "lon": 0.4621979
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Hor Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894554,
+  "center": {
+    "lat": 7.1358846,
+    "lon": 0.4609533
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894555,
+  "center": {
+    "lat": 7.1344770,
+    "lon": 0.4612181
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894556,
+  "center": {
+    "lat": 7.1347834,
+    "lon": 0.4619387
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Akpanya Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894557,
+  "center": {
+    "lat": 7.1356091,
+    "lon": 0.4633871
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894558,
+  "center": {
+    "lat": 7.1341424,
+    "lon": 0.4631330
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Worwonyo Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894559,
+  "center": {
+    "lat": 7.1398973,
+    "lon": 0.4678978
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244894644,
+  "center": {
+    "lat": 7.1347127,
+    "lon": 0.4604685
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894649,
+  "center": {
+    "lat": 7.1342189,
+    "lon": 0.4589796
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894692,
+  "center": {
+    "lat": 7.1345473,
+    "lon": 0.4545425
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894818,
+  "center": {
+    "lat": 7.1135489,
+    "lon": 0.4558752
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894819,
+  "center": {
+    "lat": 7.1143454,
+    "lon": 0.4568428
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894820,
+  "center": {
+    "lat": 7.1144653,
+    "lon": 0.4571142
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894821,
+  "center": {
+    "lat": 7.1127191,
+    "lon": 0.4554194
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Abaka Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894822,
+  "center": {
+    "lat": 7.1128007,
+    "lon": 0.4565168
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894823,
+  "center": {
+    "lat": 7.1119988,
+    "lon": 0.4584339
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894824,
+  "center": {
+    "lat": 7.1116225,
+    "lon": 0.4569937
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Abaka Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894825,
+  "center": {
+    "lat": 7.1112799,
+    "lon": 0.4566991
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244894826,
+  "center": {
+    "lat": 7.1111185,
+    "lon": 0.4553120
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Togbe Keh Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894827,
+  "center": {
+    "lat": 7.1113425,
+    "lon": 0.4551635
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894828,
+  "center": {
+    "lat": 7.1121958,
+    "lon": 0.4536486
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894829,
+  "center": {
+    "lat": 7.1122730,
+    "lon": 0.4521509
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894830,
+  "center": {
+    "lat": 7.1118410,
+    "lon": 0.4515311
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894831,
+  "center": {
+    "lat": 7.1113634,
+    "lon": 0.4521744
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894832,
+  "center": {
+    "lat": 7.1114315,
+    "lon": 0.4534410
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894833,
+  "center": {
+    "lat": 7.1140105,
+    "lon": 0.4510455
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894834,
+  "center": {
+    "lat": 7.1140775,
+    "lon": 0.4525596
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894835,
+  "center": {
+    "lat": 7.1142021,
+    "lon": 0.4519829
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894836,
+  "center": {
+    "lat": 7.1141432,
+    "lon": 0.4518773
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894987,
+  "center": {
+    "lat": 7.1139461,
+    "lon": 0.4548355
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244894988,
+  "center": {
+    "lat": 7.1131809,
+    "lon": 0.4524932
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244895006,
+  "center": {
+    "lat": 7.1156460,
+    "lon": 0.4410735
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244895250,
+  "center": {
+    "lat": 7.1070004,
+    "lon": 0.4496781
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "Talking River Street",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244895251,
+  "center": {
+    "lat": 7.1088476,
+    "lon": 0.4479497
+  },
+  "tags": {
+    "highway": "residential",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 244895252,
+  "center": {
+    "lat": 7.1095550,
+    "lon": 0.4476868
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244895516,
+  "center": {
+    "lat": 7.1040955,
+    "lon": 0.4209791
+  },
+  "tags": {
+    "highway": "service",
+    "service": "driveway",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 244895518,
+  "center": {
+    "lat": 7.0945887,
+    "lon": 0.4190143
+  },
+  "tags": {
+    "highway": "service",
+    "service": "driveway",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 244895520,
+  "center": {
+    "lat": 7.1084907,
+    "lon": 0.4156738
+  },
+  "tags": {
+    "highway": "service",
+    "service": "driveway",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 244896243,
+  "center": {
+    "lat": 7.1194803,
+    "lon": 0.3630790
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896244,
+  "center": {
+    "lat": 7.1167027,
+    "lon": 0.3621555
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896245,
+  "center": {
+    "lat": 7.1173402,
+    "lon": 0.3596572
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896246,
+  "center": {
+    "lat": 7.1182550,
+    "lon": 0.3588942
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896247,
+  "center": {
+    "lat": 7.1195429,
+    "lon": 0.3554247
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896248,
+  "center": {
+    "lat": 7.1194626,
+    "lon": 0.3579024
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896249,
+  "center": {
+    "lat": 7.1194275,
+    "lon": 0.3601414
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896250,
+  "center": {
+    "lat": 7.1163178,
+    "lon": 0.3635561
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896251,
+  "center": {
+    "lat": 7.1143286,
+    "lon": 0.3631863
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896252,
+  "center": {
+    "lat": 7.1155681,
+    "lon": 0.3642201
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896253,
+  "center": {
+    "lat": 7.1140671,
+    "lon": 0.3627460
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896255,
+  "center": {
+    "lat": 7.1162194,
+    "lon": 0.3617642
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896256,
+  "center": {
+    "lat": 7.1187125,
+    "lon": 0.3580832
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896257,
+  "center": {
+    "lat": 7.1188762,
+    "lon": 0.3584695
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896258,
+  "center": {
+    "lat": 7.1203597,
+    "lon": 0.3498160
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896259,
+  "center": {
+    "lat": 7.1190488,
+    "lon": 0.3492572
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896260,
+  "center": {
+    "lat": 7.1141992,
+    "lon": 0.3496760
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896585,
+  "center": {
+    "lat": 7.0450504,
+    "lon": 0.4311546
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896587,
+  "center": {
+    "lat": 7.0425686,
+    "lon": 0.4341084
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896589,
+  "center": {
+    "lat": 7.0346089,
+    "lon": 0.4382393
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896590,
+  "center": {
+    "lat": 7.0370663,
+    "lon": 0.4362297
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 244896591,
+  "center": {
+    "lat": 7.0403885,
+    "lon": 0.4362774
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896593,
+  "center": {
+    "lat": 7.0385849,
+    "lon": 0.4353647
+  },
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 244896594,
+  "center": {
+    "lat": 7.0390381,
+    "lon": 0.4349444
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896595,
+  "center": {
+    "lat": 7.0402630,
+    "lon": 0.4338524
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896597,
+  "center": {
+    "lat": 7.0418470,
+    "lon": 0.4330662
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896598,
+  "center": {
+    "lat": 7.0449949,
+    "lon": 0.4330372
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244896599,
+  "center": {
+    "lat": 7.0435212,
+    "lon": 0.4296443
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 244900925,
+  "center": {
+    "lat": 7.0064233,
+    "lon": 0.3132111
+  },
+  "tags": {
+    "highway": "residential",
+    "surface": "dirt"
+  }
+},
+{
+  "type": "way",
+  "id": 244900926,
+  "center": {
+    "lat": 7.0052751,
+    "lon": 0.3079770
+  },
+  "tags": {
+    "fixme": "check connectivity",
+    "highway": "residential",
+    "surface": "dirt"
+  }
+},
+{
+  "type": "way",
+  "id": 251145684,
+  "center": {
+    "lat": 7.6598620,
+    "lon": 0.5974285
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Mapbox",
+    "surface": "ground"
+  }
+},
+{
+  "type": "way",
+  "id": 258482221,
+  "center": {
+    "lat": 7.7783302,
+    "lon": 0.3136971
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 258482222,
+  "center": {
+    "lat": 7.7826806,
+    "lon": 0.3134903
+  },
+  "tags": {
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 268160422,
+  "center": {
+    "lat": 6.9312504,
+    "lon": 0.5617372
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160423,
+  "center": {
+    "lat": 6.9539146,
+    "lon": 0.5701582
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160424,
+  "center": {
+    "lat": 6.9536976,
+    "lon": 0.5701820
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160426,
+  "center": {
+    "lat": 6.9343048,
+    "lon": 0.5670598
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160428,
+  "center": {
+    "lat": 6.9614677,
+    "lon": 0.5770048
+  },
+  "tags": {
+    "building": "school",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160429,
+  "center": {
+    "lat": 6.9363276,
+    "lon": 0.5704552
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160431,
+  "center": {
+    "lat": 6.9362074,
+    "lon": 0.5701030
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160432,
+  "center": {
+    "lat": 6.9355299,
+    "lon": 0.5685081
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160434,
+  "center": {
+    "lat": 6.9356385,
+    "lon": 0.5684516
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160435,
+  "center": {
+    "lat": 6.9576960,
+    "lon": 0.5724099
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160437,
+  "center": {
+    "lat": 6.9585372,
+    "lon": 0.5747475
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160438,
+  "center": {
+    "lat": 6.9586642,
+    "lon": 0.5749068
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160440,
+  "center": {
+    "lat": 6.9510674,
+    "lon": 0.5816988
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing;survey"
+  }
+},
+{
+  "type": "way",
+  "id": 268160441,
+  "center": {
+    "lat": 6.9355524,
+    "lon": 0.5684231
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160443,
+  "center": {
+    "lat": 6.9589769,
+    "lon": 0.5749378
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160444,
+  "center": {
+    "lat": 6.9586120,
+    "lon": 0.5753033
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160446,
+  "center": {
+    "lat": 6.9342377,
+    "lon": 0.5670918
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160448,
+  "center": {
+    "lat": 6.9342953,
+    "lon": 0.5671840
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160449,
+  "center": {
+    "lat": 6.9361239,
+    "lon": 0.5699866
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing 2012"
+  }
+},
+{
+  "type": "way",
+  "id": 268160451,
+  "center": {
+    "lat": 6.9361081,
+    "lon": 0.5698184
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 268160452,
+  "center": {
+    "lat": 6.9590970,
+    "lon": 0.5754075
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 268160454,
+  "center": {
+    "lat": 6.9587729,
+    "lon": 0.5737041
+  },
+  "tags": {
+    "building": "yes",
+    "source": "bing"
+  }
+}
+
+  ]
+}

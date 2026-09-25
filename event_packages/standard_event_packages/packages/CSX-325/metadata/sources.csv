@@ -1,0 +1,41 @@
+source_id,source_name,source_type,url,status
+S001,ReliefWeb public updates search,resource_registry,https://reliefweb.int/updates?search=2023-2024+global+coral+bleaching+event+Global+tropics+%2F+Southeast+Asia,downloaded
+S002,GDACS event feeds and archive,resource_registry,https://www.gdacs.org/xml/rss.xml,downloaded
+S003,OpenStreetMap Nominatim and Overpass AOI,resource_registry,https://nominatim.openstreetmap.org/search?q=2023-2024+global+coral+bleaching+event+Tropical+reef+regions+including+Southeast+Asia+Global+tropics+%2F+Southeast+Asia+Southeast+Asia&format=jsonv2&limit=5&addressdetails=1,downloaded
+S004,NOAA OISST / PSL ERDDAP sea-surface temperature THREDDS catalog XML,resource_registry,https://psl.noaa.gov/thredds/catalog/Datasets/noaa.oisst.v2.highres/catalog.xml,downloaded
+S005,NOAA Coral Reef Watch 5km products,resource_registry,https://coralreefwatch.noaa.gov/product/5km/,downloaded
+S006,ReefBase / Allen Coral Atlas / protected areas,resource_registry,https://allencoralatlas.org/,downloaded
+S007,NASA EONET events API,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?start=2023-06-01&end=2023-06-15&status=all&limit=20,downloaded
+S008,NASA POWER daily point sample,resource_registry,https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CPRECTOTCORR%2CWS10M&community=RE&longitude=0.0000&latitude=0.0000&start=20230601&end=20230615&format=JSON,downloaded
+S009,Open-Meteo archive point sample,resource_registry,https://archive-api.open-meteo.com/v1/archive?latitude=0.0000&longitude=0.0000&start_date=2023-06-01&end_date=2023-06-15&daily=temperature_2m_max%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC,downloaded
+S010,NOAA NESDIS fourth global coral bleaching event,resource_registry,https://www.nesdis.noaa.gov/news/noaa-confirms-fourth-global-coral-bleaching-event,success
+S011,NOAA Coral Reef Watch bleaching status,resource_registry,https://coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php,success
+S012,Wikipedia 2023-2025 global coral bleaching event,resource_registry,https://en.wikipedia.org/api/rest_v1/page/summary/2023-2025_global_coral_bleaching_event,success
+S013,compact per-event AOI derived from event bbox,resource_registry,,success
+S014,ERA5-Land hourly aggregate stats,resource_registry,,success
+S015,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S016,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S017,WorldPop GP 100m population sum,resource_registry,,success
+S018,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S019,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S020,Sentinel-2 SR Harmonized dNBR,resource_registry,,success
+S021,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S022,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-05-02&BBOX=-11.5%2C101.0%2C23.5%2C136.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S023,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2024-03-16&BBOX=-11.5%2C101.0%2C23.5%2C136.0&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S024,Locked event anchor: 2023-2024 global coral bleaching event,event_specific_sources,https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2023-24_status.php,remote_verified
+S025,01_anchor.html,auxiliary_local_files,,local_file_found
+S026,02_reliefweb_reports.json,auxiliary_local_files,,local_file_found
+S027,03_gdacs_rss.xml,auxiliary_local_files,,local_file_found
+S028,05_marine_source_catalog.html,auxiliary_local_files,,local_file_found
+S029,event_2023-06-11_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S030,pre_2023-05-02_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S031,alphaearth_change_1km.zip,auxiliary_local_files,,local_file_found
+S032,chirps_event_precip.zip,auxiliary_local_files,,local_file_found
+S033,era5_land_event_stack.zip,auxiliary_local_files,,local_file_found
+S034,gpm_imerg_event_precip.zip,auxiliary_local_files,,local_file_found
+S035,osm_overpass_exposure_slice.json,auxiliary_local_files,,local_file_found
+S036,sentinel2_dnbr_250m.zip,auxiliary_local_files,,local_file_found
+S037,sentinel2_dnbr_stats.json,auxiliary_local_files,,local_file_found
+S038,worldpop_population_1km.zip,auxiliary_local_files,,local_file_found
+S039,01_event_specific_wikipedia_search_Wikipedia_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found
+S040,02_event_specific_wikidata_search_Wikidata_entity_search_for_exact_event_name.json,auxiliary_local_files,,local_file_found

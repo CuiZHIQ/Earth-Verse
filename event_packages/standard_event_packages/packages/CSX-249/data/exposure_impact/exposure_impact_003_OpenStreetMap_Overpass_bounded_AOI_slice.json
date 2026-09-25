@@ -1,0 +1,11049 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-22T08:29:09Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 673353747,
+  "lat": 38.8785384,
+  "lon": 121.5333006,
+  "tags": {
+    "amenity": "school",
+    "name": "大连育明高中"
+  }
+},
+{
+  "type": "node",
+  "id": 678984541,
+  "lat": 38.8764850,
+  "lon": 121.5182942,
+  "tags": {
+    "amenity": "hospital",
+    "name": "大连凌水地区医院"
+  }
+},
+{
+  "type": "node",
+  "id": 1112599501,
+  "lat": 38.8714762,
+  "lon": 121.5206424,
+  "tags": {
+    "amenity": "police",
+    "name": "凌水公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 1112614603,
+  "lat": 38.8806069,
+  "lon": 121.5411753,
+  "tags": {
+    "amenity": "police",
+    "name": "高家村派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 1116407043,
+  "lat": 38.9171954,
+  "lon": 121.5851804,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "大连口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 1138642584,
+  "lat": 36.3386272,
+  "lon": 120.2654723,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 1260436597,
+  "lat": 37.5081387,
+  "lon": 122.0920354,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 1261981548,
+  "lat": 37.5146781,
+  "lon": 122.0902127,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 1563921007,
+  "lat": 37.5277850,
+  "lon": 122.0800400,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 1668185112,
+  "lat": 36.5151224,
+  "lon": 118.5294313,
+  "tags": {
+    "amenity": "school",
+    "name": "临朐新华中学",
+    "name:en": "Linqu Xinhua Middle School"
+  }
+},
+{
+  "type": "node",
+  "id": 1668188141,
+  "lat": 36.5114532,
+  "lon": 118.5338181,
+  "tags": {
+    "amenity": "school",
+    "name": "临朐一中",
+    "name:en": "Linqu first high school",
+    "name:zh": "临朐县第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 1680829557,
+  "lat": 38.8770570,
+  "lon": 121.5428037,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "东财 Health Clinic"
+  }
+},
+{
+  "type": "node",
+  "id": 1704390035,
+  "lat": 37.4385959,
+  "lon": 122.1312701,
+  "tags": {
+    "amenity": "school",
+    "name": "威海市交通学校"
+  }
+},
+{
+  "type": "node",
+  "id": 1772135799,
+  "lat": 38.9100932,
+  "lon": 121.6434868,
+  "tags": {
+    "amenity": "school",
+    "name": "解放小学"
+  }
+},
+{
+  "type": "node",
+  "id": 1851345383,
+  "lat": 37.5259564,
+  "lon": 122.0757308,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 1907954693,
+  "lat": 37.5732867,
+  "lon": 121.2429731,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 2024738707,
+  "lat": 36.1665598,
+  "lon": 120.4977705,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "校医院",
+    "name:zh": "校医院",
+    "name:zh-Hans": "校医院",
+    "name:zh-Hant": "校醫院",
+    "operator": "中国海洋大学",
+    "operator:type": "government",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 2052714063,
+  "lat": 33.7627240,
+  "lon": 119.2688728,
+  "tags": {
+    "amenity": "school",
+    "name": "江苏省涟水中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2052714127,
+  "lat": 33.7634161,
+  "lon": 119.2726617,
+  "tags": {
+    "amenity": "school",
+    "name": "江苏省郑梁梅高中"
+  }
+},
+{
+  "type": "node",
+  "id": 2132541413,
+  "lat": 35.5026158,
+  "lon": 118.3505513,
+  "tags": {
+    "amenity": "school",
+    "name": "南石匣村小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2167138650,
+  "lat": 38.9288498,
+  "lon": 121.6311194,
+  "tags": {
+    "amenity": "police",
+    "name": "民乐派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 2168313448,
+  "lat": 38.9345681,
+  "lon": 121.5714573,
+  "tags": {
+    "amenity": "hospital",
+    "name": "大连市中心医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2180790435,
+  "lat": 38.9207332,
+  "lon": 121.6521273,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "友谊医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2181383216,
+  "lat": 38.9280947,
+  "lon": 121.6312581,
+  "tags": {
+    "amenity": "school",
+    "name": "第七十一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2183018992,
+  "lat": 38.9495826,
+  "lon": 121.5781451,
+  "tags": {
+    "amenity": "school",
+    "name": "第八十中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186602729,
+  "lat": 38.9128375,
+  "lon": 121.5910621,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市第七十九中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186605577,
+  "lat": 38.9156095,
+  "lon": 121.6066589,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市第一高级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186605578,
+  "lat": 38.9078063,
+  "lon": 121.5838171,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市第四十八中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186605579,
+  "lat": 38.9077414,
+  "lon": 121.5860370,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市沙河口区中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186605702,
+  "lat": 38.9166650,
+  "lon": 121.6073324,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 2186608499,
+  "lat": 38.9017738,
+  "lon": 121.5967387,
+  "tags": {
+    "amenity": "hospital",
+    "name": "大连医科大学第一附属医院二部"
+  }
+},
+{
+  "type": "node",
+  "id": 2186608501,
+  "lat": 38.9047060,
+  "lon": 121.5939857,
+  "tags": {
+    "amenity": "hospital",
+    "name": "同泰医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2186608503,
+  "lat": 38.9003142,
+  "lon": 121.5954609,
+  "tags": {
+    "amenity": "hospital",
+    "name": "大连新华医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2186609108,
+  "lat": 38.9058081,
+  "lon": 121.5871354,
+  "tags": {
+    "amenity": "police",
+    "name": "大连市公安局沙河口分局白山路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 2186645038,
+  "lat": 38.9238685,
+  "lon": 121.6441387,
+  "tags": {
+    "amenity": "police",
+    "name": "大连市公安局中山分局"
+  }
+},
+{
+  "type": "node",
+  "id": 2186645039,
+  "lat": 38.9231009,
+  "lon": 121.6495328,
+  "tags": {
+    "amenity": "police",
+    "name": "大连市公安局中山分局人民路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 2186649561,
+  "lat": 38.9080871,
+  "lon": 121.6091037,
+  "tags": {
+    "amenity": "school",
+    "name": "西岗区五四路小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186649565,
+  "lat": 38.9037164,
+  "lon": 121.5979832,
+  "tags": {
+    "amenity": "school",
+    "name": "铁路中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2186649569,
+  "lat": 38.9064006,
+  "lon": 121.5982193,
+  "tags": {
+    "amenity": "school",
+    "name": "大连盲聋哑学校"
+  }
+},
+{
+  "type": "node",
+  "id": 2186649571,
+  "lat": 38.9076287,
+  "lon": 121.5969411,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市沙河口区中山路小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2188431808,
+  "lat": 38.8869729,
+  "lon": 121.5609332,
+  "tags": {
+    "addr:street": "连山街",
+    "amenity": "police",
+    "name": "Fu-guo-jie Police Station"
+  }
+},
+{
+  "type": "node",
+  "id": 2188510109,
+  "lat": 38.8743874,
+  "lon": 121.6413811,
+  "tags": {
+    "amenity": "school",
+    "name": "44中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2189112649,
+  "lat": 38.8815538,
+  "lon": 121.6542255,
+  "tags": {
+    "amenity": "hospital",
+    "name": "海王星辰药店"
+  }
+},
+{
+  "type": "node",
+  "id": 2189132042,
+  "lat": 38.9128101,
+  "lon": 121.5753877,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市第13中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2189157041,
+  "lat": 38.9152377,
+  "lon": 121.5849750,
+  "tags": {
+    "amenity": "school",
+    "name": "大连市第八中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2189703962,
+  "lat": 38.9342637,
+  "lon": 121.5544456,
+  "tags": {
+    "amenity": "school",
+    "name": "金钥匙幼儿园"
+  }
+},
+{
+  "type": "node",
+  "id": 2264277864,
+  "lat": 38.9183875,
+  "lon": 121.5433386,
+  "tags": {
+    "amenity": "police",
+    "name": "沙河口交警大队"
+  }
+},
+{
+  "type": "node",
+  "id": 2266673805,
+  "lat": 38.8917908,
+  "lon": 121.6402226,
+  "tags": {
+    "amenity": "school",
+    "name": "第四十二中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2270496741,
+  "lat": 35.1104592,
+  "lon": 118.3592339,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂朴园小学",
+    "name:en": "Linyi Pu Yaun Primary school"
+  }
+},
+{
+  "type": "node",
+  "id": 2272258137,
+  "lat": 38.9175796,
+  "lon": 121.5520148,
+  "tags": {
+    "amenity": "hospital",
+    "name": "大连市第五医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2274514509,
+  "lat": 38.9141701,
+  "lon": 121.5696415,
+  "tags": {
+    "amenity": "hospital",
+    "name": "沙河口区医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2274514512,
+  "lat": 38.9175042,
+  "lon": 121.5836593,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "大连机车医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2274517555,
+  "lat": 38.9250384,
+  "lon": 121.5734395,
+  "tags": {
+    "amenity": "school",
+    "name": "大连世纪中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2322878034,
+  "lat": 38.8588603,
+  "lon": 121.2926242,
+  "tags": {
+    "amenity": "school",
+    "name": "市十九中"
+  }
+},
+{
+  "type": "node",
+  "id": 2322878037,
+  "lat": 38.8569545,
+  "lon": 121.2923445,
+  "tags": {
+    "amenity": "school",
+    "name": "龙头中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2334381529,
+  "lat": 35.1174412,
+  "lon": 118.2877815,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "name": "临沂大学校医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218975,
+  "lat": 35.1020122,
+  "lon": 118.3116182,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂北十小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218979,
+  "lat": 35.0499476,
+  "lon": 118.3146242,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂三合屯小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218980,
+  "lat": 35.0653325,
+  "lon": 118.3092150,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂银雀山中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218981,
+  "lat": 35.0430332,
+  "lon": 118.3256070,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂三里庄小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218983,
+  "lat": 35.0491290,
+  "lon": 118.3088609,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂蒙山小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218984,
+  "lat": 35.0478989,
+  "lon": 118.3585435,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂沂河实验学校"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218988,
+  "lat": 35.0722605,
+  "lon": 118.3374077,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂书院小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218991,
+  "lat": 35.0599405,
+  "lon": 118.3154270,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂苗庄小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218992,
+  "lat": 35.0798116,
+  "lon": 118.3243740,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂第十中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218993,
+  "lat": 35.0676982,
+  "lon": 118.3410855,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂朝阳小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218994,
+  "lat": 35.0422607,
+  "lon": 118.3417850,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂普村小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218995,
+  "lat": 35.0728931,
+  "lon": 118.3125731,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂第十一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2339218996,
+  "lat": 35.0766507,
+  "lon": 118.3168432,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂林庄小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2611634882,
+  "lat": 33.2618066,
+  "lon": 119.9182494,
+  "tags": {
+    "amenity": "school",
+    "name": "泽夫中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2611634883,
+  "lat": 33.2658314,
+  "lon": 119.9179567,
+  "tags": {
+    "amenity": "school",
+    "name": "秦北小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2611634884,
+  "lat": 33.2600932,
+  "lon": 119.9120374,
+  "tags": {
+    "amenity": "school",
+    "name": "秦南中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2611634885,
+  "lat": 33.2616978,
+  "lon": 119.9130619,
+  "tags": {
+    "amenity": "hospital",
+    "name": "盐都区第三人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2616082148,
+  "lat": 35.4330133,
+  "lon": 118.0853423,
+  "tags": {
+    "amenity": "school",
+    "name": "抗大小学（原马头崖中心小学）"
+  }
+},
+{
+  "type": "node",
+  "id": 2616082629,
+  "lat": 35.4290581,
+  "lon": 118.0846978,
+  "tags": {
+    "amenity": "school",
+    "name": "原马头崖中心初中（已经废弃）"
+  }
+},
+{
+  "type": "node",
+  "id": 2669688239,
+  "lat": 35.9718186,
+  "lon": 119.3404424,
+  "tags": {
+    "amenity": "school",
+    "name": "诸城一中"
+  }
+},
+{
+  "type": "node",
+  "id": 2669932627,
+  "lat": 35.8491452,
+  "lon": 119.4110420,
+  "tags": {
+    "amenity": "school",
+    "name": "郝戈庄初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2670912060,
+  "lat": 35.8778378,
+  "lon": 119.3687091,
+  "tags": {
+    "amenity": "school",
+    "name": "寿塔学校"
+  }
+},
+{
+  "type": "node",
+  "id": 2671018328,
+  "lat": 35.9024773,
+  "lon": 119.3806076,
+  "tags": {
+    "amenity": "school",
+    "name": "诸城长运驾校"
+  }
+},
+{
+  "type": "node",
+  "id": 2671135809,
+  "lat": 35.9909927,
+  "lon": 119.4071123,
+  "tags": {
+    "amenity": "school",
+    "name": "诸城实验初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2671147051,
+  "lat": 35.9902019,
+  "lon": 119.4034816,
+  "tags": {
+    "amenity": "school",
+    "name": "府前街小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2688397559,
+  "lat": 37.4898183,
+  "lon": 118.4896451,
+  "tags": {
+    "amenity": "school",
+    "name": "辛店镇中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2688399006,
+  "lat": 37.4638877,
+  "lon": 118.4855520,
+  "tags": {
+    "amenity": "hospital",
+    "name": "东营市中医医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2694385787,
+  "lat": 34.9148799,
+  "lon": 118.3332550,
+  "tags": {
+    "amenity": "police",
+    "name": "临沂市 罗庄区 册山派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 2700747373,
+  "lat": 33.0089814,
+  "lon": 119.0098015,
+  "tags": {
+    "addr:city": "金湖县",
+    "addr:postcode": "211600",
+    "addr:street": "神华大道",
+    "amenity": "school",
+    "name": "金湖县职业高级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2700762231,
+  "lat": 33.0126517,
+  "lon": 119.0192324,
+  "tags": {
+    "addr:city": "金湖县",
+    "addr:postcode": "211600",
+    "addr:street": "船塘路",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "name": "宋坝桥社区卫生站"
+  }
+},
+{
+  "type": "node",
+  "id": 2700948268,
+  "lat": 33.0164441,
+  "lon": 119.0111753,
+  "tags": {
+    "amenity": "school",
+    "name": "老年大学"
+  }
+},
+{
+  "type": "node",
+  "id": 2700982221,
+  "lat": 33.0253469,
+  "lon": 119.0098081,
+  "tags": {
+    "amenity": "police",
+    "name": "金湖县公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 2701003071,
+  "lat": 33.0344390,
+  "lon": 119.1896820,
+  "tags": {
+    "amenity": "school",
+    "name": "银涂镇初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 2701003072,
+  "lat": 33.0344628,
+  "lon": 119.1906367,
+  "tags": {
+    "amenity": "school",
+    "name": "银涂镇中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 2701003073,
+  "lat": 33.0387609,
+  "lon": 119.1858066,
+  "tags": {
+    "amenity": "school",
+    "name": "银涂镇中心幼儿园"
+  }
+},
+{
+  "type": "node",
+  "id": 2701003076,
+  "lat": 33.0334252,
+  "lon": 119.1870159,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "银涂镇卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 2701003077,
+  "lat": 33.0323521,
+  "lon": 119.1855025,
+  "tags": {
+    "amenity": "police",
+    "name": "银涂镇派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 2701046935,
+  "lat": 33.0203411,
+  "lon": 119.0070522,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "name": "金湖县中医院"
+  }
+},
+{
+  "type": "node",
+  "id": 2702145286,
+  "lat": 33.0211586,
+  "lon": 119.0067750,
+  "tags": {
+    "amenity": "school",
+    "name": "金湖县少儿文化宫"
+  }
+},
+{
+  "type": "node",
+  "id": 2702216552,
+  "lat": 33.0081439,
+  "lon": 119.0086725,
+  "tags": {
+    "amenity": "school",
+    "name": "金湖电大"
+  }
+},
+{
+  "type": "node",
+  "id": 2705219105,
+  "lat": 33.0246312,
+  "lon": 118.9893831,
+  "tags": {
+    "amenity": "hospital",
+    "name": "金湖县妇幼保健院"
+  }
+},
+{
+  "type": "node",
+  "id": 2747535815,
+  "lat": 37.4474204,
+  "lon": 121.2445339,
+  "tags": {
+    "amenity": "school",
+    "name": "烟台汽车职业学院"
+  }
+},
+{
+  "type": "node",
+  "id": 3224290870,
+  "lat": 35.0644141,
+  "lon": 118.3514315,
+  "tags": {
+    "amenity": "hospital",
+    "name": "交通医院"
+  }
+},
+{
+  "type": "node",
+  "id": 3233930970,
+  "lat": 35.0630931,
+  "lon": 118.3287884,
+  "tags": {
+    "amenity": "school",
+    "name": "胜利小学"
+  }
+},
+{
+  "type": "node",
+  "id": 3292111687,
+  "lat": 35.0611517,
+  "lon": 118.3461724,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 3353599190,
+  "lat": 37.2857374,
+  "lon": 122.5459834,
+  "tags": {
+    "amenity": "hospital",
+    "name": "马道医院"
+  }
+},
+{
+  "type": "node",
+  "id": 3387120127,
+  "lat": 33.8844846,
+  "lon": 120.0657475,
+  "tags": {
+    "amenity": "school",
+    "building": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 3394647844,
+  "lat": 38.9322419,
+  "lon": 121.5713883,
+  "tags": {
+    "amenity": "school",
+    "name": "大连第五十一中学",
+    "name:en": "Dalian No.51 Middle School"
+  }
+},
+{
+  "type": "node",
+  "id": 3436473363,
+  "lat": 34.8538266,
+  "lon": 117.5816152,
+  "tags": {
+    "amenity": "school",
+    "name": "山东省法官培训学院枣庄分院"
+  }
+},
+{
+  "type": "node",
+  "id": 3715461576,
+  "lat": 34.8675946,
+  "lon": 118.0777431,
+  "tags": {
+    "amenity": "school",
+    "name": "兰陵县第二实验小学柞城校区"
+  }
+},
+{
+  "type": "node",
+  "id": 3732481432,
+  "lat": 34.8075371,
+  "lon": 118.7084578,
+  "tags": {
+    "amenity": "school",
+    "name": "大兴中学"
+  }
+},
+{
+  "type": "node",
+  "id": 3820563782,
+  "lat": 36.8556614,
+  "lon": 119.4127107,
+  "tags": {
+    "amenity": "hospital",
+    "name": "康宁中医院"
+  }
+},
+{
+  "type": "node",
+  "id": 3822629526,
+  "lat": 36.8442887,
+  "lon": 119.4243031,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 3867173973,
+  "lat": 36.1403287,
+  "lon": 120.4678371,
+  "tags": {
+    "amenity": "police",
+    "name": "张村河社区警务室（崂山公安分局中韩派出所）"
+  }
+},
+{
+  "type": "node",
+  "id": 4016233448,
+  "lat": 36.8423056,
+  "lon": 119.4064689,
+  "tags": {
+    "amenity": "police",
+    "name": "昌邑市公安局",
+    "office": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 4041768935,
+  "lat": 36.8720226,
+  "lon": 119.4029967,
+  "tags": {
+    "amenity": "school",
+    "name": "中国煤矿文工团艺术学校山东分校"
+  }
+},
+{
+  "type": "node",
+  "id": 4041768936,
+  "lat": 36.8704500,
+  "lon": 119.4046420,
+  "tags": {
+    "amenity": "school",
+    "name": "潍坊技师学院昌邑分院;昌邑技工学校"
+  }
+},
+{
+  "type": "node",
+  "id": 4043683819,
+  "lat": 34.9186471,
+  "lon": 118.6412987,
+  "tags": {
+    "amenity": "hospital",
+    "name": "临沭第一人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 4043683822,
+  "lat": 34.9196432,
+  "lon": 118.6393325,
+  "tags": {
+    "amenity": "school",
+    "name": "临沭实验中学"
+  }
+},
+{
+  "type": "node",
+  "id": 4076382664,
+  "lat": 34.0337758,
+  "lon": 118.1084875,
+  "tags": {
+    "amenity": "school",
+    "name": "宿豫区皂河中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 4077554622,
+  "lat": 34.0240240,
+  "lon": 118.1000273,
+  "tags": {
+    "amenity": "police",
+    "name": "王官集卡口"
+  }
+},
+{
+  "type": "node",
+  "id": 4080839820,
+  "lat": 33.9320409,
+  "lon": 118.3345471,
+  "tags": {
+    "amenity": "school",
+    "name": "四方职教驾驶培训学校"
+  }
+},
+{
+  "type": "node",
+  "id": 4080846792,
+  "lat": 33.9515864,
+  "lon": 118.3220288,
+  "tags": {
+    "amenity": "police",
+    "name": "宿豫区公安分局便民服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 4087496666,
+  "lat": 33.8723392,
+  "lon": 118.5551984,
+  "tags": {
+    "amenity": "school",
+    "name": "丁嘴幼儿园"
+  }
+},
+{
+  "type": "node",
+  "id": 4087656875,
+  "lat": 33.9907940,
+  "lon": 118.3143570,
+  "tags": {
+    "amenity": "shelter",
+    "name": "望岳亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 4087688331,
+  "lat": 33.9052557,
+  "lon": 118.4990289,
+  "tags": {
+    "amenity": "police",
+    "name": "大兴派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 4087723623,
+  "lat": 33.9007204,
+  "lon": 118.4905768,
+  "tags": {
+    "amenity": "school",
+    "name": "大兴小学"
+  }
+},
+{
+  "type": "node",
+  "id": 4103946896,
+  "lat": 35.0737675,
+  "lon": 118.3961909,
+  "tags": {
+    "amenity": "hospital",
+    "name": "临沂人民医院胸科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 4103949222,
+  "lat": 35.0928665,
+  "lon": 118.3997235,
+  "tags": {
+    "amenity": "police",
+    "name": "河东公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 4191480067,
+  "lat": 37.5333941,
+  "lon": 122.1163825,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "威海市试验中学（北校区）"
+  }
+},
+{
+  "type": "node",
+  "id": 4192647078,
+  "lat": 35.0504104,
+  "lon": 118.3362958,
+  "tags": {
+    "amenity": "school",
+    "name": "临沂市体育中学"
+  }
+},
+{
+  "type": "node",
+  "id": 4236936617,
+  "lat": 35.1167073,
+  "lon": 118.2737950,
+  "tags": {
+    "amenity": "police",
+    "name": "大学派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 4236939314,
+  "lat": 35.1046001,
+  "lon": 118.2977872,
+  "tags": {
+    "amenity": "police",
+    "name": "站内派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 4236939315,
+  "lat": 35.0911801,
+  "lon": 118.3056242,
+  "tags": {
+    "amenity": "police",
+    "name": "育才路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 4271222891,
+  "lat": 36.0778404,
+  "lon": 120.3386650,
+  "tags": {
+    "amenity": "police",
+    "fixme": "name"
+  }
+},
+{
+  "type": "node",
+  "id": 4279251189,
+  "lat": 36.1680852,
+  "lon": 120.3680307,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 4315635931,
+  "lat": 33.1879008,
+  "lon": 118.5935980,
+  "tags": {
+    "amenity": "police",
+    "name": "洪泽县老子山派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 4325575288,
+  "lat": 36.8317693,
+  "lon": 118.0412160,
+  "tags": {
+    "amenity": "school",
+    "name": "绿杉园小学"
+  }
+},
+{
+  "type": "node",
+  "id": 4336716597,
+  "lat": 36.6290528,
+  "lon": 120.1810392,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 4336716600,
+  "lat": 36.6140354,
+  "lon": 120.2234396,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 4432141490,
+  "lat": 33.1877152,
+  "lon": 118.5967479,
+  "tags": {
+    "amenity": "hospital",
+    "name": "ሐኪም ቤት"
+  }
+},
+{
+  "type": "node",
+  "id": 4603130566,
+  "lat": 35.1139711,
+  "lon": 118.3632755,
+  "tags": {
+    "addr:city": "临沂市",
+    "addr:district": "兰山区",
+    "addr:postcode": "276007",
+    "addr:province": "山东省",
+    "addr:street": "仁和路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市中医医院北城医院",
+    "phone": "+86 539 861 1708"
+  }
+},
+{
+  "type": "node",
+  "id": 4664801348,
+  "lat": 36.8523633,
+  "lon": 119.3990885,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "昌邑昌城医院"
+  }
+},
+{
+  "type": "node",
+  "id": 4683019193,
+  "lat": 38.9059320,
+  "lon": 121.4653367,
+  "tags": {
+    "addr:city": "大连市",
+    "addr:housename": "万科溪之谷小学",
+    "addr:housenumber": "138",
+    "addr:postcode": "116031",
+    "addr:street": "柳林园",
+    "amenity": "school",
+    "name": "万科溪之谷小学"
+  }
+},
+{
+  "type": "node",
+  "id": 4689731408,
+  "lat": 35.5795393,
+  "lon": 118.8170090,
+  "tags": {
+    "amenity": "school",
+    "description": "莒县第一中学是一所省级规范化学校，该校始建于1953年。",
+    "name": "山东省莒县第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 4689739382,
+  "lat": 35.5240711,
+  "lon": 118.7900765,
+  "tags": {
+    "amenity": "school",
+    "name": "刘官庄镇中心初中"
+  }
+},
+{
+  "type": "node",
+  "id": 4689739383,
+  "lat": 35.5241134,
+  "lon": 118.7888560,
+  "tags": {
+    "amenity": "school",
+    "name": "刘官庄镇中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 4713005797,
+  "lat": 33.7292892,
+  "lon": 118.6790984,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 4713008468,
+  "lat": 33.7201517,
+  "lon": 118.6478560,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 4714147656,
+  "lat": 38.9914487,
+  "lon": 117.6952918,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "海洋石油总医院"
+  }
+},
+{
+  "type": "node",
+  "id": 4714149101,
+  "lat": 38.9965879,
+  "lon": 117.6522415,
+  "tags": {
+    "amenity": "hospital",
+    "name": "响螺湾医院"
+  }
+},
+{
+  "type": "node",
+  "id": 4714208963,
+  "lat": 38.9723269,
+  "lon": 117.6837289,
+  "tags": {
+    "amenity": "police",
+    "name": "南疆治安分局石油新村派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 4783957992,
+  "lat": 35.4428892,
+  "lon": 119.5621484,
+  "tags": {
+    "amenity": "school",
+    "name": "日照市第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 4790064276,
+  "lat": 36.6867610,
+  "lon": 119.1363352,
+  "tags": {
+    "amenity": "police",
+    "name": "梨园街道综治维稳中心"
+  }
+},
+{
+  "type": "node",
+  "id": 4851138826,
+  "lat": 36.1862383,
+  "lon": 120.6146712,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "黑风口",
+    "name:zh": "黑风口"
+  }
+},
+{
+  "type": "node",
+  "id": 4924118221,
+  "lat": 36.0670760,
+  "lon": 120.3955589,
+  "tags": {
+    "addr:housenumber": "19",
+    "addr:street": "漳州二路",
+    "amenity": "school",
+    "education": "school",
+    "name:en": "XMandarin Language School"
+  }
+},
+{
+  "type": "node",
+  "id": 4969743694,
+  "lat": 33.1850197,
+  "lon": 120.1137438,
+  "tags": {
+    "amenity": "school",
+    "name": "盐城市大冈中学正门"
+  }
+},
+{
+  "type": "node",
+  "id": 4973571568,
+  "lat": 33.1860767,
+  "lon": 120.1087864,
+  "tags": {
+    "amenity": "school",
+    "name": "大冈小学正门"
+  }
+},
+{
+  "type": "node",
+  "id": 4973586271,
+  "lat": 33.1812752,
+  "lon": 120.1105594,
+  "tags": {
+    "amenity": "hospital",
+    "name": "医院正门"
+  }
+},
+{
+  "type": "node",
+  "id": 5004885556,
+  "lat": 36.7987394,
+  "lon": 119.9797191,
+  "tags": {
+    "addr:city": "平度市",
+    "addr:postcode": "266700",
+    "addr:province": "山东省",
+    "amenity": "school",
+    "name": "山东省平度第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 5030325050,
+  "lat": 37.0910336,
+  "lon": 118.4157929,
+  "tags": {
+    "addr:city": "东营市广饶县",
+    "addr:district": "广饶镇",
+    "addr:province": "山东省",
+    "addr:street": "孙武路",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "东营肛肠病医院"
+  }
+},
+{
+  "type": "node",
+  "id": 5132079487,
+  "lat": 37.6578235,
+  "lon": 120.9897280,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "机场医院"
+  }
+},
+{
+  "type": "node",
+  "id": 5137746220,
+  "lat": 34.9772073,
+  "lon": 118.2855720,
+  "tags": {
+    "amenity": "hospital",
+    "name": "罗庄儿童医院"
+  }
+},
+{
+  "type": "node",
+  "id": 5177726738,
+  "lat": 36.3073245,
+  "lon": 120.5017433,
+  "tags": {
+    "amenity": "school",
+    "name": "篮球馆"
+  }
+},
+{
+  "type": "node",
+  "id": 5188220957,
+  "lat": 36.0645840,
+  "lon": 120.3148567,
+  "tags": {
+    "addr:city": "Qingdao",
+    "addr:district": "Shinan",
+    "addr:housenumber": "31",
+    "addr:province": "Shandong",
+    "addr:street": "湖南路",
+    "amenity": "school",
+    "name": "青岛市财政局会计人员继续教育培训学校",
+    "name:en": "Qingdao Finance Bureau Accounting Personnel Continuing Education Training School",
+    "operator": "Qingdao Finance Bureau"
+  }
+},
+{
+  "type": "node",
+  "id": 5197396022,
+  "lat": 38.0965798,
+  "lon": 117.5046775,
+  "tags": {
+    "amenity": "police",
+    "name:en": "Tollstation"
+  }
+},
+{
+  "type": "node",
+  "id": 5239752462,
+  "lat": 36.0692040,
+  "lon": 120.3134750,
+  "tags": {
+    "addr:city": "青岛市",
+    "addr:district": "市南区",
+    "addr:housenumber": "106",
+    "addr:postcode": "266001",
+    "addr:province": "山东省",
+    "addr:street": "中山路",
+    "amenity": "police",
+    "name": "青岛市中山路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 5240998321,
+  "lat": 35.1347880,
+  "lon": 118.3513613,
+  "tags": {
+    "amenity": "school",
+    "name": "一中北校南门"
+  }
+},
+{
+  "type": "node",
+  "id": 5257315522,
+  "lat": 35.9705451,
+  "lon": 120.1769684,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛丽人妇产医院"
+  }
+},
+{
+  "type": "node",
+  "id": 5259125361,
+  "lat": 36.0584493,
+  "lon": 120.3051688,
+  "tags": {
+    "addr:city": "Qingdao",
+    "addr:district": "Shinan",
+    "addr:housenumber": "1",
+    "addr:province": "Shandong",
+    "addr:street": "汶上路",
+    "amenity": "police",
+    "name": "济南铁路公安局青岛铁路公安处"
+  }
+},
+{
+  "type": "node",
+  "id": 5332537311,
+  "lat": 36.3076032,
+  "lon": 120.4982585,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "琴岛学院医务室"
+  }
+},
+{
+  "type": "node",
+  "id": 5344345046,
+  "lat": 35.9658732,
+  "lon": 120.1836714,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛拜博口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 5349322037,
+  "lat": 36.1577644,
+  "lon": 120.4909824,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 5369484245,
+  "lat": 36.0710805,
+  "lon": 120.3732094,
+  "tags": {
+    "addr:housenumber": "22",
+    "addr:street": "闽江路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "中国人民解放军海军第九七一医院-门诊部"
+  }
+},
+{
+  "type": "node",
+  "id": 5453458744,
+  "lat": 38.8747256,
+  "lon": 121.6758770,
+  "tags": {
+    "amenity": "shelter",
+    "name:de": "Teehaus"
+  }
+},
+{
+  "type": "node",
+  "id": 5595657121,
+  "lat": 36.0785291,
+  "lon": 120.4021302,
+  "tags": {
+    "addr:city": "青岛市",
+    "addr:district": "市南区",
+    "addr:housenumber": "272",
+    "addr:postcode": "266001",
+    "addr:province": "山东省",
+    "addr:street": "宁夏路",
+    "amenity": "police",
+    "name": "青岛市公安局出入境管理局",
+    "name:en": "PSB",
+    "name:zh": "青岛市公安局出入境管理局",
+    "opening_hours": "Mo-Fr 09:00-12:00, 13:30-17:00"
+  }
+},
+{
+  "type": "node",
+  "id": 5676846015,
+  "lat": 38.8827861,
+  "lon": 121.7066631,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 5868761636,
+  "lat": 36.1031828,
+  "lon": 120.3601232,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "yes",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 5877943506,
+  "lat": 36.0668431,
+  "lon": 120.3156550,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 5976801565,
+  "lat": 33.1510035,
+  "lon": 119.5930372,
+  "tags": {
+    "amenity": "school",
+    "name": "郑渡小学"
+  }
+},
+{
+  "type": "node",
+  "id": 6038310134,
+  "lat": 34.4372805,
+  "lon": 118.2484825,
+  "tags": {
+    "amenity": "school",
+    "name": "杨集镇初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 6038310137,
+  "lat": 34.4348316,
+  "lon": 118.2465427,
+  "tags": {
+    "amenity": "school",
+    "name": "杨集中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 6050600878,
+  "lat": 33.7912998,
+  "lon": 118.4971425,
+  "tags": {
+    "amenity": "school",
+    "name": "郑楼实验学校"
+  }
+},
+{
+  "type": "node",
+  "id": 6134665094,
+  "lat": 36.0347898,
+  "lon": 120.2101965,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛开发区第三中学",
+    "name:en": "Qingdao Development Zone No 3 Middle School"
+  }
+},
+{
+  "type": "node",
+  "id": 6135413985,
+  "lat": 36.0338283,
+  "lon": 120.2070333,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛开发区实验小学"
+  }
+},
+{
+  "type": "node",
+  "id": 6163691331,
+  "lat": 37.5289169,
+  "lon": 122.0598005,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "校医院"
+  }
+},
+{
+  "type": "node",
+  "id": 6185650143,
+  "lat": 34.4395151,
+  "lon": 118.2445387,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "郯城第三人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 6203024532,
+  "lat": 36.8598336,
+  "lon": 119.4273392,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市峻青初中"
+  }
+},
+{
+  "type": "node",
+  "id": 6224527853,
+  "lat": 34.4395451,
+  "lon": 118.2524353,
+  "tags": {
+    "amenity": "police",
+    "name": "郯城公安局杨集"
+  }
+},
+{
+  "type": "node",
+  "id": 6374086372,
+  "lat": 37.5195176,
+  "lon": 122.0686031,
+  "tags": {
+    "amenity": "police",
+    "name": "威海市公安局高区分局怡园派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 6374086373,
+  "lat": 37.5247547,
+  "lon": 122.0701583,
+  "tags": {
+    "amenity": "police",
+    "name": "威海市公安局高区分局金海滩边防派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 6467344742,
+  "lat": 36.9608785,
+  "lon": 121.9069594,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 6468101813,
+  "lat": 36.8312764,
+  "lon": 121.7270432,
+  "tags": {
+    "amenity": "shelter",
+    "name": "三观亭"
+  }
+},
+{
+  "type": "node",
+  "id": 6468101935,
+  "lat": 36.8372616,
+  "lon": 121.7007709,
+  "tags": {
+    "amenity": "police",
+    "name": "白沙滩边防派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 6598500145,
+  "lat": 36.0522518,
+  "lon": 120.3186096,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 6680791663,
+  "lat": 35.1686432,
+  "lon": 118.2440940,
+  "tags": {
+    "amenity": "police",
+    "name": "临沂服务区警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 6844790090,
+  "lat": 35.0025220,
+  "lon": 118.2105791,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "高新区消防大队"
+  }
+},
+{
+  "type": "node",
+  "id": 6857058827,
+  "lat": 38.8918889,
+  "lon": 121.5275333,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 6937018366,
+  "lat": 38.8194959,
+  "lon": 121.2047340,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "乐椿轩医院"
+  }
+},
+{
+  "type": "node",
+  "id": 7010404746,
+  "lat": 37.4161298,
+  "lon": 118.6555715,
+  "tags": {
+    "addr:city": "东营市",
+    "addr:postcode": "257000",
+    "addr:province": "山东省",
+    "amenity": "school",
+    "denomination": "none",
+    "name": "育才学校",
+    "operator": "东营市市政府",
+    "operator:type": "public",
+    "religion": "none",
+    "website": "https://www.dyycxx.net/"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273732,
+  "lat": 35.2725908,
+  "lon": 118.5106602,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "山东煤炭疗养院（临沂市河东区中心医院）"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273733,
+  "lat": 35.2713432,
+  "lon": 118.5106849,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂同仁康复医院"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273734,
+  "lat": 35.2725757,
+  "lon": 118.5122007,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "汤头街道中心卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273735,
+  "lat": 35.2716752,
+  "lon": 118.5120590,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂警官疗养院"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273737,
+  "lat": 35.2744824,
+  "lon": 118.5086637,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "第五疗养区"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273738,
+  "lat": 35.2723745,
+  "lon": 118.5093723,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "第三疗养区"
+  }
+},
+{
+  "type": "node",
+  "id": 7041273739,
+  "lat": 35.2713884,
+  "lon": 118.5096003,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "康复疗养大厦"
+  }
+},
+{
+  "type": "node",
+  "id": 7069295619,
+  "lat": 33.4958125,
+  "lon": 119.7405267,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7072912033,
+  "lat": 33.1821988,
+  "lon": 119.3283248,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7073020241,
+  "lat": 33.2310328,
+  "lon": 119.3058103,
+  "tags": {
+    "amenity": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 7125709689,
+  "lat": 34.0343009,
+  "lon": 118.3183281,
+  "tags": {
+    "amenity": "shelter",
+    "name": "纳爽亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 7154080068,
+  "lat": 34.8729409,
+  "lon": 117.5621011,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局市中分局北马路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 7169916237,
+  "lat": 36.8648207,
+  "lon": 119.3887227,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市墨海书画艺术培训学校(傅徐校区)"
+  }
+},
+{
+  "type": "node",
+  "id": 7175666587,
+  "lat": 36.8557321,
+  "lon": 119.3888962,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市锅炉设备配套有限责任公司;山东英睿网络科技有限公司潍坊分公司;昌邑市昌盛人力资源有限公司;潍坊昌泰职业培训学校",
+    "office": "company"
+  }
+},
+{
+  "type": "node",
+  "id": 7183283341,
+  "lat": 35.9805590,
+  "lon": 119.4117178,
+  "tags": {
+    "amenity": "school",
+    "name": "山东省诸城实验中学南校区"
+  }
+},
+{
+  "type": "node",
+  "id": 7201054388,
+  "lat": 36.4719634,
+  "lon": 120.5094502,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局即墨分局龙泉派出所",
+    "name:zh": "青岛市公安局即墨分局龙泉派出所",
+    "name:zh-Hans": "青岛市公安局即墨分局龙泉派出所",
+    "name:zh-Hant": "青島市公安局即墨分局龍泉派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 7206731524,
+  "lat": 36.8405768,
+  "lon": 119.3966060,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "昌邑厚德英杰医院"
+  }
+},
+{
+  "type": "node",
+  "id": 7235154165,
+  "lat": 35.9486935,
+  "lon": 119.4276560,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7251411151,
+  "lat": 37.0511828,
+  "lon": 119.4806695,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "昌邑市人民医院下营分院",
+    "old_name": "昌邑市下营卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 7288064544,
+  "lat": 35.9925610,
+  "lon": 119.4019175,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7395486954,
+  "lat": 36.8471104,
+  "lon": 119.3956144,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市奥鹏学习中心"
+  }
+},
+{
+  "type": "node",
+  "id": 7483471404,
+  "lat": 34.7405913,
+  "lon": 119.3619728,
+  "tags": {
+    "amenity": "police",
+    "name": "连云港市公安局连云分局墟沟派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 7552986507,
+  "lat": 37.3913810,
+  "lon": 122.6974395,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7553093377,
+  "lat": 37.4066078,
+  "lon": 122.6985379,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7553144702,
+  "lat": 37.4117743,
+  "lon": 122.6921180,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7563204331,
+  "lat": 36.8427712,
+  "lon": 119.4383173,
+  "tags": {
+    "addr:housenumber": "945",
+    "addr:street": "平安东街",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "昌邑市妇幼保健院（昌邑市妇女儿童医院、昌邑市计划生育服务中心）"
+  }
+},
+{
+  "type": "node",
+  "id": 7574267775,
+  "lat": 37.4080188,
+  "lon": 122.6942973,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7574446284,
+  "lat": 37.4220829,
+  "lon": 122.6708668,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7574487805,
+  "lat": 37.3932691,
+  "lon": 122.6854876,
+  "tags": {
+    "amenity": "police",
+    "name": "龙须岛边防派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 7585395721,
+  "lat": 37.3778563,
+  "lon": 122.6787096,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7629576884,
+  "lat": 36.6255747,
+  "lon": 118.1944730,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "莱钢集团淄博锚链有限公司医院"
+  }
+},
+{
+  "type": "node",
+  "id": 7639570590,
+  "lat": 37.4094990,
+  "lon": 122.6584764,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7639570591,
+  "lat": 37.4098281,
+  "lon": 122.6595077,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7657775791,
+  "lat": 37.3947991,
+  "lon": 122.7008405,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7657775792,
+  "lat": 37.3916921,
+  "lon": 122.7005629,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752501,
+  "lat": 37.4094297,
+  "lon": 122.6268277,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752502,
+  "lat": 37.4091911,
+  "lon": 122.6274526,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752503,
+  "lat": 37.4094116,
+  "lon": 122.6274727,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752504,
+  "lat": 37.4095075,
+  "lon": 122.6241320,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752505,
+  "lat": 37.4085104,
+  "lon": 122.6231892,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672752506,
+  "lat": 37.4085466,
+  "lon": 122.6233917,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7672754399,
+  "lat": 37.4079202,
+  "lon": 122.6233381,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7677704043,
+  "lat": 37.4082441,
+  "lon": 122.6270851,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7686918625,
+  "lat": 36.6814181,
+  "lon": 118.4780598,
+  "tags": {
+    "addr:housenumber": "2楼",
+    "amenity": "school",
+    "name": "剑桥英语培训学校"
+  }
+},
+{
+  "type": "node",
+  "id": 7691924188,
+  "lat": 37.4077530,
+  "lon": 122.6217060,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7702681925,
+  "lat": 37.4113184,
+  "lon": 122.6283887,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706587375,
+  "lat": 37.4152469,
+  "lon": 122.6285765,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706668569,
+  "lat": 37.4158796,
+  "lon": 122.6288044,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706675049,
+  "lat": 37.4144895,
+  "lon": 122.6285174,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706675050,
+  "lat": 37.4143479,
+  "lon": 122.6286395,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706675051,
+  "lat": 37.4140848,
+  "lon": 122.6288239,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7706681998,
+  "lat": 37.4137077,
+  "lon": 122.6291049,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7712319027,
+  "lat": 37.4188940,
+  "lon": 122.6275679,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7712319028,
+  "lat": 37.4188940,
+  "lon": 122.6273775,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7713132622,
+  "lat": 37.4143234,
+  "lon": 122.6223242,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7735565900,
+  "lat": 37.3827626,
+  "lon": 122.6169558,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7735565901,
+  "lat": 37.3826465,
+  "lon": 122.6165065,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7735565902,
+  "lat": 37.3825410,
+  "lon": 122.6160224,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7740615076,
+  "lat": 37.3754584,
+  "lon": 122.6168123,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7746983700,
+  "lat": 36.8697214,
+  "lon": 119.4031412,
+  "tags": {
+    "amenity": "school",
+    "name": "中国共产党昌邑市委员会党校"
+  }
+},
+{
+  "type": "node",
+  "id": 7768446647,
+  "lat": 37.4140762,
+  "lon": 122.6060526,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7768482875,
+  "lat": 37.4141721,
+  "lon": 122.6052976,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7768495417,
+  "lat": 37.4099975,
+  "lon": 122.5939652,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7768505289,
+  "lat": 37.4104513,
+  "lon": 122.6097393,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7768505901,
+  "lat": 37.4117828,
+  "lon": 122.6044527,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7772851335,
+  "lat": 33.4674054,
+  "lon": 119.7845255,
+  "tags": {
+    "addr:city": "盐城市",
+    "addr:district": "建湖县",
+    "addr:province": "江苏省",
+    "amenity": "school",
+    "grades": "7-9",
+    "name": "建湖县汇文实验初级中学",
+    "operator": "建湖县教育局",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 7794466610,
+  "lat": 35.9890611,
+  "lon": 119.4087730,
+  "tags": {
+    "amenity": "school",
+    "name": "超越教育"
+  }
+},
+{
+  "type": "node",
+  "id": 7795684781,
+  "lat": 36.0036519,
+  "lon": 119.3882707,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "邱家庄卫生室"
+  }
+},
+{
+  "type": "node",
+  "id": 7871908721,
+  "lat": 37.6396053,
+  "lon": 117.5605702,
+  "tags": {
+    "addr:city": "滨州市",
+    "addr:district": "阳信县",
+    "addr:housenumber": "871号",
+    "addr:postcode": "251800",
+    "addr:province": "山东省",
+    "addr:street": "阳城四路",
+    "amenity": "fire_station",
+    "name": "阳信县消防大队"
+  }
+},
+{
+  "type": "node",
+  "id": 7872924666,
+  "lat": 37.3478325,
+  "lon": 122.5696637,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872932082,
+  "lat": 37.3608637,
+  "lon": 122.5762090,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872933652,
+  "lat": 37.3604427,
+  "lon": 122.5757705,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872933653,
+  "lat": 37.3602125,
+  "lon": 122.5765537,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872933654,
+  "lat": 37.3600312,
+  "lon": 122.5765872,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872933655,
+  "lat": 37.3610034,
+  "lon": 122.5779015,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872933656,
+  "lat": 37.3609426,
+  "lon": 122.5773878,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7872935212,
+  "lat": 37.3598554,
+  "lon": 122.5777821,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7881450791,
+  "lat": 36.8440242,
+  "lon": 119.4048665,
+  "tags": {
+    "amenity": "school",
+    "name": "上岸自习室(三生大厦店)",
+    "operator": "昌邑市都昌街道上岸教育咨询中心"
+  }
+},
+{
+  "type": "node",
+  "id": 7881450812,
+  "lat": 36.8539953,
+  "lon": 119.3723389,
+  "tags": {
+    "amenity": "school",
+    "name": "上岸自习室(华海市场店)",
+    "operator": "昌邑市都昌街道上岸教育咨询中心"
+  }
+},
+{
+  "type": "node",
+  "id": 7890691180,
+  "lat": 37.3657622,
+  "lon": 122.5863317,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7905449856,
+  "lat": 33.6388821,
+  "lon": 119.0048514,
+  "tags": {
+    "amenity": "police",
+    "name": "校园110"
+  }
+},
+{
+  "type": "node",
+  "id": 7912665836,
+  "lat": 36.0494774,
+  "lon": 120.3424238,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 7919082186,
+  "lat": 36.7175920,
+  "lon": 119.1716467,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "潍坊学院校医院"
+  }
+},
+{
+  "type": "node",
+  "id": 7972177312,
+  "lat": 37.3733844,
+  "lon": 122.5747526,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8013860693,
+  "lat": 37.3649222,
+  "lon": 122.5592179,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8016661166,
+  "lat": 37.3608936,
+  "lon": 122.5571425,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8021482541,
+  "lat": 36.1874007,
+  "lon": 120.5076453,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛研究院",
+    "name:zh": "青岛研究院",
+    "name:zh-Hans": "青岛研究院",
+    "name:zh-Hant": "青島研究院"
+  }
+},
+{
+  "type": "node",
+  "id": 8032687088,
+  "lat": 37.3587393,
+  "lon": 122.5526800,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8065852731,
+  "lat": 37.3578023,
+  "lon": 122.5499301,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8107742707,
+  "lat": 33.1336319,
+  "lon": 117.8687713,
+  "tags": {
+    "addr:housenumber": "16",
+    "addr:street": "为民路",
+    "amenity": "police",
+    "name": "五河县公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 8140970823,
+  "lat": 37.4261583,
+  "lon": 122.1507035,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "华康骨科"
+  }
+},
+{
+  "type": "node",
+  "id": 8141474610,
+  "lat": 37.4413787,
+  "lon": 122.1524118,
+  "tags": {
+    "amenity": "police",
+    "name": "皇冠派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8141474611,
+  "lat": 37.4420246,
+  "lon": 122.1530897,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "威海泰和中医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8141480697,
+  "lat": 37.4207000,
+  "lon": 122.1725031,
+  "tags": {
+    "amenity": "police",
+    "name": "沟北边防派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8170704741,
+  "lat": 36.7178704,
+  "lon": 119.1725694,
+  "tags": {
+    "amenity": "police",
+    "name": "学院派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8204504284,
+  "lat": 36.6838514,
+  "lon": 118.4737562,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 8252337032,
+  "lat": 33.9601233,
+  "lon": 118.2571083,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局出入境接待大厅"
+  }
+},
+{
+  "type": "node",
+  "id": 8261716672,
+  "lat": 35.9838755,
+  "lon": 119.4011953,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8261716716,
+  "lat": 35.9855910,
+  "lon": 119.3993380,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8261740099,
+  "lat": 33.9625205,
+  "lon": 118.2921466,
+  "tags": {
+    "amenity": "shelter",
+    "name": "清风亭",
+    "old_name": "餐秀亭",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 8263294014,
+  "lat": 34.0129048,
+  "lon": 118.2897345,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁嶂山林场医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8267608336,
+  "lat": 33.9766131,
+  "lon": 118.2633097,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics",
+    "name": "儿科门诊"
+  }
+},
+{
+  "type": "node",
+  "id": 8267608339,
+  "lat": 33.9777978,
+  "lon": 118.2644750,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "住院部"
+  }
+},
+{
+  "type": "node",
+  "id": 8267608342,
+  "lat": 33.9765165,
+  "lon": 118.2651443,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "emergency",
+    "name": "急诊"
+  }
+},
+{
+  "type": "node",
+  "id": 8267608345,
+  "lat": 33.9769841,
+  "lon": 118.2658988,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "infectious_diseases",
+    "name": "发热门诊"
+  }
+},
+{
+  "type": "node",
+  "id": 8267608348,
+  "lat": 33.9611565,
+  "lon": 118.2888067,
+  "tags": {
+    "amenity": "shelter",
+    "name": "悠然亭"
+  }
+},
+{
+  "type": "node",
+  "id": 8281600156,
+  "lat": 33.9529562,
+  "lon": 118.2694697,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁博爱医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8281600157,
+  "lat": 33.9572976,
+  "lon": 118.2995716,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁市第二医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8281600158,
+  "lat": 33.9441304,
+  "lon": 118.2683706,
+  "tags": {
+    "addr:city": "宿迁市",
+    "addr:district": "宿城区",
+    "addr:housenumber": "618号",
+    "addr:province": "江苏省",
+    "addr:street": "人民大道",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁瑞年康复医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8308436546,
+  "lat": 33.9333708,
+  "lon": 118.2683228,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8325028258,
+  "lat": 36.8553625,
+  "lon": 119.3933205,
+  "tags": {
+    "amenity": "school",
+    "level": "4",
+    "name": "上岸自习室(新华大厦店)"
+  }
+},
+{
+  "type": "node",
+  "id": 8381429135,
+  "lat": 36.7092548,
+  "lon": 119.1575605,
+  "tags": {
+    "amenity": "police",
+    "name": "潍坊市公安消防分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8411112657,
+  "lat": 38.3580382,
+  "lon": 120.9033568,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8440075409,
+  "lat": 34.1306028,
+  "lon": 118.0528005,
+  "tags": {
+    "amenity": "school",
+    "name": "黄墩幼儿园"
+  }
+},
+{
+  "type": "node",
+  "id": 8440793267,
+  "lat": 33.3623426,
+  "lon": 118.0347671,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "上塘仁和医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8440793421,
+  "lat": 33.3610468,
+  "lon": 118.0347304,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8440793536,
+  "lat": 33.3506525,
+  "lon": 118.0343443,
+  "tags": {
+    "amenity": "police",
+    "name": "上塘派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8442337227,
+  "lat": 36.8374807,
+  "lon": 119.3871785,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8477631849,
+  "lat": 36.6701872,
+  "lon": 118.4738876,
+  "tags": {
+    "amenity": "police",
+    "fixme": "警务工作站为派出所下属",
+    "name": "警务工作站虎泉花园站",
+    "operator": "青州市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 8514355507,
+  "lat": 36.8612982,
+  "lon": 119.4267535,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8514355508,
+  "lat": 36.8609843,
+  "lon": 119.4266891,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8524798489,
+  "lat": 33.8023804,
+  "lon": 118.3513112,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局洋河新区分局",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825190,
+  "lat": 33.9047122,
+  "lon": 118.3413705,
+  "tags": {
+    "amenity": "police",
+    "name": "高新区派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825192,
+  "lat": 33.8856205,
+  "lon": 118.2858545,
+  "tags": {
+    "amenity": "police",
+    "name": "明珠派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825193,
+  "lat": 34.0594101,
+  "lon": 118.3140907,
+  "tags": {
+    "amenity": "police",
+    "name": "晓店派出所",
+    "operator": "宿迁市公安局湖滨新区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825194,
+  "lat": 33.8757546,
+  "lon": 118.2794120,
+  "tags": {
+    "amenity": "police",
+    "name": "上海铁路公安局南京公安处宿迁站派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825195,
+  "lat": 33.8728553,
+  "lon": 118.2618352,
+  "tags": {
+    "amenity": "police",
+    "name": "三棵树派出所",
+    "operator": "宿迁市公安局经济技术开发区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8524825197,
+  "lat": 33.9060980,
+  "lon": 118.2384725,
+  "tags": {
+    "amenity": "police",
+    "name": "古楚派出所",
+    "operator": "宿迁市公安局经济技术开发区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8525048151,
+  "lat": 33.9436478,
+  "lon": 118.2712169,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 8525048152,
+  "lat": 33.9435380,
+  "lon": 118.2778369,
+  "tags": {
+    "amenity": "shelter",
+    "name": "承风亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 8527151146,
+  "lat": 35.0682605,
+  "lon": 118.3231948,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 8527151147,
+  "lat": 35.0681273,
+  "lon": 118.3236955,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 8564415586,
+  "lat": 36.8612674,
+  "lon": 119.4272325,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8564415587,
+  "lat": 36.8610600,
+  "lon": 119.4272516,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8565089669,
+  "lat": 33.9843415,
+  "lon": 118.2143927,
+  "tags": {
+    "amenity": "hospital",
+    "name": "董坝卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 8565089670,
+  "lat": 33.9867781,
+  "lon": 118.2120418,
+  "tags": {
+    "amenity": "police",
+    "name": "支口派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8566833465,
+  "lat": 33.1980572,
+  "lon": 120.4278545,
+  "tags": {
+    "amenity": "school",
+    "name": "实验小学"
+  }
+},
+{
+  "type": "node",
+  "id": 8568650480,
+  "lat": 33.9514653,
+  "lon": 118.2224619,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8569323899,
+  "lat": 36.7143404,
+  "lon": 119.1173709,
+  "tags": {
+    "addr:city": "潍坊市",
+    "addr:district": "奎文区",
+    "addr:housenumber": "7",
+    "addr:postcode": "261041",
+    "addr:province": "山东省",
+    "addr:street": "中学街",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "东关街道中学街社区卫生服务中心",
+    "operator": "潍坊市第二人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8569969816,
+  "lat": 33.9346313,
+  "lon": 118.3286401,
+  "tags": {
+    "amenity": "school",
+    "grades": "7-9",
+    "name": "宿豫区第一初级中学",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 8570007417,
+  "lat": 33.9334133,
+  "lon": 118.3286164,
+  "tags": {
+    "amenity": "school",
+    "grades": "0-6",
+    "name": "文昌小学",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 8588151243,
+  "lat": 33.9373684,
+  "lon": 118.2996854,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "项里街道社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 8607299366,
+  "lat": 33.9585424,
+  "lon": 118.2923149,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "建国医院中医门诊楼"
+  }
+},
+{
+  "type": "node",
+  "id": 8607402420,
+  "lat": 33.9135544,
+  "lon": 118.2963739,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "orthopaedics",
+    "name": "宿迁市仁济骨科医院",
+    "operator:type": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 8607402422,
+  "lat": 33.9490619,
+  "lon": 118.2698588,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "surgery",
+    "name": "宿迁爱尔五官医院",
+    "operator:type": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 8632347470,
+  "lat": 33.9472283,
+  "lon": 118.2676300,
+  "tags": {
+    "amenity": "police",
+    "name": "汽车客运站警务工作站"
+  }
+},
+{
+  "type": "node",
+  "id": 8671604158,
+  "lat": 36.8399764,
+  "lon": 119.4365854,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8695330867,
+  "lat": 33.9428936,
+  "lon": 118.2716227,
+  "tags": {
+    "amenity": "shelter",
+    "name": "报刊亭"
+  }
+},
+{
+  "type": "node",
+  "id": 8712577823,
+  "lat": 33.7849610,
+  "lon": 118.3775056,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "洋河集团职工医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8712577852,
+  "lat": 33.7930037,
+  "lon": 118.3441856,
+  "tags": {
+    "amenity": "school",
+    "name": "宿迁中学洋河分校"
+  }
+},
+{
+  "type": "node",
+  "id": 8712692300,
+  "lat": 33.7890723,
+  "lon": 118.3600277,
+  "tags": {
+    "amenity": "police",
+    "name": "上海铁路公安局南京公安处洋河站派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8712766628,
+  "lat": 33.7657391,
+  "lon": 118.3737115,
+  "tags": {
+    "amenity": "police",
+    "name": "洋河派出所",
+    "operator": "宿迁市公安局洋河新区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8712824462,
+  "lat": 33.7831469,
+  "lon": 118.3460382,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "洋河消防救援大队"
+  }
+},
+{
+  "type": "node",
+  "id": 8742496046,
+  "lat": 34.0135965,
+  "lon": 118.2934663,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8805730927,
+  "lat": 33.9522566,
+  "lon": 118.4308241,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8805730929,
+  "lat": 33.9520628,
+  "lon": 118.4309303,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8805730933,
+  "lat": 33.9518923,
+  "lon": 118.4296796,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8805730934,
+  "lat": 33.9519456,
+  "lon": 118.4298542,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8805730936,
+  "lat": 33.9517767,
+  "lon": 118.4289582,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8818196381,
+  "lat": 34.8873042,
+  "lon": 118.0067719,
+  "tags": {
+    "amenity": "school",
+    "name": "兰陵县开发区中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 8818196382,
+  "lat": 34.8864241,
+  "lon": 118.0049609,
+  "tags": {
+    "amenity": "school",
+    "name": "兰陵县开发区初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 8829914173,
+  "lat": 33.9534208,
+  "lon": 118.2826418,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "dermatology",
+    "name": "宿迁市皮肤病医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8829914204,
+  "lat": 33.9596305,
+  "lon": 118.3165127,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "豫新街道社区卫生服务中心",
+    "operator:type": "government"
+  }
+},
+{
+  "type": "node",
+  "id": 8829914205,
+  "lat": 33.9639410,
+  "lon": 118.2259330,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "河滨医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8840886798,
+  "lat": 33.9310269,
+  "lon": 118.3141870,
+  "tags": {
+    "alt_name": "宿豫交警大队;宿豫交通事故处理中心",
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局交警大队交通事故处理中心"
+  }
+},
+{
+  "type": "node",
+  "id": 8840886803,
+  "lat": 33.9316462,
+  "lon": 118.3148515,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局交警大队"
+  }
+},
+{
+  "type": "node",
+  "id": 8849621939,
+  "lat": 38.6598868,
+  "lon": 117.5330442,
+  "tags": {
+    "amenity": "police",
+    "name": "马棚口边防派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8850356825,
+  "lat": 36.8468835,
+  "lon": 119.3969693,
+  "tags": {
+    "amenity": "school",
+    "name": "山海自习室"
+  }
+},
+{
+  "type": "node",
+  "id": 8880178500,
+  "lat": 33.9382655,
+  "lon": 118.2922243,
+  "tags": {
+    "amenity": "police",
+    "name": "项里派出所警务服务点"
+  }
+},
+{
+  "type": "node",
+  "id": 8898608048,
+  "lat": 35.7657250,
+  "lon": 120.1730190,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛农业大学实习基地"
+  }
+},
+{
+  "type": "node",
+  "id": 8915864409,
+  "lat": 34.2249855,
+  "lon": 118.9691172,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8926100227,
+  "lat": 36.3133689,
+  "lon": 120.4101831,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "yes",
+    "bin": "no"
+  }
+},
+{
+  "type": "node",
+  "id": 8936288024,
+  "lat": 36.9512841,
+  "lon": 119.3883717,
+  "tags": {
+    "amenity": "police",
+    "name": "昌邑市公安局柳疃派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 8946358004,
+  "lat": 33.7588312,
+  "lon": 118.4307645,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "六里棚村卫生室"
+  }
+},
+{
+  "type": "node",
+  "id": 8947765283,
+  "lat": 33.9021894,
+  "lon": 118.0931789,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8947886891,
+  "lat": 33.8829835,
+  "lon": 118.3769190,
+  "tags": {
+    "amenity": "police",
+    "name": "陆集派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 8963078948,
+  "lat": 38.9127585,
+  "lon": 121.6288308,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8977517002,
+  "lat": 33.9287257,
+  "lon": 118.3380016,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁市普济康复医院"
+  }
+},
+{
+  "type": "node",
+  "id": 8981971357,
+  "lat": 34.0003125,
+  "lon": 118.2754716,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 8995426647,
+  "lat": 33.9237284,
+  "lon": 118.2614183,
+  "tags": {
+    "amenity": "police",
+    "name": "交通事故综合服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 9002765521,
+  "lat": 33.9752932,
+  "lon": 118.2777956,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9004568349,
+  "lat": 36.7385254,
+  "lon": 119.4550554,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "昌邑市骨伤医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557628,
+  "lat": 34.0485051,
+  "lon": 118.2635278,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557629,
+  "lat": 34.0482524,
+  "lon": 118.2634556,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557630,
+  "lat": 34.0476924,
+  "lon": 118.2632981,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557631,
+  "lat": 34.0471947,
+  "lon": 118.2631477,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557632,
+  "lat": 34.0468578,
+  "lon": 118.2630531,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557633,
+  "lat": 34.0483722,
+  "lon": 118.2636755,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557634,
+  "lat": 34.0479284,
+  "lon": 118.2635322,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557635,
+  "lat": 34.0474197,
+  "lon": 118.2634194,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9006557636,
+  "lat": 34.0470357,
+  "lon": 118.2633604,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9009732212,
+  "lat": 33.9593482,
+  "lon": 118.2497106,
+  "tags": {
+    "addr:city": "宿迁市",
+    "addr:district": "宿城区",
+    "addr:housenumber": "88号",
+    "addr:postcode": "223800",
+    "addr:province": "江苏省",
+    "addr:street": "洪泽湖西路",
+    "amenity": "hospital",
+    "email": "pr@rich-healthcare.com",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "宿迁瑞慈体检中心",
+    "operator": "上海瑞慈医疗投资集团有限公司",
+    "operator:type": "private",
+    "phone": "+86 400 168 8188",
+    "website": "https://www.rich-healthcare.com",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9044792993,
+  "lat": 34.0331581,
+  "lon": 118.1143610,
+  "tags": {
+    "amenity": "shelter",
+    "name": "恩泽亭"
+  }
+},
+{
+  "type": "node",
+  "id": 9044792999,
+  "lat": 34.0345089,
+  "lon": 118.1135264,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9044874811,
+  "lat": 34.0334508,
+  "lon": 118.1169607,
+  "tags": {
+    "amenity": "shelter",
+    "name": "飞瀑亭"
+  }
+},
+{
+  "type": "node",
+  "id": 9044888143,
+  "lat": 34.0351821,
+  "lon": 118.1138709,
+  "tags": {
+    "amenity": "shelter",
+    "name": "春好亭"
+  }
+},
+{
+  "type": "node",
+  "id": 9056277520,
+  "lat": 33.9587439,
+  "lon": 118.2936604,
+  "tags": {
+    "amenity": "shelter",
+    "name": "清廉角",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 9056277526,
+  "lat": 33.9588657,
+  "lon": 118.2938402,
+  "tags": {
+    "amenity": "shelter",
+    "name": "文化长廊",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9056423405,
+  "lat": 34.0396120,
+  "lon": 118.1139697,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9056423406,
+  "lat": 34.0405087,
+  "lon": 118.1152333,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9063432340,
+  "lat": 33.8908545,
+  "lon": 118.3160882,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9077172058,
+  "lat": 33.7417771,
+  "lon": 118.4799711,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "洋河新区仓集医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9084259639,
+  "lat": 36.1085148,
+  "lon": 120.4133352,
+  "tags": {
+    "addr:city": "青岛市",
+    "addr:district": "市北区",
+    "addr:housenumber": "27",
+    "addr:province": "山东省",
+    "addr:street": "富源一路",
+    "amenity": "police",
+    "name": "青岛市公安局市北分局浮山新区派出所",
+    "name:en": "Qingdao Police Fushanxinqu Office",
+    "phone": "+86 532 6657 5730"
+  }
+},
+{
+  "type": "node",
+  "id": 9085948110,
+  "lat": 36.3586831,
+  "lon": 120.6851264,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "校医院",
+    "name:zh": "校医院",
+    "name:zh-Hans": "校医院",
+    "name:zh-Hant": "校醫院",
+    "operator": "山东大学",
+    "operator:type": "government",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9112351752,
+  "lat": 36.8476095,
+  "lon": 120.1615804,
+  "tags": {
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "撞上小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9122015396,
+  "lat": 35.9411447,
+  "lon": 120.1652594,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "急救中心"
+  }
+},
+{
+  "type": "node",
+  "id": 9135571578,
+  "lat": 35.1371625,
+  "lon": 118.2799485,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市妇女儿童医院大学院区"
+  }
+},
+{
+  "type": "node",
+  "id": 9143583980,
+  "lat": 34.0395808,
+  "lon": 118.3136289,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9143583981,
+  "lat": 34.0395196,
+  "lon": 118.3127904,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9143585603,
+  "lat": 34.0390318,
+  "lon": 118.3147170,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9153540573,
+  "lat": 33.9427190,
+  "lon": 118.2863064,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局交通警察支队一大队",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 9171786932,
+  "lat": 33.7274084,
+  "lon": 118.4379968,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9171787023,
+  "lat": 33.7285045,
+  "lon": 118.4372831,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9174477051,
+  "lat": 33.9937773,
+  "lon": 118.3161885,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9174477052,
+  "lat": 33.9938059,
+  "lon": 118.3161548,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9174477054,
+  "lat": 33.9939893,
+  "lon": 118.3161566,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9197490618,
+  "lat": 36.8074100,
+  "lon": 118.0513466,
+  "tags": {
+    "amenity": "school",
+    "name": "张店三中保卫室"
+  }
+},
+{
+  "type": "node",
+  "id": 9227606723,
+  "lat": 33.9054503,
+  "lon": 118.1712776,
+  "tags": {
+    "amenity": "shelter",
+    "name": "水月亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9227606765,
+  "lat": 33.9066260,
+  "lon": 118.1737156,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9227607647,
+  "lat": 33.9011411,
+  "lon": 118.1723384,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9227830949,
+  "lat": 33.8738510,
+  "lon": 118.1805016,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9227831165,
+  "lat": 33.8741144,
+  "lon": 118.1793050,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9230276432,
+  "lat": 33.7668244,
+  "lon": 118.4845832,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9230337259,
+  "lat": 33.8127179,
+  "lon": 118.5036352,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9231456590,
+  "lat": 33.8735957,
+  "lon": 118.1792879,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9234433215,
+  "lat": 33.9834195,
+  "lon": 118.3093859,
+  "tags": {
+    "amenity": "shelter",
+    "name": "水文站"
+  }
+},
+{
+  "type": "node",
+  "id": 9246096185,
+  "lat": 35.4224088,
+  "lon": 119.3844850,
+  "tags": {
+    "amenity": "school",
+    "name": "古城小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9246096190,
+  "lat": 35.4222064,
+  "lon": 119.4222969,
+  "tags": {
+    "amenity": "school",
+    "name": "日照市城西小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9246096192,
+  "lat": 35.4391995,
+  "lon": 119.4555631,
+  "tags": {
+    "amenity": "school",
+    "name": "山东省日照第一中学"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925547,
+  "lat": 34.1917971,
+  "lon": 118.3412887,
+  "tags": {
+    "amenity": "shelter",
+    "name": "梨花亭"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925659,
+  "lat": 34.1964627,
+  "lon": 118.3421798,
+  "tags": {
+    "amenity": "shelter",
+    "name": "观光车乘车点",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925693,
+  "lat": 34.1969254,
+  "lon": 118.3378193,
+  "tags": {
+    "amenity": "shelter",
+    "name": "观光车乘车点",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925731,
+  "lat": 34.1999990,
+  "lon": 118.3428025,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925783,
+  "lat": 34.1997873,
+  "lon": 118.3365769,
+  "tags": {
+    "amenity": "shelter",
+    "name": "观光车乘车点",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925824,
+  "lat": 34.2030968,
+  "lon": 118.3377796,
+  "tags": {
+    "amenity": "shelter",
+    "name": "观光车乘车点",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 9247925954,
+  "lat": 34.2031927,
+  "lon": 118.3415056,
+  "tags": {
+    "amenity": "shelter",
+    "name": "九龙子亭"
+  }
+},
+{
+  "type": "node",
+  "id": 9247926015,
+  "lat": 34.2006777,
+  "lon": 118.3423141,
+  "tags": {
+    "amenity": "shelter",
+    "name": "观光车乘车点",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 9247972025,
+  "lat": 35.1373824,
+  "lon": 119.2596724,
+  "tags": {
+    "amenity": "police",
+    "name": "汾水派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 9248538857,
+  "lat": 34.1996037,
+  "lon": 118.3422534,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9248538858,
+  "lat": 34.1996087,
+  "lon": 118.3421464,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9248539141,
+  "lat": 34.1816999,
+  "lon": 118.3402702,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9249743030,
+  "lat": 34.2009328,
+  "lon": 118.3387902,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9267004925,
+  "lat": 36.8007068,
+  "lon": 118.0578556,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "淄建集团医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9287339754,
+  "lat": 33.8330515,
+  "lon": 118.3797616,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9289201851,
+  "lat": 34.0617184,
+  "lon": 118.3058475,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9323727148,
+  "lat": 33.7949979,
+  "lon": 118.4970543,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9348711068,
+  "lat": 33.6953333,
+  "lon": 118.4977268,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "中扬医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9365537488,
+  "lat": 33.9389608,
+  "lon": 118.2437344,
+  "tags": {
+    "addr:city": "宿迁市",
+    "addr:district": "宿城区",
+    "addr:housenumber": "600号",
+    "addr:postcode": "223800",
+    "addr:province": "江苏省",
+    "addr:street": "西湖路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "orthopaedics",
+    "name": "骨伤科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9366489913,
+  "lat": 33.9686663,
+  "lon": 118.2352860,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9366494817,
+  "lat": 33.9680672,
+  "lon": 118.2358832,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9366494941,
+  "lat": 33.9713530,
+  "lon": 118.2295456,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9399673590,
+  "lat": 33.7555009,
+  "lon": 118.4888561,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9402447247,
+  "lat": 33.9931416,
+  "lon": 118.3919758,
+  "tags": {
+    "amenity": "police",
+    "name": "曹集派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9402447248,
+  "lat": 33.9960735,
+  "lon": 118.3921709,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "曹集医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9403999540,
+  "lat": 36.2008411,
+  "lon": 120.6106326,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9403999635,
+  "lat": 36.2042446,
+  "lon": 120.6162880,
+  "tags": {
+    "amenity": "shelter",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 9409214349,
+  "lat": 35.4169218,
+  "lon": 118.6946705,
+  "tags": {
+    "amenity": "school",
+    "name": "夏庄镇中心初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 9415475082,
+  "lat": 35.4028251,
+  "lon": 119.3653548,
+  "tags": {
+    "amenity": "school",
+    "name": "日照市机场小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9418263694,
+  "lat": 33.8045426,
+  "lon": 118.3600943,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9418316595,
+  "lat": 33.8066278,
+  "lon": 118.3555209,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9419790852,
+  "lat": 35.4149584,
+  "lon": 119.5049051,
+  "tags": {
+    "amenity": "school",
+    "name": "泰安路中学"
+  }
+},
+{
+  "type": "node",
+  "id": 9422182340,
+  "lat": 36.0566303,
+  "lon": 117.7662674,
+  "tags": {
+    "amenity": "school",
+    "name": "双峰联小"
+  }
+},
+{
+  "type": "node",
+  "id": 9422182465,
+  "lat": 36.0435189,
+  "lon": 117.8134938,
+  "tags": {
+    "amenity": "police",
+    "name": "城子坡派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 9427464179,
+  "lat": 36.7045708,
+  "lon": 119.0056819,
+  "tags": {
+    "amenity": "school",
+    "name": "潍坊旅游学校"
+  }
+},
+{
+  "type": "node",
+  "id": 9432657083,
+  "lat": 33.9929082,
+  "lon": 118.1463596,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9468397058,
+  "lat": 37.1895547,
+  "lon": 119.9358089,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "莱州市爱尔眼科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9473003220,
+  "lat": 33.7951657,
+  "lon": 118.4310208,
+  "tags": {
+    "amenity": "school",
+    "name": "佘圩小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9473004198,
+  "lat": 33.7924115,
+  "lon": 118.4122325,
+  "tags": {
+    "amenity": "school",
+    "name": "卓码小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9473354756,
+  "lat": 34.0574517,
+  "lon": 118.2663813,
+  "tags": {
+    "amenity": "police",
+    "name": "湖滨公园警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 9473418158,
+  "lat": 34.0573676,
+  "lon": 118.2781585,
+  "tags": {
+    "amenity": "police",
+    "name": "市软件园警务工作站联勤联防执勤点"
+  }
+},
+{
+  "type": "node",
+  "id": 9483584873,
+  "lat": 37.2008030,
+  "lon": 119.9411386,
+  "tags": {
+    "amenity": "police",
+    "name": "莱州市车管所"
+  }
+},
+{
+  "type": "node",
+  "id": 9483996728,
+  "lat": 37.1805762,
+  "lon": 119.9731980,
+  "tags": {
+    "amenity": "police",
+    "name": "莱州市公安局治安管理大队"
+  }
+},
+{
+  "type": "node",
+  "id": 9483996729,
+  "lat": 37.1805650,
+  "lon": 119.9734992,
+  "tags": {
+    "amenity": "police",
+    "name": "莱州市公安局刑侦大队"
+  }
+},
+{
+  "type": "node",
+  "id": 9513761175,
+  "lat": 35.4329908,
+  "lon": 119.4757879,
+  "tags": {
+    "amenity": "school",
+    "name": "日照市第二实验中学"
+  }
+},
+{
+  "type": "node",
+  "id": 9513774028,
+  "lat": 35.4172662,
+  "lon": 119.4703785,
+  "tags": {
+    "amenity": "school",
+    "name": "日照市第三实验中学"
+  }
+},
+{
+  "type": "node",
+  "id": 9560689114,
+  "lat": 33.8710946,
+  "lon": 118.2071046,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9560689115,
+  "lat": 33.8711203,
+  "lon": 118.2061043,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9560689116,
+  "lat": 33.8687481,
+  "lon": 118.2114248,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9573224023,
+  "lat": 33.9100948,
+  "lon": 118.1904505,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9574663005,
+  "lat": 33.9421357,
+  "lon": 118.2236722,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9574663006,
+  "lat": 33.9417052,
+  "lon": 118.2240176,
+  "tags": {
+    "amenity": "shelter",
+    "name": "沧浪亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9583408316,
+  "lat": 33.9529635,
+  "lon": 118.2694294,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "宿迁市东方医院",
+    "operator": "宿迁市东方医院",
+    "operator:type": "private"
+  }
+},
+{
+  "type": "node",
+  "id": 9587848774,
+  "lat": 33.9435889,
+  "lon": 118.2763551,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9588095126,
+  "lat": 33.9380489,
+  "lon": 118.2688990,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9591524607,
+  "lat": 34.0340115,
+  "lon": 118.3503502,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614818,
+  "lat": 33.6961315,
+  "lon": 118.3228156,
+  "tags": {
+    "amenity": "police",
+    "name": "陈集派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614819,
+  "lat": 33.8169491,
+  "lon": 118.2305624,
+  "tags": {
+    "amenity": "police",
+    "name": "埠子派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614820,
+  "lat": 33.8367295,
+  "lon": 118.3613960,
+  "tags": {
+    "amenity": "police",
+    "name": "洋北派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614821,
+  "lat": 33.6886041,
+  "lon": 118.5016032,
+  "tags": {
+    "amenity": "police",
+    "name": "中扬派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614822,
+  "lat": 33.7653104,
+  "lon": 118.1959070,
+  "tags": {
+    "amenity": "police",
+    "name": "龙河派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614823,
+  "lat": 33.9909642,
+  "lon": 118.1099009,
+  "tags": {
+    "amenity": "police",
+    "name": "王官集派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592614824,
+  "lat": 33.7056283,
+  "lon": 118.4007031,
+  "tags": {
+    "amenity": "police",
+    "name": "屠园派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677350,
+  "lat": 33.8713546,
+  "lon": 118.5550409,
+  "tags": {
+    "amenity": "police",
+    "name": "丁嘴派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677351,
+  "lat": 34.0362471,
+  "lon": 118.1262728,
+  "tags": {
+    "amenity": "police",
+    "name": "水上派出所",
+    "operator": "宿迁市公安局水上分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677352,
+  "lat": 34.0105745,
+  "lon": 118.5246092,
+  "tags": {
+    "amenity": "police",
+    "name": "保安派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677353,
+  "lat": 34.0518137,
+  "lon": 118.4806100,
+  "tags": {
+    "amenity": "police",
+    "name": "来龙派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677354,
+  "lat": 33.9459889,
+  "lon": 118.5172197,
+  "tags": {
+    "amenity": "police",
+    "name": "关庙派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677355,
+  "lat": 34.0986365,
+  "lon": 118.3383228,
+  "tags": {
+    "amenity": "police",
+    "name": "化工园区派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677356,
+  "lat": 34.0810124,
+  "lon": 118.4604514,
+  "tags": {
+    "amenity": "police",
+    "name": "侍岭派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677357,
+  "lat": 33.9567172,
+  "lon": 118.3395063,
+  "tags": {
+    "amenity": "police",
+    "name": "电子商务产业园派出所",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9592677358,
+  "lat": 33.8760533,
+  "lon": 118.2742631,
+  "tags": {
+    "amenity": "police",
+    "name": "高铁商务区派出所",
+    "operator": "宿迁市公安局经济技术开发区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 9593571659,
+  "lat": 35.4672049,
+  "lon": 119.3071379,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9599895291,
+  "lat": 33.9797094,
+  "lon": 118.2952016,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9605612190,
+  "lat": 34.1126120,
+  "lon": 118.3096141,
+  "tags": {
+    "amenity": "shelter",
+    "name": "嶂山亭",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9606065131,
+  "lat": 33.8424398,
+  "lon": 118.6333378,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9606065132,
+  "lat": 33.8424128,
+  "lon": 118.6338715,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9606065133,
+  "lat": 33.8423537,
+  "lon": 118.6346610,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 9606065179,
+  "lat": 33.8427419,
+  "lon": 118.6339780,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9606253684,
+  "lat": 33.9774055,
+  "lon": 118.2910141,
+  "tags": {
+    "amenity": "shelter",
+    "name": "捷胜亭",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 9606253687,
+  "lat": 33.9785262,
+  "lon": 118.2937108,
+  "tags": {
+    "amenity": "shelter",
+    "name": "红枫亭",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 9606253690,
+  "lat": 33.9785414,
+  "lon": 118.2926813,
+  "tags": {
+    "amenity": "shelter",
+    "name": "白雪亭",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 9610251462,
+  "lat": 37.5540077,
+  "lon": 121.2457821,
+  "tags": {
+    "amenity": "school",
+    "name": "烟台开发区老年大学"
+  }
+},
+{
+  "type": "node",
+  "id": 9612505277,
+  "lat": 33.9696979,
+  "lon": 118.2360140,
+  "tags": {
+    "amenity": "shelter",
+    "name": "清风亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9620303205,
+  "lat": 33.8941798,
+  "lon": 118.1540551,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 9623250933,
+  "lat": 33.9625673,
+  "lon": 118.4490237,
+  "tags": {
+    "amenity": "police",
+    "name": "新庄派出所",
+    "operator": "中华人民共和国公安部",
+    "operator:en": "Ministry of Public Security",
+    "operator:wikidata": "Q2346285",
+    "operator:wikipedia": "zh:中华人民共和国公安部",
+    "operator:zh": "中华人民共和国公安部"
+  }
+},
+{
+  "type": "node",
+  "id": 9623250935,
+  "lat": 33.9647627,
+  "lon": 118.4509616,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "新庄镇医院"
+  }
+},
+{
+  "type": "node",
+  "id": 9702902738,
+  "lat": 33.9995922,
+  "lon": 118.2843172,
+  "tags": {
+    "addr:city": "宿迁市",
+    "addr:district": "宿豫区",
+    "addr:housenumber": "18号",
+    "addr:postcode": "223800",
+    "addr:province": "江苏省",
+    "addr:street": "女贞路",
+    "alt_name": "宿迁市新冠病毒阳性患者隔离中心",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "宿迁市方舱医院",
+    "name:en": "Suqian Mobile Cabin Hospital",
+    "operator": "宿迁市新冠肺炎疫情联防联控指挥部",
+    "operator:type": "government",
+    "phone": "+86 527 8098 6813",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 9705284594,
+  "lat": 36.8525099,
+  "lon": 118.1788017,
+  "tags": {
+    "amenity": "school",
+    "name": "（已废弃）金岭铁矿小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9739173225,
+  "lat": 37.2603315,
+  "lon": 120.0321877,
+  "tags": {
+    "amenity": "school",
+    "name": "莱州市平里店镇毛家小学"
+  }
+},
+{
+  "type": "node",
+  "id": 9776871712,
+  "lat": 36.7145422,
+  "lon": 119.1213073,
+  "tags": {
+    "amenity": "school",
+    "name": "潍坊市游泳中心(潍坊市游泳学校)"
+  }
+},
+{
+  "type": "node",
+  "id": 9783215341,
+  "lat": 37.4906808,
+  "lon": 122.1164328,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 9893759110,
+  "lat": 34.5498762,
+  "lon": 119.2291287,
+  "tags": {
+    "amenity": "police",
+    "name": "江苏省高速公路交通运输执法总队宁连支队"
+  }
+},
+{
+  "type": "node",
+  "id": 9915314653,
+  "lat": 36.1553436,
+  "lon": 120.4351160,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 9916370519,
+  "lat": 36.1079928,
+  "lon": 120.5257361,
+  "tags": {
+    "amenity": "school",
+    "name:en": "Qingdao Baishan School"
+  }
+},
+{
+  "type": "node",
+  "id": 10088252426,
+  "lat": 35.1283087,
+  "lon": 118.3040994,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂老年医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10088252427,
+  "lat": 35.1275661,
+  "lon": 118.3010760,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市人民医院北城新区医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10088252428,
+  "lat": 35.1271848,
+  "lon": 118.3025157,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市人民医院北城新区医院·东门"
+  }
+},
+{
+  "type": "node",
+  "id": 10088252429,
+  "lat": 35.1292412,
+  "lon": 118.2974262,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市人民医院北城新区医院·西门"
+  }
+},
+{
+  "type": "node",
+  "id": 10088252444,
+  "lat": 35.1272671,
+  "lon": 118.2998154,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "临沂市人民医院北城新区医院·南门"
+  }
+},
+{
+  "type": "node",
+  "id": 10103291317,
+  "lat": 33.2928345,
+  "lon": 118.8443922,
+  "tags": {
+    "addr:housenumber": "102号",
+    "addr:street": "东风路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "洪泽区人民医院",
+    "phone": "+86 517 8728 3416"
+  }
+},
+{
+  "type": "node",
+  "id": 10118302534,
+  "lat": 35.4498182,
+  "lon": 119.4931990,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "高新区消防救援大队"
+  }
+},
+{
+  "type": "node",
+  "id": 10132733832,
+  "lat": 33.9470800,
+  "lon": 118.2056814,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "苏州宿迁工业园区社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 10203929073,
+  "lat": 34.0632182,
+  "lon": 118.0764404,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "滨河医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10219141923,
+  "lat": 33.9819268,
+  "lon": 118.2994704,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10219141924,
+  "lat": 33.9821448,
+  "lon": 118.2984133,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10219430784,
+  "lat": 34.0337197,
+  "lon": 118.2926631,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10219430785,
+  "lat": 34.0335522,
+  "lon": 118.2918416,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10233882965,
+  "lat": 36.6842685,
+  "lon": 118.4657423,
+  "tags": {
+    "amenity": "police",
+    "name": "城里派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 10269036100,
+  "lat": 33.9339907,
+  "lon": 118.3527510,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10271248123,
+  "lat": 34.0102675,
+  "lon": 118.2921616,
+  "tags": {
+    "amenity": "shelter",
+    "name": "康公亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10282134224,
+  "lat": 34.0435553,
+  "lon": 118.1046849,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "皂河医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10284055837,
+  "lat": 33.9051208,
+  "lon": 118.3294369,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10294946288,
+  "lat": 33.9347437,
+  "lon": 118.3113484,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10294946289,
+  "lat": 33.9348327,
+  "lon": 118.3112693,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10299990763,
+  "lat": 36.7016195,
+  "lon": 119.1959497,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "山东明润眼科医院集团有限公司"
+  }
+},
+{
+  "type": "node",
+  "id": 10303945581,
+  "lat": 33.9514891,
+  "lon": 118.2732966,
+  "tags": {
+    "addr:housenumber": "浙商大厦4F",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "建国医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10303945582,
+  "lat": 33.9518874,
+  "lon": 118.2968370,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "plastic_surgery",
+    "name": "南京医科大学友谊整形外科医院（宿迁分院）"
+  }
+},
+{
+  "type": "node",
+  "id": 10303945583,
+  "lat": 33.9434568,
+  "lon": 118.2870832,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "苏州市广济医院（宿迁分院）"
+  }
+},
+{
+  "type": "node",
+  "id": 10303945586,
+  "lat": 33.9439019,
+  "lon": 118.2770664,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "卫华医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10537965157,
+  "lat": 33.9534808,
+  "lon": 118.2701139,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "古城街道社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 10537965161,
+  "lat": 33.9136318,
+  "lon": 118.2991631,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "项里街道社区卫生服务中心医疗部"
+  }
+},
+{
+  "type": "node",
+  "id": 10544321278,
+  "lat": 36.7795380,
+  "lon": 121.1632358,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 10565070740,
+  "lat": 33.9695690,
+  "lon": 118.2928675,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10593653396,
+  "lat": 33.9735260,
+  "lon": 118.2891159,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10603640882,
+  "lat": 33.9380599,
+  "lon": 118.2680247,
+  "tags": {
+    "amenity": "shelter",
+    "name": "保安亭"
+  }
+},
+{
+  "type": "node",
+  "id": 10605366563,
+  "lat": 33.9730556,
+  "lon": 118.2676194,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10605385433,
+  "lat": 33.9680400,
+  "lon": 118.2618602,
+  "tags": {
+    "amenity": "shelter",
+    "name": "才俊亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10605385436,
+  "lat": 33.9690198,
+  "lon": 118.2734712,
+  "tags": {
+    "amenity": "shelter",
+    "name": "映秀亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10609560043,
+  "lat": 37.5305208,
+  "lon": 121.3987327,
+  "tags": {
+    "amenity": "hospital",
+    "name": "烟台顺达口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10637148277,
+  "lat": 33.1517093,
+  "lon": 117.8801661,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 10641138830,
+  "lat": 34.0177720,
+  "lon": 118.2775109,
+  "tags": {
+    "amenity": "shelter",
+    "name": "门卫室"
+  }
+},
+{
+  "type": "node",
+  "id": 10682476062,
+  "lat": 34.0162147,
+  "lon": 118.2729821,
+  "tags": {
+    "amenity": "school",
+    "grades": "7-9",
+    "name": "宿迁市湖滨海门实验学校",
+    "old_name": "宿迁市湖滨新区第一初级中学",
+    "operator": "宿迁市湖滨新区管理委员会",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 10688202400,
+  "lat": 33.9727531,
+  "lon": 118.1809881,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10706662337,
+  "lat": 33.8808208,
+  "lon": 118.3301955,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10728811589,
+  "lat": 33.9424130,
+  "lon": 118.2300031,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10728811590,
+  "lat": 33.9425172,
+  "lon": 118.2291222,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10742736289,
+  "lat": 33.9494812,
+  "lon": 118.2735699,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "爱康体检"
+  }
+},
+{
+  "type": "node",
+  "id": 10772616388,
+  "lat": 37.9137659,
+  "lon": 120.7432594,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "10-12",
+    "name": "长岛职业中等专业学校"
+  }
+},
+{
+  "type": "node",
+  "id": 10796206843,
+  "lat": 33.9355221,
+  "lon": 118.3542637,
+  "tags": {
+    "amenity": "school",
+    "name": "顺河中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 10796965315,
+  "lat": 33.1968097,
+  "lon": 117.8763012,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10799155763,
+  "lat": 34.6541723,
+  "lon": 119.2887542,
+  "tags": {
+    "amenity": "shelter",
+    "name": "迎曙亭"
+  }
+},
+{
+  "type": "node",
+  "id": 10820682413,
+  "lat": 33.9593911,
+  "lon": 118.2937924,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10836414438,
+  "lat": 33.8609656,
+  "lon": 118.2057835,
+  "tags": {
+    "amenity": "school",
+    "name": "杨圩小学"
+  }
+},
+{
+  "type": "node",
+  "id": 10872992623,
+  "lat": 34.0534445,
+  "lon": 118.2743474,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10929150026,
+  "lat": 33.8731526,
+  "lon": 118.3197067,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 10950847775,
+  "lat": 33.9673992,
+  "lon": 118.2645870,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10950847783,
+  "lat": 33.9683219,
+  "lon": 118.2669468,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10950847790,
+  "lat": 33.9680600,
+  "lon": 118.2668384,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 10956656143,
+  "lat": 34.0109098,
+  "lon": 118.3198934,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "宿迁市湖滨新区膜产业园专职消防队"
+  }
+},
+{
+  "type": "node",
+  "id": 10980361506,
+  "lat": 33.9530994,
+  "lon": 118.3512682,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "loc_name": "宿豫医院",
+    "name": "宿迁市宿豫医院"
+  }
+},
+{
+  "type": "node",
+  "id": 10980675543,
+  "lat": 36.7952040,
+  "lon": 118.1137611,
+  "tags": {
+    "amenity": "shelter",
+    "internet_access": "no",
+    "name": "班车候车点",
+    "operator": "淄博公交",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 11013300916,
+  "lat": 33.9710975,
+  "lon": 118.2881154,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11015066047,
+  "lat": 33.9036473,
+  "lon": 118.2506338,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11023171818,
+  "lat": 36.7348538,
+  "lon": 119.0109275,
+  "tags": {
+    "amenity": "school",
+    "name": "中共潍城区委党校"
+  }
+},
+{
+  "type": "node",
+  "id": 11035199551,
+  "lat": 36.7987487,
+  "lon": 118.1129379,
+  "tags": {
+    "amenity": "shelter",
+    "name": "中心服务区",
+    "network": "东方时尚驾驶学校摆渡车",
+    "operator": "山东东方时尚驾驶学校",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 11035199552,
+  "lat": 36.7953655,
+  "lon": 118.1116429,
+  "tags": {
+    "amenity": "shelter",
+    "name": "报名中心",
+    "network": "东方时尚驾驶学校摆渡车",
+    "operator": "山东东方时尚驾驶学校",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 11035301518,
+  "lat": 34.0455092,
+  "lon": 118.3120027,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11035329182,
+  "lat": 34.0390083,
+  "lon": 118.3190462,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11035329183,
+  "lat": 34.0385704,
+  "lon": 118.3185939,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11038399094,
+  "lat": 33.9448695,
+  "lon": 118.2575829,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "宿迁市消防救援支队西湖路消防救援站"
+  }
+},
+{
+  "type": "node",
+  "id": 11038417670,
+  "lat": 33.8979103,
+  "lon": 118.2749620,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "宿迁市消防救援支队应急通信与车辆勤务站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "node",
+  "id": 11038423763,
+  "lat": 33.9454968,
+  "lon": 118.2567590,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 11057806900,
+  "lat": 34.0163692,
+  "lon": 118.2926692,
+  "tags": {
+    "amenity": "school",
+    "name": "宿迁市船员技术学校"
+  }
+},
+{
+  "type": "node",
+  "id": 11057806901,
+  "lat": 34.0169133,
+  "lon": 118.2928335,
+  "tags": {
+    "amenity": "school",
+    "name": "江苏省宿迁中等专业学校"
+  }
+},
+{
+  "type": "node",
+  "id": 11057875436,
+  "lat": 34.0358987,
+  "lon": 118.2923540,
+  "tags": {
+    "amenity": "school",
+    "name": "宿迁市淮海技师学院（湖滨校区）"
+  }
+},
+{
+  "type": "node",
+  "id": 11057875438,
+  "lat": 34.0347696,
+  "lon": 118.2936469,
+  "tags": {
+    "amenity": "school",
+    "name": "江苏省专业技术人员继续教育基地"
+  }
+},
+{
+  "type": "node",
+  "id": 11072746093,
+  "lat": 33.9402250,
+  "lon": 118.2711848,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "dentist",
+    "name": "宿迁口腔医院第一门诊",
+    "operator": "宿迁口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11072746095,
+  "lat": 33.9630231,
+  "lon": 118.2397314,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "dentist",
+    "name": "宿迁口腔医院第二门诊",
+    "operator": "宿迁口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11072746096,
+  "lat": 33.9558287,
+  "lon": 118.2354716,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "dentist",
+    "name": "宿迁口腔医院（西院区）",
+    "operator": "宿迁口腔医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11074436300,
+  "lat": 34.0454275,
+  "lon": 118.3191315,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11074436311,
+  "lat": 34.0360469,
+  "lon": 118.3175706,
+  "tags": {
+    "amenity": "shelter",
+    "name": "潋滟亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11074436832,
+  "lat": 34.0214839,
+  "lon": 118.3224330,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11074437016,
+  "lat": 34.0369982,
+  "lon": 118.3136309,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11074437132,
+  "lat": 34.0312986,
+  "lon": 118.3232407,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11085007032,
+  "lat": 33.9769006,
+  "lon": 118.2620029,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "体检中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11085007050,
+  "lat": 33.9763544,
+  "lon": 118.2639787,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "门诊"
+  }
+},
+{
+  "type": "node",
+  "id": 11099754413,
+  "lat": 33.9745561,
+  "lon": 118.2161869,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11103918012,
+  "lat": 33.9486183,
+  "lon": 118.2185315,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11103918017,
+  "lat": 33.9486594,
+  "lon": 118.2187378,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11104275580,
+  "lat": 33.9920837,
+  "lon": 118.2702322,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11104275582,
+  "lat": 33.9943464,
+  "lon": 118.2660888,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11105108781,
+  "lat": 33.9517808,
+  "lon": 118.3069252,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11124180569,
+  "lat": 33.9637494,
+  "lon": 118.2968310,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124180574,
+  "lat": 33.9618759,
+  "lon": 118.2971010,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124180575,
+  "lat": 33.9644470,
+  "lon": 118.2956310,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124180577,
+  "lat": 33.9636946,
+  "lon": 118.2961744,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124180584,
+  "lat": 33.9629221,
+  "lon": 118.2941047,
+  "tags": {
+    "amenity": "shelter",
+    "name": "安保亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11124184505,
+  "lat": 33.9619593,
+  "lon": 118.2961709,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124430003,
+  "lat": 33.9668632,
+  "lon": 118.2982228,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124431215,
+  "lat": 33.9704435,
+  "lon": 118.2960300,
+  "tags": {
+    "amenity": "shelter",
+    "name": "保安亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11124431315,
+  "lat": 33.9664132,
+  "lon": 118.3003141,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11124431319,
+  "lat": 33.9650951,
+  "lon": 118.2922250,
+  "tags": {
+    "amenity": "police",
+    "name": "宿城区巡特警"
+  }
+},
+{
+  "type": "node",
+  "id": 11124441851,
+  "lat": 33.9662484,
+  "lon": 118.2956723,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "宿城区幸福卫生健康服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11129133699,
+  "lat": 33.9416487,
+  "lon": 118.2808785,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11129474988,
+  "lat": 34.0422455,
+  "lon": 118.3155345,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11129474989,
+  "lat": 34.0420249,
+  "lon": 118.3170288,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11130560448,
+  "lat": 34.0468997,
+  "lon": 118.3127017,
+  "tags": {
+    "amenity": "shelter",
+    "name": "揽翠亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11132293508,
+  "lat": 34.0540935,
+  "lon": 118.2835283,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "湖滨新区社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368509,
+  "lat": 34.0417288,
+  "lon": 118.3076917,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368518,
+  "lat": 34.0379142,
+  "lon": 118.3273118,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368535,
+  "lat": 34.0167732,
+  "lon": 118.3142303,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368540,
+  "lat": 34.0431810,
+  "lon": 118.3269176,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368567,
+  "lat": 34.0161134,
+  "lon": 118.3149839,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368592,
+  "lat": 34.0465260,
+  "lon": 118.3076928,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368610,
+  "lat": 34.0367102,
+  "lon": 118.3301570,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368617,
+  "lat": 34.0320003,
+  "lon": 118.3250518,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368619,
+  "lat": 34.0322113,
+  "lon": 118.3268176,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368624,
+  "lat": 34.0353880,
+  "lon": 118.3058619,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135368636,
+  "lat": 34.0158058,
+  "lon": 118.3141125,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息区",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11135516237,
+  "lat": 33.8977058,
+  "lon": 118.3363615,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "下相街道社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11135516243,
+  "lat": 33.8717101,
+  "lon": 118.2504585,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "community",
+    "name": "宿迁经济技术开发区社区卫生服务中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11136464329,
+  "lat": 33.9033227,
+  "lon": 118.2671819,
+  "tags": {
+    "amenity": "police",
+    "name": "梨园警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 11140936279,
+  "lat": 33.9412106,
+  "lon": 118.2653316,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11149515439,
+  "lat": 34.0365732,
+  "lon": 118.3226612,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11171751199,
+  "lat": 33.9715565,
+  "lon": 118.2619925,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11180890106,
+  "lat": 33.9621507,
+  "lon": 118.2882514,
+  "tags": {
+    "amenity": "shelter",
+    "name": "四时佳兴",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11197217859,
+  "lat": 33.9516416,
+  "lon": 118.3219850,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局交通警察大队服务大厅"
+  }
+},
+{
+  "type": "node",
+  "id": 11199801556,
+  "lat": 33.9622598,
+  "lon": 118.2912074,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202909510,
+  "lat": 33.8978087,
+  "lon": 118.2567277,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202911141,
+  "lat": 33.9018533,
+  "lon": 118.2578420,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202911161,
+  "lat": 33.9017496,
+  "lon": 118.2578184,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202911172,
+  "lat": 33.9016464,
+  "lon": 118.2577772,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202911175,
+  "lat": 33.9019562,
+  "lon": 118.2573648,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11202911180,
+  "lat": 33.9011018,
+  "lon": 118.2570021,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11207999614,
+  "lat": 33.9319995,
+  "lon": 118.2806186,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11208049036,
+  "lat": 33.9309857,
+  "lon": 118.2808971,
+  "tags": {
+    "addr:city": "宿迁市",
+    "addr:district": "宿城区",
+    "addr:housenumber": "50号",
+    "addr:postcode": "223800",
+    "addr:province": "江苏省",
+    "addr:street": "厦门路",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "internet_access": "yes",
+    "name": "宿迁肛肠专科医院",
+    "phone": "+86 527 8437 4580"
+  }
+},
+{
+  "type": "node",
+  "id": 11221859392,
+  "lat": 33.9719441,
+  "lon": 118.3460800,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局交通警察大队车辆管理所",
+    "operator": "宿迁市公安局宿豫分局交通警察大队"
+  }
+},
+{
+  "type": "node",
+  "id": 11233210403,
+  "lat": 33.9612631,
+  "lon": 118.2897391,
+  "tags": {
+    "amenity": "shelter",
+    "name": "怡然亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11238739739,
+  "lat": 33.9667750,
+  "lon": 118.2559680,
+  "tags": {
+    "amenity": "shelter",
+    "name": "邀月亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11240122397,
+  "lat": 33.9896421,
+  "lon": 118.3118985,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11242681914,
+  "lat": 33.9829992,
+  "lon": 118.2098756,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11242681919,
+  "lat": 33.9831523,
+  "lon": 118.2095818,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11278790372,
+  "lat": 33.9093763,
+  "lon": 118.3295702,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "秀强股份微型消防站"
+  }
+},
+{
+  "type": "node",
+  "id": 11279612600,
+  "lat": 35.5781362,
+  "lon": 118.1920892,
+  "tags": {
+    "amenity": "shelter",
+    "name": "瞻碑亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11303886489,
+  "lat": 33.8977544,
+  "lon": 118.3880923,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局交通警察大队五中队",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 11309779621,
+  "lat": 34.0201638,
+  "lon": 118.2753404,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11309779622,
+  "lat": 34.0197598,
+  "lon": 118.2791704,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11309779623,
+  "lat": 34.0192256,
+  "lon": 118.2797109,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11331248673,
+  "lat": 33.7089733,
+  "lon": 118.5994550,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "泗阳大兴医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11380817875,
+  "lat": 33.9211419,
+  "lon": 118.2820855,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11380836676,
+  "lat": 34.0334842,
+  "lon": 118.3021751,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11383130273,
+  "lat": 33.5883087,
+  "lon": 119.0304300,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11449444885,
+  "lat": 34.0551143,
+  "lon": 118.2670485,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11449444898,
+  "lat": 34.0551562,
+  "lon": 118.2670012,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11449444900,
+  "lat": 34.0556607,
+  "lon": 118.2656853,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11449456539,
+  "lat": 36.1141607,
+  "lon": 120.3570367,
+  "tags": {
+    "amenity": "school",
+    "name": "山东省青岛市第四十四中学"
+  }
+},
+{
+  "type": "node",
+  "id": 11449456566,
+  "lat": 36.0935808,
+  "lon": 120.3545633,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市海慈医院-门诊"
+  }
+},
+{
+  "type": "node",
+  "id": 11449456567,
+  "lat": 36.0937354,
+  "lon": 120.3547029,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市中医医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11449456568,
+  "lat": 36.0943274,
+  "lon": 120.3550068,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市海慈医疗-B楼"
+  }
+},
+{
+  "type": "node",
+  "id": 11455059973,
+  "lat": 34.0531062,
+  "lon": 118.2664425,
+  "tags": {
+    "amenity": "shelter",
+    "name": "止止亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11455059974,
+  "lat": 34.0534295,
+  "lon": 118.2656945,
+  "tags": {
+    "amenity": "shelter",
+    "name": "翠羽丹霞"
+  }
+},
+{
+  "type": "node",
+  "id": 11460192427,
+  "lat": 36.8448498,
+  "lon": 119.4127759,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "psychotherapist",
+    "name": "昌邑市精神卫生中心城区分院"
+  }
+},
+{
+  "type": "node",
+  "id": 11462712159,
+  "lat": 36.1342184,
+  "lon": 120.3795772,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "青岛市市北区水清沟消防救援站",
+    "operator": "应急管理部消防救援局",
+    "operator:wikidata": "Q60573921",
+    "operator:zh": "应急管理部消防救援局"
+  }
+},
+{
+  "type": "node",
+  "id": 11465597828,
+  "lat": 36.1264273,
+  "lon": 120.3766705,
+  "tags": {
+    "amenity": "school",
+    "name": "宜阳路小学（东校区）"
+  }
+},
+{
+  "type": "node",
+  "id": 11465597988,
+  "lat": 36.1220108,
+  "lon": 120.4294407,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛第六十七中学"
+  }
+},
+{
+  "type": "node",
+  "id": 11470378981,
+  "lat": 36.8484102,
+  "lon": 119.3776805,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11475776638,
+  "lat": 33.9627055,
+  "lon": 118.2904171,
+  "tags": {
+    "amenity": "shelter",
+    "name": "拥军亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11476148985,
+  "lat": 36.1389712,
+  "lon": 120.3717475,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市中心医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11478374360,
+  "lat": 38.8826109,
+  "lon": 121.5778705,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "美年大健康体检",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 11478374361,
+  "lat": 38.8824063,
+  "lon": 121.5773636,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "唯娜医疗美容中心"
+  }
+},
+{
+  "type": "node",
+  "id": 11481220579,
+  "lat": 33.9573038,
+  "lon": 118.3303392,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11482607312,
+  "lat": 36.0787112,
+  "lon": 120.3544280,
+  "tags": {
+    "amenity": "school",
+    "name": "青岛电子学校(市北校区)"
+  }
+},
+{
+  "type": "node",
+  "id": 11494078593,
+  "lat": 36.1021784,
+  "lon": 120.3558040,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛健民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11496580031,
+  "lat": 37.1459277,
+  "lon": 118.1102246,
+  "tags": {
+    "amenity": "school",
+    "name": "博奥幼儿园",
+    "phone": "+86 543 230 0545"
+  }
+},
+{
+  "type": "node",
+  "id": 11497206441,
+  "lat": 36.8634903,
+  "lon": 119.4020119,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市文昌小学"
+  }
+},
+{
+  "type": "node",
+  "id": 11497206442,
+  "lat": 36.8698545,
+  "lon": 119.4070721,
+  "tags": {
+    "amenity": "school",
+    "name": "昌邑市科技中学",
+    "old_name": "昌邑市文华学校"
+  }
+},
+{
+  "type": "node",
+  "id": 11499647808,
+  "lat": 36.7122618,
+  "lon": 119.2194274,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "潍坊市高新康复医院"
+  }
+},
+{
+  "type": "node",
+  "id": 11502635977,
+  "lat": 37.4257597,
+  "lon": 122.1564031,
+  "tags": {
+    "amenity": "school",
+    "name": "二轻阳光幼儿园"
+  }
+},
+{
+  "type": "node",
+  "id": 11513979292,
+  "lat": 34.0554233,
+  "lon": 118.2675210,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11529371501,
+  "lat": 33.9944744,
+  "lon": 118.2798721,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "no",
+    "shelter_type": "weather_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11561947887,
+  "lat": 33.9443352,
+  "lon": 118.3227844,
+  "tags": {
+    "amenity": "shelter",
+    "name": "思源亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11592392259,
+  "lat": 36.7057346,
+  "lon": 119.1272139,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "山东第二医科大学附属医院(胜利街园区)"
+  }
+},
+{
+  "type": "node",
+  "id": 11608458172,
+  "lat": 36.9465141,
+  "lon": 119.3908074,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11629665611,
+  "lat": 34.0451444,
+  "lon": 118.3105610,
+  "tags": {
+    "amenity": "shelter",
+    "name": "袖云亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11629665612,
+  "lat": 34.0451492,
+  "lon": 118.3098248,
+  "tags": {
+    "amenity": "shelter",
+    "name": "袖云亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11633798097,
+  "lat": 34.0240774,
+  "lon": 118.2617278,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11645707666,
+  "lat": 33.9001346,
+  "lon": 118.2428245,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11645707667,
+  "lat": 33.9001435,
+  "lon": 118.2427011,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11652993820,
+  "lat": 33.9374019,
+  "lon": 118.2146867,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11684615532,
+  "lat": 34.0384601,
+  "lon": 118.2612257,
+  "tags": {
+    "amenity": "police",
+    "name": "骆马湖生态联勤警务站",
+    "operator": "宿迁市公安局湖滨新区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 11686754220,
+  "lat": 34.0187650,
+  "lon": 118.2735459,
+  "tags": {
+    "amenity": "school",
+    "grades": "1-6",
+    "name": "宿迁市第一实验小学",
+    "operator": "宿迁市湖滨新区管理委员会",
+    "operator:type": "public"
+  }
+},
+{
+  "type": "node",
+  "id": 11687601977,
+  "lat": 33.9426307,
+  "lon": 118.2634851,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11700066578,
+  "lat": 34.0184244,
+  "lon": 118.3028622,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11721802557,
+  "lat": 33.9494635,
+  "lon": 118.2760141,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11721884440,
+  "lat": 33.9516964,
+  "lon": 118.2839460,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 11733259702,
+  "lat": 33.9429544,
+  "lon": 118.2269283,
+  "tags": {
+    "amenity": "shelter",
+    "name": "卧兰堂"
+  }
+},
+{
+  "type": "node",
+  "id": 11733259707,
+  "lat": 33.9430258,
+  "lon": 118.2278102,
+  "tags": {
+    "amenity": "police",
+    "name": "苏州街警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 11733259710,
+  "lat": 33.9434306,
+  "lon": 118.2318781,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11736553184,
+  "lat": 34.0268225,
+  "lon": 118.2590283,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11736681643,
+  "lat": 34.1193176,
+  "lon": 117.8742755,
+  "tags": {
+    "amenity": "school",
+    "name": "古邳镇高级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 11738323655,
+  "lat": 33.9538248,
+  "lon": 118.3778067,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11740346257,
+  "lat": 34.0424654,
+  "lon": 118.3050716,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11747289692,
+  "lat": 34.0223169,
+  "lon": 118.0980523,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局交通警擦支队二大队八中队"
+  }
+},
+{
+  "type": "node",
+  "id": 11789574159,
+  "lat": 33.9825162,
+  "lon": 118.2998800,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11795005532,
+  "lat": 34.0393731,
+  "lon": 118.3053498,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11816241979,
+  "lat": 34.0925950,
+  "lon": 118.2943141,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11821359982,
+  "lat": 34.0300883,
+  "lon": 118.3450212,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11827000967,
+  "lat": 33.9375580,
+  "lon": 118.2939082,
+  "tags": {
+    "amenity": "police",
+    "name": "宿城公安智慧巡察站"
+  }
+},
+{
+  "type": "node",
+  "id": 11827016182,
+  "lat": 33.9397663,
+  "lon": 118.2943902,
+  "tags": {
+    "amenity": "shelter",
+    "name": "系马亭"
+  }
+},
+{
+  "type": "node",
+  "id": 11827016184,
+  "lat": 33.9394729,
+  "lon": 118.2954163,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 11827394875,
+  "lat": 34.0998148,
+  "lon": 118.3269607,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "宿迁市消防救援支队三台山特勤站"
+  }
+},
+{
+  "type": "node",
+  "id": 11830464985,
+  "lat": 37.1491735,
+  "lon": 118.1184735,
+  "tags": {
+    "amenity": "school",
+    "name": "博兴县特殊教育学校"
+  }
+},
+{
+  "type": "node",
+  "id": 11879396686,
+  "lat": 34.1735096,
+  "lon": 118.0727078,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11879396739,
+  "lat": 34.1730810,
+  "lon": 118.0737722,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11879397406,
+  "lat": 34.1809082,
+  "lon": 118.0581431,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11879397407,
+  "lat": 34.1806127,
+  "lon": 118.0588805,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11879397409,
+  "lat": 34.1785908,
+  "lon": 118.0607473,
+  "tags": {
+    "amenity": "shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 11898420480,
+  "lat": 34.0566456,
+  "lon": 118.2781830,
+  "tags": {
+    "alt_name": "宿迁宁得康养中心",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "rehabilitation",
+    "healthcare:speciality": "geriatrics",
+    "name": "宿迁珂望康复医院",
+    "old_name": "宿迁宁得康复医院",
+    "operator": "宿迁珂望康复医院有限公司"
+  }
+},
+{
+  "type": "node",
+  "id": 11991416201,
+  "lat": 33.8342653,
+  "lon": 118.3900979,
+  "tags": {
+    "amenity": "police",
+    "name": "洋北派出所",
+    "operator": "宿迁市公安局宿城分局"
+  }
+},
+{
+  "type": "node",
+  "id": 11998610602,
+  "lat": 36.4897838,
+  "lon": 117.8211483,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "博山区中医院"
+  }
+},
+{
+  "type": "node",
+  "id": 12075678244,
+  "lat": 34.9570555,
+  "lon": 117.5015595,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局山亭分局凫城派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12075678258,
+  "lat": 34.9884226,
+  "lon": 117.6599158,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局山亭分局北庄派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12075678272,
+  "lat": 35.0626290,
+  "lon": 117.5721754,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局山亭分局徐庄派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12087447942,
+  "lat": 34.8425625,
+  "lon": 117.5531794,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局市中分局"
+  }
+},
+{
+  "type": "node",
+  "id": 12133833776,
+  "lat": 33.9937219,
+  "lon": 118.2732486,
+  "tags": {
+    "amenity": "police",
+    "name": "警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 12142248505,
+  "lat": 33.9476198,
+  "lon": 118.2027401,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局交通警察支队二大队四中队",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 12146647987,
+  "lat": 33.6492916,
+  "lon": 118.9938640,
+  "tags": {
+    "amenity": "school",
+    "name": "淮阴开放大学"
+  }
+},
+{
+  "type": "node",
+  "id": 12175261001,
+  "lat": 33.6405626,
+  "lon": 118.9999836,
+  "tags": {
+    "amenity": "police",
+    "name": "警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 12192882317,
+  "lat": 34.0353737,
+  "lon": 118.1297593,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "yes",
+    "lit": "no",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12192908305,
+  "lat": 34.0519600,
+  "lon": 118.1131858,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12248179789,
+  "lat": 34.0538644,
+  "lon": 118.2642652,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12252820344,
+  "lat": 36.9931685,
+  "lon": 121.9266143,
+  "tags": {
+    "amenity": "police",
+    "name": "北京交通大学威海校区警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 12312216171,
+  "lat": 34.0180344,
+  "lon": 118.2979089,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12328354668,
+  "lat": 33.9579626,
+  "lon": 118.3792061,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12328354669,
+  "lat": 33.9579103,
+  "lon": 118.3792858,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12367001377,
+  "lat": 33.7615858,
+  "lon": 118.4905230,
+  "tags": {
+    "amenity": "shelter",
+    "name": "休息长廊",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12389267888,
+  "lat": 34.0238039,
+  "lon": 118.2731129,
+  "tags": {
+    "amenity": "police",
+    "name": "湖滨新城交警支队二大队环湖中队"
+  }
+},
+{
+  "type": "node",
+  "id": 12400109829,
+  "lat": 36.9911847,
+  "lon": 121.9275365,
+  "tags": {
+    "amenity": "shelter",
+    "name": "知行亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12473671991,
+  "lat": 33.0175432,
+  "lon": 118.5012978,
+  "tags": {
+    "amenity": "school",
+    "name": "盱眙县宣化实验小学"
+  }
+},
+{
+  "type": "node",
+  "id": 12473671992,
+  "lat": 33.0177366,
+  "lon": 118.4998226,
+  "tags": {
+    "amenity": "school",
+    "name": "盱眙县实验初级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 12503983572,
+  "lat": 34.5014852,
+  "lon": 119.0439324,
+  "tags": {
+    "amenity": "police",
+    "name": "张湾派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12507108048,
+  "lat": 34.4464277,
+  "lon": 119.1340394,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "海州区新坝卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 12535611671,
+  "lat": 36.9897402,
+  "lon": 121.9249675,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+  }
+},
+{
+  "type": "node",
+  "id": 12546118192,
+  "lat": 34.8505417,
+  "lon": 117.5175824,
+  "tags": {
+    "amenity": "police",
+    "name": "枣庄市公安局市中分局衡山路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12555784843,
+  "lat": 34.1937406,
+  "lon": 118.3384435,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12565181966,
+  "lat": 34.4645310,
+  "lon": 119.1129299,
+  "tags": {
+    "amenity": "school",
+    "name": "连云港市魏口小学"
+  }
+},
+{
+  "type": "node",
+  "id": 12565181967,
+  "lat": 34.4951810,
+  "lon": 119.0433299,
+  "tags": {
+    "amenity": "school",
+    "name": "东海县张湾中学"
+  }
+},
+{
+  "type": "node",
+  "id": 12565181968,
+  "lat": 34.4987148,
+  "lon": 119.0441170,
+  "tags": {
+    "amenity": "school",
+    "name": "东海县张湾中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 12570848877,
+  "lat": 34.1689498,
+  "lon": 119.5950205,
+  "tags": {
+    "amenity": "school",
+    "name": "响水县灌江高级中学"
+  }
+},
+{
+  "type": "node",
+  "id": 12592477565,
+  "lat": 33.9812990,
+  "lon": 118.3073439,
+  "tags": {
+    "amenity": "police",
+    "name": "苏北航务管理处宿迁航政管理大队"
+  }
+},
+{
+  "type": "node",
+  "id": 12636300379,
+  "lat": 37.5055805,
+  "lon": 122.1838025,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12643429554,
+  "lat": 34.5882974,
+  "lon": 119.1739992,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "连云港市中医院-康复楼"
+  }
+},
+{
+  "type": "node",
+  "id": 12676560195,
+  "lat": 34.6293760,
+  "lon": 119.2314781,
+  "tags": {
+    "amenity": "police",
+    "name": "花果山派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12676560196,
+  "lat": 34.6290122,
+  "lon": 119.2306683,
+  "tags": {
+    "amenity": "police",
+    "name": "连云港市公安局高新分局"
+  }
+},
+{
+  "type": "node",
+  "id": 12691264687,
+  "lat": 36.6826990,
+  "lon": 118.4555131,
+  "tags": {
+    "amenity": "shelter",
+    "lit": "yes",
+    "name": "范公亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12693510491,
+  "lat": 34.0457641,
+  "lon": 118.3116076,
+  "tags": {
+    "amenity": "shelter",
+    "name": "石亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12729233088,
+  "lat": 33.9411395,
+  "lon": 118.2073548,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12729233089,
+  "lat": 33.9398389,
+  "lon": 118.2075175,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12730810640,
+  "lat": 33.9433144,
+  "lon": 118.2313512,
+  "tags": {
+    "amenity": "shelter",
+    "bench": "yes",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12865822815,
+  "lat": 33.4919028,
+  "lon": 117.9728710,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 12865822816,
+  "lat": 33.4937722,
+  "lon": 117.9725293,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 12893847801,
+  "lat": 34.0089488,
+  "lon": 118.2896830,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 12961483770,
+  "lat": 34.0752434,
+  "lon": 118.3229972,
+  "tags": {
+    "amenity": "police",
+    "name": "晓店派出所达利公司警务室",
+    "operator": "宿迁市公安局湖滨新区分局晓店派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076635,
+  "lat": 35.8974784,
+  "lon": 120.0425536,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局灵山湾派出所",
+    "phone": "+86 532 57786579"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076668,
+  "lat": 35.8484112,
+  "lon": 119.9885765,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局隐珠派出所",
+    "phone": "+86 532 57786534"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076669,
+  "lat": 35.9504577,
+  "lon": 120.1767748,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局唐岛湾派出所",
+    "phone": "+86 532 586998856"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076670,
+  "lat": 35.9880346,
+  "lon": 120.1699518,
+  "tags": {
+    "addr:housenumber": "666",
+    "addr:street": "江山南路",
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局长江路派出所",
+    "old_operator": "青岛市公安局青岛经济技术开发区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076674,
+  "lat": 35.9024405,
+  "lon": 119.9526392,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局青岛西站派出所",
+    "old_name": "name=青岛市公安局黄岛分局青岛西站治安派出所",
+    "phone": "+86 532 57786938"
+  }
+},
+{
+  "type": "node",
+  "id": 12973076675,
+  "lat": 35.7334028,
+  "lon": 120.0085048,
+  "tags": {
+    "addr:housenumber": "3",
+    "addr:street": "三沙路",
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局小口子派出所(不对外)",
+    "old_name": "name=青岛市公安局黄岛分局小口子治安派出所",
+    "phone": "+86 532 57786714"
+  }
+},
+{
+  "type": "node",
+  "id": 12973193817,
+  "lat": 35.9564620,
+  "lon": 120.2127278,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局薛家岛派出所",
+    "old_name": "name=青岛市公安局青岛经济技术开发区分局薛家岛派出所",
+    "phone": "+86 532 66581550"
+  }
+},
+{
+  "type": "node",
+  "id": 12973193847,
+  "lat": 36.0161864,
+  "lon": 120.0795902,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局灵珠山派出所",
+    "old_name": "name=青岛市公安局青岛经济技术开发区分局灵珠山派出所",
+    "phone": "+86 532 66581670"
+  }
+},
+{
+  "type": "node",
+  "id": 12973193852,
+  "lat": 36.0159460,
+  "lon": 120.1175153,
+  "tags": {
+    "addr:city": "青岛市",
+    "addr:district": "黄岛区",
+    "addr:housenumber": "56",
+    "addr:postcode": "266510",
+    "addr:province": "山东省",
+    "addr:street": "黄河西路",
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局辛安派出所",
+    "old_name": "青岛市公安局青岛经济技术开发区分局辛安派出所",
+    "phone": "+86 532 66581630"
+  }
+},
+{
+  "type": "node",
+  "id": 12973193895,
+  "lat": 36.0019576,
+  "lon": 120.2825257,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局凤凰岛旅游度假区派出所",
+    "old_name": "name=青岛市公安局青岛经济技术开发区分局凤凰岛旅游度假区治安派出所",
+    "phone": "+86 532 66581580"
+  }
+},
+{
+  "type": "node",
+  "id": 12973193998,
+  "lat": 35.6866256,
+  "lon": 119.8542446,
+  "tags": {
+    "addr:housenumber": "155",
+    "addr:street": "古城路",
+    "amenity": "police",
+    "name": "青岛市公安局黄岛分局琅琊派出所",
+    "phone": "+86 532 57786774"
+  }
+},
+{
+  "type": "node",
+  "id": 12977523907,
+  "lat": 35.7699135,
+  "lon": 120.0245466,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "general",
+    "name": "校医院"
+  }
+},
+{
+  "type": "node",
+  "id": 12979187970,
+  "lat": 33.2588159,
+  "lon": 119.3242096,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "宝应仁德医院"
+  }
+},
+{
+  "type": "node",
+  "id": 12979188048,
+  "lat": 33.8466635,
+  "lon": 118.8571670,
+  "tags": {
+    "amenity": "school",
+    "name": "西宋集小学"
+  }
+},
+{
+  "type": "node",
+  "id": 13042858888,
+  "lat": 37.4350306,
+  "lon": 122.2518260,
+  "tags": {
+    "amenity": "school",
+    "name": "中国地质大学（武汉）威海实习基地"
+  }
+},
+{
+  "type": "node",
+  "id": 13092571027,
+  "lat": 34.1040774,
+  "lon": 118.3037819,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13096389751,
+  "lat": 36.6310901,
+  "lon": 119.1882451,
+  "tags": {
+    "amenity": "school",
+    "name": "潍坊高新区澜海艺术培训学校有限公司(天翼校区)"
+  }
+},
+{
+  "type": "node",
+  "id": 13105176779,
+  "lat": 34.0415704,
+  "lon": 118.3344690,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13108179389,
+  "lat": 34.1138197,
+  "lon": 118.0224273,
+  "tags": {
+    "amenity": "school",
+    "name": "英庄小学"
+  }
+},
+{
+  "type": "node",
+  "id": 13128312542,
+  "lat": 33.8513614,
+  "lon": 118.3516075,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13128312543,
+  "lat": 33.8513721,
+  "lon": 118.3514828,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13128312544,
+  "lat": 33.8513082,
+  "lon": 118.3515266,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13140126143,
+  "lat": 33.9356972,
+  "lon": 118.2595484,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局特警支队",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 13172435464,
+  "lat": 36.2253726,
+  "lon": 119.9900757,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 13172488409,
+  "lat": 36.1987621,
+  "lon": 120.0768509,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 13208883854,
+  "lat": 33.7639345,
+  "lon": 118.2170498,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局交通警察支队高速公路二大队",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 13256075126,
+  "lat": 33.9710639,
+  "lon": 118.1052085,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13257153921,
+  "lat": 34.0643504,
+  "lon": 118.2679655,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "pavilion"
+  }
+},
+{
+  "type": "node",
+  "id": 13300959964,
+  "lat": 36.1629973,
+  "lon": 120.6248380,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "防火屋"
+  }
+},
+{
+  "type": "node",
+  "id": 13310651401,
+  "lat": 36.8590341,
+  "lon": 119.4206441,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13310651402,
+  "lat": 36.8591135,
+  "lon": 119.4207219,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13340713055,
+  "lat": 36.1809314,
+  "lon": 120.3811055,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "李沧区兴华路消防救援站"
+  }
+},
+{
+  "type": "node",
+  "id": 13344677633,
+  "lat": 36.1014018,
+  "lon": 120.3901355,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "错埠岭消防救援站"
+  }
+},
+{
+  "type": "node",
+  "id": 13362037583,
+  "lat": 37.4629629,
+  "lon": 118.4754825,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "胜利油田高级人才培训中心西校区"
+  }
+},
+{
+  "type": "node",
+  "id": 13368718501,
+  "lat": 37.5356045,
+  "lon": 121.4093387,
+  "tags": {
+    "addr:housenumber": "附3号",
+    "addr:postcode": "264001",
+    "addr:street": "大马路",
+    "amenity": "hospital",
+    "name": "烟台工人疗养院",
+    "opening_hours": "Mo-Su 08:00-17:30",
+    "phone": "+865356222275"
+  }
+},
+{
+  "type": "node",
+  "id": 13369105896,
+  "lat": 34.0597943,
+  "lon": 118.2691130,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "public_transport"
+  }
+},
+{
+  "type": "node",
+  "id": 13415000266,
+  "lat": 34.0646709,
+  "lon": 118.3285353,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13420660925,
+  "lat": 36.1182611,
+  "lon": 120.3634594,
+  "tags": {
+    "amenity": "shelter",
+    "name": "姊妹亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13422330194,
+  "lat": 36.1315108,
+  "lon": 120.4093956,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "法尔消防"
+  }
+},
+{
+  "type": "node",
+  "id": 13423878999,
+  "lat": 36.1719724,
+  "lon": 120.3977746,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "永清路社区卫生服务中心",
+    "old_name": "贝贝仁和妇产医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13425511780,
+  "lat": 36.1824451,
+  "lon": 120.3981065,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛颐顺和心理卫生医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13426260574,
+  "lat": 33.2604729,
+  "lon": 118.3254675,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13426261137,
+  "lat": 33.2309282,
+  "lon": 118.3228242,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13426261138,
+  "lat": 33.2502898,
+  "lon": 118.3185512,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13426261139,
+  "lat": 33.2506159,
+  "lon": 118.3186945,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13426261140,
+  "lat": 33.2504874,
+  "lon": 118.3186338,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13426265715,
+  "lat": 33.2404228,
+  "lon": 118.3198548,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13433634479,
+  "lat": 35.8968703,
+  "lon": 120.1098586,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "黄岛区星光岛消防站"
+  }
+},
+{
+  "type": "node",
+  "id": 13441158013,
+  "lat": 36.0780542,
+  "lon": 120.3420346,
+  "tags": {
+    "amenity": "police",
+    "name": "登州路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13441336266,
+  "lat": 36.1150353,
+  "lon": 120.3568218,
+  "tags": {
+    "amenity": "police",
+    "name": "海伦路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13441591506,
+  "lat": 36.1055267,
+  "lon": 120.3600256,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛东大医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13441769983,
+  "lat": 36.0613832,
+  "lon": 120.3712497,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "ophthalmology",
+    "name": "青岛麦迪格眼科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13441870355,
+  "lat": 36.1393650,
+  "lon": 120.3687318,
+  "tags": {
+    "addr:housenumber": "129",
+    "addr:street": "四流南路",
+    "amenity": "police",
+    "name": "开平路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13447705793,
+  "lat": 36.1573229,
+  "lon": 120.4130340,
+  "tags": {
+    "amenity": "police",
+    "name": "李沧商圈派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13450299080,
+  "lat": 35.5460992,
+  "lon": 119.1662786,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "林法希望小学（原）"
+  }
+},
+{
+  "type": "node",
+  "id": 13450411080,
+  "lat": 37.6696756,
+  "lon": 121.0556057,
+  "tags": {
+    "amenity": "police",
+    "name": "大季家派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13455655416,
+  "lat": 36.8645003,
+  "lon": 119.4540148,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "潍坊水源技工学校有限公司"
+  }
+},
+{
+  "type": "node",
+  "id": 13456166034,
+  "lat": 35.5475523,
+  "lon": 119.1242456,
+  "tags": {
+    "amenity": "shelter",
+    "name": "鼓亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13456166035,
+  "lat": 35.5478524,
+  "lon": 119.1248247,
+  "tags": {
+    "amenity": "shelter",
+    "name": "钟亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13456166307,
+  "lat": 35.5501988,
+  "lon": 119.1165181,
+  "tags": {
+    "amenity": "shelter",
+    "name": "望海亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13456329581,
+  "lat": 36.3883399,
+  "lon": 120.4563735,
+  "tags": {
+    "amenity": "police",
+    "name": "潮海派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13460027765,
+  "lat": 36.1470770,
+  "lon": 120.4272831,
+  "tags": {
+    "amenity": "police",
+    "name": "青岛市公安局李沧分局出入境接待大厅"
+  }
+},
+{
+  "type": "node",
+  "id": 13468669509,
+  "lat": 36.1025911,
+  "lon": 120.3533084,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛乳腺病医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13476646494,
+  "lat": 36.1434334,
+  "lon": 120.3714179,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "南茜美校"
+  }
+},
+{
+  "type": "node",
+  "id": 13485339256,
+  "lat": 36.1325915,
+  "lon": 120.4091698,
+  "tags": {
+    "addr:housenumber": "9丙",
+    "addr:street": "常宁路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛君良烧伤医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13505078591,
+  "lat": 36.1611423,
+  "lon": 120.4228420,
+  "tags": {
+    "amenity": "hospital",
+    "branch": "北部院区",
+    "healthcare": "hospital",
+    "healthcare:speciality": "ophthalmology",
+    "name": "青岛眼科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13505078592,
+  "lat": 36.1606811,
+  "lon": 120.4250746,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛现代医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13505805339,
+  "lat": 36.6693172,
+  "lon": 120.5244554,
+  "tags": {
+    "amenity": "police",
+    "name": "姜山派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13510103938,
+  "lat": 36.5387537,
+  "lon": 117.8425156,
+  "tags": {
+    "amenity": "police",
+    "name": "岜山派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13510103939,
+  "lat": 36.5388266,
+  "lon": 117.8460142,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "淄博万杰肿瘤医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13510563607,
+  "lat": 36.8450735,
+  "lon": 120.4063926,
+  "tags": {
+    "amenity": "police",
+    "name": "沽河派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13511603264,
+  "lat": 36.2679862,
+  "lon": 119.1975789,
+  "tags": {
+    "amenity": "police",
+    "name": "官庄交警中队"
+  }
+},
+{
+  "type": "node",
+  "id": 13511663037,
+  "lat": 36.3360192,
+  "lon": 119.2531264,
+  "tags": {
+    "amenity": "police",
+    "name": "金冢子派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13511663038,
+  "lat": 36.3363671,
+  "lon": 119.2535555,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "金冢子镇消防站"
+  }
+},
+{
+  "type": "node",
+  "id": 13511878814,
+  "lat": 36.1265574,
+  "lon": 120.3907238,
+  "tags": {
+    "amenity": "police",
+    "name": "河西派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13512223526,
+  "lat": 37.3075060,
+  "lon": 120.8299520,
+  "tags": {
+    "amenity": "police",
+    "name": "栖霞市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 13512748773,
+  "lat": 36.1251361,
+  "lon": 119.7195433,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "青岛华信技工学校"
+  }
+},
+{
+  "type": "node",
+  "id": 13512768089,
+  "lat": 36.1168369,
+  "lon": 119.6995564,
+  "tags": {
+    "amenity": "police",
+    "name": "铺集派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13512808345,
+  "lat": 36.2597973,
+  "lon": 120.4532017,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市城阳区第三人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13512962617,
+  "lat": 36.1364016,
+  "lon": 120.4447496,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛弘康宁心理医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13513780808,
+  "lat": 36.2970156,
+  "lon": 120.3686545,
+  "tags": {
+    "amenity": "police",
+    "name": "城阳蔬菜批发市场治安派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13513816010,
+  "lat": 37.0230536,
+  "lon": 120.3300084,
+  "tags": {
+    "amenity": "police",
+    "name": "南墅派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13513816062,
+  "lat": 37.0206665,
+  "lon": 120.3276440,
+  "tags": {
+    "amenity": "fire_station",
+    "name": "南墅镇消防站"
+  }
+},
+{
+  "type": "node",
+  "id": 13513816080,
+  "lat": 37.0219848,
+  "lon": 120.3257016,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "南墅镇中心小学"
+  }
+},
+{
+  "type": "node",
+  "id": 13516173546,
+  "lat": 36.4008947,
+  "lon": 120.5003303,
+  "tags": {
+    "amenity": "police",
+    "name": "即墨区经开区派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13516214405,
+  "lat": 36.3987636,
+  "lon": 120.5013310,
+  "tags": {
+    "amenity": "police",
+    "name": "即墨交警大队事故科"
+  }
+},
+{
+  "type": "node",
+  "id": 13516867042,
+  "lat": 36.1456408,
+  "lon": 120.4125262,
+  "tags": {
+    "amenity": "police",
+    "name": "浮山路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13516867068,
+  "lat": 36.1505441,
+  "lon": 120.4257197,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛建中妇女儿童医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13516867078,
+  "lat": 36.1565599,
+  "lon": 120.4244809,
+  "tags": {
+    "amenity": "police",
+    "name": "浮山路派出所河南社区警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 13521894023,
+  "lat": 36.1731255,
+  "lon": 120.3966928,
+  "tags": {
+    "amenity": "police",
+    "name": "永清苑社区警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 13521894034,
+  "lat": 36.1891184,
+  "lon": 120.3925847,
+  "tags": {
+    "amenity": "police",
+    "name": "永平路社区警务室"
+  }
+},
+{
+  "type": "node",
+  "id": 13524578072,
+  "lat": 36.2124791,
+  "lon": 120.2625468,
+  "tags": {
+    "amenity": "police",
+    "name": "红岛派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13525539385,
+  "lat": 36.1834082,
+  "lon": 120.4092538,
+  "tags": {
+    "amenity": "shelter",
+    "name": "悦海亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13534304686,
+  "lat": 36.8823740,
+  "lon": 120.5100690,
+  "tags": {
+    "amenity": "police",
+    "name": "莱西市公安局出入境服务大厅"
+  }
+},
+{
+  "type": "node",
+  "id": 13534389429,
+  "lat": 33.3506753,
+  "lon": 118.3964639,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13534389616,
+  "lat": 33.3514260,
+  "lon": 118.3980344,
+  "tags": {
+    "amenity": "shelter",
+    "name": "建塔工程纪要碑亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13537401913,
+  "lat": 36.0575063,
+  "lon": 120.3668340,
+  "tags": {
+    "amenity": "police",
+    "name": "市南区交警大队"
+  }
+},
+{
+  "type": "node",
+  "id": 13544380170,
+  "lat": 36.1384224,
+  "lon": 120.3888340,
+  "tags": {
+    "amenity": "police",
+    "name": "洛阳路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13556344364,
+  "lat": 36.9590595,
+  "lon": 118.1044934,
+  "tags": {
+    "amenity": "police",
+    "name": "索镇派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13556406955,
+  "lat": 36.9577238,
+  "lon": 118.0898413,
+  "tags": {
+    "amenity": "police",
+    "name": "少海派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13565914781,
+  "lat": 36.2540999,
+  "lon": 120.3991764,
+  "tags": {
+    "amenity": "police",
+    "name": "流亭派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13570122523,
+  "lat": 36.1018247,
+  "lon": 120.3548914,
+  "tags": {
+    "amenity": "police",
+    "name": "阜新路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13573167238,
+  "lat": 35.1698724,
+  "lon": 119.1790761,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13577528146,
+  "lat": 37.1964855,
+  "lon": 118.2161001,
+  "tags": {
+    "amenity": "fire_station"
+  }
+},
+{
+  "type": "node",
+  "id": 13579823273,
+  "lat": 36.3428256,
+  "lon": 120.1639521,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13580305103,
+  "lat": 37.1925280,
+  "lon": 118.2668546,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "name": "滨州京博职业中等专业学校"
+  }
+},
+{
+  "type": "node",
+  "id": 13587001839,
+  "lat": 36.0758328,
+  "lon": 120.3496094,
+  "tags": {
+    "amenity": "police",
+    "name": "延安路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13587005567,
+  "lat": 36.0752468,
+  "lon": 120.3617697,
+  "tags": {
+    "amenity": "police",
+    "name": "宁夏路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13589681523,
+  "lat": 36.6856233,
+  "lon": 120.4319819,
+  "tags": {
+    "amenity": "police",
+    "name": "夏格庄派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13595199128,
+  "lat": 37.1385081,
+  "lon": 119.1575362,
+  "tags": {
+    "amenity": "police",
+    "name": "潍坊市公安局滨海经济技术开发区分局"
+  }
+},
+{
+  "type": "node",
+  "id": 13598381504,
+  "lat": 36.1139978,
+  "lon": 120.3487927,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "民生医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13605012695,
+  "lat": 36.1911425,
+  "lon": 120.3721618,
+  "tags": {
+    "amenity": "police",
+    "name": "兴城路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13608971295,
+  "lat": 36.9570189,
+  "lon": 120.3766353,
+  "tags": {
+    "amenity": "police",
+    "name": "日庄镇派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13625158740,
+  "lat": 36.0930814,
+  "lon": 120.3425598,
+  "tags": {
+    "amenity": "police",
+    "name": "大港派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13625351357,
+  "lat": 36.0767645,
+  "lon": 120.3256426,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "城运老年病医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13626089899,
+  "lat": 36.3261405,
+  "lon": 120.3510146,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13637448061,
+  "lat": 33.9690614,
+  "lon": 118.2951898,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13653817643,
+  "lat": 36.0638073,
+  "lon": 120.3090672,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13653871421,
+  "lat": 35.8235446,
+  "lon": 119.2016870,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "高泽街道卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 13690277505,
+  "lat": 36.0846126,
+  "lon": 120.3609470,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛市北滨海医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13690912488,
+  "lat": 36.3940464,
+  "lon": 120.0462865,
+  "tags": {
+    "amenity": "police"
+  }
+},
+{
+  "type": "node",
+  "id": 13697198681,
+  "lat": 36.2666696,
+  "lon": 120.3977486,
+  "tags": {
+    "amenity": "police",
+    "name": "流亭交警中队"
+  }
+},
+{
+  "type": "node",
+  "id": 13701134416,
+  "lat": 33.9371847,
+  "lon": 118.2916169,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13701343359,
+  "lat": 37.4682145,
+  "lon": 122.1246570,
+  "tags": {
+    "amenity": "police",
+    "name": "崂山路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13704858614,
+  "lat": 34.5988843,
+  "lon": 119.2186708,
+  "tags": {
+    "amenity": "police",
+    "name": "苍梧派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13708598298,
+  "lat": 34.0415059,
+  "lon": 118.3207392,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13708598299,
+  "lat": 34.0414376,
+  "lon": 118.3207580,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13708598300,
+  "lat": 34.0415314,
+  "lon": 118.3210750,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "picnic_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13708598508,
+  "lat": 34.0324669,
+  "lon": 118.3262395,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13710208356,
+  "lat": 34.0565538,
+  "lon": 118.2659706,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13710480886,
+  "lat": 36.3707761,
+  "lon": 120.2758727,
+  "tags": {
+    "amenity": "police",
+    "name": "南泉派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13723072535,
+  "lat": 36.4424387,
+  "lon": 120.0650908,
+  "tags": {
+    "amenity": "police",
+    "name": "胶莱派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13744485336,
+  "lat": 36.5334870,
+  "lon": 120.1253286,
+  "tags": {
+    "amenity": "police",
+    "name": "南村派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13755734903,
+  "lat": 33.9523830,
+  "lon": 118.3513297,
+  "tags": {
+    "amenity": "police",
+    "name": "宿豫公安分局巡特警大队",
+    "operator": "宿迁市公安局宿豫分局"
+  }
+},
+{
+  "type": "node",
+  "id": 13755734926,
+  "lat": 33.9520729,
+  "lon": 118.3506761,
+  "tags": {
+    "amenity": "police",
+    "name": "宿迁市公安局宿豫分局",
+    "operator": "宿迁市公安局"
+  }
+},
+{
+  "type": "node",
+  "id": 13797745158,
+  "lat": 36.1198320,
+  "lon": 120.3650110,
+  "tags": {
+    "amenity": "shelter",
+    "name": "四角亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13797759971,
+  "lat": 36.1103836,
+  "lon": 120.3675599,
+  "tags": {
+    "amenity": "shelter",
+    "name": "六角亭",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13797759972,
+  "lat": 36.1111064,
+  "lon": 120.3687482,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13797759973,
+  "lat": 36.1126835,
+  "lon": 120.3681005,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "gazebo"
+  }
+},
+{
+  "type": "node",
+  "id": 13801657938,
+  "lat": 36.0705083,
+  "lon": 120.3052559,
+  "tags": {
+    "amenity": "police",
+    "name": "海警执法办案窗口"
+  }
+},
+{
+  "type": "node",
+  "id": 13820102473,
+  "lat": 36.1169042,
+  "lon": 120.3523332,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "青岛德仁医院",
+    "official_name": "青岛德仁中西医结合医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13820103696,
+  "lat": 36.1070224,
+  "lon": 120.3465287,
+  "tags": {
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "ophthalmology",
+    "name": "福柏眼科",
+    "name:de": "Phopbe",
+    "name:en": "Phopbe",
+    "name:zh": "福柏眼科",
+    "official_name": "青岛福柏眼科医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13828336575,
+  "lat": 36.4688497,
+  "lon": 120.8744143,
+  "tags": {
+    "amenity": "police",
+    "name": "田横派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13831190262,
+  "lat": 34.0433720,
+  "lon": 118.2662317,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13831190263,
+  "lat": 34.0432290,
+  "lon": 118.2663311,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13831190264,
+  "lat": 34.0420979,
+  "lon": 118.2673453,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13831190265,
+  "lat": 34.0420217,
+  "lon": 118.2672311,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13831190266,
+  "lat": 34.0424126,
+  "lon": 118.2652090,
+  "tags": {
+    "amenity": "shelter",
+    "shelter_type": "sun_shelter"
+  }
+},
+{
+  "type": "node",
+  "id": 13833280900,
+  "lat": 36.7966236,
+  "lon": 119.7352984,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "田庄医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13833317258,
+  "lat": 36.7514520,
+  "lon": 120.0967898,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "麻兰卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 13833376057,
+  "lat": 36.6229390,
+  "lon": 119.7189431,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "崔家集中心卫生院"
+  }
+},
+{
+  "type": "node",
+  "id": 13833376058,
+  "lat": 36.6229504,
+  "lon": 119.7213642,
+  "tags": {
+    "amenity": "police",
+    "name": "崔家集派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13833408212,
+  "lat": 36.7290796,
+  "lon": 120.2225153,
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "平度市第五人民医院"
+  }
+},
+{
+  "type": "node",
+  "id": 13840562517,
+  "lat": 36.0679114,
+  "lon": 120.3739495,
+  "tags": {
+    "addr:city": "青岛市",
+    "addr:district": "市南区",
+    "addr:housenumber": "5",
+    "addr:postcode": "266001",
+    "addr:province": "山东省",
+    "addr:street": "山东路",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "ophthalmology",
+    "name": "福柏眼科"
+  }
+},
+{
+  "type": "node",
+  "id": 13843401269,
+  "lat": 37.1685710,
+  "lon": 118.0934794,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "9-12",
+    "name": "博兴县第三中学"
+  }
+},
+{
+  "type": "node",
+  "id": 13844929663,
+  "lat": 36.0739468,
+  "lon": 120.3158990,
+  "tags": {
+    "amenity": "police",
+    "name": "即墨路派出所"
+  }
+},
+{
+  "type": "node",
+  "id": 13853008549,
+  "lat": 33.9466988,
+  "lon": 118.2594109,
+  "tags": {
+    "amenity": "school",
+    "education": "school",
+    "grades": "0-6",
+    "name": "华东台商子女学校(宿迁校区)"
+  }
+},
+{
+  "type": "way",
+  "id": 24635069,
+  "center": {
+    "lat": 39.0016234,
+    "lon": 117.7370507
+  },
+  "tags": {
+    "foot": "yes",
+    "highway": "trunk",
+    "lanes": "3",
+    "name": "京滨线（新港四号路）",
+    "name:en": "Jingbin Highway (Xingang 4th Road)",
+    "oneway": "yes",
+    "ref": "G103",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 25541373,
+  "center": {
+    "lat": 36.1071053,
+    "lon": 120.5331773
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "海庙路",
+    "name:zh": "海庙路",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 27629895,
+  "center": {
+    "lat": 37.5240752,
+    "lon": 122.0747008
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Hāgōngdà lù",
+    "name": "哈工大路",
+    "name:en": "Hāgōngdà Road",
+    "name:fr": "Route Hāgōngdà",
+    "name:zh": "哈工大路",
+    "name:zh-Latn-pinyin": "Hāgōngdà lù",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 27629897,
+  "center": {
+    "lat": 37.4510297,
+    "lon": 122.1389357
+  },
+  "tags": {
+    "highway": "primary",
+    "lanes": "4",
+    "name": "青岛北路",
+    "name:en": "Qingdao North Road",
+    "name:fr": "Route Nord Qīngdǎo",
+    "name:ja": "青島北通り",
+    "name:ko": "칭다오북로",
+    "name:zh": "青岛北路",
+    "name:zh-Latn-pinyin": "Qīngdǎo běi lù",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 27629898,
+  "center": {
+    "lat": 37.4992371,
+    "lon": 122.1180410
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Xinwei Road",
+    "lanes": "2",
+    "name": "新威路",
+    "name:en": "Xinwei Road",
+    "name:fr": "Route Xinwei",
+    "name:zh": "新威路",
+    "name:zh-Latn-pinyin": "Xīnwēi lù",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 27629899,
+  "center": {
+    "lat": 37.5185469,
+    "lon": 122.0955357
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Huāyuán zhōng lù",
+    "name": "花园中路",
+    "name:en": "Huayuan Middle Road",
+    "name:fr": "Route Huāyuán centre",
+    "name:ja": "花園中通り",
+    "name:ko": "화원중로",
+    "name:zh": "花园中路",
+    "name:zh-Latn-pinyin": "Huāyuán zhōng lù",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 27867457,
+  "center": {
+    "lat": 36.1413656,
+    "lon": 120.5839698
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "昌盛路"
+  }
+},
+{
+  "type": "way",
+  "id": 28939613,
+  "center": {
+    "lat": 34.6869243,
+    "lon": 119.4607862
+  },
+  "tags": {
+    "building": "industrial",
+    "generator:method": "fission",
+    "generator:output:electricity": "990 MW",
+    "generator:source": "nuclear",
+    "generator:type": "VVER",
+    "manufacturer:type": "VVER V-428",
+    "name": "1号机组",
+    "name:en": "Unit 1",
+    "name:ru": "I энергоблок",
+    "operator": "江苏核电有限公司",
+    "operator:en": "Jiangsu Nuclear Power Corporation",
+    "power": "generator",
+    "ref": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 28939616,
+  "center": {
+    "lat": 34.6878085,
+    "lon": 119.4591549
+  },
+  "tags": {
+    "building": "industrial",
+    "generator:method": "fission",
+    "generator:output:electricity": "990 MW",
+    "generator:source": "nuclear",
+    "generator:type": "VVER",
+    "manufacturer:type": "VVER V-428",
+    "name": "2号机组",
+    "name:en": "Unit 2",
+    "name:ru": "II энергоблок",
+    "operator": "江苏核电有限公司",
+    "operator:en": "Jiangsu Nuclear Power Corporation",
+    "power": "generator",
+    "ref": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 28939714,
+  "center": {
+    "lat": 34.7396996,
+    "lon": 119.2830062
+  },
+  "tags": {
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 29544745,
+  "center": {
+    "lat": 37.8144401,
+    "lon": 119.0577246
+  },
+  "tags": {
+    "alt_name:cs": "Chuang-che",
+    "boat": "yes",
+    "int_name": "Huang He",
+    "name": "黄河",
+    "name:br": "Ar Stêr Velen",
+    "name:cs": "Žlutá řeka",
+    "name:de": "Gelber Fluss",
+    "name:en": "Yellow River",
+    "name:eo": "Flava Rivero",
+    "name:fr": "Fleuve Jaune",
+    "name:hu": "Sárga-folyó",
+    "name:kn": "ಹುಅಂಗ್ ಹೆ",
+    "name:lzh": "黃河",
+    "name:nl": "Gele Rivier",
+    "name:pt": "Rio Amarelo",
+    "name:ru": "Хуанхэ",
+    "name:zh": "黄河",
+    "name:zh-Bopo": "ㄏㄨㄤˊㄏㄜˊ",
+    "name:zh-Hans": "黄河",
+    "name:zh-Hant": "黃河",
+    "name:zh-Latn-pinyin": "Huáng Hé",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 31159406,
+  "center": {
+    "lat": 38.8715245,
+    "lon": 121.4975984
+  },
+  "tags": {
+    "highway": "residential",
+    "rgn40type": "0x6"
+  }
+},
+{
+  "type": "way",
+  "id": 31159407,
+  "center": {
+    "lat": 38.8930840,
+    "lon": 121.5210775
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "红凌路",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 31159412,
+  "center": {
+    "lat": 38.8774897,
+    "lon": 121.5249544
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "书阳路",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 31305646,
+  "center": {
+    "lat": 38.8760925,
+    "lon": 121.5287478
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "2",
+    "name": "五一路",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 31535483,
+  "center": {
+    "lat": 38.8852858,
+    "lon": 121.5379858
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "数码路",
+    "name:ru": "Цифровая улица",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 31535485,
+  "center": {
+    "lat": 38.8805344,
+    "lon": 121.5411648
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Shu Ma Road",
+    "lanes": "2",
+    "name": "数码路",
+    "name:en": "Shuma Road",
+    "name:ru": "Цифровая улица",
+    "name:zh": "数码路",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 31535487,
+  "center": {
+    "lat": 38.8752365,
+    "lon": 121.5425558
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Shu Ma Road",
+    "lanes": "2",
+    "name": "数码路",
+    "name:en": "Shuma Road",
+    "name:ru": "Цифровая улица",
+    "name:zh": "数码路",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 31535489,
+  "center": {
+    "lat": 38.8718152,
+    "lon": 121.5373122
+  },
+  "tags": {
+    "highway": "trunk",
+    "lanes": "3",
+    "name": "黄浦路",
+    "name:en": "Huangpu Road",
+    "name:ru": "улица Хуанпу",
+    "name:zh": "黄浦路",
+    "name:zh-Latn-pinyin": "huángpǔ lù",
+    "oneway": "yes",
+    "ref": "G201;G228"
+  }
+},
+{
+  "type": "way",
+  "id": 31535490,
+  "center": {
+    "lat": 38.8749710,
+    "lon": 121.5427586
+  },
+  "tags": {
+    "highway": "trunk",
+    "lanes": "3",
+    "name": "黄浦路",
+    "name:en": "Huangpu Road",
+    "name:ru": "улица Хуанпу",
+    "name:zh": "黄浦路",
+    "name:zh-Latn-pinyin": "huángpǔ lù",
+    "oneway": "yes",
+    "ref": "G201;G228"
+  }
+},
+{
+  "type": "way",
+  "id": 31535493,
+  "center": {
+    "lat": 38.8758961,
+    "lon": 121.5428204
+  },
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Shu Ma Road",
+    "lanes": "2",
+    "name": "数码路",
+    "name:en": "Shuma Road",
+    "name:ru": "Цифровая улица",
+    "name:zh": "数码路",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32718671,
+  "center": {
+    "lat": 38.8873412,
+    "lon": 121.5405736
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "软件园东路",
+    "name:ru": "аллея Программного обеспечения",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32803312,
+  "center": {
+    "lat": 35.0221535,
+    "lon": 118.2138465
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "100|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803345,
+  "center": {
+    "lat": 34.6560822,
+    "lon": 118.2389380
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:name": "沂河特大桥",
+    "bridge:name:en": "Yihe Grand Bridge",
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "100|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803348,
+  "center": {
+    "lat": 34.6472659,
+    "lon": 118.2398855
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "destination:lanes": "上海|上海|上海|上海;郯城",
+    "destination:lang:en:lanes": "Shanghai|Shanghai|Shanghai|Shanghai;Tancheng",
+    "destination:ref:lanes": "G2|G2|G2|G2;S232",
+    "destination:ref:to:lanes": "S49|S49|S49|S49",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "100|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes",
+    "turn:lanes": "through|through|through|through;slight_right"
+  }
+},
+{
+  "type": "way",
+  "id": 32803381,
+  "center": {
+    "lat": 34.4351261,
+    "lon": 118.3548452
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "100|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803383,
+  "center": {
+    "lat": 34.4379435,
+    "lon": 118.3485409
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:name": "沭河大桥",
+    "bridge:name:en": "Shuhe bridge",
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "100|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803385,
+  "center": {
+    "lat": 36.0283865,
+    "lon": 118.6926802
+  },
+  "tags": {
+    "name": "沭河",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 32803410,
+  "center": {
+    "lat": 34.3116070,
+    "lon": 118.5732913
+  },
+  "tags": {
+    "bridge": "yes",
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hazmat": "80",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803414,
+  "center": {
+    "lat": 34.2972351,
+    "lon": 118.6032256
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hazmat": "80",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803434,
+  "center": {
+    "lat": 33.7319017,
+    "lon": 118.8957178
+  },
+  "tags": {
+    "boat": "yes",
+    "name": "淮沭新河",
+    "source": "Yahoo",
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 32803438,
+  "center": {
+    "lat": 34.1118743,
+    "lon": 118.8191996
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "destination": "上海",
+    "destination:ref": "G2",
+    "destination:ref:to": "S16",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hazmat": "80",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803440,
+  "center": {
+    "lat": 34.1524871,
+    "lon": 118.7854662
+  },
+  "tags": {
+    "bridge": "yes",
+    "bus:lanes": "no|yes",
+    "change": "no",
+    "goods": "no",
+    "hazmat": "no",
+    "hgv": "no",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "maxspeed": "120",
+    "maxspeed:bus": "100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90",
+    "motorcar": "designated",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated"
+  }
+},
+{
+  "type": "way",
+  "id": 32803456,
+  "center": {
+    "lat": 33.8841005,
+    "lon": 118.9694090
+  },
+  "tags": {
+    "bridge": "yes",
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "layer": "1",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hazmat": "80",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803462,
+  "center": {
+    "lat": 33.8782317,
+    "lon": 118.9734995
+  },
+  "tags": {
+    "bus:lanes": "no|yes|yes|yes",
+    "goods:lanes": "no|no|yes|yes",
+    "hgv:lanes": "no|no|yes|yes",
+    "highway": "motorway",
+    "lanes": "4",
+    "maxspeed:bus": "100",
+    "maxspeed:goods": "100",
+    "maxspeed:hazmat": "80",
+    "maxspeed:hgv": "100",
+    "maxspeed:lanes": "120|120|100|100",
+    "maxspeed:motorcar": "120",
+    "maxspeed:tourist_bus": "100",
+    "minspeed:lanes": "110|90|80|60",
+    "motorcar:lanes": "designated|designated|yes|yes",
+    "name": "京沪高速",
+    "name:en": "Beijing–Shanghai Expressway",
+    "name:zh": "京沪高速",
+    "name:zh-Hans": "京沪高速",
+    "name:zh-Hant": "京滬高速",
+    "name:zh-Latn-pinyin": "Jīnghù Gāosù",
+    "official_name": "北京—上海高速公路",
+    "oneway": "yes",
+    "ref": "G2",
+    "start_date": "2000-12-14",
+    "surface": "asphalt",
+    "toll": "yes",
+    "tourist_bus:lanes": "no|designated|yes|yes"
+  }
+},
+{
+  "type": "way",
+  "id": 32803464,
+  "center": {
+    "lat": 33.7558565,
+    "lon": 118.9478146
+  },
+  "tags": {
+    "waterway": "canal"
+  }
+},
+{
+  "type": "way",
+  "id": 32817152,
+  "center": {
+    "lat": 35.9037386,
+    "lon": 119.9764517
+  },
+  "tags": {
+    "boat": "no",
+    "name": "风河",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 32818424,
+  "center": {
+    "lat": 36.2073535,
+    "lon": 119.9594369
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "沈海高速",
+    "name:en": "Shenhai Expressway",
+    "name:zh-Hant": "瀋海高速",
+    "old_name": "同三高速",
+    "oneway": "yes",
+    "ref": "G15",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32818427,
+  "center": {
+    "lat": 36.0471664,
+    "lon": 119.8127458
+  },
+  "tags": {
+    "highway": "motorway",
+    "name": "青兰高速",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32818436,
+  "center": {
+    "lat": 35.9730310,
+    "lon": 119.9632651
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "沈海高速",
+    "name:en": "Shenhai Expressway",
+    "name:zh-Hant": "瀋海高速",
+    "old_name": "同三高速",
+    "oneway": "yes",
+    "ref": "G15",
+    "source": "GPS",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32818478,
+  "center": {
+    "lat": 35.9730533,
+    "lon": 119.9631440
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "沈海高速",
+    "name:en": "Shenhai Expressway",
+    "name:zh-Hant": "瀋海高速",
+    "old_name": "同三高速",
+    "oneway": "yes",
+    "ref": "G15",
+    "source": "Bing;GPS",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32818489,
+  "center": {
+    "lat": 36.2346624,
+    "lon": 120.1152157
+  },
+  "tags": {
+    "highway": "motorway",
+    "name": "青兰高速",
+    "name:en": "Shugang Expressway",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32818495,
+  "center": {
+    "lat": 36.2348730,
+    "lon": 120.1167030
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "layer": "1",
+    "name": "青兰高速",
+    "name:en": "Shugang Expressway",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32818505,
+  "center": {
+    "lat": 36.0474356,
+    "lon": 119.8061332
+  },
+  "tags": {
+    "highway": "motorway",
+    "name": "青兰高速",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32818510,
+  "center": {
+    "lat": 36.1386920,
+    "lon": 120.0162594
+  },
+  "tags": {
+    "boat": "no",
+    "waterway": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 32818513,
+  "center": {
+    "lat": 36.1369831,
+    "lon": 120.0536845
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "layer": "1",
+    "name": "青兰高速",
+    "name:en": "Shugang Expressway",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32818536,
+  "center": {
+    "lat": 36.1315739,
+    "lon": 120.0552260
+  },
+  "tags": {
+    "highway": "motorway",
+    "name": "青兰高速",
+    "name:zh-Hant": "青蘭高速",
+    "oneway": "yes",
+    "ref": "G22"
+  }
+},
+{
+  "type": "way",
+  "id": 32835958,
+  "center": {
+    "lat": 35.8349067,
+    "lon": 119.8723657
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "沈海高速",
+    "name:en": "Shenhai Expressway",
+    "name:zh-Hant": "瀋海高速",
+    "old_name": "同三高速",
+    "oneway": "yes",
+    "ref": "G15",
+    "source": "GPS",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32835959,
+  "center": {
+    "lat": 35.8843132,
+    "lon": 119.9245805
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "layer": "1",
+    "name": "沈海高速",
+    "name:en": "Shenhai Expressway",
+    "name:zh-Hant": "瀋海高速",
+    "old_name": "同三高速",
+    "oneway": "yes",
+    "ref": "G15",
+    "source": "GPS",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 32836030,
+  "center": {
+    "lat": 35.4768199,
+    "lon": 118.8968397
+  },
+  "tags": {
+    "embankment": "yes",
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "日兰高速",
+    "name:en": "Ridong Expressway",
+    "name:zh-Hant": "日蘭高速",
+    "oneway": "yes",
+    "ref": "G1511",
+    "source": "bing"
+  }
+},
+{
+  "type": "way",
+  "id": 32836042,
+  "center": {
+    "lat": 35.4533710,
+    "lon": 118.8055160
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "日兰高速",
+    "name:en": "Ridong Expressway",
+    "name:zh-Hant": "日蘭高速",
+    "oneway": "yes",
+    "ref": "G1511"
+  }
+},
+{
+  "type": "way",
+  "id": 32836045,
+  "center": {
+    "lat": 35.4449031,
+    "lon": 118.7436495
+  },
+  "tags": {
+    "highway": "motorway",
+    "lanes": "2",
+    "name": "日兰高速",
+    "name:en": "Ridong Expressway",
+    "name:zh-Hant": "日蘭高速",
+    "oneway": "yes",
+    "ref": "G1511"
+  }
+},
+{
+  "type": "way",
+  "id": 32836132,
+  "center": {
+    "lat": 35.5383094,
+    "lon": 118.1608361
+  },
+  "tags": {
+    "boat": "no",
+    "code": "AEB11006",
+    "name": "蒙河",
+    "name:en": "Meng River",
+    "name:zh": "蒙河",
+    "name:zh-Latn-pinyin": "mēng hé",
+    "nsdi_code": "EB2505",
+    "waterway": "river",
+    "zhb_code": "10EB100400"
+  }
+},
+{
+  "type": "way",
+  "id": 32836162,
+  "center": {
+    "lat": 35.0807840,
+    "lon": 118.3905693
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "安居路"
+  }
+},
+{
+  "type": "way",
+  "id": 32836214,
+  "center": {
+    "lat": 35.0205210,
+    "lon": 118.4152761
+  },
+  "tags": {
+    "highway": "secondary",
+    "lanes": "3",
+    "name": "沂河东路",
+    "oneway": "yes",
+    "ref": "G327"
+  }
+},
+{
+  "type": "way",
+  "id": 32881263,
+  "center": {
+    "lat": 38.9252581,
+    "lon": 121.6338881
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "上海路",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 33076189,
+  "center": {
+    "lat": 38.8761777,
+    "lon": 121.5310784
+  },
+  "tags": {
+    "highway": "tertiary",
+    "lanes": "4",
+    "name": "文静街",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 33077405,
+  "center": {
+    "lat": 38.8750310,
+    "lon": 121.5156200
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "1",
+    "name": "栾金西街",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 33077669,
+  "center": {
+    "lat": 38.8759305,
+    "lon": 121.5195921
+  },
+  "tags": {
+    "highway": "tertiary",
+    "name": "栾金东街"
+  }
+},
+{
+  "type": "way",
+  "id": 33077671,
+  "center": {
+    "lat": 38.8740424,
+    "lon": 121.5199016
+  },
+  "tags": {
+    "highway": "residential",
+    "name": "栾金东街",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 33077673,
+  "center": {
+    "lat": 38.8753503,
+    "lon": 121.5192907
+  },
+  "tags": {
+    "highway": "tertiary",
+    "junction": "roundabout",
+    "name": "栾金东街",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 33077852,
+  "center": {
+    "lat": 38.8735135,
+    "lon": 121.5276684
+  },
+  "tags": {
+    "highway": "residential",
+    "lanes": "2",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 33077854,
+  "center": {
+    "lat": 38.8729821,
+    "lon": 121.5286530
+  },
+  "tags": {
+    "highway": "residential",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 33077855,
+  "center": {
+    "lat": 38.8911869,
+    "lon": 121.5511309
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "五一路",
+    "name:en": "Wuyi Lu",
+    "oneway": "yes"
+  }
+}
+
+  ]
+}

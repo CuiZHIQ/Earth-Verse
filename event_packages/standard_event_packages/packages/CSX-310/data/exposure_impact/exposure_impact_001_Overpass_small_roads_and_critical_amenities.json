@@ -1,0 +1,2611 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-21T21:20:00Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 3079741617,
+  "lat": 12.4865681,
+  "lon": -6.7973239,
+  "tags": {
+    "addr:city": "Adjudant Bacari Si",
+    "amenity": "school",
+    "capacity:pupils": "89",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "tap",
+    "isced:level": "1",
+    "name": "ADJUDANT BAKARY SIDIBE",
+    "operator:type": "private",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 3079742855,
+  "lat": 12.2827363,
+  "lon": -6.9801433,
+  "tags": {
+    "addr:city": "Balle",
+    "amenity": "school",
+    "capacity:pupils": "68",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "BALLE",
+    "name:ar": "بال",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079742882,
+  "lat": 12.7340688,
+  "lon": -6.6563718,
+  "tags": {
+    "addr:city": "Banconi Noumoubougou",
+    "amenity": "school",
+    "capacity:pupils": "252",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "BANGONI",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079742883,
+  "lat": 12.6080507,
+  "lon": -7.0742942,
+  "tags": {
+    "addr:city": "Banikolo",
+    "amenity": "school",
+    "capacity:pupils": "142",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "BANIGOLO II",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079742907,
+  "lat": 12.7173333,
+  "lon": -7.0893333,
+  "tags": {
+    "addr:city": "Blengoua",
+    "amenity": "school",
+    "capacity:pupils": "84",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "BLENGOUA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743146,
+  "lat": 12.5990832,
+  "lon": -6.9960380,
+  "tags": {
+    "addr:city": "Daman",
+    "amenity": "school",
+    "capacity:pupils": "88",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DAMAN",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743158,
+  "lat": 12.4841333,
+  "lon": -6.9475500,
+  "tags": {
+    "addr:city": "Dantia",
+    "amenity": "school",
+    "capacity:pupils": "101",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "DANTIA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743169,
+  "lat": 12.3499685,
+  "lon": -6.6738243,
+  "tags": {
+    "addr:city": "Degnekoro",
+    "amenity": "school",
+    "capacity:pupils": "467",
+    "capacity:teachers": "6",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "DEGNEKORO [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743170,
+  "lat": 12.3502850,
+  "lon": -6.6737170,
+  "tags": {
+    "addr:city": "Degnekoro",
+    "amenity": "school",
+    "capacity:pupils": "224",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "DEGNEKORO [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743201,
+  "lat": 12.6520282,
+  "lon": -6.6779871,
+  "tags": {
+    "addr:city": "Diarani",
+    "amenity": "school",
+    "capacity:pupils": "194",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DIARANI",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743205,
+  "lat": 12.6664000,
+  "lon": -6.8572167,
+  "tags": {
+    "addr:city": "Djeba",
+    "amenity": "school",
+    "capacity:pupils": "92",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DIEBA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743210,
+  "lat": 12.7320105,
+  "lon": -6.9625107,
+  "tags": {
+    "addr:city": "Djien",
+    "amenity": "school",
+    "capacity:pupils": "200",
+    "capacity:teachers": "5",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DIEN",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743213,
+  "lat": 12.6383531,
+  "lon": -6.8203672,
+  "tags": {
+    "addr:city": "Diero",
+    "amenity": "school",
+    "capacity:pupils": "212",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DIERO",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743225,
+  "lat": 12.4758768,
+  "lon": -6.7943949,
+  "tags": {
+    "addr:city": "Dioila",
+    "amenity": "school",
+    "capacity:pupils": "312",
+    "capacity:teachers": "10",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "DIOILA A'' C'' [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743226,
+  "lat": 12.4761289,
+  "lon": -6.7944969,
+  "tags": {
+    "addr:city": "Dioila",
+    "amenity": "school",
+    "capacity:pupils": "335",
+    "capacity:teachers": "8",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "2,3",
+    "name": "DIOÏLA C [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743851,
+  "lat": 12.4425916,
+  "lon": -6.7963436,
+  "tags": {
+    "addr:city": "Diondougou",
+    "amenity": "school",
+    "capacity:pupils": "275",
+    "capacity:teachers": "6",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "DJONDOUGOU",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743873,
+  "lat": 12.4585497,
+  "lon": -6.7796535,
+  "tags": {
+    "addr:city": "Djomi",
+    "amenity": "school",
+    "capacity:pupils": "143",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DOMI",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743876,
+  "lat": 12.3615235,
+  "lon": -6.7106886,
+  "tags": {
+    "addr:city": "Donobougou",
+    "amenity": "school",
+    "capacity:pupils": "155",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "DONOMBOUGOU",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743878,
+  "lat": 12.3044833,
+  "lon": -6.8513333,
+  "tags": {
+    "addr:city": "Dougabougou",
+    "amenity": "school",
+    "capacity:pupils": "71",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "DOUGABOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079743892,
+  "lat": 12.3965853,
+  "lon": -6.6381723,
+  "tags": {
+    "addr:city": "Fah Makoungo",
+    "amenity": "school",
+    "capacity:pupils": "220",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "École communautaire de FAH",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079744975,
+  "lat": 12.4425355,
+  "lon": -6.7856509,
+  "tags": {
+    "addr:city": "Fadabougou",
+    "amenity": "school",
+    "capacity:pupils": "122",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "FADABOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079744982,
+  "lat": 12.3851789,
+  "lon": -7.0467847,
+  "tags": {
+    "addr:city": "Falakoro Koya",
+    "amenity": "school",
+    "capacity:pupils": "192",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "FALAKONO",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746035,
+  "lat": 12.4423444,
+  "lon": -6.8401028,
+  "tags": {
+    "addr:city": "Fignana",
+    "amenity": "school",
+    "capacity:pupils": "402",
+    "capacity:teachers": "5",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "tap",
+    "isced:level": "1",
+    "name": "FIGNANA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746044,
+  "lat": 12.4396992,
+  "lon": -6.7223079,
+  "tags": {
+    "addr:city": "Fouga",
+    "amenity": "school",
+    "capacity:pupils": "145",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "FOUGA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746051,
+  "lat": 12.6405937,
+  "lon": -7.0107424,
+  "tags": {
+    "addr:city": "Fousseinybougou",
+    "amenity": "school",
+    "capacity:pupils": "98",
+    "capacity:teachers": "2",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "FOUSSEYNIBOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746059,
+  "lat": 12.7059167,
+  "lon": -6.8342833,
+  "tags": {
+    "addr:city": "Gontou",
+    "amenity": "school",
+    "capacity:pupils": "134",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "GONTOU",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746063,
+  "lat": 12.6423833,
+  "lon": -6.8952167,
+  "tags": {
+    "addr:city": "Gouana",
+    "amenity": "school",
+    "capacity:pupils": "157",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "tap",
+    "isced:level": "1",
+    "name": "GOUANA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746067,
+  "lat": 12.6049602,
+  "lon": -6.6256986,
+  "tags": {
+    "addr:city": "Gouloukan",
+    "amenity": "school",
+    "capacity:pupils": "226",
+    "capacity:teachers": "5",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "GOULOUKAN",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746111,
+  "lat": 12.6880640,
+  "lon": -6.9308734,
+  "tags": {
+    "addr:city": "Kalifabougou",
+    "amenity": "school",
+    "capacity:pupils": "95",
+    "capacity:teachers": "2",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "KALIFABOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079746114,
+  "lat": 12.3558169,
+  "lon": -6.8313655,
+  "tags": {
+    "addr:city": "Kamabougou",
+    "amenity": "school",
+    "capacity:pupils": "234",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "KAMABOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747047,
+  "lat": 12.6167677,
+  "lon": -7.0859661,
+  "tags": {
+    "addr:city": "Kowena",
+    "amenity": "school",
+    "capacity:pupils": "95",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "KAWENA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747070,
+  "lat": 12.7414666,
+  "lon": -6.8381090,
+  "tags": {
+    "addr:city": "Kerela",
+    "amenity": "school",
+    "capacity:pupils": "280",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "KERELA [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747071,
+  "lat": 12.7427273,
+  "lon": -6.8381735,
+  "tags": {
+    "addr:city": "Kerela",
+    "amenity": "school",
+    "capacity:pupils": "347",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "KERELA [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747073,
+  "lat": 12.2821408,
+  "lon": -6.9611586,
+  "tags": {
+    "addr:city": "Kiyabougou",
+    "amenity": "school",
+    "capacity:pupils": "76",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "KIAMBOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747110,
+  "lat": 12.6060123,
+  "lon": -6.8528820,
+  "tags": {
+    "addr:city": "Kola Bamana",
+    "amenity": "school",
+    "capacity:pupils": "225",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "KOLA [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747111,
+  "lat": 12.6051632,
+  "lon": -6.8530173,
+  "tags": {
+    "addr:city": "Kola Bamana",
+    "amenity": "school",
+    "capacity:pupils": "386",
+    "capacity:teachers": "5",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "KOLA [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "7"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747117,
+  "lat": 12.5684988,
+  "lon": -7.0007909,
+  "tags": {
+    "addr:city": "Kolobougou",
+    "amenity": "school",
+    "capacity:pupils": "111",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "KOLOBOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747119,
+  "lat": 12.6930500,
+  "lon": -7.0090667,
+  "tags": {
+    "addr:city": "Kolombada",
+    "amenity": "school",
+    "capacity:pupils": "156",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "KOLOMBADA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747543,
+  "lat": 12.3510397,
+  "lon": -6.7837434,
+  "tags": {
+    "addr:city": "Korokoro",
+    "amenity": "school",
+    "capacity:pupils": "76",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "KOROKORO",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747586,
+  "lat": 12.4468167,
+  "lon": -6.6420833,
+  "tags": {
+    "addr:city": "Maban",
+    "amenity": "school",
+    "capacity:pupils": "268",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MABAN",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747587,
+  "lat": 12.6381005,
+  "lon": -6.8201449,
+  "tags": {
+    "addr:city": "Diero",
+    "amenity": "school",
+    "capacity:pupils": "107",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MADERSA DIERO",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747602,
+  "lat": 12.3970693,
+  "lon": -6.6397128,
+  "tags": {
+    "addr:city": "Fah Manacoungo",
+    "amenity": "school",
+    "capacity:pupils": "38",
+    "capacity:teachers": "1",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MANACOUNGO",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079747632,
+  "lat": 12.4972833,
+  "lon": -7.0482500,
+  "tags": {
+    "addr:city": "Mahiné-1",
+    "amenity": "school",
+    "capacity:pupils": "52",
+    "capacity:teachers": "2",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "MEDERSA MAHINA",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748133,
+  "lat": 12.2981667,
+  "lon": -6.8088167,
+  "tags": {
+    "addr:city": "Nonfoura",
+    "amenity": "school",
+    "capacity:pupils": "70",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MEDERSA NONFOURA",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748139,
+  "lat": 12.5177890,
+  "lon": -6.6376198,
+  "tags": {
+    "addr:city": "Balinkoungo",
+    "amenity": "school",
+    "capacity:pupils": "53",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MEDERSA BALENKOUNGO",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748175,
+  "lat": 12.2558500,
+  "lon": -6.8862000,
+  "tags": {
+    "addr:city": "Tone",
+    "amenity": "school",
+    "capacity:pupils": "47",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MEDERSA TONE",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748183,
+  "lat": 12.5431681,
+  "lon": -6.6486812,
+  "tags": {
+    "addr:city": "Missiritou",
+    "amenity": "school",
+    "capacity:pupils": "82",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "MISSIRITOU I",
+    "operator:type": "private",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748198,
+  "lat": 12.2445577,
+  "lon": -7.0809621,
+  "tags": {
+    "addr:city": "Moucodjambougou",
+    "amenity": "school",
+    "capacity:pupils": "119",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "MOUCODJAMBOUGOU",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748215,
+  "lat": 12.2816741,
+  "lon": -6.7732913,
+  "tags": {
+    "addr:city": "Nana",
+    "amenity": "school",
+    "capacity:pupils": "113",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NANA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748221,
+  "lat": 12.3386167,
+  "lon": -6.8590000,
+  "tags": {
+    "addr:city": "Nassela",
+    "amenity": "school",
+    "capacity:pupils": "103",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "NASSELA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748222,
+  "lat": 12.5206107,
+  "lon": -6.9884313,
+  "tags": {
+    "addr:city": "Natiana",
+    "amenity": "school",
+    "capacity:pupils": "112",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "NATIANA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748227,
+  "lat": 12.6780027,
+  "lon": -6.7243142,
+  "tags": {
+    "addr:city": "N'Djifina",
+    "amenity": "school",
+    "capacity:pupils": "362",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "N'DJIFINA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748230,
+  "lat": 12.5084388,
+  "lon": -6.9309462,
+  "tags": {
+    "addr:city": "Djila Fiana",
+    "amenity": "school",
+    "capacity:pupils": "266",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "N'DJILA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748539,
+  "lat": 12.5215667,
+  "lon": -6.8082333,
+  "tags": {
+    "addr:city": "Nematoulaye",
+    "amenity": "school",
+    "capacity:pupils": "59",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NEMATOULAYE",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748545,
+  "lat": 12.3745274,
+  "lon": -6.8740702,
+  "tags": {
+    "addr:city": "N'Garadougou /N'Gara",
+    "amenity": "school",
+    "capacity:pupils": "270",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "N'GARA [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748546,
+  "lat": 12.3749203,
+  "lon": -6.8757600,
+  "tags": {
+    "addr:city": "N'Garadougou /N'Gara",
+    "amenity": "school",
+    "capacity:pupils": "195",
+    "capacity:teachers": "7",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "N'GARA [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748554,
+  "lat": 12.5856167,
+  "lon": -6.9074833,
+  "tags": {
+    "addr:city": "N'Golobougou",
+    "amenity": "school",
+    "capacity:pupils": "41",
+    "capacity:teachers": "1",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "N'GOLOBOUGOUNI",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748556,
+  "lat": 12.5671333,
+  "lon": -6.9263167,
+  "tags": {
+    "addr:city": "N'Golofia",
+    "amenity": "school",
+    "capacity:pupils": "125",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "N'GOLOFIA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748558,
+  "lat": 12.3177177,
+  "lon": -7.0089663,
+  "tags": {
+    "addr:city": "N'Golotena",
+    "amenity": "school",
+    "capacity:pupils": "181",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "N'GOLOTENA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748565,
+  "lat": 12.4654034,
+  "lon": -6.8859441,
+  "tags": {
+    "addr:city": "Niabroutila",
+    "amenity": "school",
+    "capacity:pupils": "67",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NIABROUDJILA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748578,
+  "lat": 12.2638482,
+  "lon": -6.6654021,
+  "tags": {
+    "addr:city": "Sirakoro",
+    "amenity": "school",
+    "capacity:pupils": "189",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "NIANANDOUGOU SIRACORO",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748579,
+  "lat": 12.2972578,
+  "lon": -6.6692162,
+  "tags": {
+    "addr:city": "Sirakoro",
+    "amenity": "school",
+    "capacity:pupils": "18",
+    "capacity:teachers": "1",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NIANANDOUGOU SIRAKORO",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748603,
+  "lat": 12.2981667,
+  "lon": -6.8088167,
+  "tags": {
+    "addr:city": "Nonfoura",
+    "amenity": "school",
+    "capacity:pupils": "100",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NONFOURA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748611,
+  "lat": 12.4874425,
+  "lon": -6.7944378,
+  "tags": {
+    "amenity": "school",
+    "capacity:pupils": "50",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "NOUR EL ISLAM [2ème C]",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748612,
+  "lat": 12.4874425,
+  "lon": -6.7944378,
+  "tags": {
+    "amenity": "school",
+    "capacity:pupils": "104",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "NOUR EL ISLAM [1er C]",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748733,
+  "lat": 12.6069500,
+  "lon": -6.9229667,
+  "tags": {
+    "addr:city": "N'Fotadje",
+    "amenity": "school",
+    "capacity:pupils": "44",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "N'TOTADIE",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079748789,
+  "lat": 12.3425013,
+  "lon": -6.7142559,
+  "tags": {
+    "addr:city": "Sana",
+    "amenity": "school",
+    "capacity:pupils": "136",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "SANA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749173,
+  "lat": 12.6234333,
+  "lon": -6.9496167,
+  "tags": {
+    "addr:city": "Sirakorodie",
+    "amenity": "school",
+    "capacity:pupils": "146",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "SIRAKORODJE",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749193,
+  "lat": 12.3030299,
+  "lon": -6.6300292,
+  "tags": {
+    "addr:city": "Sorokoro",
+    "amenity": "school",
+    "capacity:pupils": "216",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "SOROKORONI",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749205,
+  "lat": 12.6730068,
+  "lon": -7.0797624,
+  "tags": {
+    "addr:city": "Soutiani",
+    "amenity": "school",
+    "capacity:pupils": "132",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "SOUNTIANI",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749211,
+  "lat": 12.6610855,
+  "lon": -6.6520689,
+  "tags": {
+    "amenity": "school",
+    "capacity:pupils": "79",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TAHALIM DIN WAL ADAB",
+    "operator:type": "religious",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749232,
+  "lat": 12.4739000,
+  "lon": -6.9387833,
+  "tags": {
+    "addr:city": "Tenimbougou",
+    "amenity": "school",
+    "capacity:pupils": "141",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TENIMBOUGOU",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749735,
+  "lat": 12.4137000,
+  "lon": -6.9627833,
+  "tags": {
+    "addr:city": "Thion",
+    "amenity": "school",
+    "capacity:pupils": "115",
+    "capacity:teachers": "4",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "THION",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749752,
+  "lat": 12.5555584,
+  "lon": -6.8193380,
+  "tags": {
+    "addr:city": "Tiendo",
+    "amenity": "school",
+    "capacity:pupils": "279",
+    "capacity:teachers": "6",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "TIENDO",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749754,
+  "lat": 12.3144990,
+  "lon": -6.9523931,
+  "tags": {
+    "addr:city": "Tiengola",
+    "amenity": "school",
+    "capacity:pupils": "105",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TIENGOLA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749756,
+  "lat": 12.3066500,
+  "lon": -6.7162333,
+  "tags": {
+    "addr:city": "Timpana",
+    "amenity": "school",
+    "capacity:pupils": "81",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TIMPANA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749766,
+  "lat": 12.3915667,
+  "lon": -6.6805000,
+  "tags": {
+    "addr:city": "Tirri",
+    "amenity": "school",
+    "capacity:pupils": "82",
+    "capacity:teachers": "2",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TIRI",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749776,
+  "lat": 12.2558500,
+  "lon": -6.8862000,
+  "tags": {
+    "addr:city": "Tone",
+    "amenity": "school",
+    "capacity:pupils": "138",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "TONE",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749778,
+  "lat": 12.4935500,
+  "lon": -6.8736833,
+  "tags": {
+    "addr:city": "Tonga",
+    "amenity": "school",
+    "capacity:pupils": "94",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TONGA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749779,
+  "lat": 12.6519692,
+  "lon": -6.7563505,
+  "tags": {
+    "addr:city": "Tonka",
+    "amenity": "school",
+    "capacity:pupils": "313",
+    "capacity:teachers": "6",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TONGA (WACORO)",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749788,
+  "lat": 12.4096167,
+  "lon": -6.7548833,
+  "tags": {
+    "addr:city": "Toula",
+    "amenity": "school",
+    "capacity:pupils": "140",
+    "capacity:teachers": "3",
+    "drinking_water": "no",
+    "isced:level": "1",
+    "name": "TOULA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749794,
+  "lat": 12.6030511,
+  "lon": -6.6935546,
+  "tags": {
+    "addr:city": "Wakoro",
+    "amenity": "school",
+    "capacity:pupils": "687",
+    "capacity:teachers": "7",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "WACORO [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749795,
+  "lat": 12.6030832,
+  "lon": -6.6933239,
+  "tags": {
+    "addr:city": "Wakoro",
+    "amenity": "school",
+    "capacity:pupils": "285",
+    "capacity:teachers": "7",
+    "drinking_water": "no",
+    "isced:level": "2,3",
+    "name": "WACORO [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749799,
+  "lat": 12.7277970,
+  "lon": -6.6261137,
+  "tags": {
+    "addr:city": "Ouela",
+    "amenity": "school",
+    "capacity:pupils": "50",
+    "capacity:teachers": "1",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "WELA",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749806,
+  "lat": 12.5016500,
+  "lon": -6.7591000,
+  "tags": {
+    "addr:city": "Wolome",
+    "amenity": "school",
+    "capacity:pupils": "222",
+    "capacity:teachers": "4",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "working_drilling",
+    "isced:level": "1",
+    "name": "WOLOME",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749809,
+  "lat": 12.6423432,
+  "lon": -7.0499260,
+  "tags": {
+    "addr:city": "Wonikoro",
+    "amenity": "school",
+    "capacity:pupils": "146",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "1",
+    "name": "WONIKORO",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "FANA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749818,
+  "lat": 12.4900201,
+  "lon": -6.7364445,
+  "tags": {
+    "addr:city": "Zambougou Est",
+    "amenity": "school",
+    "capacity:pupils": "47",
+    "capacity:teachers": "3",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "ZAMBOUGOU EST",
+    "operator:type": "community",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "no",
+    "toilets:number": "0"
+  }
+},
+{
+  "type": "node",
+  "id": 3079749828,
+  "lat": 12.5505817,
+  "lon": -6.7693860,
+  "tags": {
+    "addr:city": "Zeta",
+    "amenity": "school",
+    "capacity:pupils": "364",
+    "capacity:teachers": "5",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "yes",
+    "drinking_water:type": "exhaustible_well",
+    "isced:level": "1",
+    "name": "ZETA",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 8093234334,
+  "lat": 12.4960005,
+  "lon": -6.7991904,
+  "tags": {
+    "amenity": "police",
+    "name": "COMMISSARIAT DE POLICE DIOLA"
+  }
+},
+{
+  "type": "node",
+  "id": 9635270583,
+  "lat": 12.4906117,
+  "lon": -6.8003976,
+  "tags": {
+    "addr:city": "Dioila",
+    "amenity": "school",
+    "capacity:pupils": "456",
+    "capacity:teachers": "9",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "tap",
+    "isced:level": "1",
+    "name": "Dioïla ''A'' [1er C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 9635270584,
+  "lat": 12.4923139,
+  "lon": -6.7940301,
+  "tags": {
+    "addr:city": "Dioila",
+    "amenity": "school",
+    "capacity:pupils": "536",
+    "capacity:teachers": "10",
+    "drinking_water": "yes",
+    "drinking_water:seasonal": "no",
+    "drinking_water:type": "inexhaustible_well",
+    "isced:level": "2,3",
+    "name": "Dioïla A [2ème C]",
+    "operator:type": "public",
+    "restaurant": "no",
+    "school:ML:academie": "KATI",
+    "school:ML:cap": "DIOILA",
+    "source": "UNICEF",
+    "toilets": "yes",
+    "toilets:number": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 41268883,
+  "center": {
+    "lat": 12.4254723,
+    "lon": -6.7610936
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "horrible",
+    "surface": "unpaved",
+    "width": "7"
+  }
+},
+{
+  "type": "way",
+  "id": 205944022,
+  "center": {
+    "lat": 12.7269724,
+    "lon": -6.7752332
+  },
+  "tags": {
+    "highway": "secondary",
+    "ref": "L250",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205945759,
+  "center": {
+    "lat": 12.5047916,
+    "lon": -6.7546359
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205945761,
+  "center": {
+    "lat": 12.4875760,
+    "lon": -6.8011650
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205945763,
+  "center": {
+    "lat": 12.3157714,
+    "lon": -6.8642759
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Bing",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205945769,
+  "center": {
+    "lat": 12.4893684,
+    "lon": -6.7957043
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 205945775,
+  "center": {
+    "lat": 12.4401122,
+    "lon": -6.9624722
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205946362,
+  "center": {
+    "lat": 12.7363223,
+    "lon": -6.9491861
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 205946363,
+  "center": {
+    "lat": 12.5634174,
+    "lon": -6.8191321
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205946367,
+  "center": {
+    "lat": 12.5965681,
+    "lon": -6.7067814
+  },
+  "tags": {
+    "highway": "secondary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 205946370,
+  "center": {
+    "lat": 12.5717473,
+    "lon": -6.9158754
+  },
+  "tags": {
+    "highway": "tertiary",
+    "ref": "RR11",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 214458783,
+  "center": {
+    "lat": 12.2867366,
+    "lon": -6.6864400
+  },
+  "tags": {
+    "highway": "tertiary",
+    "noname": "yes",
+    "noref": "yes",
+    "surface": "unpaved",
+    "width": "5"
+  }
+},
+{
+  "type": "way",
+  "id": 237760246,
+  "center": {
+    "lat": 12.7226350,
+    "lon": -7.0362329
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 237760247,
+  "center": {
+    "lat": 12.6562221,
+    "lon": -7.0314206
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Bing",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 244005309,
+  "center": {
+    "lat": 12.3497963,
+    "lon": -6.6555656
+  },
+  "tags": {
+    "highway": "tertiary"
+  }
+},
+{
+  "type": "way",
+  "id": 244005574,
+  "center": {
+    "lat": 12.2741388,
+    "lon": -6.7190614
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "very_bad",
+    "surface": "unpaved",
+    "width": "7"
+  }
+},
+{
+  "type": "way",
+  "id": 246444070,
+  "center": {
+    "lat": 12.2455233,
+    "lon": -6.6190424
+  },
+  "tags": {
+    "highway": "tertiary",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 250713992,
+  "center": {
+    "lat": 12.6410400,
+    "lon": -7.0887686
+  },
+  "tags": {
+    "highway": "tertiary",
+    "ref": "RR11",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 473884103,
+  "center": {
+    "lat": 12.5232035,
+    "lon": -6.8077067
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 473892780,
+  "center": {
+    "lat": 12.5129636,
+    "lon": -6.6465750
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 582968613,
+  "center": {
+    "lat": 12.6226806,
+    "lon": -7.0245501
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "ref": "RR11",
+    "source": "Bing"
+  }
+},
+{
+  "type": "way",
+  "id": 618686179,
+  "center": {
+    "lat": 12.6506932,
+    "lon": -6.8261373
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 675360354,
+  "center": {
+    "lat": 12.4759897,
+    "lon": -6.7945571
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 697894608,
+  "center": {
+    "lat": 12.3423305,
+    "lon": -6.7779654
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 716809101,
+  "center": {
+    "lat": 12.7116138,
+    "lon": -6.7266884
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 716809102,
+  "center": {
+    "lat": 12.6946752,
+    "lon": -6.7269081
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 730685790,
+  "center": {
+    "lat": 12.6916926,
+    "lon": -6.9336259
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "lit": "no",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 730685791,
+  "center": {
+    "lat": 12.6092490,
+    "lon": -6.8710241
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 742738249,
+  "center": {
+    "lat": 12.7442694,
+    "lon": -6.8379380
+  },
+  "tags": {
+    "highway": "tertiary",
+    "ref": "L510",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 743153301,
+  "center": {
+    "lat": 12.6521759,
+    "lon": -6.7562510
+  },
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "way",
+  "id": 779988199,
+  "center": {
+    "lat": 12.4935748,
+    "lon": -6.8779486
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "tertiary",
+    "layer": "1",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 779988200,
+  "center": {
+    "lat": 12.4914883,
+    "lon": -6.8405669
+  },
+  "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved"
+  }
+},
+{
+  "type": "way",
+  "id": 894523630,
+  "center": {
+    "lat": 12.5187003,
+    "lon": -6.8067120
+  },
+  "tags": {
+    "bridge": "yes",
+    "bridge:name": "Pont Entree Dioïla",
+    "highway": "primary",
+    "layer": "1",
+    "lit": "no",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 894523631,
+  "center": {
+    "lat": 12.5102935,
+    "lon": -6.8043705
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "intermediate",
+    "surface": "asphalt",
+    "width": "11"
+  }
+},
+{
+  "type": "way",
+  "id": 894740823,
+  "center": {
+    "lat": 12.3435591,
+    "lon": -6.7230772
+  },
+  "tags": {
+    "highway": "primary",
+    "lit": "no",
+    "name": "Fana - Koumantou - Kolondieba - Cote d'Ivoire",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "very_bad",
+    "surface": "unpaved",
+    "width": "7"
+  }
+},
+{
+  "type": "way",
+  "id": 894740824,
+  "center": {
+    "lat": 12.3748624,
+    "lon": -6.7329163
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "layer": "1",
+    "lit": "no",
+    "ref": "RN30",
+    "shoulder": "no",
+    "sidewalk": "no",
+    "smoothness": "very_bad",
+    "surface": "unpaved",
+    "width": "7"
+  }
+},
+{
+  "type": "way",
+  "id": 1195007180,
+  "center": {
+    "lat": 12.7636364,
+    "lon": -6.8300908
+  },
+  "tags": {
+    "highway": "tertiary",
+    "ref": "L509",
+    "surface": "ground"
+  }
+}
+
+  ]
+}

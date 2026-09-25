@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-232",
+  "event_name": "2023 Turkiye-Syria earthquake sequence",
+  "hazard_family": "earthquake_tsunami_geophysical",
+  "temporal_window": {
+    "start_date": "2023-02-06",
+    "end_date": "2023-02-20",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Kahramanmaras / Gaziantep region",
+    "country_or_region": "Turkiye / Syria",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "2023 Turkiye-Syria earthquake sequence",
+    "event_start_date": "2023-02-06",
+    "event_end_date": "2023-02-20",
+    "event_location": "Kahramanmaras / Gaziantep region",
+    "event_country_or_region": "Turkiye / Syria",
+    "event_scope": "subagent_region_locked",
+    "evidence_type": "NASA disaster activation",
+    "evidence_url": "https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023",
+    "evidence_final_url": "https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023",
+    "http_status": "",
+    "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+    "lock_confidence": "high",
+    "match_rule": "subagent_exact_family_region_replacement",
+    "web_search_query_used": "NASA Türkiye Syria earthquakes 2023 USGS",
+    "event_lock_notes": "Major continental earthquake sequence affecting Anatolia and Syria.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": true
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "weak_or_missing_report_claim",
+    "recommendation": "replace_or_backlog",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": true,
+    "claim_like_source_type": false,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.320637+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "2023 Turkiye-Syria earthquake sequence",
+      "source_type": "NASA disaster activation",
+      "url": "https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023",
+      "original_url": "https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/turkiye-syria-earthquakes-2023",
+      "http_status": "",
+      "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+      "confidence": "high",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "weak_or_missing_report_claim",
+      "release_recommendation": "replace_or_backlog",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-232_earthquake_tsunami_geophysical_europe_regional_basin/event_package.json"
+}

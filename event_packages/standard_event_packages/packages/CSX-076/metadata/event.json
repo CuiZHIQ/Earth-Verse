@@ -1,0 +1,43 @@
+{
+  "package_id": "CSX-076",
+  "event_name": "2022 Pakistan monsoon floods",
+  "canonical_event_key": "2022 pakistan monsoon floods",
+  "hazard_family": "extreme_precip_pluvial_flood",
+  "hazard_label": "Extreme precipitation and pluvial flooding",
+  "scale": "national_admin",
+  "region": "South Asia",
+  "primary_evidence_url": "https://science.nasa.gov/earth/earth-observatory/devastating-floods-in-pakistan-150279/",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "97",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "34",
+    "image_files_checked": "9",
+    "valid_images": "9",
+    "formal_slice_files_checked": "15",
+    "hard_error_count": "0",
+    "metadata_warning_count": "6",
+    "final_data_score": "70",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 41,
+    "categories": {
+      "air_quality": 1,
+      "event_catalogs": 2,
+      "event_reports": 4,
+      "exposure_impact": 7,
+      "geospatial_context": 3,
+      "other": 2,
+      "physical_hazard": 11,
+      "remote_sensing": 11
+    }
+  }
+}

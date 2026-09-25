@@ -1,0 +1,36 @@
+source_id,source_name,source_type,url,status
+S001,Locked anchor report (NASA Earth Observatory),resource_registry,https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/,success
+S002,HDX CKAN package_search,resource_registry,https://data.humdata.org/api/3/action/package_search?q=June%202023%20Canadian%20wildfire%20smoke%20over%20New%20York%20City%20and%20the%20U.S.%20Northeast%20United%20States%20%2F%20Canada%202023-06-06&rows=10,success
+S003,NASA EONET v3 events/categories search,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/categories/wildfires?start=2023-06-06&end=2023-06-08&status=all,success
+S004,GDACS event list / feed search,resource_registry,"https://www.gdacs.org/gdacsapi/api/events/geteventlist/MAP?fromDate=2023-06-06&toDate=2023-06-08&alertlevel=Green,Orange,Red",success
+S005,OpenStreetMap Nominatim geocoding,resource_registry,https://nominatim.openstreetmap.org/search?q=New%20York%20City%2C%20Washington%20DC%2C%20Philadelphia%2C%20and%20the%20northeastern%20United%20States%2C%20United%20States%20%2F%20Canada&format=json&limit=5,success
+S006,MODIS/VIIRS MAIAC AOD or Worldview aerosol/smoke preview,resource_registry,https://worldview.earthdata.nasa.gov/,success
+S007,Open-Meteo daily weather fill,resource_registry,https://archive-api.open-meteo.com/v1/archive?latitude=7.5000&longitude=0.0000&start_date=2023-05-23&end_date=2023-06-08&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Cwind_speed_10m_max&timezone=UTC,success
+S008,NASA POWER daily weather fill,resource_registry,https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CT2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CWS10M&community=RE&longitude=0.0000&latitude=7.5000&start=20230523&end=20230608&format=JSON,success
+S009,Overpass small roads and critical amenities,resource_registry,https://overpass-api.de/api/interpreter,success
+S010,NASA EONET wildfire events,resource_registry,https://eonet.gsfc.nasa.gov/api/v3/events?category=wildfires&start=2023-06-06&end=2023-06-08&keyword=June%202023%20Canadian%20wildfire%20smoke%20over%20New%20York%20City%20and%20the%20U.S.%20Northeast,success
+S011,compact per-event AOI derived from event bbox,resource_registry,,success
+S012,ERA5-Land hourly aggregate stats,resource_registry,,success
+S013,GPM IMERG V07 event accumulated precipitation,resource_registry,,success
+S014,CHIRPS daily event accumulated precipitation,resource_registry,,success
+S015,WorldPop GP 100m population sum,resource_registry,,success
+S016,Google Satellite Embedding 64-band annual stats,resource_registry,,success
+S017,Google Satellite Embedding annual cosine-change stats,resource_registry,,success
+S018,Sentinel-2 SR Harmonized dNBR,resource_registry,,success
+S019,OpenStreetMap Overpass bounded AOI slice,resource_registry,,success
+S020,pre,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-05-07&BBOX=-10.0%2C-17.5%2C25.0%2C17.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S021,event,resource_registry,https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&TIME=2023-06-07&BBOX=-10.0%2C-17.5%2C25.0%2C17.5&CRS=EPSG%3A4326&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&FORMAT=image%2Fjpeg&WIDTH=1024&HEIGHT=768,success
+S022,Locked event anchor: June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast,event_specific_sources,https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/,remote_verified
+S023,113_CSX-211_01_Locked_anchor_report_NASA_Earth_Observatory.html,auxiliary_local_files,,local_file_found
+S024,113_CSX-211_02_ReliefWeb_Reports_API_event_search,auxiliary_local_files,,local_file_found
+S025,event_2023-06-07_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S026,pre_2023-05-07_modis_truecolor.jpg,auxiliary_local_files,,local_file_found
+S027,alphaearth_change_1km.zip,auxiliary_local_files,,local_file_found
+S028,chirps_event_precip.zip,auxiliary_local_files,,local_file_found
+S029,era5_land_event_stack.zip,auxiliary_local_files,,local_file_found
+S030,gpm_imerg_event_precip.zip,auxiliary_local_files,,local_file_found
+S031,osm_overpass_exposure_slice.json,auxiliary_local_files,,local_file_found
+S032,sentinel2_dnbr_250m.zip,auxiliary_local_files,,local_file_found
+S033,worldpop_population_1km.zip,auxiliary_local_files,,local_file_found
+S034,03_event_specific_news_search_GDELT_article_search_near_event_window.html,auxiliary_local_files,,local_file_found
+S035,04_event_specific_eonet_search_NASA_EONET_keyworddate_event_search.json,auxiliary_local_files,,local_file_found

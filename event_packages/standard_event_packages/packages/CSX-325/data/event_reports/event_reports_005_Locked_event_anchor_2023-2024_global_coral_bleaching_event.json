@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-325",
+  "event_name": "2023-2024 global coral bleaching event",
+  "hazard_family": "marine_heatwave_coastal_ecosystem",
+  "temporal_window": {
+    "start_date": "2023-06-01",
+    "end_date": "2024-12-31",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Tropical reef regions including Southeast Asia",
+    "country_or_region": "Global tropics / Southeast Asia",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "2023-2024 global coral bleaching event",
+    "event_start_date": "2023-06-01",
+    "event_end_date": "2024-12-31",
+    "event_location": "Tropical reef regions including Southeast Asia",
+    "event_country_or_region": "Global tropics / Southeast Asia",
+    "event_scope": "subagent_region_locked",
+    "evidence_type": "NOAA Coral Reef Watch",
+    "evidence_url": "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2023-24_status.php",
+    "evidence_final_url": "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2023-24_status.php",
+    "http_status": "",
+    "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+    "lock_confidence": "high",
+    "match_rule": "subagent_exact_family_region_replacement",
+    "web_search_query_used": "NOAA Coral Reef Watch 2023 2024 global coral bleaching Southeast Asia",
+    "event_lock_notes": "Global coral bleaching event provides Southeast Asian reef heat-stress anchor.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": true
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "weak_or_missing_report_claim",
+    "recommendation": "replace_or_backlog",
+    "probe_ok": false,
+    "probe_status": "404",
+    "probe_error": "http_404",
+    "institutional_domain": true,
+    "claim_like_source_type": false,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.806070+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "2023-2024 global coral bleaching event",
+      "source_type": "NOAA Coral Reef Watch",
+      "url": "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2023-24_status.php",
+      "original_url": "https://coralreefwatch.noaa.gov/satellite/analyses_guidance/global_coral_bleaching_2023-24_status.php",
+      "http_status": "",
+      "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+      "confidence": "high",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "weak_or_missing_report_claim",
+      "release_recommendation": "replace_or_backlog",
+      "probe_ok": false,
+      "probe_status": "404"
+    }
+  ],
+  "source_package_json": "packages/CSX-325_marine_heatwave_coastal_ecosystem_southeast_asia_national_admin/event_package.json"
+}

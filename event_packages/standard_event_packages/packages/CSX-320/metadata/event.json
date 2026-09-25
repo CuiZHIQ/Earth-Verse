@@ -1,0 +1,42 @@
+{
+  "package_id": "CSX-320",
+  "event_name": "Mendenhall Glacier outburst flood",
+  "canonical_event_key": "mendenhall glacier outburst flood",
+  "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+  "hazard_label": "Cryosphere, avalanche, GLOF, and snowmelt",
+  "scale": "national_admin",
+  "region": "North America",
+  "primary_evidence_url": "https://www.climate.gov/news-features/event-tracker/2024-glacial-outburst-flood-near-juneau-sets-record-second-year-row",
+  "existence_verdict": "confirmed",
+  "temporal_match": "match",
+  "spatial_match": "match",
+  "hazard_match": "match",
+  "source_reliability": "high_official_or_institutional",
+  "correspondence_score": "96",
+  "release_decision": "keep",
+  "benchmark_readiness": "ready_with_metadata_warnings",
+  "benchmark_readiness_label": "ready with metadata warnings",
+  "data_integrity": {
+    "local_files_checked": "34",
+    "image_files_checked": "2",
+    "valid_images": "2",
+    "formal_slice_files_checked": "20",
+    "hard_error_count": "0",
+    "metadata_warning_count": "2",
+    "final_data_score": "93",
+    "final_data_decision": "ready_with_minor_warnings",
+    "replacement_file_count": "0"
+  },
+  "file_inventory": {
+    "total_files": 40,
+    "categories": {
+      "event_catalogs": 5,
+      "event_reports": 5,
+      "exposure_impact": 5,
+      "geospatial_context": 3,
+      "other": 3,
+      "physical_hazard": 10,
+      "remote_sensing": 9
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-211",
+  "event_name": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+  "hazard_family": "air_pollution_smoke_heat",
+  "temporal_window": {
+    "start_date": "2023-06-06",
+    "end_date": "2023-06-08",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "New York City, Washington DC, Philadelphia, and the northeastern United States",
+    "country_or_region": "United States / Canada",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+    "event_start_date": "2023-06-06",
+    "event_end_date": "2023-06-08",
+    "event_location": "New York City, Washington DC, Philadelphia, and the northeastern United States",
+    "event_country_or_region": "United States / Canada",
+    "event_scope": "package_specific_real_event",
+    "evidence_type": "NASA Earth Observatory",
+    "evidence_url": "https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/",
+    "evidence_final_url": "https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/",
+    "http_status": "200",
+    "lock_status": "event_locked_second_round_url_reachable",
+    "lock_confidence": "0.92",
+    "match_rule": "second_round_targeted_package_replacement",
+    "web_search_query_used": "NASA Smoke Smothers the Northeast June 2023 New York City Canadian wildfire smoke",
+    "event_lock_notes": "Coastal megacity smoke-pollution episode with synoptic-scale transport from Canadian fires.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": false
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "core_report_claim_confirmed",
+    "recommendation": "keep_for_v0_or_v1",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": true,
+    "claim_like_source_type": true,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.195592+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "June 2023 Canadian wildfire smoke over New York City and the U.S. Northeast",
+      "source_type": "NASA Earth Observatory",
+      "url": "https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/",
+      "original_url": "https://science.nasa.gov/earth/earth-observatory/smoke-smothers-the-northeast-151433/",
+      "http_status": "200",
+      "lock_status": "event_locked_second_round_url_reachable",
+      "confidence": "0.92",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "core_report_claim_confirmed",
+      "release_recommendation": "keep_for_v0_or_v1",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-211_air_pollution_smoke_heat_coastal_megacities_global_synoptic/event_package.json"
+}

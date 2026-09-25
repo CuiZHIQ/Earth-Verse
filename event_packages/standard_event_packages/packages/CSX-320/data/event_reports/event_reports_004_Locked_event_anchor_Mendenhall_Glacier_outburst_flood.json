@@ -1,0 +1,67 @@
+{
+  "package_id": "CSX-320",
+  "event_name": "Mendenhall Glacier outburst flood",
+  "hazard_family": "cryosphere_avalanche_glof_snowmelt",
+  "temporal_window": {
+    "start_date": "2024-08-06",
+    "end_date": "2024-08-06",
+    "source": "package_event_lock_targeted_refined_v4_repaired"
+  },
+  "spatial_window": {
+    "location_text": "Juneau, Alaska",
+    "country_or_region": "United States",
+    "aoi_geometry_status": "not_defined_until_data_preparation"
+  },
+  "locked_event_anchor": {
+    "event_name": "Mendenhall Glacier outburst flood",
+    "event_start_date": "2024-08-06",
+    "event_end_date": "2024-08-06",
+    "event_location": "Juneau, Alaska",
+    "event_country_or_region": "United States",
+    "event_scope": "subagent_region_locked",
+    "evidence_type": "NOAA Climate.gov",
+    "evidence_url": "https://www.climate.gov/news-features/event-tracker/2024-glacial-outburst-flood-near-juneau-sets-record-second-year-row",
+    "evidence_final_url": "https://www.climate.gov/news-features/event-tracker/2024-glacial-outburst-flood-near-juneau-sets-record-second-year-row",
+    "http_status": "",
+    "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+    "lock_confidence": "high",
+    "match_rule": "subagent_exact_family_region_replacement",
+    "web_search_query_used": "NOAA Mendenhall Glacier outburst flood 2024",
+    "event_lock_notes": "Record GLOF from Suicide Basin/Mendenhall Glacier affecting Juneau.",
+    "verification_error": "",
+    "dual_anchor_if_applicable": "",
+    "source_table": "package_event_lock_targeted_refined_v4_repaired.csv",
+    "requires_url_probe": true
+  },
+  "report_claim_audit": {
+    "claim_audit_status": "core_report_claim_confirmed",
+    "recommendation": "keep_for_v0_or_v1",
+    "probe_ok": true,
+    "probe_status": "200",
+    "probe_error": "",
+    "institutional_domain": true,
+    "claim_like_source_type": true,
+    "anchor_fields_complete": true,
+    "audited_at_utc": "2026-05-21T11:53:15.782127+00:00",
+    "audit_table": "event_report_evidence_audit_v1.csv"
+  },
+  "evidence_inventory_reports": [
+    {
+      "role": "event_anchor",
+      "title": "Mendenhall Glacier outburst flood",
+      "source_type": "NOAA Climate.gov",
+      "url": "https://www.climate.gov/news-features/event-tracker/2024-glacial-outburst-flood-near-juneau-sets-record-second-year-row",
+      "original_url": "https://www.climate.gov/news-features/event-tracker/2024-glacial-outburst-flood-near-juneau-sets-record-second-year-row",
+      "http_status": "",
+      "lock_status": "event_locked_subagent_candidate_needs_url_probe",
+      "confidence": "high",
+      "download_status": "not_downloaded",
+      "claim_extraction_status": "not_started",
+      "claim_audit_status": "core_report_claim_confirmed",
+      "release_recommendation": "keep_for_v0_or_v1",
+      "probe_ok": true,
+      "probe_status": "200"
+    }
+  ],
+  "source_package_json": "packages/CSX-320_cryosphere_avalanche_glof_snowmelt_north_america_national_admin/event_package.json"
+}

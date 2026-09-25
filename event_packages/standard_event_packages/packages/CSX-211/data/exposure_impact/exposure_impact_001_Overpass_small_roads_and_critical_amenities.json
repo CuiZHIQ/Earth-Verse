@@ -1,0 +1,162 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-05-21T21:17:00Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 5605930781,
+  "lat": 7.7932659,
+  "lon": -0.0519437,
+  "tags": {
+    "amenity": "school"
+  }
+},
+{
+  "type": "node",
+  "id": 7193178686,
+  "lat": 7.6838048,
+  "lon": -0.2827707,
+  "tags": {
+    "amenity": "school",
+    "name": "Baba DA basic"
+  }
+},
+{
+  "type": "way",
+  "id": 29675603,
+  "center": {
+    "lat": 7.8918961,
+    "lon": -0.0291536
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Krete Krachi - Bimbila",
+    "ref": "R202"
+  }
+},
+{
+  "type": "way",
+  "id": 37289595,
+  "center": {
+    "lat": 7.7752795,
+    "lon": -0.3133626
+  },
+  "tags": {
+    "highway": "secondary",
+    "name": "Atebubu - Kwadjokrom",
+    "ref": "R47",
+    "source": "landsat;Perry-Castañeda LibraryMap Collection"
+  }
+},
+{
+  "type": "way",
+  "id": 786563182,
+  "center": {
+    "lat": 7.7943838,
+    "lon": -0.0566820
+  },
+  "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Kete Krachi Goverment Hospital"
+  }
+},
+{
+  "type": "way",
+  "id": 881616139,
+  "center": {
+    "lat": 7.7823517,
+    "lon": -0.2121762
+  },
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Sene East",
+    "addr:place": "Kajaji",
+    "addr:region": "Bono East",
+    "amenity": "school",
+    "description": "Kajaji Senior High School, established in January 1991, is a mixed school situated at Kajaji, the capital of the Sene East District",
+    "email": "kajajishs@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Kajaji Senior High School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 54 270 1071",
+    "start_date": "1991"
+  }
+},
+{
+  "type": "way",
+  "id": 1030985284,
+  "center": {
+    "lat": 7.7998829,
+    "lon": -0.0426518
+  },
+  "tags": {
+    "addr:country": "GH",
+    "addr:district": "Krachi West",
+    "addr:place": "Kete Krachi",
+    "addr:region": "Oti",
+    "amenity": "school",
+    "description": "Kete Krachi Senior High Technical School (KRASTEC) is located in the Krachi West District of the Volta Region. It is housed in the defunct Experimental Middle A school. The school was established on the 28th January 1991 with 37 students.",
+    "email": "ketekrachishst@ges.gov.gh",
+    "isced:level": "3",
+    "name": "Kete Krachi Senior High/Technical School",
+    "operator": "Ghana Education Service",
+    "operator:short": "GES",
+    "operator:type": "public",
+    "operator:wikidata": "Q30263788",
+    "phone": "+233 20 727 6625",
+    "start_date": "1991-01-28"
+  }
+},
+{
+  "type": "way",
+  "id": 1194149900,
+  "center": {
+    "lat": 7.7795587,
+    "lon": -0.1749672
+  },
+  "tags": {
+    "amenity": "school",
+    "name": "Kwadwokrom DA Basic School"
+  }
+},
+{
+  "type": "way",
+  "id": 1293699005,
+  "center": {
+    "lat": 7.7074865,
+    "lon": -0.2004918
+  },
+  "tags": {
+    "addr:city": "Kaboanya",
+    "addr:street": "Kaboanya",
+    "amenity": "school",
+    "building": "school",
+    "name": "Kaboanya SDA Primary School"
+  }
+},
+{
+  "type": "way",
+  "id": 1314437574,
+  "center": {
+    "lat": 7.7755133,
+    "lon": -0.2221369
+  },
+  "tags": {
+    "addr:city": "Kajaji",
+    "amenity": "school",
+    "building": "school",
+    "name": "Model JHS"
+  }
+}
+
+  ]
+}
