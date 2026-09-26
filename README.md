@@ -4,7 +4,7 @@ This anonymous review release contains the evaluation code, scientific tools, an
 
 ## Example evidence
 
-We include 10 complete event packages, covering 22 tasks, so reviewers can try the benchmark with the evidence at hand. The full collection is about 969 MB uncompressed; we include this subset to keep the repository download manageable. These examples contain about 80 MB of evidence and metadata. The remaining 189 event packages are not included.
+We include 10 complete event packages, covering 22 tasks, so reviewers can try the benchmark with the evidence at hand. We will release the full dataset publicly upon acceptance of the paper.
 
 The packages retain their evidence and source records. We removed access credentials embedded in saved third-party web pages and updated the affected file checksums. The examples cover Pakistan's 2022 floods, the 2013 Uttarakhand floods, Storm Ciaran, Canadian wildfire smoke over the northeastern United States, the Atami debris flow, the Turkiye-Syria earthquakes, China's 2022 heat wave and drought, the Hunga Tonga eruption, the Mendenhall glacier outburst flood, and global coral bleaching.
 
