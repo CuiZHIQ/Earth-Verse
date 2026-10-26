@@ -28,6 +28,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import traceback
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -741,28 +742,27 @@ Start by inspecting the package inventory, then choose only the files needed for
 
 
 def extract_json_object(text: str) -> dict[str, Any]:
-    text = text.strip()
-    text = text.lstrip("\ufeff")
+    """Decode one outer object; never salvage a nested tool argument as an answer."""
+    text = text.lstrip("\ufeff").strip()
+    start = text.find("{")
+    prefix = text if start < 0 else text[:start]
+    if re.search(r"</?(?:tool_call|function|parameter)(?:[=>\s])", prefix, re.I):
+        raise ValueError("XML tool protocol is unsupported; return the JSON action envelope")
     decoder = json.JSONDecoder()
+    # Permit a short prose prefix or a Markdown fence, but start at the FIRST
+    # opening brace only. On failure the model must repair its outer envelope.
+    if start < 0:
+        raise ValueError("model response did not contain a JSON object")
     try:
-        data, _ = decoder.raw_decode(text)
-        if isinstance(data, dict):
-            return data
-    except json.JSONDecodeError:
-        pass
-    fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, flags=re.DOTALL | re.IGNORECASE)
-    if fenced:
-        data, _ = decoder.raw_decode(fenced.group(1).strip())
-        if isinstance(data, dict):
-            return data
-    for match in re.finditer(r"\{", text):
-        try:
-            data, _ = decoder.raw_decode(text[match.start() :])
-            if isinstance(data, dict):
-                return data
-        except json.JSONDecodeError:
-            continue
-    raise ValueError("model response did not contain a JSON object")
+        data, end = decoder.raw_decode(text[start:])
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid outer JSON object: {exc.msg}; repair the complete action envelope") from exc
+    trailing = text[start + end:].strip()
+    if trailing not in ("", "```"):
+        raise ValueError("unexpected content after outer JSON object")
+    if not isinstance(data, dict):
+        raise ValueError("model response must be a JSON object")
+    return data
 
 
 def compact_raw_model_text(text: str, limit: int = 4000) -> str:
@@ -886,9 +886,11 @@ def normalize_agent_payload(parsed: dict[str, Any], has_tool_calls: bool) -> dic
     if isinstance(args, str):
         try:
             args = json.loads(args)
-        except json.JSONDecodeError:
-            args = {}
+        except json.JSONDecodeError as exc:
+            raise ValueError("tool arguments must be a valid JSON object") from exc
     if isinstance(tool, str) and (action in {"", "tool", "tool_call"}):
+        if not isinstance(args, dict):
+            raise ValueError("tool arguments must be an object")
         return {
             "action": "tool_call",
             "tool": tool,
@@ -896,6 +898,9 @@ def normalize_agent_payload(parsed: dict[str, Any], has_tool_calls: bool) -> dic
             "reason": parsed.get("reason", parsed.get("rationale", "")),
         }
     if action in {"final", "answer", "final_answer"}:
+        answer = parsed.get("final_answer", parsed.get("answer"))
+        if answer is None or answer == {} or answer == [] or answer == "":
+            raise ValueError("final_answer is missing or empty; return the requested answer schema")
         return {
             "action": "final_answer",
             "final_answer": parsed.get("final_answer", parsed.get("answer", parsed)),
@@ -905,8 +910,11 @@ def normalize_agent_payload(parsed: dict[str, Any], has_tool_calls: bool) -> dic
             "unsupported_or_unresolved": parsed.get("unsupported_or_unresolved", []),
         }
     if "final_answer" in parsed and "tool" not in parsed:
-        parsed["action"] = "final_answer"
-        return parsed
+        return normalize_agent_payload({**parsed, "action": "final_answer"}, has_tool_calls)
+    if action or tool or any(key in parsed for key in ("code", "path", "args", "arguments", "tool_name")):
+        raise ValueError("incomplete or unknown action envelope; tool parameters are not a final answer")
+    if not parsed:
+        raise ValueError("empty JSON object is not a final answer")
     if has_tool_calls and "tool" not in parsed and "args" not in parsed and "arguments" not in parsed:
         return {
             "action": "final_answer",
@@ -1017,8 +1025,23 @@ def call_chat_completion(
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        raw = resp.read().decode("utf-8")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read().decode("utf-8")
+    except urllib.error.HTTPError as exc:
+        # Providers put actionable error codes and request IDs in the body.
+        # Preserve the HTTPError type so status-based retry handling still works.
+        try:
+            body = exc.read(16385).decode("utf-8", errors="replace")
+        except (OSError, ValueError, http.client.HTTPException):
+            body = ""
+        if body:
+            if api_key:
+                body = body.replace(api_key, "[REDACTED]")
+            if len(body) > 16384:
+                body = body[:16384] + "...[TRUNCATED]"
+            exc.msg = f"{exc.msg}; response_body={body}"
+        raise
     data = json.loads(raw)
     content = data["choices"][0]["message"].get("content")
     if content is None:
@@ -1200,10 +1223,14 @@ def error_result(
     base_url: str,
     error: str,
     cfg: dict[str, Any] | None = None,
+    failure_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     task_id = task_dir.name
     event_id = task_id.split("_")[0]
     cfg = cfg or {}
+    state = failure_state or {}
+    elapsed = round(time.perf_counter() - state["started"], 3) if "started" in state else 0.0
+    recorded_tools = state.get("tool_calls", [])
     run_dir = out_root / safe_model_name(model) / task_id
     run_dir.mkdir(parents=True, exist_ok=True)
     trajectory = {
@@ -1219,22 +1246,39 @@ def error_result(
         "answer_type": "unknown",
         "final_answer": {"error": error},
         "confidence": 0.0,
-        "tool_calls": [],
+        "tool_calls": recorded_tools,
         "evidence": [],
         "reasoning_summary": [],
         "unsupported_or_unresolved": [error],
         "model": model,
         "api_base_url": base_url,
+        "latency_s": elapsed,
+        "error": error,
+        "termination_reason": "solver_exception",
+        "raw_usage": state.get("raw_usage", []),
     }
     write_json(run_dir / "trajectory.json", trajectory)
+    write_json(run_dir / "raw_conversation.json", {
+        "messages": state.get("messages", []), "transcript": state.get("transcript", []),
+        "usage": state.get("raw_usage", []), "error": error, "latency_s": elapsed,
+    })
+    write_json(run_dir / "failure_details.json", {
+        "error": error, "latency_s": elapsed, "traceback": state.get("traceback", ""),
+        "tool_call_count": len(recorded_tools),
+        "ok_tool_calls": sum(bool(call.get("ok")) for call in recorded_tools),
+        "recorded_model_responses": len(state.get("raw_usage", [])),
+    })
     write_text(run_dir / "answer.md", f"# {task_id} Tool-Agent Answer\n\nERROR: {error}\n")
-    write_text(run_dir / "tool_trace.md", f"# {task_id} Tool Trace\n\nNo successful tool-agent trajectory. Error: {error}\n")
+    write_text(run_dir / "tool_trace.md", f"# {task_id} Tool Trace\n\nRun ended with error: {error}\n\n"
+               + "\n\n".join(json.dumps(call, ensure_ascii=False, indent=2) for call in recorded_tools))
     write_text(
         run_dir / "run_notes.md",
         "Tool-agent run failed before completion. Forbidden files were not intentionally used. "
         "Network access was not available to local tools; only model API calls were made.\n",
     )
-    return {"task_id": task_id, "model": model, "status": "error", "latency_s": 0.0, "error": error}
+    return {"task_id": task_id, "model": model, "status": "error", "latency_s": elapsed,
+            "tool_calls": len(recorded_tools),
+            "ok_tool_calls": sum(bool(call.get("ok")) for call in recorded_tools), "error": error}
 
 
 def _solve_one_unlocked(
@@ -1246,6 +1290,7 @@ def _solve_one_unlocked(
     api_key: str,
     base_url: str,
     force: bool,
+    failure_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     task_id = task_dir.name
     event_id = task_id.split("_")[0]
@@ -1276,6 +1321,9 @@ def _solve_one_unlocked(
     max_turns = None if unlimited_turns else int(max_turns_raw)
     observation_max_chars = int(cfg.get("observation_max_chars", 12000))
     started = time.perf_counter()
+    if failure_state is not None:
+        failure_state.update(started=started, messages=messages, transcript=transcript,
+                             tool_calls=tool_calls, raw_usage=raw_usage)
     max_research_seconds, max_task_wall_seconds, finalization_reserve_seconds = (
         resolve_research_budgets(cfg)
     )
@@ -1315,7 +1363,7 @@ def _solve_one_unlocked(
             transcript.append({
                 "step": step,
                 "assistant_parse_error": str(exc),
-                "raw_content": compact_raw_model_text(content),
+                "raw_content": content,
             })
             if parse_error_count > max_parse_repairs:
                 raise ValueError(f"model response did not follow the EarthVerse agent JSON protocol after {max_parse_repairs} repair prompts")
@@ -1422,9 +1470,13 @@ def _solve_one_unlocked(
             )
             raw_usage.append((raw_data or {}).get("usage", {}))
             parsed = normalize_agent_payload(extract_json_object(content), bool(tool_calls))
-            final_payload = parsed if "final_answer" in parsed else {"final_answer": parsed}
-        except MODEL_RUN_EXCEPTIONS:
-            final_payload = budget_fallback_payload(termination_reason, content)
+            if parsed.get("action") != "final_answer":
+                raise ValueError("finalization returned a tool request instead of a final answer")
+            final_payload = parsed
+        except MODEL_RUN_EXCEPTIONS as exc:
+            transcript.append({"step": step, "finalization_error": f"{type(exc).__name__}: {exc}",
+                               "raw_content": content})
+            final_payload = budget_fallback_payload(termination_reason)
             termination_reason += "_fallback"
         transcript.append(
             {
@@ -1569,7 +1621,13 @@ def solve_one(
         lock_handle.truncate()
         lock_handle.write(f"pid={os.getpid()}\nstarted={time.time()}\n".encode("ascii"))
         lock_handle.flush()
-        return _solve_one_unlocked(task_dir, model, package_root, out_root, cfg, api_key, base_url, force)
+        state: dict[str, Any] = {"started": time.perf_counter()}
+        try:
+            return _solve_one_unlocked(task_dir, model, package_root, out_root, cfg, api_key, base_url, force, state)
+        except Exception as exc:
+            state["traceback"] = traceback.format_exc()
+            return error_result(task_dir, model, package_root / task_id.split("_")[0], out_root,
+                                base_url, f"{type(exc).__name__}: {exc}", cfg, state)
     finally:
         try:
             lock_handle.seek(0)
