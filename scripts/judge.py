@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import math
 import os
 import re
 import shutil
@@ -817,6 +818,61 @@ def answer_unit_flags(answer_units: dict[str, Any]) -> dict[str, bool]:
     }
 
 
+def rubric_consistency_errors(result: dict[str, Any]) -> list[str]:
+    """Check raw rubric arithmetic before normalization can hide bad values."""
+    errors: list[str] = []
+
+    def number(value: Any, label: str) -> float:
+        try:
+            if isinstance(value, bool):
+                raise ValueError()
+            parsed = float(value)
+            if not math.isfinite(parsed):
+                raise ValueError()
+            return parsed
+        except (TypeError, ValueError, OverflowError):
+            errors.append(f"{label} must be a finite number")
+            return float("nan")
+
+    rubric = result.get("rubric_points")
+    if not isinstance(rubric, dict):
+        return ["rubric_points must be an object"]
+    total = number(rubric.get("total"), "rubric_points.total")
+    earned = number(rubric.get("earned"), "rubric_points.earned")
+    if math.isfinite(total) and abs(total - 20) > 0.001:
+        errors.append(f"rubric total must be 20, got {total}")
+    if math.isfinite(earned) and not 0 <= earned <= total:
+        errors.append("rubric earned must be between 0 and total")
+    criteria = rubric.get("criteria")
+    if not isinstance(criteria, list) or not criteria:
+        return errors + ["rubric criteria must be a nonempty list"]
+    maxima, points = [], []
+    for index, item in enumerate(criteria):
+        if not isinstance(item, dict):
+            errors.append(f"criterion {index} must be an object")
+            continue
+        maximum = number(item.get("max_points"), f"criterion {index} max_points")
+        point = number(item.get("earned_points"), f"criterion {index} earned_points")
+        if math.isfinite(maximum) and maximum < 0:
+            errors.append(f"criterion {index} max_points is negative")
+        if math.isfinite(point) and not 0 <= point <= maximum:
+            errors.append(f"criterion {index} earned_points is outside [0, max_points]")
+        maxima.append(maximum)
+        points.append(point)
+    if abs(sum(maxima) - total) > 0.01:
+        errors.append(f"criterion maxima sum {sum(maxima):.4f} != total {total}")
+    if abs(sum(points) - earned) > 0.01:
+        errors.append(f"criterion earned sum {sum(points):.4f} != earned {earned}")
+    scores = result.get("scores")
+    score = number(scores.get("llm_rubric_score") if isinstance(scores, dict) else None,
+                   "scores.llm_rubric_score")
+    if math.isfinite(score) and not 0 <= score <= 100:
+        errors.append("llm_rubric_score is outside [0, 100]")
+    if total > 0 and abs(score - 100 * earned / total) > 0.01:
+        errors.append("rubric percentage does not equal earned / total * 100")
+    return errors
+
+
 def require_complete_judge_shape(result: dict[str, Any]) -> None:
     scores = result.get("scores")
     if not isinstance(scores, dict) or any(key not in scores for key in OFFICIAL_SCORE_KEYS):
@@ -846,6 +902,11 @@ def require_complete_judge_shape(result: dict[str, Any]) -> None:
 
 def validate_judge_result(task_id: str, result: dict[str, Any]) -> dict[str, Any]:
     require_complete_judge_shape(result)
+    errors = rubric_consistency_errors(result)
+    if result.get("task_id") not in (None, "", task_id):
+        errors.append("judge returned a different task_id")
+    if errors:
+        raise ValueError("Judge consistency check failed: " + "; ".join(errors))
     result["task_id"] = result.get("task_id") or task_id
     raw_scores = result.get("scores") if isinstance(result.get("scores"), dict) else result
     scores = {key: clamp_score(raw_scores.get(key, 0)) for key in OFFICIAL_SCORE_KEYS}
@@ -964,12 +1025,14 @@ def judge_one(
     if metadata.get("run_status") not in ("", "ok") and not scoreable_invalid:
         return solver_error_zero_result(task_id, metadata)
     retryable = (urllib.error.URLError, KeyError, TypeError, ValueError, json.JSONDecodeError, OSError)
+    failed_attempts: list[dict[str, Any]] = []
 
     def call_stage(messages: list[dict[str, str]]) -> dict[str, Any]:
         last_exc: BaseException | None = None
         for attempt in range(retries + 1):
+            response = None
             try:
-                return call_openai_compatible_raw(
+                response = call_openai_compatible_raw(
                     messages,
                     model,
                     base_url,
@@ -977,8 +1040,14 @@ def judge_one(
                     timeout,
                     use_response_format=use_response_format,
                 )
+                validated = validate_judge_result(task_id, response)
+                validated["judge_call_count"] = attempt + 1
+                validated["judge_failed_attempts"] = failed_attempts
+                return validated
             except retryable as exc:
                 last_exc = exc
+                failed_attempts.append({"attempt": attempt + 1, "error": str(exc),
+                                        "response": response})
                 if attempt < retries:
                     time.sleep(min(2.0 * (attempt + 1), 8.0))
         assert last_exc is not None
@@ -987,14 +1056,15 @@ def judge_one(
     try:
         combined_result = call_stage(build_messages(task_dir, run_dir))
         combined_result["judge_protocol"] = "single_combined_answer_and_rubric_v1"
-        combined_result["judge_call_count"] = 1
-        validated = validate_judge_result(task_id, combined_result)
+        validated = combined_result
         validated.update(metadata)
         validated["scoreable_invalid_final"] = scoreable_invalid
         return validated
     except retryable as exc:
         last_exc = exc
     failed = judge_error_result(task_id, last_exc)
+    failed["judge_failed_attempts"] = failed_attempts
+    failed["judge_call_count"] = len(failed_attempts)
     failed.update(metadata)
     return failed
 
@@ -1177,12 +1247,21 @@ def completed_result_ids(
     results: list[dict[str, Any]], force_rejudge_ids: set[str] | None = None
 ) -> set[str]:
     forced = force_rejudge_ids or set()
-    return {
-        str(result.get("task_id"))
-        for result in results
-        if result.get("verdict") != "judge_error"
-        and str(result.get("task_id")) not in forced
-    }
+    completed: set[str] = set()
+    for result in results:
+        task_id = str(result.get("task_id"))
+        if result.get("verdict") == "judge_error" or task_id in forced:
+            continue
+        if result.get("verdict") == "solver_error_scored_zero":
+            completed.add(task_id)
+            continue
+        try:
+            require_complete_judge_shape(result)
+        except (KeyError, TypeError, ValueError, OverflowError):
+            continue
+        if not rubric_consistency_errors(result):
+            completed.add(task_id)
+    return completed
 
 
 def commit_atomic_out_dir(work_dir: Path, out_dir: Path, aggregate: dict[str, Any]) -> None:
